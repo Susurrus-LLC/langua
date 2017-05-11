@@ -1,0 +1,1 @@
+var frequenView = '<div class="langua-frequen"><p class="notice">This tool is still under development</p></div>';

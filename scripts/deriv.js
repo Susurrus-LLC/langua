@@ -1,0 +1,1 @@
+var derivView = '<div class="langua-deriv"><p class="notice">This tool is still under development</p></div>';

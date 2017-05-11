@@ -1,0 +1,1 @@
+var genView = '<div class="langua-gen"><p class="notice">This tool is still under development</p></div>';
