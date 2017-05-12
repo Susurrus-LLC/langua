@@ -43,6 +43,7 @@ Langua was inspired by a few existing tools, including:
 - [Awkwords](http://akana.conlang.org/tools/awkwords/)
 - [Gen](http://www.zompist.com/gen.html)
 - [SCA2](http://www.zompist.com/sca2.html)
+- [ConWorkShop PhoMo](http://conworkshop.info/phomo.php)
 - [The Derivizer](http://akana.conlang.org/tools/derivizer.html)
 - [The Frequentizer](http://akana.conlang.org/tools/frequentizer.html)
 
