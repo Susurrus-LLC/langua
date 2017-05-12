@@ -32,11 +32,11 @@
 			</div>
 			<nav>
 				<ul class="menu">
-					<li><a href="index" class="menu-item">Home</a></li>
-					<li><a href="gen" class="menu-item">Gen</a></li>
-					<li><a href="morph" class="menu-item">Morph</a></li>
-					<li><a href="deriv" class="menu-item">Deriv</a></li>
-					<li><a href="frequen" class="menu-item">Frequen</a></li>
+					<li><a href="index" class="page-link">Home</a></li>
+					<li><a href="gen" class="page-link">Gen</a></li>
+					<li><a href="morph" class="page-link">Morph</a></li>
+					<li><a href="deriv" class="page-link">Deriv</a></li>
+					<li><a href="frequen" class="page-link">Frequen</a></li>
 				</ul>
 			</nav>
 		</div>

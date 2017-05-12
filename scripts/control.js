@@ -3,9 +3,14 @@ loadContent = function loadContent(file) {
 }
 
 $(document).ready(function () {
-	$(".menu-item").click(function (e) {
+	$(".page-link").click(function (e) {
 		e.preventDefault();
-		var data = $(this).attr("href");
+		var data;
+		if ($(this).attr("href")) {
+			data = $(this).attr("href");
+		} else {
+			data = $(this).attr("data-page");
+		}
 		$(".app").fadeOut(250, function () {
 			loadContent(data);
 			$(".app").fadeIn(250);
