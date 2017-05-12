@@ -1,6 +1,6 @@
 # Langua
 
-**Current Version:** v0.1
+**Current Version:** v0.0.1
 
 ## Overview
 
@@ -27,6 +27,10 @@ LanguaFrequen is a tool for analyzing phoneme frequencies in a given text.
 Langua is a web-based tool. The user interface is constructed using PHP, so it needs to be run on a server that can handle PHP.
 
 Langua does not use a database, so it is extremely easy to install. Simply download the latest stable release and unpack it onto a server that will run it as a website.
+
+## Versioning
+
+Langua uses an unstable Master branch. The master branch is used for development, while stable versions are provided as releases. Version numbering is similar to [Semantic Versioning](http://semver.org/); versions are listed as x.y.z., wherein z refers to bug fixes and very minor updates, y refers to minor additions and updates to functionality, and x refers to major updates or overhauls to the program that significantly impact workflow or the use of the program.
 
 **Note: Langua is currently under development and no stable release is yet ready.**
 
