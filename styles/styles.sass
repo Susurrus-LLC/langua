@@ -9,6 +9,26 @@ $mainfont: "Quattrocento Sans", Helvetica, Arial, sans-serif
 $langfont: Doulos, "Palatino Linotype", Palatino, serif
 
 // *********************************************************** //
+// Modular Scale //
+// https://alistapart.com/article/more-meaningful-typography //
+// 1rem @ 1:1.333 //
+// 1.1665rem @ 1:1.333 //
+// http://www.modularscale.com/?1,1.1665&em&1.333 //
+
+$msa0: 0.750rem
+$msb0: 0.875rem
+$msa1: 1.000rem
+$msb1: 1.167rem
+$msa2: 1.333rem
+$msb2: 1.555rem
+$msa3: 1.777rem
+$msb3: 2.073rem
+$msa4: 2.369rem
+$msb4: 2.763rem
+$msa5: 3.157rem
+$msb5: 3.683rem
+
+// *********************************************************** //
 // Colors based on https://tallys.github.io/color-theory/ //
 
 @function is-cool-color($color)
@@ -51,13 +71,11 @@ $langfont: Doulos, "Palatino Linotype", Palatino, serif
 		@else
 			@return mix(complement($color), $color, 23%)
 
-$blu-primary: hsla(194, 100%, 50%, 1) // Don't use this; use the mixed version
-$ong-primary: hsla(33, 100%, 50%, 1) // Don't use this; use the mixed version
+$blu-primary: hsla(194, 100%, 50%, 1) // Don't use this; use the mixed version instead
+$ong-primary: hsla(33, 100%, 50%, 1) // Don't use this; use the mixed version instead
 
 $blu: darken(harmonious-mix($ong-primary, $blu-primary), 5%)
 $ong: harmonious-mix($blu-primary, $ong-primary)
-$blu-light: lighten($blu, 20%)
-$blu-dark: darken($blu, 15%)
 $blu-neutral: mix-neutral($blu)
 $ong-neutral: mix-neutral($ong)
 $white: lighten($blu-neutral, 54.5%)
@@ -70,6 +88,7 @@ body
 	margin: 0
 	padding: 0
 	font-family: $mainfont
+	text-rendering: optimizeLegibility
 	font-size: 16px
 	font-size: 100%
 	font-size: 1em
@@ -86,7 +105,7 @@ body
 	display: flex
 	justify-content: space-between
 	align-items: baseline
-	border-bottom: 1px solid $blu-dark
+	border-bottom: 1px solid darken($blu, 15%)
 	.title-area
 		order: 0
 	nav
@@ -98,13 +117,14 @@ main
 
 .footer
 	text-align: center
-	border-top: 1px solid $blu-dark
+	border-top: 1px solid darken($blu, 15%)
 
 a
+	text-decoration: none
 	&:link, &:visited
-		color: $blu
+		color: $ong
 	&:hover, &:active
-		color: $blu-dark
+		color: darken($ong, 15%)
 
 .menu
 	text-align: right
@@ -112,8 +132,19 @@ a
 		display: inline-block
 		margin: 1rem
 		padding: 0
-	a
-		text-decoration: none
 
-.lang
+h1, h2, h3, h4, h5, h6, .lang, .menu
 	font-family: $langfont
+
+h1
+	color: darken($blu, 20%)
+h2
+	color: darken($blu, 10%)
+h3
+	color: darken($blu, 8%)
+h4
+	color: darken($blu, 5%)
+h5
+	color: darken($blu, 2%)
+h6
+	color: $blu

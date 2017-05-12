@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Quattrocento Sans", Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
   font-size: 16px;
   font-size: 100%;
   font-size: 1em;
@@ -61,11 +62,14 @@ main {
   border-top: 1px solid #236d75;
 }
 
+a {
+  text-decoration: none;
+}
 a:link, a:visited {
-  color: #34a4b0;
+  color: #d69428;
 }
 a:hover, a:active {
-  color: #236d75;
+  color: #96671c;
 }
 
 .menu {
@@ -76,12 +80,33 @@ a:hover, a:active {
   margin: 1rem;
   padding: 0;
 }
-.menu a {
-  text-decoration: none;
+
+h1, h2, h3, h4, h5, h6, .lang, .menu {
+  font-family: Doulos, "Palatino Linotype", Palatino, serif;
 }
 
-.lang {
-  font-family: Doulos, "Palatino Linotype", Palatino, serif;
+h1 {
+  color: #1d5b62;
+}
+
+h2 {
+  color: #297f89;
+}
+
+h3 {
+  color: #2b8691;
+}
+
+h4 {
+  color: #2e919d;
+}
+
+h5 {
+  color: #329ca8;
+}
+
+h6 {
+  color: #34a4b0;
 }
 
 /*# sourceMappingURL=styles.css.map */
