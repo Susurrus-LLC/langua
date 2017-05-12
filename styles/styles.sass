@@ -1,5 +1,31 @@
+// Fonts
 $mainfont: "Quattrocento Sans", Helvetica, Arial, sans-serif
 $langfont: Doulos, "Palatino Linotype", Palatino, serif
+
+// Colors based on https://tallys.github.io/color-theory/
+$grn-prim: hsla(140, 100%, 50%, 1)
+$org-prim: hsla(25, 100%, 50%, 1)
+
+@function is-cool-color($color)
+	@return hue($color) < 300 and hue($color) > 120
+
+@function is-high-key-value($color)
+	@return hue($color) > 30 and hue($color) < 140
+
+@function harmonious-mix($mix, $base)
+	@if is-cool-color($mix)
+		@if is-high-key-value($base)
+			@return mix($mix, $base, 11%)
+		@else
+			@return mix($mix, $base, 16%)
+	@else
+		@if is-high-key-value($base)
+			@return mix($mix, $base, 13%)
+		@else
+			@return mix($mix, $base, 23%)
+
+$grn-mix: harmonious-mix($org-prim, $grn-prim)
+$org-mix: harmonious-mix($grn-prim, $org-prim)
 
 @font-face
 	font-family: Doulos
@@ -17,3 +43,6 @@ main
 
 .site-subtitle, .lang
 	font-family: $langfont
+
+a, a:link, a:hover, a:active, a:visited
+	color: $org-mix

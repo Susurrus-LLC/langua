@@ -14,4 +14,7 @@ main {
 .site-subtitle, .lang {
   font-family: Doulos, "Palatino Linotype", Palatino, serif; }
 
+a, a:link, a:hover, a:active, a:visited {
+  color: #d6810d; }
+
 /*# sourceMappingURL=styles.css.map */
