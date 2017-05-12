@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Langua &mdash; Language Tools</title>
+	<title>Langua | Language Tools</title>
 	<meta charset="UTF-8">
 	<meta name="author" content="Ian A. Cook">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,23 +31,13 @@
 		</div>
 		<nav class="menu">
 			<ul>
-				<li><a href="#" class="menu-item menu-home">Home</a></li>
-				<li><a href="#" class="menu-item menu-gen">Gen</a></li>
-				<li><a href="#" class="menu-item menu-morph">Morph</a></li>
-				<li><a href="#" class="menu-item menu-deriv">Deriv</a></li>
-				<li><a href="#" class="menu-item menu-frequen">Frequen</a></li>
+				<li><a href="index.php" class="menu-item" data-page="index">Home</a></li>
+				<li><a href="gen.php" class="menu-item" data-page="gen">Gen</a></li>
+				<li><a href="morph.php" class="menu-item" data-page="morph">Morph</a></li>
+				<li><a href="deriv.php" class="menu-item" data-page="deriv">Deriv</a></li>
+				<li><a href="frequen.php" class="menu-item" data-page="frequen">Frequen</a></li>
 			</ul>
 		</nav>
 	</header>
 	<main>
-		<div class="app"></div>
-	</main>
-	<footer>
-		<p>Built by <a href="https://github.com/nai888" target="_blank" rel="noopener">Ian A. Cook</a>, copyright &copy; 2017 under
-			the <a href="https://choosealicense.com/licenses/agpl-3.0/" target="_blank" rel="noopener">AGPL-3.0 license</a>. <a href="https://github.com/nai888/langua"
-			    target="_blank" rel="noopener">View this project on GitHub.</a>
-		</p>
-	</footer>
-</body>
-
-</html>
+		<div class="app">

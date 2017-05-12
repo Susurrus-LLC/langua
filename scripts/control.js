@@ -1,58 +1,32 @@
 // Using pushState to dynamically control the URL for a Single Page Application: http://adkgroup.com/insights/single-page-applications-spa-and-seo-problem
 var ui = {};
 
-var controlView = '<div class="control"><p class="notice">This tool is still under development</p></div>';
-
-ui.switchViewTo = function (view) {
-	switch (view) {
-		case "control":
-			$(".app").fadeOut(250, function () {
-				$(".app").html(controlView).fadeIn(250);
-			});
-			break;
-		case "gen":
-			$(".app").fadeOut(250, function () {
-				$(".app").html(genView).fadeIn(250);
-			});
-			break;
-		case "morph":
-			$(".app").fadeOut(250, function () {
-				$(".app").html(morphView).fadeIn(250);
-			});
-			break;
-		case "deriv":
-			$(".app").fadeOut(250, function () {
-				$(".app").html(derivView).fadeIn(250);
-			});
-			break;
-		case "frequen":
-			$(".app").fadeOut(250, function () {
-				$(".app").html(frequenView).fadeIn(250);
-			});
-			break;
-	}
+ui.loadContent = function (file) {
+	$(".app").load(file + ".php ." + (file === "index" ? "home" : file));
 }
 
 $(document).ready(function () {
-	ui.switchViewTo("control");
-
-	$(".menu-home").click(function () {
-		ui.switchViewTo("control");
+	$(".menu-item").click(function (e) {
+		e.preventDefault();
+		var data = $(this).attr("data-page");
+		$(".app").fadeOut(250, function () {
+			ui.loadContent(data);
+			$(".app").fadeIn(250);
+		});
+		history.pushState(data, data, data);
 	});
 
-	$(".menu-gen").click(function () {
-		ui.switchViewTo("gen");
+	window.addEventListener("popstate", function (e) {
+		var data = e.state;
+		$(".app").fadeOut(250, function () {
+			if (data === null) {
+				ui.loadContent("index");
+				document.title = "Langua | Language Tools";
+			} else {
+				ui.loadContent(data);
+				document.title = "Langua | " + data;
+			}
+			$(".app").fadeIn(250);
+		});
 	});
-
-	$(".menu-morph").click(function () {
-		ui.switchViewTo("morph");
-	});
-
-	$(".menu-deriv").click(function () {
-		ui.switchViewTo("deriv");
-	});
-
-	$(".menu-frequen").click(function () {
-		ui.switchViewTo("frequen");
-	});
-})
+});

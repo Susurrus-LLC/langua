@@ -1,1 +1,1 @@
-var frequenView = '<div class="langua-frequen"><p class="notice">This tool is still under development</p></div>';
+var frequenView = '<div class="frequen"><p class="notice">This tool is in planning.</p></div>';

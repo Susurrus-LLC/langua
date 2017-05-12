@@ -1,6 +1,6 @@
 # Langua
 
-https://nai888.github.io/langua/
+[nai888.github.io/langua/](https://nai888.github.io/langua/)
 
 Langua is a collection of language tools that can be used for testing, experimentation, learning, analysis, or creation. There are four main tools.
 

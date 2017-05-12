@@ -1,1 +1,1 @@
-var morphView = '<div class="langua-morph"><p class="notice">This tool is still under development</p></div>';
+var morphView = '<div class="morph"><p class="notice">This tool is in planning.</p></div>';

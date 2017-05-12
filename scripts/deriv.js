@@ -1,1 +1,1 @@
-var derivView = '<div class="langua-deriv"><p class="notice">This tool is still under development</p></div>';
+var derivView = '<div class="deriv"><p class="notice">This tool is in planning.</p></div>';
