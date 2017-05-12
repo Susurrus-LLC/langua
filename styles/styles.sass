@@ -15,18 +15,28 @@ $langfont: Doulos, "Palatino Linotype", Palatino, serif
 // 1.1665rem @ 1:1.333 //
 // http://www.modularscale.com/?1,1.1665&em&1.333 //
 
-$msa0: 0.750rem
-$msb0: 0.875rem
+@function pow($number, $exponent)
+	$value: 1
+	@if $exponent > 0
+		@for $i from 1 through $exponent
+			$value: $value * $number
+	@return $value // value is integer, so must be given a unit separately
+
+$ratio: 1.333
 $msa1: 1.000rem
 $msb1: 1.167rem
-$msa2: 1.333rem
-$msb2: 1.555rem
-$msa3: 1.777rem
-$msb3: 2.073rem
-$msa4: 2.369rem
-$msb4: 2.763rem
-$msa5: 3.157rem
-$msb5: 3.683rem
+$msa0: $msa1 / pow($ratio, 1) // 0.750rem
+$msb0: $msb1 / pow($ratio, 1) // 0.875rem
+$msa2: $msa1 * pow($ratio, 1) // 1.333rem
+$msb2: $msb1 * pow($ratio, 1) // 1.555rem
+$msa3: $msa1 * pow($ratio, 2) // 1.777rem
+$msb3: $msb1 * pow($ratio, 2) // 2.073rem
+$msa4: $msa1 * pow($ratio, 3) // 2.369rem
+$msb4: $msb1 * pow($ratio, 3) // 2.763rem
+$msa5: $msa1 * pow($ratio, 4) // 3.157rem
+$msb5: $msb1 * pow($ratio, 4) // 3.683rem
+$msa6: $msa1 * pow($ratio, 5) // 4.209rem
+$msb6: $msb1 * pow($ratio, 5) // 4.909rem
 
 // *********************************************************** //
 // Colors based on https://tallys.github.io/color-theory/ //
@@ -82,22 +92,22 @@ $white: lighten($blu-neutral, 54.5%)
 $black: darken($blu-neutral, 41%)
 
 // *********************************************************** //
-// Document styles //
+// Site-wide styles //
 
 body
 	margin: 0
 	padding: 0
 	font-family: $mainfont
-	text-rendering: optimizeLegibility
 	font-size: 16px
 	font-size: 100%
 	font-size: 1em
-	font-size: 1rem
+	font-size: $msa1
+	line-height: $msa2
 	background-color: $white
 	color: $black
 
 .header, .app, .footer
-	max-width: 1200px
+	max-width: $msa1 * pow($ratio, 15) // 74.551rem // 1192.8px
 	margin-left: auto
 	margin-right: auto
 
@@ -113,7 +123,7 @@ body
 		flex-grow: 1
 
 main
-	min-height: 5rem
+	min-height: $msa6
 
 .footer
 	text-align: center
@@ -130,21 +140,62 @@ a
 	text-align: right
 	li
 		display: inline-block
-		margin: 1rem
+		margin: $msa1
 		padding: 0
 
 h1, h2, h3, h4, h5, h6, .lang, .menu
 	font-family: $langfont
 
+h1, h2, h3, h4, h5, h6
+	text-rendering: optimizeLegibility
+
 h1
 	color: darken($blu, 20%)
+	font-size: $msa5
+	line-height: $msa6
 h2
 	color: darken($blu, 10%)
+	font-size: $msa4
+	line-height: $msa5
 h3
 	color: darken($blu, 8%)
+	font-size: $msa3
+	line-height: $msa4
 h4
 	color: darken($blu, 5%)
+	font-size: $msa2
+	line-height: $msa3
 h5
 	color: darken($blu, 2%)
+	font-size: $msa1
+	line-height: $msa2
 h6
 	color: $blu
+	font-size: $msb0
+	line-height: $msa1
+
+// *********************************************************** //
+// Home styles //
+
+.grid
+	display: flex
+	justify-content: space-between
+	align-items: baseline
+	flex-wrap: wrap
+	a
+		color: $black
+		width: 49%
+		&:hover
+			outline: 1px solid rgba(darken($blu, 15%), 0.3)
+
+// *********************************************************** //
+// Gen styles //
+
+// *********************************************************** //
+// Morph styles //
+
+// *********************************************************** //
+// Deriv styles //
+
+// *********************************************************** //
+// Frequen styles //
