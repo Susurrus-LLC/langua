@@ -67,6 +67,8 @@ $black: darken($blu-neutral, 41%)
 // Document styles //
 
 body
+	margin: 0
+	padding: 0
 	font-family: $mainfont
 	font-size: 16px
 	font-size: 100%
@@ -75,13 +77,43 @@ body
 	background-color: $white
 	color: $black
 
+.header, .app, .footer
+	max-width: 1200px
+	margin-left: auto
+	margin-right: auto
+
+.header
+	display: flex
+	justify-content: space-between
+	align-items: baseline
+	border-bottom: 1px solid $blu-dark
+	.title-area
+		order: 0
+	nav
+		order: 1
+		flex-grow: 1
+
 main
 	min-height: 5rem
 
-.site-subtitle, .lang
-	font-family: $langfont
+.footer
+	text-align: center
+	border-top: 1px solid $blu-dark
 
-a, a:link, a:visited
-	color: $blu
-a:hover, a:active
-	color: $blu-dark
+a
+	&:link, &:visited
+		color: $blu
+	&:hover, &:active
+		color: $blu-dark
+
+.menu
+	text-align: right
+	li
+		display: inline-block
+		margin: 1rem
+		padding: 0
+	a
+		text-decoration: none
+
+.lang
+	font-family: $langfont

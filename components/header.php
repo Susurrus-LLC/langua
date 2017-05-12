@@ -25,19 +25,21 @@
 <body>
 
 	<header>
-		<div class="header">
-			<h1 class="site-title">Langua</h1>
-			<p class="site-subtitle">A collection of language tools</p>
+		<div class="content header">
+			<div class="title-area">
+				<h1 class="site-title">Langua</h1>
+				<p class="site-subtitle">A suite of language tools</p>
+			</div>
+			<nav>
+				<ul class="menu">
+					<li><a href="index" class="menu-item">Home</a></li>
+					<li><a href="gen" class="menu-item">Gen</a></li>
+					<li><a href="morph" class="menu-item">Morph</a></li>
+					<li><a href="deriv" class="menu-item">Deriv</a></li>
+					<li><a href="frequen" class="menu-item">Frequen</a></li>
+				</ul>
+			</nav>
 		</div>
-		<nav class="menu">
-			<ul>
-				<li><a href="index" class="menu-item">Home</a></li>
-				<li><a href="gen" class="menu-item">Gen</a></li>
-				<li><a href="morph" class="menu-item">Morph</a></li>
-				<li><a href="deriv" class="menu-item">Deriv</a></li>
-				<li><a href="frequen" class="menu-item">Frequen</a></li>
-			</ul>
-		</nav>
 	</header>
 	<main>
-		<div class="app">
+		<div class="content app">
