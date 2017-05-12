@@ -1,5 +1,7 @@
 # Langua
 
+**Current Version:** v0.1
+
 ## Overview
 
 Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation. There are four main tools: [Gen](#gen), [Morph](#morph), [Deriv](#deriv), and [Frequen](#frequen).
