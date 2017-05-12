@@ -1,6 +1,7 @@
 @font-face {
   font-family: Doulos;
-  src: url(../font/DoulosSIL-R.woff); }
+  src: url(../font/DoulosSIL-R.woff);
+}
 body {
   margin: 0;
   padding: 0;
@@ -10,12 +11,14 @@ body {
   font-size: 1em;
   font-size: 1rem;
   background-color: #fbfdfd;
-  color: #050c0d; }
+  color: #050c0d;
+}
 
 .header, .app, .footer {
   max-width: 1200px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+}
 
 .header {
   display: -webkit-box;
@@ -30,44 +33,55 @@ body {
   -webkit-align-items: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
-  border-bottom: 1px solid #236d75; }
-  .header .title-area {
-    -webkit-box-ordinal-group: 1;
-    -webkit-order: 0;
-        -ms-flex-order: 0;
-            order: 0; }
-  .header nav {
-    -webkit-box-ordinal-group: 2;
-    -webkit-order: 1;
-        -ms-flex-order: 1;
-            order: 1;
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1; }
+  border-bottom: 1px solid #236d75;
+}
+.header .title-area {
+  -webkit-box-ordinal-group: 1;
+  -webkit-order: 0;
+      -ms-flex-order: 0;
+          order: 0;
+}
+.header nav {
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
 
 main {
-  min-height: 5rem; }
+  min-height: 5rem;
+}
 
 .footer {
   text-align: center;
-  border-top: 1px solid #236d75; }
+  border-top: 1px solid #236d75;
+}
 
 a:link, a:visited {
-  color: #34a4b0; }
+  color: #34a4b0;
+}
 a:hover, a:active {
-  color: #236d75; }
+  color: #236d75;
+}
 
 .menu {
-  text-align: right; }
-  .menu li {
-    display: inline-block;
-    margin: 1rem;
-    padding: 0; }
-  .menu a {
-    text-decoration: none; }
+  text-align: right;
+}
+.menu li {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0;
+}
+.menu a {
+  text-decoration: none;
+}
 
 .lang {
-  font-family: Doulos, "Palatino Linotype", Palatino, serif; }
+  font-family: Doulos, "Palatino Linotype", Palatino, serif;
+}
 
 /*# sourceMappingURL=styles.css.map */
