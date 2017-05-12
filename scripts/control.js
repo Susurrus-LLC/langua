@@ -1,7 +1,4 @@
-// Using pushState to dynamically control the URL for a Single Page Application: http://adkgroup.com/insights/single-page-applications-spa-and-seo-problem
-var ui = {};
-
-ui.loadContent = function (file) {
+loadContent = function loadContent(file) {
 	$(".app").load(file + ".php ." + (file === "index" ? "home" : file));
 }
 
@@ -10,7 +7,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		var data = $(this).attr("data-page");
 		$(".app").fadeOut(250, function () {
-			ui.loadContent(data);
+			loadContent(data);
 			$(".app").fadeIn(250);
 		});
 		history.pushState(data, data, data);
@@ -20,10 +17,10 @@ $(document).ready(function () {
 		var data = e.state;
 		$(".app").fadeOut(250, function () {
 			if (data === null) {
-				ui.loadContent("index");
+				loadContent("index");
 				document.title = "Langua | Language Tools";
 			} else {
-				ui.loadContent(data);
+				loadContent(data);
 				document.title = "Langua | " + data;
 			}
 			$(".app").fadeIn(250);
