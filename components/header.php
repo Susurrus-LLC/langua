@@ -31,11 +31,11 @@
 		</div>
 		<nav class="menu">
 			<ul>
-				<li><a href="index.php" class="menu-item" data-page="index">Home</a></li>
-				<li><a href="gen.php" class="menu-item" data-page="gen">Gen</a></li>
-				<li><a href="morph.php" class="menu-item" data-page="morph">Morph</a></li>
-				<li><a href="deriv.php" class="menu-item" data-page="deriv">Deriv</a></li>
-				<li><a href="frequen.php" class="menu-item" data-page="frequen">Frequen</a></li>
+				<li><a href="index" class="menu-item">Home</a></li>
+				<li><a href="gen" class="menu-item">Gen</a></li>
+				<li><a href="morph" class="menu-item">Morph</a></li>
+				<li><a href="deriv" class="menu-item">Deriv</a></li>
+				<li><a href="frequen" class="menu-item">Frequen</a></li>
 			</ul>
 		</nav>
 	</header>
