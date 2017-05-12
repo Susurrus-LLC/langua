@@ -1,16 +1,24 @@
-// Fonts
+// *********************************************************** //
+// Fonts //
+
+@font-face
+	font-family: Doulos
+	src: url(../font/DoulosSIL-R.woff)
+
 $mainfont: "Quattrocento Sans", Helvetica, Arial, sans-serif
 $langfont: Doulos, "Palatino Linotype", Palatino, serif
 
-// Colors based on https://tallys.github.io/color-theory/
-$grn-prim: hsla(140, 100%, 50%, 1)
-$org-prim: hsla(25, 100%, 50%, 1)
+// *********************************************************** //
+// Colors based on https://tallys.github.io/color-theory/ //
 
 @function is-cool-color($color)
 	@return hue($color) < 300 and hue($color) > 120
 
 @function is-high-key-value($color)
 	@return hue($color) > 30 and hue($color) < 140
+
+@function is-high-key-value($color)
+	@return hue($color) > 50 and hue($color) < 105
 
 @function harmonious-mix($mix, $base)
 	@if is-cool-color($mix)
@@ -24,12 +32,39 @@ $org-prim: hsla(25, 100%, 50%, 1)
 		@else
 			@return mix($mix, $base, 23%)
 
-$grn-mix: harmonious-mix($org-prim, $grn-prim)
-$org-mix: harmonious-mix($grn-prim, $org-prim)
+@function mix-neutral($color)
+	@if is-highest-key-value($color)
+		@if is-high-key-value(complement($color))
+			@return mix(complement($color), $color, 19%)
+		@else
+			@return mix(complement($color), $color, 13%)
+	@else if is-high-key-value($color)
+		@if is-high-key-value(complement($color))
+			@return mix(complement($color), $color, 31%)
+		@else
+			@return mix(complement($color), $color, 23%)
+	@else
+		@if is-highest-key-value(complement($color))
+			@return mix(complement($color), $color, 31%)
+		@if is-high-key-value(complement($color))
+			@return mix(complement($color), $color, 26%)
+		@else
+			@return mix(complement($color), $color, 23%)
 
-@font-face
-	font-family: Doulos
-	src: url(../font/DoulosSIL-R.woff)
+$blu-primary: hsla(194, 100%, 50%, 1) // Don't use this; use the mixed version
+$ong-primary: hsla(33, 100%, 50%, 1) // Don't use this; use the mixed version
+
+$blu: darken(harmonious-mix($ong-primary, $blu-primary), 5%)
+$ong: harmonious-mix($blu-primary, $ong-primary)
+$blu-light: lighten($blu, 20%)
+$blu-dark: darken($blu, 15%)
+$blu-neutral: mix-neutral($blu)
+$ong-neutral: mix-neutral($ong)
+$white: lighten($blu-neutral, 54.5%)
+$black: darken($blu-neutral, 41%)
+
+// *********************************************************** //
+// Document styles //
 
 body
 	font-family: $mainfont
@@ -37,6 +72,8 @@ body
 	font-size: 100%
 	font-size: 1em
 	font-size: 1rem
+	background-color: $white
+	color: $black
 
 main
 	min-height: 5rem
@@ -44,5 +81,7 @@ main
 .site-subtitle, .lang
 	font-family: $langfont
 
-a, a:link, a:hover, a:active, a:visited
-	color: $org-mix
+a, a:link, a:visited
+	color: $blu
+a:hover, a:active
+	color: $blu-dark

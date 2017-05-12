@@ -6,7 +6,9 @@ body {
   font-size: 16px;
   font-size: 100%;
   font-size: 1em;
-  font-size: 1rem; }
+  font-size: 1rem;
+  background-color: #fbfdfd;
+  color: #050c0d; }
 
 main {
   min-height: 5rem; }
@@ -14,7 +16,10 @@ main {
 .site-subtitle, .lang {
   font-family: Doulos, "Palatino Linotype", Palatino, serif; }
 
-a, a:link, a:hover, a:active, a:visited {
-  color: #d6810d; }
+a, a:link, a:visited {
+  color: #34a4b0; }
+
+a:hover, a:active {
+  color: #236d75; }
 
 /*# sourceMappingURL=styles.css.map */
