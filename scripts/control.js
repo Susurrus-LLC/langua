@@ -5,11 +5,16 @@ loadContent = function loadContent(file) {
 $(document).ready(function () {
 	$(".menu-item").click(function (e) {
 		e.preventDefault();
-		var data = $(this).attr("data-page");
+		var data = $(this).attr("href");
 		$(".app").fadeOut(250, function () {
 			loadContent(data);
 			$(".app").fadeIn(250);
 		});
+		if (data === "index") {
+			document.title = "Langua | Language Tools";
+		} else {
+			document.title = "Langua | " + data.slice(0, 1).toUpperCase() + data.slice(1);
+		}
 		history.pushState(data, data, data);
 	});
 
@@ -21,7 +26,7 @@ $(document).ready(function () {
 				document.title = "Langua | Language Tools";
 			} else {
 				loadContent(data);
-				document.title = "Langua | " + data;
+				document.title = "Langua | " + data.slice(0, 1).toUpperCase() + data.slice(1);
 			}
 			$(".app").fadeIn(250);
 		});
