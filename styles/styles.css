@@ -13,12 +13,14 @@ body {
   line-height: 1.333rem;
   background-color: #fbfdfd;
   color: #050c0d;
+  box-sizing: border-box;
 }
 
 .header, .app, .footer {
   max-width: 74.55079rem;
   margin-left: auto;
   margin-right: auto;
+  padding: 1.333rem 0;
 }
 
 .header {
@@ -54,7 +56,7 @@ body {
 }
 
 main {
-  min-height: 4.20873rem;
+  min-height: 6.665rem;
 }
 
 .footer {
@@ -71,14 +73,30 @@ a:link, a:visited {
 a:hover, a:active {
   color: #96671c;
 }
+a:focus {
+  outline: 1px solid rgba(35, 109, 117, 0.3);
+}
 
 .menu {
   text-align: right;
 }
 .menu li {
   display: inline-block;
-  margin: 1rem;
+  margin: 0 1.333rem;
   padding: 0;
+  font-size: 1.333rem;
+  line-height: 1.333rem;
+}
+
+.site-title {
+  margin-bottom: 0.6665rem;
+}
+.site-title a {
+  color: #1d5b62;
+}
+
+.site-subtitle {
+  font-style: italic;
 }
 
 h1, h2, h3, h4, h5, h6, .lang, .menu {
@@ -92,37 +110,52 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   color: #1d5b62;
   font-size: 3.15733rem;
-  line-height: 4.20873rem;
+  line-height: 3.999rem;
+  margin: 0 0 2.666rem;
+  padding: 0;
 }
 
 h2 {
   color: #297f89;
   font-size: 2.36859rem;
-  line-height: 3.15733rem;
+  line-height: 2.666rem;
+  margin: 0 0 1.9995rem;
+  padding: 0;
 }
 
 h3 {
   color: #2b8691;
   font-size: 1.77689rem;
-  line-height: 2.36859rem;
+  line-height: 1.9995rem;
+  margin: 0 0 1.333rem;
+  padding: 0;
 }
 
 h4 {
   color: #2e919d;
   font-size: 1.333rem;
-  line-height: 1.77689rem;
+  line-height: 1.9995rem;
+  margin: 0 0 1.333rem;
+  padding: 0;
 }
 
 h5 {
   color: #329ca8;
+}
+
+h5, p {
   font-size: 1rem;
   line-height: 1.333rem;
+  margin: 0 0 1.333rem;
+  padding: 0;
 }
 
 h6 {
   color: #34a4b0;
-  font-size: 0.87547rem;
-  line-height: 1rem;
+  font-size: 0.75019rem;
+  line-height: 1.333rem;
+  margin: 0 0 0.6665rem;
+  padding: 0;
 }
 
 .grid {
@@ -145,6 +178,7 @@ h6 {
 .grid a {
   color: #050c0d;
   width: 49%;
+  margin-bottom: 0.6665rem;
 }
 .grid a:hover {
   outline: 1px solid rgba(35, 109, 117, 0.3);

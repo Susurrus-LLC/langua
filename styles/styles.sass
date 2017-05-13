@@ -24,19 +24,13 @@ $langfont: Doulos, "Palatino Linotype", Palatino, serif
 
 $ratio: 1.333
 $msa1: 1.000rem
-$msb1: 1.167rem
 $msa0: $msa1 / pow($ratio, 1) // 0.750rem
-$msb0: $msb1 / pow($ratio, 1) // 0.875rem
 $msa2: $msa1 * pow($ratio, 1) // 1.333rem
-$msb2: $msb1 * pow($ratio, 1) // 1.555rem
 $msa3: $msa1 * pow($ratio, 2) // 1.777rem
-$msb3: $msb1 * pow($ratio, 2) // 2.073rem
 $msa4: $msa1 * pow($ratio, 3) // 2.369rem
-$msb4: $msb1 * pow($ratio, 3) // 2.763rem
 $msa5: $msa1 * pow($ratio, 4) // 3.157rem
-$msb5: $msb1 * pow($ratio, 4) // 3.683rem
 $msa6: $msa1 * pow($ratio, 5) // 4.209rem
-$msb6: $msb1 * pow($ratio, 5) // 4.909rem
+$lnht: $msa2 / 2 // 0.6665rem
 
 // *********************************************************** //
 // Colors based on https://tallys.github.io/color-theory/ //
@@ -102,14 +96,16 @@ body
 	font-size: 100%
 	font-size: 1em
 	font-size: $msa1
-	line-height: $msa2
+	line-height: $lnht * 2
 	background-color: $white
 	color: $black
+	box-sizing: border-box
 
 .header, .app, .footer
 	max-width: $msa1 * pow($ratio, 15) // 74.551rem // 1192.8px
 	margin-left: auto
 	margin-right: auto
+	padding: (2 * $lnht) 0
 
 .header
 	display: flex
@@ -123,7 +119,7 @@ body
 		flex-grow: 1
 
 main
-	min-height: $msa6
+	min-height: 10 * $lnht
 
 .footer
 	text-align: center
@@ -135,13 +131,25 @@ a
 		color: $ong
 	&:hover, &:active
 		color: darken($ong, 15%)
+	&:focus
+		outline: 1px solid rgba(darken($blu, 15%), 0.3)
 
 .menu
 	text-align: right
 	li
 		display: inline-block
-		margin: $msa1
+		margin: 0 $lnht * 2
 		padding: 0
+		font-size: $msa2
+		line-height: $lnht * 2
+
+.site-title
+	margin-bottom: $lnht
+	a
+		color: darken($blu, 20%)
+
+.site-subtitle
+	font-style: italic
 
 h1, h2, h3, h4, h5, h6, .lang, .menu
 	font-family: $langfont
@@ -152,27 +160,40 @@ h1, h2, h3, h4, h5, h6
 h1
 	color: darken($blu, 20%)
 	font-size: $msa5
-	line-height: $msa6
+	line-height: 6 * $lnht
+	margin: 0 0 (4 * $lnht)
+	padding: 0
 h2
 	color: darken($blu, 10%)
 	font-size: $msa4
-	line-height: $msa5
+	line-height: 4 * $lnht
+	margin: 0 0 (3 * $lnht)
+	padding: 0
 h3
 	color: darken($blu, 8%)
 	font-size: $msa3
-	line-height: $msa4
+	line-height: 3 * $lnht
+	margin: 0 0 (2 * $lnht)
+	padding: 0
 h4
 	color: darken($blu, 5%)
 	font-size: $msa2
-	line-height: $msa3
+	line-height: 3 * $lnht
+	margin: 0 0 (2 * $lnht)
+	padding: 0
 h5
 	color: darken($blu, 2%)
+h5, p
 	font-size: $msa1
-	line-height: $msa2
+	line-height: 2 * $lnht
+	margin: 0 0 (2 * $lnht)
+	padding: 0
 h6
 	color: $blu
-	font-size: $msb0
-	line-height: $msa1
+	font-size: $msa0
+	line-height: 2 * $lnht
+	margin: 0 0 $lnht
+	padding: 0
 
 // *********************************************************** //
 // Home styles //
@@ -185,6 +206,7 @@ h6
 	a
 		color: $black
 		width: 49%
+		margin-bottom: $lnht
 		&:hover
 			outline: 1px solid rgba(darken($blu, 15%), 0.3)
 
