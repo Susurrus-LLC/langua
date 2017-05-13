@@ -9,11 +9,11 @@
 	<!-- Import jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<!-- Import scripts -->
+	<script src="scripts/control.js"></script>
 	<script src="scripts/gen.js"></script>
 	<script src="scripts/morph.js"></script>
 	<script src="scripts/deriv.js"></script>
 	<script src="scripts/frequen.js"></script>
-	<script src="scripts/control.js"></script>
 	<!-- Import Google Quattrocento Sans Cycle -->
 	<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i" rel="stylesheet">
 	<!-- Import Normalize -->
