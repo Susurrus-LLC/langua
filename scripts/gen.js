@@ -1,5 +1,7 @@
 function Subpatterns() {
 	var self = this;
+	this.data = $.getJSON("../data/gen.json");
+	console.log(this.data);
 	this.options = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 	this.used = [];
 	this.remaining = this.options;
@@ -70,14 +72,14 @@ function Subpatterns() {
 	}
 }
 
-var subpatterns = new Subpatterns();
+var subPs = new Subpatterns();
 
 $(".gen").ready(function () {
-	for (var i = 1; i <= 4; i++) {
-		subpatterns.addRow();
+	for (var i = 1; i <= subPs.data.subpatterns.length + 1; i++) {
+		subPs.addRow();
 	}
 
-	subpatterns.selectSub(1, "V");
-	subpatterns.selectSub(2, "C");
-	subpatterns.selectSub(3, "N");
+	subPs.selectSub(1, "V");
+	subPs.selectSub(2, "C");
+	subPs.selectSub(3, "N");
 });
