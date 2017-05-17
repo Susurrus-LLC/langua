@@ -27,7 +27,7 @@
 	<header>
 		<div class="content header">
 			<div class="title-area">
-				<h1 class="site-title"><a href="index" class="page-link">Langua</a></h1>
+				<h1 class="site-title"><a href="../" class="page-link">Langua</a></h1>
 				<p class="site-subtitle">A suite of language tools</p>
 			</div>
 			<nav>
