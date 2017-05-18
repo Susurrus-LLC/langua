@@ -13,7 +13,8 @@ body {
   line-height: 1.333rem;
   background-color: #fdfefe;
   color: #060d0e;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .header, .app, .footer {
@@ -152,6 +153,18 @@ h6 {
   padding: 0;
 }
 
+button, input, optgroup, select, textarea {
+  font-size: 1rem;
+}
+
+button, input, optgroup, select {
+  font-family: "Quattrocento Sans", Helvetica, Arial, sans-serif;
+}
+
+textarea {
+  font-family: Doulos, "Palatino Linotype", Palatino, serif;
+}
+
 .grid {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -172,6 +185,10 @@ h6 {
 }
 .grid a:hover {
   outline: 1px solid rgba(35, 110, 118, 0.3);
+}
+
+.duplicate {
+  outline: 1px solid #d61f29;
 }
 
 /*# sourceMappingURL=styles.css.map */

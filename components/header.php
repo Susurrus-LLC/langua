@@ -7,7 +7,7 @@
 	<meta name="author" content="Ian A. Cook">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Import jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<!-- Import scripts -->
 	<script src="scripts/control.js"></script>
 	<script src="scripts/gen.js"></script>
@@ -17,7 +17,7 @@
 	<!-- Import Google Quattrocento Sans Cycle -->
 	<link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400i,700,700i" rel="stylesheet">
 	<!-- Import Normalize -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
 	<!-- Import stylesheet -->
 	<link rel="stylesheet" type="text/css" href="styles/styles.css" />
 </head>

@@ -23,14 +23,14 @@ $langfont: Doulos, "Palatino Linotype", Palatino, serif
 	@return $value // value is integer, so must be given a unit separately
 
 $ratio: 1.333
-$msa1: 1.000rem
-$msa0: $msa1 / pow($ratio, 1) // 0.750rem
-$msa2: $msa1 * pow($ratio, 1) // 1.333rem
-$msa3: $msa1 * pow($ratio, 2) // 1.777rem
-$msa4: $msa1 * pow($ratio, 3) // 2.369rem
-$msa5: $msa1 * pow($ratio, 4) // 3.157rem
-$msa6: $msa1 * pow($ratio, 5) // 4.209rem
-$lnht: $msa2 / 2 // 0.6665rem
+$ms1: 1.000rem
+$ms0: $ms1 / pow($ratio, 1) // 0.750rem
+$ms2: $ms1 * pow($ratio, 1) // 1.333rem
+$ms3: $ms1 * pow($ratio, 2) // 1.777rem
+$ms4: $ms1 * pow($ratio, 3) // 2.369rem
+$ms5: $ms1 * pow($ratio, 4) // 3.157rem
+$ms6: $ms1 * pow($ratio, 5) // 4.209rem
+$lnht: $ms2 / 2 // 0.6665rem
 
 // *********************************************************** //
 // Colors based on https://tallys.github.io/color-theory/ //
@@ -77,11 +77,14 @@ $lnht: $msa2 / 2 // 0.6665rem
 
 $blu-primary: hsla(194, 100%, 50%, 1) // Don't use this; use the mixed version instead
 $ong-primary: hsla(33, 100%, 50%, 1) // Don't use this; use the mixed version instead
+$red-primary: hsla(0, 100%, 50%, 1) // Don't use this; use the mixed version instead
 
 $blu: darken(harmonious-mix($ong-primary, $blu-primary), 5%)
 $ong: harmonious-mix($blu-primary, $ong-primary)
+$red: harmonious-mix($blu-primary, $red-primary)
 $blu-neutral: mix-neutral($blu)
 $ong-neutral: mix-neutral($ong)
+$red-neutral: mix-neutral($red)
 $white: lighten($blu-neutral, 54.5%)
 $black: darken($blu-neutral, 41%)
 
@@ -95,14 +98,14 @@ body
 	font-size: 16px
 	font-size: 100%
 	font-size: 1em
-	font-size: $msa1
+	font-size: $ms1
 	line-height: $lnht * 2
 	background-color: $white
 	color: $black
 	box-sizing: border-box
 
 .header, .app, .footer
-	max-width: $msa1 * pow($ratio, 15) // 74.551rem // 1192.8px
+	max-width: $ms1 * pow($ratio, 15) // 74.551rem // 1192.8px
 	margin-left: auto
 	margin-right: auto
 	padding: (2 * $lnht) 0
@@ -140,7 +143,7 @@ a
 		display: inline-block
 		margin: 0 $lnht * 2
 		padding: 0
-		font-size: $msa2
+		font-size: $ms2
 		line-height: $lnht * 2
 
 .site-title
@@ -159,41 +162,50 @@ h1, h2, h3, h4, h5, h6
 
 h1
 	color: darken($blu, 20%)
-	font-size: $msa5
+	font-size: $ms5
 	line-height: 6 * $lnht
 	margin: 0 0 (4 * $lnht)
 	padding: 0
 h2
 	color: darken($blu, 10%)
-	font-size: $msa4
+	font-size: $ms4
 	line-height: 4 * $lnht
 	margin: 0 0 (3 * $lnht)
 	padding: 0
 h3
 	color: darken($blu, 8%)
-	font-size: $msa3
+	font-size: $ms3
 	line-height: 3 * $lnht
 	margin: 0 0 (2 * $lnht)
 	padding: 0
 h4
 	color: darken($blu, 5%)
-	font-size: $msa2
+	font-size: $ms2
 	line-height: 3 * $lnht
 	margin: 0 0 (2 * $lnht)
 	padding: 0
 h5
 	color: darken($blu, 2%)
 h5, p
-	font-size: $msa1
+	font-size: $ms1
 	line-height: 2 * $lnht
 	margin: 0 0 (2 * $lnht)
 	padding: 0
 h6
 	color: $blu
-	font-size: $msa0
+	font-size: $ms0
 	line-height: 2 * $lnht
 	margin: 0 0 $lnht
 	padding: 0
+
+button, input, optgroup, select, textarea
+	font-size: $ms1
+
+button, input, optgroup, select
+	font-family: $mainfont
+
+textarea
+	font-family: $langfont
 
 // *********************************************************** //
 // Home styles //
@@ -209,6 +221,9 @@ h6
 		margin-bottom: $lnht
 		&:hover
 			outline: 1px solid rgba(darken($blu, 15%), 0.3)
+
+.duplicate
+	outline: 1px solid $red
 
 // *********************************************************** //
 // Gen styles //
