@@ -1,85 +1,47 @@
-function Subpatterns() {
-	var self = this;
-	this.data = $.getJSON("../data/gen.json");
-	console.log(this.data);
-	this.options = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-	this.used = [];
-	this.remaining = this.options;
-	this.subNum = 0;
-	this.addRow = function () {
-		self.subNum++;
-		var perm = self.subNum <= 4 ? ' class="permanent"' : '';
-		$(".subpatterns").append('<select' + perm + ' data-sub="' + self.subNum + '" data-sel="-"></select>');
-		var $sub = $('[data-sub="' + self.subNum + '"]');
-		$sub.append('<option value="-" selected>-</option>');
-		for (var i = 0; i < self.remaining.length; i++) {
-			var val = self.remaining[i];
-			$sub.append('<option value="' + val + '">' + val + '</option>');
-		}
-	};
-	this.removeRow = function (row) {
-		var $sub = $('[data-sub="' + row + '"]');
-		$sub.remove();
-	};
-	this.selectSub = function (subSel, selection) {
-		var $sub = $('[data-sub="' + subSel + '"]');
-		$sub.val(selection).change();
-		//$(sub).data('sel', selection);
-		//$(sub + ' [value="' + selection + '"]').attr("selected, selected");
-		evalUsed();
-		evalRemaining();
-		self.cleanLists();
+var subPs = {};
+subPs.options = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+subPs.subNum = 0;
+subPs.addRow = function () {
+	subPs.subNum++;
+	var perm = subPs.subNum <= 4 ? ' class="permanent"' : '';
+	$(".subpatterns").append('<select' + perm + ' data-sub="' + subPs.subNum + '" data-sel="-"></select>');
+	var $sub = $('[data-sub="' + subPs.subNum + '"]');
+	$sub.append('<option value="-" selected>-</option>');
+	for (var i = 0; i < subPs.options.length; i++) {
+		var val = subPs.options[i];
+		$sub.append('<option value="' + val + '">' + val + '</option>');
 	}
-	this.cleanLists = function () {
-		for (var i = 1; i <= self.subNum; i++) {
-			var $sub = $('[data-sub="' + i + '"]');
-			var $options = $sub.children();
-			for (var j = 0; j < $options.length; j++) {
-				if ($options[j].innerText !== $sub.data("sel")) {
-					if (self.used.indexOf($options[j].innerText) > -1) {
-						$options[j].remove();
-					}
-				}
-			}
-		}
-	};
-
-	function evalUsed() {
-		var currUsed = [];
-		for (var i = 1; i <= self.subNum; i++) {
-			var val = $('[data-sub="' + i + '"]').data("sel");
-			currUsed.push(val);
-		}
-		if (currUsed.indexOf("-") > -1) {
-			currUsed.splice(currUsed.indexOf("-"), 1);
-		}
-		currUsed.sort();
-		self.used = currUsed;
-		console.log(self.used);
-	}
-
-	function evalRemaining() {
-		var currRemaining = self.options;
-		for (var i = 0; i < self.used.length; i++) {
-			var ind = currRemaining.indexOf(self.used[i]);
-			if (ind > -1) {
-				currRemaining.splice(ind, 1);
-			}
-		}
-		currRemaining.sort();
-		self.remaining = currRemaining;
-		console.log(self.remaining);
-	}
+};
+subPs.selectSub = function (subSel, selection) {
+	var $sub = $('[data-sub="' + subSel + '"]');
+	$sub.val(selection).change();
+	$sub.data("sel", selection);
 }
-
-var subPs = new Subpatterns();
+subPs.checkDupes = function () {
+	var dupeVals = [];
+	console.log($("select").length);
+};
+subPs.startup = function (custom) {
+	function addStartData() {
+		for (var i = 1; i <= Object.keys(subPs.data.subpatterns).length + 1; i++) {
+			subPs.addRow();
+			if (subPs.data.subpatterns["sub" + i] !== undefined) {
+				var selected = subPs.data.subpatterns["sub" + i].selected;
+				subPs.selectSub(i, selected);
+			}
+		}
+		subPs.checkDupes();
+	}
+	if (custom) {
+		// load the custom data
+	} else {
+		var json = $.getJSON("../data/gen.json", function (json) {
+			subPs.data = json;
+			addStartData();
+		});
+	}
+};
 
 $(".gen").ready(function () {
-	for (var i = 1; i <= subPs.data.subpatterns.length + 1; i++) {
-		subPs.addRow();
-	}
-
-	subPs.selectSub(1, "V");
-	subPs.selectSub(2, "C");
-	subPs.selectSub(3, "N");
+	subPs.startup(false);
 });
