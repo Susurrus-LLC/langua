@@ -201,11 +201,17 @@ h6
 button, input, optgroup, select, textarea
 	font-size: $ms1
 
-button, input, optgroup, select
+button, optgroup, select
 	font-family: $mainfont
 
-textarea
+textarea, input
 	font-family: $langfont
+
+.results
+	border-top: 1px solid darken($blu, 15%)
+
+input
+	box-sizing: border-box
 
 // *********************************************************** //
 // Home styles //
@@ -222,11 +228,39 @@ textarea
 		&:hover
 			outline: 1px solid rgba(darken($blu, 15%), 0.3)
 
+// *********************************************************** //
+// Gen styles //
+
 .duplicate
 	outline: 1px solid $red
 
-// *********************************************************** //
-// Gen styles //
+.subps-row
+	width: 100%
+	display: flex
+	align-items: baseline
+	input
+		flex-grow: 1
+	select, input
+		padding: 1px
+		margin: 1px
+		height: 2* $lnht
+
+.pattern-input
+	width: 100%
+	padding: 1px
+	margin: 1px 0
+
+.part, .results
+	margin-top: $lnht
+
+input
+	font-family: $langfont
+
+.section-title
+	margin: 0
+	font-style: italic
+	font-weight: bold
+	color: darken($blu, 8%)
 
 // *********************************************************** //
 // Morph styles //
