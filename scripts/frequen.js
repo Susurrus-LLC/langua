@@ -1,1 +1,0 @@
-var frequenView = '<div class="frequen"><p class="notice">This tool is in planning.</p></div>';

@@ -1,0 +1,104 @@
+@font-face {
+  font-family: Doulos;
+  src: url(./assets/font/DoulosSIL-R.woff); }
+/* Modular Scale
+ * https://alistapart.com/article/more-meaningful-typography
+ * 1rem @ 1:1.333
+ * 1.1665rem @ 1:1.333
+ * http://www.modularscale.com/?1,1.1665&em&1.333
+ */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Quattrocento Sans", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-size: 100%;
+  font-size: 1em;
+  font-size: 1rem;
+  line-height: 1.333rem;
+  background-color: #fdfefe;
+  color: #060d0e;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.header, .main, .footer {
+  max-width: 74.55079rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.333rem 0; }
+
+a {
+  text-decoration: none; }
+  a:focus {
+    outline: 1px solid rgba(35, 110, 118, 0.3); }
+  a:link, a:visited {
+    color: #35a5b0; }
+  a:hover, a:active {
+    color: #236e76; }
+  a.active:link, a.active:visited {
+    color: #d69529; }
+  a.active:hover, a.active:active {
+    color: #96681d; }
+
+h1, h2, h3, h4, h5, h6, .lang, .menu {
+  font-family: Doulos, "Palatino Linotype", Palatino, serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility; }
+
+h1 {
+  color: #1e5c62;
+  font-size: 3.15733rem;
+  line-height: 3.999rem;
+  margin: 0 0 2.666rem;
+  padding: 0; }
+
+h2 {
+  color: #298089;
+  font-size: 2.36859rem;
+  line-height: 2.666rem;
+  margin: 0 0 1.9995rem;
+  padding: 0; }
+
+h3 {
+  color: #2c8791;
+  font-size: 1.77689rem;
+  line-height: 1.9995rem;
+  margin: 0 0 1.333rem;
+  padding: 0; }
+
+h4 {
+  color: #2f929d;
+  font-size: 1.333rem;
+  line-height: 1.9995rem;
+  margin: 0 0 1.333rem;
+  padding: 0; }
+
+h5 {
+  color: #339da9; }
+
+h5, p {
+  font-size: 1rem;
+  line-height: 1.333rem;
+  margin: 0 0 1.333rem;
+  padding: 0; }
+
+h6 {
+  color: #35a5b0;
+  font-size: 0.75019rem;
+  line-height: 1.333rem;
+  margin: 0 0 0.6665rem;
+  padding: 0; }
+
+textarea, input {
+  font-family: Doulos, "Palatino Linotype", Palatino, serif; }
+
+button, input, optgroup, select, textarea {
+  font-size: 1rem; }
+
+button, optgroup, select {
+  font-family: "Quattrocento Sans", Helvetica, Arial, sans-serif; }
+
+input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }

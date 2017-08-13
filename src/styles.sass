@@ -1,0 +1,105 @@
+// Fonts
+
+@font-face
+  font-family: Doulos
+  src: url(./assets/font/DoulosSIL-R.woff)
+
+$mainfont: "Quattrocento Sans", Helvetica, Arial, sans-serif
+$langfont: Doulos, "Palatino Linotype", Palatino, serif
+
+@import 'variables'
+
+body
+  margin: 0
+  padding: 0
+  font-family: $mainfont
+  font-size: 16px
+  font-size: 100%
+  font-size: 1em
+  font-size: $ms1
+  line-height: $lnht * 2
+  background-color: $white
+  color: $black
+  box-sizing: border-box
+
+.header, .main, .footer
+  max-width: $ms1 * pow($ratio, 15) // 74.551rem // 1192.8px
+  margin-left: auto
+  margin-right: auto
+  padding: (2 * $lnht) 0
+
+a
+  text-decoration: none
+  &:focus
+    outline: 1px solid rgba(darken($blu, 15%), 0.3)
+  &:link, &:visited
+    color: $blu
+  &:hover, &:active
+    color: darken($blu, 15%)
+  &.active
+    &:link, &:visited
+      color: $ong
+    &:hover, &:active
+      color: darken($ong, 15%)
+
+h1, h2, h3, h4, h5, h6, .lang, .menu
+  font-family: $langfont
+
+h1, h2, h3, h4, h5, h6
+  text-rendering: optimizeLegibility
+
+h1
+  color: darken($blu, 20%)
+  font-size: $ms5
+  line-height: 6 * $lnht
+  margin: 0 0 (4 * $lnht)
+  padding: 0
+
+h2
+  color: darken($blu, 10%)
+  font-size: $ms4
+  line-height: 4 * $lnht
+  margin: 0 0 (3 * $lnht)
+  padding: 0
+
+h3
+  color: darken($blu, 8%)
+  font-size: $ms3
+  line-height: 3 * $lnht
+  margin: 0 0 (2 * $lnht)
+  padding: 0
+
+h4
+  color: darken($blu, 5%)
+  font-size: $ms2
+  line-height: 3 * $lnht
+  margin: 0 0 (2 * $lnht)
+  padding: 0
+
+h5
+  color: darken($blu, 2%)
+
+h5, p
+  font-size: $ms1
+  line-height: 2 * $lnht
+  margin: 0 0 (2 * $lnht)
+  padding: 0
+
+h6
+  color: $blu
+  font-size: $ms0
+  line-height: 2 * $lnht
+  margin: 0 0 $lnht
+  padding: 0
+
+textarea, input
+  font-family: $langfont
+
+button, input, optgroup, select, textarea
+  font-size: $ms1
+
+button, optgroup, select
+  font-family: $mainfont
+
+input
+  box-sizing: border-box

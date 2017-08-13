@@ -1,1 +1,0 @@
-var morphView = '<div class="morph"><p class="notice">This tool is in planning.</p></div>';

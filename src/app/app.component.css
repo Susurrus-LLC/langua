@@ -1,0 +1,8 @@
+/* Modular Scale
+ * https://alistapart.com/article/more-meaningful-typography
+ * 1rem @ 1:1.333
+ * 1.1665rem @ 1:1.333
+ * http://www.modularscale.com/?1,1.1665&em&1.333
+ */
+main {
+  min-height: 6.665rem; }

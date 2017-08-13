@@ -1,0 +1,31 @@
+@import '../../variables'
+
+.header
+  display: flex
+  justify-content: space-between
+  align-items: baseline
+  border-bottom: 1px solid darken($blu, 15%)
+
+.title-area
+  order: 0
+
+nav
+  order: 1
+  flex-grow: 1
+
+.menu
+  text-align: right
+  li
+    display: inline-block
+    margin: 0 $lnht * 2
+    padding: 0
+    font-size: $ms2
+    line-height: $lnht * 2
+
+.site-title
+  margin-bottom: $lnht
+  a
+    color: darken($blu, 20%)
+
+.site-subtitle
+  font-style: italic
