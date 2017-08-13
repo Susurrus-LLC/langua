@@ -11,6 +11,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "prod-build": "ng build --prod --env=prod --output-path=dist/",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
