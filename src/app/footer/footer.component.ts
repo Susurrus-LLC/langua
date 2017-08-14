@@ -21,4 +21,5 @@ export class FooterComponent {
   author = 'Ian A. Cook'
   authorURL = 'https://github.com/nai888'
   copyYear = this.getCopyrightDates()
+  appGhURL = 'https://github.com/nai888/langua'
 }
