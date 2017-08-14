@@ -1,6 +1,6 @@
 {
   "name": "langua",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "AGPL-3.0",
   "author": "Ian A. Cook",
   "repository": {
@@ -12,7 +12,7 @@
     "start": "ng serve",
     "build": "ng build",
     "prod-build": "ng build --prod --env=prod --output-path=dist/",
-    "deploy": "git push origin -d gh-pages && git branch -D gh-pages && git subtree push --prefix dist origin gh-pages",
+    "deploy": "git push origin -d gh-pages && git subtree push --prefix dist origin gh-pages",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
