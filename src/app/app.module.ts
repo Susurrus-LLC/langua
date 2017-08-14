@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser'
+import { BrowserModule, Title } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 
@@ -10,14 +10,16 @@ import { AppRoutingModule } from './app-routing.module'
 import { DerivModule } from './deriv/deriv.module'
 import { FrequenModule } from './frequen/frequen.module'
 import { GenModule } from './gen/gen.module'
-import { MorphModule } from './morph/morph.module'
+import { MorphModule } from './morph/morph.module';
+import { NotFoundComponent } from './not-found/not-found.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,9 @@ import { MorphModule } from './morph/morph.module'
     GenModule,
     MorphModule
   ],
-  providers: [],
+  providers: [
+    Title
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+import { Title } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-gen',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./gen.component.css']
 })
 export class GenComponent {
-
+  constructor(private titleService: Title) {
+    titleService.setTitle('Langua | Gen')
+  }
 }

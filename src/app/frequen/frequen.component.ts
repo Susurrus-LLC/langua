@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core'
+import { Title } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-frequen',
   templateUrl: './frequen.component.html',
   styleUrls: ['./frequen.component.css']
 })
-export class FrequenComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class FrequenComponent {
+  constructor(private titleService: Title) {
+    titleService.setTitle('Langua | Frequen')
   }
-
 }

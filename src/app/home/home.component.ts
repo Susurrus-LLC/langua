@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
+import { Title } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-home',
@@ -7,5 +8,10 @@ import { Router } from '@angular/router'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private titleService: Title
+  ) {
+    titleService.setTitle('Langua | Language Tools')
+  }
 }
