@@ -1,0 +1,39 @@
+/* Modular Scale
+ * https://alistapart.com/article/more-meaningful-typography
+ * 1rem @ 1:1.333
+ * 1.1665rem @ 1:1.333
+ * http://www.modularscale.com/?1,1.1665&em&1.333
+ */
+.duplicate {
+  outline: 1px solid #d61f29; }
+
+.subps-row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline; }
+  .subps-row input {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+  .subps-row select, .subps-row input {
+    padding: 1px;
+    margin: 1px;
+    height: 1.333rem; }
+
+.pattern-input {
+  width: 100%;
+  padding: 1px;
+  margin: 1px 0; }
+
+.part, .results {
+  margin-top: 0.6665rem; }
+
+.section-title {
+  margin: 0;
+  font-style: italic;
+  font-weight: bold;
+  color: #2c8791; }
