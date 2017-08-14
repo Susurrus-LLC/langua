@@ -1,4 +1,4 @@
-{
+export const genData = {
   "subpatterns": {
     "sub1": {
       "selected": "V",
