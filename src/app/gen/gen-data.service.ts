@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core'
 
-import { genData } from './gen.data'
+import { genData, GenData } from './gen.data'
 
 @Injectable()
 export class GenDataService {
-  private data: object
+  private data: GenData
 
   constructor() {
     const storage = window.localStorage
@@ -19,7 +19,7 @@ export class GenDataService {
     }
   }
 
-  getData(): object {
+  getData(): GenData {
     return this.data
   }
 }
