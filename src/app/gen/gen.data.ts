@@ -23,3 +23,5 @@ export const genData: GenData = {
   ],
   pattern: 'CV(CV)(N)'
 }
+
+export const variables: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']

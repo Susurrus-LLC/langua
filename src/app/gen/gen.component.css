@@ -15,14 +15,16 @@
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline; }
-  .subps-row input {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1; }
-  .subps-row select, .subps-row input {
-    padding: 1px;
-    margin: 1px;
-    height: 1.333rem; }
+
+input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+
+select, input {
+  padding: 1px;
+  margin: 1px;
+  height: 1.9995rem; }
 
 .pattern-input {
   width: 100%;

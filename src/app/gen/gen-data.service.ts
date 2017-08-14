@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 
-import { genData, GenData } from './gen.data'
+import { genData, GenData, variables } from './gen.data'
 
 @Injectable()
 export class GenDataService {

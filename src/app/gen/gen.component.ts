@@ -2,6 +2,7 @@ import { Component } from '@angular/core'
 import { Title } from '@angular/platform-browser'
 
 import { GenDataService } from './gen-data.service'
+import { genData, GenData, variables } from './gen.data'
 
 @Component({
   selector: 'app-gen',
@@ -9,7 +10,7 @@ import { GenDataService } from './gen-data.service'
   styleUrls: ['./gen.component.css']
 })
 export class GenComponent {
-  private data: object
+  private data: GenData
 
   constructor(
     private titleService: Title,
