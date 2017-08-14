@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+import { Title } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-gen-help',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./help.component.css']
 })
 export class HelpComponent {
-  
+  constructor(private titleService: Title) {
+    titleService.setTitle('Langua | Deriv Help')
+  }
 }
