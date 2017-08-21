@@ -6,6 +6,7 @@ import { DerivComponent } from './deriv/deriv.component'
 import { FrequenComponent } from './frequen/frequen.component'
 import { GenComponent } from './gen/gen.component'
 import { MorphComponent } from './morph/morph.component'
+import { TreeComponent } from './tree/tree.component'
 import { NotFoundComponent } from './not-found/not-found.component'
 
 const routes: Routes = [
@@ -24,6 +25,9 @@ const routes: Routes = [
   }, {
     path: 'morph',
     component: MorphComponent
+  }, {
+    path: 'tree',
+    component: TreeComponent
   }, {
     path: '**',
     component: NotFoundComponent

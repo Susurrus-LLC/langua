@@ -10,7 +10,8 @@ import { AppRoutingModule } from './app-routing.module'
 import { DerivModule } from './deriv/deriv.module'
 import { FrequenModule } from './frequen/frequen.module'
 import { GenModule } from './gen/gen.module'
-import { MorphModule } from './morph/morph.module';
+import { MorphModule } from './morph/morph.module'
+import { TreeModule } from './tree/tree.module'
 import { NotFoundComponent } from './not-found/not-found.component'
 
 @NgModule({
@@ -27,7 +28,8 @@ import { NotFoundComponent } from './not-found/not-found.component'
     DerivModule,
     FrequenModule,
     GenModule,
-    MorphModule
+    MorphModule,
+    TreeModule
   ],
   providers: [
     Title
