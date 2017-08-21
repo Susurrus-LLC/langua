@@ -22,6 +22,10 @@ LanguaDeriv is a tool for modeling word derivation according to arbitrary rules 
 
 LanguaFrequen is a tool for analyzing phoneme frequencies in a given text.
 
+### Tree
+
+LanguaTree is a tool for drawing and labeling syntax trees.
+
 ## Deployment
 
 Langua is a web-based tool built on JavaScript, and it does not use a database, so it can be installed almost anywhere without need for running a back-end server. Simply download the latest stable release and unpack it onto a website.
@@ -40,7 +44,7 @@ See also the list of [people who have contributed](https://github.com/nai888/lan
 
 ## Acknowledgments
 
-Langua was inspired by a few existing tools, including:
+Langua was inspired by several existing tools, including:
 
 - [Awkwords](http://akana.conlang.org/tools/awkwords/)
 - [Gen](http://www.zompist.com/gen.html)
@@ -48,6 +52,9 @@ Langua was inspired by a few existing tools, including:
 - [ConWorkShop PhoMo](http://conworkshop.info/phomo.php)
 - [The Derivizer](http://akana.conlang.org/tools/derivizer.html)
 - [The Frequentizer](http://akana.conlang.org/tools/frequentizer.html)
+- [phpSyntaxTree](http://ironcreek.net/phpsyntaxtree/)
+- [SynTree](http://mshang.ca/syntree/)
+- [RSyntaxTree](https://www.yohasebe.com/rsyntaxtree/)
 
 ## License
 
