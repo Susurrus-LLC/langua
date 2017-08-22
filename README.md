@@ -28,13 +28,23 @@ LanguaTree is a tool for drawing and labeling syntax trees.
 
 ## Deployment
 
-Langua is a web-based tool built on JavaScript, and it does not use a database, so it can be installed almost anywhere without need for running a back-end server. Simply download the latest stable release and unpack it onto a website.
+Langua is a web-based tool built on JavaScript, and it does not use a database, so it can be installed almost anywhere without need for running a back-end server. Simply download and unpack the latest stable release locally and open it in a browser or deploy it to a web server.
 
 **Note: Langua is currently under development and no stable release is yet ready.**
 
 ## Versioning
 
 Langua uses an unstable Master branch. The master branch is used for development, while stable versions are provided as releases. Version numbering is similar to [Semantic Versioning](http://semver.org/); versions are listed as x.y.z., wherein z refers to bug fixes and very minor updates, y refers to minor additions and updates to functionality, and x refers to major updates or overhauls to the program that significantly impact workflow or the use of the program.
+
+## Development Roadmap
+
+- [ ] **v0.0.x:** Building the architecture of the site.
+- [ ] **v0.1.x:** Building the [Gen](#gen) tool; bug fixes and other small updates.
+- [ ] **v0.2.x:** Building the [Morph](#morph) tool; bug fixes and other small updates.
+- [ ] **v0.3.x:** Building the [Deriv](#deriv) tool; bug fixes and other updates.
+- [ ] **v0.4.x:** Building the [Frequen](#frequen) tool; bug fixes and other updates.
+- [ ] **v0.5.x:** Building the [Tree](#tree) tool; bug fixes and other updates.
+- [ ] **v1.x.x:** All tools working; bug fixes and ongoing development.
 
 ## Authors
 
