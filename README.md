@@ -2,6 +2,14 @@
 
 **Current Version:** v0.0.2
 
+1. [Overview](#overview)
+1. [Deployment](#deployment)
+1. [Versioning](#versioning)
+1. [Development Roadmap](#development-roadmap)
+1. [Authors](#authors)
+1. [Acknowledgments](#acknowledments)
+1. [License](#license)
+
 ## Overview
 
 Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation. There are several main tools: [Gen](#gen), [Morph](#morph), [Deriv](#deriv), [Frequen](#frequen), and [Tree](#tree).
