@@ -48,11 +48,11 @@ Langua uses an unstable Master branch. The master branch is used for development
 
 - [ ] **v0.0.x:** Building the architecture of the site.
 - [ ] **v0.1.x:** Building the [Gen](#gen) tool; bug fixes and other small updates.
-- [ ] **v0.2.x:** Building the [Morph](#morph) tool; bug fixes and other small updates.
-- [ ] **v0.3.x:** Building the [Deriv](#deriv) tool; bug fixes and other updates.
-- [ ] **v0.4.x:** Building the [Frequen](#frequen) tool; bug fixes and other updates.
-- [ ] **v0.5.x:** Building the [Tree](#tree) tool; bug fixes and other updates.
-- [ ] **v1.x.x:** All tools working; bug fixes and ongoing development.
+- [ ] **v0.2.x:** Building the [Morph](#morph) tool; [Gen](#gen) tool functional; bug fixes and other small updates.
+- [ ] **v0.3.x:** Building the [Deriv](#deriv) tool; [Morph](#morph) tool functional; bug fixes and other updates.
+- [ ] **v0.4.x:** Building the [Frequen](#frequen) tool; [Deriv](#deriv) tool functional; bug fixes and other updates.
+- [ ] **v0.5.x:** Building the [Tree](#tree) tool; [Frequen](#frequen) tool functional; bug fixes and other updates.
+- [ ] **v1.x.x:** All tools functional; bug fixes and ongoing development.
 
 ## Authors
 
