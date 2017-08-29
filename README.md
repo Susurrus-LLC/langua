@@ -1,7 +1,5 @@
 # Langua
 
-**Current Version:** v0.0.2
-
 1. [Overview](#overview)
 1. [Deployment](#deployment)
 1. [Versioning](#versioning)
