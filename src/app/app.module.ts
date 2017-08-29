@@ -14,7 +14,6 @@ import { FrequenModule } from './frequen/frequen.module'
 import { GenModule } from './gen/gen.module'
 import { MorphModule } from './morph/morph.module'
 import { TreeModule } from './tree/tree.module'
-import { environment } from '../environments/environment'
 
 @NgModule({
   declarations: [
@@ -34,7 +33,7 @@ import { environment } from '../environments/environment'
     TreeModule
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue: environment.baseUrl },
+    { provide: APP_BASE_HREF, useValue: '/langua/' },
     Title
   ],
   bootstrap: [AppComponent]
