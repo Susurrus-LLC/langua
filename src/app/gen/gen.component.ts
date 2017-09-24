@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { FormControl } from '@angular/forms'
 import { Title } from '@angular/platform-browser'
 
 import { GenDataService } from './gen-data.service'
@@ -11,6 +12,7 @@ import { genData, GenData, variables } from './gen.data'
 })
 export class GenComponent {
   private data: GenData
+  private variables: string[]
 
   constructor(
     private titleService: Title,
@@ -18,5 +20,6 @@ export class GenComponent {
   ) {
     titleService.setTitle('Langua | Gen')
     this.data = genDataService.getData()
+    this.variables = variables
   }
 }

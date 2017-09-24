@@ -30,8 +30,6 @@ body
 
 a
   text-decoration: none
-  &:focus
-    outline: 1px solid rgba(darken($blu, 15%), 0.3)
   &:link, &:visited
     color: $blu
   &:hover, &:active
@@ -41,6 +39,11 @@ a
       color: $ong
     &:hover, &:active
       color: darken($ong, 15%)
+
+a:focus,
+input:focus,
+button:focus
+  outline: 1px solid rgba(darken($blu, 15%), 0.3)
 
 h1, h2, h3, h4, h5, h6, .lang, .menu
   font-family: $langfont

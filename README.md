@@ -44,7 +44,7 @@ Langua uses an unstable Master branch. The master branch is used for development
 
 ## Development Roadmap
 
-- [ ] **v0.0.x:** Building the architecture of the site.
+- [x] **v0.0.x:** Building the architecture of the site.
 - [ ] **v0.1.x:** Building the [Gen](#gen) tool; bug fixes and other small updates.
 - [ ] **v0.2.x:** Building the [Morph](#morph) tool; [Gen](#gen) tool functional; bug fixes and other small updates.
 - [ ] **v0.3.x:** Building the [Deriv](#deriv) tool; [Morph](#morph) tool functional; bug fixes and other updates.

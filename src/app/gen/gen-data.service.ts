@@ -8,8 +8,7 @@ export class GenDataService {
 
   constructor() {
     const storage = window.localStorage
-    const storing = typeof(Storage) !== 'undefined'
-    if (storing) {
+    if (typeof(Storage) !== 'undefined') {
       if (storage.getItem('gen-data')) {
         this.data = JSON.parse(storage.getItem('gen-data'))
       } else {

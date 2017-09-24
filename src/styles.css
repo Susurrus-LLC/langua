@@ -29,8 +29,6 @@ body {
 
 a {
   text-decoration: none; }
-  a:focus {
-    outline: 1px solid rgba(35, 110, 118, 0.3); }
   a:link, a:visited {
     color: #35a5b0; }
   a:hover, a:active {
@@ -39,6 +37,11 @@ a {
     color: #d69529; }
   a.active:hover, a.active:active {
     color: #96681d; }
+
+a:focus,
+input:focus,
+button:focus {
+  outline: 1px solid rgba(35, 110, 118, 0.3); }
 
 h1, h2, h3, h4, h5, h6, .lang, .menu {
   font-family: Doulos, "Palatino Linotype", Palatino, serif; }
