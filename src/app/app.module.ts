@@ -33,7 +33,6 @@ import { TreeModule } from './tree/tree.module'
     TreeModule
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue: '/langua/' },
     Title
   ],
   bootstrap: [AppComponent]

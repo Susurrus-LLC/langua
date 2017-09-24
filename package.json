@@ -10,8 +10,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "prod-build": "ng build --prod --env=prod --output-path=dist/",
+    "dev-build": "ng build",
+    "build": "ng build --prod --env=prod --output-path=dist/",
     "deploy": "git push origin -d gh-pages && git subtree push --prefix dist origin gh-pages",
     "test": "ng test",
     "lint": "ng lint",
