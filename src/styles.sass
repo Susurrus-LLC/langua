@@ -1,11 +1,7 @@
 // Fonts
 
-@font-face
-  font-family: Doulos
-  src: url(./assets/font/DoulosSIL-R.woff)
-
-$mainfont: "Quattrocento Sans", Helvetica, Arial, sans-serif
-$langfont: Doulos, "Palatino Linotype", Palatino, serif
+$mainfont: voces, Helvetica, Arial, sans-serif
+$headerfont: Lusitana, "Palatino Linotype", Palatino, serif
 
 @import 'variables'
 
@@ -46,7 +42,7 @@ button:focus
   outline: 1px solid rgba(darken($blu, 15%), 0.3)
 
 h1, h2, h3, h4, h5, h6, .lang, .menu
-  font-family: $langfont
+  font-family: $headerfont
 
 h1, h2, h3, h4, h5, h6
   text-rendering: optimizeLegibility
@@ -95,8 +91,8 @@ h6
   margin: 0 0 $lnht
   padding: 0
 
-textarea, input
-  font-family: $langfont
+textarea, input, select
+  font-family: $mainfont
 
 button, input, optgroup, select, textarea
   font-size: $ms1

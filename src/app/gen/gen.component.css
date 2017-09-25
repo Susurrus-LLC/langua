@@ -26,6 +26,9 @@ select, input {
   margin: 1px;
   height: 1.9995rem; }
 
+select {
+  text-align: center; }
+
 .pattern-input {
   width: 100%;
   padding: 1px;
