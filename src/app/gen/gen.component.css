@@ -34,8 +34,7 @@ input {
 
 select, input {
   padding: 1px;
-  margin: 1px;
-  height: 1.9995rem; }
+  margin: 1px; }
 
 select {
   text-align: center; }

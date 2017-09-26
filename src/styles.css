@@ -104,27 +104,50 @@ input {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
+select, input {
+  height: 1.9995rem; }
+
+input[type=checkbox], input[type=radio] {
+  height: inherit;
+  vertical-align: baseline; }
+
 button, .btn {
   border: 1px solid rgba(35, 110, 118, 0.3);
   background: none;
   background-color: #fff;
   padding: 0.6665rem;
   border-radius: 3px; }
+  button:hover, .btn:hover {
+    background-color: #ebf8f9; }
+  button:active, .btn:active {
+    background-color: #edf6f7;
+    -webkit-box-shadow: inset 0 0 0.6665rem #c9e5e8;
+            box-shadow: inset 0 0 0.6665rem #c9e5e8; }
   button.btn-success, button.btn-neutral, button.btn-danger, .btn.btn-success, .btn.btn-neutral, .btn.btn-danger {
     color: #fff; }
-  button:active, .btn:active {
-    background-color: #f8fbfc; }
   button.btn-success, .btn.btn-success {
     background-color: #2f929d; }
+    button.btn-success:hover, .btn.btn-success:hover {
+      background-color: #2d8b95; }
     button.btn-success:active, .btn.btn-success:active {
-      background-color: #3a8087; }
+      background-color: #3a8087;
+      -webkit-box-shadow: inset 0 0 0.6665rem #2b5e63;
+              box-shadow: inset 0 0 0.6665rem #2b5e63; }
   button.btn-neutral, .btn.btn-neutral {
     background-color: #c18625;
     border: 1px solid rgba(150, 104, 29, 0.3); }
+    button.btn-neutral:hover, .btn.btn-neutral:hover {
+      background-color: #b88023; }
     button.btn-neutral:active, .btn.btn-neutral:active {
-      background-color: #a57b36; }
+      background-color: #a57b36;
+      -webkit-box-shadow: inset 0 0 0.6665rem #7f5e2a;
+              box-shadow: inset 0 0 0.6665rem #7f5e2a; }
   button.btn-danger, .btn.btn-danger {
     background-color: #c01c25;
     border: 1px solid rgba(147, 21, 28, 0.3); }
+    button.btn-danger:hover, .btn.btn-danger:hover {
+      background-color: #b71a23; }
     button.btn-danger:active, .btn.btn-danger:active {
-      background-color: #a22f35; }
+      background-color: #a22f35;
+      -webkit-box-shadow: inset 0 0 0.6665rem #7b2428;
+              box-shadow: inset 0 0 0.6665rem #7b2428; }
