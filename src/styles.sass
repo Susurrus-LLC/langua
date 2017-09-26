@@ -19,7 +19,8 @@ body
   box-sizing: border-box
 
 .header, .main, .footer
-  max-width: $ms1 * pow($ratio, 15) // 74.551rem // 1192.8px
+  width: $ms1 * pow($ratio, 15) // 74.551rem // 1192.8px
+  max-width: 92%
   margin-left: auto
   margin-right: auto
   padding: (2 * $lnht) 0
@@ -102,3 +103,28 @@ button, optgroup, select
 
 input
   box-sizing: border-box
+
+button, .btn
+  border: 1px solid rgba(darken($blu, 15%), 0.3)
+  background: none
+  background-color: #fff
+  padding: $lnht
+  border-radius: 3px
+  &.btn-success, &.btn-neutral, &.btn-danger
+    color: #fff
+  &:active
+    background-color: lighten($blu-ntl, 53%)
+  &.btn-success
+    background-color: darken($blu, 5%)
+    &:active
+      background-color: darken($blu-ntl, 7%)
+  &.btn-neutral
+    background-color: darken($ong, 5%)
+    border: 1px solid rgba(darken($ong, 15%), 0.3)
+    &:active
+      background-color: darken($ong-ntl, 7%)
+  &.btn-danger
+    background-color: darken($red, 5%)
+    border: 1px solid rgba(darken($red, 15%), 0.3)
+    &:active
+      background-color: darken($red-ntl, 7%)

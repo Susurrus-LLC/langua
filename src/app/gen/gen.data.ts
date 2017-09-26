@@ -1,11 +1,16 @@
+export type variable = '-' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+
 type subpatterns = {
-  selected: string,
+  selected: variable,
   subpattern: string
 }
 
 export type GenData = {
   subpatterns: subpatterns[],
-  pattern: string
+  pattern: string,
+  words: number,
+  newline: boolean,
+  filterdupes: boolean
 }
 
 export const genData: GenData = {
@@ -19,9 +24,81 @@ export const genData: GenData = {
     }, {
       selected: 'N',
       subpattern: 'm/n'
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
+    }, {
+      selected: '-',
+      subpattern: ''
     }
   ],
-  pattern: 'CV(CV)(N)'
+  pattern: 'CV(CV)(N)',
+  words: 100,
+  newline: false,
+  filterdupes: false
 }
 
-export const variables: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+export const variables: variable[] = ['-', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']

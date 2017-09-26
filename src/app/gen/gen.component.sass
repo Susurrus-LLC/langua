@@ -5,8 +5,13 @@
 
 .subps-row
   width: 100%
+
+.subps-row, .control, .control-left, .control-right, .control-piece
   display: flex
+  flex-direction: row
+  justify-content: space-between
   align-items: baseline
+  align-content: space-between
 
 input
   flex-grow: 1
@@ -33,12 +38,10 @@ select
   font-weight: bold
   color: darken($blu, 8%)
 
-.pattern.part
-  display: flex
-  flex-direction: row
-  flex-wrap: nowrap
-  justify-content: space-between
-  align-items: baseline
-  align-content: flex-start
-  .section-title
-    margin-right: 1rem
+.words-input
+  width: $ms5
+
+.control-piece, label
+  margin-left: $lnht
+  margin-right: $lnht
+  vertical-align: middle

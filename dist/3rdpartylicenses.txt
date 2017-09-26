@@ -24,6 +24,8 @@ THE SOFTWARE.
 
 @angular/router@4.3.4 MIT
 
+@angular/forms@4.3.4 MIT
+
 zone.js@0.8.16 MIT
 The MIT License
 

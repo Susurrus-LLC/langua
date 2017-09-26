@@ -1,5 +1,6 @@
 import { APP_BASE_HREF } from '@angular/common'
 import { BrowserModule, Title } from '@angular/platform-browser'
+import { FormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 
@@ -25,6 +26,7 @@ import { TreeModule } from './tree/tree.module'
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     DerivModule,
     FrequenModule,

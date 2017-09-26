@@ -1,18 +1,69 @@
 <h2 class="tool-title">LanguaGen</h2>
 <p class="notice">This tool is still under construction.</p>
-<div class="input">
+<form class="input">
   <div class="subpatterns part">
     <p class="section-title">Subpatterns</p>
-    <select name="sub1v">
-      <option *ngFor="let variable of variables" [value]="variable">
-        {{variable}}
-      </option>
-    </select>
+    <div class="subps-row">
+      <select id="sub1v">
+        <option *ngFor="let variable of variables" [value]="variable">
+          {{variable}}
+        </option>
+      </select>
+      <input type="text" id="sub1p" class="subpattern-input">
+    </div>
+    <div class="subps-row">
+      <select id="sub2v">
+        <option *ngFor="let variable of variables" [value]="variable">
+          {{variable}}
+        </option>
+      </select>
+      <input type="text" id="sub2p" class="subpattern-input">
+    </div>
+    <div class="subps-row">
+      <select id="sub3v">
+        <option *ngFor="let variable of variables" [value]="variable">
+          {{variable}}
+        </option>
+      </select>
+      <input type="text" id="sub3p" class="subpattern-input">
+    </div>
+    <div class="subps-row">
+      <select id="sub4v">
+        <option *ngFor="let variable of variables" [value]="variable">
+          {{variable}}
+        </option>
+      </select>
+      <input type="text" id="sub4p" class="subpattern-input">
+    </div>
   </div>
   <div class="pattern part">
-    <p class="section-title">Pattern:</p>
-    <input type="text" class="pattern-input">
+    <p class="section-title">Pattern</p>
+    <input type="text" id="pattern" class="pattern-input">
   </div>
-  <div class="control part"></div>
-</div>
+  <div class="control part">
+    <div class="control-left">
+      <div class="control-piece">
+        <button type="submit" class="btn btn-neutral">Generate</button>
+      </div>
+      <div class="control-piece">
+        <label>words:</label>
+        <input type="text" id="words" class="words-input" value="100">
+      </div>
+      <div class="control-piece">
+        <label><input type="checkbox" id="newline"> new line each</label>
+      </div>
+      <div class="control-piece">
+        <label><input type="checkbox" id="filterdupes"> filter duplicates</label>
+      </div>
+    </div>
+    <div class="control-right">
+      <div class="control-piece">
+        <button class="btn btn-success">Save</button>
+      </div>
+      <div class="control-piece">
+        <button class="btn btn-danger">Open</button>
+      </div>
+    </div>
+  </div>
+</form>
 <div class="results"></div>

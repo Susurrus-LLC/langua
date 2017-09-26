@@ -19,7 +19,8 @@ body {
           box-sizing: border-box; }
 
 .header, .main, .footer {
-  max-width: 74.55079rem;
+  width: 74.55079rem;
+  max-width: 92%;
   margin-left: auto;
   margin-right: auto;
   padding: 1.333rem 0; }
@@ -102,3 +103,28 @@ button, optgroup, select {
 input {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
+
+button, .btn {
+  border: 1px solid rgba(35, 110, 118, 0.3);
+  background: none;
+  background-color: #fff;
+  padding: 0.6665rem;
+  border-radius: 3px; }
+  button.btn-success, button.btn-neutral, button.btn-danger, .btn.btn-success, .btn.btn-neutral, .btn.btn-danger {
+    color: #fff; }
+  button:active, .btn:active {
+    background-color: #f8fbfc; }
+  button.btn-success, .btn.btn-success {
+    background-color: #2f929d; }
+    button.btn-success:active, .btn.btn-success:active {
+      background-color: #3a8087; }
+  button.btn-neutral, .btn.btn-neutral {
+    background-color: #c18625;
+    border: 1px solid rgba(150, 104, 29, 0.3); }
+    button.btn-neutral:active, .btn.btn-neutral:active {
+      background-color: #a57b36; }
+  button.btn-danger, .btn.btn-danger {
+    background-color: #c01c25;
+    border: 1px solid rgba(147, 21, 28, 0.3); }
+    button.btn-danger:active, .btn.btn-danger:active {
+      background-color: #a22f35; }
