@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser'
 @Component({
   selector: 'app-deriv',
   templateUrl: './deriv.component.html',
-  styleUrls: ['./deriv.component.css']
+  styleUrls: ['./deriv.component.sass']
 })
 export class DerivComponent {
   constructor(private titleService: Title) {

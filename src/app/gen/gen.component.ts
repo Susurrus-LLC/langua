@@ -8,7 +8,7 @@ import { genData, GenData, variable, variables } from './gen.data'
 @Component({
   selector: 'app-gen',
   templateUrl: './gen.component.html',
-  styleUrls: ['./gen.component.css']
+  styleUrls: ['./gen.component.sass']
 })
 export class GenComponent {
   data: GenData

@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser'
 @Component({
   selector: 'app-deriv-help',
   templateUrl: './help.component.html',
-  styleUrls: ['./help.component.css']
+  styleUrls: ['./help.component.sass']
 })
 export class HelpComponent {
   constructor(private titleService: Title) {
