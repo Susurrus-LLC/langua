@@ -1,4 +1,149 @@
+// Fonts
+
+$mainfont: voces, Helvetica, Arial, sans-serif
+$headerfont: Lusitana, "Palatino Linotype", Palatino, serif
+
+@import '_variables'
+
 body
   margin: 0
   padding: 0
-  font-family: sans-serif
+  font-family: $mainfont
+  font-size: 16px
+  font-size: 100%
+  font-size: 1em
+  font-size: $ms1
+  line-height: $lnht * 2
+  background-color: $white
+  color: $black
+  box-sizing: border-box
+
+.header, .main, .footer
+  width: $ms1 * pow($ratio, 15) // 74.551rem // 1192.8px
+  max-width: 92%
+  margin-left: auto
+  margin-right: auto
+  padding: (2 * $lnht) 0
+
+a
+  text-decoration: none
+  &:link, &:visited
+    color: $blu
+  &:hover, &:active
+    color: darken($blu, 15%)
+  &.active
+    &:link, &:visited
+      color: $ong
+    &:hover, &:active
+      color: darken($ong, 15%)
+
+a:focus,
+input:focus,
+button:focus
+  outline: 1px solid rgba(darken($blu, 15%), 0.3)
+
+h1, h2, h3, h4, h5, h6, .lang, .menu
+  font-family: $headerfont
+
+h1, h2, h3, h4, h5, h6
+  text-rendering: optimizeLegibility
+
+h1
+  color: darken($blu, 20%)
+  font-size: $ms5
+  line-height: 6 * $lnht
+  margin: 0 0 (4 * $lnht)
+  padding: 0
+
+h2
+  color: darken($blu, 10%)
+  font-size: $ms4
+  line-height: 4 * $lnht
+  margin: 0 0 (3 * $lnht)
+  padding: 0
+
+h3
+  color: darken($blu, 8%)
+  font-size: $ms3
+  line-height: 3 * $lnht
+  margin: 0 0 (2 * $lnht)
+  padding: 0
+
+h4
+  color: darken($blu, 5%)
+  font-size: $ms2
+  line-height: 3 * $lnht
+  margin: 0 0 (2 * $lnht)
+  padding: 0
+
+h5
+  color: darken($blu, 2%)
+
+h5, p
+  font-size: $ms1
+  line-height: 2 * $lnht
+  margin: 0 0 (2 * $lnht)
+  padding: 0
+
+h6
+  color: $blu
+  font-size: $ms0
+  line-height: 2 * $lnht
+  margin: 0 0 $lnht
+  padding: 0
+
+textarea, input, select
+  font-family: $mainfont
+
+button, input, optgroup, select, textarea
+  font-size: $ms1
+
+button, optgroup, select
+  font-family: $mainfont
+
+input
+  box-sizing: border-box
+
+select, input
+  height: 3 * $lnht
+
+input[type=checkbox], input[type=radio]
+  height: inherit
+  vertical-align: baseline
+
+button, .btn
+  border: 1px solid rgba(darken($blu, 15%), 0.3)
+  background: none
+  background-color: #fff
+  padding: $lnht
+  border-radius: 3px
+  &:hover
+    background-color: lighten($blu, 50%)
+  &:active
+    background-color: lighten($blu-ntl, 50%)
+    box-shadow: inset 0 0 $lnht lighten($blu-ntl, 40%)
+  &.btn-success, &.btn-neutral, &.btn-danger
+    color: #fff
+  &.btn-success
+    background-color: darken($blu, 5%)
+    &:hover
+      background-color: darken($blu, 7%)
+    &:active
+      background-color: darken($blu-ntl, 7%)
+      box-shadow: inset 0 0 $lnht darken($blu-ntl, 17%)
+  &.btn-neutral
+    background-color: darken($ong, 5%)
+    border: 1px solid rgba(darken($ong, 15%), 0.3)
+    &:hover
+      background-color: darken($ong, 7%)
+    &:active
+      background-color: darken($ong-ntl, 7%)
+      box-shadow: inset 0 0 $lnht darken($ong-ntl, 17%)
+  &.btn-danger
+    background-color: darken($red, 5%)
+    border: 1px solid rgba(darken($red, 15%), 0.3)
+    &:hover
+      background-color: darken($red, 7%)
+    &:active
+      background-color: darken($red-ntl, 7%)
+      box-shadow: inset 0 0 $lnht darken($red-ntl, 17%)

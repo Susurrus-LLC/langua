@@ -1,0 +1,79 @@
+/*
+ * Modular Scale
+ * https://alistapart.com/article/more-meaningful-typography
+ * 1rem @ 1:1.333
+ * 1.1665rem @ 1:1.333
+ * http://www.modularscale.com/?1,1.1665&em&1.333
+ */
+
+@function pow($number, $exponent)
+  $value: 1
+  @if $exponent > 0
+    @for $i from 1 through $exponent
+      $value: $value * $number
+  @return $value // value is integer, so must be given a unit separately
+
+$ratio: 1.333
+$ms1: 1.000rem
+$ms0: $ms1 / pow($ratio, 1) // 0.750rem
+$ms2: $ms1 * pow($ratio, 1) // 1.333rem
+$ms3: $ms1 * pow($ratio, 2) // 1.777rem
+$ms4: $ms1 * pow($ratio, 3) // 2.369rem
+$ms5: $ms1 * pow($ratio, 4) // 3.157rem
+$ms6: $ms1 * pow($ratio, 5) // 4.209rem
+$lnht: $ms2 / 2 // 0.6665rem
+
+// Colors based on https://tallys.github.io/color-theory/
+
+@function is-cool-color($color)
+  @return hue($color) < 300 and hue($color) > 120
+
+@function is-high-key-value($color)
+  @return hue($color) > 30 and hue($color) < 140
+
+@function is-high-key-value($color)
+  @return hue($color) > 50 and hue($color) < 105
+
+@function harmonious-mix($mix, $base)
+  @if is-cool-color($mix)
+    @if is-high-key-value($base)
+      @return mix($mix, $base, 11%)
+    @else
+      @return mix($mix, $base, 16%)
+  @else
+    @if is-high-key-value($base)
+      @return mix($mix, $base, 13%)
+    @else
+      @return mix($mix, $base, 23%)
+
+@function mix-neutral($color)
+  @if is-highest-key-value($color)
+    @if is-high-key-value(complement($color))
+      @return mix(complement($color), $color, 19%)
+    @else
+      @return mix(complement($color), $color, 13%)
+  @else if is-high-key-value($color)
+    @if is-high-key-value(complement($color))
+      @return mix(complement($color), $color, 31%)
+    @else
+      @return mix(complement($color), $color, 23%)
+  @else
+    @if is-highest-key-value(complement($color))
+      @return mix(complement($color), $color, 31%)
+    @if is-high-key-value(complement($color))
+      @return mix(complement($color), $color, 26%)
+    @else
+      @return mix(complement($color), $color, 23%)
+
+$blu-pmy: hsla(194, 100%, 50%, 1) // Don't use this; use the mixed version instead
+$ong-pmy: hsla(33, 100%, 50%, 1) // Don't use this; use the mixed version instead
+$red-pmy: hsla(0, 100%, 50%, 1) // Don't use this; use the mixed version instead
+
+$blu: darken(harmonious-mix($ong-pmy, $blu-pmy), 5%)
+$ong: harmonious-mix($blu-pmy, $ong-pmy)
+$red: harmonious-mix($blu-pmy, $red-pmy)
+$blu-ntl: mix-neutral($blu)
+$ong-ntl: mix-neutral($ong)
+$red-ntl: mix-neutral($red)
+$white: lighten($blu-ntl, 54.5%)
+$black: darken($blu-ntl, 41%)
