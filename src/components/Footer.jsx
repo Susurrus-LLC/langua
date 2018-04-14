@@ -10,7 +10,16 @@ const getCopyright = () => {
 const Footer = () => (
   <footer>
     <p>
-      Built by Ian A.&nbsp;Cook, copyright &copy; {getCopyright()}.
+      Built by
+      {' '}
+      <a
+        href='https://github.com/nai888/'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Ian A.&nbsp;Cook
+      </a>
+      , copyright &copy; {getCopyright()}.
       {' '}
       <a
         href='https://github.com/nai888/langua'
