@@ -22,7 +22,7 @@ const styles = {
     padding: [[`${2 * v.lnht}rem`, 0]]
   },
   'a:focus, input:focus, button:focus': {
-    outline: [[1, 'solid', v.blu.darken(0.15).alpha(0.3)]]
+    outline: [[1, 'solid', v.blu.darken(0.15).alpha(0.3).string()]]
   },
   'h1, h2, h3, h4, h5, h6, .lang, .menu': {
     fontFamily: headerFont
@@ -31,35 +31,35 @@ const styles = {
     textRendering: 'optimizeLegibility'
   },
   h1: {
-    color: v.blu.darken(0.2),
+    color: v.blu.darken(0.2).string(),
     fontSize: `${v.ms5}rem`,
     lineHeight: `${6 * v.lnht}rem`,
     margin: [[0, 0, `${4 * v.lnht}rem`]],
     padding: 0
   },
   h2: {
-    color: v.blu.darken(0.1),
+    color: v.blu.darken(0.1).string(),
     fontSize: `${v.ms4}rem`,
     lineHeight: `${4 * v.lnht}rem`,
     margin: [[0, 0, `${3 * v.lnht}rem`]],
     padding: 0
   },
   h3: {
-    color: v.blu.darken(0.08),
+    color: v.blu.darken(0.08).string(),
     fontSize: `${v.ms3}rem`,
     lineHeight: `${3 * v.lnht}rem`,
     margin: [[0, 0, `${2 * v.lnht}rem`]],
     padding: 0
   },
   h4: {
-    color: v.blu.darken(0.05),
+    color: v.blu.darken(0.05).string(),
     fontSize: `${v.ms2}rem`,
     lineHeight: `${3 * v.lnht}rem`,
     margin: [[0, 0, `${2 * v.lnht}rem`]],
     padding: 0
   },
   h5: {
-    color: v.blu.darken(0.02)
+    color: v.blu.darken(0.02).string()
   },
   'h5, p': {
     fontSize: `${v.ms1}rem`,
@@ -89,51 +89,51 @@ const styles = {
     verticalAlign: 'baseline'
   },
   'button, .btn': {
-    border: [[1, 'solid', v.blu.darken(0.15).alpha(0.3)]],
+    border: [[1, 'solid', v.blu.darken(0.15).alpha(0.3).string()]],
     background: 'none',
-    backgroundColor: v.white,
+    backgroundColor: v.white.string(),
     padding: `${v.lnht}rem`,
     borderRadius: '3px',
     '&:hover': {
-      backgroundColor: v.blu.lighten(0.5)
+      backgroundColor: v.blu.lighten(0.5).string()
     },
     '&:active': {
-      backgroundColor: v.bluNtl.lighten(0.5),
-      boxShadow: [['inset', 0, 0, `${v.lnht}rem`, v.bluNtl.lighten(0.4)]]
+      backgroundColor: v.bluNtl.lighten(0.5).string(),
+      boxShadow: [['inset', 0, 0, `${v.lnht}rem`, v.bluNtl.lighten(0.4).string()]]
     },
     '&.btn-success, &.btn-neutral, &.btn-danger': {
       color: v.white
     },
     '&.btn-success': {
-      backgroundColor: v.blu.darken(0.05),
+      backgroundColor: v.blu.darken(0.05).string(),
       '&:hover': {
-        backgroundColor: v.blu.darken(0.07)
+        backgroundColor: v.blu.darken(0.07).string()
       },
       '&:active': {
-        backgroundColor: v.bluNtl.darken(0.07),
-        boxShadow: [['inset', 0, 0, `${v.lnht}rem`, v.bluNtl.lighten(0.17)]]
+        backgroundColor: v.bluNtl.darken(0.07).string(),
+        boxShadow: [['inset', 0, 0, `${v.lnht}rem`, v.bluNtl.lighten(0.17).string()]]
       }
     },
     '&:btn-neutral': {
-      backgroundColor: v.ong.darken(0.05),
-      border: [[1, 'solid', v.ong.darken(0.15).alpha(0.3)]],
+      backgroundColor: v.ong.darken(0.05).string(),
+      border: [[1, 'solid', v.ong.darken(0.15).alpha(0.3).string()]],
       '&:hover': {
-        backgroundColor: v.ong.darken(0.07)
+        backgroundColor: v.ong.darken(0.07).string()
       },
       '&:active': {
-        backgroundColor: v.ongNtl.darken(0.07),
-        boxShadow: [['inset', 0, 0, `${v.lnht}rem`, v.ongNtl.darken(0.17)]]
+        backgroundColor: v.ongNtl.darken(0.07).string(),
+        boxShadow: [['inset', 0, 0, `${v.lnht}rem`, v.ongNtl.darken(0.17).string()]]
       }
     },
     '&:btn-danger': {
-      backgroundColor: v.red.darken(0.05),
-      border: [[1, 'solid', v.red.darken(0.15).alpha(0.3)]],
+      backgroundColor: v.red.darken(0.05).string(),
+      border: [[1, 'solid', v.red.darken(0.15).alpha(0.3).string()]],
       '&:hover': {
-        backgroundColor: v.red.darken(0.07)
+        backgroundColor: v.red.darken(0.07).string()
       },
       '&:active': {
-        backgroundColor: v.redNtl.darken(0.07),
-        boxShadow: [['inset', 0, 0, `${v.lnht}rem`, v.redNtl.darken(0.17)]]
+        backgroundColor: v.redNtl.darken(0.07).string(),
+        boxShadow: [['inset', 0, 0, `${v.lnht}rem`, v.redNtl.darken(0.17).string()]]
       }
     }
   }

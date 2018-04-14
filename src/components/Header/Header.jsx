@@ -9,12 +9,12 @@ const siteSubtitle = 'A suite of language tools'
 const Header = () => (
   <header>
     <div className='header'>
-      <div class='title-area'>
-        <h1 class='site-title'><Link to='/'>{siteTitle}</Link></h1>
-        <p class='site-subtitle'>{siteSubtitle}</p>
+      <div className='title-area'>
+        <h1 className='site-title'><Link to='/'>{siteTitle}</Link></h1>
+        <p className='site-subtitle'>{siteSubtitle}</p>
       </div>
       <nav>
-        <ul class='menu'>
+        <ul className='menu'>
           <li><NavLink to='/gen' activeClassName='active'>Gen</NavLink></li>
           <li><NavLink to='/morph' activeClassName='active'>Morph</NavLink></li>
           <li><NavLink to='/deriv' activeClassName='active'>Deriv</NavLink></li>

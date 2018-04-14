@@ -17,7 +17,7 @@ import Tree from '../Tree/Tree'
 import TreeHelp from '../Tree/Help/TreeHelp'
 
 const Main = () => (
-  <div className='App'>
+  <div className='page'>
     <main>
       <div className='main'>
         <Switch>

@@ -1,15 +1,16 @@
 import React from 'react'
-import { hydrate, render } from 'react-dom'
+import ReactDOM from 'react-dom'
 import 'normalize.css/normalize.css'
 
-import App from './App'
+import Router from './Router'
 import registerServiceWorker from './registerServiceWorker'
 
 const rootElement = document.getElementById('root')
+
 if (rootElement.hasChildNodes()) {
-  hydrate(<App />, rootElement)
+  ReactDOM.hydrate(<Router />, rootElement)
 } else {
-  render(<App />, rootElement)
+  ReactDOM.render(<Router />, rootElement)
 }
 
 registerServiceWorker()

@@ -14,7 +14,7 @@ const styles = {
     padding: `${v.ms0}rem`,
     boxSizing: 'border-box',
     '&:hover': {
-      outline: [[1, 'solid', v.blu.darken(0.15).alpha(0.3)]]
+      outline: [[1, 'solid', v.blu.darken(0.15).alpha(0.3).string()]]
     },
     p: {
       margin: 0

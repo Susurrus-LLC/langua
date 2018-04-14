@@ -23,9 +23,9 @@ export const lnht = ms2 / 2 //                 0.6665
 
 // Colors based on https://tallys.github.io/color-theory/
 
-const bluPmy = Color('hsla(124, 100%, 50%, 1)')
-const ongPmy = Color('hsla(33, 100%, 50%, 1)')
-const redPmy = Color('hsla(0, 100%, 50%, 1)')
+const bluPmy = Color('hsl(124, 100%, 50%)')
+const ongPmy = Color('hsl(33, 100%, 50%)')
+const redPmy = Color('hsl(0, 100%, 50%)')
 
 export const blu = harmoniousMix(ongPmy, bluPmy).darken(0.1)
 export const ong = harmoniousMix(bluPmy, ongPmy)

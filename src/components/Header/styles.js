@@ -5,7 +5,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'baseline',
-    borderBottom: [[1, 'solid', v.blu.darken(0.15)]]
+    borderBottom: [[1, 'solid', v.blu.darken(0.15).string()]]
   },
   '.title-area': {
     order: 0
@@ -27,7 +27,7 @@ const styles = {
   '.site-title': {
     marginBottom: `${v.lnht}rem`,
     a: {
-      color: v.blu.darken(0.2)
+      color: v.blu.darken(0.2).string()
     }
   },
   '.site-subtitle': {
