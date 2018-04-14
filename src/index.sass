@@ -5,6 +5,9 @@ $headerfont: Lusitana, "Palatino Linotype", Palatino, serif
 
 @import './_variables'
 
+*
+  box-sizing: border-box
+
 body
   margin: 0
   padding: 0
@@ -16,7 +19,6 @@ body
   line-height: $lnht * 2
   background-color: $white
   color: $black
-  box-sizing: border-box
 
 .header, .main, .footer
   width: $ms1 * pow($ratio, 15) // 74.551rem // 1192.8px
