@@ -10,24 +10,18 @@
   "homepage": "https://nai888.github.io/langua/",
   "private": true,
   "scripts": {
-    "flow": "flow",
-    "watch-css": "yarn build-css && node-sass-chokidar --include-path ./src src/ -o src/ --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build-css": "node-sass-chokidar --include-path ./src src/ -o src/",
-    "build-js": "react-scripts build",
-    "build": "npm-run-all build-css build-js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "deploy": "git branch -D gh-pages && git subtree push --prefix build origin gh-pages",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "flow-bin": "^0.69.0",
-    "node-sass-chokidar": "^1.2.2",
+    "color": "^3.0.0",
     "normalize.css": "^8.0.0",
-    "npm-run-all": "^4.1.2",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
+    "react-jss": "^8.4.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4"
   },

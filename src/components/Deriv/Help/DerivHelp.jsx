@@ -1,5 +1,6 @@
 import * as React from 'react'
-import './DerivHelp.css'
+import injectSheet from 'react-jss'
+import styles from './styles'
 
 const DerivHelp = () => (
   <div className='deriv-help'>
@@ -8,4 +9,4 @@ const DerivHelp = () => (
   </div>
 )
 
-export default DerivHelp
+export default injectSheet(styles)(DerivHelp)

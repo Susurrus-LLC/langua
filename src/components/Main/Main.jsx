@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import './Main.css'
+import injectSheet from 'react-jss'
+import styles from './styles'
 import Home from '../Home/Home'
 import Deriv from '../Deriv/Deriv'
 import DerivHelp from '../Deriv/Help/DerivHelp'
@@ -33,4 +34,4 @@ const Main = () => (
   </main>
 )
 
-export default Main
+export default injectSheet(styles)(Main)

@@ -1,5 +1,6 @@
 import * as React from 'react'
-import './Footer.css'
+import injectSheet from 'react-jss'
+import styles from './styles'
 
 const getCopyrightYear = () => {
   const initYear = 2017
@@ -80,4 +81,4 @@ const Footer = () => (
   </footer>
 )
 
-export default Footer
+export default injectSheet(styles)(Footer)

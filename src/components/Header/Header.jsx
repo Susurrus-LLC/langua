@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import './Header.css'
+import injectSheet from 'react-jss'
+import styles from './styles'
 
 const siteTitle = 'Langua'
 const siteSubtitle = 'A suite of language tools'
@@ -25,4 +26,4 @@ const Header = () => (
   </header>
 )
 
-export default Header
+export default injectSheet(styles)(Header)

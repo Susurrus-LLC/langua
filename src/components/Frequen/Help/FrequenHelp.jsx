@@ -1,5 +1,6 @@
 import * as React from 'react'
-import './FrequenHelp.css'
+import injectSheet from 'react-jss'
+import styles from './styles'
 
 const FrequenHelp = () => (
   <div className='frequen-help'>
@@ -8,4 +9,4 @@ const FrequenHelp = () => (
   </div>
 )
 
-export default FrequenHelp
+export default injectSheet(styles)(FrequenHelp)

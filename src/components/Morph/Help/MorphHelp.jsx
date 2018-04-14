@@ -1,5 +1,6 @@
 import * as React from 'react'
-import './MorphHelp.css'
+import injectSheet from 'react-jss'
+import styles from './styles'
 
 const MorphHelp = () => (
   <div className='morph-help'>
@@ -8,4 +9,4 @@ const MorphHelp = () => (
   </div>
 )
 
-export default MorphHelp
+export default injectSheet(styles)(MorphHelp)

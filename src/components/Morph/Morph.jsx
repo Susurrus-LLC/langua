@@ -1,5 +1,6 @@
 import * as React from 'react'
-import './Morph.css'
+import injectSheet from 'react-jss'
+import styles from './styles'
 
 const Morph = () => (
   <div className='morph'>
@@ -8,4 +9,4 @@ const Morph = () => (
   </div>
 )
 
-export default Morph
+export default injectSheet(styles)(Morph)

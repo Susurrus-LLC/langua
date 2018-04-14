@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import './Home.css'
+import injectSheet from 'react-jss'
+import styles from './styles'
 
 const Home = () => (
   <div className='home'>
@@ -30,4 +31,4 @@ const Home = () => (
   </div>
 )
 
-export default Home
+export default injectSheet(styles)(Home)

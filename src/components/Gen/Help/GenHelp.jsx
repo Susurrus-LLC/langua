@@ -1,5 +1,6 @@
 import * as React from 'react'
-import './GenHelp.css'
+import injectSheet from 'react-jss'
+import styles from './styles'
 
 const GenHelp = () => (
   <div className='gen-help'>
@@ -8,4 +9,4 @@ const GenHelp = () => (
   </div>
 )
 
-export default GenHelp
+export default injectSheet(styles)(GenHelp)

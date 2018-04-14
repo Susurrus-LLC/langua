@@ -1,5 +1,6 @@
 import * as React from 'react'
-import './Tree.css'
+import injectSheet from 'react-jss'
+import styles from './styles'
 
 const Tree = () => (
   <div className='tree'>
@@ -8,4 +9,4 @@ const Tree = () => (
   </div>
 )
 
-export default Tree
+export default injectSheet(styles)(Tree)

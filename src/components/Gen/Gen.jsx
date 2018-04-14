@@ -1,5 +1,6 @@
 import * as React from 'react'
-import './Gen.css'
+import injectSheet from 'react-jss'
+import styles from './styles'
 
 const Gen = () => (
   <div className='gen'>
@@ -8,4 +9,4 @@ const Gen = () => (
   </div>
 )
 
-export default Gen
+export default injectSheet(styles)(Gen)
