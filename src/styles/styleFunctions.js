@@ -14,17 +14,13 @@ const mix = (color1, color2, weight = 0.5) => {
   const g = color1.green() * w1 + color2.green() * w2
   const b = color1.blue() * w1 + color2.blue() * w2
   const a = color1.alpha() * weight + color2.alpha() * (1 - weight)
-  let mixed = new Color(`rgba(${r}, ${g}, ${b}, ${a})`)
-  return mixed
+  return Color(`rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${Math.round(a)})`)
 }
 
 // Function ported from the SASS complement() function, based on the source code at http://sass-lang.com/documentation/Sass/Script/Functions.html#complement-instance_method
 
 const complement = (color) => {
-  let h = color.hue + 180
-  if (h >= 360) { h -= 360 }
-  let complemented = new Color(`hsla(${h}, ${color.saturationl()}, ${color.lightness()}, ${color.alpha()})`)
-  return complemented
+  return color.rotate(180)
 }
 
 // Colors based on https://tallys.github.io/color-theory/
@@ -41,18 +37,18 @@ const isHighestKeyValue = (color) => {
   return color.hue > 50 && color.hue < 105
 }
 
-export const harmoniousMix = (mix, base) => {
-  if (isCoolColor(mix)) {
+export const harmoniousMix = (colMix, base) => {
+  if (isCoolColor(colMix)) {
     if (isHighKeyValue(base)) {
-      return mix(mix, base, 0.11)
+      return mix(colMix, base, 0.11)
     } else {
-      return mix(mix, base, 0.16)
+      return mix(colMix, base, 0.16)
     }
   } else {
     if (isHighKeyValue(base)) {
-      return mix(mix, base, 0.13)
+      return mix(colMix, base, 0.13)
     } else {
-      return mix(mix, base, 0.23)
+      return mix(colMix, base, 0.23)
     }
   }
 }

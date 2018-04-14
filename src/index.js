@@ -2,14 +2,14 @@ import React from 'react'
 import { hydrate, render } from 'react-dom'
 import 'normalize.css/normalize.css'
 
-import Site from './Site'
+import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 
 const rootElement = document.getElementById('root')
 if (rootElement.hasChildNodes()) {
-  hydrate(<Site />, rootElement)
+  hydrate(<App />, rootElement)
 } else {
-  render(<Site />, rootElement)
+  render(<App />, rootElement)
 }
 
 registerServiceWorker()
