@@ -5,8 +5,8 @@ import styles from './styles'
 
 const Tree = ({classes}) => (
   <div className={classes.tree}>
-    <h2 className={classes.toolTitle}>LanguaTree</h2>
-    <p className={classes.notice}>This tool is still in planning.</p>
+    <h2 className='tool-title'>LanguaTree</h2>
+    <p className='notice'>This tool is still in planning.</p>
   </div>
 )
 

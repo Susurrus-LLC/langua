@@ -4,8 +4,8 @@ import styles from './styles'
 
 const Frequen = ({classes}) => (
   <div className={classes.frequen}>
-    <h2 class={classes.toolTitle}>LanguaFrequen</h2>
-    <p class={classes.notice}>This tool is still in planning.</p>
+    <h2 class='tool-title'>LanguaFrequen</h2>
+    <p class='notice'>This tool is still in planning.</p>
   </div>
 )
 
