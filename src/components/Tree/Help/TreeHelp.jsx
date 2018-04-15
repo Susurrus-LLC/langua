@@ -4,8 +4,8 @@ import styles from './styles'
 
 const TreeHelp = ({classes}) => (
   <div className={classes.treeHelp}>
-    <h2 class='tool-title'>LanguaTree Help</h2>
-    <p class='notice'>This tool is still in planning.</p>
+    <h2 className='tool-title'>LanguaTree Help</h2>
+    <p className='notice'>This tool is still in planning.</p>
   </div>
 )
 

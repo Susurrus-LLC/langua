@@ -5,8 +5,8 @@ import styles from './styles'
 
 const Deriv = ({classes}) => (
   <div className={classes.deriv}>
-    <h2 class='tool-title'>LanguaDeriv</h2>
-    <p class='notice'>This tool is still in planning.</p>
+    <h2 className='tool-title'>LanguaDeriv</h2>
+    <p className='notice'>This tool is still in planning.</p>
   </div>
 )
 

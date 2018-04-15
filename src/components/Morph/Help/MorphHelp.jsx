@@ -4,8 +4,8 @@ import styles from './styles'
 
 const MorphHelp = ({classes}) => (
   <div className={classes.morphHelp}>
-    <h2 class='tool-title'>LanguaMorph Help</h2>
-    <p class='notice'>This tool is still in planning.</p>
+    <h2 className='tool-title'>LanguaMorph Help</h2>
+    <p className='notice'>This tool is still in planning.</p>
   </div>
 )
 
