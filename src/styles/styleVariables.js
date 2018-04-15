@@ -1,6 +1,9 @@
 import * as Color from 'color'
 import { harmoniousMix, mixNeutral } from './styleFunctions'
 
+export const mainFont = 'voces, Helvetica, Arial, sans-serif'
+export const headerFont = 'Lusitana, "Palatino Linotype", Palatino, serif'
+
 /*
  * Modular Scale
  * https://alistapart.com/article/more-meaningful-typography
@@ -23,15 +26,15 @@ export const lnht = ms2 / 2 //                 0.6665
 
 // Colors based on https://tallys.github.io/color-theory/
 
-const bluPmy = Color('hsl(124, 100%, 50%)')
+const bluPmy = Color('hsl(196, 100%, 50%)')
 const ongPmy = Color('hsl(33, 100%, 50%)')
 const redPmy = Color('hsl(0, 100%, 50%)')
 
-export const blu = harmoniousMix(ongPmy, bluPmy).darken(0.1)
+export const blu = harmoniousMix(ongPmy, bluPmy).darken(0.2)
 export const ong = harmoniousMix(bluPmy, ongPmy)
 export const red = harmoniousMix(bluPmy, redPmy)
 export const bluNtl = mixNeutral(blu)
 export const ongNtl = mixNeutral(ong)
 export const redNtl = mixNeutral(red)
-export const white = bluNtl.lighten(0.99)
-export const black = bluNtl.darken(0.99)
+export const white = bluNtl.lightness(99.3)
+export const black = bluNtl.lightness(3)

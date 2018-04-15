@@ -2,10 +2,10 @@ import React from 'react'
 import injectSheet from 'react-jss'
 import styles from './styles'
 
-const Frequen = () => (
-  <div className='frequen'>
-    <h2 class='tool-title'>LanguaFrequen</h2>
-    <p class='notice'>This tool is still in planning.</p>
+const Frequen = ({classes}) => (
+  <div className={classes.frequen}>
+    <h2 class={classes.toolTitle}>LanguaFrequen</h2>
+    <p class={classes.notice}>This tool is still in planning.</p>
   </div>
 )
 

@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import injectSheet from 'react-jss'
+
 import styles from './styles'
 
-const Home = () => (
+const Home = ({classes, children}) => (
   <div className='home'>
     <p>Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation. There are four main tools in the suite.</p>
     <div className='grid'>

@@ -1,5 +1,6 @@
 import React from 'react'
 import injectSheet from 'react-jss'
+
 import styles from './styles'
 
 const getCopyrightYear = () => {
@@ -13,10 +14,10 @@ const author = 'Ian A. Cook'
 const authorURL = 'https://github.com/nai888'
 const appGhURL = 'https://github.com/nai888/langua'
 
-const Footer = () => (
+const Footer = ({classes, children}) => (
   <footer>
-    <div className='footer'>
-      <p className='copyright'>
+    <div className={classes.footer}>
+      <p className={classes.copyright}>
         <a
           href={appGhURL + '#versioning'}
           target='_blank'

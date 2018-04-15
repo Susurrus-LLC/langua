@@ -6,7 +6,7 @@ import styles from './styles'
 
 import App from './App'
 
-const Router = () => (
+const Router = ({classes, children}) => (
   <BrowserRouter>
     <App />
   </BrowserRouter>

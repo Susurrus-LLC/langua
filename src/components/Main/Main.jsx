@@ -16,10 +16,10 @@ import MorphHelp from '../Morph/Help/MorphHelp'
 import Tree from '../Tree/Tree'
 import TreeHelp from '../Tree/Help/TreeHelp'
 
-const Main = () => (
+const Main = ({classes}) => (
   <div className='page'>
     <main>
-      <div className='main'>
+      <div className={classes.main}>
         <Switch>
           <Route path='/deriv/help' component={DerivHelp} />
           <Route path='/deriv/' component={Deriv} />

@@ -1,22 +1,23 @@
 import * as v from '../../styles/styleVariables'
 
 const styles = {
-  '.header': {
+  header: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'baseline',
     borderBottom: [[1, 'solid', v.blu.darken(0.15).string()]]
   },
-  '.title-area': {
+  titleArea: {
     order: 0
   },
   nav: {
     order: 1,
     flexGrow: 1
   },
-  '.menu': {
+  menu: {
     textAlign: 'right',
-    li: {
+    fontFamily: v.headerFont,
+    '& li': {
       display: 'inline-block',
       margin: [[0, `${v.lnht * 2}rem`]],
       padding: 0,
@@ -24,13 +25,13 @@ const styles = {
       lineHeight: `${v.lnht * 2}rem`
     }
   },
-  '.site-title': {
+  siteTitle: {
     marginBottom: `${v.lnht}rem`,
-    a: {
+    '& a': {
       color: v.blu.darken(0.2).string()
     }
   },
-  '.site-subtitle': {
+  siteSubtitle: {
     fontStyle: 'italic'
   }
 }
