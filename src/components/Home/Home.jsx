@@ -4,8 +4,8 @@ import injectSheet from 'react-jss'
 
 import styles from './styles'
 
-const Home = ({classes, children}) => (
-  <div className='home'>
+const Home = ({classes}) => (
+  <div className={classes.home}>
     <p>Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation. There are four main tools in the suite.</p>
     <div className='grid'>
       <Link to='/gen'>

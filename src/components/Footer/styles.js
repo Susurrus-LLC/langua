@@ -1,7 +1,7 @@
-import * as v from '../../styles/styleVariables'
+import * as v from '../../styles/variables'
 
 const styles = {
-  '.footer': {
+  foot: {
     textAlign: 'center',
     borderTop: [[1, 'solid', v.blu.darken(0.15).string()]]
   }

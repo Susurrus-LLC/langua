@@ -1,5 +1,5 @@
 import * as Color from 'color'
-import { harmoniousMix, mixNeutral } from './styleFunctions'
+import { harmoniousMix, mixNeutral } from './functions'
 
 export const mainFont = 'voces, Helvetica, Arial, sans-serif'
 export const headerFont = 'Lusitana, "Palatino Linotype", Palatino, serif'

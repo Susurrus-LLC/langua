@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import injectSheet from 'react-jss'
+import classNames from 'classnames'
 
 import styles from './styles'
 
@@ -19,7 +20,7 @@ import TreeHelp from '../Tree/Help/TreeHelp'
 const Main = ({classes}) => (
   <div className='page'>
     <main>
-      <div className={classes.main}>
+      <div className={classNames(classes.main, 'main')}>
         <Switch>
           <Route path='/deriv/help' component={DerivHelp} />
           <Route path='/deriv/' component={Deriv} />

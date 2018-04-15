@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import injectSheet from 'react-jss'
 
-import styles from './styles'
+import styles from './globalStyles'
 
 import App from './App'
 
