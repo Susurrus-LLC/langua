@@ -1,7 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import injectSheet from 'react-jss'
-import classNames from 'classnames'
 
 import styles from './styles'
 
@@ -18,25 +17,23 @@ import Tree from '../Tree/Tree'
 import TreeHelp from '../Tree/Help/TreeHelp'
 
 const Main = ({classes}) => (
-  <div className='page'>
-    <main>
-      <div className={classNames(classes.main, 'main')}>
-        <Switch>
-          <Route path='/deriv/help' component={DerivHelp} />
-          <Route path='/deriv/' component={Deriv} />
-          <Route path='/frequen/help' component={FrequenHelp} />
-          <Route path='/frequen' component={Frequen} />
-          <Route path='/gen/help' component={GenHelp} />
-          <Route path='/gen' component={Gen} />
-          <Route path='/morph/help' component={MorphHelp} />
-          <Route path='/morph' component={Morph} />
-          <Route path='/tree/help' component={TreeHelp} />
-          <Route path='/tree' component={Tree} />
-          <Route path='/' component={Home} />
-        </Switch>
-      </div>
-    </main>
-  </div>
+  <main>
+    <div className={classes.main}>
+      <Switch>
+        <Route path='/deriv/help' component={DerivHelp} />
+        <Route path='/deriv/' component={Deriv} />
+        <Route path='/frequen/help' component={FrequenHelp} />
+        <Route path='/frequen' component={Frequen} />
+        <Route path='/gen/help' component={GenHelp} />
+        <Route path='/gen' component={Gen} />
+        <Route path='/morph/help' component={MorphHelp} />
+        <Route path='/morph' component={Morph} />
+        <Route path='/tree/help' component={TreeHelp} />
+        <Route path='/tree' component={Tree} />
+        <Route path='/' component={Home} />
+      </Switch>
+    </div>
+  </main>
 )
 
 export default injectSheet(styles)(Main)

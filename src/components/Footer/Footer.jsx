@@ -1,6 +1,5 @@
 import React from 'react'
 import injectSheet from 'react-jss'
-import classNames from 'classnames'
 
 import styles from './styles'
 
@@ -17,8 +16,8 @@ const appGhURL = 'https://github.com/nai888/langua'
 
 const Footer = ({classes}) => (
   <footer>
-    <div className={classNames(classes.foot, 'foot')}>
-      <p className='copyright'>
+    <div className={classes.footer}>
+      <p className={classes.copyright}>
         <a
           href={appGhURL + '#versioning'}
           target='_blank'
