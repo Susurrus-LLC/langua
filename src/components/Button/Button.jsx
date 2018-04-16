@@ -10,12 +10,12 @@ const filterClass = (type) => {
   }
 }
 
-const Button = ({ classes, onClick, label, type }) => (
+const Button = ({ classes, onClick, type, children }) => (
   <button
     onClick={onClick}
     className={classNames(classes.btn, filterClass(type))}
   >
-    {label}
+    {children}
   </button>
 )
 
