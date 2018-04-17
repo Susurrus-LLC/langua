@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import injectSheet from 'react-jss'
+import classNames from 'classnames'
 
 import styles from './styles'
 
@@ -23,16 +24,16 @@ const Header = ({classes}) => (
           <li className={classes.navLink}>
             <NavLink to='/gen' activeClassName='active'>Gen</NavLink>
           </li>
-          <li className={classes.navLink}>
+          <li className={classNames(classes.navLink, classes.disabled)}>
             <NavLink to='/morph' activeClassName='active'>Morph</NavLink>
           </li>
-          <li className={classes.navLink}>
+          <li className={classNames(classes.navLink, classes.disabled)}>
             <NavLink to='/deriv' activeClassName='active'>Deriv</NavLink>
           </li>
-          <li className={classes.navLink}>
+          <li className={classNames(classes.navLink, classes.disabled)}>
             <NavLink to='/frequen' activeClassName='active'>Frequen</NavLink>
           </li>
-          <li className={classes.navLink}>
+          <li className={classNames(classes.navLink, classes.disabled)}>
             <NavLink to='/tree' activeClassName='active'>Tree</NavLink>
           </li>
         </ul>

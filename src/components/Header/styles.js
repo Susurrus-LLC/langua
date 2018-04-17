@@ -45,6 +45,12 @@ const styles = {
     padding: 0,
     fontSize: `${v.ms2}rem`,
     lineHeight: `${v.lnht * 2}rem`
+  },
+  disabled: {
+    opacity: 0.5,
+    '&:hover': {
+      opacity: 0.8
+    }
   }
 }
 
