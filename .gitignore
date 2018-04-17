@@ -9,9 +9,6 @@
 # production
 # /build
 
-# source .css files, since they are compiled from .sass
-/src/**/*.css
-
 # misc
 .DS_Store
 .env.local
