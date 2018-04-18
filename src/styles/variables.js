@@ -1,8 +1,8 @@
 import * as Color from 'color'
 import { harmoniousMix, mixNeutral } from './functions'
 
-export const mainFont = 'voces, Helvetica, Arial, sans-serif'
-export const headerFont = 'Lusitana, "Palatino Linotype", Palatino, serif'
+export const mainFont = '"Noto Sans", Helvetica, Arial, sans-serif'
+export const headerFont = '"Noto Serif", "Palatino Linotype", Palatino, serif'
 
 /*
  * Modular Scale
