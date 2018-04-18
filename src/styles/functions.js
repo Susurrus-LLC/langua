@@ -1,19 +1,19 @@
 // Colors based on https://tallys.github.io/color-theory/
 
-const complement = (color) => {
+export const complement = (color) => {
   return color.rotate(180)
 }
 
 const isCoolColor = (color) => {
-  return color.hue < 300 && color.hue > 120
+  return color.hue() < 310 && color.hue() > 140
 }
 
 const isHighKeyValue = (color) => {
-  return color.hue > 30 && color.hue < 140
+  return color.hue() > 20 && color.hue() < 190
 }
 
 const isHighestKeyValue = (color) => {
-  return color.hue > 50 && color.hue < 105
+  return color.hue() > 30 && color.hue() < 90
 }
 
 export const harmoniousMix = (colMix, base) => {
@@ -54,4 +54,20 @@ export const mixNeutral = (color) => {
       return color.mix(complement(color), 0.23)
     }
   }
+}
+
+export const pickContrastOf = (color) => {
+  let newColor = complement(color)
+  if (color.lightness() < 0.3) {
+    newColor.lightness(newColor.lightness() + 0.86)
+  } else if (color.lightness() > 0.7) {
+    newColor.lightness(newColor.lightness() - 0.68)
+  } else {
+    if (isHighKeyValue(color)) {
+      newColor.lightness(newColor.lightness() - 0.53)
+    } else {
+      newColor.lightness(newColor.lightness() + 0.53)
+    }
+  }
+  return newColor
 }
