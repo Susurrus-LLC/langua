@@ -14,6 +14,6 @@
   "start_url": "./index.html",
   "scope": "/",
   "display": "standalone",
-  "theme_color": "#35a5b0",
+  "theme_color": "#2f8f9d",
   "background_color": "#ffffff"
 }
