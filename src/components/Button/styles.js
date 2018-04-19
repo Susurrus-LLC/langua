@@ -28,11 +28,11 @@ const styles = {
   },
   neutral: {
     color: v.white.string(),
-    backgroundColor: v.ong.string(),
+    backgroundColor: v.ong.darken(0.15).string(),
     border: {
       width: 1,
       style: 'solid',
-      color: v.ong.darken(0.6).alpha(0.3).string()
+      color: v.ong.darken(0.7).alpha(0.3).string()
     },
     '&:hover': {
       backgroundColor: v.ong.darken(0.1).string()
@@ -69,11 +69,11 @@ const styles = {
   },
   danger: {
     color: v.white.string(),
-    backgroundColor: v.red.string(),
+    backgroundColor: v.red.darken(0.1).string(),
     border: {
       width: 1,
       style: 'solid',
-      color: v.red.darken(0.6).alpha(0.3).string()
+      color: v.red.darken(0.65).alpha(0.3).string()
     },
     '&:hover': {
       backgroundColor: v.red.darken(0.1).string()

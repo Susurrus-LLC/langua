@@ -77,9 +77,6 @@ const styles = {
   part: {
     marginTop: `${v.lnht}rem`
   },
-  results: {
-    marginTop: `${v.lnht}rem`
-  },
   sectionTitle: {
     margin: 0
   },
