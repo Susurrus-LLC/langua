@@ -1,4 +1,4 @@
-const defData = {
+export const defData = {
   subpatterns: [
     {
       selected: 'V',
@@ -9,75 +9,6 @@ const defData = {
     }, {
       selected: 'N',
       subpattern: 'm/n'
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
-    }, {
-      selected: '-',
-      subpattern: ''
     }
   ],
   pattern: 'CV(CV)(N)',
@@ -86,4 +17,4 @@ const defData = {
   filterdupes: false
 }
 
-export default defData
+export const vars = ['-', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
