@@ -86,14 +86,12 @@ const GenForm = ({ classes }) => {
           </div>
           <div className={classes.controlPiece}>
             <label>
-              <input type='checkbox' id='newline' />
-                new line each
+              <input type='checkbox' id='newline' /> new line each
             </label>
           </div>
           <div className={classes.controlPiece}>
             <label>
-              <input type='checkbox' id='filterdupes' />
-              filter duplicates
+              <input type='checkbox' id='filterdupes' /> filter duplicates
             </label>
           </div>
         </div>
