@@ -8,7 +8,7 @@ import Button from '../../Button/Button'
 import { vars } from '../defaultData'
 import styles from './styles'
 
-const GenForm = ({ classes }) => {
+const GenForm = ({ classes, data, generate }) => {
   const selectOptions = vars.map((variab, index) => (
     <option key={index} value={variab}>
       {variab}
@@ -20,33 +20,36 @@ const GenForm = ({ classes }) => {
       <div className={classNames(classes.subpatterns, classes.part)}>
         <h5 className={classes.sectionTitle}>Subpatterns</h5>
         <div className={classes.subpsRow}>
-          <select id='sub1v'>
+          <select id='sub1v' value={data.subpatterns[0].selected}>
             {selectOptions}
           </select>
           <input
             type='text'
             id='sub1p'
             className={classes.subpatternInput}
+            value={data.subpatterns[0].subpattern}
           />
         </div>
         <div className={classes.subpsRow}>
-          <select id='sub2v'>
+          <select id='sub2v' value={data.subpatterns[1].selected}>
             {selectOptions}
           </select>
           <input
             type='text'
             id='sub2p'
             className={classes.subpatternInput}
+            value={data.subpatterns[1].subpattern}
           />
         </div>
         <div className={classes.subpsRow}>
-          <select id='sub3v'>
+          <select id='sub3v' value={data.subpatterns[2].selected}>
             {selectOptions}
           </select>
           <input
             type='text'
             id='sub3p'
             className={classes.subpatternInput}
+            value={data.subpatterns[2].subpattern}
           />
         </div>
         <div className={classes.subpsRow}>
@@ -66,12 +69,17 @@ const GenForm = ({ classes }) => {
           type='text'
           id='pattern'
           className={classes.patternInput}
+          value={data.pattern}
         />
       </div>
       <div className={classNames(classes.control, classes.part)}>
         <div className={classes.controlLeft}>
           <div className={classes.controlPiece}>
-            <Button type='submit' ver='neutral'>
+            <Button
+              onClick={generate}
+              type='submit'
+              ver='neutral'
+            >
               Generate
             </Button>
           </div>
@@ -81,17 +89,29 @@ const GenForm = ({ classes }) => {
               type='text'
               id='words'
               className={classes.wordsInput}
-              value='100'
+              value={data.words}
             />
           </div>
           <div className={classes.controlPiece}>
             <label>
-              <input type='checkbox' id='newline' /> new line each
+              <input
+                type='checkbox'
+                id='newline'
+                name='options'
+                value='newline'
+                checked={data.newline}
+              /> new line each
             </label>
           </div>
           <div className={classes.controlPiece}>
             <label>
-              <input type='checkbox' id='filterdupes' /> filter duplicates
+              <input
+                type='checkbox'
+                id='filterdupes'
+                name='options'
+                value='filterdupes'
+                checked={data.filterdupes}
+              /> filter duplicates
             </label>
           </div>
         </div>

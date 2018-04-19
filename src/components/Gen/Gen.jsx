@@ -11,9 +11,19 @@ class Gen extends React.Component {
   constructor (props) {
     super(props)
     this.classes = props.classes
+    this.onGenerate = this.onGenerate.bind(this)
     this.state = {
-      data: service.getData()
+      data: service.getData(),
+      results: ''
     }
+  }
+
+  onGenerate (e) {
+    e.preventDefault()
+    service.setStorage(this.state.data)
+    this.setState(prevState => ({
+      results: JSON.stringify(service.generate(this.state.data))
+    }))
   }
 
   render () {
@@ -25,8 +35,8 @@ class Gen extends React.Component {
         <h2 className='tool-title'>LanguaGen</h2>
         <Notice>This tool is still in development. Please be patient until it is complete.</Notice>
         <p className={classes.code}>{JSON.stringify(state.data)}</p>
-        <GenForm />
-        <GenResults />
+        <GenForm data={state.data} generate={this.onGenerate} />
+        <GenResults results={state.results} />
       </div>
     )
   }
