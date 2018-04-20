@@ -87,7 +87,7 @@ const styles = {
     h6: {
       fontFamily: v.headerFont,
       textRendering: 'optimizeLegibility',
-      color: v.blu,
+      color: v.blu.string(),
       fontSize: `${v.ms0}rem`,
       lineHeight: `${2 * v.lnht}rem`,
       margin: {

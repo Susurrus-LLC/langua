@@ -38,14 +38,16 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'baseline',
-    alignContent: 'space-between'
+    alignContent: 'space-between',
+    flexWrap: 'wrap'
   },
   controlLeft: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'baseline',
-    alignContent: 'space-between'
+    alignContent: 'space-between',
+    flexWrap: 'wrap'
   },
   controlRight: {
     display: 'flex',
@@ -60,8 +62,7 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'baseline',
     alignContent: 'space-between',
-    marginLeft: `${v.lnht}rem`,
-    marginRight: `${v.lnht}rem`,
+    margin: `${v.lnht}rem`,
     verticalAlign: 'middle'
   },
   patternInput: {
