@@ -10,6 +10,6 @@ const Router = ({ classes }) => (
   <BrowserRouter>
     <App />
   </BrowserRouter>
-)
+) // Add prop basename={'/langua'} before deploying to GitHub
 
 export default injectSheet(styles)(Router)
