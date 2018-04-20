@@ -1,0 +1,19 @@
+{
+  "short_name": "Langua",
+  "name": "Langua",
+  "description": "A suite of language tools",
+  "dir": "ltr",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "./index.html",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#2f8f9d",
+  "background_color": "#ffffff"
+}
