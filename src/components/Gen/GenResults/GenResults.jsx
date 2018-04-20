@@ -11,7 +11,7 @@ const GenResults = ({ classes, newLine, results, stats }) => {
   return (
     <div className={classes.results}>
       <div className={classes.output}>
-        <p className={classes.text}>
+        <p className={classes.outText}>
           {joinedResults}
         </p>
       </div>

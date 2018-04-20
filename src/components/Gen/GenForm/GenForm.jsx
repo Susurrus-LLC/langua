@@ -11,6 +11,7 @@ import styles from './styles'
 const GenForm = (props) => {
   const classes = props.classes
   const data = props.data
+  const changeWordNum = props.changeWordNum
   const changeNewline = props.changeNewline
   const changeDupes = props.changeDupes
   const generate = props.generate
@@ -93,10 +94,13 @@ const GenForm = (props) => {
           <div className={classes.controlPiece}>
             <label>words:</label>
             <input
-              type='text'
+              type='number'
               id='words'
+              min='1'
+              max='9999'
               className={classes.wordsInput}
               value={data.words}
+              onChange={changeWordNum}
             />
           </div>
           <div className={classes.controlPiece}>

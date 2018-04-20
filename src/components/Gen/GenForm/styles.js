@@ -81,7 +81,7 @@ const styles = {
     margin: 0
   },
   wordsInput: {
-    width: `${v.ms5}rem`
+    width: `${v.ms6}rem`
   }
 }
 

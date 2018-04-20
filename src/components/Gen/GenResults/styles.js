@@ -8,7 +8,9 @@ const styles = {
       width: 1,
       style: 'dotted',
       color: v.bluNtl.string()
-    },
+    }
+  },
+  outText: {
     whiteSpace: 'pre-wrap'
   },
   stats: {

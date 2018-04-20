@@ -11,6 +11,7 @@ class Gen extends React.Component {
   constructor (props) {
     super(props)
     this.classes = props.classes
+    this.onWordNumChange = this.onWordNumChange.bind(this)
     this.onChangeNewline = this.onChangeNewline.bind(this)
     this.onChangeDupes = this.onChangeDupes.bind(this)
     this.onGenerate = this.onGenerate.bind(this)
@@ -22,6 +23,23 @@ class Gen extends React.Component {
         words: 0,
         maxWords: 0
       }
+    }
+  }
+
+  onWordNumChange (e) {
+    let val = e.target.value
+    if (val < 1) {
+      val = 1
+    } else if (val > 9999) {
+      val = 9999
+    }
+
+    if (val > 0 && val < 10000) {
+      let newData = this.state.data
+      newData.words = val
+      this.setState(prevState => ({
+        data: newData
+      }))
     }
   }
 
@@ -70,6 +88,7 @@ class Gen extends React.Component {
         </p>
         <GenForm
           data={state.data}
+          changeWordNum={this.onWordNumChange}
           changeNewline={this.onChangeNewline}
           changeDupes={this.onChangeDupes}
           generate={this.onGenerate}
