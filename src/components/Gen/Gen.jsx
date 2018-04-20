@@ -1,7 +1,7 @@
 import React from 'react'
 import injectSheet from 'react-jss'
 
-import * as service from './service'
+import service from './service'
 import styles from './styles'
 import Notice from '../Notice/Notice'
 import GenForm from './GenForm/GenForm'
@@ -14,15 +14,21 @@ class Gen extends React.Component {
     this.onGenerate = this.onGenerate.bind(this)
     this.state = {
       data: service.getData(),
-      results: ''
+      results: '',
+      stats: {
+        words: 0,
+        maxWords: 0
+      }
     }
   }
 
   onGenerate (e) {
     e.preventDefault()
     service.setStorage(this.state.data)
+    let response = service.generate(this.state.data)
     this.setState(prevState => ({
-      results: JSON.stringify(service.generate(this.state.data))
+      results: response.results,
+      stats: response.stats
     }))
   }
 
@@ -34,9 +40,18 @@ class Gen extends React.Component {
       <div className={classes.gen}>
         <h2 className='tool-title'>LanguaGen</h2>
         <Notice>This tool is still in development. Please be patient until it is complete.</Notice>
-        <p className={classes.code}>{JSON.stringify(state.data)}</p>
-        <GenForm data={state.data} generate={this.onGenerate} />
-        <GenResults results={state.results} />
+        <p className={classes.code}>
+          {JSON.stringify(state.data)}
+        </p>
+        <GenForm
+          data={state.data}
+          generate={this.onGenerate}
+        />
+        <GenResults
+          newLine={state.data.newline}
+          results={state.results}
+          stats={state.stats}
+        />
       </div>
     )
   }

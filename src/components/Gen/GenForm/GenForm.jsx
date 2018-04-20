@@ -122,7 +122,10 @@ const GenForm = ({ classes, data, generate }) => {
             </Button>
           </div>
           <div className={classes.controlPiece}>
-            <Button ver='danger'>
+            <Button
+              type='file'
+              ver='danger'
+            >
               Open
             </Button>
           </div>
