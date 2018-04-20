@@ -8,7 +8,14 @@ import Button from '../../Button/Button'
 import { vars } from '../defaultData'
 import styles from './styles'
 
-const GenForm = ({ classes, data, changeNewline, changeDupes, generate }) => {
+const GenForm = (props) => {
+  const classes = props.classes
+  const data = props.data
+  const changeNewline = props.changeNewline
+  const changeDupes = props.changeDupes
+  const generate = props.generate
+  const save = props.save
+
   const selectOptions = vars.map((variab, index) => (
     <option key={index} value={variab}>
       {variab}
@@ -119,7 +126,10 @@ const GenForm = ({ classes, data, changeNewline, changeDupes, generate }) => {
         </div>
         <div className={classes.controlRight}>
           <div className={classes.controlPiece}>
-            <Button ver='success'>
+            <Button
+              ver='success'
+              onClick={save}
+            >
               Save
             </Button>
           </div>

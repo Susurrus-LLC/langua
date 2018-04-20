@@ -14,6 +14,7 @@ class Gen extends React.Component {
     this.onChangeNewline = this.onChangeNewline.bind(this)
     this.onChangeDupes = this.onChangeDupes.bind(this)
     this.onGenerate = this.onGenerate.bind(this)
+    this.onSave = this.onSave.bind(this)
     this.state = {
       data: service.getData(),
       results: '',
@@ -50,6 +51,12 @@ class Gen extends React.Component {
     }))
   }
 
+  onSave (e) {
+    e.preventDefault()
+    service.setStorage(this.state.data)
+    // Add a function to save this.state.data to a file
+  }
+
   render () {
     const classes = this.classes
     const state = this.state
@@ -66,6 +73,7 @@ class Gen extends React.Component {
           changeNewline={this.onChangeNewline}
           changeDupes={this.onChangeDupes}
           generate={this.onGenerate}
+          save={this.onSave}
         />
         <GenResults
           newLine={state.data.newline}
