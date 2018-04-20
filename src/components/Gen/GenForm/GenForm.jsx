@@ -8,7 +8,7 @@ import Button from '../../Button/Button'
 import { vars } from '../defaultData'
 import styles from './styles'
 
-const GenForm = ({ classes, data, generate }) => {
+const GenForm = ({ classes, data, changeNewline, changeDupes, generate }) => {
   const selectOptions = vars.map((variab, index) => (
     <option key={index} value={variab}>
       {variab}
@@ -100,6 +100,7 @@ const GenForm = ({ classes, data, generate }) => {
                 name='options'
                 value='newline'
                 checked={data.newline}
+                onChange={changeNewline}
               /> new line each
             </label>
           </div>
@@ -111,6 +112,7 @@ const GenForm = ({ classes, data, generate }) => {
                 name='options'
                 value='filterdupes'
                 checked={data.filterdupes}
+                onChange={changeDupes}
               /> filter duplicates
             </label>
           </div>

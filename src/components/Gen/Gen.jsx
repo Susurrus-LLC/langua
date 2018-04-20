@@ -11,6 +11,8 @@ class Gen extends React.Component {
   constructor (props) {
     super(props)
     this.classes = props.classes
+    this.onChangeNewline = this.onChangeNewline.bind(this)
+    this.onChangeDupes = this.onChangeDupes.bind(this)
     this.onGenerate = this.onGenerate.bind(this)
     this.state = {
       data: service.getData(),
@@ -20,6 +22,22 @@ class Gen extends React.Component {
         maxWords: 0
       }
     }
+  }
+
+  onChangeNewline (e) {
+    let newData = this.state.data
+    newData.newline = e.target.checked
+    this.setState(prevState => ({
+      data: newData
+    }))
+  }
+
+  onChangeDupes (e) {
+    let newData = this.state.data
+    newData.filterdupes = e.target.checked
+    this.setState(prevState => ({
+      data: newData
+    }))
   }
 
   onGenerate (e) {
@@ -45,6 +63,8 @@ class Gen extends React.Component {
         </p>
         <GenForm
           data={state.data}
+          changeNewline={this.onChangeNewline}
+          changeDupes={this.onChangeDupes}
           generate={this.onGenerate}
         />
         <GenResults

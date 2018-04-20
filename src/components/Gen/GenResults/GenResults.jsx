@@ -4,7 +4,7 @@ import injectSheet from 'react-jss'
 import styles from './styles'
 
 const GenResults = ({ classes, newLine, results, stats }) => {
-  let joinedResults = Array.prototype.join.call(results, `${newLine ? '\n' : ' '}`)
+  let joinedResults = Array.prototype.join.call(results, `${newLine ? '\n' : ' '}`).trim()
   let words = stats.words
   let maxWords = stats.maxWords
 

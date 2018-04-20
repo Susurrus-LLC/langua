@@ -8,7 +8,8 @@ const styles = {
       width: 1,
       style: 'dotted',
       color: v.bluNtl.string()
-    }
+    },
+    whiteSpace: 'pre-wrap'
   },
   stats: {
     paddingTop: `${v.lnht}rem`,
