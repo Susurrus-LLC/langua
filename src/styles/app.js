@@ -1,4 +1,4 @@
-import * as v from './styles/variables'
+import * as v from './variables'
 
 const styles = {
   app: {

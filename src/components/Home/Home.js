@@ -7,7 +7,7 @@ import styles from './styles'
 
 const Home = ({classes}) => (
   <div className={classes.home}>
-    <p className={classes.siteDescription}>Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation. There are four main tools in the suite.</p>
+    <p className={classes.siteDescription}>Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation.</p>
     <div className={classes.grid}>
       <Link to='/gen' className={classes.panel}>
         <h2 className={classes.toolTitle}>Gen</h2>
