@@ -18,7 +18,7 @@ const GenHelp = ({classes}) => (
     <HelpLink link='/gen'>
       Back
     </HelpLink>
-    <h2 className='tool-title'>LanguaGen Help</h2>
+    <h2 className='toolTitle'>LanguaGen Help</h2>
     <Notice>This tool is still in development and a help file is not yet available.</Notice>
   </div>
 )

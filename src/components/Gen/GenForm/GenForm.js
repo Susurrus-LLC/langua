@@ -92,7 +92,7 @@ const GenForm = (props) => {
             </Button>
           </div>
           <div className={classes.controlPiece}>
-            <label>words:</label>
+            <label for='words'>words:</label>
             <input
               type='number'
               id='words'

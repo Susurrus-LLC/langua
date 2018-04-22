@@ -18,7 +18,7 @@ const Deriv = ({classes}) => (
     <HelpLink link='/deriv/help'>
       Help
     </HelpLink>
-    <h2 className='tool-title'>LanguaDeriv</h2>
+    <h2 className='toolTitle'>LanguaDeriv</h2>
     <Notice>This tool is still in planning.</Notice>
   </div>
 )

@@ -18,7 +18,7 @@ const Tree = ({classes}) => (
     <HelpLink link='/tree/help'>
       Help
     </HelpLink>
-    <h2 className='tool-title'>LanguaTree</h2>
+    <h2 className='toolTitle'>LanguaTree</h2>
     <Notice>This tool is still in planning.</Notice>
   </div>
 )

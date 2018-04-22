@@ -18,7 +18,7 @@ const Morph = ({classes}) => (
     <HelpLink link='/morph/help'>
       Help
     </HelpLink>
-    <h2 className='tool-title'>LanguaMorph</h2>
+    <h2 className='toolTitle'>LanguaMorph</h2>
     <Notice>This tool is still in planning.</Notice>
   </div>
 )

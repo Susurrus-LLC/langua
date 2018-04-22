@@ -93,7 +93,7 @@ class Gen extends React.Component {
         <HelpLink link='/gen/help'>
           Help
         </HelpLink>
-        <h2 className='tool-title'>LanguaGen</h2>
+        <h2 className='toolTitle'>LanguaGen</h2>
         <Notice>This tool is still in development. Please be patient until it is complete.</Notice>
         <p className={classes.code}>
           {JSON.stringify(state.data)}

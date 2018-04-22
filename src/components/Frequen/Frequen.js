@@ -18,7 +18,7 @@ const Frequen = ({classes}) => (
     <HelpLink link='/frequen/help'>
       Help
     </HelpLink>
-    <h2 className='tool-title'>LanguaFrequen</h2>
+    <h2 className='toolTitle'>LanguaFrequen</h2>
     <Notice>This tool is still in planning.</Notice>
   </div>
 )
