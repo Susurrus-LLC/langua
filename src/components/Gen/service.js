@@ -1,4 +1,4 @@
-import { defData } from './defaultData'
+import { defData, vars } from './defaultData'
 
 class Service {
   constructor () {
@@ -27,6 +27,34 @@ class Service {
     if (typeof (Storage) !== 'undefined') {
       this.storage.setItem(this.item, JSON.stringify(data))
     }
+  }
+
+  addSubpattern (data) {
+    let toUse = ''
+
+    for (let i = 0; i < vars.length; i++) {
+      let used = false
+      for (let j = 0; j < data.subpatterns.length; j++) {
+        if (data.subpatterns[j].selected === vars[i]) {
+          used = true
+          break
+        } else {
+          continue
+        }
+      }
+      if (!used) {
+        toUse = vars[i]
+        break
+      } else {
+        continue
+      }
+    }
+
+    if (data.subpatterns.length < vars.length) {
+      data.subpatterns.push({ selected: toUse, subpattern: '' })
+    }
+
+    return data
   }
 
   getStats (data, results) {

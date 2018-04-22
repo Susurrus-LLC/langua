@@ -54,16 +54,18 @@ class Gen extends React.Component {
   }
 
   onClear (e) {
+    e.preventDefault()
     let newData = this.state.data
     let id = e.target.id.slice(1)
+    newData.subpatterns.splice(id, 1)
     this.setState(prevState => ({
       data: newData
     }))
   }
 
   onAdd (e) {
-    let newData = this.state.data
-    let id = e.target.id.slice(1)
+    e.preventDefault()
+    let newData = service.addSubpattern(this.state.data)
     this.setState(prevState => ({
       data: newData
     }))
