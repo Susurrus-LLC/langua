@@ -70,18 +70,46 @@ class Service {
 
   generate (data) {
     let results = []
+    let subpatterns = data.subpatterns
+
+    for (let i = 0; i < subpatterns.length; i++) {
+      subpatterns[i].subpattern = subpatterns[i].subpattern.split('/')
+    }
+
+    const chooseRand = (length) => {
+      return Math.floor(Math.random() * length)
+    }
 
     for (let i = 0; i < data.words; i++) {
       let word = ''
 
       for (let j = 0; j < data.pattern.length; j++) {
-        let letter = data.pattern[j]
+        let variab = data.pattern[j]
 
+        if (vars.indexOf(variab) !== -1) {
+          let letter = ''
+
+          for (let k = 0; k < subpatterns.length; k++) {
+            const subpattern = subpatterns[k].subpattern
+            if (subpatterns[k].selected === variab) {
+              letter = subpattern[chooseRand(subpattern.length)]
+              break
+            } else {
+              continue
+            }
+          }
+          word += letter
+        } else {
+          continue
+        }
+
+        /*
         if (letter === '(' || letter === ')' || letter === '[' || letter === ']') {
           continue
         } else {
           word += letter
         }
+        */
       }
 
       if (data.filterdupes) {
@@ -95,11 +123,9 @@ class Service {
       }
     }
 
-    let stats = this.getStats(data, results)
-
-    let response = {
+    const response = {
       results: results,
-      stats: stats
+      stats: this.getStats(data, results)
     }
 
     return response
