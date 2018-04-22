@@ -33,6 +33,26 @@ const styles = {
     alignItems: 'baseline',
     alignContent: 'space-between'
   },
+  addingRow: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'baseline',
+    alignContent: 'space-between',
+    padding: {
+      top: 1,
+      right: 0,
+      bottom: 1,
+      left: 0
+    },
+    margin: {
+      top: 1,
+      right: 0,
+      bottom: 1,
+      left: 0
+    }
+  },
   control: {
     display: 'flex',
     flexDirection: 'row',

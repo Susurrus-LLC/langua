@@ -11,6 +11,11 @@ import styles from './styles'
 const GenForm = (props) => {
   const classes = props.classes
   const data = props.data
+  const changeSelect = props.changeSelect
+  const changeSubpattern = props.changeSubpattern
+  const clear = props.clear
+  const add = props.add
+  const changePattern = props.changePattern
   const changeWordNum = props.changeWordNum
   const changeNewline = props.changeNewline
   const changeDupes = props.changeDupes
@@ -18,58 +23,70 @@ const GenForm = (props) => {
   const save = props.save
 
   const selectOptions = vars.map((variab, index) => (
-    <option key={index} value={variab}>
+    <option
+      key={index}
+      value={variab}
+    >
       {variab}
     </option>
   ))
+
+  const subpatternRows = data.subpatterns.map((subpattern, index) => (
+    <div
+      key={index}
+      className={classes.subpsRow}
+    >
+      <select
+        id={`v${index}`}
+        value={subpattern.selected}
+        onChange={changeSelect}
+      >
+        {selectOptions}
+      </select>
+      <input
+        type='text'
+        id={`p${index}`}
+        className={classes.subpatternInput}
+        value={subpattern.subpattern}
+        onChange={changeSubpattern}
+      />
+      <div className={classes.clearButton}>
+        <Button
+          id={`c${index}`}
+          onClick={clear}
+          ver='danger'
+          addClass='small'
+        >
+          Clear
+        </Button>
+      </div>
+    </div>
+  ))
+
+  const addButton = () => {
+    console.log(data.subpatterns.length)
+    console.log(vars.length)
+    if (data.subpatterns.length < vars.length) {
+      return (
+        <div className={classes.addingRow}>
+          <Button
+            onClick={add}
+            ver='success'
+            addClass='small'
+          >
+            Add
+          </Button>
+        </div>
+      )
+    }
+  }
 
   return (
     <form className={classes.form}>
       <div className={classNames(classes.subpatterns, classes.part)}>
         <h5 className={classes.sectionTitle}>Subpatterns</h5>
-        <div className={classes.subpsRow}>
-          <select id='sub1v' value={data.subpatterns[0].selected}>
-            {selectOptions}
-          </select>
-          <input
-            type='text'
-            id='sub1p'
-            className={classes.subpatternInput}
-            value={data.subpatterns[0].subpattern}
-          />
-        </div>
-        <div className={classes.subpsRow}>
-          <select id='sub2v' value={data.subpatterns[1].selected}>
-            {selectOptions}
-          </select>
-          <input
-            type='text'
-            id='sub2p'
-            className={classes.subpatternInput}
-            value={data.subpatterns[1].subpattern}
-          />
-        </div>
-        <div className={classes.subpsRow}>
-          <select id='sub3v' value={data.subpatterns[2].selected}>
-            {selectOptions}
-          </select>
-          <input
-            type='text'
-            id='sub3p'
-            className={classes.subpatternInput}
-            value={data.subpatterns[2].subpattern}
-          />
-        </div>
-        <div className={classes.subpsRow}>
-          <select id='sub4v'>
-            {selectOptions}
-          </select>
-          <input
-            type='text'
-            id='sub4p'
-            className={classes.subpatternInput}
-          />
-        </div>
+        {subpatternRows}
+        {addButton()}
       </div>
       <div className={classNames(classes.pattern, classes.part)}>
         <h5 className={classes.sectionTitle}>Pattern</h5>
@@ -78,6 +95,7 @@ const GenForm = (props) => {
           id='pattern'
           className={classes.patternInput}
           value={data.pattern}
+          onChange={changePattern}
         />
       </div>
       <div className={classNames(classes.control, classes.part)}>
@@ -92,7 +110,7 @@ const GenForm = (props) => {
             </Button>
           </div>
           <div className={classes.controlPiece}>
-            <label for='words'>words:</label>
+            <label htmlFor='words'>words:</label>
             <input
               type='number'
               id='words'
@@ -138,10 +156,7 @@ const GenForm = (props) => {
             </Button>
           </div>
           <div className={classes.controlPiece}>
-            <Button
-              type='file'
-              ver='danger'
-            >
+            <Button type='file'>
               Open
             </Button>
           </div>

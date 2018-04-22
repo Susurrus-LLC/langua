@@ -98,6 +98,10 @@ const styles = {
       },
       color: v.white.string()
     }
+  },
+  small: {
+    fontSize: `${v.ms0}rem`,
+    padding: `${v.ms1 / 2}rem`
   }
 }
 

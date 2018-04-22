@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import styles from './styles'
 
-const Button = ({ classes, onClick, type, ver, children }) => {
+const Button = ({ classes, addClass, onClick, type, ver, children }) => {
   const filterClass = (ver, classes) => {
     if (ver === 'neutral') {
       return classes.neutral
@@ -20,7 +20,7 @@ const Button = ({ classes, onClick, type, ver, children }) => {
     return (
       <input
         onClick={onClick}
-        className={classNames(classes.btn, filterClass(ver, classes))}
+        className={classNames(classes.btn, filterClass(ver, classes), classes[addClass])}
         type={type}
       />
     )
@@ -28,7 +28,7 @@ const Button = ({ classes, onClick, type, ver, children }) => {
     return (
       <button
         onClick={onClick}
-        className={classNames(classes.btn, filterClass(ver, classes))}
+        className={classNames(classes.btn, filterClass(ver, classes), classes[addClass])}
         type={type}
       >
         {children}

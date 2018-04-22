@@ -15,6 +15,11 @@ class Gen extends React.Component {
   constructor (props) {
     super(props)
     this.classes = props.classes
+    this.onChangeSelect = this.onChangeSelect.bind(this)
+    this.onChangeSubpattern = this.onChangeSubpattern.bind(this)
+    this.onClear = this.onClear.bind(this)
+    this.onAdd = this.onAdd.bind(this)
+    this.onChangePattern = this.onChangePattern.bind(this)
     this.onWordNumChange = this.onWordNumChange.bind(this)
     this.onChangeNewline = this.onChangeNewline.bind(this)
     this.onChangeDupes = this.onChangeDupes.bind(this)
@@ -28,6 +33,48 @@ class Gen extends React.Component {
         maxWords: 0
       }
     }
+  }
+
+  onChangeSelect (e) {
+    let newData = this.state.data
+    let id = e.target.id.slice(1)
+    newData.subpatterns[id].selected = e.target.value
+    this.setState(prevState => ({
+      data: newData
+    }))
+  }
+
+  onChangeSubpattern (e) {
+    let newData = this.state.data
+    let id = e.target.id.slice(1)
+    newData.subpatterns[id].subpattern = e.target.value
+    this.setState(prevState => ({
+      data: newData
+    }))
+  }
+
+  onClear (e) {
+    let newData = this.state.data
+    let id = e.target.id.slice(1)
+    this.setState(prevState => ({
+      data: newData
+    }))
+  }
+
+  onAdd (e) {
+    let newData = this.state.data
+    let id = e.target.id.slice(1)
+    this.setState(prevState => ({
+      data: newData
+    }))
+  }
+
+  onChangePattern (e) {
+    let newData = this.state.data
+    newData.pattern = e.target.value
+    this.setState(prevState => ({
+      data: newData
+    }))
   }
 
   onWordNumChange (e) {
@@ -100,6 +147,11 @@ class Gen extends React.Component {
         </p>
         <GenForm
           data={state.data}
+          changeSelect={this.onChangeSelect}
+          changeSubpattern={this.onChangeSubpattern}
+          clear={this.onClear}
+          add={this.onAdd}
+          changePattern={this.onChangePattern}
           changeWordNum={this.onWordNumChange}
           changeNewline={this.onChangeNewline}
           changeDupes={this.onChangeDupes}
