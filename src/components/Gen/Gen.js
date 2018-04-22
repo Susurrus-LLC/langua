@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
 
 import service from './service'
@@ -7,6 +8,8 @@ import HelpLink from '../HelpLink/HelpLink'
 import Notice from '../Notice/Notice'
 import GenForm from './GenForm/GenForm'
 import GenResults from './GenResults/GenResults'
+
+import { canonical, siteTitle } from '../../App'
 
 class Gen extends React.Component {
   constructor (props) {
@@ -82,6 +85,11 @@ class Gen extends React.Component {
 
     return (
       <div className={classes.gen}>
+        <Helmet>
+          <title>{siteTitle} Gen</title>
+          <meta name='description' content='LanguaGen is a tool for automatically building a set of words based on arbitrary rules of phonotactics.' />
+          <link rel='canonical' href={`${canonical}gen/`} />
+        </Helmet>
         <HelpLink link='/gen/help'>
           Help
         </HelpLink>
