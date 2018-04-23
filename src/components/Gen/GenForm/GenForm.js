@@ -64,8 +64,6 @@ const GenForm = (props) => {
   ))
 
   const addButton = () => {
-    console.log(data.subpatterns.length)
-    console.log(vars.length)
     if (data.subpatterns.length < vars.length) {
       return (
         <div className={classes.addingRow}>
