@@ -14,9 +14,12 @@ const styles = {
       backgroundColor: v.white.string(),
       color: v.black.string()
     },
-    h1: {
+    'h1, h2, h3, h4, h5, h6': {
       fontFamily: v.headerFont,
       textRendering: 'optimizeLegibility',
+      padding: 0
+    },
+    h1: {
       color: v.blu.darken(0.2).string(),
       fontSize: `${v.ms5}rem`,
       lineHeight: `${6 * v.lnht}rem`,
@@ -25,12 +28,9 @@ const styles = {
         right: '0',
         bottom: `${4 * v.lnht}rem`,
         left: '0'
-      },
-      padding: 0
+      }
     },
     h2: {
-      fontFamily: v.headerFont,
-      textRendering: 'optimizeLegibility',
       color: v.blu.darken(0.1).string(),
       fontSize: `${v.ms4}rem`,
       lineHeight: `${4 * v.lnht}rem`,
@@ -39,12 +39,9 @@ const styles = {
         right: '0',
         bottom: `${3 * v.lnht}rem`,
         left: '0'
-      },
-      padding: 0
+      }
     },
     h3: {
-      fontFamily: v.headerFont,
-      textRendering: 'optimizeLegibility',
       color: v.blu.darken(0.08).string(),
       fontSize: `${v.ms3}rem`,
       lineHeight: `${3 * v.lnht}rem`,
@@ -53,12 +50,9 @@ const styles = {
         right: '0',
         bottom: `${2 * v.lnht}rem`,
         left: '0'
-      },
-      padding: 0
+      }
     },
     h4: {
-      fontFamily: v.headerFont,
-      textRendering: 'optimizeLegibility',
       color: v.blu.darken(0.05).string(),
       fontSize: `${v.ms2}rem`,
       lineHeight: `${3 * v.lnht}rem`,
@@ -67,12 +61,9 @@ const styles = {
         right: '0',
         bottom: `${2 * v.lnht}rem`,
         left: '0'
-      },
-      padding: 0
+      }
     },
     h5: {
-      fontFamily: v.headerFont,
-      textRendering: 'optimizeLegibility',
       color: v.blu.darken(0.02).string(),
       fontSize: `${v.ms1}rem`,
       lineHeight: `${2 * v.lnht}rem`,
@@ -81,12 +72,9 @@ const styles = {
         right: '0',
         bottom: `${2 * v.lnht}rem`,
         left: '0'
-      },
-      padding: 0
+      }
     },
     h6: {
-      fontFamily: v.headerFont,
-      textRendering: 'optimizeLegibility',
       color: v.blu.string(),
       fontSize: `${v.ms0}rem`,
       lineHeight: `${2 * v.lnht}rem`,
@@ -95,8 +83,7 @@ const styles = {
         right: '0',
         bottom: `${v.lnht}rem`,
         left: '0'
-      },
-      padding: 0
+      }
     },
     p: {
       fontSize: `${v.ms1}rem`,
@@ -192,18 +179,26 @@ const styles = {
         }
       }
     },
-    select: {
+    'select, optgroup, textarea': {
       fontFamily: v.mainFont,
-      fontSize: `${v.ms1}rem`,
+      fontSize: `${v.ms1}rem`
+    },
+    select: {
       height: `${3 * v.lnht}rem`
     },
-    optgroup: {
-      fontFamily: v.mainFont,
-      fontSize: `${v.ms1}rem`
-    },
-    textarea: {
-      fontFamily: v.mainFont,
-      fontSize: `${v.ms1}rem`
+    'code, kbd, samp, var': {
+      fontFamily: 'monospace, monospace',
+      backgroundColor: v.white.darken(0.08).string(),
+      color: v.black.lighten(3).string(),
+      fontSize: `${v.ms1}rem`,
+      lineHeight: `${2 * v.lnht}rem`,
+      margin: {
+        top: '0',
+        right: '0',
+        bottom: `${2 * v.lnht}rem`,
+        left: '0'
+      },
+      padding: 0
     }
   }
 }
