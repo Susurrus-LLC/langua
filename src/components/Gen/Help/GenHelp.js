@@ -29,7 +29,7 @@ const GenHelp = ({classes}) => (
     <p>The syntax is identical for all Pattern and Subpattern fields. Uppercase versions of the standard English letters (e.g. <code>C</code>, <code>V</code>, or <code>N</code>) are variables referring to Subpatterns while any other letter (e.g. <code>a</code>, <code>s</code>, or <code>n</code>) represents that specific glyph.</p>
     <h5 id='options'>Options &ndash; <code>/</code></h5>
     <p>Multiple options can be separated using forward slashes (<code>/</code>). For each word, the tool will randomly select one of the options. By default, each option will have the same chance of being chosen. This can be changed by assigning <a href='#weights'>weights</a>.</p>
-    <p>For example, with the subpatterns <code>V: a/i</code>, <code>C: t/s</code>, and <code>N: m/n</code> and the Pattern <code>CVN</code>, the tool will output the words <samp>sam tan tam tin sim san tim sin</samp>.</p>
+    <p>For example, with the Subpatterns <code>V: a/i</code>, <code>C: t/s</code>, and <code>N: m/n</code> and the Pattern <code>CVN</code>, the tool will output the words <samp>sam tan tam tin sim san tim sin</samp>.</p>
     <h5 id='units'>Single Units &ndash; <code>[ ]</code></h5>
     <p>This functionality is planned.</p>
     <h5 id='optional'>Optional Units &ndash; <code>( )</code></h5>
