@@ -184,6 +184,8 @@ class Gen extends React.Component {
       newData.subpatterns[i].subpattern = newData.subpatterns[i].subpattern.split('/')
     }
 
+    const pattArr = newData.pattern.split('/')
+
     const chooseRand = (length) => {
       return Math.floor(Math.random() * length)
     }
@@ -191,10 +193,16 @@ class Gen extends React.Component {
     for (let i = 0; i < newData.words; i++) {
       let word = ''
 
-      for (let j = 0; j < newData.pattern.length; j++) {
-        let variab = newData.pattern[j]
+      const patt = pattArr[chooseRand(pattArr.length)]
 
-        if (vars.indexOf(variab) !== -1) {
+      for (let j = 0; j < patt.length; j++) {
+        const variab = patt[j]
+
+        if (variab === '(' || variab === ')' || variab === '[' || variab === ']' || variab === '^' || variab === '*' || variab === '"') {
+          continue
+        } else if (vars.indexOf(variab) === -1) {
+          word += patt[j]
+        } else {
           let letter = ''
 
           for (let k = 0; k < newData.subpatterns.length; k++) {
@@ -207,8 +215,6 @@ class Gen extends React.Component {
             }
           }
           word += letter
-        } else {
-          continue
         }
 
         /*
