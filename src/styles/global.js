@@ -98,7 +98,8 @@ const styles = {
     },
     a: {
       '&:link, &:visited, &:hover, &:active': {
-        textDecoration: 'none'
+        textDecoration: 'underline',
+        TextDecorationSkipInk: 'auto'
       },
       '&:link, &:visited': {
         color: v.blu.string()
@@ -188,17 +189,14 @@ const styles = {
     },
     'code, kbd, samp, var': {
       fontFamily: 'monospace, monospace',
-      backgroundColor: v.white.darken(0.08).string(),
-      color: v.black.lighten(3).string(),
-      fontSize: `${v.ms1}rem`,
-      lineHeight: `${2 * v.lnht}rem`,
-      margin: {
-        top: '0',
-        right: '0',
-        bottom: `${2 * v.lnht}rem`,
-        left: '0'
-      },
-      padding: 0
+      backgroundColor: v.white.darken(0.1).string(),
+      color: v.black.lighten(5).string(),
+      padding: {
+        top: `${v.lnht / 7}rem`,
+        right: `${v.lnht / 2}rem`,
+        bottom: `${v.lnht / 7}rem`,
+        left: `${v.lnht / 2}rem`
+      }
     }
   }
 }

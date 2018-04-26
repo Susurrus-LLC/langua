@@ -3,6 +3,8 @@ import * as v from '../../styles/variables'
 const styles = {
   help: {
     '&:link, &:visited, &:hover, &:active': {
+      fontWeight: 'bold',
+      textDecoration: 'none',
       border: {
         width: 1,
         style: 'solid',

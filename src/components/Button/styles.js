@@ -10,6 +10,7 @@ const styles = {
     background: 'none',
     backgroundColor: v.white.darken(0.05).string(),
     color: v.blu.string(),
+    fontWeight: 'bold',
     padding: `${v.lnht}rem`,
     borderRadius: 3,
     '&:hover': {

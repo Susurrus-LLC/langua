@@ -15,6 +15,9 @@ const styles = {
       right: 0,
       bottom: `${2 * v.lnht}rem`,
       left: 0
+    },
+    '& a, & a:link, & a:visited, & a:hover, & a:active': {
+      textDecoration: 'none'
     }
   },
   titleArea: {

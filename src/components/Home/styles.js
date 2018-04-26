@@ -13,6 +13,7 @@ const styles = {
       width: '49%',
       marginBottom: `${v.lnht}rem`,
       padding: `${v.ms0}rem`,
+      textDecoration: 'none',
       boxSizing: 'border-box'
     },
     '&:hover': {
