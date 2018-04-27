@@ -4,6 +4,7 @@
 1. [Deployment](#deployment)
 1. [Versioning](#versioning)
 1. [Development Roadmap](#development-roadmap)
+1. [Contributing](#contributing)
 1. [Authors](#authors)
 1. [Acknowledgments](#acknowledgments)
 1. [License](#license)
