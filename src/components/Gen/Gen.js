@@ -42,6 +42,7 @@ class Gen extends React.Component {
   getData () {
     let data
 
+    // Check if there is data in storage. If so, pull it. If not, pull the default data and store it.
     if (typeof (Storage) !== 'undefined') {
       if (this.storage.getItem(this.item)) {
         data = JSON.parse(this.storage.getItem(this.item))
@@ -56,12 +57,14 @@ class Gen extends React.Component {
     return data
   }
 
+  // Store the current data in storage
   setStorage (data) {
     if (typeof (Storage) !== 'undefined') {
       this.storage.setItem(this.item, JSON.stringify(data))
     }
   }
 
+  // When a Subpattern variable is changed, store that change in state
   onChangeSelect (e) {
     let newData = JSON.parse(JSON.stringify(this.state.data))
     let id = e.target.id.slice(1)
@@ -71,6 +74,7 @@ class Gen extends React.Component {
     }))
   }
 
+  // When a Subpattern is changed, store that change in state
   onChangeSubpattern (e) {
     let newData = JSON.parse(JSON.stringify(this.state.data))
     let id = e.target.id.slice(1)
@@ -80,6 +84,7 @@ class Gen extends React.Component {
     }))
   }
 
+  // When a clear button is clicked, delete the corresponding Subpattern from state
   onClear (e) {
     e.preventDefault()
     let newData = JSON.parse(JSON.stringify(this.state.data))
@@ -90,11 +95,13 @@ class Gen extends React.Component {
     }))
   }
 
+  // When the add button is clicked, add a blank Subpattern to state
   onAdd (e) {
     e.preventDefault()
     let toUse = ''
     let newData = JSON.parse(JSON.stringify(this.state.data))
 
+    // Identify the first unused Subpattern variable and select it
     for (let i = 0; i < vars.length; i++) {
       let used = false
       for (let j = 0; j < newData.subpatterns.length; j++) {
@@ -122,6 +129,7 @@ class Gen extends React.Component {
     }))
   }
 
+  // When the pattern is changed, store the change in state
   onChangePattern (e) {
     let newData = JSON.parse(JSON.stringify(this.state.data))
     newData.pattern = e.target.value
@@ -130,14 +138,17 @@ class Gen extends React.Component {
     }))
   }
 
+  // When the number of desired words is changed, store that change in state
   onWordNumChange (e) {
     let val = e.target.value
+    // Limit number entry to between 1 and 9999
     if (val < 1) {
       val = 1
     } else if (val > 9999) {
       val = 9999
     }
 
+    // Only push to state if number is between 1 and 9999
     if (val > 0 && val < 10000) {
       let newData = JSON.parse(JSON.stringify(this.state.data))
       newData.words = val
@@ -147,6 +158,7 @@ class Gen extends React.Component {
     }
   }
 
+  // If the selection for new lines is changed, store that change in state
   onChangeNewline (e) {
     let newData = JSON.parse(JSON.stringify(this.state.data))
     newData.newline = e.target.checked
@@ -155,6 +167,7 @@ class Gen extends React.Component {
     }))
   }
 
+  // If the selection for filtering duplicates is changed, store that change in state
   onChangeDupes (e) {
     let newData = JSON.parse(JSON.stringify(this.state.data))
     newData.filterdupes = e.target.checked
@@ -163,9 +176,11 @@ class Gen extends React.Component {
     }))
   }
 
+  // Generate the output
   onGenerate (e) {
     e.preventDefault()
 
+    // Calculate the stats on the generated output
     const getStats = (data, results) => {
       let stats = {
         words: results.length,
@@ -180,16 +195,20 @@ class Gen extends React.Component {
     let results = []
     let newData = JSON.parse(JSON.stringify(this.state.data))
 
+    // Split all the Subpatterns into arrays based on '/'
     for (let i = 0; i < newData.subpatterns.length; i++) {
       newData.subpatterns[i].subpattern = newData.subpatterns[i].subpattern.split('/')
     }
 
+    // Split the Pattern into an array based on '/'
     const pattArr = newData.pattern.split('/')
 
+    // Randomly choose from the items in an array
     const chooseRand = (length) => {
       return Math.floor(Math.random() * length)
     }
 
+    // Generate all the words
     for (let i = 0; i < newData.words; i++) {
       let word = ''
 
@@ -226,6 +245,7 @@ class Gen extends React.Component {
         */
       }
 
+      // If filtering duplicates, only push unique words to the results
       if (newData.filterdupes) {
         if (results.indexOf(word) === -1) {
           results.push(word)
@@ -250,6 +270,7 @@ class Gen extends React.Component {
     this.setStorage(this.state.data)
   }
 
+  // Save the current state to storage and generate a file
   onSave (e) {
     e.preventDefault()
     this.setStorage(this.state.data)
