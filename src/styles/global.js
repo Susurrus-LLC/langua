@@ -10,88 +10,57 @@ const styles = {
       padding: 0,
       fontFamily: v.mainFont,
       fontSize: `${v.ms1}rem`,
-      lineHeight: `${v.lnht * 2}rem`,
+      lineHeight: v.lnht * 2,
       backgroundColor: v.white.string(),
-      color: v.black.string()
+      color: v.black.string(),
+      fontKerning: 'normal',
+      fontVariantLigatures: 'common-ligatures contextual',
+      fontFeatureSettings: ['"kern" 1', '"liga" 1', '"clig" 1', '"calt" 1']
     },
     'h1, h2, h3, h4, h5, h6': {
       fontFamily: v.headerFont,
       textRendering: 'optimizeLegibility',
+      margin: {
+        top: `${(v.lnht * 2) * (v.ms1 * 2)}rem`, // base line height * double base font size
+        right: '0',
+        bottom: `${(v.lnht * 2) * v.ms1}rem`, // base line height * font size
+        left: '0'
+      },
       padding: 0
+    },
+    'h1, h2': {
+      marginTop: 0
     },
     h1: {
       color: v.blu.darken(0.2).string(),
-      fontSize: `${v.ms5}rem`,
-      lineHeight: `${6 * v.lnht}rem`,
-      margin: {
-        top: '0',
-        right: '0',
-        bottom: `${4 * v.lnht}rem`,
-        left: '0'
-      }
+      fontSize: `${v.ms5}rem`
     },
     h2: {
       color: v.blu.darken(0.1).string(),
-      fontSize: `${v.ms4}rem`,
-      lineHeight: `${4 * v.lnht}rem`,
-      margin: {
-        top: '0',
-        right: '0',
-        bottom: `${3 * v.lnht}rem`,
-        left: '0'
-      }
+      fontSize: `${v.ms4}rem`
     },
     h3: {
       color: v.blu.darken(0.08).string(),
-      fontSize: `${v.ms3}rem`,
-      lineHeight: `${3 * v.lnht}rem`,
-      margin: {
-        top: '0',
-        right: '0',
-        bottom: `${2 * v.lnht}rem`,
-        left: '0'
-      }
+      fontSize: `${v.ms3}rem`
     },
     h4: {
       color: v.blu.darken(0.05).string(),
-      fontSize: `${v.ms2}rem`,
-      lineHeight: `${3 * v.lnht}rem`,
-      margin: {
-        top: '0',
-        right: '0',
-        bottom: `${2 * v.lnht}rem`,
-        left: '0'
-      }
+      fontSize: `${v.ms2}rem`
     },
     h5: {
       color: v.blu.darken(0.02).string(),
-      fontSize: `${v.ms1}rem`,
-      lineHeight: `${2 * v.lnht}rem`,
-      margin: {
-        top: '0',
-        right: '0',
-        bottom: `${2 * v.lnht}rem`,
-        left: '0'
-      }
+      fontSize: `${v.ms1}rem`
     },
     h6: {
       color: v.blu.string(),
-      fontSize: `${v.ms0}rem`,
-      lineHeight: `${2 * v.lnht}rem`,
-      margin: {
-        top: '0',
-        right: '0',
-        bottom: `${v.lnht}rem`,
-        left: '0'
-      }
+      fontSize: `${v.ms0}rem`
     },
     p: {
       fontSize: `${v.ms1}rem`,
-      lineHeight: `${2 * v.lnht}rem`,
       margin: {
         top: '0',
         right: '0',
-        bottom: `${2 * v.lnht}rem`,
+        bottom: `${(v.lnht * 2) * v.ms1}rem`, // base line height * base font size
         left: '0'
       },
       padding: 0
