@@ -11,7 +11,7 @@ export const defData = {
       subpattern: 'm/n'
     }
   ],
-  pattern: 'CV(CV)(N)',
+  pattern: 'CV/CVN/CVCV/CVCVN',
   words: 100,
   newline: false,
   filterdupes: false
