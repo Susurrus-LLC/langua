@@ -5,7 +5,7 @@
 1. [Versioning](#versioning)
 1. [Development Roadmap](#development-roadmap)
 1. [Authors](#authors)
-1. [Acknowledgments](#acknowledments)
+1. [Acknowledgments](#acknowledgments)
 1. [License](#license)
 
 ## Overview
@@ -34,7 +34,14 @@ LanguaTree is a tool for drawing and labeling syntax trees.
 
 ## Deployment
 
-Langua is a web-based tool built on JavaScript, and it does not use a database, so it can be installed almost anywhere without need for running a back-end server. Simply download and unpack the latest stable release locally and open it in a browser or deploy it to a web server.
+Langua is a web-based tool built on JavaScript, and it does not use a database, so it can be installed almost anywhere without need for running a back-end server.
+
+- If you are installing in a website's root (e.g. a URL that ends in `.com`, `.org`, or similar), simply download and unpack the latest stable release onto the web server.
+- If you are installing in a subfolder (e.g. `*.com/langua/`), you will need to download the source files, change the basename for the router, and create a new build.
+  1. Open `index.js`.
+  1. Add the prop `basename={'/yoursubfolder'}` to the `<BrowserRouter>`. For example, if you are deploying to `*.com/langua/`, BrowserRouter should read `<BrowserRouter basename={'/langua'}>`.
+  1. Create a new build by running `yarn build`.
+  1. Copy all of the files from the /build folder and deploy them onto the web server.
 
 **Note: Langua is currently under development and no stable release is yet ready.**
 
@@ -51,6 +58,10 @@ Langua uses an unstable Master branch. The master branch is used for development
 - [ ] **v0.4.x:** Building the [Frequen](#frequen) tool; [Deriv](#deriv) tool functional; bug fixes and other updates.
 - [ ] **v0.5.x:** Building the [Tree](#tree) tool; [Frequen](#frequen) tool functional; bug fixes and other updates.
 - [ ] **v1.x.x:** All tools functional; bug fixes and ongoing development.
+
+## Contributing
+
+Please review the [contributing guidelines](https://github.com/nai888/langua/blob/master/.github/CONTRIBUTING.md) before contributing.
 
 ## Authors
 
