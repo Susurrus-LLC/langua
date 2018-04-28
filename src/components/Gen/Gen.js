@@ -34,7 +34,8 @@ class Gen extends React.Component {
       results: '',
       stats: {
         words: 0,
-        maxWords: 0
+        maxWords: 0,
+        filtered: 0
       }
     }
   }
@@ -179,15 +180,67 @@ class Gen extends React.Component {
   // Generate the output
   onGenerate (e) {
     e.preventDefault()
-
     // Calculate the stats on the generated output
     const getStats = (data, results) => {
-      let stats = {
-        words: results.length,
-        maxWords: 0
+      // Calculate the maximum number of words
+      const pattArr = data.pattern.split('/')
+
+      let count = 0
+
+      for (let i = 0; i < pattArr.length; i++) {
+        let optCount = 1
+        if (pattArr[i].length === 0) {
+          optCount = 0
+          break
+        } else {
+          for (let j = 0; j < pattArr[i].length; j++) {
+            const variab = pattArr[i][j]
+            let addCount = 0
+            let multCount = 1
+            if (variab === '(' || variab === ')' || variab === '[' || variab === ']' || variab === '^' || variab === '*' || variab === '"') {
+              // For now, ignore the characters that will be used for operations
+              continue
+            } else if (vars.indexOf(variab) === -1) {
+              // If the current item in the Pattern is not a variable, add 1 to the count
+              addCount += 1
+              console.log(addCount)
+            } else {
+              for (let k = 0; k < data.subpatterns.length; k++) {
+                const subpattern = data.subpatterns[k]
+                if (subpattern.selected === variab) {
+                  // If the variable is defined, count how many options are in the Subpattern
+                  multCount *= subpattern.subpattern.length
+                  console.log(multCount)
+                  break
+                } else {
+                  // If the variable is unused, skip it
+                  continue
+                }
+              }
+            }
+            optCount *= multCount
+            optCount += addCount
+          }
+        }
+        count += optCount
       }
 
-      // Calculate the maximum number of words
+      // If there are results, count how many words there are
+      let words = 0
+      if (results[0].length !== 0) {
+        words = results.length
+      }
+
+      let filtered = 0
+      if (data.filterdupes) {
+        filtered = data.words - words
+      }
+
+      let stats = {
+        words: words,
+        maxWords: count,
+        filtered: filtered
+      }
 
       return stats
     }
@@ -208,18 +261,21 @@ class Gen extends React.Component {
       return Math.floor(Math.random() * length)
     }
 
-    // Generate all the words
+    // Generate the number of words requested in the settings
     for (let i = 0; i < newData.words; i++) {
       let word = ''
 
+      // If the Pattern has options, choose one
       const patt = pattArr[chooseRand(pattArr.length)]
 
       for (let j = 0; j < patt.length; j++) {
         const variab = patt[j]
 
         if (variab === '(' || variab === ')' || variab === '[' || variab === ']' || variab === '^' || variab === '*' || variab === '"') {
+          // For now, ignore the characters that will be used for operations
           continue
         } else if (vars.indexOf(variab) === -1) {
+          // If the current item in the Pattern is not a variable, add it to the current word
           word += patt[j]
         } else {
           let letter = ''
@@ -227,22 +283,16 @@ class Gen extends React.Component {
           for (let k = 0; k < newData.subpatterns.length; k++) {
             const subpattern = newData.subpatterns[k]
             if (subpattern.selected === variab) {
+              // If the variable is defined, randomly choose an option from the related Subpattern
               letter = subpattern.subpattern[chooseRand(subpattern.subpattern.length)]
               break
             } else {
+              // If the variable is unused, skip it
               continue
             }
           }
           word += letter
         }
-
-        /*
-        if (letter === '(' || letter === ')' || letter === '[' || letter === ']') {
-          continue
-        } else {
-          word += letter
-        }
-        */
       }
 
       // If filtering duplicates, only push unique words to the results
@@ -267,6 +317,7 @@ class Gen extends React.Component {
       stats: response.stats
     }))
 
+    // Save the current state to storage
     this.setStorage(this.state.data)
   }
 

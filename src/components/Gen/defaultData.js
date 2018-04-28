@@ -2,16 +2,16 @@ export const defData = {
   subpatterns: [
     {
       selected: 'V',
-      subpattern: 'a/i/u'
+      subpattern: 'a/e/i/o/u'
     }, {
       selected: 'C',
-      subpattern: 'p/t/k/s/m/n'
+      subpattern: 'p/t/k/b/d/g/s/m/n/l/r'
     }, {
       selected: 'N',
       subpattern: 'm/n'
     }
   ],
-  pattern: 'CV/CVN/CVCV/CVCVN',
+  pattern: 'V/CV/CVN/CVCV/CVCVN',
   words: 100,
   newline: false,
   filterdupes: false

@@ -42,7 +42,7 @@ const GenHelp = ({classes}) => (
     <p>This functionality is planned.</p>
     <h4 id='generating'>Generating Words</h4>
     <p>Once the Pattern and all Subpatterns have been set up, you can click the <strong>Generate</strong> button to generate words. There are also several adjustments you can make, including the total number of words that should be generated, whether each word should be written on a new line, and whether the tool should filter out duplicate words.</p>
-    <p>After the words have been generated, some statistics are shown below, including how many words were printed to the output and how many words are possible based on the given Pattern and Subpatterns. (Note that the number of <em>unique</em> words possible may actually be lower if there are multiple ways to obtain the same word.)</p>
+    <p>After the words have been generated, some statistics are shown below, including how many words were printed to the output, how many duplicates were filtered out of the results (if any), and how many words are possible based on the given Pattern and Subpatterns. (Note that the number of <em>unique</em> words possible may actually be lower if there are multiple ways to obtain the same word.)</p>
     <h4 id='files'>Saving and Loading Settings</h4>
     <p>This functionality is planned.</p>
     <p>Clicking the <strong>Save</strong> button will save the current settings to the browser’s local storage and generate a small text file containing the current settings that can be saved to your disk. This text file can be loaded using the <strong>Open</strong> button to reload past settings.</p>
