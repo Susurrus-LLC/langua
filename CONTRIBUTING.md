@@ -38,13 +38,14 @@ Please post a new issue with your intentions and a description of the changes yo
 
 It is easy to work on code locally.
 
-```
+```bash
 git clone https://github.com/nai888/langua.git
 cd langua
+yarn
 yarn start
 ```
 
-This will start a virtual server running Langua at http://localhost:3000.
+This will start a virtual server running Langua at [http://localhost:3000](http://localhost:3000).
 
 #### Pull requests
 

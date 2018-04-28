@@ -35,16 +35,26 @@ LanguaTree is a tool for drawing and labeling syntax trees.
 
 ## Deployment
 
-Langua is a web-based tool built on JavaScript, and it does not use a database, so it can be installed almost anywhere without need for running a back-end server.
+Langua is a web-based tool built on JavaScript, and it does not use a database, so it can be installed almost anywhere without need for running a back-end server. You simply need to run the build command to build the files.
 
-- If you are installing in a website's root (e.g. a URL that ends in `.com`, `.org`, or similar), simply download and unpack the latest stable release onto the web server.
-- If you are installing in a subfolder (e.g. `*.com/langua/`), you will need to download the source files, change the basename for the router, and create a new build.
-  1. Open `index.js`.
-  1. Add the prop `basename={'/yoursubfolder'}` to the `<BrowserRouter>`. For example, if you are deploying to `*.com/langua/`, BrowserRouter should read `<BrowserRouter basename={'/langua'}>`.
-  1. Create a new build by running `yarn build`.
-  1. Copy all of the files from the /build folder and deploy them onto the web server.
+### Deployment to Root
 
-**Note: Langua is currently under development and no stable release is yet ready.**
+If you are installing Langua in a website's root (e.g. a URL that ends in `.com`, `.org`, or similar):
+
+1. Download and unpack the [latest release](https://github.com/nai888/langua/releases/latest).
+1. Install the dependencies with `yarn`.
+1. Build the project with `yarn build`.
+1. Copy the contents of the resulting /build folder onto your server. You're done!
+
+### Deployment to Subfolder
+
+If you are installing Langua in a subfolder (e.g. `*.com/langua/`), you will need to change the basename for the router before you build the project:
+
+1. Download and unpack the [latest release](https://github.com/nai888/langua/releases/latest).
+1. Install the dependencies with `yarn`.
+1. Open `index.js` and add the prop `basename={'/yoursubfolder'}` to the `<BrowserRouter>`. For example, if you are deploying to `*.com/langua/`, BrowserRouter should read `<BrowserRouter basename={'/langua'}>`.
+1. Build the project with `yarn build`.
+1. Copy the contents of the resulting /build folder into the appropriate subfolder on your server. You're done!
 
 ## Versioning
 
