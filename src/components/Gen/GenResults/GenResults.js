@@ -11,13 +11,9 @@ const GenResults = ({ classes, newLine, results, stats }) => {
 
   const statsText = () => {
     if (filtered > 0) {
-      return (
-        `words: ${words} (${filtered} filtered out); maximum different words: ${maxWords}`
-      )
+      return `words: ${words} (${filtered} filtered out); maximum different words: ${maxWords}`
     } else {
-      return (
-        `words: ${words}; maximum different words: ${maxWords}`
-      )
+      return `words: ${words}; maximum different words: ${maxWords}`
     }
   }
 

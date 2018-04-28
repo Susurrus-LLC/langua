@@ -203,14 +203,12 @@ class Gen extends React.Component {
             } else if (vars.indexOf(variab) === -1) {
               // If the current item in the Pattern is not a variable, add 1 to the count
               addCount += 1
-              console.log(addCount)
             } else {
               for (let k = 0; k < data.subpatterns.length; k++) {
                 const subpattern = data.subpatterns[k]
                 if (subpattern.selected === variab) {
                   // If the variable is defined, count how many options are in the Subpattern
                   multCount *= subpattern.subpattern.length
-                  console.log(multCount)
                   break
                 } else {
                   // If the variable is unused, skip it
