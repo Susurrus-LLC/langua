@@ -197,7 +197,7 @@ class Gen extends React.Component {
             const variab = pattArr[i][j]
             let addCount = 0
             let multCount = 1
-            if (variab === '(' || variab === ')' || variab === '[' || variab === ']' || variab === '^' || variab === '*' || variab === '"') {
+            if (/[()[\]^*"]/.test(variab)) {
               // For now, ignore the characters that will be used for operations
               continue
             } else if (vars.indexOf(variab) === -1) {
