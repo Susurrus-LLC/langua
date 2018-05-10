@@ -21,6 +21,7 @@ const GenForm = (props) => {
   const changeDupes = props.changeDupes
   const generate = props.generate
   const save = props.save
+  const open = props.open
 
   const selectOptions = vars.map((variab, index) => (
     <option
@@ -154,7 +155,10 @@ const GenForm = (props) => {
             </Button>
           </div>
           <div className={classes.controlPiece}>
-            <Button type='file'>
+            <Button
+              type='file'
+              onClick={open}
+            >
               Open
             </Button>
           </div>

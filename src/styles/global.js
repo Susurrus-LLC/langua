@@ -166,6 +166,15 @@ const styles = {
         bottom: `${v.lnht / 7}rem`,
         left: `${v.lnht / 2}rem`
       }
+    },
+    '.toast-update': {
+      backgroundColor: v.red.darken(0.1).alpha(0.9).string()
+    },
+    '.toast-cached': {
+      backgroundColor: v.blu.darken(0.1).alpha(0.9).string()
+    },
+    '.toast-offline': {
+      backgroundColor: v.ong.darken(0.1).alpha(0.9).string()
     }
   }
 }

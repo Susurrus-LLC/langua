@@ -67,18 +67,24 @@ function registerValidSW (swUrl) {
               // the fresh content will have been added to the cache.
               // It's the perfect time to display a "New content is
               // available; please refresh." message in your web app.
-              toast.warn('An update is available; please refresh the page.', {
-                autoClose: false
+              toast.warn('An update is available; please refresh the page to load it.', {
+                autoClose: false,
+                className: 'toast-update',
+                bodyClassName: 'toast-update-body',
+                progressClassName: 'toast-update-progress'
               })
-              console.log('New content is available; please refresh.')
+              console.log('An update is available; please refresh the page to load it.')
             } else {
               // At this point, everything has been precached.
               // It's the perfect time to display a
               // "Content is cached for offline use." message.
               toast.success('Langua has been successfully cached. You can now use it offline.', {
-                autoClose: 5000
+                autoClose: 5000,
+                className: 'toast-cached',
+                bodyClassName: 'toast-cached-body',
+                progressClassName: 'toast-cached-progress'
               })
-              console.log('Content is cached for offline use.')
+              console.log('Langua has been successfully cached. You can now use it offline.')
             }
           }
         }
@@ -110,7 +116,13 @@ function checkValidServiceWorker (swUrl) {
       }
     })
     .catch(() => {
-      console.log('No internet connection found. App is running in offline mode.')
+      toast.info('No internet connection found; Langua is running in offline mode.', {
+        autoClose: 5000,
+        className: 'toast-offline',
+        bodyClassName: 'toast-offline-body',
+        progressClassName: 'toast-offline-progress'
+      })
+      console.log('No internet connection found; Langua is running in offline mode.')
     })
 }
 

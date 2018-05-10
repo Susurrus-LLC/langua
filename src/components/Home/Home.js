@@ -30,6 +30,7 @@ const Home = ({classes}) => (
         <p className={classes.toolDescription}>LanguaTree is a tool for drawing and labeling syntax trees.</p>
       </Link>
     </div>
+    <p className={classes.siteDescription}>Langua is a full Progressive Web App; once the site has been loaded, its full functionality is available even offline. Langua can also be added to the homescreen of your tablet or mobile device for easy access.</p>
   </div>
 )
 

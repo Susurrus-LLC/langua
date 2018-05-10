@@ -5,15 +5,15 @@ import styles from './styles'
 
 const GenResults = ({ classes, newLine, results, stats }) => {
   let joinedResults = Array.prototype.join.call(results, `${newLine ? '\n' : ' '}`).trim()
-  let words = stats.words
-  let maxWords = stats.maxWords
-  let filtered = stats.filtered
+  let words = stats.words.toLocaleString()
+  let maxWords = stats.maxWords.toLocaleString()
+  let filtered = stats.filtered // If converted here, the comparison below won't work because the string will be NaN
 
   const statsText = () => {
     if (filtered > 0) {
-      return `words: ${words.toLocaleString()} (${filtered.toLocaleString()} filtered out); maximum different words: ${maxWords.toLocaleString()}`
+      return `words: ${words} (${filtered.toLocaleString()} filtered out); maximum different words: ${maxWords}`
     } else {
-      return `words: ${words.toLocaleString()}; maximum different words: ${maxWords.toLocaleString()}`
+      return `words: ${words}; maximum different words: ${maxWords}`
     }
   }
 

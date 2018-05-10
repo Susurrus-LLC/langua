@@ -28,6 +28,7 @@ class Gen extends React.Component {
     this.onChangeDupes = this.onChangeDupes.bind(this)
     this.onGenerate = this.onGenerate.bind(this)
     this.onSave = this.onSave.bind(this)
+    this.onOpen = this.onOpen.bind(this)
     this.classes = props.classes
     this.state = {
       data: this.getData(),
@@ -269,7 +270,7 @@ class Gen extends React.Component {
       for (let j = 0; j < patt.length; j++) {
         const variab = patt[j]
 
-        if (variab === '(' || variab === ')' || variab === '[' || variab === ']' || variab === '^' || variab === '*' || variab === '"') {
+        if (/[()[\]^*"]/.test(variab)) {
           // For now, ignore the characters that will be used for operations
           continue
         } else if (vars.indexOf(variab) === -1) {
@@ -326,6 +327,12 @@ class Gen extends React.Component {
     // Add a function to save this.state.data to a file
   }
 
+  // Open a file and parse it to restore a saved state
+  onOpen (e) {
+    e.preventDefault()
+    // Add a function to handle opening a saved document
+  }
+
   render () {
     const classes = this.classes
     const state = this.state
@@ -354,6 +361,7 @@ class Gen extends React.Component {
           changeDupes={this.onChangeDupes}
           generate={this.onGenerate}
           save={this.onSave}
+          open={this.onOpen}
         />
         <GenResults
           newLine={state.data.newline}
