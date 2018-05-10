@@ -9,6 +9,10 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 ### Added
 
 - Create this Changelog.
+- Add toast notifications to indicate:
+  - The app has been fully cached and can be accessed offline.
+  - An updated verision of the app is available and can be loaded by reloading the page.
+  - An internet connection is unavailable and the app is being served from the cache.
 
 ### Changed
 
@@ -19,7 +23,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 ### Removed
 
 - Delete the `console.log()` calls and reformatted some of the code within the Gen results function.
-- Remove react-snap from the build process for now, since it currently assigns CSS classes incorrectly.
+- Remove react-snap from the build process for now, since it currently assigns CSS classes incorrectly. (See [issue #11](https://github.com/nai888/langua/issues/11).)
 
 ## [v0.1.3] - 2018-04-27
 
