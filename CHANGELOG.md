@@ -8,15 +8,15 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Added
 
-- Create this Changelog.
-- Add toast notifications to indicate:
+- Create this Changelog. (See [issue #9](https://github.com/nai888/langua/issues/9).)
+- Add toast notifications to indicate: (See [issue #12](https://github.com/nai888/langua/issues/12).)
   - The app has been fully cached and can be accessed offline.
   - An updated verision of the app is available and can be loaded by reloading the page.
   - An internet connection is unavailable and the app is being served from the cache.
 
 ### Changed
 
-- Add locale formatting to the statistics shown at the bottom of the Gen page.
+- Add locale formatting to the statistics shown at the bottom of the Gen page. (See [issue #10](https://github.com/nai888/langua/issues/10).)
 - Reformat some of the code to use regex instead of naming several different possible matches.
 - Clarify deployment documentation in README.md.
 
