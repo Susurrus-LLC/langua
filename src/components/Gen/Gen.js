@@ -7,17 +7,14 @@ import HelpLink from '../HelpLink/HelpLink'
 import Notice from '../Notice/Notice'
 import GenForm from './GenForm/GenForm'
 import GenResults from './GenResults/GenResults'
+import genService from './GenService'
 
-import { defData, vars } from './defaultData'
+import { vars } from './defaultData'
 import { canonical, siteTitle } from '../../App'
 
 class Gen extends React.Component {
   constructor (props) {
     super(props)
-    this.storage = window.localStorage
-    this.item = 'gen'
-    this.getData = this.getData.bind(this)
-    this.setStorage = this.setStorage.bind(this)
     this.onChangeSelect = this.onChangeSelect.bind(this)
     this.onChangeSubpattern = this.onChangeSubpattern.bind(this)
     this.onClear = this.onClear.bind(this)
@@ -31,38 +28,13 @@ class Gen extends React.Component {
     this.onOpen = this.onOpen.bind(this)
     this.classes = props.classes
     this.state = {
-      data: this.getData(),
+      data: genService.getData(),
       results: '',
       stats: {
         words: 0,
         maxWords: 0,
         filtered: 0
       }
-    }
-  }
-
-  getData () {
-    let data
-
-    // Check if there is data in storage. If so, pull it. If not, pull the default data and store it.
-    if (typeof (Storage) !== 'undefined') {
-      if (this.storage.getItem(this.item)) {
-        data = JSON.parse(this.storage.getItem(this.item))
-      } else {
-        data = defData
-        this.storage.setItem(this.item, JSON.stringify(data))
-      }
-    } else {
-      data = defData
-    }
-
-    return data
-  }
-
-  // Store the current data in storage
-  setStorage (data) {
-    if (typeof (Storage) !== 'undefined') {
-      this.storage.setItem(this.item, JSON.stringify(data))
     }
   }
 
@@ -317,13 +289,13 @@ class Gen extends React.Component {
     }))
 
     // Save the current state to storage
-    this.setStorage(this.state.data)
+    genService.setStorage(this.state.data)
   }
 
   // Save the current state to storage and generate a file
   onSave (e) {
     e.preventDefault()
-    this.setStorage(this.state.data)
+    genService.setStorage(this.state.data)
     // Add a function to save this.state.data to a file
   }
 

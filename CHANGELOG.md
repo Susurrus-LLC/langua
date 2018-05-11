@@ -18,7 +18,9 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Add locale formatting to the statistics shown at the bottom of the Gen page. (See [issue #10](https://github.com/nai888/langua/issues/10).)
 - Reformat some of the code to use regex instead of naming several different possible matches.
+- Refactor code from Gen component to GenService external service.
 - Clarify deployment documentation in README.md.
+- Update dependencies.
 
 ### Removed
 
