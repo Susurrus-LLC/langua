@@ -19,7 +19,7 @@ const Footer = ({classes}) => (
     <div className={classes.footer}>
       <p className={classes.copyright}>
         <a
-          href={appGhURL + '#versioning'}
+          href={appGhURL + '/blob/master/CHANGELOG.md'}
           target='_blank'
           rel='noopener noreferrer'
         >
