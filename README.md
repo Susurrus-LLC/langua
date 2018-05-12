@@ -41,7 +41,7 @@ Langua is a web-based tool built on JavaScript, and it does not use a database, 
 
 If you are installing Langua in a website's root (e.g. a URL that ends in `.com`, `.org`, or similar):
 
-1. Download and unpack the [latest release](./releases/latest).
+1. Download and unpack the [latest release](../../releases/latest).
 1. Install the dependencies with `yarn`.
 1. Build the project with `yarn build`.
 1. Copy the contents of the resulting /build folder onto your server. You're done!
@@ -50,7 +50,7 @@ If you are installing Langua in a website's root (e.g. a URL that ends in `.com`
 
 If you are installing Langua in a subfolder (e.g. `*.com/langua/`), you will need to change the basename for the router before you build the project:
 
-1. Download and unpack the [latest release](./releases/latest).
+1. Download and unpack the [latest release](../../releases/latest).
 1. Install the dependencies with `yarn`.
 1. Open `index.js` and add the prop `basename={'/yoursubfolder'}` to the `<BrowserRouter>`. For example, if you are deploying to `*.com/langua/`, BrowserRouter should read `<BrowserRouter basename={'/langua'}>`.
 1. Build the project with `yarn build`.
@@ -60,7 +60,7 @@ If you are installing Langua in a subfolder (e.g. `*.com/langua/`), you will nee
 
 Langua uses an unstable Master branch. The master branch is used for development, while stable versions are provided as releases. Version numbering is similar to [Semantic Versioning](http://semver.org/); versions are listed as x.y.z., wherein z refers to bug fixes and very minor updates, y refers to minor additions and updates to functionality, and x refers to major updates or overhauls to the program that significantly impact workflow or the use of the program.
 
-For a full list of all changes made in each version of Langua, see the [Changelog](./blob/master/CHANGELOG.md).
+For a full list of all changes made in each version of Langua, see the [Changelog](./CHANGELOG.md).
 
 ## Development Roadmap
 
@@ -74,13 +74,13 @@ For a full list of all changes made in each version of Langua, see the [Changelo
 
 ## Contributing
 
-Please review the [contributing guidelines](./blob/master/.github/CONTRIBUTING.md) before contributing.
+Please review the [contributing guidelines](./.github/CONTRIBUTING.md) and [code of conduct](./CODE_OF_CONDUCT.md) before contributing.
 
 ## Authors
 
 - [Ian A. Cook](https://github.com/nai888)
 
-See also the list of [people who have contributed](./graphs/contributors) to this project.
+See also the list of [people who have contributed](../../graphs/contributors) to this project.
 
 ## Acknowledgments
 
