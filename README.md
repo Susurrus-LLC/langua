@@ -74,7 +74,7 @@ For a full list of all changes made in each version of Langua, see the [Changelo
 
 ## Contributing
 
-Please review the [contributing guidelines](./.github/CONTRIBUTING.md) and [code of conduct](./CODE_OF_CONDUCT.md) before contributing.
+Please review the [contributing guidelines](./CONTRIBUTING.md) and [code of conduct](./CODE_OF_CONDUCT.md) before contributing.
 
 ## Authors
 
