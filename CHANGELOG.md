@@ -6,6 +6,14 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased]
 
+### Added 0.1.5
+
+### Changed 0.1.5
+
+- Refactor GenService so it reads in order without needing to call an internal function for getStats().
+- Change internal links in the README to relative links.
+- Link to the CHANGELOG in the footer instead of to the README#versioning header.
+
 ## [v0.1.4] - 2018-05-12
 
 ### Added 0.1.4

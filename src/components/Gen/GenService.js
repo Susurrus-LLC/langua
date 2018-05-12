@@ -143,71 +143,13 @@ class GenService {
 
   // Generate the output
   generate (data) {
-    // Calculate the stats on the generated output
-    const getStats = (statsData, results) => {
-      // Calculate the maximum number of words
-      const pattArr = statsData.pattern.split('/')
-
-      let count = 0
-
-      for (let i = 0; i < pattArr.length; i++) {
-        let optCount = 1
-        if (pattArr[i].length === 0) {
-          optCount = 0
-          break
-        } else {
-          for (let j = 0; j < pattArr[i].length; j++) {
-            const variab = pattArr[i][j]
-            let addCount = 0
-            let multCount = 1
-            if (/[()[\]^*"]/.test(variab)) {
-              // For now, ignore the characters that will be used for operations
-              continue
-            } else if (vars.indexOf(variab) === -1) {
-              // If the current item in the Pattern is not a variable, add 1 to the count
-              addCount += 1
-            } else {
-              for (let k = 0; k < statsData.subpatterns.length; k++) {
-                const subpattern = statsData.subpatterns[k]
-                if (subpattern.selected === variab) {
-                  // If the variable is defined, count how many options are in the Subpattern
-                  multCount *= subpattern.subpattern.length
-                  break
-                } else {
-                  // If the variable is unused, skip it
-                  continue
-                }
-              }
-            }
-            optCount *= multCount
-            optCount += addCount
-          }
-        }
-        count += optCount
-      }
-
-      // If there are results, count how many words there are
-      let words = 0
-      if (results[0].length !== 0) {
-        words = results.length
-      }
-
-      let filtered = 0
-      if (statsData.filterdupes) {
-        filtered = statsData.words - words
-      }
-
-      let stats = {
-        words: words,
-        maxWords: count,
-        filtered: filtered
-      }
-
-      return stats
-    }
-
     let results = []
     let newData = JSON.parse(JSON.stringify(data))
+
+    // Randomly choose from the items in an array
+    const chooseRand = (length) => {
+      return Math.floor(Math.random() * length)
+    }
 
     // Split all the Subpatterns into arrays based on '/'
     for (let i = 0; i < newData.subpatterns.length; i++) {
@@ -216,11 +158,6 @@ class GenService {
 
     // Split the Pattern into an array based on '/'
     const pattArr = newData.pattern.split('/')
-
-    // Randomly choose from the items in an array
-    const chooseRand = (length) => {
-      return Math.floor(Math.random() * length)
-    }
 
     // Generate the number of words requested in the settings
     for (let i = 0; i < newData.words; i++) {
@@ -258,7 +195,7 @@ class GenService {
 
       // If filtering duplicates, only push unique words to the results
       if (newData.filterdupes) {
-        if (results.indexOf(word) === -1) {
+        if (!results.includes(word)) {
           results.push(word)
         } else {
           continue
@@ -268,9 +205,65 @@ class GenService {
       }
     }
 
+    // Calculate the stats on the generated output
+
+    // Calculate the maximum number of words
+    let count = 0
+
+    for (let i = 0; i < pattArr.length; i++) {
+      let optCount = 1
+      if (pattArr[i].length === 0) {
+        optCount = 0
+        break
+      } else {
+        for (let j = 0; j < pattArr[i].length; j++) {
+          const variab = pattArr[i][j]
+          let addCount = 0
+          let multCount = 1
+          if (/[()[\]^*"]/.test(variab)) {
+            // For now, ignore the characters that will be used for operations
+            continue
+          } else if (vars.indexOf(variab) === -1) {
+            // If the current item in the Pattern is not a variable, add 1 to the count
+            addCount += 1
+          } else {
+            for (let k = 0; k < newData.subpatterns.length; k++) {
+              const subpattern = newData.subpatterns[k]
+              if (subpattern.selected === variab) {
+                // If the variable is defined, count how many options are in the Subpattern
+                multCount *= subpattern.subpattern.length
+                break
+              } else {
+                // If the variable is unused, skip it
+                continue
+              }
+            }
+          }
+          optCount *= multCount
+          optCount += addCount
+        }
+      }
+      count += optCount
+    }
+
+    // If there are results, count how many words there are
+    let words = 0
+    if (results[0].length !== 0) {
+      words = results.length
+    }
+
+    let filtered = 0
+    if (newData.filterdupes) {
+      filtered = newData.words - words
+    }
+
     const response = {
       results: results,
-      stats: getStats(newData, results)
+      stats: {
+        words: words,
+        maxWords: count,
+        filtered: filtered
+      }
     }
 
     return response
