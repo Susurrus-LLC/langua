@@ -4,7 +4,7 @@ import injectSheet from 'react-jss'
 
 import styles from './styles'
 import Notice from '../../Notice/Notice'
-import HelpLink from '../../HelpLink/HelpLink'
+import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
@@ -15,9 +15,9 @@ const FrequenHelp = ({classes}) => (
       <meta name='description' content='LanguaFrequen is a tool for analyzing phoneme frequencies in a given text.' />
       <link rel='canonical' href={`${canonical}frequen/help/`} />
     </Helmet>
-    <HelpLink link='/frequen'>
+    <ButtonLink route='/frequen'>
       Back
-    </HelpLink>
+    </ButtonLink>
     <h2 className='toolTitle'>LanguaFrequen Help</h2>
     <Notice>This tool is still in planning.</Notice>
   </div>

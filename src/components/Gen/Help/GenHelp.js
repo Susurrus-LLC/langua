@@ -4,7 +4,7 @@ import injectSheet from 'react-jss'
 
 import styles from './styles'
 import Notice from '../../Notice/Notice'
-import HelpLink from '../../HelpLink/HelpLink'
+import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
@@ -15,9 +15,9 @@ const GenHelp = ({classes}) => (
       <meta name='description' content='LanguaGen is a tool for automatically building a set of words based on arbitrary rules of phonotactics.' />
       <link rel='canonical' href={`${canonical}gen/help/`} />
     </Helmet>
-    <HelpLink link='/gen'>
+    <ButtonLink route='/gen'>
       Back
-    </HelpLink>
+    </ButtonLink>
     <h2 className='toolTitle'>LanguaGen Help</h2>
     <Notice>This tool is still in development. More instructions will be added to this help file as the tool is fleshed out.</Notice>
     <p id='description'>LanguaGen is a tool for automatically building a set of words based on arbitrary rules of phonotactics. This can be used to create a dummy vocabulary for linguistic experimentation, to generate words or names for a naming language in a work of fantasy or science fiction, or as the basis for building the vocabulary of a constructed language.</p>

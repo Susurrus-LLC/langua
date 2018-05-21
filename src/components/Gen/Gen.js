@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
 
 import styles from './styles'
-import HelpLink from '../HelpLink/HelpLink'
+import ButtonLink from '../Button/ButtonLink'
 import Notice from '../Notice/Notice'
 import GenForm from './GenForm/GenForm'
 import GenResults from './GenResults/GenResults'
@@ -142,9 +142,9 @@ class Gen extends React.Component {
           <meta name='description' content='LanguaGen is a tool for automatically building a set of words based on arbitrary rules of phonotactics.' />
           <link rel='canonical' href={`${canonical}gen/`} />
         </Helmet>
-        <HelpLink link='/gen/help'>
+        <ButtonLink route='/gen/help'>
           Help
-        </HelpLink>
+        </ButtonLink>
         <h2 className='toolTitle'>LanguaGen</h2>
         <Notice>This tool is still in development. Please be patient until it is complete.</Notice>
         <GenForm

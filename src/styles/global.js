@@ -118,6 +118,7 @@ const styles = {
     button: {
       fontFamily: v.mainFont,
       fontSize: `${v.ms1}rem`,
+      cursor: 'pointer',
       border: {
         width: '1px',
         style: 'solid',

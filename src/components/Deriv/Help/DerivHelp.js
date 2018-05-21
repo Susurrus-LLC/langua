@@ -4,7 +4,7 @@ import injectSheet from 'react-jss'
 
 import styles from './styles'
 import Notice from '../../Notice/Notice'
-import HelpLink from '../../HelpLink/HelpLink'
+import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
@@ -15,9 +15,9 @@ const DerivHelp = ({classes}) => (
       <meta name='description' content='LanguaDeriv is a tool for modeling word derivation according to arbitrary rules of morphosyntactics.' />
       <link rel='canonical' href={`${canonical}deriv/help/`} />
     </Helmet>
-    <HelpLink link='/deriv'>
+    <ButtonLink route='/deriv'>
       Back
-    </HelpLink>
+    </ButtonLink>
     <h2 className='toolTitle'>LanguaDeriv Help</h2>
     <Notice>This tool is still in planning.</Notice>
   </div>

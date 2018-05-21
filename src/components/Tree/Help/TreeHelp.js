@@ -4,7 +4,7 @@ import injectSheet from 'react-jss'
 
 import styles from './styles'
 import Notice from '../../Notice/Notice'
-import HelpLink from '../../HelpLink/HelpLink'
+import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
@@ -15,9 +15,9 @@ const TreeHelp = ({classes}) => (
       <meta name='description' content='LanguaTree is a tool for drawing and labeling syntax trees.' />
       <link rel='canonical' href={`${canonical}tree/help/`} />
     </Helmet>
-    <HelpLink link='/tree'>
+    <ButtonLink route='/tree'>
       Back
-    </HelpLink>
+    </ButtonLink>
     <h2 className='toolTitle'>LanguaTree Help</h2>
     <Notice>This tool is still in planning.</Notice>
   </div>

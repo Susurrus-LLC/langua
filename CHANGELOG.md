@@ -10,6 +10,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Changed 0.1.5
 
+- Change HelpLink component (a link styled like a button) to a ButtonLink component (a button that changes the URL). (See [issue #13](https://github.com/nai888/langua/issues/13).)
 - Refactor GenService so it reads in order without needing to call an internal function for getStats().
 - Change internal links in the README to relative links.
 - Link to the CHANGELOG in the footer instead of to the README#versioning header.

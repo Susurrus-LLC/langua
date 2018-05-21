@@ -100,6 +100,9 @@ const styles = {
       color: v.white.string()
     }
   },
+  buttonLink: {
+    float: 'right'
+  },
   small: {
     fontSize: `${v.ms0}rem`,
     padding: `${v.ms1 / 2}rem`
