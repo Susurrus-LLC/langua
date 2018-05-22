@@ -10,7 +10,7 @@ const ButtonLink = (props) => {
   }
 
   return (
-    <Button ver={props.buttonType} addClass={'buttonLink'} onClick={onClick}>
+    <Button ver={props.buttonType} addClass={'buttonLink'} onClick={onClick} role='link'>
       {props.children}
     </Button>
   )

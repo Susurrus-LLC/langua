@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import styles from './styles'
 
-const Button = ({ classes, addClass, onClick, type, ver, id, children }) => {
+const Button = ({ classes, addClass, onClick, type, ver, id, role, children }) => {
   const filterClass = (ver, classes) => {
     if (ver === 'neutral') {
       return classes.neutral
@@ -32,6 +32,7 @@ const Button = ({ classes, addClass, onClick, type, ver, id, children }) => {
         id={id}
         className={classNames(classes.btn, filterClass(ver, classes), classes[addClass])}
         type={type}
+        role={role || 'button'}
       >
         {children}
       </button>

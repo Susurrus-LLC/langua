@@ -8,6 +8,8 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Added 0.1.5
 
+- Add `role` to `<button>` elements, and give `ButtonLink` components `role='link'`.
+
 ### Changed 0.1.5
 
 - Change HelpLink component (a link styled like a button) to a ButtonLink component (a button that changes the URL). (See [issue #13](https://github.com/nai888/langua/issues/13).)
