@@ -98,7 +98,7 @@ Langua was inspired by several existing tools, including:
 
 Thank you to [Travis CI](https://travis-ci.com) and [BrowserStack](https://www.browserstack.com) for offering free services to open source projects!
 
-[![Travis CI](./Logo Travis CI.png)](https://travis-ci.com "Travis CI") [![BrowserStack](./Logo BrowserStack.png)](https://www.browserstack.com "BrowserStack")
+[![Travis CI](./Logo%20Travis%20CI.png)](https://travis-ci.com "Travis CI") [![BrowserStack](./Logo%20BrowserStack.png)](https://www.browserstack.com "BrowserStack")
 
 ## License
 
