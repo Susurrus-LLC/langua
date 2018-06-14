@@ -1,5 +1,7 @@
 # Langua
 
+[![Build Status](https://travis-ci.com/nai888/langua.svg?branch=master)](https://travis-ci.com/nai888/langua)
+
 1. [Overview](#overview)
 1. [Deployment](#deployment)
 1. [Versioning](#versioning)
