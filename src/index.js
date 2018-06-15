@@ -8,10 +8,15 @@ import registerServiceWorker from './registerServiceWorker'
 import App from './App'
 
 const Router = () => (
-  <BrowserRouter>
+  <BrowserRouter
+    // If deploying to the subfolder '/langua', leave as-is.
+    // If deploying to a different subfolder, change the basename below accordingly.
+    // If deploying to the root of a site, remove the basename prop completely.
+    basename={'/langua'}
+  >
     <App />
   </BrowserRouter>
-) // Add prop basename={'/langua'} to BrowserRouter before building and deploying to GitHub
+)
 
 const Site = injectSheet(styles)(Router)
 

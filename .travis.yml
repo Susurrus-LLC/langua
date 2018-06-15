@@ -15,3 +15,8 @@ deploy:
   local_dir: build
   on:
     branch: master
+addons:
+  browserstack:
+    username: "iancook3"
+    access_key:
+      secure: "LCsLq5xwD29+T3b+BCYB/JhA5gy1QJAFtifEJL/k5+yftI3evejEhvdZVA8vlLXW9cKV9M4xRRazND48Stn7ZBGqR8XfL+CxB76ErnNW1ECbfCeqm7ucXbsS+7crOqjMbRwgtjrupayuz9ZrDDhYm2p3POALE64rn/GvefzrTrcIks4SKA28MO7OWeWLEnIH8thHpGPqd4+SBaeN/xWjhPPlsuIvADnTcI59JDHwO96MtZxcPQBjQwz0RrZ+/mXyxkHx1QCelNU9Gnj9kGXOf/zcwyjxTx3I3tBkpPWVc8/Lu0V3pkDS7AxnIBJQmrrQGP+6GNXJmMM3ggsHBvWxsOM1zJ3fetJAq1i7wR2NPd1hEBG9GVR5Lm1zoQJ9cIkNM4R/ZaIc9VpHROBjeRVuBxBSNLI6lrUg3Ak3vF1wxF8pFCEl1qEJGBvqVyAdjSpIiVhH5YmKpTTFJkk66XhSnyPESQNe7CQdYbPeNHrav7+Yzmv8L5vcqc28W4sexpcTUayguOH9Eyb/zbowjeMVixZmJumLEGC4M9sZ2cVCAbvv99cIr/lr1t4tgrJ4Q6MGfgGimnXFA9UoNjAKvXrR6Mp6ANRoRTeIPboD9V0BolkjVBAAvMojEtY+c4XvngPh0B/eKcD5ERFh3TDT01pX9JPB/rlSM1VYOe8SFlYcfNQ="
