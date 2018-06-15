@@ -1,4 +1,4 @@
-import * as Color from 'color'
+import Color from 'color'
 import { harmoniousMix, mixNeutral } from './functions'
 
 export const mainFont = '"Noto Sans", Helvetica, Arial, sans-serif'
