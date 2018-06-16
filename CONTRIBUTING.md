@@ -1,5 +1,7 @@
 # Contributing to Langua
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+
 Thank you for taking the time to contribute to Langua! :+1::tada:
 
 ## Code of Conduct
@@ -52,5 +54,7 @@ This will start a virtual server running Langua at [http://localhost:3000](http:
 When creating a pull request, always use the [pull request template](https://github.com/nai888/langua/blob/master/.github/PULL_REQUEST_TEMPLATE.md) and provide all required information along with a clear and descriptive title and any other relevant details. Do not include issue numbers in the title; *do* link to related issues in the body of the pull request. If needed, include a screenshot or animate GIF to demonstrate your changes.
 
 ## Styles
+
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](http://standardjs.com)
 
 All JavaScript must adhere to the [JavaScript Standard Style](https://standardjs.com/).
