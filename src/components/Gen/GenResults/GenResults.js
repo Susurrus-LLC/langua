@@ -1,13 +1,14 @@
 import React from 'react'
 import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
 
 import styles from './styles'
 
-const GenResults = ({ classes, newLine, results, stats }) => {
-  let joinedResults = Array.prototype.join.call(results, `${newLine ? '\n' : ' '}`).trim()
-  let words = stats.words.toLocaleString()
-  let maxWords = stats.maxWords.toLocaleString()
-  let filtered = stats.filtered // If converted here, the comparison below won't work because the string will be NaN
+const GenResults = (props) => {
+  let joinedResults = Array.prototype.join.call(props.results, `${props.newLine ? '\n' : ' '}`).trim()
+  let words = props.stats.words.toLocaleString()
+  let maxWords = props.stats.maxWords.toLocaleString()
+  let filtered = props.stats.filtered // If converted here, the comparison below won't work because the string will be NaN
 
   const statsText = () => {
     if (filtered > 0) {
@@ -18,19 +19,26 @@ const GenResults = ({ classes, newLine, results, stats }) => {
   }
 
   return (
-    <div className={classes.results}>
-      <div className={classes.output}>
-        <p className={classes.outText}>
+    <div className={props.classes.results}>
+      <div className={props.classes.output}>
+        <p className={props.classes.outText}>
           {joinedResults}
         </p>
       </div>
-      <div className={classes.stats}>
-        <p className={classes.statsText}>
+      <div className={props.classes.stats}>
+        <p className={props.classes.statsText}>
           {statsText()}
         </p>
       </div>
     </div>
   )
+}
+
+GenResults.propTypes = {
+  classes: PropTypes.object.isRequired,
+  newLine: PropTypes.bool.isRequired,
+  results: PropTypes.array.isRequired,
+  stats: PropTypes.object.isRequired
 }
 
 export default injectSheet(styles)(GenResults)

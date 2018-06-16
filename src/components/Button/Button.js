@@ -1,10 +1,11 @@
 import React from 'react'
 import injectSheet from 'react-jss'
 import classNames from 'classnames'
+import PropTypes from 'prop-types'
 
 import styles from './styles'
 
-const Button = ({ classes, addClass, onClick, type, ver, id, role, children }) => {
+const Button = (props) => {
   const filterClass = (ver, classes) => {
     if (ver === 'neutral') {
       return classes.neutral
@@ -12,32 +13,45 @@ const Button = ({ classes, addClass, onClick, type, ver, id, role, children }) =
       return classes.success
     } else if (ver === 'danger') {
       return classes.danger
+    } else {
+      return null
     }
   }
 
-  if (type === 'file' && type === 'this is not ready yet') {
+  if (props.type === 'file' && props.type === 'this is not ready yet') {
     // This still needs to be ironed out
     return (
       <input
-        onClick={onClick}
-        id={id}
-        className={classNames(classes.btn, filterClass(ver, classes), classes[addClass])}
-        type={type}
+        onClick={props.onClick}
+        id={props.id}
+        className={classNames(props.classes.btn, filterClass(props.ver, props.classes), props.classes[props.addClass])}
+        type={props.type}
       />
     )
   } else {
     return (
       <button
-        onClick={onClick}
-        id={id}
-        className={classNames(classes.btn, filterClass(ver, classes), classes[addClass])}
-        type={type}
-        role={role || 'button'}
+        onClick={props.onClick}
+        id={props.id}
+        className={classNames(props.classes.btn, filterClass(props.ver, props.classes), props.classes[props.addClass])}
+        type={props.type}
+        role={props.role || 'button'}
       >
-        {children}
+        {props.children}
       </button>
     )
   }
+}
+
+Button.propTypes = {
+  classes: PropTypes.object.isRequired,
+  addClass: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  ver: PropTypes.string,
+  id: PropTypes.string,
+  role: PropTypes.string,
+  children: PropTypes.element.isRequired
 }
 
 export default injectSheet(styles)(Button)

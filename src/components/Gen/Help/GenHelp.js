@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
 
 import styles from './styles'
 import Notice from '../../Notice/Notice'
@@ -8,8 +9,8 @@ import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
-const GenHelp = ({classes}) => (
-  <div className={classes.genHelp}>
+const GenHelp = (props) => (
+  <div className={props.classes.genHelp}>
     <Helmet>
       <title>{siteTitle} Gen Help</title>
       <meta name='description' content='LanguaGen is a tool for automatically building a set of words based on arbitrary rules of phonotactics.' />
@@ -48,5 +49,9 @@ const GenHelp = ({classes}) => (
     <p>Clicking the <strong>Save</strong> button will save the current settings to the browser’s local storage and generate a small text file containing the current settings that can be saved to your disk. This text file can be loaded using the <strong>Open</strong> button to reload past settings.</p>
   </div>
 )
+
+GenHelp.propTypes = {
+  classes: PropTypes.object.isRequired
+}
 
 export default injectSheet(styles)(GenHelp)

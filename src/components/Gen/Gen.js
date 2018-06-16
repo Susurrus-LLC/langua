@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
 
 import styles from './styles'
 import ButtonLink from '../Button/ButtonLink'
@@ -169,6 +170,10 @@ class Gen extends React.Component {
       </div>
     )
   }
+}
+
+Gen.propTypes = {
+  classes: PropTypes.object.isRequired
 }
 
 export default injectSheet(styles)(Gen)

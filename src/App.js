@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
 import 'normalize.css/normalize.css'
 
 import * as v from './styles/variables'
@@ -13,8 +14,8 @@ import Footer from './components/Footer/Footer'
 export const canonical = 'https://nai888.github.io/langua/'
 export const siteTitle = 'Langua |'
 
-const App = ({classes}) => (
-  <div className={classes.app}>
+const App = (props) => (
+  <div className={props.classes.app}>
     <Helmet>
       <title>{siteTitle} Language Tools</title>
       <meta charset='utf-8' />
@@ -31,5 +32,9 @@ const App = ({classes}) => (
     <Footer />
   </div>
 )
+
+App.propTypes = {
+  classes: PropTypes.object.isRequired
+}
 
 export default injectSheet(styles)(App)

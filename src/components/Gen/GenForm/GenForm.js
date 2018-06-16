@@ -1,6 +1,7 @@
 import React from 'react'
 import injectSheet from 'react-jss'
 import classNames from 'classnames'
+import PropTypes from 'prop-types'
 
 import Button from '../../Button/Button'
 
@@ -9,20 +10,6 @@ import { vars } from '../defaultData'
 import styles from './styles'
 
 const GenForm = (props) => {
-  const classes = props.classes
-  const data = props.data
-  const changeSelect = props.changeSelect
-  const changeSubpattern = props.changeSubpattern
-  const clear = props.clear
-  const add = props.add
-  const changePattern = props.changePattern
-  const changeWordNum = props.changeWordNum
-  const changeNewline = props.changeNewline
-  const changeDupes = props.changeDupes
-  const generate = props.generate
-  const save = props.save
-  const open = props.open
-
   const selectOptions = vars.map((variab, index) => (
     <option
       key={index}
@@ -32,29 +19,29 @@ const GenForm = (props) => {
     </option>
   ))
 
-  const subpatternRows = data.subpatterns.map((subpattern, index) => (
+  const subpatternRows = props.data.subpatterns.map((subpattern, index) => (
     <div
       key={index}
-      className={classes.subpsRow}
+      className={props.classes.subpsRow}
     >
       <select
         id={`v${index}`}
         value={subpattern.selected}
-        onChange={changeSelect}
+        onChange={props.changeSelect}
       >
         {selectOptions}
       </select>
       <input
         type='text'
         id={`p${index}`}
-        className={classes.subpatternInput}
+        className={props.classes.subpatternInput}
         value={subpattern.subpattern}
-        onChange={changeSubpattern}
+        onChange={props.changeSubpattern}
       />
-      <div className={classes.clearButton}>
+      <div className={props.classes.clearButton}>
         <Button
           id={`c${index}`}
-          onClick={clear}
+          onClick={props.clear}
           ver='danger'
           addClass='small'
         >
@@ -65,11 +52,11 @@ const GenForm = (props) => {
   ))
 
   const addButton = () => {
-    if (data.subpatterns.length < vars.length) {
+    if (props.data.subpatterns.length < vars.length) {
       return (
-        <div className={classes.addingRow}>
+        <div className={props.classes.addingRow}>
           <Button
-            onClick={add}
+            onClick={props.add}
             ver='success'
             addClass='small'
           >
@@ -81,83 +68,83 @@ const GenForm = (props) => {
   }
 
   return (
-    <form className={classes.form}>
-      <div className={classNames(classes.subpatterns, classes.part)}>
-        <h5 className={classes.sectionTitle}>Subpatterns</h5>
+    <form className={props.classes.form}>
+      <div className={classNames(props.classes.subpatterns, props.classes.part)}>
+        <h5 className={props.classes.sectionTitle}>Subpatterns</h5>
         {subpatternRows}
         {addButton()}
       </div>
-      <div className={classNames(classes.pattern, classes.part)}>
-        <h5 className={classes.sectionTitle}>Pattern</h5>
+      <div className={classNames(props.classes.pattern, props.classes.part)}>
+        <h5 className={props.classes.sectionTitle}>Pattern</h5>
         <input
           type='text'
           id='pattern'
-          className={classes.patternInput}
-          value={data.pattern}
-          onChange={changePattern}
+          className={props.classes.patternInput}
+          value={props.data.pattern}
+          onChange={props.changePattern}
         />
       </div>
-      <div className={classNames(classes.control, classes.part)}>
-        <div className={classes.controlLeft}>
-          <div className={classes.controlPiece}>
+      <div className={classNames(props.classes.control, props.classes.part)}>
+        <div className={props.classes.controlLeft}>
+          <div className={props.classes.controlPiece}>
             <Button
-              onClick={generate}
+              onClick={props.generate}
               type='submit'
               ver='neutral'
             >
               Generate
             </Button>
           </div>
-          <div className={classes.controlPiece}>
+          <div className={props.classes.controlPiece}>
             <label htmlFor='words'>words:</label>
             <input
               type='number'
               id='words'
               min='1'
               max='9999'
-              className={classes.wordsInput}
-              value={data.words}
-              onChange={changeWordNum}
+              className={props.classes.wordsInput}
+              value={props.data.words}
+              onChange={props.changeWordNum}
             />
           </div>
-          <div className={classes.controlPiece}>
+          <div className={props.classes.controlPiece}>
             <label>
               <input
                 type='checkbox'
                 id='newline'
                 name='options'
                 value='newline'
-                checked={data.newline}
-                onChange={changeNewline}
+                checked={props.data.newline}
+                onChange={props.changeNewline}
               /> new line each
             </label>
           </div>
-          <div className={classes.controlPiece}>
+          <div className={props.classes.controlPiece}>
             <label>
               <input
                 type='checkbox'
                 id='filterdupes'
                 name='options'
                 value='filterdupes'
-                checked={data.filterdupes}
-                onChange={changeDupes}
+                checked={props.data.filterdupes}
+                onChange={props.changeDupes}
               /> filter duplicates
             </label>
           </div>
         </div>
-        <div className={classes.controlRight}>
-          <div className={classes.controlPiece}>
+        <div className={props.classes.controlRight}>
+          <div className={props.classes.controlPiece}>
             <Button
               ver='success'
-              onClick={save}
+              onClick={props.save}
             >
               Save
             </Button>
           </div>
-          <div className={classes.controlPiece}>
+          <div className={props.classes.controlPiece}>
             <Button
               type='file'
-              onClick={open}
+              onClick={props.open}
             >
               Open
             </Button>
@@ -166,6 +153,22 @@ const GenForm = (props) => {
       </div>
     </form>
   )
+}
+
+GenForm.propTypes = {
+  classes: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
+  changeSelect: PropTypes.func.isRequired,
+  changeSubpattern: PropTypes.func.isRequired,
+  clear: PropTypes.func.isRequired,
+  add: PropTypes.func.isRequired,
+  changePattern: PropTypes.func.isRequired,
+  changeWordNum: PropTypes.func.isRequired,
+  changeNewline: PropTypes.func.isRequired,
+  changeDupes: PropTypes.func.isRequired,
+  generate: PropTypes.func.isRequired,
+  save: PropTypes.func.isRequired,
+  open: PropTypes.func.isRequired
 }
 
 export default injectSheet(styles)(GenForm)

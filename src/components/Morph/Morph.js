@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
 
 import styles from './styles'
 import Notice from '../Notice/Notice'
@@ -8,8 +9,8 @@ import ButtonLink from '../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../App'
 
-const Morph = ({classes}) => (
-  <div className={classes.morph}>
+const Morph = (props) => (
+  <div className={props.classes.morph}>
     <Helmet>
       <title>{siteTitle} Morph</title>
       <meta name='description' content='LanguaMorph is a tool for modeling historical sound change according to arbitrary rules of phonetic change. It can also be used to reverse historical sound change according to those same rules in order to guess at a word’s proto-language roots.' />
@@ -22,5 +23,9 @@ const Morph = ({classes}) => (
     <Notice>This tool is still in planning.</Notice>
   </div>
 )
+
+Morph.propTypes = {
+  classes: PropTypes.object.isRequired
+}
 
 export default injectSheet(styles)(Morph)

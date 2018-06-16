@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
 import { ToastContainer, toast, Flip } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -18,9 +19,9 @@ import MorphHelp from '../Morph/Help/MorphHelp'
 import Tree from '../Tree/Tree'
 import TreeHelp from '../Tree/Help/TreeHelp'
 
-const Main = ({classes}) => (
+const Main = (props) => (
   <main>
-    <div className={classes.main}>
+    <div className={props.classes.main}>
       <Switch>
         <Route path='/deriv/help' component={DerivHelp} />
         <Route path='/deriv/' component={Deriv} />
@@ -42,5 +43,9 @@ const Main = ({classes}) => (
     />
   </main>
 )
+
+Main.propTypes = {
+  classes: PropTypes.object.isRequired
+}
 
 export default injectSheet(styles)(Main)
