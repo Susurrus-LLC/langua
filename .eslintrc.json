@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "plugin:flowtype/recommended",
+    "react-app",
+    "standard",
+    "standard-flow"
+  ],
+  "plugins": [
+    "flowtype"
+  ],
+  "rules": {
+    "flowtype/define-flow-type": 1,
+    "flowtype/use-flow-type": 1
+  }
+}

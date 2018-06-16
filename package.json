@@ -14,6 +14,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "lint": "eslint ./src",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -30,6 +31,17 @@
     "react-toastify": "^4.0.1"
   },
   "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-config-standard-flow": "^1.0.1",
+    "eslint-plugin-flowtype": "^2.49.3",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.9.1",
+    "eslint-plugin-standard": "^3.1.0",
     "flow-bin": "^0.74.0",
     "react-snap": "^1.12.2",
     "react-test-renderer": "^16.4.1"
