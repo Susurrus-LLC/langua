@@ -1,12 +1,24 @@
+// @flow
 import React from 'react'
 import injectSheet from 'react-jss'
+import type Classes from 'react-jss'
 import classNames from 'classnames'
-import PropTypes from 'prop-types'
 
 import styles from './styles'
 
-const Button = (props) => {
-  const filterClass = (ver, classes) => {
+type props = {
+  classes: Classes,
+  addClass?: string,
+  onClick(): void,
+  type?: string,
+  ver?: string,
+  id?: string,
+  role?: string,
+  children: string
+}
+
+const Button = (props: props) => {
+  const filterClass = (ver: typeof props.ver, classes: typeof props.classes): string | null => {
     if (ver === 'neutral') {
       return classes.neutral
     } else if (ver === 'success') {
@@ -41,17 +53,6 @@ const Button = (props) => {
       </button>
     )
   }
-}
-
-Button.propTypes = {
-  classes: PropTypes.object.isRequired,
-  addClass: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
-  type: PropTypes.string,
-  ver: PropTypes.string,
-  id: PropTypes.string,
-  role: PropTypes.string,
-  children: PropTypes.element.isRequired
 }
 
 export default injectSheet(styles)(Button)

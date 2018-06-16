@@ -1,3 +1,4 @@
+// @flow
 import Color from 'color'
 import { harmoniousMix, mixNeutral } from './functions'
 

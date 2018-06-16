@@ -1,10 +1,16 @@
+// @flow
 import React from 'react'
 import injectSheet from 'react-jss'
+import type Classes from 'react-jss'
 import PropTypes from 'prop-types'
 
 import styles from './styles'
 
-const Footer = (props) => {
+type props = {
+  classes: Classes
+}
+
+const Footer = (props: props) => {
   const getCopyrightYear = () => {
     const initYear = 2017
     const d = new Date()
@@ -83,10 +89,6 @@ const Footer = (props) => {
       </div>
     </footer>
   )
-}
-
-Footer.propTypes = {
-  classes: PropTypes.object.isRequired
 }
 
 export default injectSheet(styles)(Footer)

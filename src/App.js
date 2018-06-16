@@ -1,6 +1,8 @@
+// @flow
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
+import type Classes from 'react-jss'
 import PropTypes from 'prop-types'
 import 'normalize.css/normalize.css'
 
@@ -14,7 +16,11 @@ import Footer from './components/Footer/Footer'
 export const canonical = 'https://nai888.github.io/langua/'
 export const siteTitle = 'Langua |'
 
-const App = (props) => (
+type props = {
+  classes: Classes
+}
+
+const App = (props: props) => (
   <div className={props.classes.app}>
     <Helmet>
       <title>{siteTitle} Language Tools</title>
@@ -32,9 +38,5 @@ const App = (props) => (
     <Footer />
   </div>
 )
-
-App.propTypes = {
-  classes: PropTypes.object.isRequired
-}
 
 export default injectSheet(styles)(App)

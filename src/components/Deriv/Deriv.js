@@ -1,6 +1,8 @@
+// @flow
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
+import type Classes from 'react-jss'
 import PropTypes from 'prop-types'
 
 import styles from './styles'
@@ -9,7 +11,11 @@ import ButtonLink from '../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../App'
 
-const Deriv = (props) => (
+type props = {
+  classes: Classes
+}
+
+const Deriv = (props: props) => (
   <div className={props.classes.deriv}>
     <Helmet>
       <title>{siteTitle} Deriv</title>
@@ -23,9 +29,5 @@ const Deriv = (props) => (
     <Notice>This tool is still in planning.</Notice>
   </div>
 )
-
-Deriv.propTypes = {
-  classes: PropTypes.object.isRequired
-}
 
 export default injectSheet(styles)(Deriv)
