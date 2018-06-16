@@ -29,6 +29,7 @@
     "react-toastify": "^4.0.1"
   },
   "devDependencies": {
-    "react-snap": "^1.12.2"
+    "react-snap": "^1.12.2",
+    "react-test-renderer": "^16.4.1"
   }
 }

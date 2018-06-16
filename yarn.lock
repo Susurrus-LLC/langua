@@ -5900,6 +5900,10 @@ react-helmet@^5.2.0:
     prop-types "^15.5.4"
     react-side-effect "^1.1.0"
 
+react-is@^16.4.1:
+  version "16.4.1"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
+
 react-jss@^8.4.0:
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/react-jss/-/react-jss-8.4.0.tgz#7cb43d85dea56afafc8f0fd072ae27fcc0518950"
@@ -5999,6 +6003,15 @@ react-snap@^1.12.2:
     puppeteer "^1.2.0"
     serve-static "^1.13.1"
     sourcemapped-stacktrace-node "^2.1.6"
+
+react-test-renderer@^16.4.1:
+  version "16.4.1"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.4.1.tgz#f2fb30c2c7b517db6e5b10ed20bb6b0a7ccd8d70"
+  dependencies:
+    fbjs "^0.8.16"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
+    react-is "^16.4.1"
 
 react-toastify@^4.0.1:
   version "4.0.1"
