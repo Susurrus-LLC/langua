@@ -30,6 +30,7 @@
     "react-toastify": "^4.0.1"
   },
   "devDependencies": {
+    "flow-bin": "^0.74.0",
     "react-snap": "^1.12.2",
     "react-test-renderer": "^16.4.1"
   }
