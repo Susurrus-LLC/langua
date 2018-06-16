@@ -3,7 +3,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
 import type Classes from 'react-jss'
-import PropTypes from 'prop-types'
 import 'normalize.css/normalize.css'
 
 import * as v from './styles/variables'
