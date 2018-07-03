@@ -1,10 +1,21 @@
 import React from 'react'
 import injectSheet from 'react-jss'
-import PropTypes from 'prop-types'
+import type Classes from 'react-jss'
 
 import styles from './styles'
 
-const GenResults = (props) => {
+type props = {
+  classes: Classes,
+  newLine: boolean,
+  results: array<string>,
+  stats: {
+    words: number,
+    maxWords: number,
+    filtered: number
+  }
+}
+
+const GenResults = (props: props) => {
   let joinedResults = Array.prototype.join.call(props.results, `${props.newLine ? '\n' : ' '}`).trim()
   let words = props.stats.words.toLocaleString()
   let maxWords = props.stats.maxWords.toLocaleString()
@@ -32,13 +43,6 @@ const GenResults = (props) => {
       </div>
     </div>
   )
-}
-
-GenResults.propTypes = {
-  classes: PropTypes.object.isRequired,
-  newLine: PropTypes.bool.isRequired,
-  results: PropTypes.array.isRequired,
-  stats: PropTypes.object.isRequired
 }
 
 export default injectSheet(styles)(GenResults)

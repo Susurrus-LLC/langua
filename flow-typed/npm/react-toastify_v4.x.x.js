@@ -100,4 +100,12 @@ declare module "react-toastify" {
   declare export function style(props: styleProps): void;
 
   declare export var toast: Toast;
+
+  declare export var Bounce: any;
+
+  declare export var Slide: any;
+
+  declare export var Zoom: any;
+
+  declare export var Flip: any;
 }

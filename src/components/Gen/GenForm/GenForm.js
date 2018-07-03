@@ -1,15 +1,31 @@
 import React from 'react'
 import injectSheet from 'react-jss'
+import type Classes from 'react-jss'
 import classNames from 'classnames'
-import PropTypes from 'prop-types'
 
 import Button from '../../Button/Button'
 
 // import * as service from '../service'
-import { vars } from '../defaultData'
+import { vars, type Data } from '../defaultData'
 import styles from './styles'
 
-const GenForm = (props) => {
+type props = {
+  classes: Classes,
+  data: Data,
+  changeSelect: () => void,
+  changeSubpattern: () => void,
+  clear: () => void,
+  add: () => void,
+  changePattern: () => void,
+  changeWordNum: () => void,
+  changeNewline: () => void,
+  changeDupes: () => void,
+  generate: () => void,
+  save: () => void,
+  open: () => void
+}
+
+const GenForm = (props: props) => {
   const selectOptions = vars.map((variab, index) => (
     <option
       key={index}
@@ -153,22 +169,6 @@ const GenForm = (props) => {
       </div>
     </form>
   )
-}
-
-GenForm.propTypes = {
-  classes: PropTypes.object.isRequired,
-  data: PropTypes.object.isRequired,
-  changeSelect: PropTypes.func.isRequired,
-  changeSubpattern: PropTypes.func.isRequired,
-  clear: PropTypes.func.isRequired,
-  add: PropTypes.func.isRequired,
-  changePattern: PropTypes.func.isRequired,
-  changeWordNum: PropTypes.func.isRequired,
-  changeNewline: PropTypes.func.isRequired,
-  changeDupes: PropTypes.func.isRequired,
-  generate: PropTypes.func.isRequired,
-  save: PropTypes.func.isRequired,
-  open: PropTypes.func.isRequired
 }
 
 export default injectSheet(styles)(GenForm)

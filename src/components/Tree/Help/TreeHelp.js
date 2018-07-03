@@ -1,7 +1,8 @@
+// @flow
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
-import PropTypes from 'prop-types'
+import type Classes from 'react-jss'
 
 import styles from './styles'
 import Notice from '../../Notice/Notice'
@@ -9,7 +10,11 @@ import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
-const TreeHelp = (props) => (
+type props = {
+  classes: Classes
+}
+
+const TreeHelp = (props: props) => (
   <div className={props.classes.treeHelp}>
     <Helmet>
       <title>{siteTitle} Tree Help</title>
@@ -23,9 +28,5 @@ const TreeHelp = (props) => (
     <Notice>This tool is still in planning.</Notice>
   </div>
 )
-
-TreeHelp.propTypes = {
-  classes: PropTypes.object.isRequired
-}
 
 export default injectSheet(styles)(TreeHelp)

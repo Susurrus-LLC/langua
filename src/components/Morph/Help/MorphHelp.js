@@ -1,7 +1,8 @@
+// @flow
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
-import PropTypes from 'prop-types'
+import type Classes from 'react-jss'
 
 import styles from './styles'
 import Notice from '../../Notice/Notice'
@@ -9,7 +10,11 @@ import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
-const MorphHelp = (props) => (
+type props = {
+  classes: Classes
+}
+
+const MorphHelp = (props: props) => (
   <div className={props.classes.morphHelp}>
     <Helmet>
       <title>{siteTitle} Morph Help</title>
@@ -23,9 +28,5 @@ const MorphHelp = (props) => (
     <Notice>This tool is still in planning.</Notice>
   </div>
 )
-
-MorphHelp.propTypes = {
-  classes: PropTypes.object.isRequired
-}
 
 export default injectSheet(styles)(MorphHelp)

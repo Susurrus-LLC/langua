@@ -1,3 +1,4 @@
-const styles = { }
+// @flow
+const styles = {}
 
 export default styles

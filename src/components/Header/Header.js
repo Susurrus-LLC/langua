@@ -1,15 +1,20 @@
+// @flow
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import injectSheet from 'react-jss'
+import type Classes from 'react-jss'
 import classNames from 'classnames'
-import PropTypes from 'prop-types'
 
 import styles from './styles'
 
 const siteTitle = 'Langua'
 const siteSubtitle = 'A suite of language tools'
 
-const Header = (props) => (
+type props = {
+  classes: Classes
+}
+
+const Header = (props: props) => (
   <header>
     <div className={props.classes.header}>
       <div className={props.classes.titleArea}>
@@ -42,9 +47,5 @@ const Header = (props) => (
     </div>
   </header>
 )
-
-Header.propTypes = {
-  classes: PropTypes.object.isRequired
-}
 
 export default injectSheet(styles)(Header)

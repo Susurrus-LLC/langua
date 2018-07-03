@@ -1,7 +1,8 @@
+// @flow
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import injectSheet from 'react-jss'
-import PropTypes from 'prop-types'
+import type Classes from 'react-jss'
 import { ToastContainer, toast, Flip } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -19,7 +20,11 @@ import MorphHelp from '../Morph/Help/MorphHelp'
 import Tree from '../Tree/Tree'
 import TreeHelp from '../Tree/Help/TreeHelp'
 
-const Main = (props) => (
+type props = {
+  classes: Classes
+}
+
+const Main = (props: props) => (
   <main>
     <div className={props.classes.main}>
       <Switch>
@@ -43,9 +48,5 @@ const Main = (props) => (
     />
   </main>
 )
-
-Main.propTypes = {
-  classes: PropTypes.object.isRequired
-}
 
 export default injectSheet(styles)(Main)

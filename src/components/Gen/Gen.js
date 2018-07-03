@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
-import PropTypes from 'prop-types'
+import type Classes from 'react-jss'
 
 import styles from './styles'
 import ButtonLink from '../Button/ButtonLink'
@@ -12,8 +12,12 @@ import genService from './GenService'
 
 import { canonical, siteTitle } from '../../App'
 
+type props = {
+  classes: Classes
+}
+
 class Gen extends React.Component {
-  constructor (props) {
+  constructor (props: props) {
     super(props)
     this.onChangeSelect = this.onChangeSelect.bind(this)
     this.onChangeSubpattern = this.onChangeSubpattern.bind(this)
@@ -39,7 +43,7 @@ class Gen extends React.Component {
   }
 
   // When a Subpattern variable is changed, store that change in state
-  onChangeSelect (e) {
+  onChangeSelect (e: SyntheticEvent<HTMLButtonElement>): void {
     const id = e.target.id.slice(1)
     const val = e.target.value
     this.setState(prevState => ({
@@ -48,7 +52,7 @@ class Gen extends React.Component {
   }
 
   // When a Subpattern is changed, store that change in state
-  onChangeSubpattern (e) {
+  onChangeSubpattern (e: SyntheticEvent<HTMLButtonElement>): void {
     const id = e.target.id.slice(1)
     const val = e.target.value
     this.setState(prevState => ({
@@ -57,7 +61,7 @@ class Gen extends React.Component {
   }
 
   // When a Subpattern is cleared, delete the corresponding Subpattern from state
-  onClear (e) {
+  onClear (e: SyntheticEvent<HTMLButtonElement>): void {
     e.preventDefault()
     const id = e.target.id.slice(1)
     this.setState(prevState => ({
@@ -66,7 +70,7 @@ class Gen extends React.Component {
   }
 
   // When the add button is clicked, add a blank Subpattern to state
-  onAdd (e) {
+  onAdd (e: SyntheticEvent<HTMLButtonElement>): void {
     e.preventDefault()
     this.setState(prevState => ({
       data: genService.add(this.state.data)
@@ -74,7 +78,7 @@ class Gen extends React.Component {
   }
 
   // When the pattern is changed, store the change in state
-  onChangePattern (e) {
+  onChangePattern (e: SyntheticEvent<HTMLButtonElement>): void {
     const val = e.target.value
     this.setState(prevState => ({
       data: genService.changePattern(val, this.state.data)
@@ -82,7 +86,7 @@ class Gen extends React.Component {
   }
 
   // When the number of desired words is changed, store that change in state
-  onWordNumChange (e) {
+  onWordNumChange (e: SyntheticEvent<HTMLButtonElement>): void {
     let val = e.target.value
     // Only update state if there's a change
     if (genService.wordNumChange(val, this.state.data)) {
@@ -93,7 +97,7 @@ class Gen extends React.Component {
   }
 
   // If the selection for new lines is changed, store that change in state
-  onChangeNewline (e) {
+  onChangeNewline (e: SyntheticEvent<HTMLButtonElement>): void {
     const checked = e.target.checked
     this.setState(prevState => ({
       data: genService.changeNewline(checked, this.state.data)
@@ -101,7 +105,7 @@ class Gen extends React.Component {
   }
 
   // If the selection for filtering duplicates is changed, store that change in state
-  onChangeDupes (e) {
+  onChangeDupes (e: SyntheticEvent<HTMLButtonElement>): void {
     const checked = e.target.checked
     this.setState(prevState => ({
       data: genService.changeDupes(checked, this.state.data)
@@ -109,7 +113,7 @@ class Gen extends React.Component {
   }
 
   // Generate the output
-  onGenerate (e) {
+  onGenerate (e: SyntheticEvent<HTMLButtonElement>): void {
     e.preventDefault()
     const response = genService.generate(this.state.data)
     this.setState(prevState => ({
@@ -121,13 +125,13 @@ class Gen extends React.Component {
   }
 
   // Save the current state to storage and generate a file
-  onSave (e) {
+  onSave (e: SyntheticEvent<HTMLButtonElement>): void {
     e.preventDefault()
     genService.save(this.state.data)
   }
 
   // Open a file and parse it to restore a saved state
-  onOpen (e) {
+  onOpen (e: SyntheticEvent<HTMLButtonElement>): void {
     e.preventDefault()
     genService.open(this.state.data)
   }
@@ -170,10 +174,6 @@ class Gen extends React.Component {
       </div>
     )
   }
-}
-
-Gen.propTypes = {
-  classes: PropTypes.object.isRequired
 }
 
 export default injectSheet(styles)(Gen)

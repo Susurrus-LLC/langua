@@ -1,7 +1,8 @@
+// @flow
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
-import PropTypes from 'prop-types'
+import type Classes from 'react-jss'
 
 import styles from './styles'
 import Notice from '../../Notice/Notice'
@@ -9,7 +10,11 @@ import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
-const GenHelp = (props) => (
+type props = {
+  classes: Classes
+}
+
+const GenHelp = (props: props) => (
   <div className={props.classes.genHelp}>
     <Helmet>
       <title>{siteTitle} Gen Help</title>
@@ -49,9 +54,5 @@ const GenHelp = (props) => (
     <p>Clicking the <strong>Save</strong> button will save the current settings to the browser’s local storage and generate a small text file containing the current settings that can be saved to your disk. This text file can be loaded using the <strong>Open</strong> button to reload past settings.</p>
   </div>
 )
-
-GenHelp.propTypes = {
-  classes: PropTypes.object.isRequired
-}
 
 export default injectSheet(styles)(GenHelp)

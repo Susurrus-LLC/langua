@@ -1,3 +1,4 @@
+// @flow
 import * as v from '../../styles/variables'
 
 const styles = {

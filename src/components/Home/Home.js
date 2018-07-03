@@ -1,12 +1,17 @@
+// @flow
 import React from 'react'
 import { Link } from 'react-router-dom'
 import injectSheet from 'react-jss'
+import type Classes from 'react-jss'
 import classNames from 'classnames'
-import PropTypes from 'prop-types'
 
 import styles from './styles'
 
-const Home = (props) => (
+type props = {
+  classes: Classes
+}
+
+const Home = (props: props) => (
   <div className={props.classes.home}>
     <p className={props.classes.siteDescription}>Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation.</p>
     <div className={props.classes.grid}>
@@ -34,9 +39,5 @@ const Home = (props) => (
     <p className={props.classes.siteDescription}>Langua is a full Progressive Web App; once the site has been loaded, its full functionality is available even offline. Langua can also be added to the homescreen of your tablet or mobile device for easy access.</p>
   </div>
 )
-
-Home.propTypes = {
-  classes: PropTypes.object.isRequired
-}
 
 export default injectSheet(styles)(Home)
