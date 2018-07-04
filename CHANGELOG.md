@@ -9,11 +9,13 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 ### Added 0.1.5
 
 - Add `role` to `<button>` elements, and give `ButtonLink` components `role='link'`.
+- Add an input error checker that verifies the Gen input is valid and displays an error if it is not.
 - Add Flow type checking to all JavaScript files.
 - Add a few basic unit tests to the site's source files.
 
 ### Changed 0.1.5
 
+- Update the Filter Duplicates option so that it updates the results immediately, rather than needing to re-generate the results before taking effect.
 - Change HelpLink component (a link styled like a button) to a ButtonLink component (a button that changes the URL). (See [issue #13](https://github.com/nai888/langua/issues/13).)
 - Refactor GenService so it reads in order without needing to call an internal function for getStats().
 - Change internal links in the README to relative links.
