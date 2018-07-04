@@ -234,12 +234,12 @@ class GenService {
       }
     }
 
-    const dupeSet = Array.from(new Set(duplicates))
-    const dupes = dupeSet.join(', ')
+    duplicates = Array.from(new Set(duplicates))
+    const dupes = duplicates.join(', ')
 
-    if (dupeSet.length > 1) {
+    if (duplicates.length > 1) {
       status.push(`Some Subpattern variables (${dupes}) have been used multiple times.`)
-    } else if (dupeSet.length === 1) {
+    } else if (duplicates.length === 1) {
       status.push(`The Subpattern variable ${dupes} has been used multiple times.`)
     }
 
