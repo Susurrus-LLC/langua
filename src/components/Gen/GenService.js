@@ -284,7 +284,8 @@ class GenService {
         stats: {
           words: 0,
           maxWords: 0,
-          filtered: 0
+          filtered: 0,
+          remaining: 0
         }
       }
     } else {
