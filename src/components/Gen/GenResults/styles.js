@@ -11,6 +11,9 @@ const styles = {
       color: v.bluNtl.string()
     }
   },
+  error: {
+    color: v.red.string()
+  },
   outText: {
     whiteSpace: 'pre-wrap'
   },

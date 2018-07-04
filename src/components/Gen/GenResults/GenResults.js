@@ -8,6 +8,7 @@ import styles from './styles'
 declare type Props = {
   classes: Classes,
   newLine: boolean,
+  status: Array<string>,
   results: Array<string>,
   stats: {
     words: number,
@@ -17,12 +18,36 @@ declare type Props = {
 }
 
 const GenResults = (props: Props) => {
-  let joinedResults = Array.prototype.join.call(props.results, `${props.newLine ? '\n' : ' '}`).trim()
   let words = props.stats.words.toLocaleString()
   let maxWords = props.stats.maxWords.toLocaleString()
-  let filtered = props.stats.filtered // If converted here, the comparison below won't work because the string will be NaN
+  let filtered = props.stats.filtered // If converted toLocaleString() here, the comparison below won't work because the string will be NaN
 
-  const statsText = () => {
+  const outputText = (classes: Classes): React.Node => {
+    let joinedResults = Array.prototype.join.call(props.results, `${props.newLine ? '\n' : ' '}`).trim()
+
+    return (
+      <p className={classes.outText}>
+        {joinedResults}
+      </p>
+    )
+  }
+
+  const errorText = (classes: Classes): React.Node => {
+    if (props.status.includes('ok')) {
+      return null
+    } else {
+      return props.status.map((error, index) => (
+        <p
+          key={index}
+          className={classes.error}
+        >
+          {error}
+        </p>
+      ))
+    }
+  }
+
+  const statsText = (): string => {
     if (filtered > 0) {
       return `words: ${words} (${filtered.toLocaleString()} filtered out); maximum different words: ${maxWords}`
     } else {
@@ -33,9 +58,8 @@ const GenResults = (props: Props) => {
   return (
     <div className={props.classes.results}>
       <div className={props.classes.output}>
-        <p className={props.classes.outText}>
-          {joinedResults}
-        </p>
+        {errorText(props.classes)}
+        {outputText(props.classes)}
       </div>
       <div className={props.classes.stats}>
         <p className={props.classes.statsText}>
