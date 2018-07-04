@@ -2,6 +2,7 @@
 import { defData, vars } from './defaultData'
 
 declare type Results = {
+  status: Array<string>,
   results: Array<string>,
   stats: {
     words: number,
@@ -25,12 +26,14 @@ class GenService {
     this.wordNumChange = this.wordNumChange.bind(this)
     this.changeNewline = this.changeNewline.bind(this)
     this.changeDupes = this.changeDupes.bind(this)
+    this.checkErrors = this.checkErrors.bind(this)
     this.generate = this.generate.bind(this)
+    this.build = this.build.bind(this)
     this.save = this.save.bind(this)
     this.open = this.open.bind(this)
   }
 
-  getData (): () => Data {
+  getData (): Data {
     let data: Data
 
     // Check if there's storage access
@@ -54,35 +57,35 @@ class GenService {
   }
 
   // Store the current data in storage
-  setStorage (data: Data): () => void {
+  setStorage (data: Data): void {
     if (typeof (Storage) !== 'undefined') {
       this.storage.setItem(this.item, JSON.stringify(data))
     }
   }
 
   // When a Subpattern variable is changed, create a new version of state
-  changeSelect (id: number, val: string, data: Data): () => Data {
+  changeSelect (id: number, val: string, data: Data): Data {
     let newData: Data = JSON.parse(JSON.stringify(data))
     newData.subpatterns[id].selected = val
     return newData
   }
 
   // When a Subpattern is changed, create a new version of state
-  changeSubpattern (id: number, val: string, data: Data): () => Data {
+  changeSubpattern (id: number, val: string, data: Data): Data {
     let newData: Data = JSON.parse(JSON.stringify(data))
     newData.subpatterns[id].subpattern = val
     return newData
   }
 
   // When a Subpattern is cleared, create a new version of state
-  clear (id: number, data: Data): () => Data {
+  clear (id: number, data: Data): Data {
     let newData: Data = JSON.parse(JSON.stringify(data))
     newData.subpatterns.splice(id, 1)
     return newData
   }
 
   // When a Subpattern is added, create a new version of state
-  add (data: Data): () => Data {
+  add (data: Data): Data {
     let toUse: string = ''
     let newData: Data = JSON.parse(JSON.stringify(data))
 
@@ -113,14 +116,14 @@ class GenService {
   }
 
   // When the pattern is changed, create a new version of state
-  changePattern (val: string, data: Data): () => Data {
+  changePattern (val: string, data: Data): Data {
     let newData: Data = JSON.parse(JSON.stringify(data))
     newData.pattern = val
     return newData
   }
 
   // When the number of desired words is changed, create a new version of state
-  wordNumChange (val: number, data: Data): () => Data | boolean {
+  wordNumChange (val: number, data: Data): Data | boolean {
     // Limit number entry to between 1 and 9999
     if (val < 1) {
       val = 1
@@ -140,21 +143,159 @@ class GenService {
   }
 
   // If the selection for new lines is changed, create a new version of state
-  changeNewline (checked: boolean, data: Data): () => Data {
+  changeNewline (checked: boolean, data: Data): Data {
     let newData: Data = JSON.parse(JSON.stringify(data))
     newData.newline = checked
     return newData
   }
 
   // If the selection for filtering duplicates is changed, create a new version of state
-  changeDupes (checked: boolean, data: Data): () => Data {
+  changeDupes (checked: boolean, data: Data): Data {
     let newData: Data = JSON.parse(JSON.stringify(data))
     newData.filterdupes = checked
     return newData
   }
 
+  // Check the input for errors
+  checkErrors (data: Data): Array<string> {
+    let status: Array<string> = []
+
+    // Check Subpattern for circular reference
+    const getSp = (selected: string): string => {
+      let sp: string = ''
+      for (let i = 0; i < data.subpatterns.length; i++) {
+        if (data.subpatterns[i].selected === selected) {
+          sp = data.subpatterns[i].subpattern
+          break
+        }
+      }
+      return sp
+    }
+
+    const idDeps = (subpattern: string): Array<string> => {
+      let deps: Array<string> = []
+      for (let i = 0; i < subpattern.length; i++) {
+        if (vars.includes(subpattern[i])) {
+          deps.push(subpattern[i])
+        }
+      }
+      return Array.from(new Set(deps))
+    }
+
+    const checkCirc = (selected: string, refed: Array<string>): boolean => {
+      const sp = getSp(selected)
+      const deps = idDeps(sp)
+      refed.push(selected)
+      let circ: boolean = false
+
+      if (deps.length > 0) {
+        if (deps.includes(selected) || refed.includes(selected)) {
+          circ = true
+        } else {
+          let i: number = 0
+          while (!circ && i < deps.length) {
+            circ = checkCirc(deps[i], refed)
+            i++
+          }
+        }
+      }
+
+      return circ
+    }
+
+    for (let i = 0; i < data.subpatterns.length; i++) {
+      const deps = idDeps(data.subpatterns[i].subpattern)
+      const sel = data.subpatterns[i].selected
+      let refed: Array<string> = [sel]
+
+      if (deps.length > 0) {
+        for (let j = 0; j < deps.length; j++) {
+          if (checkCirc(deps[j], refed)) {
+            status.push('The Subpatterns contain a circular reference.')
+            break
+          }
+        }
+      }
+    }
+
+    // Check for duplicate Subpattern variable names
+    let duplicates: Array<string> = []
+    for (let i = 0; i < data.subpatterns.length; i++) {
+      let current: string = data.subpatterns[i].selected
+
+      for (let j = 0; j < data.subpatterns.length; j++) {
+        if (i === j) {
+          continue
+        } else {
+          if (data.subpatterns[j].selected === current) {
+            duplicates.push(current)
+          }
+        }
+      }
+    }
+
+    const dupeSet = Array.from(new Set(duplicates))
+    const dupes = dupeSet.join(', ')
+
+    if (dupeSet.length > 1) {
+      status.push(`Some Subpattern variables (${dupes}) have been used multiple times.`)
+    } else if (dupeSet.length === 1) {
+      status.push(`The Subpattern variable ${dupes} has been used multiple times.`)
+    }
+
+    // Check Pattern for undefined variable
+    let defed: Array<string> = []
+    for (let i = 0; i < data.subpatterns.length; i++) {
+      defed.push(data.subpatterns[i].selected)
+    }
+
+    let undefed: Array<string> = []
+    for (let i = 0; i < data.pattern.length; i++) {
+      if (vars.includes(data.pattern[i])) {
+        if (!defed.includes(data.pattern[i])) {
+          undefed.push(data.pattern[i])
+        }
+      }
+    }
+
+    const undefSet = Array.from(new Set(undefed))
+    const undefs = undefSet.join(', ')
+
+    if (undefSet.length > 1) {
+      // Update this status message once escaping characters is enabled
+      status.push(`Some capital A–Z letters (${undefs}) were used in the Pattern but not defined as variables. A future version will allow this using escaped characters.`)
+    } else if (undefSet.length === 1) {
+      status.push(`The capital letter ${undefs} was used in the Pattern but not defined as a variable. A future version will allow this using escaped characters.`)
+    }
+
+    status = Array.from(new Set(status))
+    return status
+  }
+
+  // Start the generation process
+  generate (data: Data): Results {
+    const status = this.checkErrors(data)
+    let results: Results
+
+    if (status.length > 0) {
+      results = {
+        status: status,
+        results: [],
+        stats: {
+          words: 0,
+          maxWords: 0,
+          filtered: 0
+        }
+      }
+    } else {
+      results = this.build(data, 'ok')
+    }
+
+    return results
+  }
+
   // Generate the output
-  generate (data: Data): () => results {
+  build (data: Data, status: string): results {
     let results: Array<string> = []
     let newData: Data = JSON.parse(JSON.stringify(data))
 
@@ -184,7 +325,7 @@ class GenService {
         if (/[()[\]^*"]/.test(variab)) {
           // For now, ignore the characters that will be used for operations
           continue
-        } else if (vars.indexOf(variab) === -1) {
+        } else if (!vars.includes(variab)) {
           // If the current item in the Pattern is not a variable, add it to the current word
           word += patt[j]
         } else {
@@ -235,7 +376,7 @@ class GenService {
           if (/[()[\]^*"]/.test(variab)) {
             // For now, ignore the characters that will be used for operations
             continue
-          } else if (vars.indexOf(variab) === -1) {
+          } else if (!vars.includes(variab)) {
             // If the current item in the Pattern is not a variable, add 1 to the count
             addCount += 1
           } else {
@@ -270,6 +411,7 @@ class GenService {
     }
 
     const response: Results = {
+      status: status,
       results: results,
       stats: {
         words: words,
@@ -282,14 +424,14 @@ class GenService {
   }
 
   // Save the current state to storage and generate a file
-  save (data: Data): () => void {
+  save (data: Data): void {
     // Save data to storage
     this.setStorage(data)
     // Add a function to save data to a file
   }
 
   // Open a file and parse it to restore a saved state
-  open (data: Data): () => void {
+  open (data: Data): void {
     // Add a function to handle opening a saved document
   }
 }

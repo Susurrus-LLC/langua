@@ -1,4 +1,4 @@
-type Subpattern = {
+declare type Subpattern = {
   selected: string,
   subpattern: string
 }

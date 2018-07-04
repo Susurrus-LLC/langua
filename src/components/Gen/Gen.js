@@ -34,6 +34,7 @@ class Gen extends React.Component {
     this.classes = props.classes
     this.state = {
       data: genService.getData(),
+      status: ['ok'],
       results: '',
       stats: {
         words: 0,
@@ -118,6 +119,7 @@ class Gen extends React.Component {
     e.preventDefault()
     const response = genService.generate(this.state.data)
     this.setState(prevState => ({
+      status: response.status,
       results: response.results,
       stats: response.stats
     }))
