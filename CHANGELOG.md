@@ -6,6 +6,12 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased]
 
+### Added 0.1.6
+
+### Changed 0.1.6
+
+## [v0.1.5] - 2018-07-04
+
 ### Added 0.1.5
 
 - Add `role` to `<button>` elements, and give `ButtonLink` components `role='link'`.
@@ -20,7 +26,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Refactor GenService so it reads in order without needing to call an internal function for getStats().
 - Change internal links in the README to relative links.
 - Link to the CHANGELOG in the footer instead of to the README#versioning header.
-- Refactor top-level Router into its own page so that index.js *only* handles rendering.
+- Refactor the top-level Router into its own page so that index.js *only* handles rendering.
 
 ## [v0.1.4] - 2018-05-12
 
