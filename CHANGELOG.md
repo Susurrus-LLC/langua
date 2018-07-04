@@ -10,6 +10,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Add `role` to `<button>` elements, and give `ButtonLink` components `role='link'`.
 - Add Flow type checking to all JavaScript files.
+- Add a few basic unit tests to the site's source files.
 
 ### Changed 0.1.5
 
