@@ -6,8 +6,6 @@ import type Classes from 'react-jss'
 import { ToastContainer, toast, Flip } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-import styles from './styles'
-
 import Home from '../Home/Home'
 import Deriv from '../Deriv/Deriv'
 import DerivHelp from '../Deriv/Help/DerivHelp'
@@ -19,6 +17,8 @@ import Morph from '../Morph/Morph'
 import MorphHelp from '../Morph/Help/MorphHelp'
 import Tree from '../Tree/Tree'
 import TreeHelp from '../Tree/Help/TreeHelp'
+
+import styles from './styles'
 
 declare type Props = {
   classes: Classes
