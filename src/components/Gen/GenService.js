@@ -346,16 +346,7 @@ class GenService {
         }
       }
 
-      // If filtering duplicates, only push unique words to the results
-      if (newData.filterdupes) {
-        if (!results.includes(word)) {
-          results.push(word)
-        } else {
-          continue
-        }
-      } else {
-        results.push(word)
-      }
+      results.push(word)
     }
 
     // Calculate the stats on the generated output
@@ -405,10 +396,9 @@ class GenService {
       words = results.length
     }
 
-    let filtered: number = 0
-    if (newData.filterdupes) {
-      filtered = newData.words - words
-    }
+    const filteredWords = Array.from(new Set(results))
+    const remaining: number = filteredWords.length
+    const filtered: number = newData.words - remaining
 
     const response: Results = {
       status: status,
@@ -416,7 +406,8 @@ class GenService {
       stats: {
         words: words,
         maxWords: count,
-        filtered: filtered
+        filtered: filtered,
+        remaining: remaining
       }
     }
 

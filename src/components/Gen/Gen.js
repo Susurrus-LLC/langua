@@ -39,7 +39,8 @@ class Gen extends React.Component {
       stats: {
         words: 0,
         maxWords: 0,
-        filtered: 0
+        filtered: 0,
+        remaining: 0
       }
     }
   }
@@ -171,6 +172,7 @@ class Gen extends React.Component {
         />
         <GenResults
           newLine={state.data.newline}
+          filterDupes={state.data.filterdupes}
           status={state.status}
           results={state.results}
           stats={state.stats}

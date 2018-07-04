@@ -8,22 +8,26 @@ import styles from './styles'
 declare type Props = {
   classes: Classes,
   newLine: boolean,
+  filterDupes: boolean,
   status: Array<string>,
   results: Array<string>,
   stats: {
     words: number,
     maxWords: number,
-    filtered: number
+    filtered: number,
+    remaining: number
   }
 }
 
 const GenResults = (props: Props) => {
-  let words = props.stats.words.toLocaleString()
-  let maxWords = props.stats.maxWords.toLocaleString()
-  let filtered = props.stats.filtered // If converted toLocaleString() here, the comparison below won't work because the string will be NaN
+  const words = props.stats.words.toLocaleString()
+  const maxWords = props.stats.maxWords.toLocaleString()
+  const filteredWords = props.stats.filtered.toLocaleString()
+  const remainingWords = props.stats.remaining.toLocaleString()
 
   const outputText = (classes: Classes): React.Node => {
-    let joinedResults = Array.prototype.join.call(props.results, `${props.newLine ? '\n' : ' '}`).trim()
+    const filterResults = props.filterDupes ? Array.from(new Set(props.results)) : props.results
+    const joinedResults = Array.prototype.join.call(filterResults, `${props.newLine ? '\n' : ' '}`).trim()
 
     return (
       <p className={classes.outText}>
@@ -48,8 +52,8 @@ const GenResults = (props: Props) => {
   }
 
   const statsText = (): string => {
-    if (filtered > 0) {
-      return `words: ${words} (${filtered.toLocaleString()} filtered out); maximum different words: ${maxWords}`
+    if (props.filterDupes) {
+      return `words: ${remainingWords} (${filteredWords} filtered out); maximum different words: ${maxWords}`
     } else {
       return `words: ${words}; maximum different words: ${maxWords}`
     }
