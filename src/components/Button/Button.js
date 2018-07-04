@@ -6,7 +6,7 @@ import classNames from 'classnames'
 
 import styles from './styles'
 
-type props = {
+declare type Props = {
   classes: Classes,
   addClass?: string,
   onClick(): void,
@@ -17,8 +17,8 @@ type props = {
   children: string
 }
 
-const Button = (props: props) => {
-  const filterClass = (ver: typeof props.ver, classes: typeof props.classes): string | null => {
+const Button = (props: Props) => {
+  const filterClass = (ver: typeof Props.ver, classes: typeof Props.classes): string | null => {
     if (ver === 'neutral') {
       return classes.neutral
     } else if (ver === 'success') {

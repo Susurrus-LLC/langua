@@ -5,11 +5,11 @@ import type Classes from 'react-jss'
 
 import styles from './styles'
 
-type props = {
+declare type Props = {
   classes: Classes
 }
 
-const Footer = (props: props) => {
+const Footer = (props: Props) => {
   const getCopyrightYear = () => {
     const initYear = 2017
     const d = new Date()

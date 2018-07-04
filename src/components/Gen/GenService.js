@@ -1,7 +1,7 @@
 // @flow
-import { defData, vars, type Data } from './defaultData'
+import { defData, vars } from './defaultData'
 
-type results = {
+declare type Results = {
   results: Array<string>,
   stats: {
     words: number,
@@ -10,10 +10,10 @@ type results = {
   }
 }
 
-type props = {}
+declare type Props = {}
 
 class GenService {
-  constructor (props: props) {
+  constructor (props: Props) {
     this.storage = window.localStorage
     this.item = 'gen'
     this.getData = this.getData.bind(this)
@@ -62,33 +62,33 @@ class GenService {
 
   // When a Subpattern variable is changed, create a new version of state
   changeSelect (id: number, val: string, data: Data): () => Data {
-    let newData: Data = JSON.parse(JSON.stringify(data));
+    let newData: Data = JSON.parse(JSON.stringify(data))
     newData.subpatterns[id].selected = val
     return newData
   }
 
   // When a Subpattern is changed, create a new version of state
   changeSubpattern (id: number, val: string, data: Data): () => Data {
-    let newData: Data = JSON.parse(JSON.stringify(data));
+    let newData: Data = JSON.parse(JSON.stringify(data))
     newData.subpatterns[id].subpattern = val
     return newData
   }
 
   // When a Subpattern is cleared, create a new version of state
   clear (id: number, data: Data): () => Data {
-    let newData: Data = JSON.parse(JSON.stringify(data));
+    let newData: Data = JSON.parse(JSON.stringify(data))
     newData.subpatterns.splice(id, 1)
     return newData
   }
 
   // When a Subpattern is added, create a new version of state
   add (data: Data): () => Data {
-    let toUse: string = '';
-    let newData: Data = JSON.parse(JSON.stringify(data));
+    let toUse: string = ''
+    let newData: Data = JSON.parse(JSON.stringify(data))
 
     // Identify the first unused Subpattern variable and select it
     for (let i = 0; i < vars.length; i++) {
-      let used: boolean = false;
+      let used: boolean = false
       for (let j = 0; j < newData.subpatterns.length; j++) {
         if (newData.subpatterns[j].selected === vars[i]) {
           used = true
@@ -114,7 +114,7 @@ class GenService {
 
   // When the pattern is changed, create a new version of state
   changePattern (val: string, data: Data): () => Data {
-    let newData: Data = JSON.parse(JSON.stringify(data));
+    let newData: Data = JSON.parse(JSON.stringify(data))
     newData.pattern = val
     return newData
   }
@@ -130,7 +130,7 @@ class GenService {
 
     // Only change state if the number is between 1 and 9999
     if (val > 0 && val < 10000) {
-      let newData: Data = JSON.parse(JSON.stringify(data));
+      let newData: Data = JSON.parse(JSON.stringify(data))
       newData.words = val
       return newData
     } else {
@@ -141,22 +141,22 @@ class GenService {
 
   // If the selection for new lines is changed, create a new version of state
   changeNewline (checked: boolean, data: Data): () => Data {
-    let newData: Data = JSON.parse(JSON.stringify(data));
+    let newData: Data = JSON.parse(JSON.stringify(data))
     newData.newline = checked
     return newData
   }
 
   // If the selection for filtering duplicates is changed, create a new version of state
   changeDupes (checked: boolean, data: Data): () => Data {
-    let newData: Data = JSON.parse(JSON.stringify(data));
+    let newData: Data = JSON.parse(JSON.stringify(data))
     newData.filterdupes = checked
     return newData
   }
 
   // Generate the output
   generate (data: Data): () => results {
-    let results: Array<string> = [];
-    let newData: Data = JSON.parse(JSON.stringify(data));
+    let results: Array<string> = []
+    let newData: Data = JSON.parse(JSON.stringify(data))
 
     // Randomly choose from the items in an array
     const chooseRand = (length: number) => {
@@ -173,7 +173,7 @@ class GenService {
 
     // Generate the number of words requested in the settings
     for (let i = 0; i < newData.words; i++) {
-      let word: string = '';
+      let word: string = ''
 
       // If the Pattern has options, choose one
       const patt = pattArr[chooseRand(pattArr.length)]
@@ -188,7 +188,7 @@ class GenService {
           // If the current item in the Pattern is not a variable, add it to the current word
           word += patt[j]
         } else {
-          let letter: string = '';
+          let letter: string = ''
 
           for (let k = 0; k < newData.subpatterns.length; k++) {
             const subpattern = newData.subpatterns[k]
@@ -220,18 +220,18 @@ class GenService {
     // Calculate the stats on the generated output
 
     // Calculate the maximum number of words
-    let count: number = 0;
+    let count: number = 0
 
     for (let i = 0; i < pattArr.length; i++) {
-      let optCount: number = 1;
+      let optCount: number = 1
       if (pattArr[i].length === 0) {
         optCount = 0
         break
       } else {
         for (let j = 0; j < pattArr[i].length; j++) {
           const variab = pattArr[i][j]
-          let addCount: number = 0;
-          let multCount: number = 1;
+          let addCount: number = 0
+          let multCount: number = 1
           if (/[()[\]^*"]/.test(variab)) {
             // For now, ignore the characters that will be used for operations
             continue
@@ -259,24 +259,24 @@ class GenService {
     }
 
     // If there are results, count how many words there are
-    let words: number = 0;
+    let words: number = 0
     if (results[0].length !== 0) {
       words = results.length
     }
 
-    let filtered: number = 0;
+    let filtered: number = 0
     if (newData.filterdupes) {
       filtered = newData.words - words
     }
 
-    const response: results = {
+    const response: Results = {
       results: results,
       stats: {
         words: words,
         maxWords: count,
         filtered: filtered
       }
-    };
+    }
 
     return response
   }
@@ -292,7 +292,7 @@ class GenService {
   open (data: Data): () => void {
     // Add a function to handle opening a saved document
   }
-};
+}
 
 const genService = new GenService()
 

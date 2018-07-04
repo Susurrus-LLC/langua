@@ -15,11 +15,11 @@ import Footer from './components/Footer/Footer'
 export const canonical = 'https://nai888.github.io/langua/'
 export const siteTitle = 'Langua |'
 
-type props = {
+declare type Props = {
   classes: Classes
 }
 
-const App = (props: props) => (
+const App = (props: Props) => (
   <div className={props.classes.app}>
     <Helmet>
       <title>{siteTitle} Language Tools</title>

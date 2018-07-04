@@ -10,11 +10,11 @@ import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
-type props = {
+declare type Props = {
   classes: Classes
 }
 
-const TreeHelp = (props: props) => (
+const TreeHelp = (props: Props) => (
   <div className={props.classes.treeHelp}>
     <Helmet>
       <title>{siteTitle} Tree Help</title>

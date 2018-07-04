@@ -5,14 +5,14 @@ import type { RouterHistory, Route } from 'react-router-dom'
 
 import Button from './Button'
 
-type props = {
+declare type Props = {
   history: RouterHistory,
   route: Route,
   buttonType?: string,
   children: string
 }
 
-const ButtonLink = (props: props) => {
+const ButtonLink = (props: Props) => {
   const onClick = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault()
     props.history.push(props.route)

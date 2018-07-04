@@ -10,11 +10,11 @@ import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
-type props = {
+declare type Props = {
   classes: Classes
 }
 
-const GenHelp = (props: props) => (
+const GenHelp = (props: Props) => (
   <div className={props.classes.genHelp}>
     <Helmet>
       <title>{siteTitle} Gen Help</title>

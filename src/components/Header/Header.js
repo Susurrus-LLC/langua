@@ -10,11 +10,11 @@ import styles from './styles'
 const siteTitle = 'Langua'
 const siteSubtitle = 'A suite of language tools'
 
-type props = {
+declare type Props = {
   classes: Classes
 }
 
-const Header = (props: props) => (
+const Header = (props: Props) => (
   <header>
     <div className={props.classes.header}>
       <div className={props.classes.titleArea}>

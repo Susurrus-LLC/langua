@@ -10,11 +10,11 @@ import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
-type props = {
+declare type Props = {
   classes: Classes
 }
 
-const DerivHelp = (props: props) => (
+const DerivHelp = (props: Props) => (
   <div className={props.classes.derivHelp}>
     <Helmet>
       <title>{siteTitle} Deriv Help</title>

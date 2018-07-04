@@ -10,11 +10,11 @@ import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
-type props = {
+declare type Props = {
   classes: Classes
 }
 
-const MorphHelp = (props: props) => (
+const MorphHelp = (props: Props) => (
   <div className={props.classes.morphHelp}>
     <Helmet>
       <title>{siteTitle} Morph Help</title>

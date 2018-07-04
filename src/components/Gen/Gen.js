@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
@@ -12,12 +13,12 @@ import genService from './GenService'
 
 import { canonical, siteTitle } from '../../App'
 
-type props = {
+declare type Props = {
   classes: Classes
 }
 
 class Gen extends React.Component {
-  constructor (props: props) {
+  constructor (props: Props) {
     super(props)
     this.onChangeSelect = this.onChangeSelect.bind(this)
     this.onChangeSubpattern = this.onChangeSubpattern.bind(this)

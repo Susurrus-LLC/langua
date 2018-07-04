@@ -7,11 +7,11 @@ import classNames from 'classnames'
 
 import styles from './styles'
 
-type props = {
+declare type Props = {
   classes: Classes
 }
 
-const Home = (props: props) => (
+const Home = (props: Props) => (
   <div className={props.classes.home}>
     <p className={props.classes.siteDescription}>Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation.</p>
     <div className={props.classes.grid}>

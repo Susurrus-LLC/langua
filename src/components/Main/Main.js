@@ -20,11 +20,11 @@ import MorphHelp from '../Morph/Help/MorphHelp'
 import Tree from '../Tree/Tree'
 import TreeHelp from '../Tree/Help/TreeHelp'
 
-type props = {
+declare type Props = {
   classes: Classes
 }
 
-const Main = (props: props) => (
+const Main = (props: Props) => (
   <main>
     <div className={props.classes.main}>
       <Switch>

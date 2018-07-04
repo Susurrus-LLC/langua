@@ -1,17 +1,4 @@
 // @flow
-type subpattern = {
-  selected: string,
-  subpattern: string
-}
-
-export type Data = {
-  subpatterns: Array<subpattern>,
-  pattern: string,
-  words: number,
-  newline: boolean,
-  filterdupes: boolean
-}
-
 export const defData: Data = {
   subpatterns: [
     {

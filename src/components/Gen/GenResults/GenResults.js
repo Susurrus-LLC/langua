@@ -1,13 +1,14 @@
+// @flow
 import React from 'react'
 import injectSheet from 'react-jss'
 import type Classes from 'react-jss'
 
 import styles from './styles'
 
-type props = {
+declare type Props = {
   classes: Classes,
   newLine: boolean,
-  results: array<string>,
+  results: Array<string>,
   stats: {
     words: number,
     maxWords: number,
@@ -15,7 +16,7 @@ type props = {
   }
 }
 
-const GenResults = (props: props) => {
+const GenResults = (props: Props) => {
   let joinedResults = Array.prototype.join.call(props.results, `${props.newLine ? '\n' : ' '}`).trim()
   let words = props.stats.words.toLocaleString()
   let maxWords = props.stats.maxWords.toLocaleString()

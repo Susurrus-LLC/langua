@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import injectSheet from 'react-jss'
 import type Classes from 'react-jss'
@@ -6,10 +7,10 @@ import classNames from 'classnames'
 import Button from '../../Button/Button'
 
 // import * as service from '../service'
-import { vars, type Data } from '../defaultData'
+import { vars } from '../defaultData'
 import styles from './styles'
 
-type props = {
+declare type Props = {
   classes: Classes,
   data: Data,
   changeSelect: () => void,
@@ -25,7 +26,7 @@ type props = {
   open: () => void
 }
 
-const GenForm = (props: props) => {
+const GenForm = (props: Props) => {
   const selectOptions = vars.map((variab, index) => (
     <option
       key={index}
