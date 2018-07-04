@@ -257,15 +257,24 @@ class GenService {
         }
       }
     }
+    for (let i = 0; i < data.subpatterns.length; i++) {
+      for (let j = 0; j < data.subpatterns[i].subpattern.length; j++) {
+        if (vars.includes(data.subpatterns[i].subpattern[j])) {
+          if (!defed.includes(data.subpatterns[i].subpattern[j])) {
+            undefed.push(data.subpatterns[i].subpattern[j])
+          }
+        }
+      }
+    }
 
     const undefSet = Array.from(new Set(undefed))
     const undefs = undefSet.join(', ')
 
     if (undefSet.length > 1) {
       // Update this status message once escaping characters is enabled
-      status.push(`Some capital A–Z letters (${undefs}) were used in the Pattern but not defined as variables. A future version will allow this using escaped characters.`)
+      status.push(`Some capital A–Z letters (${undefs}) were used but not defined as variables. If your intention is to include these characters as a letter in the results, a future version will allow this using escaped characters.`)
     } else if (undefSet.length === 1) {
-      status.push(`The capital letter ${undefs} was used in the Pattern but not defined as a variable. A future version will allow this using escaped characters.`)
+      status.push(`The capital letter ${undefs} was used but not defined as a variable. If your intention is to include this character as a letter in the results, a future version will allow this using escaped characters.`)
     }
 
     status = Array.from(new Set(status))
