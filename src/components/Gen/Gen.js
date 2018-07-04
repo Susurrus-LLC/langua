@@ -171,6 +171,7 @@ class Gen extends React.Component {
         />
         <GenResults
           newLine={state.data.newline}
+          status={state.status}
           results={state.results}
           stats={state.stats}
         />
