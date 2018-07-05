@@ -55,7 +55,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Delete the `console.log()` calls and reformatted some of the code within the Gen results function.
 - Remove react-snap from the build process for now, since it currently assigns CSS classes incorrectly. (See [issue #11](https://github.com/nai888/langua/issues/11).)
 
-## [v0.1.3] - 2018-04-27
+## v0.1.3 - 2018-04-27
 
 ### Added 0.1.3
 
