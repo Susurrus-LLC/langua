@@ -55,7 +55,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Delete the `console.log()` calls and reformatted some of the code within the Gen results function.
 - Remove react-snap from the build process for now, since it currently assigns CSS classes incorrectly. (See [issue #11](https://github.com/nai888/langua/issues/11).)
 
-## v0.1.3 - 2018-04-27
+## [v0.1.3] - 2018-04-27
 
 ### Added 0.1.3
 
@@ -71,6 +71,15 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Add link to CONTRIBUTING.md to README.md.
 - Clarify deployment documentation in README.md.
 
+## [v0.1.2]
+
+### Added 0.1.2
+
+- Build site framework.
+- Build basic version of the Gen tool.
+
 [Unreleased]: https://github.com/nai888/langua/compare/v0.1.5...HEAD
 [v0.1.5]: https://github.com/nai888/langua/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/nai888/langua/compare/v0.1.3...v0.1.4
+[v0.1.3]: https://github.com/nai888/langua/compare/b5e3e039d054041d8757ffa331d4702b9ea60dd8...v0.1.3
+[v0.1.2]: https://github.com/nai888/langua/compare/d0ce8c9ed58aeef8802092d220af7c57f9f0da29...a6e3d281e83fee7648864ac8eaee3f3b8a1b37ff
