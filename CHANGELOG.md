@@ -8,6 +8,9 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Added 0.1.6
 
+- Add v0.1.2 to this CHANGELOG.
+- Add links to GitHub's version comparing for each of the versions.
+
 ### Changed 0.1.6
 
 - Fix bug preventing variable use within Subpatterns.
