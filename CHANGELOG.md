@@ -72,5 +72,5 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Clarify deployment documentation in README.md.
 
 [Unreleased]: https://github.com/nai888/langua/compare/v0.1.5...HEAD
-[0.1.5]: https://github.com/nai888/langua/compare/v0.1.4...v0.1.5
-[0.1.4]: https://github.com/nai888/langua/compare/v0.1.3...v0.1.4
+[v0.1.5]: https://github.com/nai888/langua/compare/v0.1.4...v0.1.5
+[v0.1.4]: https://github.com/nai888/langua/compare/v0.1.3...v0.1.4
