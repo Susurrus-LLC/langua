@@ -185,7 +185,6 @@ class GenService {
     const checkCirc = (selected: string, refed: Array<string>): boolean => {
       const sp = getSp(selected)
       const deps = idDeps(sp)
-      refed.push(selected)
       let circ: boolean = false
 
       if (deps.length > 0) {
@@ -193,6 +192,7 @@ class GenService {
           circ = true
         } else {
           let i: number = 0
+          refed.push(selected)
           while (!circ && i < deps.length) {
             circ = checkCirc(deps[i], refed)
             i++
@@ -205,8 +205,7 @@ class GenService {
 
     for (let i = 0; i < data.subpatterns.length; i++) {
       const deps = idDeps(data.subpatterns[i].subpattern)
-      const sel = data.subpatterns[i].selected
-      let refed: Array<string> = [sel]
+      let refed: Array<string> = []
 
       if (deps.length > 0) {
         for (let j = 0; j < deps.length; j++) {
@@ -310,8 +309,53 @@ class GenService {
     let newData: Data = JSON.parse(JSON.stringify(data))
 
     // Randomly choose from the items in an array
-    const chooseRand = (length: number) => {
+    const chooseRand = (length: number): number => {
       return Math.floor(Math.random() * length)
+    }
+
+    // Get the subpattern for a variable
+    const getSubpattern = (subpatterns: Array<Subpattern>, selected: string): Array<string> => {
+      let subpattern: Array<string> = []
+      for (let i = 0; i < subpatterns.length; i++) {
+        if (subpatterns[i].selected === selected) {
+          subpattern = subpatterns[i].subpattern
+          break
+        }
+      }
+      return subpattern
+    }
+
+    // If a chosen item is a defined variable, randomly choose from its own Subpattern
+    const resolveVar = (subpatterns: Array<Subpattern>, selected: string): string => {
+      let letter: string = ''
+      if (vars.includes(selected)) {
+        const subpattern = getSubpattern(subpatterns, selected)
+        const selection: string = subpattern[chooseRand(subpattern.length)]
+        if (vars.includes(selection)) {
+          letter = resolveVar(subpatterns, selection)
+        } else {
+          letter = selection
+        }
+      } else {
+        letter = selected
+      }
+      if (letter.length > 1) {
+        letter = resolveOpt(subpatterns, letter)
+      }
+      return letter
+    }
+
+    const resolveOpt = (subpatterns: Array<Subpattern>, option: string): string => {
+      let letters: string = ''
+      for (let i = 0; i < option.length; i++) {
+        if (/[()[\]^*"]/.test(option[i])) {
+          // For now, ignore the characters that will be used for operations
+          continue
+        } else {
+          letters += resolveVar(subpatterns, option[i])
+        }
+      }
+      return letters
     }
 
     // Split all the Subpatterns into arrays based on '/'
@@ -329,32 +373,7 @@ class GenService {
       // If the Pattern has options, choose one
       const patt = pattArr[chooseRand(pattArr.length)]
 
-      for (let j = 0; j < patt.length; j++) {
-        const variab = patt[j]
-
-        if (/[()[\]^*"]/.test(variab)) {
-          // For now, ignore the characters that will be used for operations
-          continue
-        } else if (!vars.includes(variab)) {
-          // If the current item in the Pattern is not a variable, add it to the current word
-          word += patt[j]
-        } else {
-          let letter: string = ''
-
-          for (let k = 0; k < newData.subpatterns.length; k++) {
-            const subpattern = newData.subpatterns[k]
-            if (subpattern.selected === variab) {
-              // If the variable is defined, randomly choose an option from the related Subpattern
-              letter = subpattern.subpattern[chooseRand(subpattern.subpattern.length)]
-              break
-            } else {
-              // If the variable is unused, skip it
-              continue
-            }
-          }
-          word += letter
-        }
-      }
+      word += resolveOpt(newData.subpatterns, patt)
 
       results.push(word)
     }
