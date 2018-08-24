@@ -31,7 +31,7 @@
     "react-helmet": "5.2.0",
     "react-jss": "8.4.0",
     "react-router-dom": "4.2.2",
-    "react-scripts": "1.1.4",
+    "react-scripts": "1.1.5",
     "react-toastify": "4.0.1"
   },
   "devDependencies": {
