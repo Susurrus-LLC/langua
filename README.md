@@ -1,6 +1,8 @@
 # Langua
 
-[![Build Status](https://travis-ci.com/nai888/langua.svg?branch=master)](https://travis-ci.com/nai888/langua) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![Build Status](https://travis-ci.com/nai888/langua.svg?branch=master)](https://travis-ci.com/nai888/langua)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 
 1. [Overview](#overview)
 1. [Deployment](#deployment)
