@@ -1,5 +1,18 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    ":preserveSemverRanges"
+  ],
+  "assignees": [
+    "nai888"
+  ],
+  "labels": [
+    "code improvement"
+  ],
+  "prCreation": [
+    "not-pending"
+  ],
+  "reviewers": [
+    "nai888"
   ]
 }
