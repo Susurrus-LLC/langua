@@ -16,6 +16,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Fix bug preventing variable use within Subpatterns.
 - Improve error checker when finding circular references in the Subpatterns.
 - Expand the error checker that finds undefined variables in the Pattern to check Subpatterns as well.
+- Update dependencies.
 
 ## [v0.1.5] - 2018-07-04
 
