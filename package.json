@@ -26,8 +26,8 @@
     "color": "3.0.0",
     "normalize.css": "8.0.0",
     "prop-types": "15.6.2",
-    "react": "16.3.2",
-    "react-dom": "16.3.2",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
     "react-helmet": "5.2.0",
     "react-jss": "8.6.1",
     "react-router-dom": "4.2.2",
@@ -48,6 +48,6 @@
     "eslint-plugin-standard": "3.1.0",
     "flow-bin": "0.79.1",
     "react-snap": "1.18.0",
-    "react-test-renderer": "16.4.1"
+    "react-test-renderer": "16.4.2"
   }
 }
