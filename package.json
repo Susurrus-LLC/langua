@@ -22,7 +22,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "classnames": "2.2.5",
+    "classnames": "2.2.6",
     "color": "3.0.0",
     "normalize.css": "8.0.0",
     "prop-types": "15.6.1",
