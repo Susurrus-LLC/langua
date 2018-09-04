@@ -10,6 +10,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Add v0.1.2 to this CHANGELOG.
 - Add links to GitHub's version comparing for each of the versions.
+- Add [Renovate integration](https://renovatebot.com/) to continually maintain dependencies.
 
 ### Changed 0.1.6
 
