@@ -6458,9 +6458,9 @@ react-test-renderer@16.4.2:
     prop-types "^15.6.0"
     react-is "^16.4.2"
 
-react-toastify@4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-4.2.0.tgz#90221a49853eef6b8cb8dd9f2d95e4203b4e293a"
+react-toastify@4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-4.3.0.tgz#3c80e8819ed6d3203784814b526dc663679720a6"
   dependencies:
     classnames "^2.2.6"
     prop-types "^15.6.0"
