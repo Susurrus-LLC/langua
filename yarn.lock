@@ -1540,7 +1540,7 @@ clean-css@4.1.x:
   dependencies:
     source-map "0.5.x"
 
-clean-css@4.2.1:
+clean-css@4.2.1, clean-css@4.2.x:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.1.tgz#2d411ef76b8569b6d0c84068dabe85b0aa5e5c17"
   dependencies:
@@ -1661,11 +1661,7 @@ commander@2.15.x, commander@^2.11.0, commander@~2.15.0:
   version "2.15.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.15.1.tgz#df46e867d0fc2aec66a34662b406a9ccafff5b0f"
 
-commander@2.16.x:
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.16.0.tgz#f16390593996ceb4f3eeb020b31d78528f7f8a50"
-
-commander@~2.17.1:
+commander@2.17.x, commander@~2.17.1:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
 
@@ -3650,13 +3646,13 @@ html-entities@^1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
 
-html-minifier@3.5.19:
-  version "3.5.19"
-  resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.5.19.tgz#ed53c4b7326fe507bc3a1adbcc3bbb56660a2ebd"
+html-minifier@3.5.20:
+  version "3.5.20"
+  resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.5.20.tgz#7b19fd3caa0cb79f7cde5ee5c3abdf8ecaa6bb14"
   dependencies:
     camel-case "3.0.x"
-    clean-css "4.1.x"
-    commander "2.16.x"
+    clean-css "4.2.x"
+    commander "2.17.x"
     he "1.1.x"
     param-case "2.1.x"
     relateurl "0.2.x"
@@ -5120,9 +5116,9 @@ mimic-fn@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
 
-minimalcss@0.7.8:
-  version "0.7.8"
-  resolved "https://registry.yarnpkg.com/minimalcss/-/minimalcss-0.7.8.tgz#0b5eec5013a0669a214aec734891eab710a858da"
+minimalcss@0.7.10:
+  version "0.7.10"
+  resolved "https://registry.yarnpkg.com/minimalcss/-/minimalcss-0.7.10.tgz#453b642e43065cfebcaf21344171b9c34fb4e00e"
   dependencies:
     cheerio "1.0.0-rc.2"
     css-tree "1.0.0-alpha.28"
@@ -6434,16 +6430,16 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-snap@1.18.0:
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/react-snap/-/react-snap-1.18.0.tgz#51c32ec2bd4dd78ba3e5f4bf5978cf1c1d01b3d4"
+react-snap@1.19.0:
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/react-snap/-/react-snap-1.19.0.tgz#125883c95434987d78a55a3a72c733227721acb3"
   dependencies:
     clean-css "4.2.1"
     express "4.16.3"
     express-history-api-fallback "2.2.1"
     highland "2.13.0"
-    html-minifier "3.5.19"
-    minimalcss "0.7.8"
+    html-minifier "3.5.20"
+    minimalcss "0.7.10"
     mkdirp "0.5.1"
     puppeteer "^1.4.0"
     serve-static "1.13.2"
