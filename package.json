@@ -32,7 +32,7 @@
     "react-jss": "8.6.1",
     "react-router-dom": "4.3.1",
     "react-scripts": "1.1.5",
-    "react-toastify": "4.3.0"
+    "react-toastify": "4.3.1"
   },
   "devDependencies": {
     "eslint": "5.5.0",
