@@ -26,28 +26,28 @@
     "color": "3.0.0",
     "normalize.css": "8.0.0",
     "prop-types": "15.6.2",
-    "react": "16.5.0",
-    "react-dom": "16.5.0",
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
     "react-helmet": "5.2.0",
     "react-jss": "8.6.1",
     "react-router-dom": "4.3.1",
     "react-scripts": "1.1.5",
-    "react-toastify": "4.3.0"
+    "react-toastify": "4.3.2"
   },
   "devDependencies": {
-    "eslint": "5.5.0",
+    "eslint": "5.6.1",
     "eslint-config-react-app": "2.1.0",
     "eslint-config-standard": "12.0.0",
     "eslint-config-standard-flow": "1.0.1",
-    "eslint-plugin-flowtype": "2.50.0",
+    "eslint-plugin-flowtype": "2.50.3",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-node": "7.0.1",
     "eslint-plugin-promise": "4.0.1",
     "eslint-plugin-react": "7.11.1",
     "eslint-plugin-standard": "4.0.0",
-    "flow-bin": "0.80.0",
+    "flow-bin": "0.81.0",
     "react-snap": "1.19.0",
-    "react-test-renderer": "16.5.0"
+    "react-test-renderer": "16.5.2"
   }
 }
