@@ -110,9 +110,11 @@ Langua was inspired by several existing tools, including:
 - [SynTree](http://mshang.ca/syntree/)
 - [RSyntaxTree](https://www.yohasebe.com/rsyntaxtree/)
 
-Thank you to [Travis CI](https://travis-ci.com) and [BrowserStack](https://www.browserstack.com) for offering free services to open source projects!
+Thank you to [Travis CI](https://travis-ci.com), [BrowserStack](https://www.browserstack.com), and [Renovate](https://renovatebot.com) for offering free services to open source projects!
 
-[![Travis CI](./Logo%20Travis%20CI.png)](https://travis-ci.com "Travis CI") [![BrowserStack](./Logo%20BrowserStack.png)](https://www.browserstack.com "BrowserStack")
+[![Travis CI](./Logo%20Travis%20CI.png)](https://travis-ci.com "Travis CI")
+[![BrowserStack](./Logo%20BrowserStack.png)](https://www.browserstack.com "BrowserStack")
+[![Renovate](./Logo%20Renovate.png)](https://renovatebot.com "Renovate")
 
 ## License
 
