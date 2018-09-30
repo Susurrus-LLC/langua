@@ -165,7 +165,9 @@ class Gen extends React.Component {
           filterdupes: Boolean
         })
 
-        const content = JSON.parse(result)
+        let content = JSON.parse(result)
+
+        content.words = parseInt(content.words, 10)
 
         if (DataSchema(content)) {
           // If the file's content contains valid Data, load it
