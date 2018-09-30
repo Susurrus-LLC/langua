@@ -1,4 +1,6 @@
 // @flow
+import { toast } from 'react-toastify'
+
 import { defData, vars } from './defaultData'
 import fileProcessor from './fileProcessor'
 
@@ -448,7 +450,17 @@ class GenService {
   save (data: Data): void {
     // Save data to storage
     this.setStorage(data)
-    // Add a function to save data to a file
+    // If the browser has access to File and Blob, save the file locally
+    if (window.File) {
+      fileProcessor.saveFile(data)
+    } else {
+      toast.info('Your browser is unable to save files. The data has been saved to your browser’s local storage.', {
+        autoClose: 5000,
+        className: 'toast-unsaved',
+        bodyClassName: 'toast-unsaved-body',
+        progressClassName: 'toast-unsaved-progress'
+      })
+    }
   }
 
   // Open a file and parse it to restore a saved state
