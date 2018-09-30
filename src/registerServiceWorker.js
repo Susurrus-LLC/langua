@@ -41,6 +41,12 @@ export default function register () {
         // Add some additional logging to localhost, pointing developers to the
         // service worker/PWA documentation.
         navigator.serviceWorker.ready.then(() => {
+          toast.info('Langua is up-to-date and loading from your cache.', {
+            autoClose: 3000,
+            className: 'toast-cached',
+            bodyClassName: 'toast-cached-body',
+            progressClassName: 'toast-cached-progress'
+          })
           console.log(
             'This web app is being served cache-first by a service ' +
               'worker. To learn more, visit https://goo.gl/SC7cgQ'
