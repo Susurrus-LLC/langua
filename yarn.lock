@@ -3584,7 +3584,7 @@ file-loader@1.1.5:
     loader-utils "^1.0.2"
     schema-utils "^0.3.0"
 
-file-saver@^2.0.0-rc.3:
+file-saver@2.0.0-rc.3:
   version "2.0.0-rc.3"
   resolved "https://registry.yarnpkg.com/file-saver/-/file-saver-2.0.0-rc.3.tgz#4b77bbbafce2b75e25c6b4d1024e4c670bcb3b54"
   integrity sha512-LZ89x9kYxsAbJFoeLFiD5dRQnGoppXn3NLmPuULYyiKeAcEHQ8TTUwzGAEWT1VjoNGCapP3z+OG2qrwPoas80Q==
@@ -5217,7 +5217,7 @@ js-base64@^2.1.9:
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.3.tgz#2e545ec2b0f2957f41356510205214e98fad6582"
   integrity sha512-H7ErYLM34CvDMto3GbD6xD0JLUGYXR3QTcH6B/tr4Hi/QpSThnCsIp+Sy5FRTw3B0d6py4HcNkW7nO/wdtGWEw==
 
-js-schema@^1.0.1:
+js-schema@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/js-schema/-/js-schema-1.0.1.tgz#fed3517f7eff059199794ae640fbf6f3a595ccee"
   integrity sha1-/tNRf37/BZGZeUrmQPv286WVzO4=
