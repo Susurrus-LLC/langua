@@ -6,11 +6,19 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased]
 
+### Added 0.1.7
+
+### Changed 0.1.7
+
+## [v0.1.6] - 2018-09-30
+
 ### Added 0.1.6
 
 - Add v0.1.2 to this CHANGELOG.
 - Add links to GitHub's version comparing for each of the versions.
 - Add [Renovate integration](https://renovatebot.com/) to continually maintain dependencies.
+- Add function to save Gen settings to a `.lngg` text file.
+- Add function to open `.lngg` files, process and validate the content, and load the settings into Gen
 
 ### Changed 0.1.6
 
@@ -83,7 +91,8 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Build site framework.
 - Build basic version of the Gen tool.
 
-[Unreleased]: https://github.com/nai888/langua/compare/v0.1.5...HEAD
+[Unreleased]: https://github.com/nai888/langua/compare/v0.1.6...HEAD
+[v0.1.6]: https://github.com/nai888/langua/compare/v0.1.5...v0.1.6
 [v0.1.5]: https://github.com/nai888/langua/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/nai888/langua/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/nai888/langua/compare/b5e3e039d054041d8757ffa331d4702b9ea60dd8...v0.1.3
