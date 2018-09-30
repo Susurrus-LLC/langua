@@ -23,6 +23,8 @@ declare type Props = {
   changeDupes: () => void,
   generate: () => void,
   save: () => void,
+  showOpen: boolean,
+  onShowOpen: () => void,
   open: () => void
 }
 
@@ -62,7 +64,7 @@ const GenForm = (props: Props) => {
           ver='danger'
           addClass='small'
         >
-          Clear
+          Delete
         </Button>
       </div>
     </div>
@@ -81,6 +83,14 @@ const GenForm = (props: Props) => {
           </Button>
         </div>
       )
+    }
+  }
+
+  const determineClasses = (classes) => {
+    if (props.showOpen) {
+      return classes.controlPiece
+    } else {
+      return classNames(classes.controlPiece, classes.hidePiece)
     }
   }
 
@@ -159,12 +169,21 @@ const GenForm = (props: Props) => {
             </Button>
           </div>
           <div className={props.classes.controlPiece}>
-            <Button
+            <label className={props.classes.fileContainer}>
+              <Button
+                onClick={props.onShowOpen}
+              >
+                Open
+              </Button>
+            </label>
+          </div>
+        </div>
+        <div className={props.classes.controlFull}>
+          <div className={determineClasses(props.classes)}>
+            <input
               type='file'
-              onClick={props.open}
-            >
-              Open
-            </Button>
+              onChange={props.open}
+            />
           </div>
         </div>
       </div>

@@ -30,12 +30,14 @@ class Gen extends React.Component {
     this.onChangeDupes = this.onChangeDupes.bind(this)
     this.onGenerate = this.onGenerate.bind(this)
     this.onSave = this.onSave.bind(this)
+    this.onShowOpen = this.onShowOpen.bind(this)
     this.onOpen = this.onOpen.bind(this)
     this.classes = props.classes
     this.state = {
       data: genService.getData(),
       status: ['ok'],
       results: '',
+      showOpen: false,
       stats: {
         words: 0,
         maxWords: 0,
@@ -134,10 +136,25 @@ class Gen extends React.Component {
     genService.save(this.state.data)
   }
 
+  onShowOpen (e: SyntheticEvent<HTMLButtonElement>): void {
+    e.preventDefault()
+    this.setState(prevState => ({
+      showOpen: !this.state.showOpen
+    }))
+  }
+
   // Open a file and parse it to restore a saved state
   onOpen (e: SyntheticEvent<HTMLButtonElement>): void {
     e.preventDefault()
-    genService.open(this.state.data)
+    console.log('Tried to open')
+    const file = e.target.files[0]
+    console.log(file.name)
+    //const content = genService.open(file)
+    //console.log(content)
+    this.setState(prevState => ({
+      //data: content,
+      showOpen: false
+    }))
   }
 
   render () {
@@ -168,6 +185,8 @@ class Gen extends React.Component {
           changeDupes={this.onChangeDupes}
           generate={this.onGenerate}
           save={this.onSave}
+          showOpen={this.state.showOpen}
+          onShowOpen={this.onShowOpen}
           open={this.onOpen}
         />
         <GenResults

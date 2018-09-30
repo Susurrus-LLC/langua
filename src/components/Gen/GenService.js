@@ -1,5 +1,6 @@
 // @flow
 import { defData, vars } from './defaultData'
+import fileProcessor from './fileProcessor'
 
 declare type Results = {
   status: Array<string>,

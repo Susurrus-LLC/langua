@@ -30,11 +30,11 @@ const Button = (props: Props) => {
     }
   }
 
-  if (props.type === 'file' && props.type === 'this is not ready yet') {
+  if (props.type === 'file') {
     // This still needs to be ironed out
     return (
       <input
-        onClick={props.onClick}
+        onChange={props.onClick}
         id={props.id}
         className={classNames(props.classes.btn, filterClass(props.ver, props.classes), props.classes[props.addClass])}
         type={props.type}

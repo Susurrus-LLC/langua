@@ -77,6 +77,14 @@ const styles = {
     alignItems: 'baseline',
     alignContent: 'space-between'
   },
+  controlFull: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'baseline',
+    alignContent: 'space-between'
+  },
   controlPiece: {
     display: 'flex',
     flexDirection: 'row',
@@ -85,6 +93,9 @@ const styles = {
     alignContent: 'space-between',
     margin: `${v.lnht}rem`,
     verticalAlign: 'middle'
+  },
+  hidePiece: {
+    display: 'none'
   },
   patternInput: {
     width: '100%',
