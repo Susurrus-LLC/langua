@@ -3,6 +3,8 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
 import type Classes from 'react-jss'
+import { toast } from 'react-toastify'
+import schema from 'js-schema'
 
 import styles from './styles'
 import ButtonLink from '../Button/ButtonLink'
@@ -146,15 +148,62 @@ class Gen extends React.Component {
   // Open a file and parse it to restore a saved state
   onOpen (e: SyntheticEvent<HTMLButtonElement>): void {
     e.preventDefault()
-    console.log('Tried to open')
     const file = e.target.files[0]
-    console.log(file.name)
-    //const content = genService.open(file)
-    //console.log(content)
-    this.setState(prevState => ({
-      //data: content,
-      showOpen: false
-    }))
+
+    const processResults = (result) => {
+      if (file.name.slice(-5) === '.lngg') {
+        const SubpatternSchema = schema({
+          selected: /[A-Z]/,
+          subpattern: String
+        })
+
+        const DataSchema = schema({
+          subpatterns: Array.of(1, 24, SubpatternSchema),
+          pattern: String,
+          words: Number.min(1).max(9999),
+          newline: Boolean,
+          filterdupes: Boolean
+        })
+
+        const content = JSON.parse(result)
+
+        if (DataSchema(content)) {
+          // If the file's content contains valid Data, load it
+          toast.success(`Data loaded from ${file.name}.`, {
+            autoClose: 5000,
+            className: 'toast-opened',
+            bodyClassName: 'toast-opened-body',
+            progressClassName: 'toast-opened-progress'
+          })
+
+          this.setState(prevState => ({
+            data: content,
+            showOpen: false
+          }))
+
+          genService.setStorage(content)
+        } else {
+          // If the file's content does not contain valid Data, show an error
+          toast.info(`The content of ${file.name} is invalid.`, {
+            autoClose: 5000,
+            className: 'toast-unopened',
+            bodyClassName: 'toast-unopened-body',
+            progressClassName: 'toast-unopened-progress'
+          })
+
+          console.log(DataSchema.errors(content))
+        }
+      } else {
+        toast.info('Wrong filetype selected.', {
+          autoClose: 5000,
+          className: 'toast-unopened',
+          bodyClassName: 'toast-unopened-body',
+          progressClassName: 'toast-unopened-progress'
+        })
+      }
+    }
+
+    genService.open(file, this.state.data, processResults)
   }
 
   render () {

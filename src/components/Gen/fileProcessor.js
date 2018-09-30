@@ -19,8 +19,14 @@ class FileProcessor {
     saveAs(file)
   }
 
-  openFile (file): void {
-    
+  openFile (file, callback): Data {
+    const reader = new FileReader()
+
+    reader.onload = () => {
+      callback(reader.result)
+    }
+
+    reader.readAsText(file)
   }
 }
 

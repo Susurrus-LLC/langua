@@ -450,10 +450,11 @@ class GenService {
   save (data: Data): void {
     // Save data to storage
     this.setStorage(data)
-    // If the browser has access to File and Blob, save the file locally
     if (window.File) {
+      // If the browser has access to File, save the file locally
       fileProcessor.saveFile(data)
     } else {
+      // If the browser can't access File, display a notification
       toast.info('Your browser is unable to save files. The data has been saved to your browser’s local storage.', {
         autoClose: 5000,
         className: 'toast-unsaved',
@@ -464,8 +465,20 @@ class GenService {
   }
 
   // Open a file and parse it to restore a saved state
-  open (data: Data): void {
-    // Add a function to handle opening a saved document
+  open (file, data: Data, callback): Data {
+    if (window.FileReader) {
+      // If the browser has access to the File APIs, open the file
+      return fileProcessor.openFile(file, callback)
+    } else {
+      // If the browser can't access the File APIs, display a notification
+      toast.info('Your browser is unable to open files.', {
+        autoClose: 5000,
+        className: 'toast-unopened',
+        bodyClassName: 'toast-unopened-body',
+        progressClassName: 'toast-unopened-progress'
+      })
+      return data
+    }
   }
 }
 

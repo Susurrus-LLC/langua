@@ -94,6 +94,11 @@ const GenForm = (props: Props) => {
     }
   }
 
+  const open = (e) => {
+    props.open(e)
+    e.target.value = ''
+  }
+
   return (
     <form className={props.classes.form}>
       <div className={classNames(props.classes.subpatterns, props.classes.part)}>
@@ -182,7 +187,7 @@ const GenForm = (props: Props) => {
           <div className={determineClasses(props.classes)}>
             <input
               type='file'
-              onChange={props.open}
+              onChange={open}
             />
           </div>
         </div>

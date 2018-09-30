@@ -169,10 +169,10 @@ const styles = {
         left: `${v.lnht / 2}rem`
       }
     },
-    '.toast-update, .toast-unsaved': {
+    '.toast-update, .toast-unsaved, .toast-unopened': {
       backgroundColor: v.red.darken(0.1).alpha(0.9).string()
     },
-    '.toast-cached': {
+    '.toast-cached, .toast-opened': {
       backgroundColor: v.blu.darken(0.1).alpha(0.9).string()
     },
     '.toast-offline': {
