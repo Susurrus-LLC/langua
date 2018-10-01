@@ -23,8 +23,6 @@ declare type Props = {
   changeDupes: () => void,
   generate: () => void,
   save: () => void,
-  showOpen: boolean,
-  onShowOpen: () => void,
   open: () => void
 }
 
@@ -86,17 +84,13 @@ const GenForm = (props: Props) => {
     }
   }
 
-  const determineClasses = (classes) => {
-    if (props.showOpen) {
-      return classes.controlPiece
-    } else {
-      return classNames(classes.controlPiece, classes.hidePiece)
-    }
+  const applyClassHidden = (classes) => {
+    return classNames(classes.controlPiece, classes.hidePiece)
   }
 
-  const open = (e) => {
-    props.open(e)
-    e.target.value = ''
+  const invokeFilePicker = (e : SyntheticEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    this.filePicker.click()
   }
 
   return (
@@ -176,7 +170,7 @@ const GenForm = (props: Props) => {
           <div className={props.classes.controlPiece}>
             <label className={props.classes.fileContainer}>
               <Button
-                onClick={props.onShowOpen}
+                onClick={invokeFilePicker.bind(this)}
               >
                 Open
               </Button>
@@ -184,10 +178,11 @@ const GenForm = (props: Props) => {
           </div>
         </div>
         <div className={props.classes.controlFull}>
-          <div className={determineClasses(props.classes)}>
+          <div className={applyClassHidden(props.classes)}>
             <input
               type='file'
-              onChange={open}
+              ref={ filePicker => { this.filePicker = filePicker } }
+              onChange={props.open}
             />
           </div>
         </div>
