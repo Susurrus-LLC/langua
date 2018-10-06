@@ -15,6 +15,17 @@ import genService from './GenService'
 
 import { canonical, siteTitle } from '../../App'
 
+// String.endsWith() polyfill
+if (!String.prototype.endsWith) {
+  // eslint-disable-next-line
+  String.prototype.endsWith = (search, thisLen) => {
+    if (thisLen === undefined || thisLen > this.length) {
+      thisLen = this.length
+    }
+    return this.substring(thisLen - search.length, thisLen) === search
+  }
+}
+
 declare type Props = {
   classes: Classes
 }
@@ -142,7 +153,7 @@ class Gen extends React.Component {
     const file = e.target.files[0]
 
     const processResults = (result) => {
-      if (file.name.slice(-5) === '.lngg') {
+      if (file.name.endsWith('.lngg')) {
         const SubpatternSchema = schema({
           selected: /[A-Z]/,
           subpattern: String

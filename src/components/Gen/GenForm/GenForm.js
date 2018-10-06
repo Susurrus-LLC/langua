@@ -84,12 +84,9 @@ const GenForm = (props: Props) => {
     }
   }
 
-  const applyClassHidden = (classes) => {
-    return classNames(classes.controlPiece, classes.hidePiece)
-  }
-
-  const invokeFilePicker = (e : SyntheticEvent<HTMLButtonElement>) => {
+  const invokeFilePicker = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault()
+    this.filePicker.value = ''
     this.filePicker.click()
   }
 
@@ -168,20 +165,13 @@ const GenForm = (props: Props) => {
             </Button>
           </div>
           <div className={props.classes.controlPiece}>
-            <label className={props.classes.fileContainer}>
-              <Button
-                onClick={invokeFilePicker.bind(this)}
-              >
-                Open
-              </Button>
-            </label>
-          </div>
-        </div>
-        <div className={props.classes.controlFull}>
-          <div className={applyClassHidden(props.classes)}>
+            <Button onClick={invokeFilePicker}>
+              Open
+            </Button>
             <input
+              className={props.classes.hidden}
               type='file'
-              ref={ filePicker => { this.filePicker = filePicker } }
+              ref={filePicker => { this.filePicker = filePicker }}
               onChange={props.open}
             />
           </div>
