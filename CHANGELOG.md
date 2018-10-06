@@ -10,6 +10,10 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Changed 0.1.7
 
+- Change `file.name.slice(-5) === '.lngg'` to `file.name.endsWith('.lngg')`.
+- Open files directly when clicking the Open button, rather than unhiding a file input element. (See [issue #50](https://github.com/nai888/langua/issues/50).)
+- Update dependencies.
+
 ## [v0.1.6] - 2018-09-30
 
 ### Added 0.1.6
@@ -18,7 +22,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Add links to GitHub's version comparing for each of the versions.
 - Add [Renovate integration](https://renovatebot.com/) to continually maintain dependencies.
 - Add function to save Gen settings to a `.lngg` text file.
-- Add function to open `.lngg` files, process and validate the content, and load the settings into Gen
+- Add function to open `.lngg` files, process and validate the content, and load the settings into Gen.
 
 ### Changed 0.1.6
 
