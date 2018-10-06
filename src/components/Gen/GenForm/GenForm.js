@@ -27,6 +27,8 @@ declare type Props = {
 }
 
 const GenForm = (props: Props) => {
+  const filePicker = React.createRef()
+
   const selectOptions = vars.map((variab, index) => (
     <option
       key={index}
@@ -86,8 +88,8 @@ const GenForm = (props: Props) => {
 
   const invokeFilePicker = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    this.filePicker.value = ''
-    this.filePicker.click()
+    filePicker.current.value = ''
+    filePicker.current.click()
   }
 
   return (
@@ -171,7 +173,7 @@ const GenForm = (props: Props) => {
             <input
               className={props.classes.hidden}
               type='file'
-              ref={filePicker => { this.filePicker = filePicker }}
+              ref={filePicker}
               onChange={props.open}
             />
           </div>

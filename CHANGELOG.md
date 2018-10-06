@@ -14,6 +14,10 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Open files directly when clicking the Open button, rather than unhiding a file input element. (See [issue #50](https://github.com/nai888/langua/issues/50).)
 - Update dependencies.
 
+### Removed 0.1.7
+
+- Remove eslint due to conflicts with create-react-app version 2+.
+
 ## [v0.1.6] - 2018-09-30
 
 ### Added 0.1.6
