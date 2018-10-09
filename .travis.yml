@@ -15,6 +15,8 @@ deploy:
   local_dir: build
   on:
     branch: master
+notifications:
+  webhooks: https://www.travisbuddy.com/
 addons:
   browserstack:
     username: iancook3
