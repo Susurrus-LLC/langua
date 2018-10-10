@@ -8,14 +8,19 @@ Thanks for your contribution. There seems to be an issue with your pull request.
 
 ### {{displayName}}
 
+<a href="{{link}}">View build log</a>
+
 {{#scripts}}
-
-**{{command}}**
-
+<details>
+  <summary>
+    <strong>
+     {{command}}
+    </strong>
+  </summary>
 ```
 {{&contents}}
 ```
-
+</details>
 {{/scripts}}
 {{/jobs}}
 
