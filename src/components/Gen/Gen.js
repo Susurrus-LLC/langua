@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 
 import styles from './styles'
 import ButtonLink from '../Button/ButtonLink'
-import Notice from '../Notice/Notice'
 import GenForm from './GenForm/GenForm'
 import GenResults from './GenResults/GenResults'
 import genService from './GenService'
@@ -218,7 +217,6 @@ class Gen extends React.Component {
           Help
         </ButtonLink>
         <h2 className='toolTitle'>LanguaGen</h2>
-        <Notice>This tool is still in development. Please be patient until it is complete.</Notice>
         <GenForm
           data={state.data}
           changeSelect={this.onChangeSelect}

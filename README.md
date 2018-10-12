@@ -80,11 +80,11 @@ For a full list of all changes made in each version of Langua, see the [Changelo
 ## Development Roadmap
 
 - [x] **v0.0.x:** Building the architecture of the site.
-- [ ] **v0.1.x:** Building the [Gen](#gen) tool; bug fixes and other small updates.
-- [ ] **v0.2.x:** Building the [Morph](#morph) tool; [Gen](#gen) tool functional; bug fixes and other small updates.
-- [ ] **v0.3.x:** Building the [Deriv](#deriv) tool; [Morph](#morph) tool functional; bug fixes and other updates.
-- [ ] **v0.4.x:** Building the [Frequen](#frequen) tool; [Deriv](#deriv) tool functional; bug fixes and other updates.
-- [ ] **v0.5.x:** Building the [Tree](#tree) tool; [Frequen](#frequen) tool functional; bug fixes and other updates.
+- [x] **v0.1.x:** Building the [Gen](#gen) tool; bug fixes and other small updates.
+- [ ] **v0.2.x:** [Gen](#gen) tool basic functionality working; building the [Frequen](#frequen) tool; bug fixes and other small updates.
+- [ ] **v0.3.x:** [Gen](#gen) and [Frequen](#frequen) tools basic functionality working; building the [Morph](#morph) tool; bug fixes and other small updates.
+- [ ] **v0.4.x:** [Gen](#gen), [Frequen](#frequen), and [Morph](#morph) tools basic functionality working; building the [Deriv](#deriv) tool; bug fixes and other small updates.
+- [ ] **v0.5.x:** [Gen](#gen), [Frequen](#frequen), [Morph](#morph), and [Deriv](#deriv) tools basic functionality working; building the [Tree](#tree) tool; bug fixes and other small updates.
 - [ ] **v1.x.x:** All tools functional; bug fixes and ongoing development.
 
 ## Contributing

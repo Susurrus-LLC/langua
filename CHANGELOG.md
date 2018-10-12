@@ -19,6 +19,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Open files directly when clicking the Open button, rather than unhiding a file input element. (See [issue #50](https://github.com/nai888/langua/issues/50).)
 - Update dependencies.
 - Refactor Home panels into a separate component for reusability.
+- Fill out remaining information in the Gen Help file.
 
 ### Removed 0.1.7
 
