@@ -11,7 +11,7 @@
   ],
   "settings": {
     "react": {
-
+      "version": "latest"
     }
   },
   "parserOptions": {

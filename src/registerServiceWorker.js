@@ -47,6 +47,7 @@ export default function register () {
             bodyClassName: 'toast-cached-body',
             progressClassName: 'toast-cached-progress'
           })
+          // eslint-disable-next-line
           console.log('This web app is being served cache-first by a service worker. To learn more, visit https://goo.gl/SC7cgQ')
         })
       } else {
@@ -76,6 +77,7 @@ function registerValidSW (swUrl) {
                 bodyClassName: 'toast-update-body',
                 progressClassName: 'toast-update-progress'
               })
+              // eslint-disable-next-line
               console.log('An update is available; please refresh the page to load it.')
             } else {
               // At this point, everything has been precached.
@@ -87,6 +89,7 @@ function registerValidSW (swUrl) {
                 bodyClassName: 'toast-cached-body',
                 progressClassName: 'toast-cached-progress'
               })
+              // eslint-disable-next-line
               console.log('Langua has been successfully cached. You can now use it offline.')
             }
           }
@@ -94,6 +97,7 @@ function registerValidSW (swUrl) {
       }
     })
     .catch(error => {
+      // eslint-disable-next-line
       console.error('Error during service worker registration:', error)
     })
 }
@@ -125,6 +129,7 @@ function checkValidServiceWorker (swUrl) {
         bodyClassName: 'toast-offline-body',
         progressClassName: 'toast-offline-progress'
       })
+      // eslint-disable-next-line
       console.log('No internet connection found; Langua is running in offline mode.')
     })
 }

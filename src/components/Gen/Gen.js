@@ -187,6 +187,7 @@ class Gen extends React.Component {
             progressClassName: 'toast-unopened-progress'
           })
 
+          // eslint-disable-next-line
           console.error(DataSchema.errors(content))
         }
       } else {
