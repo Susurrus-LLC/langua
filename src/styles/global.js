@@ -8,6 +8,7 @@ const styles = {
     body: {
       margin: 0,
       padding: 0,
+      paddingLeft: 'calc(100vw - 100%)',
       fontFamily: v.mainFont,
       fontSize: `${v.ms1}rem`,
       lineHeight: v.lnht * 2,

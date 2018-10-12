@@ -20,6 +20,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Update dependencies.
 - Refactor Home panels into a separate component for reusability.
 - Fill out remaining information in the Gen Help file.
+- Adjust page centering to remain consistent as the vertical scrollbar appears or disappears.
 
 ### Removed 0.1.7
 
