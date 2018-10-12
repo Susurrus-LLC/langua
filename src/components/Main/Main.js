@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import injectSheet from 'react-jss'
 import { ToastContainer, toast, Flip } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import PropTypes from 'prop-types'
 
 import Home from '../Home/Home'
 import Deriv from '../Deriv/Deriv'
@@ -42,5 +43,9 @@ const Main = (props) => (
     />
   </main>
 )
+
+Main.propTypes = {
+  classes: PropTypes.object
+}
 
 export default injectSheet(styles)(Main)

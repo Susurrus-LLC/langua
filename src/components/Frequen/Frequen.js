@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
 
 import styles from './styles'
 import Notice from '../Notice/Notice'
@@ -22,5 +23,9 @@ const Frequen = (props) => (
     <Notice>This tool is still in planning.</Notice>
   </div>
 )
+
+Frequen.propTypes = {
+  classes: PropTypes.object
+}
 
 export default injectSheet(styles)(Frequen)

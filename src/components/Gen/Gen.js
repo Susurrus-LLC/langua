@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
 import { toast } from 'react-toastify'
 import schema from 'js-schema'
+import PropTypes from 'prop-types'
 
 import styles from './styles'
 import ButtonLink from '../Button/ButtonLink'
@@ -42,7 +43,7 @@ class Gen extends React.Component {
     this.state = {
       data: genService.getData(),
       status: ['ok'],
-      results: '',
+      results: [''],
       stats: {
         words: 0,
         maxWords: 0,
@@ -241,6 +242,10 @@ class Gen extends React.Component {
       </div>
     )
   }
+}
+
+Gen.propTypes = {
+  classes: PropTypes.object
 }
 
 export default injectSheet(styles)(Gen)

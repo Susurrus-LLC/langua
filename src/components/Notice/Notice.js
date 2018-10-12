@@ -1,5 +1,6 @@
 import React from 'react'
 import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
 
 const styles = {
   notice: {
@@ -12,5 +13,10 @@ const Notice = (props) => (
     {props.children}
   </p>
 )
+
+Notice.propTypes = {
+  classes: PropTypes.object,
+  children: PropTypes.string
+}
 
 export default injectSheet(styles)(Notice)

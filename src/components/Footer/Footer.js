@@ -1,5 +1,6 @@
 import React from 'react'
 import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
 
 import styles from './styles'
 
@@ -82,6 +83,10 @@ const Footer = (props) => {
       </div>
     </footer>
   )
+}
+
+Footer.propTypes = {
+  classes: PropTypes.object
 }
 
 export default injectSheet(styles)(Footer)

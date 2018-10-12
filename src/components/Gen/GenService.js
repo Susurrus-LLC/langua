@@ -4,7 +4,7 @@ import { defData, vars } from './defaultData'
 import fileProcessor from './fileProcessor'
 
 class GenService {
-  constructor (props) {
+  constructor () {
     this.storage = window.localStorage
     this.item = 'gen'
     this.getData = this.getData.bind(this)
@@ -287,7 +287,7 @@ class GenService {
         }
       }
     } else {
-      results = this.build(data, 'ok')
+      results = this.build(data, ['ok'])
     }
 
     return results

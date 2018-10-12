@@ -8,6 +8,9 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Added 0.1.7
 
+- Add PropTypes.
+- Add Codacy and codacy-coverage.
+
 ### Changed 0.1.7
 
 - Change `file.name.slice(-5) === '.lngg'` to `file.name.endsWith('.lngg')`.

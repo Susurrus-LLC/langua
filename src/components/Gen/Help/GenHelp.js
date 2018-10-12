@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
 
 import styles from './styles'
 import Notice from '../../Notice/Notice'
@@ -48,5 +49,9 @@ const GenHelp = (props) => (
     <p>Clicking the <strong>Save</strong> button will save the current settings to the browser’s local storage and generate a small `.lngg` text file containing the current settings that can be saved to your disk. This `.lngg` file can be loaded using the <strong>Open</strong> button to reload saved settings.</p>
   </div>
 )
+
+GenHelp.propTypes = {
+  classes: PropTypes.object
+}
 
 export default injectSheet(styles)(GenHelp)

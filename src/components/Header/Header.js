@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import injectSheet from 'react-jss'
 import classNames from 'classnames'
+import PropTypes from 'prop-types'
 
 import styles from './styles'
 
@@ -41,5 +42,9 @@ const Header = (props) => (
     </div>
   </header>
 )
+
+Header.propTypes = {
+  classes: PropTypes.object
+}
 
 export default injectSheet(styles)(Header)

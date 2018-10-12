@@ -1,5 +1,6 @@
 import React from 'react'
 import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
 
 import styles from './styles'
 
@@ -56,6 +57,20 @@ const GenResults = (props) => {
       </div>
     </div>
   )
+}
+
+GenResults.propTypes = {
+  classes: PropTypes.object,
+  newLine: PropTypes.bool.isRequired,
+  filterDupes: PropTypes.bool.isRequired,
+  status: PropTypes.arrayOf(PropTypes.string).isRequired,
+  results: PropTypes.arrayOf(PropTypes.string).isRequired,
+  stats: PropTypes.shape({
+    words: PropTypes.number.isRequired,
+    maxWords: PropTypes.number.isRequired,
+    filtered: PropTypes.number.isRequired,
+    remaining: PropTypes.number.isRequired
+  }).isRequired
 }
 
 export default injectSheet(styles)(GenResults)

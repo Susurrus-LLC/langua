@@ -1,7 +1,7 @@
 import saveAs from 'file-saver'
 
 class FileProcessor {
-  constructor(props) {
+  constructor() {
     this.saveFile = this.saveFile.bind(this)
     this.openFile = this.openFile.bind(this)
   }

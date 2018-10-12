@@ -1,6 +1,7 @@
 import React from 'react'
 import injectSheet from 'react-jss'
 import classNames from 'classnames'
+import PropTypes from 'prop-types'
 
 import Button from '../../Button/Button'
 
@@ -163,6 +164,31 @@ const GenForm = (props) => {
       </div>
     </form>
   )
+}
+
+GenForm.propTypes = {
+  classes: PropTypes.object,
+  data: PropTypes.shape({
+    subpatterns: PropTypes.arrayOf(PropTypes.shape({
+      selected: PropTypes.string.isRequired,
+      subpattern: PropTypes.string.isRequired
+    })).isRequired,
+    pattern: PropTypes.string.isRequired,
+    words: PropTypes.number.isRequired,
+    newline: PropTypes.bool.isRequired,
+    filterdupes: PropTypes.bool.isRequired
+  }).isRequired,
+  changeSelect: PropTypes.func.isRequired,
+  changeSubpattern: PropTypes.func.isRequired,
+  clear: PropTypes.func.isRequired,
+  add: PropTypes.func.isRequired,
+  changePattern: PropTypes.func.isRequired,
+  changeWordNum: PropTypes.func.isRequired,
+  changeNewline: PropTypes.func.isRequired,
+  changeDupes: PropTypes.func.isRequired,
+  generate: PropTypes.func.isRequired,
+  save: PropTypes.func.isRequired,
+  open: PropTypes.func.isRequired
 }
 
 export default injectSheet(styles)(GenForm)

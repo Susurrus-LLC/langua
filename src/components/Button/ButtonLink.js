@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router'
+import PropTypes from 'prop-types'
 
 import Button from './Button'
 
@@ -14,6 +15,13 @@ const ButtonLink = (props) => {
       {props.children}
     </Button>
   )
+}
+
+ButtonLink.propTypes = {
+  buttonType: PropTypes.string,
+  children: PropTypes.string,
+  history: PropTypes.object,
+  route: PropTypes.string
 }
 
 export default withRouter(ButtonLink)

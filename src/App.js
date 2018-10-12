@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
 import 'normalize.css/normalize.css'
+import PropTypes from 'prop-types'
 
 import * as v from './styles/variables'
 import styles from './styles/app'
@@ -31,5 +32,9 @@ const App = (props) => (
     <Footer />
   </div>
 )
+
+App.propTypes = {
+  classes: PropTypes.object
+}
 
 export default injectSheet(styles)(App)

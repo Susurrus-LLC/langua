@@ -1,6 +1,7 @@
 import React from 'react'
 import injectSheet from 'react-jss'
 import classNames from 'classnames'
+import PropTypes from 'prop-types'
 
 import styles from './styles'
 
@@ -40,6 +41,16 @@ const Button = (props) => {
       </button>
     )
   }
+}
+
+Button.propTypes = {
+  ver: PropTypes.oneOf(['neutral', 'success', 'danger']),
+  onClick: PropTypes.func,
+  id: PropTypes.string,
+  addClass: PropTypes.string,
+  type: PropTypes.string,
+  role: PropTypes.string,
+  classes: PropTypes.object
 }
 
 export default injectSheet(styles)(Button)
