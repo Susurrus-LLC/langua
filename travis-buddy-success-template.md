@@ -6,4 +6,4 @@ Thanks for your contribution! It looks like your pull request is passing all the
 
 <a href="{{link}}">View build log</a>
 
-###### TravisBuddy Request Identifier: {{requestId}}
+**TravisBuddy Request Identifier: {{requestId}}**

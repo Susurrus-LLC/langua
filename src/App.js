@@ -18,7 +18,7 @@ const App = (props) => (
   <div className={props.classes.app}>
     <Helmet>
       <title>{siteTitle} Language Tools</title>
-      <meta charset='utf-8' />
+      <meta charSet='utf-8' />
       <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
       <meta name='author' content='Ian A. Cook' />
       <meta name='description' content='Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation.' />

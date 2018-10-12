@@ -24,4 +24,4 @@ Thanks for your contribution. There seems to be an issue with your pull request.
 {{/scripts}}
 {{/jobs}}
 
-###### TravisBuddy Request Identifier: {{requestId}}
+**TravisBuddy Request Identifier: {{requestId}}**
