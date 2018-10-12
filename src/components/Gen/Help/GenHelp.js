@@ -45,7 +45,7 @@ const GenHelp = (props) => (
     <p>After the words have been generated, some statistics are shown below, including how many words were printed to the output, how many duplicates were filtered out of the results (if any), and how many words are possible based on the given Pattern and Subpatterns. (Note that the number of <em>unique</em> words possible may actually be lower if there are multiple ways to obtain the same word.)</p>
     <h4 id='files'>Saving and Loading Settings</h4>
     <p>This functionality is planned.</p>
-    <p>Clicking the <strong>Save</strong> button will save the current settings to the browser’s local storage and generate a small text file containing the current settings that can be saved to your disk. This text file can be loaded using the <strong>Open</strong> button to reload past settings.</p>
+    <p>Clicking the <strong>Save</strong> button will save the current settings to the browser’s local storage and generate a small `.lngg` text file containing the current settings that can be saved to your disk. This `.lngg` file can be loaded using the <strong>Open</strong> button to reload saved settings.</p>
   </div>
 )
 
