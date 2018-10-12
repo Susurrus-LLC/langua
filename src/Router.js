@@ -1,4 +1,3 @@
-// @flow
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import injectSheet from 'react-jss'

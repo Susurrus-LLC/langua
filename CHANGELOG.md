@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format of this changelog is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [Unreleased](https://github.com/nai888/langua/compare/v0.1.6...HEAD)
 
 ### Added 0.1.7
 
@@ -16,9 +16,9 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Removed 0.1.7
 
-- Remove eslint due to conflicts with create-react-app version 2+.
+- Remove Flow.
 
-## [v0.1.6] - 2018-09-30
+## [v0.1.6](https://github.com/nai888/langua/compare/v0.1.5...v0.1.6) - 2018-09-30
 
 ### Added 0.1.6
 
@@ -35,7 +35,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Expand the error checker that finds undefined variables in the Pattern to check Subpatterns as well.
 - Update dependencies.
 
-## [v0.1.5] - 2018-07-04
+## [v0.1.5](https://github.com/nai888/langua/compare/v0.1.4...v0.1.5) - 2018-07-04
 
 ### Added 0.1.5
 
@@ -53,7 +53,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Link to the CHANGELOG in the footer instead of to the README#versioning header.
 - Refactor the top-level Router into its own page so that index.js *only* handles rendering.
 
-## [v0.1.4] - 2018-05-12
+## [v0.1.4](https://github.com/nai888/langua/compare/v0.1.3...v0.1.4) - 2018-05-12
 
 ### Added 0.1.4
 
@@ -76,7 +76,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Delete the `console.log()` calls and reformatted some of the code within the Gen results function.
 - Remove react-snap from the build process for now, since it currently assigns CSS classes incorrectly. (See [issue #11](https://github.com/nai888/langua/issues/11).)
 
-## [v0.1.3] - 2018-04-27
+## [v0.1.3](https://github.com/nai888/langua/compare/b5e3e039d054041d8757ffa331d4702b9ea60dd8...v0.1.3) - 2018-04-27
 
 ### Added 0.1.3
 
@@ -92,16 +92,9 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Add link to CONTRIBUTING.md to README.md.
 - Clarify deployment documentation in README.md.
 
-## [v0.1.2]
+## [v0.1.2](https://github.com/nai888/langua/compare/d0ce8c9ed58aeef8802092d220af7c57f9f0da29...a6e3d281e83fee7648864ac8eaee3f3b8a1b37ff)
 
 ### Added 0.1.2
 
 - Build site framework.
 - Build basic version of the Gen tool.
-
-[Unreleased]: https://github.com/nai888/langua/compare/v0.1.6...HEAD
-[v0.1.6]: https://github.com/nai888/langua/compare/v0.1.5...v0.1.6
-[v0.1.5]: https://github.com/nai888/langua/compare/v0.1.4...v0.1.5
-[v0.1.4]: https://github.com/nai888/langua/compare/v0.1.3...v0.1.4
-[v0.1.3]: https://github.com/nai888/langua/compare/b5e3e039d054041d8757ffa331d4702b9ea60dd8...v0.1.3
-[v0.1.2]: https://github.com/nai888/langua/compare/d0ce8c9ed58aeef8802092d220af7c57f9f0da29...a6e3d281e83fee7648864ac8eaee3f3b8a1b37ff

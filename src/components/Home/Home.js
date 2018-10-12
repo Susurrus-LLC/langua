@@ -1,17 +1,11 @@
-// @flow
 import React from 'react'
 import { Link } from 'react-router-dom'
 import injectSheet from 'react-jss'
-import type Classes from 'react-jss'
 import classNames from 'classnames'
 
 import styles from './styles'
 
-declare type Props = {
-  classes: Classes
-}
-
-const Home = (props: Props) => (
+const Home = (props) => (
   <div className={props.classes.home}>
     <p className={props.classes.siteDescription}>Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation.</p>
     <div className={props.classes.grid}>

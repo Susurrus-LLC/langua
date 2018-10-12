@@ -1,8 +1,6 @@
-// @flow
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
-import type Classes from 'react-jss'
 import 'normalize.css/normalize.css'
 
 import * as v from './styles/variables'
@@ -15,11 +13,7 @@ import Footer from './components/Footer/Footer'
 export const canonical = 'https://nai888.github.io/langua/'
 export const siteTitle = 'Langua |'
 
-declare type Props = {
-  classes: Classes
-}
-
-const App = (props: Props) => (
+const App = (props) => (
   <div className={props.classes.app}>
     <Helmet>
       <title>{siteTitle} Language Tools</title>
@@ -30,7 +24,7 @@ const App = (props: Props) => (
       <meta name='theme-color' content={v.blu.string()} />
       <link rel='canonical' href={canonical} />
       <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Noto+Serif:400,400i,700,700i&amp;subset=greek,greek-ext,latin-ext' rel='stylesheet' />
-      <script defer src='https://use.fontawesome.com/releases/v5.0.10/js/all.js' integrity='sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+' crossorigin='anonymous' />
+      <script defer src='https://use.fontawesome.com/releases/v5.0.10/js/all.js' integrity='sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+' crossOrigin='anonymous' />
     </Helmet>
     <Header />
     <Main />

@@ -1,24 +1,11 @@
-// @flow
 import React from 'react'
 import injectSheet from 'react-jss'
-import type Classes from 'react-jss'
 import classNames from 'classnames'
 
 import styles from './styles'
 
-declare type Props = {
-  classes: Classes,
-  addClass?: string,
-  onClick(): void,
-  type?: string,
-  ver?: string,
-  id?: string,
-  role?: string,
-  children: string
-}
-
-const Button = (props: Props) => {
-  const filterClass = (ver: typeof Props.ver, classes: typeof Props.classes): string | null => {
+const Button = (props) => {
+  const filterClass = (ver, classes) => {
     if (ver === 'neutral') {
       return classes.neutral
     } else if (ver === 'success') {

@@ -1,8 +1,6 @@
-// @flow
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
-import type Classes from 'react-jss'
 
 import styles from './styles'
 import Notice from '../Notice/Notice'
@@ -10,11 +8,7 @@ import ButtonLink from '../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../App'
 
-declare type Props = {
-  classes: Classes
-}
-
-const Frequen = (props: Props) => (
+const Frequen = (props) => (
   <div className={props.classes.frequen}>
     <Helmet>
       <title>{siteTitle} Frequen</title>

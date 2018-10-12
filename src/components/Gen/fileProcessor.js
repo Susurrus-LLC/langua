@@ -1,16 +1,13 @@
-// @flow
 import saveAs from 'file-saver'
 
-declare type Props = {}
-
 class FileProcessor {
-  constructor(props: Props) {
+  constructor(props) {
     this.saveFile = this.saveFile.bind(this)
     this.openFile = this.openFile.bind(this)
   }
 
-  saveFile (data: Data): void {
-    const file = new File(
+  saveFile (data) {
+    const file = new window.File(
       [JSON.stringify(data, null, 2)],
       'LanguaGen.lngg',
       { type: 'application/json' }
@@ -19,8 +16,8 @@ class FileProcessor {
     saveAs(file)
   }
 
-  openFile (file, callback): Data {
-    const reader = new FileReader()
+  openFile (file, callback) {
+    const reader = new window.FileReader()
 
     reader.onload = () => {
       callback(reader.result)

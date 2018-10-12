@@ -1,25 +1,22 @@
-// @flow
-// eslint-disable-next-line no-unused-vars
-import type Color from 'color'
 // Colors based on https://tallys.github.io/color-theory/
 
-export const complement = (color: Color): Color => {
+export const complement = (color) => {
   return color.rotate(180)
 }
 
-const isCoolColor = (color: Color): boolean => {
+const isCoolColor = (color) => {
   return color.hue() < 310 && color.hue() > 140
 }
 
-const isHighKeyValue = (color: Color): boolean => {
+const isHighKeyValue = (color) => {
   return color.hue() > 20 && color.hue() < 190
 }
 
-const isHighestKeyValue = (color: Color): boolean => {
+const isHighestKeyValue = (color) => {
   return color.hue() > 30 && color.hue() < 90
 }
 
-export const harmoniousMix = (colMix: Color, base: Color): Color => {
+export const harmoniousMix = (colMix, base) => {
   if (isCoolColor(colMix)) {
     if (isHighKeyValue(base)) {
       return base.mix(colMix, 0.11)
@@ -35,7 +32,7 @@ export const harmoniousMix = (colMix: Color, base: Color): Color => {
   }
 }
 
-export const mixNeutral = (color: Color): Color => {
+export const mixNeutral = (color) => {
   if (isHighestKeyValue(color)) {
     if (isHighKeyValue(color)) {
       return color.mix(complement(color), 0.19)
@@ -59,8 +56,8 @@ export const mixNeutral = (color: Color): Color => {
   }
 }
 
-export const pickContrastOf = (color: Color): Color => {
-  let newColor: Color = complement(color)
+export const pickContrastOf = (color) => {
+  let newColor = complement(color)
   if (color.lightness() < 0.3) {
     newColor.lightness(newColor.lightness() + 0.86)
   } else if (color.lightness() > 0.7) {

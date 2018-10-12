@@ -1,7 +1,5 @@
-// @flow
 import React from 'react'
 import injectSheet from 'react-jss'
-import type Classes from 'react-jss'
 
 const styles = {
   notice: {
@@ -9,12 +7,7 @@ const styles = {
   }
 }
 
-declare type Props = {
-  classes: Classes,
-  children: string
-}
-
-const Notice = (props: Props) => (
+const Notice = (props) => (
   <p className={props.classes.notice}>
     {props.children}
   </p>

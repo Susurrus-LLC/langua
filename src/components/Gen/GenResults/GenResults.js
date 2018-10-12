@@ -1,31 +1,15 @@
-// @flow
 import React from 'react'
 import injectSheet from 'react-jss'
-import type Classes from 'react-jss'
 
 import styles from './styles'
 
-declare type Props = {
-  classes: Classes,
-  newLine: boolean,
-  filterDupes: boolean,
-  status: Array<string>,
-  results: Array<string>,
-  stats: {
-    words: number,
-    maxWords: number,
-    filtered: number,
-    remaining: number
-  }
-}
-
-const GenResults = (props: Props) => {
+const GenResults = (props) => {
   const words = props.stats.words.toLocaleString()
   const maxWords = props.stats.maxWords.toLocaleString()
   const filteredWords = props.stats.filtered.toLocaleString()
   const remainingWords = props.stats.remaining.toLocaleString()
 
-  const outputText = (classes: Classes): React.Node => {
+  const outputText = (classes) => {
     const filterResults = props.filterDupes ? Array.from(new Set(props.results)) : props.results
     const joinedResults = Array.prototype.join.call(filterResults, `${props.newLine ? '\n' : ' '}`).trim()
 
@@ -36,7 +20,7 @@ const GenResults = (props: Props) => {
     )
   }
 
-  const errorText = (classes: Classes): React.Node => {
+  const errorText = (classes) => {
     if (props.status.includes('ok')) {
       return null
     } else {
@@ -51,7 +35,7 @@ const GenResults = (props: Props) => {
     }
   }
 
-  const statsText = (): string => {
+  const statsText = () => {
     if (props.filterDupes) {
       return `words: ${remainingWords} (${filteredWords} filtered out); maximum different words: ${maxWords}`
     } else {

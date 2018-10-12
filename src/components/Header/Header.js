@@ -1,8 +1,6 @@
-// @flow
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import injectSheet from 'react-jss'
-import type Classes from 'react-jss'
 import classNames from 'classnames'
 
 import styles from './styles'
@@ -10,11 +8,7 @@ import styles from './styles'
 const siteTitle = 'Langua'
 const siteSubtitle = 'A suite of language tools'
 
-declare type Props = {
-  classes: Classes
-}
-
-const Header = (props: Props) => (
+const Header = (props) => (
   <header>
     <div className={props.classes.header}>
       <div className={props.classes.titleArea}>

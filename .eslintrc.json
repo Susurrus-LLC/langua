@@ -1,15 +1,22 @@
 {
   "extends": [
-    "plugin:flowtype/recommended",
-    "react-app",
     "standard",
-    "standard-flow"
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
   ],
   "plugins": [
-    "flowtype"
+    "react",
+    "jest"
   ],
-  "rules": {
-    "flowtype/define-flow-type": 1,
-    "flowtype/use-flow-type": 1
+  "settings": {
+    "react": {
+
+    }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
   }
 }

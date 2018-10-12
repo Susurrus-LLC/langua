@@ -1,19 +1,10 @@
-// @flow
 import React from 'react'
 import { withRouter } from 'react-router'
-import type { RouterHistory, Route } from 'react-router-dom'
 
 import Button from './Button'
 
-declare type Props = {
-  history: RouterHistory,
-  route: Route,
-  buttonType?: string,
-  children: string
-}
-
-const ButtonLink = (props: Props) => {
-  const onClick = (e: SyntheticEvent<HTMLButtonElement>) => {
+const ButtonLink = (props) => {
+  const onClick = (e) => {
     e.preventDefault()
     props.history.push(props.route)
   }

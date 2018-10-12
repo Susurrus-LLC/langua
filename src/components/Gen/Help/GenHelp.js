@@ -1,8 +1,6 @@
-// @flow
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
-import type Classes from 'react-jss'
 
 import styles from './styles'
 import Notice from '../../Notice/Notice'
@@ -10,11 +8,7 @@ import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
-declare type Props = {
-  classes: Classes
-}
-
-const GenHelp = (props: Props) => (
+const GenHelp = (props) => (
   <div className={props.classes.genHelp}>
     <Helmet>
       <title>{siteTitle} Gen Help</title>
@@ -44,7 +38,7 @@ const GenHelp = (props: Props) => (
     <p>This functionality is planned.</p>
     <h5 id='filtering'>Filtering &ndash; <code>^</code></h5>
     <p>This functionality is planned.</p>
-    <h5 id='escaping'>Esaping Characters &ndash; <code>" "</code></h5>
+    <h5 id='escaping'>Esaping Characters &ndash; <code>&quot; &quot;</code></h5>
     <p>This functionality is planned.</p>
     <h4 id='generating'>Generating Words</h4>
     <p>Once the Pattern and all Subpatterns have been set up, you can click the <strong>Generate</strong> button to generate words. There are also several adjustments you can make, including the total number of words that should be generated, whether each word should be written on a new line, and whether the tool should filter out duplicate words.</p>

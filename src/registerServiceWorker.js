@@ -47,10 +47,7 @@ export default function register () {
             bodyClassName: 'toast-cached-body',
             progressClassName: 'toast-cached-progress'
           })
-          console.log(
-            'This web app is being served cache-first by a service ' +
-              'worker. To learn more, visit https://goo.gl/SC7cgQ'
-          )
+          console.log('This web app is being served cache-first by a service worker. To learn more, visit https://goo.gl/SC7cgQ')
         })
       } else {
         // Is not local host. Just register service worker
@@ -103,7 +100,7 @@ function registerValidSW (swUrl) {
 
 function checkValidServiceWorker (swUrl) {
   // Check if the service worker can be found. If it can't reload the page.
-  fetch(swUrl)
+  window.fetch(swUrl)
     .then(response => {
       // Ensure service worker exists, and that we really are getting a JS file.
       if (

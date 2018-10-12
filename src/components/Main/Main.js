@@ -1,8 +1,6 @@
-// @flow
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import injectSheet from 'react-jss'
-import type Classes from 'react-jss'
 import { ToastContainer, toast, Flip } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -20,11 +18,7 @@ import TreeHelp from '../Tree/Help/TreeHelp'
 
 import styles from './styles'
 
-declare type Props = {
-  classes: Classes
-}
-
-const Main = (props: Props) => (
+const Main = (props) => (
   <main>
     <div className={props.classes.main}>
       <Switch>

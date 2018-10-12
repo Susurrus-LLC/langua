@@ -1,8 +1,6 @@
-// @flow
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
-import type Classes from 'react-jss'
 import { toast } from 'react-toastify'
 import schema from 'js-schema'
 
@@ -26,12 +24,8 @@ if (!String.prototype.endsWith) {
   }
 }
 
-declare type Props = {
-  classes: Classes
-}
-
 class Gen extends React.Component {
-  constructor (props: Props) {
+  constructor (props) {
     super(props)
     this.onChangeSelect = this.onChangeSelect.bind(this)
     this.onChangeSubpattern = this.onChangeSubpattern.bind(this)
@@ -59,7 +53,7 @@ class Gen extends React.Component {
   }
 
   // When a Subpattern variable is changed, store that change in state
-  onChangeSelect (e: SyntheticEvent<HTMLButtonElement>): void {
+  onChangeSelect (e) {
     const id = e.target.id.slice(1)
     const val = e.target.value
     this.setState(prevState => ({
@@ -68,7 +62,7 @@ class Gen extends React.Component {
   }
 
   // When a Subpattern is changed, store that change in state
-  onChangeSubpattern (e: SyntheticEvent<HTMLButtonElement>): void {
+  onChangeSubpattern (e) {
     const id = e.target.id.slice(1)
     const val = e.target.value
     this.setState(prevState => ({
@@ -77,7 +71,7 @@ class Gen extends React.Component {
   }
 
   // When a Subpattern is cleared, delete the corresponding Subpattern from state
-  onClear (e: SyntheticEvent<HTMLButtonElement>): void {
+  onClear (e) {
     e.preventDefault()
     const id = e.target.id.slice(1)
     this.setState(prevState => ({
@@ -86,7 +80,7 @@ class Gen extends React.Component {
   }
 
   // When the add button is clicked, add a blank Subpattern to state
-  onAdd (e: SyntheticEvent<HTMLButtonElement>): void {
+  onAdd (e) {
     e.preventDefault()
     this.setState(prevState => ({
       data: genService.add(this.state.data)
@@ -94,7 +88,7 @@ class Gen extends React.Component {
   }
 
   // When the pattern is changed, store the change in state
-  onChangePattern (e: SyntheticEvent<HTMLButtonElement>): void {
+  onChangePattern (e) {
     const val = e.target.value
     this.setState(prevState => ({
       data: genService.changePattern(val, this.state.data)
@@ -102,7 +96,7 @@ class Gen extends React.Component {
   }
 
   // When the number of desired words is changed, store that change in state
-  onWordNumChange (e: SyntheticEvent<HTMLButtonElement>): void {
+  onWordNumChange (e) {
     let val = e.target.value
     // Only update state if there's a change
     if (genService.wordNumChange(val, this.state.data)) {
@@ -113,7 +107,7 @@ class Gen extends React.Component {
   }
 
   // If the selection for new lines is changed, store that change in state
-  onChangeNewline (e: SyntheticEvent<HTMLButtonElement>): void {
+  onChangeNewline (e) {
     const checked = e.target.checked
     this.setState(prevState => ({
       data: genService.changeNewline(checked, this.state.data)
@@ -121,7 +115,7 @@ class Gen extends React.Component {
   }
 
   // If the selection for filtering duplicates is changed, store that change in state
-  onChangeDupes (e: SyntheticEvent<HTMLButtonElement>): void {
+  onChangeDupes (e) {
     const checked = e.target.checked
     this.setState(prevState => ({
       data: genService.changeDupes(checked, this.state.data)
@@ -129,7 +123,7 @@ class Gen extends React.Component {
   }
 
   // Generate the output
-  onGenerate (e: SyntheticEvent<HTMLButtonElement>): void {
+  onGenerate (e) {
     e.preventDefault()
     const response = genService.generate(this.state.data)
     this.setState(prevState => ({
@@ -142,13 +136,13 @@ class Gen extends React.Component {
   }
 
   // Save the current state to storage and generate a file
-  onSave (e: SyntheticEvent<HTMLButtonElement>): void {
+  onSave (e) {
     e.preventDefault()
     genService.save(this.state.data)
   }
 
   // Open a file and parse it to restore a saved state
-  onOpen (e: SyntheticEvent<HTMLButtonElement>): void {
+  onOpen (e) {
     e.preventDefault()
     const file = e.target.files[0]
 
@@ -192,7 +186,7 @@ class Gen extends React.Component {
             progressClassName: 'toast-unopened-progress'
           })
 
-          console.log(DataSchema.errors(content))
+          console.error(DataSchema.errors(content))
         }
       } else {
         toast.info('Wrong filetype selected.', {

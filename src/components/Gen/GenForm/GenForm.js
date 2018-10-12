@@ -1,7 +1,5 @@
-// @flow
 import React from 'react'
 import injectSheet from 'react-jss'
-import type Classes from 'react-jss'
 import classNames from 'classnames'
 
 import Button from '../../Button/Button'
@@ -10,23 +8,7 @@ import Button from '../../Button/Button'
 import { vars } from '../defaultData'
 import styles from './styles'
 
-declare type Props = {
-  classes: Classes,
-  data: Data,
-  changeSelect: () => void,
-  changeSubpattern: () => void,
-  clear: () => void,
-  add: () => void,
-  changePattern: () => void,
-  changeWordNum: () => void,
-  changeNewline: () => void,
-  changeDupes: () => void,
-  generate: () => void,
-  save: () => void,
-  open: () => void
-}
-
-const GenForm = (props: Props) => {
+const GenForm = (props) => {
   const filePicker = React.createRef()
 
   const selectOptions = vars.map((variab, index) => (
@@ -86,7 +68,7 @@ const GenForm = (props: Props) => {
     }
   }
 
-  const invokeFilePicker = (e: SyntheticEvent<HTMLButtonElement>) => {
+  const invokeFilePicker = (e) => {
     e.preventDefault()
     filePicker.current.value = ''
     filePicker.current.click()

@@ -1,15 +1,9 @@
-// @flow
 import React from 'react'
 import injectSheet from 'react-jss'
-import type Classes from 'react-jss'
 
 import styles from './styles'
 
-declare type Props = {
-  classes: Classes
-}
-
-const Footer = (props: Props) => {
+const Footer = (props) => {
   const getCopyrightYear = () => {
     const initYear = 2017
     const d = new Date()

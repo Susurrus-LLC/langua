@@ -1,5 +1,4 @@
-// @flow
-export const defData: Data = {
+export const defData = {
   subpatterns: [
     {
       selected: 'V',
