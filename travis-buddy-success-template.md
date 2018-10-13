@@ -1,4 +1,4 @@
-## Your pull request is passing all tests
+## Your pull request is passing all TravisCI tests
 
 Hey @{{pullRequestAuthor}},
 

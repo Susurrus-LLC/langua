@@ -12,6 +12,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Add Codacy and codacy-coverage.
 - Add eslint and codacy-coverage to TravisCI.
 - Add remark-lint.
+- Add basic structure of Frequen tool.
 
 ### Changed 0.1.7
 
