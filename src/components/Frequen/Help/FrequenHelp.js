@@ -20,7 +20,10 @@ const FrequenHelp = (props) => (
       Back
     </ButtonLink>
     <h2 className='toolTitle'>LanguaFrequen Help</h2>
-    <Notice>This tool is still in planning.</Notice>
+    <Notice>This tool is still in development.</Notice>
+    <p id='description'>LanguaFrequen is a tool for analyzing phoneme frequencies in a given text.</p>
+    <h3 id='using'>Using LanguaFrequen</h3>
+    <p>Input a corpus of text in the <strong>Text Corpus</strong> field. This is the text that will be analyzed. Next, add a list of consonants and vowels accordingly to the <strong>Consonants</strong> and <strong>Vowels</strong> lists.</p>
   </div>
 )
 
