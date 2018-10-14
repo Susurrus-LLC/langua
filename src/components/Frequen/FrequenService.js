@@ -37,6 +37,34 @@ class FrequenService {
       this.storage.setItem(this.item, JSON.stringify(data))
     }
   }
+
+  // Analyze the data
+  analyze (data) {
+    const corpus = data.corpus
+    // Break the input into arrays
+    const cons = data.consonants.split('/')
+    // Break each element in an array into a sub-array
+    let consons = []
+    cons.forEach((el) => {
+      consons.push(el.split(','))
+    })
+    const consonants = [].concat(...consons)
+    const vows = data.vowels.split('/')
+    let vowes = []
+    vows.forEach((el) => {
+      vowes.push(el.split(','))
+    })
+    const vowels = [].concat(...vowes)
+    // Sort the input arrays by length
+    consonants.sort((a, b) => {
+      return b[0].length - a[0].length
+    })
+    vowels.sort((a, b) => {
+      return b[0].length - a[0].length
+    })
+    console.log(consonants)
+    console.log(vowels)
+  }
 }
 
 const frequenService = new FrequenService()

@@ -17,6 +17,7 @@ class Frequen extends React.Component {
   constructor (props) {
     super(props)
     this.onChangeInput = this.onChangeInput.bind(this)
+    this.onAnalyze = this.onAnalyze.bind(this)
     this.state = {
       data: frequenService.getData()
     }
@@ -31,6 +32,16 @@ class Frequen extends React.Component {
         [name]: val
       }
     }))
+  }
+
+  onAnalyze (e) {
+    e.preventDefault()
+    const response = frequenService.analyze(this.state.data)
+    this.setState(prevState => ({
+      results: response
+    }))
+    // Save the current state to storage
+    frequenService.setStorage(this.state.data)
   }
 
   render () {
@@ -74,7 +85,14 @@ class Frequen extends React.Component {
             onChange={this.onChangeInput}
           />
           <div className={this.props.classes.controls}>
-            <label for='distinguishCase'>
+            <Button
+              type='submit'
+              ver='neutral'
+              onClick={this.onAnalyze}
+            >
+              Analyze
+            </Button>
+            <label htmlFor='distinguishCase'>
               <input
                 id='distinguishCase'
                 name='distinguishCase'
@@ -83,7 +101,7 @@ class Frequen extends React.Component {
                 onChange={this.onChangeInput}
               /> Distinguish Case
             </label>
-            <label for='distinguishCase'>
+            <label htmlFor='distinguishCase'>
               <input
                 id='ignoreNumbers'
                 name='ignoreNumbers'
@@ -92,9 +110,6 @@ class Frequen extends React.Component {
                 onChange={this.onChangeInput}
               /> Ignore Numbers
             </label>
-            <Button ver='neutral'>
-              Analyze
-            </Button>
           </div>
         </form>
       </div>
