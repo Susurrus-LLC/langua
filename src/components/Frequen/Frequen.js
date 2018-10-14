@@ -6,6 +6,7 @@ import classnames from 'classnames'
 
 import styles from './styles'
 import Notice from '../Notice/Notice'
+import Button from '../Button/Button'
 import ButtonLink from '../Button/ButtonLink'
 
 import frequenService from './FrequenService'
@@ -45,37 +46,57 @@ class Frequen extends React.Component {
         </ButtonLink>
         <h2 className='toolTitle'>LanguaFrequen</h2>
         <Notice>This tool is still in development.</Notice>
-        <h5>Text Corpus</h5>
-        <textarea
-          className={classnames(this.props.classes.corpus, this.props.classes.input)}
-          id='corpus'
-          name='corpus'
-          value={this.state.data.corpus}
-          onChange={this.onChangeInput}
-        />
-        <input
-          className={this.props.classes.input}
-          id='consonants'
-          name='consonants'
-          type='text'
-          value={this.state.data.consonants}
-          onChange={this.onChangeInput}
-        />
-        <input
-          className={this.props.classes.input}
-          id='vowels'
-          name='vowels'
-          type='text'
-          value={this.state.data.vowels}
-          onChange={this.onChangeInput}
-        />
-        <input
-          id='distinguishCase'
-          name='distinguishCase'
-          type='checkbox'
-          checked={this.state.data.distinguishCase}
-          onChange={this.onChangeInput}
-        />
+        <form className={this.props.classes.form}>
+          <h5 className={this.props.classes.sectionTitle}>Text Corpus</h5>
+          <textarea
+            className={classnames(this.props.classes.corpus, this.props.classes.input)}
+            id='corpus'
+            name='corpus'
+            value={this.state.data.corpus}
+            onChange={this.onChangeInput}
+          />
+          <h5 className={this.props.classes.sectionTitle}>Consonants</h5>
+          <input
+            className={this.props.classes.input}
+            id='consonants'
+            name='consonants'
+            type='text'
+            value={this.state.data.consonants}
+            onChange={this.onChangeInput}
+          />
+          <h5 className={this.props.classes.sectionTitle}>Vowels</h5>
+          <input
+            className={this.props.classes.input}
+            id='vowels'
+            name='vowels'
+            type='text'
+            value={this.state.data.vowels}
+            onChange={this.onChangeInput}
+          />
+          <div className={this.props.classes.controls}>
+            <label for='distinguishCase'>
+              <input
+                id='distinguishCase'
+                name='distinguishCase'
+                type='checkbox'
+                checked={this.state.data.distinguishCase}
+                onChange={this.onChangeInput}
+              /> Distinguish Case
+            </label>
+            <label for='distinguishCase'>
+              <input
+                id='ignoreNumbers'
+                name='ignoreNumbers'
+                type='checkbox'
+                checked={this.state.data.ignoreNumbers}
+                onChange={this.onChangeInput}
+              /> Ignore Numbers
+            </label>
+            <Button ver='neutral'>
+              Analyze
+            </Button>
+          </div>
+        </form>
       </div>
     )
   }
