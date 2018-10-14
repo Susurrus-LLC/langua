@@ -48,12 +48,14 @@ class FrequenService {
     cons.forEach((el) => {
       consons.push(el.split(','))
     })
+    // Flatten array
     const consonants = [].concat(...consons)
     const vows = data.vowels.split('/')
     let vowes = []
     vows.forEach((el) => {
       vowes.push(el.split(','))
     })
+    // Flatten array
     const vowels = [].concat(...vowes)
     // Sort the input arrays by length
     consonants.sort((a, b) => {
