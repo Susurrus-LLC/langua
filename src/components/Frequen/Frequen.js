@@ -13,7 +13,7 @@ import frequenService from './FrequenService'
 import { canonical, siteTitle } from '../../App'
 
 class Frequen extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.onChangeInput = this.onChangeInput.bind(this)
     this.state = {
@@ -42,7 +42,7 @@ class Frequen extends React.Component {
         </Helmet>
         <ButtonLink route='/frequen/help'>
           Help
-          </ButtonLink>
+        </ButtonLink>
         <h2 className='toolTitle'>LanguaFrequen</h2>
         <Notice>This tool is still in development.</Notice>
         <h5>Text Corpus</h5>
