@@ -1,8 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
-import { toast } from 'react-toastify'
-import schema from 'js-schema'
 import PropTypes from 'prop-types'
 
 import styles from './styles'
@@ -27,17 +25,7 @@ if (!String.prototype.endsWith) {
 class Gen extends React.Component {
   constructor (props) {
     super(props)
-    this.onChangeSelect = this.onChangeSelect.bind(this)
-    this.onChangeSubpattern = this.onChangeSubpattern.bind(this)
-    this.onClear = this.onClear.bind(this)
-    this.onAdd = this.onAdd.bind(this)
-    this.onChangePattern = this.onChangePattern.bind(this)
-    this.onWordNumChange = this.onWordNumChange.bind(this)
-    this.onChangeNewline = this.onChangeNewline.bind(this)
-    this.onChangeDupes = this.onChangeDupes.bind(this)
-    this.onGenerate = this.onGenerate.bind(this)
-    this.onSave = this.onSave.bind(this)
-    this.onOpen = this.onOpen.bind(this)
+    this.onChangeInput = this.onChangeInput.bind(this)
     this.classes = props.classes
     this.state = {
       data: genService.getData(),
@@ -52,154 +40,93 @@ class Gen extends React.Component {
     }
   }
 
-  // When a Subpattern variable is changed, store that change in state
-  onChangeSelect (e) {
-    const id = e.target.id.slice(1)
-    const val = e.target.value
-    this.setState(prevState => ({
-      data: genService.changeSelect(id, val, this.state.data)
-    }))
-  }
-
-  // When a Subpattern is changed, store that change in state
-  onChangeSubpattern (e) {
-    const id = e.target.id.slice(1)
-    const val = e.target.value
-    this.setState(prevState => ({
-      data: genService.changeSubpattern(id, val, this.state.data)
-    }))
-  }
-
-  // When a Subpattern is cleared, delete the corresponding Subpattern from state
-  onClear (e) {
-    e.preventDefault()
-    const id = e.target.id.slice(1)
-    this.setState(prevState => ({
-      data: genService.clear(id, this.state.data)
-    }))
-  }
-
-  // When the add button is clicked, add a blank Subpattern to state
-  onAdd (e) {
-    e.preventDefault()
-    this.setState(prevState => ({
-      data: genService.add(this.state.data)
-    }))
-  }
-
-  // When the pattern is changed, store the change in state
-  onChangePattern (e) {
-    const val = e.target.value
-    this.setState(prevState => ({
-      data: genService.changePattern(val, this.state.data)
-    }))
-  }
-
-  // When the number of desired words is changed, store that change in state
-  onWordNumChange (e) {
-    let val = e.target.value
-    // Only update state if there's a change
-    if (genService.wordNumChange(val, this.state.data)) {
-      this.setState(prevState => ({
-        data: genService.wordNumChange(val, this.state.data)
-      }))
-    }
-  }
-
-  // If the selection for new lines is changed, store that change in state
-  onChangeNewline (e) {
-    const checked = e.target.checked
-    this.setState(prevState => ({
-      data: genService.changeNewline(checked, this.state.data)
-    }))
-  }
-
-  // If the selection for filtering duplicates is changed, store that change in state
-  onChangeDupes (e) {
-    const checked = e.target.checked
-    this.setState(prevState => ({
-      data: genService.changeDupes(checked, this.state.data)
-    }))
-  }
-
-  // Generate the output
-  onGenerate (e) {
-    e.preventDefault()
-    const response = genService.generate(this.state.data)
-    this.setState(prevState => ({
-      status: response.status,
-      results: response.results,
-      stats: response.stats
-    }))
-    // Save the current state to storage
-    genService.setStorage(this.state.data)
-  }
-
-  // Save the current state to storage and generate a file
-  onSave (e) {
-    e.preventDefault()
-    genService.save(this.state.data)
-  }
-
-  // Open a file and parse it to restore a saved state
-  onOpen (e) {
-    e.preventDefault()
-    const file = e.target.files[0]
-
-    const processResults = (result) => {
-      if (file.name.endsWith('.lngg')) {
-        const SubpatternSchema = schema({
-          selected: /[A-Z]/,
-          subpattern: String
-        })
-
-        const DataSchema = schema({
-          subpatterns: Array.of(1, 24, SubpatternSchema),
-          pattern: String,
-          words: Number.min(1).max(9999),
-          newline: Boolean,
-          filterdupes: Boolean
-        })
-
-        let content = JSON.parse(result)
-
-        content.words = parseInt(content.words, 10)
-
-        if (DataSchema(content)) {
-          // If the file's content contains valid Data, load it
-          toast.success(`Data loaded from ${file.name}.`, {
-            autoClose: 5000,
-            className: 'toast-opened',
-            bodyClassName: 'toast-opened-body',
-            progressClassName: 'toast-opened-progress'
-          })
-
-          this.setState(prevState => ({ data: content }))
-
-          genService.setStorage(content)
-        } else {
-          // If the file's content does not contain valid Data, show an error
-          toast.info(`The content of ${file.name} is invalid.`, {
-            autoClose: 5000,
-            className: 'toast-unopened',
-            bodyClassName: 'toast-unopened-body',
-            progressClassName: 'toast-unopened-progress'
-          })
-
-          // eslint-disable-next-line
-          console.error(DataSchema.errors(content))
+  onChangeInput (e) {
+    if (e.target.tagName === 'BUTTON') {
+      e.preventDefault()
+      if (e.target.type === 'submit') {
+        // Generate the output
+        const response = genService.generate(this.state.data)
+        this.setState(prevState => ({
+          status: response.status,
+          results: response.results,
+          stats: response.stats
+        }))
+        // Save the current state to storage
+        genService.setStorage(this.state.data)
+      } else if (e.target.type === 'button') {
+        if (e.target.id === 'save') {
+          // Save the current state to storage and generate a file
+          genService.save(this.state.data)
+        } else if (e.target.id === 'add') {
+          // When the add button is clicked, add a blank Subpattern to state
+          this.setState(prevState => ({
+            data: genService.add(this.state.data)
+          }))
+        } else if (e.target.id.slice(0, 1) === 'c') {
+          // When a Subpattern is cleared, delete the corresponding Subpattern from state
+          const id = e.target.id.slice(1)
+          this.setState(prevState => ({
+            data: genService.clear(id, this.state.data)
+          }))
+        }
+      }
+    } else if (e.target.type === 'file') {
+      e.preventDefault()
+      // Open a file and parse it to restore a saved state
+      const file = e.target.files[0]
+      const updateState = (response) => {
+        console.log(response)
+        if (response) { // Only change state if the file was successfully opened
+          this.setState(prevState => ({
+            data: response
+          }))
+        }
+      }
+      genService.open(file, this.state.data, updateState)
+    } else if (e.target.type === 'checkbox') {
+      const checked = e.target.checked
+      if (e.target.id === 'newline') {
+        // If the selection for new lines is changed, store that change in state
+        this.setState(prevState => ({
+          data: genService.changeNewline(checked, this.state.data)
+        }))
+      } else if (e.target.id === 'filterdupes') {
+        // If the selection for filtering duplicates is changed, store that change in state
+        this.setState(prevState => ({
+          data: genService.changeDupes(checked, this.state.data)
+        }))
+      }
+    } else {
+      const val = e.target.value
+      if (e.target.id === 'pattern') {
+        // When the pattern is changed, store the change in state
+        this.setState(prevState => ({
+          data: genService.changePattern(val, this.state.data)
+        }))
+      } else if (e.target.id === 'words') {
+        // When the number of desired words is changed, store that change in state
+        if (genService.wordNumChange(val, this.state.data)) {
+          // Only update state if there's a change
+          this.setState(prevState => ({
+            data: genService.wordNumChange(val, this.state.data)
+          }))
         }
       } else {
-        toast.info('Wrong filetype selected.', {
-          autoClose: 5000,
-          className: 'toast-unopened',
-          bodyClassName: 'toast-unopened-body',
-          progressClassName: 'toast-unopened-progress'
-        })
+        const id = e.target.id.slice(1)
+        const which = e.target.id.slice(0, 1)
+        if (which === 'v') {
+          // When a Subpattern variable is changed, store that change in state
+          this.setState(prevState => ({
+            data: genService.changeSelect(id, val, this.state.data)
+          }))
+        } else if (which === 'p') {
+          // When a Subpattern is changed, store that change in state
+          this.setState(prevState => ({
+            data: genService.changeSubpattern(id, val, this.state.data)
+          }))
+        }
       }
     }
-
-    genService.open(file, this.state.data, processResults)
   }
 
   render () {
@@ -219,17 +146,7 @@ class Gen extends React.Component {
         <h2 className='toolTitle'>LanguaGen</h2>
         <GenForm
           data={state.data}
-          changeSelect={this.onChangeSelect}
-          changeSubpattern={this.onChangeSubpattern}
-          clear={this.onClear}
-          add={this.onAdd}
-          changePattern={this.onChangePattern}
-          changeWordNum={this.onWordNumChange}
-          changeNewline={this.onChangeNewline}
-          changeDupes={this.onChangeDupes}
-          generate={this.onGenerate}
-          save={this.onSave}
-          open={this.onOpen}
+          change={this.onChangeInput}
         />
         <GenResults
           newLine={state.data.newline}
