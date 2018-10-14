@@ -75,7 +75,6 @@ class Gen extends React.Component {
       // Open a file and parse it to restore a saved state
       const file = e.target.files[0]
       const updateState = (response) => {
-        console.log(response)
         if (response) { // Only change state if the file was successfully opened
           this.setState(prevState => ({
             data: response
