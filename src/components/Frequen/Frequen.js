@@ -92,24 +92,6 @@ class Frequen extends React.Component {
             >
               Analyze
             </Button>
-            <label htmlFor='distinguishCase'>
-              <input
-                id='distinguishCase'
-                name='distinguishCase'
-                type='checkbox'
-                checked={this.state.data.distinguishCase}
-                onChange={this.onChangeInput}
-              /> Distinguish Case
-            </label>
-            <label htmlFor='distinguishCase'>
-              <input
-                id='ignoreNumbers'
-                name='ignoreNumbers'
-                type='checkbox'
-                checked={this.state.data.ignoreNumbers}
-                onChange={this.onChangeInput}
-              /> Ignore Numbers
-            </label>
           </div>
         </form>
       </div>

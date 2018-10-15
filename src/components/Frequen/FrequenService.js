@@ -44,28 +44,28 @@ class FrequenService {
     // Break the input into arrays
     const cons = data.consonants.split('/')
     // Break each element in an array into a sub-array
-    let consons = []
+    let consonants = []
     cons.forEach((el) => {
-      consons.push(el.split(','))
+      consonants.push(el.split(','))
     })
     // Flatten array
-    const consonants = [].concat(...consons)
+    const consonantsFlat = [].concat(...consonants)
     const vows = data.vowels.split('/')
-    let vowes = []
+    let vowels = []
     vows.forEach((el) => {
-      vowes.push(el.split(','))
+      vowels.push(el.split(','))
     })
     // Flatten array
-    const vowels = [].concat(...vowes)
+    const vowelsFlat = [].concat(...vowels)
     // Sort the input arrays by length
-    consonants.sort((a, b) => {
+    consonantsFlat.sort((a, b) => {
       return b[0].length - a[0].length
     })
-    vowels.sort((a, b) => {
+    vowelsFlat.sort((a, b) => {
       return b[0].length - a[0].length
     })
-    console.log(consonants)
-    console.log(vowels)
+    console.log(consonantsFlat)
+    console.log(vowelsFlat)
   }
 }
 
