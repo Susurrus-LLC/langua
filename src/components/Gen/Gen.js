@@ -104,10 +104,11 @@ class Gen extends React.Component {
         }))
       } else if (e.target.id === 'words') {
         // When the number of desired words is changed, store that change in state
-        if (genService.wordNumChange(val, this.state.data)) {
+        const response = genService.wordNumChange(val, this.state.data)
+        if (response) {
           // Only update state if there's a change
           this.setState(prevState => ({
-            data: genService.wordNumChange(val, this.state.data)
+            data: response
           }))
         }
       } else {
