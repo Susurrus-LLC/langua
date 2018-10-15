@@ -41,31 +41,60 @@ class FrequenService {
   // Analyze the data
   analyze (data) {
     const corpus = data.corpus
-    // Break the input into arrays
-    const cons = data.consonants.split('/')
+    // Break the input into arrays and remove duplicates
+    const splitBySlash = (arr) => Array.from(new Set(arr.split('/')))
     // Break each element in an array into a sub-array
-    let consonants = []
-    cons.forEach((el) => {
-      consonants.push(el.split(','))
-    })
-    // Flatten array
-    const consonantsFlat = [].concat(...consonants)
-    const vows = data.vowels.split('/')
-    let vowels = []
-    vows.forEach((el) => {
-      vowels.push(el.split(','))
-    })
-    // Flatten array
-    const vowelsFlat = [].concat(...vowels)
-    // Sort the input arrays by length
-    consonantsFlat.sort((a, b) => {
-      return b[0].length - a[0].length
-    })
-    vowelsFlat.sort((a, b) => {
-      return b[0].length - a[0].length
-    })
-    console.log(consonantsFlat)
-    console.log(vowelsFlat)
+    const makeSubArrays = (arr) => {
+      let newArr = []
+      arr.forEach((el) => {
+        newArr.push(el.split(','))
+      })
+      return newArr
+    }
+    const consonants = makeSubArrays(splitBySlash(data.consonants))
+    const vowels = makeSubArrays(splitBySlash(data.vowels))
+
+    // Flatten arrays and make sure there are no duplicates
+    const flattenArrays = (arr) => Array.from(new Set([].concat(...arr)))
+    // And sort the flattened arrays by length so the longest segments are first
+    const sortArrays = (arr) => {
+      return arr.sort((a, b) => b.length - a.length)
+    }
+    const consonantsFlat = sortArrays(flattenArrays(consonants))
+    const vowelsFlat = sortArrays(flattenArrays(vowels))
+
+    let results = {}
+
+    // Add each element in the flattened arrays to the results object and indicate which type they are
+    const initResults = (arr, type) => {
+      arr.forEach((el) => {
+        results[el] = {}
+        results[el].count = 0
+        results[el].type = type
+      })
+    }
+    initResults(consonantsFlat, 'consonant')
+    initResults(vowelsFlat, 'vowel') // Currently, if an element appears in both consonants and vowels, its vowel instance will take precedence
+
+    // Label which segments are allophones
+    const labelAllophones = (arr) => {
+      arr.forEach((elArr, i) => {
+        if (elArr.length > 1) {
+          elArr.forEach((el, j) => {
+            if (j > 0) {
+              results[arr[i][j]].allophoneOf = arr[i][0]
+            }
+          })
+        }
+      })
+    }
+    labelAllophones(consonants)
+    labelAllophones(vowels)
+
+    console.log(results)
+
+    // Build a single array and sort by segment length
+    const fullArr = sortArrays(consonantsFlat.concat(vowelsFlat))
   }
 }
 
