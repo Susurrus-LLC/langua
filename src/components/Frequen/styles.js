@@ -25,6 +25,18 @@ const styles = {
     alignContent: 'space-between',
     flexWrap: 'wrap',
     marginTop: `${v.lnht}rem`
+  },
+  results: {
+    marginTop: `${v.lnht}rem`,
+    paddingTop: `${v.lnht}rem`,
+    borderTop: {
+      width: 1,
+      style: 'dotted',
+      color: v.bluNtl.string()
+    }
+  },
+  error: {
+    color: v.red.string()
   }
 }
 

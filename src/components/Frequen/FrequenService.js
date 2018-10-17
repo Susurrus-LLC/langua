@@ -40,9 +40,6 @@ class FrequenService {
 
   // Analyze the data
   analyze (data) {
-    // Save the current data to storage
-    this.setStorage(data)
-
     // Break the input into arrays and remove duplicates
     const splitBySlash = (arr) => Array.from(new Set(arr.split('/')))
     // Break each element in an array into a sub-array
@@ -96,37 +93,24 @@ class FrequenService {
     // Build a single array and sort by segment length
     const fullArr = sortArrays(consonantsFlat.concat(vowelsFlat))
 
-    const corpus = data.corpus
+    let corpus = data.corpus
 
     // For every instance of the segment in the text, increment the count and slice the instance out of the text
-    const sliceAndCount = (text, arr, i) => {
-      let newText = text
-      const seg = arr[i]
-      console.log(seg)
-      console.log(newText)
-      console.log(i)
-      if (i < arr.length - 1) {
-        console.log(seg)
-        if (text.indexOf(seg) > -1) {
-          results[seg].count += 1
-          newText = text.slice(0, text.indexOf(seg)) + text.slice(text.indexOf(seg) + seg.length)
-
-          if (newText.indexOf(seg) > -1) {
-            // Recursively find each instances of the segment
-            sliceAndCount(newText.trim(), arr, i)
-          }
-        }
-      }
-      // Move on to the next item
-      if (i + 1 < arr.length) {
-        sliceAndCount(newText.trim(), arr, i + 1)
+    const sliceAndCount = (seg) => {
+      if (corpus.indexOf(seg) > -1) {
+        results[seg].count += 1
+        corpus = corpus.slice(0, corpus.indexOf(seg)) + corpus.slice(corpus.indexOf(seg) + seg.length)
       }
     }
 
     // Loop through all segments counting and slicing all instances of each.
-    console.log(fullArr)
-    sliceAndCount(corpus, fullArr, 0)
-    console.log(results)
+    fullArr.forEach((el) => {
+      while (corpus.indexOf(el) > -1) {
+        sliceAndCount(el)
+      }
+    })
+
+    return results
   }
 }
 
