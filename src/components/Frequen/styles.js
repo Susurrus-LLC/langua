@@ -37,6 +37,9 @@ const styles = {
   },
   error: {
     color: v.red.string()
+  },
+  hovering: {
+    fill: v.ong.string()
   }
 }
 

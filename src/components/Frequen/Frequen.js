@@ -33,17 +33,17 @@ class Frequen extends React.Component {
     e.preventDefault()
     this.setState(prevState => ({
       analyzed: false
-    }))
+    }), () => {
+      // Save the current state to storage
+      frequenService.setStorage(this.state)
 
-    // Save the current state to storage
-    frequenService.setStorage(this.state)
+      const response = frequenService.analyze(this.state)
 
-    const response = frequenService.analyze(this.state)
-
-    this.setState(prevState => ({
-      results: response,
-      analyzed: true
-    }))
+      this.setState(prevState => ({
+        results: response,
+        analyzed: true
+      }))
+    })
   }
 
   render () {
@@ -67,7 +67,8 @@ class Frequen extends React.Component {
         />
         <FrequenResults
           classes={this.props.classes}
-          state={this.state}
+          results={this.state.results}
+          analyzed={this.state.analyzed}
         />
       </div>
     )
