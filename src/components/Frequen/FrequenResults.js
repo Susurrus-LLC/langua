@@ -45,11 +45,11 @@ class FrequenResults extends React.Component {
     })
   }
 
-  onMouseOver = (datapoint) => {
+  onMouseOver (datapoint) {
     this.setState({ index: datapoint.i })
   }
 
-  onMouseOut = () => {
+  onMouseOut () {
     this.setState({ index: null })
   }
 
