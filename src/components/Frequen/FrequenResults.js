@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import 'react-vis/dist/style.css'
-import { FlexibleWidthXYPlot, HorizontalBarSeries, HorizontalGridLines, VerticalGridLines, XAxis, YAxis } from 'react-vis'
+import { FlexibleWidthXYPlot, HorizontalBarSeries, HorizontalGridLines, VerticalGridLines, XAxis, YAxis, Hint } from 'react-vis'
 
 import * as v from '../../styles/variables'
 
@@ -11,7 +11,10 @@ class FrequenResults extends React.Component {
     this.onMouseOver = this.onMouseOver.bind(this)
     this.onMouseOut = this.onMouseOut.bind(this)
     this.state = {
-      index: null
+      index: null,
+      x: null,
+      y: null,
+      filter: null
     }
 
     let rawResults = this.props.results
@@ -46,11 +49,19 @@ class FrequenResults extends React.Component {
   }
 
   onMouseOver (datapoint) {
-    this.setState({ index: datapoint.i })
+    this.setState({
+      index: datapoint.i,
+      x: datapoint.x,
+      y: datapoint.y
+    })
   }
 
   onMouseOut () {
-    this.setState({ index: null })
+    this.setState({
+      index: null,
+      x: null,
+      y: null
+    })
   }
 
   render () {
@@ -81,7 +92,7 @@ class FrequenResults extends React.Component {
           <div className='bar-chart'>
             <FlexibleWidthXYPlot
               yType='ordinal'
-              height={v.ms2 * 16 * data.length}
+              height={v.ms2 * 16 * (data.length)}
               onMouseLeave={this.onMouseOut}
             >
               <VerticalGridLines style={gridStyle} />
@@ -98,6 +109,15 @@ class FrequenResults extends React.Component {
                 onValueMouseOver={this.onMouseOver}
                 onMouseOut={this.onMouseOut}
               />
+              {this.state.x ? (
+                <Hint
+                  value={{ Frequency: `${this.state.x.toFixed(2)}%` }}
+                  align={{
+                    horizontal: 'left',
+                    vertical: 'auto'
+                  }}
+                />
+              ) : null}
             </FlexibleWidthXYPlot>
           </div>
         </div>
