@@ -1,6 +1,6 @@
 {
   "name": "langua",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "license": "AGPL-3.0",
   "author": "Ian A. Cook",
   "description": "A suite of language tools",
@@ -32,7 +32,8 @@
     "react-jss": "8.6.1",
     "react-router-dom": "4.3.1",
     "react-scripts": "2.0.5",
-    "react-toastify": "4.4.0"
+    "react-toastify": "4.4.0",
+    "react-vis": "^1.11.3"
   },
   "devDependencies": {
     "codacy-coverage": "^3.2.0",

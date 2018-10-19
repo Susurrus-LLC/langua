@@ -4,7 +4,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c594056d0f96442cba7a92fe2c348d92)](https://app.codacy.com/app/nai888/langua?utm_source=github.com&utm_medium=referral&utm_content=nai888/langua&utm_campaign=Badge_Grade_Dashboard)
 [![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/58bcc4dc2f914f06ad6cc51658678dc3)](https://www.codacy.com/app/Langua/langua?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nai888/langua&amp;utm_campaign=Badge_Coverage)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
-[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=nai888/langua)](https://dependabot.com)
 
 1. [Overview](#overview)
 1. [Deployment](#deployment)
@@ -112,11 +112,10 @@ Langua was inspired by several existing tools, including:
 - [SynTree](http://mshang.ca/syntree/)
 - [RSyntaxTree](https://www.yohasebe.com/rsyntaxtree/)
 
-Thank you to [Travis CI](https://travis-ci.com), [BrowserStack](https://www.browserstack.com), and [Renovate](https://renovatebot.com) for offering free services to open source projects!
+Thank you to [Travis CI](https://travis-ci.com), [BrowserStack](https://www.browserstack.com), [Dependabot](https://dependabot.com), and [Codacy](https://www.codacy.com/) for offering free services to open source projects!
 
 [![Travis CI](./Logo%20Travis%20CI.png)](https://travis-ci.com "Travis CI")
 [![BrowserStack](./Logo%20BrowserStack.png)](https://www.browserstack.com "BrowserStack")
-[![Renovate](./Logo%20Renovate.png)](https://renovatebot.com "Renovate")
 
 ## License
 
