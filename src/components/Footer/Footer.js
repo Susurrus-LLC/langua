@@ -31,7 +31,7 @@ const Footer = (props) => {
               className='fas fa-code'
             />
             {' '}
-            0.1.6
+            0.2.0
           </a>
           . Built by
           {' '}

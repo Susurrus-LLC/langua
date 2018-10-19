@@ -4,17 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format of this changelog is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased](https://github.com/nai888/langua/compare/v0.1.6...HEAD)
+## [Unreleased](https://github.com/nai888/langua/compare/v0.2.0...HEAD)
 
-### Added 0.1.7
+### Changed 0.2.1
+
+## [v0.2.0](https://github.com/nai888/langua/compare/v0.1.6...v0.2.0) - 2018-10-19
+
+### Added 0.2.0
 
 - Add PropTypes.
 - Add Codacy and codacy-coverage.
 - Add eslint and codacy-coverage to TravisCI.
 - Add remark-lint.
 - Add basic structure of Frequen tool.
+- Add graphical analyzsis to Frequen tool, including tooltips to show exact data.
 
-### Changed 0.1.7
+### Changed 0.2.0
 
 - Change `file.name.slice(-5) === '.lngg'` to `file.name.endsWith('.lngg')`.
 - Open files directly when clicking the Open button, rather than unhiding a file input element. (See [issue #50](https://github.com/nai888/langua/issues/50).)
@@ -23,7 +28,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Fill out remaining information in the Gen Help file.
 - Adjust page centering to remain consistent as the vertical scrollbar appears or disappears.
 
-### Removed 0.1.7
+### Removed 0.2.0
 
 - Remove Flow.
 
