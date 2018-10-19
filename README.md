@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/nai888/langua.svg?branch=master)](https://travis-ci.com/nai888/langua)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c594056d0f96442cba7a92fe2c348d92)](https://app.codacy.com/app/nai888/langua?utm_source=github.com&utm_medium=referral&utm_content=nai888/langua&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/58bcc4dc2f914f06ad6cc51658678dc3)](https://www.codacy.com/app/Langua/langua?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nai888/langua&amp;utm_campaign=Badge_Coverage)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=nai888/langua)](https://dependabot.com)
 

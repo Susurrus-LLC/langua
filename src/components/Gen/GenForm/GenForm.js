@@ -28,24 +28,27 @@ const GenForm = (props) => {
     >
       <select
         id={`v${index}`}
+        name={`v${index}`}
         value={subpattern.selected}
-        onChange={props.changeSelect}
+        onChange={props.change}
       >
         {selectOptions}
       </select>
       <input
         type='text'
         id={`p${index}`}
+        name={`p${index}`}
         className={props.classes.subpatternInput}
         value={subpattern.subpattern}
-        onChange={props.changeSubpattern}
+        onChange={props.change}
       />
       <div className={props.classes.clearButton}>
         <Button
           id={`c${index}`}
-          onClick={props.clear}
+          onClick={props.change}
           ver='danger'
           addClass='small'
+          type='button'
         >
           Delete
         </Button>
@@ -58,9 +61,11 @@ const GenForm = (props) => {
       return (
         <div className={props.classes.addingRow}>
           <Button
-            onClick={props.add}
+            onClick={props.change}
+            id='add'
             ver='success'
             addClass='small'
+            type='button'
           >
             Add
           </Button>
@@ -87,16 +92,18 @@ const GenForm = (props) => {
         <input
           type='text'
           id='pattern'
+          name='pattern'
           className={props.classes.patternInput}
           value={props.data.pattern}
-          onChange={props.changePattern}
+          onChange={props.change}
         />
       </div>
       <div className={classNames(props.classes.control, props.classes.part)}>
         <div className={props.classes.controlLeft}>
           <div className={props.classes.controlPiece}>
             <Button
-              onClick={props.generate}
+              id='generate'
+              onClick={props.change}
               type='submit'
               ver='neutral'
             >
@@ -108,11 +115,12 @@ const GenForm = (props) => {
             <input
               type='number'
               id='words'
+              name='words'
               min='1'
               max='9999'
               className={props.classes.wordsInput}
               value={props.data.words}
-              onChange={props.changeWordNum}
+              onChange={props.change}
             />
           </div>
           <div className={props.classes.controlPiece}>
@@ -123,7 +131,7 @@ const GenForm = (props) => {
                 name='options'
                 value='newline'
                 checked={props.data.newline}
-                onChange={props.changeNewline}
+                onChange={props.change}
               /> new line each
             </label>
           </div>
@@ -135,7 +143,7 @@ const GenForm = (props) => {
                 name='options'
                 value='filterdupes'
                 checked={props.data.filterdupes}
-                onChange={props.changeDupes}
+                onChange={props.change}
               /> filter duplicates
             </label>
           </div>
@@ -143,21 +151,29 @@ const GenForm = (props) => {
         <div className={props.classes.controlRight}>
           <div className={props.classes.controlPiece}>
             <Button
+              id='save'
               ver='success'
-              onClick={props.save}
+              onClick={props.change}
+              type='button'
             >
               Save
             </Button>
           </div>
           <div className={props.classes.controlPiece}>
-            <Button onClick={invokeFilePicker}>
+            <Button
+              id='open'
+              onClick={invokeFilePicker}
+              type='button'
+            >
               Open
             </Button>
             <input
+              id='file'
+              name='file'
               className={props.classes.hidden}
               type='file'
               ref={filePicker}
-              onChange={props.open}
+              onChange={props.change}
             />
           </div>
         </div>
@@ -178,17 +194,7 @@ GenForm.propTypes = {
     newline: PropTypes.bool.isRequired,
     filterdupes: PropTypes.bool.isRequired
   }).isRequired,
-  changeSelect: PropTypes.func.isRequired,
-  changeSubpattern: PropTypes.func.isRequired,
-  clear: PropTypes.func.isRequired,
-  add: PropTypes.func.isRequired,
-  changePattern: PropTypes.func.isRequired,
-  changeWordNum: PropTypes.func.isRequired,
-  changeNewline: PropTypes.func.isRequired,
-  changeDupes: PropTypes.func.isRequired,
-  generate: PropTypes.func.isRequired,
-  save: PropTypes.func.isRequired,
-  open: PropTypes.func.isRequired
+  change: PropTypes.func.isRequired
 }
 
 export default injectSheet(styles)(GenForm)

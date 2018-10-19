@@ -1,4 +1,5 @@
 import { toast } from 'react-toastify'
+import schema from 'js-schema'
 
 import { defData, vars } from './defaultData'
 import fileProcessor from './fileProcessor'
@@ -11,6 +12,7 @@ class GenService {
     this.setStorage = this.setStorage.bind(this)
     this.changeSelect = this.changeSelect.bind(this)
     this.changeSubpattern = this.changeSubpattern.bind(this)
+    this.clear = this.clear.bind(this)
     this.add = this.add.bind(this)
     this.changePattern = this.changePattern.bind(this)
     this.wordNumChange = this.wordNumChange.bind(this)
@@ -453,9 +455,69 @@ class GenService {
 
   // Open a file and parse it to restore a saved state
   open (file, data, callback) {
+    const processResults = (result) => {
+      // If correct filetype
+      if (file.name.endsWith('.lngg')) {
+        // Define correct file structure
+        const SubpatternSchema = schema({
+          selected: /[A-Z]/,
+          subpattern: String
+        })
+
+        const DataSchema = schema({
+          subpatterns: Array.of(1, 24, SubpatternSchema),
+          pattern: String,
+          words: Number.min(1).max(9999),
+          newline: Boolean,
+          filterdupes: Boolean
+        })
+
+        let content = JSON.parse(result)
+
+        content.words = parseInt(content.words, 10)
+
+        if (DataSchema(content)) {
+          // If the file's content contains valid Data, load it
+          toast.success(`Data loaded from ${file.name}.`, {
+            autoClose: 5000,
+            className: 'toast-opened',
+            bodyClassName: 'toast-opened-body',
+            progressClassName: 'toast-opened-progress'
+          })
+
+          genService.setStorage(content)
+
+          callback(content)
+        } else {
+          // If the file's content does not contain valid Data, show an error
+          toast.info(`The content of ${file.name} is invalid.`, {
+            autoClose: 5000,
+            className: 'toast-unopened',
+            bodyClassName: 'toast-unopened-body',
+            progressClassName: 'toast-unopened-progress'
+          })
+
+          // eslint-disable-next-line
+          console.error(DataSchema.errors(content))
+
+          callback(false)
+        }
+      } else {
+        // If incorrect filetype
+        toast.info('Wrong filetype selected.', {
+          autoClose: 5000,
+          className: 'toast-unopened',
+          bodyClassName: 'toast-unopened-body',
+          progressClassName: 'toast-unopened-progress'
+        })
+
+        callback(false)
+      }
+    }
+
     if (window.FileReader) {
       // If the browser has access to the File APIs, open the file
-      return fileProcessor.openFile(file, callback)
+      fileProcessor.openFile(file, processResults)
     } else {
       // If the browser can't access the File APIs, display a notification
       toast.info('Your browser is unable to open files.', {
@@ -464,7 +526,8 @@ class GenService {
         bodyClassName: 'toast-unopened-body',
         progressClassName: 'toast-unopened-progress'
       })
-      return data
+
+      callback(false)
     }
   }
 }
