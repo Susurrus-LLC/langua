@@ -1,0 +1,13 @@
+{ 
+  "scripts":{
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.js": [
+        "prettier-standard",
+        "git add"
+      ]
+    }
+  }
+}

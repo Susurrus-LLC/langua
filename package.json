@@ -17,17 +17,8 @@
     "test-no-coverage": "react-scripts test --env=jsdom",
     "lintjs": "eslint src/**/*.js",
     "lintmd": "remark .",
-    "precommit": "lint-staged",
     "format": "prettier-standard 'src/**/*.js'",
     "eject": "react-scripts eject"
-  },
-  "lint-staged": {
-    "linters": {
-      "src/**/*.js": [
-        "prettier-standard",
-        "git add"
-      ]
-    }
   },
   "dependencies": {
     "classnames": "2.2.6",
