@@ -20,6 +20,19 @@
     "format": "prettier-standard 'src/**/*.js'",
     "eject": "react-scripts eject"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.js": [
+        "prettier-standard",
+        "git add"
+      ]
+    }
+  },
   "dependencies": {
     "classnames": "2.2.6",
     "color": "3.1.0",
