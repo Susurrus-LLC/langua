@@ -22,8 +22,7 @@ class FrequenResults extends React.Component {
       index: null,
       x: null,
       y: null,
-      filter: null,
-      data: null
+      filter: null
     }
   }
 
