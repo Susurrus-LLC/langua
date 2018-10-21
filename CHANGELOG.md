@@ -13,6 +13,8 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Changed 0.2.1
 
+- Fix issue where re-analyzing didn't update Frequen analysis until refresh
+
 ### Removed 0.2.1
 
 - Remove `disabled` formatting for Frequen in the Header and the Home page
