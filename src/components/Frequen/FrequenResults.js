@@ -22,7 +22,8 @@ class FrequenResults extends React.Component {
       index: null,
       x: null,
       y: null,
-      filter: null
+      filter: null,
+      data: null
     }
   }
 
@@ -43,47 +44,6 @@ class FrequenResults extends React.Component {
   }
 
   render () {
-    this.results = []
-    this.fullCount = 0
-    let rawResults = this.props.results
-
-    if (rawResults) {
-      // Find allophones and combine their counts
-      for (let seg in rawResults) {
-        if (rawResults.hasOwnProperty(seg)) {
-          if (rawResults[seg].hasOwnProperty('allophoneOf')) {
-            rawResults[rawResults[seg].allophoneOf].count +=
-              rawResults[seg].count
-            delete rawResults[seg]
-          }
-        }
-      }
-
-      // Add the results to the results array
-      for (let seg in rawResults) {
-        this.results.push({
-          segment: seg,
-          count: rawResults[seg].count,
-          type: rawResults[seg].type
-        })
-      }
-    }
-
-    this.results.sort((a, b) => {
-      return b['count'] - a['count']
-    })
-
-    this.results.forEach(elObj => {
-      this.fullCount += elObj.count
-    })
-
-    const data = this.results.map((d, i) => ({
-      x: (d.count / this.fullCount) * 100,
-      y: d.segment,
-      i: i,
-      color: i === this.state.index ? v.ong.string() : v.blu.string()
-    }))
-
     const axisStyle = {
       fontSize: `${v.ms0}rem`,
       text: {
@@ -102,7 +62,7 @@ class FrequenResults extends React.Component {
           <div className='bar-chart'>
             <FlexibleWidthXYPlot
               yType='ordinal'
-              height={v.ms2 * 16 * data.length}
+              height={v.ms2 * 16 * this.props.results.combined.length}
               onMouseLeave={this.onMouseOut}
             >
               <VerticalGridLines style={gridStyle} />
@@ -110,7 +70,7 @@ class FrequenResults extends React.Component {
               <XAxis tickFormat={t => `${t}%`} style={axisStyle} />
               <YAxis style={axisStyle} />
               <HorizontalBarSeries
-                data={data}
+                data={this.props.results.combined}
                 animation
                 colorType='literal'
                 onValueMouseOver={this.onMouseOver}
@@ -118,7 +78,9 @@ class FrequenResults extends React.Component {
               />
               {this.state.x ? (
                 <Hint
-                  value={{ Frequency: `${this.state.x.toFixed(2)}%` }}
+                  value={{
+                    [`/${this.state.y}/`]: `${this.state.x.toFixed(2)}%`
+                  }}
                   align={{
                     horizontal: 'left',
                     vertical: 'auto'

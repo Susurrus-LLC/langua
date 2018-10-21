@@ -62,14 +62,14 @@ class FrequenService {
     const consonantsFlat = sortArrays(flattenArrays(consonants))
     const vowelsFlat = sortArrays(flattenArrays(vowels))
 
-    let results = {}
+    let rawResults = {}
 
     // Add each element in the flattened arrays to the results object and indicate which type they are
     const initResults = (arr, type) => {
       arr.forEach(el => {
-        results[el] = {}
-        results[el].count = 0
-        results[el].type = type
+        rawResults[el] = {}
+        rawResults[el].count = 0
+        rawResults[el].type = type
       })
     }
     initResults(consonantsFlat, 'consonant')
@@ -81,7 +81,7 @@ class FrequenService {
         if (elArr.length > 1) {
           elArr.forEach((el, j) => {
             if (j > 0) {
-              results[arr[i][j]].allophoneOf = arr[i][0]
+              rawResults[arr[i][j]].allophoneOf = arr[i][0]
             }
           })
         }
@@ -98,7 +98,7 @@ class FrequenService {
     // For every instance of the segment in the text, increment the count and slice the instance out of the text
     const sliceAndCount = seg => {
       if (corpus.indexOf(seg) > -1) {
-        results[seg].count += 1
+        rawResults[seg].count += 1
         corpus =
           corpus.slice(0, corpus.indexOf(seg)) +
           corpus.slice(corpus.indexOf(seg) + seg.length)
@@ -111,6 +111,48 @@ class FrequenService {
         sliceAndCount(el)
       }
     })
+
+    let combinedResults = []
+    let combinedCount = 0
+
+    // Find allophones and combine their counts
+    for (let seg in rawResults) {
+      if (rawResults.hasOwnProperty(seg)) {
+        if (rawResults[seg].hasOwnProperty('allophoneOf')) {
+          rawResults[rawResults[seg].allophoneOf].count += rawResults[seg].count
+          delete rawResults[seg]
+        }
+      }
+    }
+
+    // Add the results to the combinedResults array
+    for (let seg in rawResults) {
+      combinedResults.push({
+        segment: seg,
+        count: rawResults[seg].count,
+        type: rawResults[seg].type
+      })
+    }
+
+    // Sort by largest count
+    combinedResults.sort((a, b) => {
+      return b['count'] - a['count']
+    })
+
+    // Count the total number of counted segments
+    combinedResults.forEach(elObj => {
+      combinedCount += elObj.count
+    })
+
+    const combinedData = combinedResults.map((d, i) => ({
+      x: (d.count / combinedCount) * 100,
+      y: d.segment,
+      i: i
+    }))
+
+    const results = {
+      combined: combinedData
+    }
 
     return results
   }
