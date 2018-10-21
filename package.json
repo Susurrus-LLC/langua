@@ -14,9 +14,20 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage && codacy-coverage < ./coverage/lcov.info",
+    "test-no-coverage": "react-scripts test --env=jsdom",
     "lintjs": "eslint src/**/*.js",
     "lintmd": "remark .",
+    "precommit": "lint-staged",
+    "format": "prettier-standard 'src/**/*.js'",
     "eject": "react-scripts eject"
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.js": [
+        "prettier-standard",
+        "git add"
+      ]
+    }
   },
   "dependencies": {
     "classnames": "2.2.6",
@@ -44,6 +55,9 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.1.2",
+    "lint-staged": "^7.3.0",
+    "prettier-standard": "^8.0.1",
     "react-snap": "1.19.0",
     "react-test-renderer": "16.5.2",
     "remark-cli": "^5.0.0",

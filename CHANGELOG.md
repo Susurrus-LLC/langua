@@ -6,6 +6,11 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.2.0...HEAD)
 
+### Added 0.2.1
+
+- Add test script that doesn't include coverage reporting
+- Add Prettier Standard for automatic reformatting to Standard format
+
 ### Changed 0.2.1
 
 ### Removed 0.2.1
