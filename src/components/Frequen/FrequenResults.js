@@ -18,6 +18,7 @@ class FrequenResults extends React.Component {
     super(props)
     this.onMouseOver = this.onMouseOver.bind(this)
     this.onMouseOut = this.onMouseOut.bind(this)
+    this.whichData = this.whichData.bind(this)
     this.state = {
       index: null,
       x: null,
@@ -42,6 +43,17 @@ class FrequenResults extends React.Component {
     })
   }
 
+  whichData () {
+    switch (this.state.filter) {
+      case 'consonants':
+        return this.props.results.consonants
+      case 'vowels':
+        return this.props.results.vowels
+      default:
+        return this.props.results.combined
+    }
+  }
+
   render () {
     const axisStyle = {
       fontSize: `${v.ms0}rem`,
@@ -61,7 +73,7 @@ class FrequenResults extends React.Component {
           <div className='bar-chart'>
             <FlexibleWidthXYPlot
               yType='ordinal'
-              height={v.ms2 * 16 * this.props.results.combined.length}
+              height={v.ms2 * 16 * this.whichData().length}
               onMouseLeave={this.onMouseOut}
             >
               <VerticalGridLines style={gridStyle} />
@@ -69,7 +81,7 @@ class FrequenResults extends React.Component {
               <XAxis tickFormat={t => `${t}%`} style={axisStyle} />
               <YAxis style={axisStyle} />
               <HorizontalBarSeries
-                data={this.props.results.combined}
+                data={this.whichData()}
                 animation
                 colorType='literal'
                 onValueMouseOver={this.onMouseOver}
