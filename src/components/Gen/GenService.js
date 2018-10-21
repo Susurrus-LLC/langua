@@ -29,7 +29,7 @@ class GenService {
     let data
 
     // Check if there's storage access
-    if (typeof (Storage) !== 'undefined') {
+    if (typeof Storage !== 'undefined') {
       // If we can access storage, check if there is data in storage.
       if (this.storage.getItem(this.item)) {
         // If there's data in storage, pull it
@@ -50,7 +50,7 @@ class GenService {
 
   // Store the current data in storage
   setStorage (data) {
-    if (typeof (Storage) !== 'undefined') {
+    if (typeof Storage !== 'undefined') {
       this.storage.setItem(this.item, JSON.stringify(data))
     }
   }
@@ -153,7 +153,7 @@ class GenService {
     let status = []
 
     // Check Subpattern for circular reference
-    const getSp = (selected) => {
+    const getSp = selected => {
       let sp = ''
       for (let i = 0; i < data.subpatterns.length; i++) {
         if (data.subpatterns[i].selected === selected) {
@@ -164,7 +164,7 @@ class GenService {
       return sp
     }
 
-    const idDeps = (subpattern) => {
+    const idDeps = subpattern => {
       let deps = []
       for (let i = 0; i < subpattern.length; i++) {
         if (vars.includes(subpattern[i])) {
@@ -229,9 +229,13 @@ class GenService {
     const dupes = duplicates.join(', ')
 
     if (duplicates.length > 1) {
-      status.push(`Some Subpattern variables (${dupes}) have been used multiple times.`)
+      status.push(
+        `Some Subpattern variables (${dupes}) have been used multiple times.`
+      )
     } else if (duplicates.length === 1) {
-      status.push(`The Subpattern variable ${dupes} has been used multiple times.`)
+      status.push(
+        `The Subpattern variable ${dupes} has been used multiple times.`
+      )
     }
 
     // Check Pattern for undefined variable
@@ -263,9 +267,13 @@ class GenService {
 
     if (undefSet.length > 1) {
       // Update this status message once escaping characters is enabled
-      status.push(`Some capital A–Z letters (${undefs}) were used but not defined as variables. If your intention is to include these characters as a letter in the results, a future version will allow this using escaped characters.`)
+      status.push(
+        `Some capital A–Z letters (${undefs}) were used but not defined as variables. If your intention is to include these characters as a letter in the results, a future version will allow this using escaped characters.`
+      )
     } else if (undefSet.length === 1) {
-      status.push(`The capital letter ${undefs} was used but not defined as a variable. If your intention is to include this character as a letter in the results, a future version will allow this using escaped characters.`)
+      status.push(
+        `The capital letter ${undefs} was used but not defined as a variable. If your intention is to include this character as a letter in the results, a future version will allow this using escaped characters.`
+      )
     }
 
     status = Array.from(new Set(status))
@@ -301,7 +309,7 @@ class GenService {
     let newData = JSON.parse(JSON.stringify(data))
 
     // Randomly choose from the items in an array
-    const chooseRand = (length) => {
+    const chooseRand = length => {
       return Math.floor(Math.random() * length)
     }
 
@@ -444,18 +452,21 @@ class GenService {
       fileProcessor.saveFile(data)
     } else {
       // If the browser can't access File, display a notification
-      toast.info('Your browser is unable to save files. The data has been saved to your browser’s local storage.', {
-        autoClose: 5000,
-        className: 'toast-unsaved',
-        bodyClassName: 'toast-unsaved-body',
-        progressClassName: 'toast-unsaved-progress'
-      })
+      toast.info(
+        'Your browser is unable to save files. The data has been saved to your browser’s local storage.',
+        {
+          autoClose: 5000,
+          className: 'toast-unsaved',
+          bodyClassName: 'toast-unsaved-body',
+          progressClassName: 'toast-unsaved-progress'
+        }
+      )
     }
   }
 
   // Open a file and parse it to restore a saved state
   open (file, data, callback) {
-    const processResults = (result) => {
+    const processResults = result => {
       // If correct filetype
       if (file.name.endsWith('.lngg')) {
         // Define correct file structure

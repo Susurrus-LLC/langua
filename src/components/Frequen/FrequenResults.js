@@ -1,7 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import 'react-vis/dist/style.css'
-import { FlexibleWidthXYPlot, HorizontalBarSeries, HorizontalGridLines, VerticalGridLines, XAxis, YAxis, Hint } from 'react-vis'
+import {
+  FlexibleWidthXYPlot,
+  HorizontalBarSeries,
+  HorizontalGridLines,
+  VerticalGridLines,
+  XAxis,
+  YAxis,
+  Hint
+} from 'react-vis'
 
 import * as v from '../../styles/variables'
 
@@ -25,7 +33,8 @@ class FrequenResults extends React.Component {
       for (let seg in rawResults) {
         if (rawResults.hasOwnProperty(seg)) {
           if (rawResults[seg].hasOwnProperty('allophoneOf')) {
-            rawResults[rawResults[seg].allophoneOf].count += rawResults[seg].count
+            rawResults[rawResults[seg].allophoneOf].count +=
+              rawResults[seg].count
             delete rawResults[seg]
           }
         }
@@ -33,7 +42,11 @@ class FrequenResults extends React.Component {
 
       // Add the results to the results array
       for (let seg in rawResults) {
-        this.results.push({ segment: seg, count: rawResults[seg].count, type: rawResults[seg].type })
+        this.results.push({
+          segment: seg,
+          count: rawResults[seg].count,
+          type: rawResults[seg].type
+        })
       }
     }
 
@@ -43,7 +56,7 @@ class FrequenResults extends React.Component {
 
     this.fullCount = 0
 
-    this.results.forEach((elObj) => {
+    this.results.forEach(elObj => {
       this.fullCount += elObj.count
     })
   }
@@ -65,14 +78,12 @@ class FrequenResults extends React.Component {
   }
 
   render () {
-    const data = this.results.map((d, i) => (
-      {
-        x: (d.count / this.fullCount) * 100,
-        y: d.segment,
-        i: i,
-        color: i === this.state.index ? v.ong.string() : v.blu.string()
-      }
-    ))
+    const data = this.results.map((d, i) => ({
+      x: (d.count / this.fullCount) * 100,
+      y: d.segment,
+      i: i,
+      color: i === this.state.index ? v.ong.string() : v.blu.string()
+    }))
 
     const axisStyle = {
       fontSize: `${v.ms0}rem`,
@@ -92,15 +103,12 @@ class FrequenResults extends React.Component {
           <div className='bar-chart'>
             <FlexibleWidthXYPlot
               yType='ordinal'
-              height={v.ms2 * 16 * (data.length)}
+              height={v.ms2 * 16 * data.length}
               onMouseLeave={this.onMouseOut}
             >
               <VerticalGridLines style={gridStyle} />
               <HorizontalGridLines style={gridStyle} />
-              <XAxis
-                tickFormat={(t) => `${t}%`}
-                style={axisStyle}
-              />
+              <XAxis tickFormat={t => `${t}%`} style={axisStyle} />
               <YAxis style={axisStyle} />
               <HorizontalBarSeries
                 data={data}

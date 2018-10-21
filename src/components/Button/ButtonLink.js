@@ -4,14 +4,19 @@ import PropTypes from 'prop-types'
 
 import Button from './Button'
 
-const ButtonLink = (props) => {
-  const onClick = (e) => {
+const ButtonLink = props => {
+  const onClick = e => {
     e.preventDefault()
     props.history.push(props.route)
   }
 
   return (
-    <Button ver={props.buttonType} addClass={'buttonLink'} onClick={onClick} role='link'>
+    <Button
+      ver={props.buttonType}
+      addClass={'buttonLink'}
+      onClick={onClick}
+      role='link'
+    >
       {props.children}
     </Button>
   )

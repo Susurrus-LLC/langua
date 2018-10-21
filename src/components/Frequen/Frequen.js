@@ -31,19 +31,22 @@ class Frequen extends React.Component {
 
   onAnalyze (e) {
     e.preventDefault()
-    this.setState(prevState => ({
-      analyzed: false
-    }), () => {
-      // Save the current state to storage
-      frequenService.setStorage(this.state)
+    this.setState(
+      prevState => ({
+        analyzed: false
+      }),
+      () => {
+        // Save the current state to storage
+        frequenService.setStorage(this.state)
 
-      const response = frequenService.analyze(this.state)
+        const response = frequenService.analyze(this.state)
 
-      this.setState(prevState => ({
-        results: response,
-        analyzed: true
-      }))
-    })
+        this.setState(prevState => ({
+          results: response,
+          analyzed: true
+        }))
+      }
+    )
   }
 
   render () {
@@ -51,12 +54,13 @@ class Frequen extends React.Component {
       <div className={this.props.classes.frequen}>
         <Helmet>
           <title>{siteTitle} Frequen</title>
-          <meta name='description' content='LanguaFrequen is a tool for analyzing phoneme frequencies in a given text.' />
+          <meta
+            name='description'
+            content='LanguaFrequen is a tool for analyzing phoneme frequencies in a given text.'
+          />
           <link rel='canonical' href={`${canonical}frequen/`} />
         </Helmet>
-        <ButtonLink route='/frequen/help'>
-          Help
-        </ButtonLink>
+        <ButtonLink route='/frequen/help'>Help</ButtonLink>
         <h2 className='toolTitle'>LanguaFrequen</h2>
         <Notice>This tool is still in development.</Notice>
         <FrequenForm

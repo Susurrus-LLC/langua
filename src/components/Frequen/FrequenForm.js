@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 import Button from '../Button/Button'
 
-const FrequenForm = (props) => (
+const FrequenForm = props => (
   <form className={props.classes.form}>
     <h5 className={props.classes.sectionTitle}>Text Corpus</h5>
     <textarea
@@ -33,11 +33,7 @@ const FrequenForm = (props) => (
       onChange={props.onChangeInput}
     />
     <div className={props.classes.controls}>
-      <Button
-        type='submit'
-        ver='neutral'
-        onClick={props.onAnalyze}
-      >
+      <Button type='submit' ver='neutral' onClick={props.onAnalyze}>
         Analyze
       </Button>
     </div>

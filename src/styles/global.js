@@ -22,9 +22,9 @@ const styles = {
       fontFamily: v.headerFont,
       textRendering: 'optimizeLegibility',
       margin: {
-        top: `${(v.lnht * 2) * (v.ms1 * 2)}rem`, // base line height * double base font size
+        top: `${v.lnht * 2 * (v.ms1 * 2)}rem`, // base line height * double base font size
         right: '0',
-        bottom: `${(v.lnht * 2) * v.ms1}rem`, // base line height * font size
+        bottom: `${v.lnht * 2 * v.ms1}rem`, // base line height * font size
         left: '0'
       },
       padding: 0
@@ -61,7 +61,7 @@ const styles = {
       margin: {
         top: '0',
         right: '0',
-        bottom: `${(v.lnht * 2) * v.ms1}rem`, // base line height * base font size
+        bottom: `${v.lnht * 2 * v.ms1}rem`, // base line height * base font size
         left: '0'
       },
       padding: 0
@@ -95,7 +95,10 @@ const styles = {
         outline: {
           width: 1,
           style: 'solid',
-          color: v.blu.darken(0.15).alpha(0.3).string()
+          color: v.blu
+            .darken(0.15)
+            .alpha(0.3)
+            .string()
         }
       }
     },
@@ -108,7 +111,10 @@ const styles = {
         outline: {
           width: 1,
           style: 'solid',
-          color: v.blu.darken(0.15).alpha(0.3).string()
+          color: v.blu
+            .darken(0.15)
+            .alpha(0.3)
+            .string()
         }
       },
       '&[type=checkbox], &[type=radio]': {
@@ -123,7 +129,10 @@ const styles = {
       border: {
         width: '1px',
         style: 'solid',
-        color: v.blu.darken(0.15).alpha(0.3).string()
+        color: v.blu
+          .darken(0.15)
+          .alpha(0.3)
+          .string()
       },
       background: 'none',
       backgroundColor: v.white.darken(0.05).string(),
@@ -147,7 +156,10 @@ const styles = {
         outline: {
           width: 1,
           style: 'solid',
-          color: v.blu.darken(0.15).alpha(0.3).string()
+          color: v.blu
+            .darken(0.15)
+            .alpha(0.3)
+            .string()
         }
       }
     },
@@ -170,13 +182,22 @@ const styles = {
       }
     },
     '.toast-update, .toast-unsaved, .toast-unopened': {
-      backgroundColor: v.red.darken(0.1).alpha(0.9).string()
+      backgroundColor: v.red
+        .darken(0.1)
+        .alpha(0.9)
+        .string()
     },
     '.toast-cached, .toast-opened': {
-      backgroundColor: v.blu.darken(0.1).alpha(0.9).string()
+      backgroundColor: v.blu
+        .darken(0.1)
+        .alpha(0.9)
+        .string()
     },
     '.toast-offline': {
-      backgroundColor: v.ong.darken(0.1).alpha(0.9).string()
+      backgroundColor: v.ong
+        .darken(0.1)
+        .alpha(0.9)
+        .string()
     }
   }
 }

@@ -1,5 +1,5 @@
 // import * as v from '../../styles/variables'
 
-const styles = { }
+const styles = {}
 
 export default styles

@@ -8,11 +8,7 @@ const styles = {
   }
 }
 
-const Notice = (props) => (
-  <p className={props.classes.notice}>
-    {props.children}
-  </p>
-)
+const Notice = props => <p className={props.classes.notice}>{props.children}</p>
 
 Notice.propTypes = {
   classes: PropTypes.object,

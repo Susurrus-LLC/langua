@@ -74,8 +74,9 @@ class Gen extends React.Component {
       e.preventDefault()
       // Open a file and parse it to restore a saved state
       const file = e.target.files[0]
-      const updateState = (response) => {
-        if (response) { // Only change state if the file was successfully opened
+      const updateState = response => {
+        if (response) {
+          // Only change state if the file was successfully opened
           this.setState(prevState => ({
             data: response
           }))
@@ -137,17 +138,15 @@ class Gen extends React.Component {
       <div className={classes.gen}>
         <Helmet>
           <title>{siteTitle} Gen</title>
-          <meta name='description' content='LanguaGen is a tool for automatically building a set of words based on arbitrary rules of phonotactics.' />
+          <meta
+            name='description'
+            content='LanguaGen is a tool for automatically building a set of words based on arbitrary rules of phonotactics.'
+          />
           <link rel='canonical' href={`${canonical}gen/`} />
         </Helmet>
-        <ButtonLink route='/gen/help'>
-          Help
-        </ButtonLink>
+        <ButtonLink route='/gen/help'>Help</ButtonLink>
         <h2 className='toolTitle'>LanguaGen</h2>
-        <GenForm
-          data={state.data}
-          change={this.onChangeInput}
-        />
+        <GenForm data={state.data} change={this.onChangeInput} />
         <GenResults
           newLine={state.data.newline}
           filterDupes={state.data.filterdupes}

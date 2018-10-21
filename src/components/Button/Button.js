@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import styles from './styles'
 
-const Button = (props) => {
+const Button = props => {
   const filterClass = (ver, classes) => {
     if (ver === 'neutral') {
       return classes.neutral
@@ -24,7 +24,11 @@ const Button = (props) => {
       <input
         onChange={props.onClick}
         id={props.id}
-        className={classNames(props.classes.btn, filterClass(props.ver, props.classes), props.classes[props.addClass])}
+        className={classNames(
+          props.classes.btn,
+          filterClass(props.ver, props.classes),
+          props.classes[props.addClass]
+        )}
         type={props.type}
       />
     )
@@ -33,7 +37,11 @@ const Button = (props) => {
       <button
         onClick={props.onClick}
         id={props.id}
-        className={classNames(props.classes.btn, filterClass(props.ver, props.classes), props.classes[props.addClass])}
+        className={classNames(
+          props.classes.btn,
+          filterClass(props.ver, props.classes),
+          props.classes[props.addClass]
+        )}
         type={props.type}
         role={props.role || 'button'}
       >

@@ -9,23 +9,17 @@ import Button from '../../Button/Button'
 import { vars } from '../defaultData'
 import styles from './styles'
 
-const GenForm = (props) => {
+const GenForm = props => {
   const filePicker = React.createRef()
 
   const selectOptions = vars.map((variab, index) => (
-    <option
-      key={index}
-      value={variab}
-    >
+    <option key={index} value={variab}>
       {variab}
     </option>
   ))
 
   const subpatternRows = props.data.subpatterns.map((subpattern, index) => (
-    <div
-      key={index}
-      className={props.classes.subpsRow}
-    >
+    <div key={index} className={props.classes.subpsRow}>
       <select
         id={`v${index}`}
         name={`v${index}`}
@@ -74,7 +68,7 @@ const GenForm = (props) => {
     }
   }
 
-  const invokeFilePicker = (e) => {
+  const invokeFilePicker = e => {
     e.preventDefault()
     filePicker.current.value = ''
     filePicker.current.click()
@@ -82,7 +76,9 @@ const GenForm = (props) => {
 
   return (
     <form className={props.classes.form}>
-      <div className={classNames(props.classes.subpatterns, props.classes.part)}>
+      <div
+        className={classNames(props.classes.subpatterns, props.classes.part)}
+      >
         <h5 className={props.classes.sectionTitle}>Subpatterns</h5>
         {subpatternRows}
         {addButton()}
@@ -132,7 +128,8 @@ const GenForm = (props) => {
                 value='newline'
                 checked={props.data.newline}
                 onChange={props.change}
-              /> new line each
+              />{' '}
+              new line each
             </label>
           </div>
           <div className={props.classes.controlPiece}>
@@ -144,7 +141,8 @@ const GenForm = (props) => {
                 value='filterdupes'
                 checked={props.data.filterdupes}
                 onChange={props.change}
-              /> filter duplicates
+              />{' '}
+              filter duplicates
             </label>
           </div>
         </div>
@@ -160,11 +158,7 @@ const GenForm = (props) => {
             </Button>
           </div>
           <div className={props.classes.controlPiece}>
-            <Button
-              id='open'
-              onClick={invokeFilePicker}
-              type='button'
-            >
+            <Button id='open' onClick={invokeFilePicker} type='button'>
               Open
             </Button>
             <input
@@ -185,10 +179,12 @@ const GenForm = (props) => {
 GenForm.propTypes = {
   classes: PropTypes.object,
   data: PropTypes.shape({
-    subpatterns: PropTypes.arrayOf(PropTypes.shape({
-      selected: PropTypes.string.isRequired,
-      subpattern: PropTypes.string.isRequired
-    })).isRequired,
+    subpatterns: PropTypes.arrayOf(
+      PropTypes.shape({
+        selected: PropTypes.string.isRequired,
+        subpattern: PropTypes.string.isRequired
+      })
+    ).isRequired,
     pattern: PropTypes.string.isRequired,
     words: PropTypes.number.isRequired,
     newline: PropTypes.bool.isRequired,

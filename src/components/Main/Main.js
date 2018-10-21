@@ -19,7 +19,7 @@ import TreeHelp from '../Tree/Help/TreeHelp'
 
 import styles from './styles'
 
-const Main = (props) => (
+const Main = props => (
   <main>
     <div className={props.classes.main}>
       <Switch>

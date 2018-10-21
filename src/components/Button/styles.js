@@ -5,7 +5,10 @@ const styles = {
     border: {
       width: 1,
       style: 'solid',
-      color: v.blu.darken(0.6).alpha(0.3).string()
+      color: v.blu
+        .darken(0.6)
+        .alpha(0.3)
+        .string()
     },
     background: 'none',
     backgroundColor: v.white.darken(0.05).string(),
@@ -36,7 +39,10 @@ const styles = {
     border: {
       width: 1,
       style: 'solid',
-      color: v.ong.darken(0.7).alpha(0.3).string()
+      color: v.ong
+        .darken(0.7)
+        .alpha(0.3)
+        .string()
     },
     '&:hover': {
       backgroundColor: v.ong.darken(0.25).string(),
@@ -81,7 +87,10 @@ const styles = {
     border: {
       width: 1,
       style: 'solid',
-      color: v.red.darken(0.65).alpha(0.3).string()
+      color: v.red
+        .darken(0.65)
+        .alpha(0.3)
+        .string()
     },
     '&:hover': {
       backgroundColor: v.red.darken(0.2).string(),

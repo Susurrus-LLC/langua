@@ -15,7 +15,7 @@ export const headerFont = '"Noto Serif", "Palatino Linotype", Palatino, serif'
 // All sizes are given as pure numbers, so must be given the unit 'rem'
 
 export const ratio = 1.333
-export const ms1 = 1.000
+export const ms1 = 1.0
 export const ms0 = ms1 / Math.pow(ratio, 1) // 0.750
 export const ms2 = ms1 * Math.pow(ratio, 1) // 1.333
 export const ms3 = ms1 * Math.pow(ratio, 2) // 1.777

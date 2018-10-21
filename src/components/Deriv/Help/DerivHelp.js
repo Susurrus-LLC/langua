@@ -9,16 +9,17 @@ import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
-const DerivHelp = (props) => (
+const DerivHelp = props => (
   <div className={props.classes.derivHelp}>
     <Helmet>
       <title>{siteTitle} Deriv Help</title>
-      <meta name='description' content='LanguaDeriv is a tool for modeling word derivation according to arbitrary rules of morphosyntactics.' />
+      <meta
+        name='description'
+        content='LanguaDeriv is a tool for modeling word derivation according to arbitrary rules of morphosyntactics.'
+      />
       <link rel='canonical' href={`${canonical}deriv/help/`} />
     </Helmet>
-    <ButtonLink route='/deriv'>
-      Back
-    </ButtonLink>
+    <ButtonLink route='/deriv'>Back</ButtonLink>
     <h2 className='toolTitle'>LanguaDeriv Help</h2>
     <Notice>This tool is still in planning.</Notice>
   </div>

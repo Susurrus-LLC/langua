@@ -9,16 +9,17 @@ import ButtonLink from '../../Button/ButtonLink'
 
 import { canonical, siteTitle } from '../../../App'
 
-const TreeHelp = (props) => (
+const TreeHelp = props => (
   <div className={props.classes.treeHelp}>
     <Helmet>
       <title>{siteTitle} Tree Help</title>
-      <meta name='description' content='LanguaTree is a tool for drawing and labeling syntax trees.' />
+      <meta
+        name='description'
+        content='LanguaTree is a tool for drawing and labeling syntax trees.'
+      />
       <link rel='canonical' href={`${canonical}tree/help/`} />
     </Helmet>
-    <ButtonLink route='/tree'>
-      Back
-    </ButtonLink>
+    <ButtonLink route='/tree'>Back</ButtonLink>
     <h2 className='toolTitle'>LanguaTree Help</h2>
     <Notice>This tool is still in planning.</Notice>
   </div>

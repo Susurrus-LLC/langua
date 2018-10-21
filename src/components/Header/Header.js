@@ -9,7 +9,7 @@ import styles from './styles'
 const siteTitle = 'Langua'
 const siteSubtitle = 'A suite of language tools'
 
-const Header = (props) => (
+const Header = props => (
   <header>
     <div className={props.classes.header}>
       <div className={props.classes.titleArea}>
@@ -23,19 +23,44 @@ const Header = (props) => (
       <nav className={props.classes.nav}>
         <ul className={props.classes.menu}>
           <li className={props.classes.navLink}>
-            <NavLink to='/gen' activeClassName='active'>Gen</NavLink>
+            <NavLink to='/gen' activeClassName='active'>
+              Gen
+            </NavLink>
           </li>
-          <li className={classNames(props.classes.navLink, props.classes.disabled)}>
-            <NavLink to='/morph' activeClassName='active'>Morph</NavLink>
+          <li
+            className={classNames(
+              props.classes.navLink,
+              props.classes.disabled
+            )}
+          >
+            <NavLink to='/morph' activeClassName='active'>
+              Morph
+            </NavLink>
           </li>
-          <li className={classNames(props.classes.navLink, props.classes.disabled)}>
-            <NavLink to='/deriv' activeClassName='active'>Deriv</NavLink>
+          <li
+            className={classNames(
+              props.classes.navLink,
+              props.classes.disabled
+            )}
+          >
+            <NavLink to='/deriv' activeClassName='active'>
+              Deriv
+            </NavLink>
           </li>
           <li className={props.classes.navLink}>
-            <NavLink to='/frequen' activeClassName='active'>Frequen</NavLink>
+            <NavLink to='/frequen' activeClassName='active'>
+              Frequen
+            </NavLink>
           </li>
-          <li className={classNames(props.classes.navLink, props.classes.disabled)}>
-            <NavLink to='/tree' activeClassName='active'>Tree</NavLink>
+          <li
+            className={classNames(
+              props.classes.navLink,
+              props.classes.disabled
+            )}
+          >
+            <NavLink to='/tree' activeClassName='active'>
+              Tree
+            </NavLink>
           </li>
         </ul>
       </nav>

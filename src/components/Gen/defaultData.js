@@ -3,10 +3,12 @@ export const defData = {
     {
       selected: 'V',
       subpattern: 'a/e/i/o/u'
-    }, {
+    },
+    {
       selected: 'C',
       subpattern: 'p/t/k/b/d/g/s/m/n/l/r'
-    }, {
+    },
+    {
       selected: 'N',
       subpattern: 'm/n'
     }
@@ -17,4 +19,31 @@ export const defData = {
   filterdupes: false
 }
 
-export const vars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+export const vars = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z'
+]

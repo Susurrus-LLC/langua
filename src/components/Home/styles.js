@@ -20,7 +20,10 @@ const styles = {
       outline: {
         width: '1px',
         style: 'solid',
-        color: v.blu.darken(0.15).alpha(0.3).string()
+        color: v.blu
+          .darken(0.15)
+          .alpha(0.3)
+          .string()
       }
     }
   },

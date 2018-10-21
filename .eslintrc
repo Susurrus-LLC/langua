@@ -21,6 +21,8 @@
   },
   "rules": {
     "semi": ["error", "never"],
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "space-before-function-paren": ["error", "always"],
+    "jsx-quotes": ["error", "prefer-single"]
   }
 }
