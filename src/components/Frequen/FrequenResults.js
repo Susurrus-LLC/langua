@@ -24,9 +24,28 @@ class FrequenResults extends React.Component {
       y: null,
       filter: null
     }
+  }
 
-    let rawResults = this.props.results
+  onMouseOver (datapoint) {
+    this.setState({
+      index: datapoint.i,
+      x: datapoint.x,
+      y: datapoint.y
+    })
+  }
+
+  onMouseOut () {
+    this.setState({
+      index: null,
+      x: null,
+      y: null
+    })
+  }
+
+  render () {
     this.results = []
+    this.fullCount = 0
+    let rawResults = this.props.results
 
     if (rawResults) {
       // Find allophones and combine their counts
@@ -54,30 +73,10 @@ class FrequenResults extends React.Component {
       return b['count'] - a['count']
     })
 
-    this.fullCount = 0
-
     this.results.forEach(elObj => {
       this.fullCount += elObj.count
     })
-  }
 
-  onMouseOver (datapoint) {
-    this.setState({
-      index: datapoint.i,
-      x: datapoint.x,
-      y: datapoint.y
-    })
-  }
-
-  onMouseOut () {
-    this.setState({
-      index: null,
-      x: null,
-      y: null
-    })
-  }
-
-  render () {
     const data = this.results.map((d, i) => ({
       x: (d.count / this.fullCount) * 100,
       y: d.segment,
