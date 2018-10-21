@@ -8,6 +8,10 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Changed 0.2.1
 
+### Removed 0.2.1
+
+- Remove `disabled` formatting for Frequen in the Header and the Home page
+
 ## [v0.2.0](https://github.com/nai888/langua/compare/v0.1.6...v0.2.0) - 2018-10-19
 
 ### Added 0.2.0
@@ -17,7 +21,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Add eslint and codacy-coverage to TravisCI.
 - Add remark-lint.
 - Add basic structure of Frequen tool.
-- Add graphical analyzsis to Frequen tool, including tooltips to show exact data.
+- Add graphical analysis to Frequen tool, including tooltips to show exact data.
 
 ### Changed 0.2.0
 

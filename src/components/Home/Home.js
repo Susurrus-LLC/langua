@@ -36,7 +36,6 @@ const Home = (props) => (
         classes={props.classes}
         linkTo='/frequen'
         toolTitle='Frequen'
-        disabled
       >
         LanguaFrequen is a tool for analyzing phoneme frequencies in a given text.
       </HomePanel>

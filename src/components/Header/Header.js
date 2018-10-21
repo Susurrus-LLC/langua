@@ -31,7 +31,7 @@ const Header = (props) => (
           <li className={classNames(props.classes.navLink, props.classes.disabled)}>
             <NavLink to='/deriv' activeClassName='active'>Deriv</NavLink>
           </li>
-          <li className={classNames(props.classes.navLink, props.classes.disabled)}>
+          <li className={props.classes.navLink}>
             <NavLink to='/frequen' activeClassName='active'>Frequen</NavLink>
           </li>
           <li className={classNames(props.classes.navLink, props.classes.disabled)}>
