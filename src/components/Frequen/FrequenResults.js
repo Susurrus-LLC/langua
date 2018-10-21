@@ -20,26 +20,32 @@ class FrequenResults extends React.Component {
     this.onMouseOut = this.onMouseOut.bind(this)
     this.whichData = this.whichData.bind(this)
     this.state = {
-      index: null,
       x: null,
       y: null,
+      count: null,
+      type: null,
+      index: null,
       filter: null
     }
   }
 
   onMouseOver (datapoint) {
     this.setState({
-      index: datapoint.i,
       x: datapoint.x,
-      y: datapoint.y
+      y: datapoint.y,
+      count: datapoint.count,
+      type: datapoint.type,
+      index: datapoint.i
     })
   }
 
   onMouseOut () {
     this.setState({
-      index: null,
       x: null,
-      y: null
+      y: null,
+      count: null,
+      type: null,
+      index: null
     })
   }
 
@@ -90,7 +96,9 @@ class FrequenResults extends React.Component {
               {this.state.x ? (
                 <Hint
                   value={{
-                    [`/${this.state.y}/`]: `${this.state.x.toFixed(2)}%`
+                    [`/${this.state.y}/ (${this.state.type})`]: `${
+                      this.state.count
+                    } (${this.state.x.toFixed(2)}%)`
                   }}
                   align={{
                     horizontal: 'left',

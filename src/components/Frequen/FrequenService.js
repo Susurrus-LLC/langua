@@ -112,9 +112,6 @@ class FrequenService {
       }
     })
 
-    let combinedResults = []
-    let combinedCount = 0
-
     // Find allophones and combine their counts
     for (let seg in rawResults) {
       if (rawResults.hasOwnProperty(seg)) {
@@ -125,33 +122,46 @@ class FrequenService {
       }
     }
 
-    // Add the results to the combinedResults array
-    for (let seg in rawResults) {
-      combinedResults.push({
-        segment: seg,
-        count: rawResults[seg].count,
-        type: rawResults[seg].type
+    // Assemble the data
+    const assembleData = filter => {
+      // Add the results to a results array
+      let resArr = []
+
+      for (let seg in rawResults) {
+        if (rawResults[seg].type === filter || filter === undefined) {
+          resArr.push({
+            segment: seg,
+            count: rawResults[seg].count,
+            type: rawResults[seg].type
+          })
+        }
+      }
+
+      // Sort by largest count
+      resArr.sort((a, b) => {
+        return b['count'] - a['count']
       })
+
+      // Count the total number of counted segments
+      let count = 0
+
+      resArr.forEach(elObj => {
+        count += elObj.count
+      })
+
+      return resArr.map((d, i) => ({
+        x: (d.count / count) * 100,
+        y: d.segment,
+        count: d.count,
+        type: d.type,
+        i: i
+      }))
     }
 
-    // Sort by largest count
-    combinedResults.sort((a, b) => {
-      return b['count'] - a['count']
-    })
-
-    // Count the total number of counted segments
-    combinedResults.forEach(elObj => {
-      combinedCount += elObj.count
-    })
-
-    const combinedData = combinedResults.map((d, i) => ({
-      x: (d.count / combinedCount) * 100,
-      y: d.segment,
-      i: i
-    }))
-
     const results = {
-      combined: combinedData
+      combined: assembleData(),
+      consonants: assembleData('consonant'),
+      vowels: assembleData('vowel')
     }
 
     return results
