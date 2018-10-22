@@ -8,7 +8,7 @@ Thank you for taking the time to contribute to Langua! :+1::tada:
 
 This project and everyone participating in it is governed by Langua's [code of conduct](https://github.com/nai888/langua/blob/master/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code of conduct.
 
-## How Can I Contribute?
+## How to Contribute
 
 ### Reporting Bugs
 
@@ -24,17 +24,17 @@ Always use a clear and descriptive title and provide a detailed explanation of t
 
 ### Contributing Code
 
-#### Unsure where to begin?
+#### Where to begin
 
-You can search for issues tagged with `beginner` or `help wanted`. `beginner` issues are relatively easy to fix. `help wanted` issues are more involved than Beginner issues.
+If you are unsure where to begin, you can search for issues tagged with `beginner` or `help wanted`. `beginner` issues are relatively easy to fix. `help wanted` issues are more involved than Beginner issues.
 
-#### Want to work on an open issue?
+#### Open issues
 
-Please comment on the issue and state your intention to develop a solution and make a pull request. This helps prevent duplicate and conflicting work being done.
+If you want to address an open issue, please comment on the issue and state your intention to develop a solution and make a pull request. This helps prevent duplicate and conflicting work being done.
 
-#### Want to work on something that doesn't have an open issue?
+#### Work on something that doesn't have an open issue
 
-Please post a new issue with your intentions and a description of the changes you will make. Again, this helps prevent duplicate and conflicting work being done.
+If you want to work on something that doesn't have an open issue, please open a new issue with your intentions and a description of the changes you will make. Again, this helps prevent duplicate and conflicting work being done.
 
 #### Local development
 
