@@ -466,6 +466,8 @@ class GenService {
 
   // Open a file and parse it to restore a saved state
   open (file, data, callback) {
+    let response
+
     const processResults = result => {
       // If correct filetype
       if (file.name.endsWith('.lngg')) {
@@ -498,7 +500,7 @@ class GenService {
 
           genService.setStorage(content)
 
-          callback(content)
+          response = content
         } else {
           // If the file's content does not contain valid Data, show an error
           toast.info(`The content of ${file.name} is invalid.`, {
@@ -511,7 +513,7 @@ class GenService {
           // eslint-disable-next-line
           console.error(DataSchema.errors(content))
 
-          callback(false)
+          response = false
         }
       } else {
         // If incorrect filetype
@@ -522,7 +524,7 @@ class GenService {
           progressClassName: 'toast-unopened-progress'
         })
 
-        callback(false)
+        response = false
       }
     }
 
@@ -538,8 +540,10 @@ class GenService {
         progressClassName: 'toast-unopened-progress'
       })
 
-      callback(false)
+      response = false
     }
+
+    callback(response)
   }
 }
 
