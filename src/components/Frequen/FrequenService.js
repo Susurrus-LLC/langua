@@ -41,7 +41,14 @@ class FrequenService {
   // Analyze the data
   analyze (data) {
     // Break the input into arrays and remove duplicates
-    const splitBySlash = arr => Array.from(new Set(arr.split('/')))
+    const splitBySlash = arr => {
+      let newArr = Array.from(new Set(arr.split('/')))
+      // Remove any blanks
+      if (newArr.indexOf('') > -1) {
+        newArr.splice(newArr.indexOf(''), 1)
+      }
+      return newArr
+    }
     // Break each element in an array into a sub-array
     const makeSubArrays = arr => {
       let newArr = []
