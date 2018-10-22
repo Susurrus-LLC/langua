@@ -144,9 +144,9 @@ class FrequenService {
         }
       }
 
-      // Sort by largest count
+      // Sort by smallest count
       resArr.sort((a, b) => {
-        return b['count'] - a['count']
+        return a['count'] - b['count']
       })
 
       // Count the total number of counted segments

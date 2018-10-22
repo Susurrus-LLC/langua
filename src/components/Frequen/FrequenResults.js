@@ -80,12 +80,28 @@ class FrequenResults extends React.Component {
             <FlexibleWidthXYPlot
               yType='ordinal'
               height={v.ms2 * 16 * this.whichData().length}
+              margin={{
+                top: v.ms3 * 16,
+                right: v.ms5 * 16,
+                bottom: v.ms3 * 16,
+                left: v.ms5 * 16
+              }}
               onMouseLeave={this.onMouseOut}
             >
               <VerticalGridLines style={gridStyle} />
               <HorizontalGridLines style={gridStyle} />
-              <XAxis tickFormat={t => `${t}%`} style={axisStyle} />
-              <YAxis style={axisStyle} />
+              <XAxis
+                tickFormat={t => `${t}%`}
+                style={axisStyle}
+                orientation='top'
+              />
+              <XAxis
+                tickFormat={t => `${t}%`}
+                style={axisStyle}
+                orientation='bottom'
+              />
+              <YAxis style={axisStyle} orientation='left' />
+              <YAxis style={axisStyle} orientation='right' />
               <HorizontalBarSeries
                 data={this.whichData()}
                 animation
@@ -99,10 +115,6 @@ class FrequenResults extends React.Component {
                     [`/${this.state.y}/ (${this.state.type})`]: `${
                       this.state.count
                     } (${this.state.x.toFixed(2)}%)`
-                  }}
-                  align={{
-                    horizontal: 'left',
-                    vertical: 'auto'
                   }}
                 />
               ) : null}
