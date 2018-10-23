@@ -4,7 +4,6 @@ import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
 
 import styles from './styles'
-import Notice from '../Notice/Notice'
 import ButtonLink from '../Button/ButtonLink'
 
 import FrequenForm from './FrequenForm'
@@ -62,7 +61,6 @@ class Frequen extends React.Component {
         </Helmet>
         <ButtonLink route='/frequen/help'>Help</ButtonLink>
         <h2 className='toolTitle'>LanguaFrequen</h2>
-        <Notice>This tool is still in development.</Notice>
         <FrequenForm
           classes={this.props.classes}
           state={this.state}
