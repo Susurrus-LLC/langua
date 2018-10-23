@@ -116,15 +116,17 @@ class FrequenResults extends React.Component {
 
     return allData.map(seg => (
       <tr className={this.props.classes.dataRow} key={seg.i}>
-        <td>{seg.y}</td>
-        <td>{seg.count}</td>
-        <td>{this.twoDecimals(seg.x) + '%'}</td>
-        <td>
+        <td className={this.props.classes.dataCell}>{seg.y}</td>
+        <td className={this.props.classes.dataCell}>{seg.count}</td>
+        <td className={this.props.classes.dataCell}>
+          {this.twoDecimals(seg.x) + '%'}
+        </td>
+        <td className={this.props.classes.dataCell}>
           {seg.type === 'consonant'
             ? findPercent(this.props.results.consonants, seg.y)
             : null}
         </td>
-        <td>
+        <td className={this.props.classes.dataCell}>
           {seg.type === 'vowel'
             ? findPercent(this.props.results.vowels, seg.y)
             : null}

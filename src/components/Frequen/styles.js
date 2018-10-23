@@ -38,8 +38,29 @@ const styles = {
   error: {
     color: v.red.string()
   },
-  hovering: {
-    fill: v.ong.string()
+  table: {
+    width: '100%',
+    borderCollapse: 'collapse'
+  },
+  headerCell: {
+    borderBottom: {
+      width: 1,
+      style: 'solid',
+      color: v.blu.string()
+    },
+    paddingBottom: `${v.lnht}rem`,
+    textAlign: 'center'
+  },
+  dataCell: {
+    borderRight: {
+      width: 1,
+      style: 'solid',
+      color: v.blu.string()
+    },
+    '&:last-child': {
+      borderRight: 'none'
+    },
+    textAlign: 'center'
   }
 }
 
