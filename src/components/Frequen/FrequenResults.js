@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 import 'react-vis/dist/style.css'
 import {
   FlexibleWidthXYPlot,
@@ -151,7 +152,12 @@ class FrequenResults extends React.Component {
     if (this.props.analyzed) {
       return (
         <div className={this.props.classes.results}>
-          <div className={this.props.classes.barChart}>
+          <div
+            className={classNames(
+              this.props.classes.barChart,
+              this.props.classes.resultsSection
+            )}
+          >
             <FlexibleWidthXYPlot
               yType='ordinal'
               height={v.ms2 * 16 * this.whichData().length}
@@ -195,7 +201,12 @@ class FrequenResults extends React.Component {
               ) : null}
             </FlexibleWidthXYPlot>
           </div>
-          <div className={this.props.classes.dataTable}>
+          <div
+            className={classNames(
+              this.props.classes.dataTable,
+              this.props.classes.resultsSection
+            )}
+          >
             <table className={this.props.classes.table}>
               <thead className={this.props.classes.tableHead}>
                 <tr className={this.props.classes.headerRow}>
