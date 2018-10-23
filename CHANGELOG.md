@@ -4,20 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format of this changelog is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased](https://github.com/nai888/langua/compare/v0.2.0...HEAD)
+## [Unreleased](https://github.com/nai888/langua/compare/v0.2.1...HEAD)
+
+## [v0.2.1](https://github.com/nai888/langua/compare/v0.2.0...v0.2.1)
 
 ### Added 0.2.1
 
-- Add test script that doesn't include coverage reporting
-- Add Prettier Standard for automatic reformatting to Standard format
+- Add test script that doesn't include coverage reporting.
+- Add Prettier Standard for automatic reformatting to Standard format.
+- Add table to Frequen to display data results.
+- Add instructions to FrequenHelp.
 
 ### Changed 0.2.1
 
-- Fix issue where re-analyzing didn't update Frequen analysis until refresh
+- Fix issue where re-analyzing didn't update Frequen analysis until refresh.
+- Improve appearance of Frequen's graphical output.
 
 ### Removed 0.2.1
 
-- Remove `disabled` formatting for Frequen in the Header and the Home page
+- Remove `disabled` formatting for Frequen in the Header and the Home page.
 
 ## [v0.2.0](https://github.com/nai888/langua/compare/v0.1.6...v0.2.0) - 2018-10-19
 
