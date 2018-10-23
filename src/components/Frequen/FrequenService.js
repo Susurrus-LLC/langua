@@ -146,7 +146,7 @@ class FrequenService {
 
       // Sort by smallest count
       resArr.sort((a, b) => {
-        return a['count'] - b['count']
+        return a.count - b.count
       })
 
       // Count the total number of counted segments
@@ -166,7 +166,7 @@ class FrequenService {
     }
 
     const results = {
-      combined: assembleData(),
+      all: assembleData(),
       consonants: assembleData('consonant'),
       vowels: assembleData('vowel')
     }

@@ -16,9 +16,12 @@ import * as v from '../../styles/variables'
 class FrequenResults extends React.Component {
   constructor (props) {
     super(props)
+    this.twoDecimals = this.twoDecimals.bind(this)
     this.onMouseOver = this.onMouseOver.bind(this)
     this.onMouseOut = this.onMouseOut.bind(this)
     this.whichData = this.whichData.bind(this)
+    this.headerCells = this.headerCells.bind(this)
+    this.dataRows = this.dataRows.bind(this)
     this.state = {
       x: null,
       y: null,
@@ -27,6 +30,10 @@ class FrequenResults extends React.Component {
       index: null,
       filter: null
     }
+  }
+
+  twoDecimals (num) {
+    return (Math.round(num * 100) / 100).toFixed(2)
   }
 
   onMouseOver (datapoint) {
@@ -56,8 +63,74 @@ class FrequenResults extends React.Component {
       case 'vowels':
         return this.props.results.vowels
       default:
-        return this.props.results.combined
+        return this.props.results.all
     }
+  }
+
+  headerCells () {
+    let data = []
+    for (let prop in this.props.results) {
+      if (this.props.results.hasOwnProperty(prop)) {
+        let count = 0
+
+        this.props.results[prop].forEach(el => {
+          count += el.count
+        })
+
+        data.push({
+          name: prop,
+          total: count
+        })
+      }
+    }
+    return data.map((d, i) => (
+      <th className={this.props.classes.headerCell} key={i}>
+        {`% of ${d.name}`}
+        <br />
+        {`total: ${d.total}`}
+      </th>
+    ))
+  }
+
+  dataRows () {
+    const allData = JSON.parse(JSON.stringify(this.props.results.all)).sort(
+      (a, b) => {
+        return b.count - a.count
+      }
+    )
+
+    const findPercent = (arr, y) => {
+      let i = -1
+      for (let j = 0; j < arr.length; j++) {
+        if (arr[j].y === y) {
+          i = j
+        }
+      }
+
+      if (i > -1) {
+        return this.twoDecimals(arr[i].x) + '%'
+      } else {
+        return this.twoDecimals(0) + '%'
+      }
+    }
+
+    return allData.map(seg => (
+      <tr className={this.props.classes.dataRow} key={seg.i}>
+        <td>{seg.y}</td>
+        <td>{seg.count}</td>
+        <td>{this.twoDecimals(seg.x) + '%'}</td>
+        <td>
+          {seg.type === 'consonant'
+            ? findPercent(this.props.results.consonants, seg.y)
+            : null}
+        </td>
+        <td>
+          {seg.type === 'vowel'
+            ? findPercent(this.props.results.vowels, seg.y)
+            : null}
+        </td>
+      </tr>
+    ))
   }
 
   render () {
@@ -76,7 +149,7 @@ class FrequenResults extends React.Component {
     if (this.props.analyzed) {
       return (
         <div className={this.props.classes.results}>
-          <div className='bar-chart'>
+          <div className={this.props.classes.barChart}>
             <FlexibleWidthXYPlot
               yType='ordinal'
               height={v.ms2 * 16 * this.whichData().length}
@@ -114,11 +187,25 @@ class FrequenResults extends React.Component {
                   value={{
                     [`/${this.state.y}/ (${this.state.type})`]: `${
                       this.state.count
-                    } (${this.state.x.toFixed(2)}%)`
+                    } (${this.twoDecimals(this.state.x)}%)`
                   }}
                 />
               ) : null}
             </FlexibleWidthXYPlot>
+          </div>
+          <div className={this.props.classes.dataTable}>
+            <table className={this.props.classes.table}>
+              <thead className={this.props.classes.tableHead}>
+                <tr className={this.props.classes.headerRow}>
+                  <th className={this.props.classes.headerCell}>Segment</th>
+                  <th className={this.props.classes.headerCell}>Count</th>
+                  {this.headerCells()}
+                </tr>
+              </thead>
+              <tbody className={this.props.classes.tableBody}>
+                {this.dataRows()}
+              </tbody>
+            </table>
           </div>
         </div>
       )
