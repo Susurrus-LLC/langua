@@ -9192,10 +9192,10 @@ react-transition-group@^2.4.0:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react-vis@^1.11.3:
-  version "1.11.3"
-  resolved "https://registry.yarnpkg.com/react-vis/-/react-vis-1.11.3.tgz#fb984c42ca2402941e0cefbe1635be84a281016b"
-  integrity sha512-F5NVRAE5A/JaAmEfaRux4T1iJuT8uNC1q0w2XIBULG1LXdSOYqYjYV4tWC/srAduV1SVkCLDbft1yIEiL7+Rxg==
+react-vis@^1.11.4:
+  version "1.11.4"
+  resolved "https://registry.yarnpkg.com/react-vis/-/react-vis-1.11.4.tgz#f5d662d3439d45fd0f1f1186f725bf19b9b3a718"
+  integrity sha512-C/Uw0GKjN+Hriov6UD5HF6YaVqSq4j944z7IQZ/0pELtroHDowuyuxVc0myfT7G0SAoYwuvlIgNjxVi41l7bpQ==
   dependencies:
     d3-array "^1.2.0"
     d3-collection "^1.0.3"
