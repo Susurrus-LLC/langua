@@ -48,7 +48,7 @@
     "react-router-dom": "4.3.1",
     "react-scripts": "2.0.5",
     "react-toastify": "4.4.0",
-    "react-vis": "^1.11.3"
+    "react-vis": "^1.11.4"
   },
   "devDependencies": {
     "codacy-coverage": "^3.2.0",
