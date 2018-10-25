@@ -6,6 +6,10 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.2.1...HEAD)
 
+### Changed 0.2.2
+
+- Update dependencies.
+
 ## [v0.2.1](https://github.com/nai888/langua/compare/v0.2.0...v0.2.1)
 
 ### Added 0.2.1
@@ -19,6 +23,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Fix issue where re-analyzing didn't update Frequen analysis until refresh.
 - Improve appearance of Frequen's graphical output.
+- Update dependencies.
 
 ### Removed 0.2.1
 
@@ -39,11 +44,11 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Change `file.name.slice(-5) === '.lngg'` to `file.name.endsWith('.lngg')`.
 - Open files directly when clicking the Open button, rather than unhiding a file input element. (See [issue #50](https://github.com/nai888/langua/issues/50).)
-- Update dependencies.
 - Refactor Home panels into a separate component for reusability.
 - Fill out remaining information in the Gen Help file.
 - Refactor Gen component form handling.
 - Adjust page centering to remain consistent as the vertical scrollbar appears or disappears.
+- Update dependencies.
 
 ### Removed 0.2.0
 
@@ -83,6 +88,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Change internal links in the README to relative links.
 - Link to the CHANGELOG in the footer instead of to the README#versioning header.
 - Refactor the top-level Router into its own page so that index.js *only* handles rendering.
+- Update dependencies.
 
 ## [v0.1.4](https://github.com/nai888/langua/compare/v0.1.3...v0.1.4) - 2018-05-12
 
