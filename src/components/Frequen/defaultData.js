@@ -5,5 +5,6 @@ export const defData = {
     'b/d/f/g/k/kw/l/m/mp/mv/n/nt/nts/nz/ñ/ŋk/ŋkw/p/r/s/t/ts/v/w/x,h/y/’',
   vowels: 'a,á/ɛ,ɛ́/e,é/ə,ə́/i,í/ɔ,ɔ́/o,ó/u,ú',
   analyzed: false,
-  results: undefined
+  results: undefined,
+  hovered: undefined
 }

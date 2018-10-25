@@ -18,43 +18,16 @@ class FrequenResults extends React.Component {
   constructor (props) {
     super(props)
     this.twoDecimals = this.twoDecimals.bind(this)
-    this.onMouseOver = this.onMouseOver.bind(this)
-    this.onMouseOut = this.onMouseOut.bind(this)
     this.whichData = this.whichData.bind(this)
     this.headerCells = this.headerCells.bind(this)
     this.dataRows = this.dataRows.bind(this)
     this.state = {
-      x: null,
-      y: null,
-      count: null,
-      type: null,
-      index: null,
       filter: null
     }
   }
 
   twoDecimals (num) {
     return (Math.round(num * 100) / 100).toFixed(2)
-  }
-
-  onMouseOver (datapoint) {
-    this.setState({
-      x: datapoint.x,
-      y: datapoint.y,
-      count: datapoint.count,
-      type: datapoint.type,
-      index: datapoint.i
-    })
-  }
-
-  onMouseOut () {
-    this.setState({
-      x: null,
-      y: null,
-      count: null,
-      type: null,
-      index: null
-    })
   }
 
   whichData () {
@@ -167,7 +140,7 @@ class FrequenResults extends React.Component {
                 bottom: v.ms3 * 16,
                 left: v.ms5 * 16
               }}
-              onMouseLeave={this.onMouseOut}
+              onMouseLeave={this.props.onMouseOut}
             >
               <VerticalGridLines style={gridStyle} />
               <HorizontalGridLines style={gridStyle} />
@@ -187,15 +160,17 @@ class FrequenResults extends React.Component {
                 data={this.whichData()}
                 animation
                 colorType='literal'
-                onValueMouseOver={this.onMouseOver}
-                onMouseOut={this.onMouseOut}
+                onValueMouseOver={this.props.onMouseOver}
+                onMouseOut={this.props.onMouseOut}
               />
-              {this.state.x ? (
+              {this.props.hovered ? (
                 <Hint
                   value={{
-                    [`/${this.state.y}/ (${this.state.type})`]: `${
-                      this.state.count
-                    } (${this.twoDecimals(this.state.x)}%)`
+                    [`/${this.props.hovered.y}/ (${
+                      this.props.hovered.type
+                    })`]: `${this.props.hovered.count} (${this.twoDecimals(
+                      this.props.hovered.x
+                    )}%)`
                   }}
                 />
               ) : null}

@@ -17,6 +17,8 @@ class Frequen extends React.Component {
     super(props)
     this.onChangeInput = this.onChangeInput.bind(this)
     this.onAnalyze = this.onAnalyze.bind(this)
+    this.onMouseOver = this.onMouseOver.bind(this)
+    this.onMouseOut = this.onMouseOut.bind(this)
     this.state = frequenService.getData()
   }
 
@@ -48,6 +50,18 @@ class Frequen extends React.Component {
     )
   }
 
+  onMouseOver (datapoint) {
+    this.setState(prevState => ({
+      hovered: datapoint
+    }))
+  }
+
+  onMouseOut () {
+    this.setState(prevState => ({
+      hovered: undefined
+    }))
+  }
+
   render () {
     return (
       <div className={this.props.classes.frequen}>
@@ -70,7 +84,10 @@ class Frequen extends React.Component {
         <FrequenResults
           classes={this.props.classes}
           results={this.state.results}
+          hovered={this.state.hovered}
           analyzed={this.state.analyzed}
+          onMouseOver={this.onMouseOver}
+          onMouseOut={this.onMouseOut}
         />
       </div>
     )
