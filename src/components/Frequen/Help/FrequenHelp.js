@@ -25,7 +25,7 @@ const FrequenHelp = props => (
     <p id='description'>
       LanguaFrequen is a tool for analyzing phoneme frequencies in a given text.
     </p>
-    <h3 id='using'>Using LanguaFrequen</h3>
+    <h3 id='corpus'>Text Corpus</h3>
     <p>
       Input a corpus of text in the <strong>Text Corpus</strong> field. This is
       the text that will be analyzed. The text can be phomic or phonetic, or it
@@ -37,6 +37,7 @@ const FrequenHelp = props => (
       punctuation is removed from the corpus, as any graphemes not identified
       for analysis in the next step will be ignored by the tool.
     </p>
+    <h3 id='phonemes'>Phonemes</h3>
     <p>
       Next, add a list of consonants and vowels accordingly to the{' '}
       <strong>Consonants</strong> and <strong>Vowels</strong> lists. Separate
@@ -50,6 +51,7 @@ const FrequenHelp = props => (
       example, since <code>k</code> was not added to the list of consonants, the
       tool would not count its occurance.
     </p>
+    <h3 id='allophones'>Allophones</h3>
     <p>
       Allophones can be added after a segment to indicate that multiple segments
       should all be counted as occurances of the same segment. Separate
@@ -60,6 +62,7 @@ const FrequenHelp = props => (
       list contained <code>a,á/o</code>, the tool would identify two occurances
       of <code>a</code> and one occurance of <code>o</code>.
     </p>
+    <h3 id='analysis'>Analysis</h3>
     <p>
       When ready, click the <strong>Analyze</strong> button to run the analysis.
       The tool will draw a graph and display a table showing the frequencies of
