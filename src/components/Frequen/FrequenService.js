@@ -1,5 +1,7 @@
 import { defData } from './defaultData'
 
+import * as v from '../../styles/variables'
+
 class FrequenService {
   constructor () {
     this.storage = window.localStorage
@@ -161,7 +163,9 @@ class FrequenService {
         y: d.segment,
         count: d.count,
         type: d.type,
-        i: i
+        i: i,
+        color:
+          d.type === 'consonant' ? v.blu.string() : v.blu.darken(0.2).string()
       }))
     }
 
