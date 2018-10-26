@@ -7,5 +7,6 @@ export const defData = {
   distinguishCase: false,
   analyzed: false,
   results: undefined,
-  hovered: undefined
+  hovered: undefined,
+  filter: 'all'
 }

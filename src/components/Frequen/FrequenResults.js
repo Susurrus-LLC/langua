@@ -17,13 +17,20 @@ import * as v from '../../styles/variables'
 class FrequenResults extends React.Component {
   constructor (props) {
     super(props)
+    this.onChangeInput = this.onChangeInput.bind(this)
     this.twoDecimals = this.twoDecimals.bind(this)
     this.whichData = this.whichData.bind(this)
     this.headerCells = this.headerCells.bind(this)
     this.dataRows = this.dataRows.bind(this)
-    this.state = {
-      filter: null
-    }
+  }
+
+  onChangeInput (e) {
+    e.preventDefault()
+    const name = e.target.name
+    let val = e.target.val
+    this.setState(prevState => ({
+      [name]: val
+    }))
   }
 
   twoDecimals (num) {
@@ -31,7 +38,7 @@ class FrequenResults extends React.Component {
   }
 
   whichData () {
-    switch (this.state.filter) {
+    switch (this.props.filter) {
       case 'consonants':
         return this.props.results.consonants
       case 'vowels':
@@ -60,7 +67,7 @@ class FrequenResults extends React.Component {
     const filterData = () => {
       let newData = {}
       data.forEach(el => {
-        if (el.name === this.state.filter) {
+        if (el.name === this.props.filter) {
           newData = {
             name: el.name,
             total: el.total
@@ -69,7 +76,7 @@ class FrequenResults extends React.Component {
       })
       return newData
     }
-    if (this.state.filter !== null) {
+    if (this.props.filter !== 'all') {
       return (
         <th className={this.props.classes.headerCell}>
           {`% of ${filterData().name}`}
@@ -114,29 +121,29 @@ class FrequenResults extends React.Component {
       <tr className={this.props.classes.dataRow} key={seg.i}>
         <td className={this.props.classes.dataCell}>{seg.y}</td>
         <td className={this.props.classes.dataCell}>{seg.count}</td>
-        {this.state.filter === null ? (
+        {this.props.filter === 'all' ? (
           <td className={this.props.classes.dataCell}>
             {this.twoDecimals(seg.x) + '%'}
           </td>
         ) : null}
-        {this.state.filter === null ? (
+        {this.props.filter === 'all' ? (
           <td className={this.props.classes.dataCell}>
             {seg.type === 'consonant'
               ? findPercent(this.props.results.consonants, seg.y)
               : null}
           </td>
-        ) : this.state.filter === 'consonants' ? (
+        ) : this.props.filter === 'consonants' ? (
           <td className={this.props.classes.dataCell}>
             {this.twoDecimals(seg.x) + '%'}
           </td>
         ) : null}
-        {this.state.filter === null ? (
+        {this.props.filter === 'all' ? (
           <td className={this.props.classes.dataCell}>
             {seg.type === 'vowel'
               ? findPercent(this.props.results.vowels, seg.y)
               : null}
           </td>
-        ) : this.state.filter === 'vowels' ? (
+        ) : this.props.filter === 'vowels' ? (
           <td className={this.props.classes.dataCell}>
             {this.twoDecimals(seg.x) + '%'}
           </td>
@@ -161,6 +168,20 @@ class FrequenResults extends React.Component {
     if (this.props.analyzed) {
       return (
         <div className={this.props.classes.results}>
+          <div className={this.props.classes.controls}>
+            <div className={this.props.classes.controlPiece}>
+              <select
+                id='filter'
+                name='filter'
+                value={this.props.filter}
+                onChange={this.props.onChangeInput}
+              >
+                <option value='all'>All Segments</option>
+                <option value='consonants'>Consonants</option>
+                <option value='vowels'>Vowels</option>
+              </select>
+            </div>
+          </div>
           <div
             className={classNames(
               this.props.classes.barChart,
@@ -243,7 +264,9 @@ FrequenResults.propTypes = {
   classes: PropTypes.object,
   results: PropTypes.object,
   hovered: PropTypes.object,
+  filter: PropTypes.string.isRequired,
   analyzed: PropTypes.bool.isRequired,
+  onChangeInput: PropTypes.func.isRequired,
   onMouseOver: PropTypes.func.isRequired,
   onMouseOut: PropTypes.func.isRequired
 }
