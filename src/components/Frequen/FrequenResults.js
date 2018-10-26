@@ -57,17 +57,39 @@ class FrequenResults extends React.Component {
         })
       }
     }
-    return data.map((d, i) => (
-      <th className={this.props.classes.headerCell} key={i}>
-        {`% of ${d.name}`}
-        <br />
-        {`total: ${d.total}`}
-      </th>
-    ))
+    const filterData = () => {
+      let newData = {}
+      data.forEach(el => {
+        if (el.name === this.state.filter) {
+          newData = {
+            name: el.name,
+            total: el.total
+          }
+        }
+      })
+      return newData
+    }
+    if (this.state.filter !== null) {
+      return (
+        <th className={this.props.classes.headerCell}>
+          {`% of ${filterData().name}`}
+          <br />
+          {`total: ${filterData().total}`}
+        </th>
+      )
+    } else {
+      return data.map((d, i) => (
+        <th className={this.props.classes.headerCell} key={i}>
+          {`% of ${d.name}`}
+          <br />
+          {`total: ${d.total}`}
+        </th>
+      ))
+    }
   }
 
   dataRows () {
-    const allData = JSON.parse(JSON.stringify(this.props.results.all)).sort(
+    const allData = JSON.parse(JSON.stringify(this.whichData())).sort(
       (a, b) => {
         return b.count - a.count
       }
@@ -92,19 +114,33 @@ class FrequenResults extends React.Component {
       <tr className={this.props.classes.dataRow} key={seg.i}>
         <td className={this.props.classes.dataCell}>{seg.y}</td>
         <td className={this.props.classes.dataCell}>{seg.count}</td>
-        <td className={this.props.classes.dataCell}>
-          {this.twoDecimals(seg.x) + '%'}
-        </td>
-        <td className={this.props.classes.dataCell}>
-          {seg.type === 'consonant'
-            ? findPercent(this.props.results.consonants, seg.y)
-            : null}
-        </td>
-        <td className={this.props.classes.dataCell}>
-          {seg.type === 'vowel'
-            ? findPercent(this.props.results.vowels, seg.y)
-            : null}
-        </td>
+        {this.state.filter === null ? (
+          <td className={this.props.classes.dataCell}>
+            {this.twoDecimals(seg.x) + '%'}
+          </td>
+        ) : null}
+        {this.state.filter === null ? (
+          <td className={this.props.classes.dataCell}>
+            {seg.type === 'consonant'
+              ? findPercent(this.props.results.consonants, seg.y)
+              : null}
+          </td>
+        ) : this.state.filter === 'consonants' ? (
+          <td className={this.props.classes.dataCell}>
+            {this.twoDecimals(seg.x) + '%'}
+          </td>
+        ) : null}
+        {this.state.filter === null ? (
+          <td className={this.props.classes.dataCell}>
+            {seg.type === 'vowel'
+              ? findPercent(this.props.results.vowels, seg.y)
+              : null}
+          </td>
+        ) : this.state.filter === 'vowels' ? (
+          <td className={this.props.classes.dataCell}>
+            {this.twoDecimals(seg.x) + '%'}
+          </td>
+        ) : null}
       </tr>
     ))
   }
