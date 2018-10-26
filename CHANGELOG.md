@@ -6,6 +6,10 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.2.1...HEAD)
 
+### Added 0.2.2
+
+- Add option to distinguish case in Frequen.
+
 ### Changed 0.2.2
 
 - Update dependencies.
