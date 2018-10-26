@@ -67,18 +67,15 @@ class FrequenService {
     // Distinguish upper/lower case if that option is selected
     const distinguishCase = arr => {
       let newArr = []
-      console.log(data)
       if (!data.distinguishCase) {
         arr.forEach(el => newArr.push(el.toLowerCase()))
       } else {
         newArr = arr
       }
-      console.log(newArr)
       return Array.from(new Set(newArr))
     }
     // And sort the flattened arrays by length so the longest segments are first
     const sortArrays = arr => {
-      console.log(arr)
       return arr.sort((a, b) => b.length - a.length)
     }
     const consonantsFlat = sortArrays(
