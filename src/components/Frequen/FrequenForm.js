@@ -36,6 +36,19 @@ const FrequenForm = props => (
       <Button type='submit' ver='neutral' onClick={props.onAnalyze}>
         Analyze
       </Button>
+      <div className={props.classes.controlPiece}>
+        <label>
+          <input
+            type='checkbox'
+            id='distinguishCase'
+            name='distinguishCase'
+            value='distinguishCase'
+            checked={props.state.distinguishCase}
+            onChange={props.onChangeInput}
+          />{' '}
+          distinguish upper and lower case
+        </label>
+      </div>
     </div>
   </form>
 )

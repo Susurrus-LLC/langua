@@ -64,12 +64,27 @@ class FrequenService {
 
     // Flatten arrays and make sure there are no duplicates
     const flattenArrays = arr => Array.from(new Set([].concat(...arr)))
+    // Distinguish upper/lower case if that option is selected
+    const distinguishCase = arr => {
+      let newArr = []
+      console.log(data)
+      if (!data.distinguishCase) {
+        arr.forEach(el => newArr.push(el.toLowerCase()))
+      } else {
+        newArr = arr
+      }
+      console.log(newArr)
+      return Array.from(new Set(newArr))
+    }
     // And sort the flattened arrays by length so the longest segments are first
     const sortArrays = arr => {
+      console.log(arr)
       return arr.sort((a, b) => b.length - a.length)
     }
-    const consonantsFlat = sortArrays(flattenArrays(consonants))
-    const vowelsFlat = sortArrays(flattenArrays(vowels))
+    const consonantsFlat = sortArrays(
+      distinguishCase(flattenArrays(consonants))
+    )
+    const vowelsFlat = sortArrays(distinguishCase(flattenArrays(vowels)))
 
     let rawResults = {}
 
@@ -102,7 +117,8 @@ class FrequenService {
     // Build a single array and sort by segment length
     const fullArr = sortArrays(consonantsFlat.concat(vowelsFlat))
 
-    let corpus = data.corpus
+    // If not distinguishing case, convert the corpus to lowercase
+    let corpus = data.distinguishCase ? data.corpus : data.corpus.toLowerCase()
 
     // For every instance of the segment in the text, increment the count and slice the instance out of the text
     const sliceAndCount = seg => {

@@ -26,6 +26,15 @@ const styles = {
     flexWrap: 'wrap',
     marginTop: `${v.lnht}rem`
   },
+  controlPiece: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'baseline',
+    alignContent: 'space-between',
+    margin: `${v.lnht}rem`,
+    verticalAlign: 'middle'
+  },
   results: {
     marginTop: `${v.lnht}rem`,
     paddingTop: `${v.lnht}rem`,
