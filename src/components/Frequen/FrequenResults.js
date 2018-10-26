@@ -205,8 +205,11 @@ class FrequenResults extends React.Component {
 
 FrequenResults.propTypes = {
   classes: PropTypes.object,
-  results: PropTypes.object.isRequired,
-  analyzed: PropTypes.bool.isRequired
+  results: PropTypes.object,
+  hovered: PropTypes.object,
+  analyzed: PropTypes.bool.isRequired,
+  onMouseOver: PropTypes.func.isRequired,
+  onMouseOut: PropTypes.func.isRequired
 }
 
 export default FrequenResults
