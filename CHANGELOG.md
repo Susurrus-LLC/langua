@@ -9,6 +9,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 ### Added 0.2.2
 
 - Add option to distinguish case in Frequen.
+- Add filtering to the Frequen results.
 
 ### Changed 0.2.2
 
