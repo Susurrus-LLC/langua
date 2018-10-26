@@ -68,6 +68,17 @@ const FrequenHelp = props => (
       The tool will draw a graph and display a table showing the frequencies of
       each of the identified segments in the text corpus.
     </p>
+    <h3 id='filtering'>Filtering</h3>
+    <p>
+      After a text has been analyzed, the results can be filtered to show only
+      certain segments. Choosing a filter will show the percentages in the data
+      as it compares to only segments of that type, rather than comparing to all
+      segments.
+    </p>
+    <p>
+      Currently, the results can be filtered to show only consonants or only
+      vowels. Additional filtering options will be added in the future.
+    </p>
   </div>
 )
 
