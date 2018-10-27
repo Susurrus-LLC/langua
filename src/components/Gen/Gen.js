@@ -140,7 +140,7 @@ class Gen extends React.Component {
           <title>{siteTitle} Gen</title>
           <meta
             name='description'
-            content='LanguaGen is a tool for automatically building a set of words based on arbitrary rules of phonotactics.'
+            content='LanguaGen is a tool for automatically building a set of words based on arbitrary rules of phonotactics. This can be used to create a dummy vocabulary for linguistic experimentation, to generate words or names for a naming language in a work of fantasy or science fiction, or as the basis for building the vocabulary of a constructed language.'
           />
           <link rel='canonical' href={`${canonical}gen/`} />
         </Helmet>
