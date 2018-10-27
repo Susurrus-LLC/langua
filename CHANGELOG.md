@@ -19,7 +19,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Create a Help component and refactor all Help pages to use the new component.
 - Update dependencies.
 
-## [v0.2.1](https://github.com/nai888/langua/compare/v0.2.0...v0.2.1)
+## [v0.2.1](https://github.com/nai888/langua/compare/v0.2.0...v0.2.1) - 2018-10-23
 
 ### Added 0.2.1
 
