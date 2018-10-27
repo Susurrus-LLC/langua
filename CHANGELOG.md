@@ -138,7 +138,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Add link to CONTRIBUTING.md to README.md.
 - Clarify deployment documentation in README.md.
 
-## [v0.1.2](https://github.com/nai888/langua/compare/d0ce8c9ed58aeef8802092d220af7c57f9f0da29...a6e3d281e83fee7648864ac8eaee3f3b8a1b37ff)
+## [v0.1.2](https://github.com/nai888/langua/compare/d0ce8c9ed58aeef8802092d220af7c57f9f0da29...a6e3d281e83fee7648864ac8eaee3f3b8a1b37ff) - 2018-04-27
 
 ### Added 0.1.2
 
