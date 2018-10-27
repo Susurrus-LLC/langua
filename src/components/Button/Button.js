@@ -42,7 +42,8 @@ Button.propTypes = {
   addClass: PropTypes.string,
   type: PropTypes.string,
   role: PropTypes.string,
-  classes: PropTypes.object
+  classes: PropTypes.object,
+  children: PropTypes.element
 }
 
 export default injectSheet(styles)(Button)
