@@ -18,37 +18,21 @@ const Button = props => {
     }
   }
 
-  if (props.type === 'file') {
-    // This still needs to be ironed out
-    return (
-      <input
-        onChange={props.onClick}
-        id={props.id}
-        className={classNames(
-          props.classes.btn,
-          filterClass(props.ver, props.classes),
-          props.classes[props.addClass]
-        )}
-        type={props.type}
-      />
-    )
-  } else {
-    return (
-      <button
-        onClick={props.onClick}
-        id={props.id}
-        className={classNames(
-          props.classes.btn,
-          filterClass(props.ver, props.classes),
-          props.classes[props.addClass]
-        )}
-        type={props.type}
-        role={props.role || 'button'}
-      >
-        {props.children}
-      </button>
-    )
-  }
+  return (
+    <button
+      onClick={props.onClick}
+      id={props.id}
+      className={classNames(
+        props.classes.btn,
+        filterClass(props.ver, props.classes),
+        props.classes[props.addClass]
+      )}
+      type={props.type}
+      role={props.role || 'button'}
+    >
+      {props.children}
+    </button>
+  )
 }
 
 Button.propTypes = {

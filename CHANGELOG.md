@@ -6,6 +6,10 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.2.2...HEAD)
 
+### Removed 0.2.3
+
+- Removed unneeded code for creating a file picker in Button.js.
+
 ## [v0.2.2](https://github.com/nai888/langua/compare/v0.2.1...v0.2.2) - 2018-10-27
 
 ### Added 0.2.2
