@@ -6,9 +6,14 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.2.2...HEAD)
 
+### Changed 0.2.3
+
+- Fix PropTypes for children in Button and Help files.
+- Update dependencies.
+
 ### Removed 0.2.3
 
-- Removed unneeded code for creating a file picker in Button.js.
+- Remove unneeded code for creating a file picker in Button.js.
 
 ## [v0.2.2](https://github.com/nai888/langua/compare/v0.2.1...v0.2.2) - 2018-10-27
 

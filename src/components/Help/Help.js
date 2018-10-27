@@ -29,7 +29,13 @@ Help.propTypes = {
   toolTitle: PropTypes.string.isRequired,
   toolDescription: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-  children: PropTypes.element
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.element, PropTypes.string])
+    )
+  ])
 }
 
 export default injectSheet(styles)(Help)
