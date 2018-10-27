@@ -26,7 +26,7 @@ const Footer = props => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            Version <i className='fas fa-code' /> 0.2.1
+            Version <i className='fas fa-code' /> 0.2.2
           </a>
           . Built by{' '}
           <a href={authorURL} target='_blank' rel='noopener noreferrer'>
