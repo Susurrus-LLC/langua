@@ -1,31 +1,21 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
-import injectSheet from 'react-jss'
-import PropTypes from 'prop-types'
 
-import styles from './styles'
-import Notice from '../../Notice/Notice'
-import ButtonLink from '../../Button/ButtonLink'
+import Help from '../Help/Help'
+import Notice from '../Notice/Notice'
 
-import { canonical, siteTitle } from '../../../App'
+const toolTitle = 'Frequen'
 
 const FrequenHelp = props => (
-  <div className={props.classes.frequenHelp}>
-    <Helmet>
-      <title>{siteTitle} Frequen Help</title>
-      <meta
-        name='description'
-        content='LanguaFrequen is a tool for analyzing phoneme frequencies in a given text.'
-      />
-      <link rel='canonical' href={`${canonical}frequen/help/`} />
-    </Helmet>
-    <ButtonLink route='/frequen'>Back</ButtonLink>
-    <h2 className='toolTitle'>LanguaFrequen Help</h2>
+  <Help
+    toolTitle={toolTitle}
+    toolDescription={`Langua${toolTitle} is a tool for analyzing phoneme frequencies in a given text.`}
+    link='frequen'
+  >
     <Notice>This tool is still in development.</Notice>
-    <p id='description'>
-      LanguaFrequen is a tool for analyzing phoneme frequencies in a given text.
-    </p>
-    <h3 id='using'>Using LanguaGen</h3>
+    <h3 id='using'>
+      Using Langua
+      {toolTitle}
+    </h3>
     <h4 id='corpus'>Text Corpus</h4>
     <p>
       Input a corpus of text in the <strong>Text Corpus</strong> field. This is
@@ -102,11 +92,7 @@ const FrequenHelp = props => (
       . LanguaFrequen was mainly built as a modernized and updated version of
       the Frequentizer.
     </p>
-  </div>
+  </Help>
 )
 
-FrequenHelp.propTypes = {
-  classes: PropTypes.object
-}
-
-export default injectSheet(styles)(FrequenHelp)
+export default FrequenHelp

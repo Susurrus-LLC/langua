@@ -1,34 +1,20 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
-import injectSheet from 'react-jss'
-import PropTypes from 'prop-types'
 
-import styles from './styles'
-import Notice from '../../Notice/Notice'
-import ButtonLink from '../../Button/ButtonLink'
+import Help from '../Help/Help'
+import Notice from '../Notice/Notice'
 
-import { canonical, siteTitle } from '../../../App'
+const toolTitle = 'Gen'
 
 const GenHelp = props => (
-  <div className={props.classes.genHelp}>
-    <Helmet>
-      <title>{siteTitle} Gen Help</title>
-      <meta
-        name='description'
-        content='LanguaGen is a tool for automatically building a set of words based on arbitrary rules of phonotactics.'
-      />
-      <link rel='canonical' href={`${canonical}gen/help/`} />
-    </Helmet>
-    <ButtonLink route='/gen'>Back</ButtonLink>
-    <h2 className='toolTitle'>LanguaGen Help</h2>
-    <p id='description'>
-      LanguaGen is a tool for automatically building a set of words based on
-      arbitrary rules of phonotactics. This can be used to create a dummy
-      vocabulary for linguistic experimentation, to generate words or names for
-      a naming language in a work of fantasy or science fiction, or as the basis
-      for building the vocabulary of a constructed language.
-    </p>
-    <h3 id='using'>Using LanguaGen</h3>
+  <Help
+    toolTitle={toolTitle}
+    toolDescription={`Langua${toolTitle} is a tool for automatically building a set of words based on arbitrary rules of phonotactics. This can be used to create a dummy vocabulary for linguistic experimentation, to generate words or names for a naming language in a work of fantasy or science fiction, or as the basis for building the vocabulary of a constructed language.`}
+    link='gen'
+  >
+    <h3 id='using'>
+      Using Langua
+      {toolTitle}
+    </h3>
     <p>
       The most important part of the tool is the <strong>Pattern</strong>. This
       field defines how words will be formed using a specific syntax, defined{' '}
@@ -167,11 +153,7 @@ const GenHelp = props => (
       . LanguaGen was mainly built as a modernized and updated version of
       Awkwords.
     </p>
-  </div>
+  </Help>
 )
 
-GenHelp.propTypes = {
-  classes: PropTypes.object
-}
-
-export default injectSheet(styles)(GenHelp)
+export default GenHelp
