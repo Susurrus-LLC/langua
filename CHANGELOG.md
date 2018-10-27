@@ -15,6 +15,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Changed 0.2.2
 
+- Update Gen description in meta tags, in Home, and in the README.
 - Create a Help component and refactor all Help pages to use the new component.
 - Update dependencies.
 
