@@ -22,7 +22,7 @@ Langua is a suite of language tools that can be used for testing, experimentatio
 
 ### Gen
 
-LanguaGen is a tool for automatically building a set of words based on arbitrary rules of phonotactics.
+LanguaGen is a tool for automatically building a set of words based on arbitrary rules of phonotactics. This can be used to create a dummy vocabulary for linguistic experimentation, to generate words or names for a naming language in a work of fantasy or science fiction, or as the basis for building the vocabulary of a constructed language.
 
 ### Morph
 
