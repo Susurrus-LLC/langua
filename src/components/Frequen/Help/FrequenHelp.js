@@ -25,7 +25,8 @@ const FrequenHelp = props => (
     <p id='description'>
       LanguaFrequen is a tool for analyzing phoneme frequencies in a given text.
     </p>
-    <h3 id='corpus'>Text Corpus</h3>
+    <h3 id='using'>Using LanguaGen</h3>
+    <h4 id='corpus'>Text Corpus</h4>
     <p>
       Input a corpus of text in the <strong>Text Corpus</strong> field. This is
       the text that will be analyzed. The text can be phomic or phonetic, or it
@@ -37,7 +38,7 @@ const FrequenHelp = props => (
       punctuation is removed from the corpus, as any graphemes not identified
       for analysis in the next step will be ignored by the tool.
     </p>
-    <h3 id='phonemes'>Phonemes</h3>
+    <h4 id='phonemes'>Phonemes</h4>
     <p>
       Next, add a list of consonants and vowels accordingly to the{' '}
       <strong>Consonants</strong> and <strong>Vowels</strong> lists. Separate
@@ -51,7 +52,7 @@ const FrequenHelp = props => (
       example, since <code>k</code> was not added to the list of consonants, the
       tool would not count its occurance.
     </p>
-    <h3 id='allophones'>Allophones</h3>
+    <h4 id='allophones'>Allophones</h4>
     <p>
       Allophones can be added after a segment to indicate that multiple segments
       should all be counted as occurances of the same segment. Separate
@@ -62,13 +63,13 @@ const FrequenHelp = props => (
       list contained <code>a,á/o</code>, the tool would identify two occurances
       of <code>a</code> and one occurance of <code>o</code>.
     </p>
-    <h3 id='analysis'>Analysis</h3>
+    <h4 id='analysis'>Analysis</h4>
     <p>
       When ready, click the <strong>Analyze</strong> button to run the analysis.
       The tool will draw a graph and display a table showing the frequencies of
       each of the identified segments in the text corpus.
     </p>
-    <h3 id='filtering'>Filtering</h3>
+    <h4 id='filtering'>Filtering</h4>
     <p>
       After a text has been analyzed, the results can be filtered to show only
       certain segments. Choosing a filter will show the percentages in the data
@@ -78,6 +79,28 @@ const FrequenHelp = props => (
     <p>
       Currently, the results can be filtered to show only consonants or only
       vowels. Additional filtering options will be added in the future.
+    </p>
+    <h4 id='files'>Saving and Loading Settings</h4>
+    <Notice>This functionality has not yet been implemented.</Notice>
+    <p>
+      Clicking the <strong>Save</strong> button will save the current settings
+      to the browser’s local storage and generate a small <code>.lngf</code>{' '}
+      text file containing the current settings that can be saved to your disk.
+      This <code>.lngf</code> file can be loaded using the <strong>Open</strong>{' '}
+      button to reload saved settings.
+    </p>
+    <h3 id='acknowledgments'>Acknowledgments</h3>
+    <p>
+      Much thanks should be given to Jan Strasser and{' '}
+      <a
+        href='http://akana.conlang.org/tools/frequentizer.html'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        the Frequentizer
+      </a>
+      . LanguaFrequen was mainly built as a modernized and updated version of
+      the Frequentizer.
     </p>
   </div>
 )

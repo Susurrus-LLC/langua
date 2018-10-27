@@ -154,6 +154,19 @@ const GenHelp = props => (
       This <code>.lngg</code> file can be loaded using the <strong>Open</strong>{' '}
       button to reload saved settings.
     </p>
+    <h3 id='acknowledgments'>Acknowledgments</h3>
+    <p>
+      Much thanks should be given to Petr Mejzlík and{' '}
+      <a
+        href='https://github.com/nai888/awkwords'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Awkwords
+      </a>
+      . LanguaGen was mainly built as a modernized and updated version of
+      Awkwords.
+    </p>
   </div>
 )
 

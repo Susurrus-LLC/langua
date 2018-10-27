@@ -10,6 +10,8 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Add option to distinguish case in Frequen.
 - Add filtering to the Frequen results.
+- Add information about saving and opening settings in FrequenHelp.
+- Add acknowledgments to the bottom of GenHelp and FrequenHelp.
 
 ### Changed 0.2.2
 
