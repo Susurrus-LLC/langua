@@ -120,3 +120,8 @@ Thank you to [Travis CI](https://travis-ci.com), [BrowserStack](https://www.brow
 ## License
 
 Langua is licensed under the [GNU Affero General Public License v3.0](https://choosealicense.com/licenses/agpl-3.0/).
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/nai888/langua/badge.svg?style=beer-square)](https://beerpay.io/nai888/langua)  [![Beerpay](https://beerpay.io/nai888/langua/make-wish.svg?style=flat-square)](https://beerpay.io/nai888/langua?focus=wish)
