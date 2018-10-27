@@ -17,6 +17,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Update Gen description in meta tags, in Home, and in the README.
 - Create a Help component and refactor all Help pages to use the new component.
+- Fix bug with opening a `.lngg` file not updating state immediately.
 - Update dependencies.
 
 ## [v0.2.1](https://github.com/nai888/langua/compare/v0.2.0...v0.2.1) - 2018-10-23

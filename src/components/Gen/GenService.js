@@ -2,7 +2,7 @@ import { toast } from 'react-toastify'
 import schema from 'js-schema'
 
 import { defData, vars } from './defaultData'
-import fileProcessor from './fileProcessor'
+import fileProcessor from '../../tools/fileProcessor'
 
 class GenService {
   constructor () {
@@ -360,7 +360,9 @@ class GenService {
 
     // Split all the Subpatterns into arrays based on '/'
     for (let i = 0; i < newData.subpatterns.length; i++) {
-      newData.subpatterns[i].subpattern = newData.subpatterns[i].subpattern.split('/')
+      newData.subpatterns[i].subpattern = newData.subpatterns[
+        i
+      ].subpattern.split('/')
     }
 
     // Split the Pattern into an array based on '/'
@@ -449,7 +451,7 @@ class GenService {
     this.setStorage(data)
     if (window.File) {
       // If the browser has access to File, save the file locally
-      fileProcessor.saveFile(data)
+      fileProcessor.saveFile(data, 'gen')
     } else {
       // If the browser can't access File, display a notification
       toast.info(
@@ -526,6 +528,8 @@ class GenService {
 
         response = false
       }
+
+      callback(response)
     }
 
     if (window.FileReader) {
@@ -541,9 +545,8 @@ class GenService {
       })
 
       response = false
+      callback(response)
     }
-
-    callback(response)
   }
 }
 
