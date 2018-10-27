@@ -15,6 +15,7 @@ const Footer = props => {
   const author = 'Ian A. Cook'
   const authorURL = 'https://github.com/nai888'
   const appGhURL = 'https://github.com/nai888/langua'
+  const appBpURL = 'https://beerpay.io/nai888/langua'
 
   return (
     <footer>
@@ -40,13 +41,15 @@ const Footer = props => {
           >
             AGPL-3.0 <i className='fas fa-gavel' /> license
           </a>
-          .{' '}
-          <a
-            href='https://github.com/nai888/langua'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          .
+        </p>
+        <p className={props.classes.links}>
+          <a href={appGhURL} target='_blank' rel='noopener noreferrer'>
             View this project on <i className='fab fa-github' /> GitHub
+          </a>{' '}
+          or{' '}
+          <a href={appBpURL} target='_blank' rel='noopener noreferrer'>
+            buy {author} a <i className='fas fa-beer' /> beer
           </a>
           .
         </p>
