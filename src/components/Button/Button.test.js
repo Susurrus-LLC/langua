@@ -84,7 +84,7 @@ describe('Button', () => {
 `)
 
     button = renderer.create(
-      <Button addClass='small' onClick='alert()'>
+      <Button addClass='small' onClick={jest.fn()}>
         Small
       </Button>
     )
@@ -92,7 +92,7 @@ describe('Button', () => {
     expect(tree).toMatchInlineSnapshot(`
 <button
   className="Button-btn-0-1-1 Button-small-0-1-6"
-  onClick="alert()"
+  onClick={[MockFunction]}
   role="button"
   type="button"
 >
