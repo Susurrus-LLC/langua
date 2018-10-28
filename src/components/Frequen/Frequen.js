@@ -76,7 +76,7 @@ class Frequen extends React.Component {
         <ButtonLink route='/frequen/help'>Help</ButtonLink>
         <h2 className='toolTitle'>LanguaFrequen</h2>
         <FrequenForm
-          classes={this.props.classes}
+          styles={this.props.classes}
           state={this.state}
           onChangeInput={this.onChangeInput}
           onAnalyze={this.onAnalyze}

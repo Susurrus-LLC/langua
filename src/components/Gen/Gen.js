@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 
 import styles from './styles'
 import ButtonLink from '../Button/ButtonLink'
-import GenForm from './GenForm/GenForm'
-import GenResults from './GenResults/GenResults'
+import GenForm from './GenForm'
+import GenResults from './GenResults'
 import genService from './GenService'
 
 import { canonical, siteTitle } from '../../App'
@@ -146,8 +146,13 @@ class Gen extends React.Component {
         </Helmet>
         <ButtonLink route='/gen/help'>Help</ButtonLink>
         <h2 className='toolTitle'>LanguaGen</h2>
-        <GenForm data={state.data} change={this.onChangeInput} />
+        <GenForm
+          styles={this.props.classes}
+          data={state.data}
+          change={this.onChangeInput}
+        />
         <GenResults
+          classes={this.props.classes}
           newLine={state.data.newline}
           filterDupes={state.data.filterdupes}
           status={state.status}

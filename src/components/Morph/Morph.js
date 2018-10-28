@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import styles from './styles'
 import Notice from '../Notice/Notice'
 import ButtonLink from '../Button/ButtonLink'
+import MorphForm from './MorphForm'
 
 import { canonical, siteTitle } from '../../App'
 
@@ -22,6 +23,7 @@ const Morph = props => (
     <ButtonLink route='/morph/help'>Help</ButtonLink>
     <h2 className='toolTitle'>LanguaMorph</h2>
     <Notice>This tool is still in planning.</Notice>
+    <MorphForm styles={props.classes} />
   </div>
 )
 

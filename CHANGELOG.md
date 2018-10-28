@@ -15,6 +15,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 ### Changed 0.2.3
 
 - Fix PropTypes for children in Button and Help files.
+- Create a Form component with shared styles and refactor all tool forms to use the new component.
 - Update dependencies.
 
 ### Removed 0.2.3

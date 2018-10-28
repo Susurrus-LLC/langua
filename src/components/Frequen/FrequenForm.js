@@ -1,14 +1,17 @@
 import React from 'react'
+import injectSheet from 'react-jss'
+import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
 
 import Button from '../Button/Button'
+import Form from '../Form/Form'
+import sharedFormStyles from '../Form/sharedFormStyles'
 
 const FrequenForm = props => (
-  <form className={props.classes.form}>
+  <Form>
     <h5 className={props.classes.sectionTitle}>Text Corpus</h5>
     <textarea
-      className={classnames(props.classes.corpus, props.classes.input)}
+      className={classNames(props.styles.corpus, props.styles.input)}
       id='corpus'
       name='corpus'
       value={props.state.corpus}
@@ -16,7 +19,7 @@ const FrequenForm = props => (
     />
     <h5 className={props.classes.sectionTitle}>Consonants</h5>
     <input
-      className={props.classes.input}
+      className={props.styles.input}
       id='consonants'
       name='consonants'
       type='text'
@@ -25,39 +28,45 @@ const FrequenForm = props => (
     />
     <h5 className={props.classes.sectionTitle}>Vowels</h5>
     <input
-      className={props.classes.input}
+      className={props.styles.input}
       id='vowels'
       name='vowels'
       type='text'
       value={props.state.vowels}
       onChange={props.onChangeInput}
     />
-    <div className={props.classes.controls}>
-      <Button type='submit' ver='neutral' onClick={props.onAnalyze}>
-        Analyze
-      </Button>
-      <div className={props.classes.controlPiece}>
-        <label>
-          <input
-            type='checkbox'
-            id='distinguishCase'
-            name='distinguishCase'
-            value='distinguishCase'
-            checked={props.state.distinguishCase}
-            onChange={props.onChangeInput}
-          />{' '}
-          distinguish upper and lower case
-        </label>
+    <div className={classNames(props.classes.control, props.classes.part)}>
+      <div className={props.classes.controlLeft}>
+        <div className={props.classes.controlPiece}>
+          <Button type='submit' ver='neutral' onClick={props.onAnalyze}>
+            Analyze
+          </Button>
+        </div>
+        <div className={props.classes.controlPiece}>
+          <label>
+            <input
+              type='checkbox'
+              id='distinguishCase'
+              name='distinguishCase'
+              value='distinguishCase'
+              checked={props.state.distinguishCase}
+              onChange={props.onChangeInput}
+            />{' '}
+            distinguish upper and lower case
+          </label>
+        </div>
       </div>
+      <div className={props.classes.controlRight} />
     </div>
-  </form>
+  </Form>
 )
 
 FrequenForm.propTypes = {
   classes: PropTypes.object,
+  styles: PropTypes.object,
   state: PropTypes.object.isRequired,
   onChangeInput: PropTypes.func.isRequired,
   onAnalyze: PropTypes.func.isRequired
 }
 
-export default FrequenForm
+export default injectSheet(sharedFormStyles)(FrequenForm)

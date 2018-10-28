@@ -3,11 +3,11 @@ import injectSheet from 'react-jss'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
-import Button from '../../Button/Button'
+import Button from '../Button/Button'
+import Form from '../Form/Form'
+import sharedFormStyles from '../Form/sharedFormStyles'
 
-// import * as service from '../service'
-import { vars } from '../defaultData'
-import styles from './styles'
+import { vars } from './defaultData'
 
 const GenForm = props => {
   const filePicker = React.createRef()
@@ -19,7 +19,7 @@ const GenForm = props => {
   ))
 
   const subpatternRows = props.data.subpatterns.map((subpattern, index) => (
-    <div key={index} className={props.classes.subpsRow}>
+    <div key={index} className={props.styles.subpsRow}>
       <select
         id={`v${index}`}
         name={`v${index}`}
@@ -32,11 +32,11 @@ const GenForm = props => {
         type='text'
         id={`p${index}`}
         name={`p${index}`}
-        className={props.classes.subpatternInput}
+        className={props.styles.subpatternInput}
         value={subpattern.subpattern}
         onChange={props.change}
       />
-      <div className={props.classes.clearButton}>
+      <div className={props.styles.clearButton}>
         <Button
           id={`c${index}`}
           onClick={props.change}
@@ -53,7 +53,7 @@ const GenForm = props => {
   const addButton = () => {
     if (props.data.subpatterns.length < vars.length) {
       return (
-        <div className={props.classes.addingRow}>
+        <div className={props.styles.addingRow}>
           <Button
             onClick={props.change}
             id='add'
@@ -75,21 +75,19 @@ const GenForm = props => {
   }
 
   return (
-    <form className={props.classes.form}>
-      <div
-        className={classNames(props.classes.subpatterns, props.classes.part)}
-      >
+    <Form>
+      <div className={classNames(props.styles.subpatterns, props.classes.part)}>
         <h5 className={props.classes.sectionTitle}>Subpatterns</h5>
         {subpatternRows}
         {addButton()}
       </div>
-      <div className={classNames(props.classes.pattern, props.classes.part)}>
+      <div className={classNames(props.styles.pattern, props.classes.part)}>
         <h5 className={props.classes.sectionTitle}>Pattern</h5>
         <input
           type='text'
           id='pattern'
           name='pattern'
-          className={props.classes.patternInput}
+          className={props.styles.patternInput}
           value={props.data.pattern}
           onChange={props.change}
         />
@@ -114,7 +112,7 @@ const GenForm = props => {
               name='words'
               min='1'
               max='9999'
-              className={props.classes.wordsInput}
+              className={props.styles.wordsInput}
               value={props.data.words}
               onChange={props.change}
             />
@@ -172,12 +170,13 @@ const GenForm = props => {
           </div>
         </div>
       </div>
-    </form>
+    </Form>
   )
 }
 
 GenForm.propTypes = {
   classes: PropTypes.object,
+  styles: PropTypes.object,
   data: PropTypes.shape({
     subpatterns: PropTypes.arrayOf(
       PropTypes.shape({
@@ -193,4 +192,4 @@ GenForm.propTypes = {
   change: PropTypes.func.isRequired
 }
 
-export default injectSheet(styles)(GenForm)
+export default injectSheet(sharedFormStyles)(GenForm)

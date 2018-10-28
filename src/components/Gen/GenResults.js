@@ -1,8 +1,5 @@
 import React from 'react'
-import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
-
-import styles from './styles'
 
 const GenResults = props => {
   const words = props.stats.words.toLocaleString()
@@ -68,4 +65,4 @@ GenResults.propTypes = {
   }).isRequired
 }
 
-export default injectSheet(styles)(GenResults)
+export default GenResults
