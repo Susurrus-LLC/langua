@@ -25,7 +25,7 @@ describe('Notice', () => {
     expect(notice.text()).toEqual('Test')
   })
 
-  it('matches the snapshot', () => {
+  it('renders accurately', () => {
     const notice = renderer.create(<Notice>Test</Notice>)
     let tree = notice.toJSON()
     expect(tree).toMatchInlineSnapshot(`
