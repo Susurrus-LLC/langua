@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
+import { MemoryRouter } from 'react-router-dom'
 import renderer from 'react-test-renderer'
 
 import ButtonLink from './ButtonLink'
@@ -9,9 +9,9 @@ describe('ButtonLink', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(
-      <BrowserRouter>
+      <MemoryRouter>
         <ButtonLink />
-      </BrowserRouter>,
+      </MemoryRouter>,
       div
     )
     ReactDOM.unmountComponentAtNode(div)
@@ -19,9 +19,9 @@ describe('ButtonLink', () => {
 
   it('renders accurately with various props and children', () => {
     let buttonLink = renderer.create(
-      <BrowserRouter>
+      <MemoryRouter>
         <ButtonLink />
-      </BrowserRouter>
+      </MemoryRouter>
     )
     let tree = buttonLink.toJSON()
     expect(tree).toMatchInlineSnapshot(`
@@ -34,9 +34,9 @@ describe('ButtonLink', () => {
 `)
 
     buttonLink = renderer.create(
-      <BrowserRouter>
+      <MemoryRouter>
         <ButtonLink route='/'>Click</ButtonLink>
-      </BrowserRouter>
+      </MemoryRouter>
     )
     tree = buttonLink.toJSON()
     expect(tree).toMatchInlineSnapshot(`
@@ -51,9 +51,9 @@ describe('ButtonLink', () => {
 `)
 
     buttonLink = renderer.create(
-      <BrowserRouter>
+      <MemoryRouter>
         <ButtonLink buttonType='neutral'>Click</ButtonLink>
-      </BrowserRouter>
+      </MemoryRouter>
     )
     tree = buttonLink.toJSON()
     expect(tree).toMatchInlineSnapshot(`
@@ -68,9 +68,9 @@ describe('ButtonLink', () => {
 `)
 
     buttonLink = renderer.create(
-      <BrowserRouter>
+      <MemoryRouter>
         <ButtonLink buttonType='success'>Click</ButtonLink>
-      </BrowserRouter>
+      </MemoryRouter>
     )
     tree = buttonLink.toJSON()
     expect(tree).toMatchInlineSnapshot(`
@@ -85,11 +85,11 @@ describe('ButtonLink', () => {
 `)
 
     buttonLink = renderer.create(
-      <BrowserRouter>
+      <MemoryRouter>
         <ButtonLink buttonType='danger' route=''>
           Click
         </ButtonLink>
-      </BrowserRouter>
+      </MemoryRouter>
     )
     tree = buttonLink.toJSON()
     expect(tree).toMatchInlineSnapshot(`

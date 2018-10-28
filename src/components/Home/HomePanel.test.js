@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
+import { MemoryRouter } from 'react-router-dom'
 
 import HomePanel from './HomePanel'
 
@@ -8,11 +8,11 @@ describe('HomePanel', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(
-      <BrowserRouter>
+      <MemoryRouter>
         <HomePanel classes={{ panel: 'panel' }} linkTo='test' toolTitle='test'>
           Test
         </HomePanel>
-      </BrowserRouter>,
+      </MemoryRouter>,
       div
     )
     ReactDOM.unmountComponentAtNode(div)
