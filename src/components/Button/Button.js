@@ -27,7 +27,7 @@ const Button = props => {
         filterClass(props.ver, props.classes),
         props.classes[props.addClass]
       )}
-      type={props.type}
+      type={props.type || 'button'}
       role={props.role || 'button'}
     >
       {props.children}
