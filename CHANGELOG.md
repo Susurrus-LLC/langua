@@ -9,6 +9,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 ### Added 0.2.3
 
 - Add basic tests to all components.
+- Add react-test-renderer and enzyme for more in-depth testing.
 
 ### Changed 0.2.3
 

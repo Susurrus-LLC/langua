@@ -52,6 +52,8 @@
   },
   "devDependencies": {
     "codacy-coverage": "^3.2.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^21.26.2",
@@ -63,7 +65,7 @@
     "lint-staged": "^7.3.0",
     "prettier-standard": "^8.0.1",
     "react-snap": "1.19.0",
-    "react-test-renderer": "16.6.0",
+    "react-test-renderer": "^16.6.0",
     "remark-cli": "^6.0.0",
     "remark-lint": "^6.0.3",
     "remark-preset-lint-recommended": "^3.0.2"
