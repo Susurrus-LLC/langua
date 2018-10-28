@@ -6,6 +6,10 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.2.2...HEAD)
 
+### Added 0.2.3
+
+- Add basic tests to all components.
+
 ### Changed 0.2.3
 
 - Fix PropTypes for children in Button and Help files.

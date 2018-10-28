@@ -2,14 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 
-import App from './App'
+import Help from './Help'
 
-describe('App', () => {
+describe('Help', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(
       <BrowserRouter>
-        <App />
+        <Help toolTitle='Test' toolDescription='This is a test' link='test' />
       </BrowserRouter>,
       div
     )

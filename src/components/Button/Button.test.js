@@ -1,13 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Router from './Router'
+import Button from './Button'
 
-describe('Router', () => {
+describe('Button', () => {
   it('renders without crashing', () => {
-    window.history.pushState({}, 'Testing', '/langua')
     const div = document.createElement('div')
-    ReactDOM.render(<Router />, div)
+    ReactDOM.render(<Button />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
 })
