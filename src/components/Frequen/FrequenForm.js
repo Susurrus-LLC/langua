@@ -9,32 +9,38 @@ import sharedFormStyles from '../Form/sharedFormStyles'
 
 const FrequenForm = props => (
   <Form>
-    <h5 className={props.classes.sectionTitle}>Text Corpus</h5>
-    <textarea
-      className={classNames(props.styles.corpus, props.styles.input)}
-      id='corpus'
-      name='corpus'
-      value={props.state.corpus}
-      onChange={props.onChangeInput}
-    />
-    <h5 className={props.classes.sectionTitle}>Consonants</h5>
-    <input
-      className={props.styles.input}
-      id='consonants'
-      name='consonants'
-      type='text'
-      value={props.state.consonants}
-      onChange={props.onChangeInput}
-    />
-    <h5 className={props.classes.sectionTitle}>Vowels</h5>
-    <input
-      className={props.styles.input}
-      id='vowels'
-      name='vowels'
-      type='text'
-      value={props.state.vowels}
-      onChange={props.onChangeInput}
-    />
+    <div className={classNames(props.styles.corpus, props.classes.part)}>
+      <h5 className={props.classes.sectionTitle}>Text Corpus</h5>
+      <textarea
+        className={classNames(props.styles.corpusInput, props.styles.input)}
+        id='corpus'
+        name='corpus'
+        value={props.state.corpus}
+        onChange={props.onChangeInput}
+      />
+    </div>
+    <div className={classNames(props.styles.consonants, props.classes.part)}>
+      <h5 className={props.classes.sectionTitle}>Consonants</h5>
+      <input
+        className={props.styles.input}
+        id='consonants'
+        name='consonants'
+        type='text'
+        value={props.state.consonants}
+        onChange={props.onChangeInput}
+      />
+    </div>
+    <div className={classNames(props.styles.vowels, props.classes.part)}>
+      <h5 className={props.classes.sectionTitle}>Vowels</h5>
+      <input
+        className={props.styles.input}
+        id='vowels'
+        name='vowels'
+        type='text'
+        value={props.state.vowels}
+        onChange={props.onChangeInput}
+      />
+    </div>
     <div className={classNames(props.classes.control, props.classes.part)}>
       <div className={props.classes.controlLeft}>
         <div className={props.classes.controlPiece}>

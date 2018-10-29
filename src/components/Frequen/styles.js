@@ -4,7 +4,7 @@ const styles = {
   input: {
     width: '100%'
   },
-  corpus: {
+  corpusInput: {
     height: `${2 * v.ms6}rem`
   },
   results: {
