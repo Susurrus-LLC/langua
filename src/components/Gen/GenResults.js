@@ -1,5 +1,9 @@
 import React from 'react'
+import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
+
+import Results from '../Results/Results'
+import sharedResultsStyles from '../Results/sharedResultsStyles'
 
 const GenResults = props => {
   const words = props.stats.words.toLocaleString()
@@ -7,7 +11,7 @@ const GenResults = props => {
   const filteredWords = props.stats.filtered.toLocaleString()
   const remainingWords = props.stats.remaining.toLocaleString()
 
-  const outputText = classes => {
+  const outputText = styles => {
     const filterResults = props.filterDupes
       ? Array.from(new Set(props.results))
       : props.results
@@ -15,7 +19,7 @@ const GenResults = props => {
       .call(filterResults, `${props.newLine ? '\n' : ' '}`)
       .trim()
 
-    return <p className={classes.outText}>{joinedResults}</p>
+    return <p className={styles.outText}>{joinedResults}</p>
   }
 
   const errorText = classes => {
@@ -39,15 +43,15 @@ const GenResults = props => {
   }
 
   return (
-    <div className={props.classes.results}>
-      <div className={props.classes.output}>
+    <Results>
+      <div className={props.styles.output}>
         {errorText(props.classes)}
-        {outputText(props.classes)}
+        {outputText(props.styles)}
       </div>
       <div className={props.classes.stats}>
         <p className={props.classes.statsText}>{statsText()}</p>
       </div>
-    </div>
+    </Results>
   )
 }
 
@@ -65,4 +69,4 @@ GenResults.propTypes = {
   }).isRequired
 }
 
-export default GenResults
+export default injectSheet(sharedResultsStyles)(GenResults)

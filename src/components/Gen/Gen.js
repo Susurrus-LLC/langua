@@ -152,7 +152,7 @@ class Gen extends React.Component {
           change={this.onChangeInput}
         />
         <GenResults
-          classes={this.props.classes}
+          styles={this.props.classes}
           newLine={state.data.newline}
           filterDupes={state.data.filterdupes}
           status={state.status}

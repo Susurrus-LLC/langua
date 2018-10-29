@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import injectSheet from 'react-jss'
 import classNames from 'classnames'
 import 'react-vis/dist/style.css'
 import {
@@ -11,8 +11,14 @@ import {
   YAxis,
   Hint
 } from 'react-vis'
+import PropTypes from 'prop-types'
 
 import * as v from '../../styles/variables'
+
+import Results from '../Results/Results'
+import sharedResultsStyles from '../Results/sharedResultsStyles'
+import Control from '../Controls/Control'
+import ControlPiece from '../Controls/ControlPiece'
 
 class FrequenResults extends React.Component {
   constructor (props) {
@@ -167,9 +173,9 @@ class FrequenResults extends React.Component {
 
     if (this.props.analyzed) {
       return (
-        <div className={this.props.classes.results}>
-          <div className={this.props.classes.controls}>
-            <div className={this.props.classes.controlPiece}>
+        <Results>
+          <Control>
+            <ControlPiece>
               <select
                 id='filter'
                 name='filter'
@@ -180,8 +186,8 @@ class FrequenResults extends React.Component {
                 <option value='consonants'>Consonants</option>
                 <option value='vowels'>Vowels</option>
               </select>
-            </div>
-          </div>
+            </ControlPiece>
+          </Control>
           <div
             className={classNames(
               this.props.classes.barChart,
@@ -252,7 +258,7 @@ class FrequenResults extends React.Component {
               </tbody>
             </table>
           </div>
-        </div>
+        </Results>
       )
     } else {
       return <div className={this.props.classes.results} />
@@ -271,4 +277,4 @@ FrequenResults.propTypes = {
   onMouseOut: PropTypes.func.isRequired
 }
 
-export default FrequenResults
+export default injectSheet(sharedResultsStyles)(FrequenResults)

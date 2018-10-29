@@ -5,6 +5,9 @@ import PropTypes from 'prop-types'
 
 import Button from '../Button/Button'
 import Form from '../Form/Form'
+import Control from '../Controls/Control'
+import ControlSide from '../Controls/ControlSide'
+import ControlPiece from '../Controls/ControlPiece'
 import sharedFormStyles from '../Form/sharedFormStyles'
 
 import { vars } from './defaultData'
@@ -92,9 +95,9 @@ const GenForm = props => {
           onChange={props.change}
         />
       </div>
-      <div className={classNames(props.classes.control, props.classes.part)}>
-        <div className={props.classes.controlLeft}>
-          <div className={props.classes.controlPiece}>
+      <Control addedClasses={props.classes.part}>
+        <ControlSide side='left'>
+          <ControlPiece>
             <Button
               id='generate'
               onClick={props.change}
@@ -103,8 +106,8 @@ const GenForm = props => {
             >
               Generate
             </Button>
-          </div>
-          <div className={props.classes.controlPiece}>
+          </ControlPiece>
+          <ControlPiece>
             <label htmlFor='words'>words:</label>
             <input
               type='number'
@@ -116,8 +119,8 @@ const GenForm = props => {
               value={props.data.words}
               onChange={props.change}
             />
-          </div>
-          <div className={props.classes.controlPiece}>
+          </ControlPiece>
+          <ControlPiece>
             <label>
               <input
                 type='checkbox'
@@ -129,8 +132,8 @@ const GenForm = props => {
               />{' '}
               new line each
             </label>
-          </div>
-          <div className={props.classes.controlPiece}>
+          </ControlPiece>
+          <ControlPiece>
             <label>
               <input
                 type='checkbox'
@@ -142,10 +145,10 @@ const GenForm = props => {
               />{' '}
               filter duplicates
             </label>
-          </div>
-        </div>
-        <div className={props.classes.controlRight}>
-          <div className={props.classes.controlPiece}>
+          </ControlPiece>
+        </ControlSide>
+        <ControlSide side='right'>
+          <ControlPiece>
             <Button
               id='save'
               ver='success'
@@ -154,8 +157,8 @@ const GenForm = props => {
             >
               Save
             </Button>
-          </div>
-          <div className={props.classes.controlPiece}>
+          </ControlPiece>
+          <ControlPiece>
             <Button id='open' onClick={invokeFilePicker} type='button'>
               Open
             </Button>
@@ -167,9 +170,9 @@ const GenForm = props => {
               ref={filePicker}
               onChange={props.change}
             />
-          </div>
-        </div>
-      </div>
+          </ControlPiece>
+        </ControlSide>
+      </Control>
     </Form>
   )
 }

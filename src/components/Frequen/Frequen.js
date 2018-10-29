@@ -82,7 +82,7 @@ class Frequen extends React.Component {
           onAnalyze={this.onAnalyze}
         />
         <FrequenResults
-          classes={this.props.classes}
+          styles={this.props.classes}
           results={this.state.results}
           hovered={this.state.hovered}
           filter={this.state.filter}

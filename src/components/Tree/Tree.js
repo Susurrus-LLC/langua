@@ -3,10 +3,12 @@ import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
 
-import styles from './styles'
 import Notice from '../Notice/Notice'
 import ButtonLink from '../Button/ButtonLink'
+
 import TreeForm from './TreeForm'
+import TreeResults from './TreeResults'
+import styles from './styles'
 
 import { canonical, siteTitle } from '../../App'
 
@@ -24,6 +26,7 @@ const Tree = props => (
     <h2 className='toolTitle'>LanguaTree</h2>
     <Notice>This tool is still in planning.</Notice>
     <TreeForm styles={props.classes} />
+    <TreeResults styles={props.classes} />
   </div>
 )
 

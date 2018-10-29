@@ -49,32 +49,8 @@ const styles = {
   wordsInput: {
     width: `${v.ms6}rem`
   },
-  results: {
-    marginTop: `${v.lnht}rem`,
-    paddingTop: `${v.lnht}rem`,
-    borderTop: {
-      width: 1,
-      style: 'dotted',
-      color: v.bluNtl.string()
-    }
-  },
-  error: {
-    color: v.red.string()
-  },
   outText: {
     whiteSpace: 'pre-wrap'
-  },
-  stats: {
-    paddingTop: `${v.lnht}rem`,
-    borderTop: {
-      width: 1,
-      style: 'dotted',
-      color: v.bluNtl.string()
-    }
-  },
-  statsText: {
-    fontSize: `${v.ms0}rem`,
-    fontStyle: 'italic'
   }
 }
 

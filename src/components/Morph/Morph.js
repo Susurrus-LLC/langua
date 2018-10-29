@@ -3,10 +3,12 @@ import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
 
-import styles from './styles'
 import Notice from '../Notice/Notice'
 import ButtonLink from '../Button/ButtonLink'
+
 import MorphForm from './MorphForm'
+import MorphResults from './MorphResults'
+import styles from './styles'
 
 import { canonical, siteTitle } from '../../App'
 
@@ -24,6 +26,7 @@ const Morph = props => (
     <h2 className='toolTitle'>LanguaMorph</h2>
     <Notice>This tool is still in planning.</Notice>
     <MorphForm styles={props.classes} />
+    <MorphResults styles={props.classes} />
   </div>
 )
 

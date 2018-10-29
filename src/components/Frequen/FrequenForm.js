@@ -5,6 +5,9 @@ import PropTypes from 'prop-types'
 
 import Button from '../Button/Button'
 import Form from '../Form/Form'
+import Control from '../Controls/Control'
+import ControlSide from '../Controls/ControlSide'
+import ControlPiece from '../Controls/ControlPiece'
 import sharedFormStyles from '../Form/sharedFormStyles'
 
 const FrequenForm = props => (
@@ -41,14 +44,14 @@ const FrequenForm = props => (
         onChange={props.onChangeInput}
       />
     </div>
-    <div className={classNames(props.classes.control, props.classes.part)}>
-      <div className={props.classes.controlLeft}>
-        <div className={props.classes.controlPiece}>
+    <Control addedClasses={props.classes.part}>
+      <ControlSide side='left'>
+        <ControlPiece>
           <Button type='submit' ver='neutral' onClick={props.onAnalyze}>
             Analyze
           </Button>
-        </div>
-        <div className={props.classes.controlPiece}>
+        </ControlPiece>
+        <ControlPiece>
           <label>
             <input
               type='checkbox'
@@ -60,10 +63,10 @@ const FrequenForm = props => (
             />{' '}
             distinguish upper and lower case
           </label>
-        </div>
-      </div>
-      <div className={props.classes.controlRight} />
-    </div>
+        </ControlPiece>
+      </ControlSide>
+      <ControlSide side='right' />
+    </Control>
   </Form>
 )
 

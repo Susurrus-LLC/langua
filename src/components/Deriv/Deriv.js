@@ -3,10 +3,12 @@ import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
 
-import styles from './styles'
 import Notice from '../Notice/Notice'
 import ButtonLink from '../Button/ButtonLink'
+
 import DerivForm from './DerivForm'
+import DerivResults from './DerivResults'
+import styles from './styles'
 
 import { canonical, siteTitle } from '../../App'
 
@@ -24,6 +26,7 @@ const Deriv = props => (
     <h2 className='toolTitle'>LanguaDeriv</h2>
     <Notice>This tool is still in planning.</Notice>
     <DerivForm styles={props.classes} />
+    <DerivResults styles={props.classes} />
   </div>
 )
 
