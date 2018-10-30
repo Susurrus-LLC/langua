@@ -8,6 +8,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Changed 0.2.4
 
+- Fix missing PropType in GenResults.
 - Update dependencies.
 
 ## [v0.2.3](https://github.com/nai888/langua/compare/v0.2.2...v0.2.3) - 2018-10-29
