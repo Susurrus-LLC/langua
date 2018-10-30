@@ -57,6 +57,7 @@ const GenResults = props => {
 
 GenResults.propTypes = {
   classes: PropTypes.object,
+  styles: PropTypes.object,
   newLine: PropTypes.bool.isRequired,
   filterDupes: PropTypes.bool.isRequired,
   status: PropTypes.arrayOf(PropTypes.string).isRequired,
