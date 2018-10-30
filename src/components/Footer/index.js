@@ -16,6 +16,7 @@ const Footer = props => {
   const authorURL = 'https://github.com/nai888'
   const appGhURL = 'https://github.com/nai888/langua'
   const appBpURL = 'https://beerpay.io/nai888/langua'
+  const version = '0.2.3'
 
   return (
     <footer>
@@ -26,7 +27,7 @@ const Footer = props => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            Version <i className='fas fa-code' /> 0.2.2
+            Version <i className='fas fa-code' /> {version}
           </a>
           . Built by{' '}
           <a href={authorURL} target='_blank' rel='noopener noreferrer'>
