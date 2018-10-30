@@ -6,6 +6,10 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.2.3...HEAD)
 
+### Added 0.2.4
+
+- Add loading animation.
+
 ### Changed 0.2.4
 
 - Fix missing PropType in GenResults.

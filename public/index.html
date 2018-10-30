@@ -4,14 +4,20 @@
     <title>Langua | Language Tools</title>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link href="/loading.css" rel="stylesheet" />
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to use this webpage. You can find instructions for enabling JavaScript in your web browser <a href="https://www.enable-javascript.com/" target="_blank" rel="noopener noreferrer">here</a>.</p>
     </noscript>
     <div id="root">
-      <header class="header">
-        <h1>Loading&hellip;</h1>
+      <header class="loading">
+        <h1 class="loading-text">Loading&hellip;</h1>
+        <div class="spinner">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+        </div>
       </header>
     </div>
   </body>
