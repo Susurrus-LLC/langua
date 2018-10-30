@@ -83,7 +83,7 @@ class Gen extends React.Component {
           }))
         }
       }
-      genService.open(file, this.state.data, updateState)
+      genService.open(file, updateState)
     } else if (e.target.type === 'checkbox') {
       const checked = e.target.checked
       if (e.target.id === 'newline') {

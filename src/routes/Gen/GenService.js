@@ -1,8 +1,9 @@
 import { toast } from 'react-toastify'
 import schema from 'js-schema'
 
-import { defData, vars } from './defaultData'
 import fileProcessor from '../../tools/fileProcessor'
+
+import { defData, vars } from './defaultData'
 
 class GenService {
   constructor () {
@@ -451,7 +452,7 @@ class GenService {
     this.setStorage(data)
     if (window.File) {
       // If the browser has access to File, save the file locally
-      fileProcessor.saveFile(data, 'gen')
+      fileProcessor.saveFile(data, this.item)
     } else {
       // If the browser can't access File, display a notification
       toast.info(
@@ -467,7 +468,7 @@ class GenService {
   }
 
   // Open a file and parse it to restore a saved state
-  open (file, data, callback) {
+  open (file, callback) {
     let response
 
     const processResults = result => {
@@ -500,7 +501,7 @@ class GenService {
             progressClassName: 'toast-opened-progress'
           })
 
-          genService.setStorage(content)
+          this.setStorage(content)
 
           response = content
         } else {
