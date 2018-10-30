@@ -23,11 +23,31 @@ class Frequen extends React.Component {
   }
 
   onChangeInput (e) {
-    const val = e.target.type === 'checkbox' ? e.target.checked : e.target.value
-    const name = e.target.name
-    this.setState(prevState => ({
-      [name]: val
-    }))
+    if (e.target.tagName === 'BUTTON') {
+      e.preventDefault()
+      if (e.target.id === 'save') {
+        // Save the current state to storage and generate a file
+        frequenService.save(this.state)
+      }
+    } else if (e.target.type === 'file') {
+      e.preventDefault()
+      // Open a file and parse it to restore a saved state
+      const file = e.target.files[0]
+      const updateState = response => {
+        if (response) {
+          // Only change state if the file was successfully opened
+          this.setState(prevState => response)
+        }
+      }
+      frequenService.open(file, updateState)
+    } else {
+      const val =
+        e.target.type === 'checkbox' ? e.target.checked : e.target.value
+      const name = e.target.name
+      this.setState(prevState => ({
+        [name]: val
+      }))
+    }
   }
 
   onAnalyze (e) {

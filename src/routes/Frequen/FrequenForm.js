@@ -10,65 +10,99 @@ import Control from '../../components/Control'
 import ControlSide from '../../components/Control/Side'
 import ControlPiece from '../../components/Control/Piece'
 
-const FrequenForm = props => (
-  <Form>
-    <div className={classNames(props.styles.corpus, props.classes.part)}>
-      <h5 className={props.classes.sectionTitle}>Text Corpus</h5>
-      <textarea
-        className={classNames(props.styles.corpusInput, props.styles.input)}
-        id='corpus'
-        name='corpus'
-        value={props.state.corpus}
-        onChange={props.onChangeInput}
-      />
-    </div>
-    <div className={classNames(props.styles.consonants, props.classes.part)}>
-      <h5 className={props.classes.sectionTitle}>Consonants</h5>
-      <input
-        className={props.styles.input}
-        id='consonants'
-        name='consonants'
-        type='text'
-        value={props.state.consonants}
-        onChange={props.onChangeInput}
-      />
-    </div>
-    <div className={classNames(props.styles.vowels, props.classes.part)}>
-      <h5 className={props.classes.sectionTitle}>Vowels</h5>
-      <input
-        className={props.styles.input}
-        id='vowels'
-        name='vowels'
-        type='text'
-        value={props.state.vowels}
-        onChange={props.onChangeInput}
-      />
-    </div>
-    <Control addedClasses={props.classes.part}>
-      <ControlSide side='left'>
-        <ControlPiece>
-          <Button type='submit' ver='neutral' onClick={props.onAnalyze}>
-            Analyze
-          </Button>
-        </ControlPiece>
-        <ControlPiece>
-          <label>
+const FrequenForm = props => {
+  const filePicker = React.createRef()
+
+  const invokeFilePicker = e => {
+    e.preventDefault()
+    filePicker.current.value = ''
+    filePicker.current.click()
+  }
+
+  return (
+    <Form>
+      <div className={classNames(props.styles.corpus, props.classes.part)}>
+        <h5 className={props.classes.sectionTitle}>Text Corpus</h5>
+        <textarea
+          className={classNames(props.styles.corpusInput, props.styles.input)}
+          id='corpus'
+          name='corpus'
+          value={props.state.corpus}
+          onChange={props.onChangeInput}
+        />
+      </div>
+      <div className={classNames(props.styles.consonants, props.classes.part)}>
+        <h5 className={props.classes.sectionTitle}>Consonants</h5>
+        <input
+          className={props.styles.input}
+          id='consonants'
+          name='consonants'
+          type='text'
+          value={props.state.consonants}
+          onChange={props.onChangeInput}
+        />
+      </div>
+      <div className={classNames(props.styles.vowels, props.classes.part)}>
+        <h5 className={props.classes.sectionTitle}>Vowels</h5>
+        <input
+          className={props.styles.input}
+          id='vowels'
+          name='vowels'
+          type='text'
+          value={props.state.vowels}
+          onChange={props.onChangeInput}
+        />
+      </div>
+      <Control addedClasses={props.classes.part}>
+        <ControlSide side='left'>
+          <ControlPiece>
+            <Button type='submit' ver='neutral' onClick={props.onAnalyze}>
+              Analyze
+            </Button>
+          </ControlPiece>
+          <ControlPiece>
+            <label>
+              <input
+                type='checkbox'
+                id='distinguishCase'
+                name='distinguishCase'
+                value='distinguishCase'
+                checked={props.state.distinguishCase}
+                onChange={props.onChangeInput}
+              />{' '}
+              distinguish upper and lower case
+            </label>
+          </ControlPiece>
+        </ControlSide>
+        <ControlSide side='right'>
+          <ControlPiece>
+            <Button
+              id='save'
+              ver='success'
+              onClick={props.onChangeInput}
+              type='button'
+            >
+              Save
+            </Button>
+          </ControlPiece>
+          <ControlPiece>
+            <Button id='open' onClick={invokeFilePicker} type='button'>
+              Open
+            </Button>
             <input
-              type='checkbox'
-              id='distinguishCase'
-              name='distinguishCase'
-              value='distinguishCase'
-              checked={props.state.distinguishCase}
+              id='file'
+              name='file'
+              className={props.classes.hidden}
+              type='file'
+              ref={filePicker}
               onChange={props.onChangeInput}
-            />{' '}
-            distinguish upper and lower case
-          </label>
-        </ControlPiece>
-      </ControlSide>
-      <ControlSide side='right' />
-    </Control>
-  </Form>
-)
+            />
+          </ControlPiece>
+        </ControlSide>
+      </Control>
+    </Form>
+  )
+}
 
 FrequenForm.propTypes = {
   classes: PropTypes.object,

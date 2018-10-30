@@ -11,6 +11,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Add basic tests to all components.
 - Add react-test-renderer and enzyme for more in-depth testing.
 - Add snapshot and DOM tests to several components.
+- Add save and open buttons to Frequen.
 
 ### Changed 0.2.3
 
