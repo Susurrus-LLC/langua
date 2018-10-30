@@ -7,9 +7,9 @@ import PropTypes from 'prop-types'
 import * as v from './styles/variables'
 import styles from './styles/app'
 
-import Header from './components/Header/Header'
-import Main from './components/Main/Main'
-import Footer from './components/Footer/Footer'
+import Header from './components/Header'
+import Main from './components/Main'
+import Footer from './components/Footer'
 
 export const canonical = 'https://nai888.github.io/langua/'
 export const siteTitle = 'Langua |'

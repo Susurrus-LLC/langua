@@ -18,6 +18,8 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Create a Form component with shared styles and refactor all tool forms to use the new component.
 - Create a Results component with shared styles and refactor all tool results to use the new component.
 - Create various Controls components and refactor all tool forms and results to use the new components.
+- Move all pages into a separate /routes folder.
+- Rename all main files to index.js for easier import.
 - Update dependencies.
 
 ### Removed 0.2.3
