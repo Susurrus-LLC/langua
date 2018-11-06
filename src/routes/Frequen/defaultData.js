@@ -8,5 +8,7 @@ export const defData = {
   analyzed: false,
   results: undefined,
   hovered: undefined,
-  filter: 'all'
+  filterSeg: 'all',
+  filterSyll: 'all',
+  filterWords: 'all'
 }

@@ -9,10 +9,13 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 ### Added 0.2.4
 
 - Add loading animation.
+- Add a component tests to FrequenResults and GenResults.
 
 ### Changed 0.2.4
 
 - Fix missing PropType in GenResults.
+- Adjust conditional display of cells in FrequenResults table to be more efficient.
+- Add additional filters to state.
 - Update dependencies.
 
 ## [v0.2.3](https://github.com/nai888/langua/compare/v0.2.2...v0.2.3) - 2018-10-29

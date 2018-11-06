@@ -105,7 +105,7 @@ class Frequen extends React.Component {
           styles={this.props.classes}
           results={this.state.results}
           hovered={this.state.hovered}
-          filter={this.state.filter}
+          filterSeg={this.state.filterSeg}
           analyzed={this.state.analyzed}
           onChangeInput={this.onChangeInput}
           onMouseOver={this.onMouseOver}

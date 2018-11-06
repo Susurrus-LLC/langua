@@ -44,7 +44,7 @@ class FrequenResults extends React.Component {
   }
 
   whichData () {
-    switch (this.props.filter) {
+    switch (this.props.filterSeg) {
       case 'consonants':
         return this.props.results.consonants
       case 'vowels':
@@ -73,7 +73,7 @@ class FrequenResults extends React.Component {
     const filterData = () => {
       let newData = {}
       data.forEach(el => {
-        if (el.name === this.props.filter) {
+        if (el.name === this.props.filterSeg) {
           newData = {
             name: el.name,
             total: el.total
@@ -82,7 +82,7 @@ class FrequenResults extends React.Component {
       })
       return newData
     }
-    if (this.props.filter !== 'all') {
+    if (this.props.filterSeg !== 'all') {
       return (
         <th className={this.props.classes.headerCell}>
           {`% of ${filterData().name}`}
@@ -123,39 +123,31 @@ class FrequenResults extends React.Component {
       }
     }
 
-    return allData.map(seg => (
-      <tr className={this.props.classes.dataRow} key={seg.i}>
-        <td className={this.props.classes.dataCell}>{seg.y}</td>
-        <td className={this.props.classes.dataCell}>{seg.count}</td>
-        {this.props.filter === 'all' ? (
-          <td className={this.props.classes.dataCell}>
-            {this.twoDecimals(seg.x) + '%'}
-          </td>
-        ) : null}
-        {this.props.filter === 'all' ? (
-          <td className={this.props.classes.dataCell}>
-            {seg.type === 'consonant'
-              ? findPercent(this.props.results.consonants, seg.y)
-              : null}
-          </td>
-        ) : this.props.filter === 'consonants' ? (
-          <td className={this.props.classes.dataCell}>
-            {this.twoDecimals(seg.x) + '%'}
-          </td>
-        ) : null}
-        {this.props.filter === 'all' ? (
-          <td className={this.props.classes.dataCell}>
-            {seg.type === 'vowel'
-              ? findPercent(this.props.results.vowels, seg.y)
-              : null}
-          </td>
-        ) : this.props.filter === 'vowels' ? (
-          <td className={this.props.classes.dataCell}>
-            {this.twoDecimals(seg.x) + '%'}
-          </td>
-        ) : null}
-      </tr>
-    ))
+    return allData.map(seg => {
+      const segment = seg.y
+      const count = seg.count
+      const percent = this.twoDecimals(seg.x)
+      const consPercent = findPercent(this.props.results.consonants, segment)
+      const vowsPercent = findPercent(this.props.results.vowels, segment)
+
+      return (
+        <tr className={this.props.classes.dataRow} key={seg.i}>
+          <td className={this.props.classes.dataCell}>{segment}</td>
+          <td className={this.props.classes.dataCell}>{count}</td>
+          <td className={this.props.classes.dataCell}>{percent + '%'}</td>
+          {this.props.filterSeg === 'all' ? (
+            <React.Fragment>
+              <td className={this.props.classes.dataCell}>
+                {seg.type === 'consonant' ? consPercent : null}
+              </td>
+              <td className={this.props.classes.dataCell}>
+                {seg.type === 'vowel' ? vowsPercent : null}
+              </td>
+            </React.Fragment>
+          ) : null}
+        </tr>
+      )
+    })
   }
 
   render () {
@@ -177,9 +169,9 @@ class FrequenResults extends React.Component {
           <Control>
             <ControlPiece>
               <select
-                id='filter'
-                name='filter'
-                value={this.props.filter}
+                id='filterSeg'
+                name='filterSeg'
+                value={this.props.filterSeg}
                 onChange={this.props.onChangeInput}
               >
                 <option value='all'>All Segments</option>
@@ -270,7 +262,7 @@ FrequenResults.propTypes = {
   classes: PropTypes.object,
   results: PropTypes.object,
   hovered: PropTypes.object,
-  filter: PropTypes.string.isRequired,
+  filterSeg: PropTypes.string.isRequired,
   analyzed: PropTypes.bool.isRequired,
   onChangeInput: PropTypes.func.isRequired,
   onMouseOver: PropTypes.func.isRequired,
