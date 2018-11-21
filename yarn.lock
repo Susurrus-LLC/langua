@@ -9448,10 +9448,10 @@ react-transition-group@^2.4.0:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react-vis@^1.11.4:
-  version "1.11.4"
-  resolved "https://registry.yarnpkg.com/react-vis/-/react-vis-1.11.4.tgz#f5d662d3439d45fd0f1f1186f725bf19b9b3a718"
-  integrity sha512-C/Uw0GKjN+Hriov6UD5HF6YaVqSq4j944z7IQZ/0pELtroHDowuyuxVc0myfT7G0SAoYwuvlIgNjxVi41l7bpQ==
+react-vis@^1.11.5:
+  version "1.11.5"
+  resolved "https://registry.yarnpkg.com/react-vis/-/react-vis-1.11.5.tgz#d2aa4931fd125ba2eafb7216a3e63e825360d261"
+  integrity sha512-8UyBwEnnF/uHHdUMPZD3EwoSy64Ag6Rfz7dI0j2zyKRfc7pMc54g0cIoT/SQ94l9EEGbZ3gMJSlyNAetEZxXpA==
   dependencies:
     d3-array "^1.2.0"
     d3-collection "^1.0.3"
