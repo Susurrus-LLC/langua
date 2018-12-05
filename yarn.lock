@@ -9356,10 +9356,10 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-snap@1.22.0:
-  version "1.22.0"
-  resolved "https://registry.yarnpkg.com/react-snap/-/react-snap-1.22.0.tgz#10bcda510ce13d7573f66a17741ae477ba958b0f"
-  integrity sha512-pkl0978O2+wveyFhY6oBWgG4ksircjnqR85nkiNlUSKIzi0TFLrdbotuMa2l9tnrKr3IvAlZBuO5c3kamQwF7g==
+react-snap@1.22.1:
+  version "1.22.1"
+  resolved "https://registry.yarnpkg.com/react-snap/-/react-snap-1.22.1.tgz#d34be268ed2234a8924fdaf023b8532261206c7e"
+  integrity sha512-W0wftNzRdw36L7zM2pBFCgVDXSdpDkntSbc047wEY2I5cYdhaKBm0P8UutbiGge2IXcAXBhQ685ZSymP+hRR8Q==
   dependencies:
     clean-css "4.2.1"
     express "4.16.4"
