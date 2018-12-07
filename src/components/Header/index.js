@@ -62,6 +62,16 @@ const Header = props => (
               Tree
             </NavLink>
           </li>
+          <li
+            className={classNames(
+              props.classes.navLink,
+              props.classes.disabled
+            )}
+          >
+            <NavLink to='/lex' activeClassName='active'>
+              Lex
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </div>

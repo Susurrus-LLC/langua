@@ -110,6 +110,17 @@ describe('Header', () => {
             Tree
           </a>
         </li>
+        <li
+          className="Header-navLink-0-1-8 Header-disabled-0-1-9"
+        >
+          <a
+            aria-current={null}
+            href="/lex"
+            onClick={[Function]}
+          >
+            Lex
+          </a>
+        </li>
       </ul>
     </nav>
   </div>

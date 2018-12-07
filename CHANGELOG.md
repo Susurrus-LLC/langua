@@ -10,6 +10,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Add loading animation.
 - Add a component tests to FrequenResults and GenResults.
+- Add template pages for LanguaLex.
 
 ### Changed 0.2.4
 

@@ -16,6 +16,8 @@ import Morph from '../../routes/Morph'
 import MorphHelp from '../../routes/Morph/Help'
 import Tree from '../../routes/Tree'
 import TreeHelp from '../../routes/Tree/Help'
+import Lex from '../../routes/Lex'
+import LexHelp from '../../routes/Lex/Help'
 
 import styles from './styles'
 
@@ -33,6 +35,8 @@ const Main = props => (
         <Route path='/morph' component={Morph} />
         <Route path='/tree/help' component={TreeHelp} />
         <Route path='/tree' component={Tree} />
+        <Route path='/lex/help' component={LexHelp} />
+        <Route path='/lex' component={Lex} />
         <Route path='/' component={Home} />
       </Switch>
     </div>

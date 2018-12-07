@@ -18,7 +18,7 @@
 
 ## Overview
 
-Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation. There are several main tools: [Gen](#gen), [Morph](#morph), [Deriv](#deriv), [Frequen](#frequen), and [Tree](#tree).
+Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation. There are several main tools: [Gen](#gen), [Morph](#morph), [Deriv](#deriv), [Frequen](#frequen), [Tree](#tree), and [Lex](#lex).
 
 ### Gen
 
@@ -39,6 +39,10 @@ LanguaFrequen is a tool for analyzing phoneme frequencies in a given text.
 ### Tree
 
 LanguaTree is a tool for drawing and labeling syntax trees.
+
+### Lex
+
+LanguaLex is a tool for building a lexicon or dictionary for a language and exporting it to various formats.
 
 ## Deployment
 

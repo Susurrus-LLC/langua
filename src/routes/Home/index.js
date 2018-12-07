@@ -51,6 +51,10 @@ const Home = props => (
       >
         LanguaTree is a tool for drawing and labeling syntax trees.
       </HomePanel>
+      <HomePanel classes={props.classes} linkTo='/lex' toolTitle='Lex' disabled>
+        LanguaTree is a tool for building a lexicon or dictionary for a language
+        and exporting it to various formats.
+      </HomePanel>
     </div>
     <p className={props.classes.siteDescription}>
       Langua is a full Progressive Web App; once the site has been loaded, its
