@@ -8,6 +8,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Changed 0.2.5
 
+- Adjust Frequen graph height to make bar width more consistent.
 - Update dependencies.
 
 ## [v0.2.4](https://github.com/nai888/langua/compare/v0.2.3...v0.2.4) - 2018-12-07

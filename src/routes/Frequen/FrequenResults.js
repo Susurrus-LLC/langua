@@ -188,7 +188,11 @@ class FrequenResults extends React.Component {
           >
             <FlexibleWidthXYPlot
               yType='ordinal'
-              height={v.ms2 * 16 * this.whichData().length}
+              height={
+                v.ms1 * 16 * this.whichData().length /* bar height */ +
+                v.ms3 * (this.whichData().length - 1) /* bar spacing */ +
+                64 /* top and bottom axes */
+              }
               margin={{
                 top: v.ms3 * 16,
                 right: v.ms5 * 16,
