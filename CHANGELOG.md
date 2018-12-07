@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format of this changelog is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased](https://github.com/nai888/langua/compare/v0.2.3...HEAD)
+## [Unreleased](https://github.com/nai888/langua/compare/v0.2.4...HEAD)
+
+### Changed 0.2.5
+
+- Update dependencies.
+
+## [v0.2.4](https://github.com/nai888/langua/compare/v0.2.3...v0.2.4) - 2018-12-07
 
 ### Added 0.2.4
 
@@ -17,6 +23,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Fix missing PropType in GenResults.
 - Adjust conditional display of cells in FrequenResults table to be more efficient.
 - Add additional filters to state.
+- Change `yarn test` to `yarn test-with-coverage` and change `yarn test-no-coverage` to `yarn test`.
 - Update dependencies.
 
 ## [v0.2.3](https://github.com/nai888/langua/compare/v0.2.2...v0.2.3) - 2018-10-29
