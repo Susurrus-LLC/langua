@@ -13,8 +13,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --coverage && codacy-coverage < ./coverage/lcov.info",
-    "test-no-coverage": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom",
+    "test-with-coverage": "react-scripts test --env=jsdom --coverage && codacy-coverage < ./coverage/lcov.info",
     "lintjs": "eslint src/**/*.js",
     "lintmd": "remark .",
     "format": "prettier-standard 'src/**/*.js'",
