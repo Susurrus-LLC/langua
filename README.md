@@ -87,10 +87,11 @@ For a full list of all changes made in each version of Langua, see the [Changelo
 
 - [x] **v0.0.x:** Building the architecture of the site.
 - [x] **v0.1.x:** Building the [Gen](#gen) tool; bug fixes and other small updates.
-- [ ] **v0.2.x:** [Gen](#gen) tool basic functionality working; building the [Frequen](#frequen) tool; bug fixes and other small updates.
-- [ ] **v0.3.x:** [Gen](#gen) and [Frequen](#frequen) tools basic functionality working; building the [Morph](#morph) tool; bug fixes and other small updates.
-- [ ] **v0.4.x:** [Gen](#gen), [Frequen](#frequen), and [Morph](#morph) tools basic functionality working; building the [Deriv](#deriv) tool; bug fixes and other small updates.
-- [ ] **v0.5.x:** [Gen](#gen), [Frequen](#frequen), [Morph](#morph), and [Deriv](#deriv) tools basic functionality working; building the [Tree](#tree) tool; bug fixes and other small updates.
+- [x] **v0.2.x:** [Gen](#gen) tool basic functionality working; building the [Frequen](#frequen) tool; bug fixes and other small updates.
+- [ ] **v0.3.x:** [Gen](#gen) and [Frequen](#frequen) tools basic functionality working; building the [Lex](#lex) tool; bug fixes and other small updates.
+- [ ] **v0.4.x:** [Gen](#gen), [Frequen](#frequen), and [Lex](#lex) tools basic functionality working; building the [Morph](#morph) tool; bug fixes and other small updates.
+- [ ] **v0.5.x:** [Gen](#gen), [Frequen](#frequen), [Lex](#lex), and [Morph](#morph) tools basic functionality working; building the [Deriv](#deriv) tool; bug fixes and other small updates.
+- [ ] **v0.6.x:** [Gen](#gen), [Frequen](#frequen), [Lex](#lex), [Morph](#morph), and [Deriv](#deriv) tools basic functionality working; building the [Tree](#tree) tool; bug fixes and other small updates.
 - [ ] **v1.x.x:** All tools functional; bug fixes and ongoing development.
 
 ## Contributing
@@ -127,6 +128,7 @@ Thank you to [Travis CI](https://travis-ci.com), [BrowserStack](https://www.brow
 Langua is licensed under the [GNU Affero General Public License v3.0](https://choosealicense.com/licenses/agpl-3.0/).
 
 ## Support on Beerpay
+
 Want to support continued work on Langua? Help me out with a couple of :beers:!
 
 [![Beerpay](https://beerpay.io/nai888/langua/badge.svg?style=beer)](https://beerpay.io/nai888/langua)
