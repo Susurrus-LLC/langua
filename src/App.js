@@ -12,7 +12,7 @@ import Main from './components/Main'
 import Footer from './components/Footer'
 
 export const canonical = 'https://nai888.github.io/langua/'
-export const siteTitle = 'Langua |'
+export const siteTitle = 'Langua'
 
 // String.endsWith() polyfill
 if (!String.prototype.endsWith) {
@@ -28,7 +28,7 @@ if (!String.prototype.endsWith) {
 const App = props => (
   <div className={props.classes.app}>
     <Helmet>
-      <title>{siteTitle} Language Tools</title>
+      <title>{siteTitle} | Language Tools</title>
       <meta charSet='utf-8' />
       <meta
         name='viewport'

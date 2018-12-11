@@ -12,6 +12,12 @@ import styles from './styles'
 
 import { canonical, siteTitle } from '../../App'
 
+export const frequenInfo = {
+  title: 'Frequen',
+  link: 'frequen',
+  description: 'is a tool for analyzing phoneme frequencies in a given text.'
+}
+
 class Frequen extends React.Component {
   constructor (props) {
     super(props)
@@ -86,15 +92,23 @@ class Frequen extends React.Component {
     return (
       <div className={this.props.classes.frequen}>
         <Helmet>
-          <title>{siteTitle} Frequen</title>
+          <title>
+            {siteTitle}
+            {frequenInfo.title}
+          </title>
           <meta
             name='description'
-            content='LanguaFrequen is a tool for analyzing phoneme frequencies in a given text.'
+            content={`${siteTitle}${frequenInfo.title} ${
+              frequenInfo.description
+            }`}
           />
-          <link rel='canonical' href={`${canonical}frequen/`} />
+          <link rel='canonical' href={`${canonical}${frequenInfo.link}/`} />
         </Helmet>
-        <ButtonLink route='/frequen/help'>Help</ButtonLink>
-        <h2 className='toolTitle'>LanguaFrequen</h2>
+        <ButtonLink route={`/${frequenInfo.link}/help`}>Help</ButtonLink>
+        <h2 className='toolTitle'>
+          {siteTitle}
+          {frequenInfo.title}
+        </h2>
         <FrequenForm
           styles={this.props.classes}
           state={this.state}

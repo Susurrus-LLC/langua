@@ -12,18 +12,31 @@ import styles from './styles'
 
 import { canonical, siteTitle } from '../../App'
 
+export const lexInfo = {
+  title: 'Lex',
+  link: 'lex',
+  description:
+    'is a tool for building a lexicon or dictionary for a language and exporting it to various formats.'
+}
+
 const Lex = props => (
   <div className={props.classes.lex}>
     <Helmet>
-      <title>{siteTitle} Lex</title>
+      <title>
+        {siteTitle}
+        {lexInfo.title}
+      </title>
       <meta
         name='description'
-        content='LanguaLex is a tool for building a lexicon or dictionary for a language and exporting it to various formats.'
+        content={`${siteTitle}${lexInfo.title} ${lexInfo.description}`}
       />
-      <link rel='canonical' href={`${canonical}lex/`} />
+      <link rel='canonical' href={`${canonical}${lexInfo.link}/`} />
     </Helmet>
-    <ButtonLink route='/lex/help'>Help</ButtonLink>
-    <h2 className='toolTitle'>LanguaLex</h2>
+    <ButtonLink route={`/${lexInfo.link}/help`}>Help</ButtonLink>
+    <h2 className='toolTitle'>
+      {siteTitle}
+      {lexInfo.title}
+    </h2>
     <Notice>This tool is still in planning.</Notice>
     <LexForm styles={props.classes} />
     <LexResults styles={props.classes} />

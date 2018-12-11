@@ -1,18 +1,24 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
+import { siteTitle } from '../../../App'
 import Help from '../../../components/Help'
 import Notice from '../../../components/Notice'
 
-const toolTitle = 'Deriv'
+import { derivInfo } from '../'
 
 const DerivHelp = props => (
-  <Help
-    toolTitle={toolTitle}
-    toolDescription={`Langua${toolTitle} is a tool for modeling word derivation according to arbitrary rules of morphosyntactics.`}
-    link='deriv'
-  >
+  <Help toolInfo={derivInfo}>
     <Notice>This tool is still in planning.</Notice>
+    <h3 id='using'>
+      Using {siteTitle}
+      {derivInfo.title}
+    </h3>
   </Help>
 )
+
+DerivHelp.propTypes = {
+  classes: PropTypes.object
+}
 
 export default DerivHelp

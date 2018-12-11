@@ -12,6 +12,13 @@ import styles from './styles'
 
 import { canonical, siteTitle } from '../../App'
 
+export const genInfo = {
+  title: 'Gen',
+  link: 'gen',
+  description:
+    'is a tool for automatically building a set of words based on arbitrary rules of phonotactics. This can be used to create a dummy vocabulary for linguistic experimentation, to generate words or names for a naming language in a work of fantasy or science fiction, or as the basis for building the vocabulary of a constructed language.'
+}
+
 class Gen extends React.Component {
   constructor (props) {
     super(props)
@@ -127,15 +134,21 @@ class Gen extends React.Component {
     return (
       <div className={classes.gen}>
         <Helmet>
-          <title>{siteTitle} Gen</title>
+          <title>
+            {siteTitle}
+            {genInfo.title}
+          </title>
           <meta
             name='description'
-            content='LanguaGen is a tool for automatically building a set of words based on arbitrary rules of phonotactics. This can be used to create a dummy vocabulary for linguistic experimentation, to generate words or names for a naming language in a work of fantasy or science fiction, or as the basis for building the vocabulary of a constructed language.'
+            content={`${siteTitle}${genInfo.title} ${genInfo.description}`}
           />
-          <link rel='canonical' href={`${canonical}gen/`} />
+          <link rel='canonical' href={`${canonical}${genInfo.link}/`} />
         </Helmet>
-        <ButtonLink route='/gen/help'>Help</ButtonLink>
-        <h2 className='toolTitle'>LanguaGen</h2>
+        <ButtonLink route={`/${genInfo.link}/help`}>Help</ButtonLink>
+        <h2 className='toolTitle'>
+          {siteTitle}
+          {genInfo.title}
+        </h2>
         <GenForm
           styles={this.props.classes}
           data={state.data}

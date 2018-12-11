@@ -1,20 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
+import { siteTitle } from '../../../App'
 import Help from '../../../components/Help'
 import Notice from '../../../components/Notice'
 
-const toolTitle = 'Frequen'
+import { frequenInfo } from '../'
 
 const FrequenHelp = props => (
-  <Help
-    toolTitle={toolTitle}
-    toolDescription={`Langua${toolTitle} is a tool for analyzing phoneme frequencies in a given text.`}
-    link='frequen'
-  >
+  <Help toolInfo={frequenInfo}>
     <Notice>This tool is still in development.</Notice>
     <h3 id='using'>
-      Using Langua
-      {toolTitle}
+      Using {siteTitle}
+      {frequenInfo.title}
     </h3>
     <h4 id='corpus'>Text Corpus</h4>
     <p>
@@ -90,10 +88,15 @@ const FrequenHelp = props => (
       >
         the Frequentizer
       </a>
-      . LanguaFrequen was mainly built as a modernized and updated version of
-      the Frequentizer.
+      . {siteTitle}
+      {frequenInfo.title} was mainly built as a modernized and updated version
+      of the Frequentizer.
     </p>
   </Help>
 )
+
+FrequenHelp.propTypes = {
+  classes: PropTypes.object
+}
 
 export default FrequenHelp

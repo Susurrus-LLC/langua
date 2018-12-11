@@ -1,18 +1,24 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
+import { siteTitle } from '../../../App'
 import Help from '../../../components/Help'
 import Notice from '../../../components/Notice'
 
-const toolTitle = 'Lex'
+import { lexInfo } from '../'
 
 const LexHelp = props => (
-  <Help
-    toolTitle={toolTitle}
-    toolDescription={`Langua${toolTitle} is a tool for building a lexicon or dictionary for a language and exporting it to various formats.`}
-    link='lex'
-  >
+  <Help toolInfo={lexInfo}>
     <Notice>This tool is still in planning.</Notice>
+    <h3 id='using'>
+      Using {siteTitle}
+      {lexInfo.title}
+    </h3>
   </Help>
 )
+
+LexHelp.propTypes = {
+  classes: PropTypes.object
+}
 
 export default LexHelp

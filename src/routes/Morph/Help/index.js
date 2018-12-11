@@ -1,18 +1,24 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
+import { siteTitle } from '../../../App'
 import Help from '../../../components/Help'
 import Notice from '../../../components/Notice'
 
-const toolTitle = 'Morph'
+import { morphInfo } from '../'
 
 const MorphHelp = props => (
-  <Help
-    toolTitle={toolTitle}
-    toolDescription={`Langua${toolTitle} is a tool for modeling historical sound change according to arbitrary rules of phonetic change. It can also be used to reverse historical sound change according to those same rules in order to guess at a word’s proto-language roots.`}
-    link='morph'
-  >
+  <Help toolInfo={morphInfo}>
     <Notice>This tool is still in planning.</Notice>
+    <h3 id='using'>
+      Using {siteTitle}
+      {morphInfo.title}
+    </h3>
   </Help>
 )
+
+MorphHelp.propTypes = {
+  classes: PropTypes.object
+}
 
 export default MorphHelp

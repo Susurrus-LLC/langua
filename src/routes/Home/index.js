@@ -2,6 +2,15 @@ import React from 'react'
 import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
 
+import { siteTitle } from '../../App'
+
+import { genInfo } from '../Gen'
+import { morphInfo } from '../Morph'
+import { derivInfo } from '../Deriv'
+import { frequenInfo } from '../Frequen'
+import { treeInfo } from '../Tree'
+import { lexInfo } from '../Lex'
+
 import HomePanel from './HomePanel'
 import styles from './styles'
 
@@ -12,54 +21,57 @@ const Home = props => (
       experimentation, learning, analysis, or creation.
     </p>
     <div className={props.classes.grid}>
-      <HomePanel classes={props.classes} linkTo='/gen' toolTitle='Gen'>
-        LanguaGen is a tool for automatically building a set of words based on
-        arbitrary rules of phonotactics. This can be used to create a dummy
-        vocabulary for linguistic experimentation, to generate words or names
-        for a naming language in a work of fantasy or science fiction, or as the
-        basis for building the vocabulary of a constructed language.
+      <HomePanel
+        classes={props.classes}
+        linkTo={`${genInfo.link}/`}
+        toolTitle={genInfo.title}
+      >
+        {`${siteTitle}${genInfo.title} ${genInfo.description}`}
       </HomePanel>
       <HomePanel
         classes={props.classes}
-        linkTo='/morph'
-        toolTitle='Morph'
+        linkTo={`${morphInfo.link}/`}
+        toolTitle={morphInfo.title}
         disabled
       >
-        LanguaMorph is a tool for modeling historical sound change according to
-        arbitrary rules of phonetic change. It can also be used to reverse
-        historical sound change according to those same rules in order to guess
-        at a word&rsquo;s proto-language roots.
+        {`${siteTitle}${morphInfo.title} ${morphInfo.description}`}
       </HomePanel>
       <HomePanel
         classes={props.classes}
-        linkTo='/deriv'
-        toolTitle='Deriv'
+        linkTo={`${derivInfo.link}/`}
+        toolTitle={derivInfo.title}
         disabled
       >
-        LanguaDeriv is a tool for modeling word derivation according to
-        arbitrary rules of morphosyntactics.
-      </HomePanel>
-      <HomePanel classes={props.classes} linkTo='/frequen' toolTitle='Frequen'>
-        LanguaFrequen is a tool for analyzing phoneme frequencies in a given
-        text.
+        {`${siteTitle}${derivInfo.title} ${derivInfo.description}`}
       </HomePanel>
       <HomePanel
         classes={props.classes}
-        linkTo='/tree'
-        toolTitle='Tree'
+        linkTo={`${frequenInfo.link}/`}
+        toolTitle={frequenInfo.title}
+      >
+        {`${siteTitle}${frequenInfo.title} ${frequenInfo.description}`}
+      </HomePanel>
+      <HomePanel
+        classes={props.classes}
+        linkTo={`${treeInfo.link}/`}
+        toolTitle={treeInfo.title}
         disabled
       >
-        LanguaTree is a tool for drawing and labeling syntax trees.
+        {`${siteTitle}${treeInfo.title} ${treeInfo.description}`}
       </HomePanel>
-      <HomePanel classes={props.classes} linkTo='/lex' toolTitle='Lex' disabled>
-        LanguaTree is a tool for building a lexicon or dictionary for a language
-        and exporting it to various formats.
+      <HomePanel
+        classes={props.classes}
+        linkTo={`${lexInfo.link}/`}
+        toolTitle={lexInfo.title}
+        disabled
+      >
+        {`${siteTitle}${lexInfo.title} ${lexInfo.description}`}
       </HomePanel>
     </div>
     <p className={props.classes.siteDescription}>
-      Langua is a full Progressive Web App; once the site has been loaded, its
-      full functionality is available even offline. Langua can also be added to
-      the homescreen of your tablet or mobile device for easy access.
+      {siteTitle} is a full Progressive Web App; once the site has been loaded,
+      its full functionality is available even offline. {siteTitle} can also be
+      added to the homescreen of your tablet or mobile device for easy access.
     </p>
   </div>
 )

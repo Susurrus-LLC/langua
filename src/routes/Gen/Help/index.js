@@ -1,19 +1,17 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
+import { siteTitle } from '../../../App'
 import Help from '../../../components/Help'
 import Notice from '../../../components/Notice'
 
-const toolTitle = 'Gen'
+import { genInfo } from '../'
 
 const GenHelp = props => (
-  <Help
-    toolTitle={toolTitle}
-    toolDescription={`Langua${toolTitle} is a tool for automatically building a set of words based on arbitrary rules of phonotactics. This can be used to create a dummy vocabulary for linguistic experimentation, to generate words or names for a naming language in a work of fantasy or science fiction, or as the basis for building the vocabulary of a constructed language.`}
-    link='gen'
-  >
+  <Help toolInfo={genInfo}>
     <h3 id='using'>
-      Using Langua
-      {toolTitle}
+      Using {siteTitle}
+      {genInfo.title}
     </h3>
     <p>
       The most important part of the tool is the <strong>Pattern</strong>. This
@@ -150,10 +148,15 @@ const GenHelp = props => (
       >
         Awkwords
       </a>
-      . LanguaGen was mainly built as a modernized and updated version of
+      . {siteTitle}
+      {genInfo.title} was mainly built as a modernized and updated version of
       Awkwords.
     </p>
   </Help>
 )
+
+GenHelp.propTypes = {
+  classes: PropTypes.object
+}
 
 export default GenHelp
