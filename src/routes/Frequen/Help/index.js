@@ -57,7 +57,8 @@ const FrequenHelp = props => (
     <p>
       When ready, click the <strong>Analyze</strong> button to run the analysis.
       The tool will draw a graph and display a table showing the frequencies of
-      each of the identified segments in the text corpus.
+      each of the identified segments in the text corpus. Segments that never
+      occur will be omitted from the graph and table.
     </p>
     <h4 id='filtering'>Filtering</h4>
     <p>

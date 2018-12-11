@@ -178,6 +178,17 @@ class FrequenService {
         count += elObj.count
       })
 
+      // If a segment occurs 0 times, remove it from the results
+      let numToRemove = 0
+
+      resArr.forEach(elObj => {
+        if (elObj.count === 0) {
+          numToRemove += 1
+        }
+      })
+
+      resArr.splice(0, numToRemove)
+
       return resArr.map((d, i) => ({
         x: (d.count / count) * 100,
         y: d.segment,
