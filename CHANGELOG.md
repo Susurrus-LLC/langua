@@ -6,11 +6,16 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.2.4...HEAD)
 
+### Added 0.2.5
+
+- Create a Tool component.
+
 ### Changed 0.2.5
 
 - Adjust Frequen graph height to make bar width more consistent.
 - Remove unused segments from Frequen graph and table.
 - Extract a tool info object for each tool to populate those details across the site.
+- Refactor all tools to use the new Tool component
 - Update dependencies.
 
 ## [v0.2.4](https://github.com/nai888/langua/compare/v0.2.3...v0.2.4) - 2018-12-07
@@ -61,11 +66,12 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Add filtering to the Frequen results.
 - Add information about saving and opening settings in FrequenHelp.
 - Add acknowledgments to the bottom of GenHelp and FrequenHelp.
+- Create a Help component.
 
 ### Changed 0.2.2
 
 - Update Gen description in meta tags, in Home, and in the README.
-- Create a Help component and refactor all Help pages to use the new component.
+- Refactor all Help pages to use the new Help component.
 - Fix bug with opening a `.lngg` file not updating state immediately.
 - Update dependencies.
 

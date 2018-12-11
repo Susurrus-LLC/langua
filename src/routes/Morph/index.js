@@ -1,16 +1,13 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
 
 import Notice from '../../components/Notice'
-import ButtonLink from '../../components/Button/Link'
+import Tool from '../../components/Tool'
 
 import MorphForm from './MorphForm'
 import MorphResults from './MorphResults'
 import styles from './styles'
-
-import { canonical, siteTitle } from '../../App'
 
 export const morphInfo = {
   title: 'Morph',
@@ -20,27 +17,11 @@ export const morphInfo = {
 }
 
 const Morph = props => (
-  <div className={props.classes.morph}>
-    <Helmet>
-      <title>
-        {siteTitle}
-        {morphInfo.title}
-      </title>
-      <meta
-        name='description'
-        content={`${siteTitle}${morphInfo.title} ${morphInfo.description}`}
-      />
-      <link rel='canonical' href={`${canonical}${morphInfo.link}/`} />
-    </Helmet>
-    <ButtonLink route={`/${morphInfo.link}/help`}>Help</ButtonLink>
-    <h2 className='toolTitle'>
-      {siteTitle}
-      {morphInfo.title}
-    </h2>
+  <Tool toolInfo={morphInfo}>
     <Notice>This tool is still in planning.</Notice>
     <MorphForm styles={props.classes} />
     <MorphResults styles={props.classes} />
-  </div>
+  </Tool>
 )
 
 Morph.propTypes = {

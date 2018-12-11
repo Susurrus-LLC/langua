@@ -1,16 +1,13 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
 
-import ButtonLink from '../../components/Button/Link'
+import Tool from '../../components/Tool'
 
 import FrequenForm from './FrequenForm'
 import FrequenResults from './FrequenResults'
 import frequenService from './FrequenService'
 import styles from './styles'
-
-import { canonical, siteTitle } from '../../App'
 
 export const frequenInfo = {
   title: 'Frequen',
@@ -90,25 +87,7 @@ class Frequen extends React.Component {
 
   render () {
     return (
-      <div className={this.props.classes.frequen}>
-        <Helmet>
-          <title>
-            {siteTitle}
-            {frequenInfo.title}
-          </title>
-          <meta
-            name='description'
-            content={`${siteTitle}${frequenInfo.title} ${
-              frequenInfo.description
-            }`}
-          />
-          <link rel='canonical' href={`${canonical}${frequenInfo.link}/`} />
-        </Helmet>
-        <ButtonLink route={`/${frequenInfo.link}/help`}>Help</ButtonLink>
-        <h2 className='toolTitle'>
-          {siteTitle}
-          {frequenInfo.title}
-        </h2>
+      <Tool toolInfo={frequenInfo}>
         <FrequenForm
           styles={this.props.classes}
           state={this.state}
@@ -125,7 +104,7 @@ class Frequen extends React.Component {
           onMouseOver={this.onMouseOver}
           onMouseOut={this.onMouseOut}
         />
-      </div>
+      </Tool>
     )
   }
 }

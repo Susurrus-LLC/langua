@@ -1,16 +1,13 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
 
-import ButtonLink from '../../components/Button/Link'
+import Tool from '../../components/Tool'
 
 import GenForm from './GenForm'
 import GenResults from './GenResults'
 import genService from './GenService'
 import styles from './styles'
-
-import { canonical, siteTitle } from '../../App'
 
 export const genInfo = {
   title: 'Gen',
@@ -23,7 +20,6 @@ class Gen extends React.Component {
   constructor (props) {
     super(props)
     this.onChangeInput = this.onChangeInput.bind(this)
-    this.classes = props.classes
     this.state = {
       data: genService.getData(),
       status: ['ok'],
@@ -128,27 +124,10 @@ class Gen extends React.Component {
   }
 
   render () {
-    const classes = this.classes
     const state = this.state
 
     return (
-      <div className={classes.gen}>
-        <Helmet>
-          <title>
-            {siteTitle}
-            {genInfo.title}
-          </title>
-          <meta
-            name='description'
-            content={`${siteTitle}${genInfo.title} ${genInfo.description}`}
-          />
-          <link rel='canonical' href={`${canonical}${genInfo.link}/`} />
-        </Helmet>
-        <ButtonLink route={`/${genInfo.link}/help`}>Help</ButtonLink>
-        <h2 className='toolTitle'>
-          {siteTitle}
-          {genInfo.title}
-        </h2>
+      <Tool toolInfo={genInfo}>
         <GenForm
           styles={this.props.classes}
           data={state.data}
@@ -162,7 +141,7 @@ class Gen extends React.Component {
           results={state.results}
           stats={state.stats}
         />
-      </div>
+      </Tool>
     )
   }
 }
