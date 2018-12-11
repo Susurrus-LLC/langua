@@ -14,6 +14,17 @@ import Footer from './components/Footer'
 export const canonical = 'https://nai888.github.io/langua/'
 export const siteTitle = 'Langua |'
 
+// String.endsWith() polyfill
+if (!String.prototype.endsWith) {
+  // eslint-disable-next-line
+  String.prototype.endsWith = (search, thisLen) => {
+    if (thisLen === undefined || thisLen > this.length) {
+      thisLen = this.length
+    }
+    return this.substring(thisLen - search.length, thisLen) === search
+  }
+}
+
 const App = props => (
   <div className={props.classes.app}>
     <Helmet>

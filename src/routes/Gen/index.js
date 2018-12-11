@@ -12,17 +12,6 @@ import styles from './styles'
 
 import { canonical, siteTitle } from '../../App'
 
-// String.endsWith() polyfill
-if (!String.prototype.endsWith) {
-  // eslint-disable-next-line
-  String.prototype.endsWith = (search, thisLen) => {
-    if (thisLen === undefined || thisLen > this.length) {
-      thisLen = this.length
-    }
-    return this.substring(thisLen - search.length, thisLen) === search
-  }
-}
-
 class Gen extends React.Component {
   constructor (props) {
     super(props)
