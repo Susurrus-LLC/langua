@@ -14,6 +14,20 @@ const DerivHelp = props => (
       Using {siteTitle}
       {derivInfo.title}
     </h3>
+    <h3 id='acknowledgments'>Acknowledgments</h3>
+    <p>
+      Much thanks should be given to Jan Strasser and{' '}
+      <a
+        href='http://akana.conlang.org/tools/derivizer.html'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        the Derivizer
+      </a>
+      . {siteTitle}
+      {derivInfo.title} was mainly built as a modernized and updated version of
+      the Derivizer.
+    </p>
   </Help>
 )
 
