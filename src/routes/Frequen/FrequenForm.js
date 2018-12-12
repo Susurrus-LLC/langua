@@ -61,7 +61,7 @@ const FrequenForm = props => {
             </Button>
           </ControlPiece>
           <ControlPiece>
-            <label>
+            <label htmlFor='distinguishCase'>
               <input
                 type='checkbox'
                 id='distinguishCase'
