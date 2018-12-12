@@ -14,14 +14,14 @@ export const headerFont = '"Noto Serif", "Palatino Linotype", Palatino, serif'
 
 // All sizes are given as pure numbers, so must be given the unit 'rem'
 
-export const ratio = 1.333
+export const ratio = 4.0 / 3.0
 export const ms1 = 1.0
 export const ms0 = ms1 / Math.pow(ratio, 1) // 0.750
 export const ms2 = ms1 * Math.pow(ratio, 1) // 1.333
 export const ms3 = ms1 * Math.pow(ratio, 2) // 1.777
-export const ms4 = ms1 * Math.pow(ratio, 3) // 2.369
-export const ms5 = ms1 * Math.pow(ratio, 4) // 3.157
-export const ms6 = ms1 * Math.pow(ratio, 5) // 4.209
+export const ms4 = ms1 * Math.pow(ratio, 3) // 2.370
+export const ms5 = ms1 * Math.pow(ratio, 4) // 3.160
+export const ms6 = ms1 * Math.pow(ratio, 5) // 4.214
 export const lnht = ms2 / 2 //                 0.6665
 
 // Colors based on https://tallys.github.io/color-theory/
