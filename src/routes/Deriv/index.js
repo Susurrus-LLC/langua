@@ -5,9 +5,9 @@ import PropTypes from 'prop-types'
 import Notice from '../../components/Notice'
 import Tool from '../../components/Tool'
 
-import { defData } from './defaultData'
 import DerivForm from './DerivForm'
 import DerivResults from './DerivResults'
+import derivService from './DerivService'
 import styles from './styles'
 
 export const derivInfo = {
@@ -22,12 +22,19 @@ class Deriv extends React.Component {
     super(props)
     this.onDerive = this.onDerive.bind(this)
     this.onChange = this.onChange.bind(this)
-    this.state = defData
+    this.state = derivService.getData()
   }
 
   onDerive (e) {
     e.preventDefault()
-    return null
+    // Save the current state to storage
+    derivService.setStorage(this.state)
+
+    const response = derivService.derive(this.state)
+
+    this.setState(prevState => ({
+      results: response
+    }))
   }
 
   onChange (e) {
@@ -35,7 +42,7 @@ class Deriv extends React.Component {
       e.preventDefault()
       if (e.target.id === 'save') {
         // Save the current state to storage and generate a file
-        // genService.save(this.state)
+        derivService.save(this.state)
       }
     } else if (e.target.type === 'file') {
       e.preventDefault()
@@ -47,7 +54,7 @@ class Deriv extends React.Component {
           this.setState(prevState => response)
         }
       }
-      // genService.open(file, updateState)
+      derivService.open(file, updateState)
     } else {
       const val = e.target.value
       const name = e.target.name
@@ -55,6 +62,12 @@ class Deriv extends React.Component {
         [name]: val
       }))
     }
+  }
+
+  componentWillUnmount () {
+    this.setState(prevState => ({
+      results: []
+    }))
   }
 
   render () {

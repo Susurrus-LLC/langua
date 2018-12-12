@@ -20,8 +20,11 @@ class FileProcessor {
       case 'tree':
         filename = 'LanguaTree.lngt'
         break
+      case 'lex':
+        filename = 'LanguaLex.lngl'
+        break
       default:
-        filename = 'Langua.lngl'
+        filename = 'Langua.lnga'
     }
 
     const file = new window.File([JSON.stringify(data, null, 2)], filename, {

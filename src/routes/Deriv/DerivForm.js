@@ -13,6 +13,94 @@ import ControlPiece from '../../components/Control/Piece'
 const DerivForm = props => {
   const filePicker = React.createRef()
 
+  const lexemeRows = props.data.lexemes.map((lexeme, index) => (
+    <div key={index} className={props.styles.lexemeRow}>
+      <input
+        type='text'
+        id={`lw${index}`}
+        name={`lw${index}`}
+        className={props.styles.lexemeInput}
+        value={lexeme.lexeme}
+        onChange={props.change}
+      />
+      <input
+        type='text'
+        id={`ld${index}`}
+        name={`ld${index}`}
+        className={props.styles.lexemeDefInput}
+        value={lexeme.definition}
+        onChange={props.change}
+      />
+      <div className={props.styles.clearButton}>
+        <Button
+          id={`lc${index}`}
+          onClick={props.change}
+          ver='danger'
+          addClass='small'
+          type='button'
+        >
+          Delete
+        </Button>
+      </div>
+    </div>
+  ))
+
+  const derivationRows = props.data.derivations.map((derivation, index) => (
+    <div key={index} className={props.styles.derivationRow}>
+      <input
+        type='text'
+        id={`da${index}`}
+        name={`da${index}`}
+        className={props.styles.derivationInput}
+        value={derivation.derivation}
+        onChange={props.change}
+      />
+      <input
+        type='text'
+        id={`dl${index}`}
+        name={`dl${index}`}
+        className={props.styles.derivationLabelInput}
+        value={derivation.label}
+        onChange={props.change}
+      />
+      <input
+        type='text'
+        id={`dd${index}`}
+        name={`dd${index}`}
+        className={props.styles.derivationDefInput}
+        value={derivation.definition}
+        onChange={props.change}
+      />
+      <div className={props.styles.clearButton}>
+        <Button
+          id={`dc${index}`}
+          onClick={props.change}
+          ver='danger'
+          addClass='small'
+          type='button'
+        >
+          Delete
+        </Button>
+      </div>
+    </div>
+  ))
+
+  const addButton = which => {
+    return (
+      <div className={props.styles.addingRow}>
+        <Button
+          onClick={props.change}
+          id={`${which}Add`}
+          ver='success'
+          addClass='small'
+          type='button'
+        >
+          Add
+        </Button>
+      </div>
+    )
+  }
+
   const invokeFilePicker = e => {
     e.preventDefault()
     filePicker.current.value = ''
@@ -21,6 +109,16 @@ const DerivForm = props => {
 
   return (
     <Form>
+      <div className={classNames(props.styles.lexemes, props.classes.part)}>
+        <h5 className={props.classes.sectionTitle}>Lexemes</h5>
+        {lexemeRows}
+        {addButton('lex')}
+      </div>
+      <div className={classNames(props.styles.derivations, props.classes.part)}>
+        <h5 className={props.classes.sectionTitle}>Derivational Affixes</h5>
+        {derivationRows}
+        {addButton('der')}
+      </div>
       <Control addedClasses={props.classes.part}>
         <ControlSide side='left'>
           <ControlPiece>
