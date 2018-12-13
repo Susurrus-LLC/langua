@@ -16,7 +16,7 @@ const Footer = props => {
   const authorURL = 'https://github.com/nai888'
   const appGhURL = 'https://github.com/nai888/langua'
   const appBpURL = 'https://beerpay.io/nai888/langua'
-  const version = '0.2.6'
+  const version = '0.3.0'
 
   return (
     <footer>

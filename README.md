@@ -88,10 +88,10 @@ For a full list of all changes made in each version of Langua, see the [Changelo
 - [x] **v0.0.x:** Building the architecture of the site.
 - [x] **v0.1.x:** Building the [Gen](#gen) tool; bug fixes and other small updates.
 - [x] **v0.2.x:** [Gen](#gen) tool basic functionality working; building the [Frequen](#frequen) tool; bug fixes and other small updates.
-- [ ] **v0.3.x:** [Gen](#gen) and [Frequen](#frequen) tools basic functionality working; building the [Lex](#lex) tool; bug fixes and other small updates.
-- [ ] **v0.4.x:** [Gen](#gen), [Frequen](#frequen), and [Lex](#lex) tools basic functionality working; building the [Morph](#morph) tool; bug fixes and other small updates.
-- [ ] **v0.5.x:** [Gen](#gen), [Frequen](#frequen), [Lex](#lex), and [Morph](#morph) tools basic functionality working; building the [Deriv](#deriv) tool; bug fixes and other small updates.
-- [ ] **v0.6.x:** [Gen](#gen), [Frequen](#frequen), [Lex](#lex), [Morph](#morph), and [Deriv](#deriv) tools basic functionality working; building the [Tree](#tree) tool; bug fixes and other small updates.
+- [x] **v0.3.x:** [Gen](#gen) and [Frequen](#frequen) tools basic functionality working; building the [Deriv](#deriv) tool; bug fixes and other small updates.
+- [ ] **v0.4.x:** [Gen](#gen), [Frequen](#frequen), and [Deriv](#deriv) tools basic functionality working; building the [Morph](#morph) tool; bug fixes and other small updates.
+- [ ] **v0.5.x:** [Gen](#gen), [Frequen](#frequen), [Deriv](#deriv), and [Morph](#morph) tools basic functionality working; building the [Lex](#lex) tool; bug fixes and other small updates.
+- [ ] **v0.6.x:** [Gen](#gen), [Frequen](#frequen), [Deriv](#deriv), [Morph](#morph), and [Lex](#lex) tools basic functionality working; building the [Tree](#tree) tool; bug fixes and other small updates.
 - [ ] **v1.x.x:** All tools functional; bug fixes and ongoing development.
 
 ## Contributing

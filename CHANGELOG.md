@@ -6,13 +6,13 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.2.5...HEAD)
 
-### Added 0.2.6
+### Added 0.3.0
 
-- Add the Deriv form controls.
+- Build the Deriv form.
 - Add the Deriv default data.
 - Start adding instructions to Deriv Help.
 
-### Changed 0.2.6
+### Changed 0.3.0
 
 - Update dependencies.
 
