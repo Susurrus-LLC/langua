@@ -28,6 +28,7 @@ const GenForm = props => {
         name={`v${index}`}
         value={subpattern.selected}
         onChange={props.change}
+        className={props.styles.select}
       >
         {selectOptions}
       </select>
