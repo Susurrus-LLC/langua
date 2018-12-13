@@ -8,7 +8,7 @@ import { defData } from './defaultData'
 class DerivService {
   constructor () {
     this.storage = window.localStorage
-    this.item = 'frequen'
+    this.item = 'deriv'
     this.getData = this.getData.bind(this)
     this.setStorage = this.setStorage.bind(this)
     this.derive = this.derive.bind(this)
