@@ -36,6 +36,9 @@ const styles = {
       left: 0
     }
   },
+  subpatternInput: {
+    flexGrow: 1
+  },
   patternInput: {
     width: '100%',
     padding: 1,
