@@ -189,7 +189,20 @@ DerivForm.propTypes = {
   data: PropTypes.shape({
     words: PropTypes.number.isRequired,
     type: PropTypes.oneOf(['any', 'single base', 'single derivation'])
-      .isRequired
+      .isRequired,
+    lexemes: PropTypes.arrayOf(
+      PropTypes.shape({
+        lexeme: PropTypes.string.isRequired,
+        definition: PropTypes.string.isRequired
+      })
+    ),
+    derivations: PropTypes.arrayOf(
+      PropTypes.shape({
+        derivation: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        definition: PropTypes.string.isRequired
+      })
+    )
   }).isRequired,
   derive: PropTypes.func.isRequired,
   change: PropTypes.func.isRequired
