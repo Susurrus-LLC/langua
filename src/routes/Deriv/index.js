@@ -20,29 +20,33 @@ export const derivInfo = {
 class Deriv extends React.Component {
   constructor (props) {
     super(props)
-    this.onDerive = this.onDerive.bind(this)
     this.onChange = this.onChange.bind(this)
     this.state = derivService.getData()
-  }
-
-  onDerive (e) {
-    e.preventDefault()
-    // Save the current state to storage
-    derivService.setStorage(this.state)
-
-    const response = derivService.derive(this.state)
-
-    this.setState(prevState => ({
-      results: response
-    }))
   }
 
   onChange (e) {
     if (e.target.tagName === 'BUTTON') {
       e.preventDefault()
-      if (e.target.id === 'save') {
+      if (e.target.type === 'submit') {
+        // Derive the output
+        const response = derivService.derive(this.state)
+        this.setState(prevState => ({
+          results: response
+        }))
+        // Save the current state to storage
+        derivService.setStorage(this.state)
+      } else if (e.target.id === 'save') {
         // Save the current state to storage and generate a file
         derivService.save(this.state)
+      } else if (e.target.id.slice(3) === 'Add') {
+        const which = e.target.id.slice(0, 3)
+        // When the add button is clicked, add a blank row to state
+        this.setState(prevState => derivService.add(this.state, which))
+      } else if (e.target.id.slice(1, 2) === 'c') {
+        // When a row is cleared, delete the corresponding row from state
+        const idNum = e.target.id.slice(2)
+        const which = e.target.id.slice(0, 1)
+        this.setState(prevState => derivService.clear(this.state, idNum, which))
       }
     } else if (e.target.type === 'file') {
       e.preventDefault()
@@ -56,11 +60,31 @@ class Deriv extends React.Component {
       }
       derivService.open(file, updateState)
     } else {
+      const idNum = e.target.id.slice(2)
+      const which = e.target.id.slice(0, 2)
       const val = e.target.value
       const name = e.target.name
-      this.setState(prevState => ({
-        [name]: val
-      }))
+      if (
+        which === 'lw' ||
+        which === 'ld' ||
+        which === 'da' ||
+        which === 'dl' ||
+        which === 'dd'
+      ) {
+        this.setState(prevState =>
+          derivService.changeInput(this.state, idNum, which, val)
+        )
+      } else if (e.target.name === 'words') {
+        const response = derivService.wordNumChange(this.state, val)
+        if (response) {
+          this.setState(prevState => response)
+        }
+        this.setState(prevState => derivService.wordNumChange(this.state, val))
+      } else {
+        this.setState(prevState => ({
+          [name]: val
+        }))
+      }
     }
   }
 
@@ -77,7 +101,6 @@ class Deriv extends React.Component {
         <DerivForm
           styles={this.props.classes}
           data={this.state}
-          derive={this.onDerive}
           change={this.onChange}
         />
         <DerivResults styles={this.props.classes} />

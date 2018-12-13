@@ -122,7 +122,7 @@ const DerivForm = props => {
       <Control addedClasses={props.classes.part}>
         <ControlSide side='left'>
           <ControlPiece>
-            <Button type='submit' ver='neutral' onClick={props.Derive}>
+            <Button type='submit' ver='neutral' onClick={props.change}>
               Derive
             </Button>
           </ControlPiece>
@@ -204,7 +204,6 @@ DerivForm.propTypes = {
       })
     )
   }).isRequired,
-  derive: PropTypes.func.isRequired,
   change: PropTypes.func.isRequired
 }
 

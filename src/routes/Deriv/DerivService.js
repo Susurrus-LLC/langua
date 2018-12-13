@@ -11,6 +11,9 @@ class DerivService {
     this.item = 'deriv'
     this.getData = this.getData.bind(this)
     this.setStorage = this.setStorage.bind(this)
+    this.add = this.add.bind(this)
+    this.clear = this.clear.bind(this)
+    this.changeInput = this.changeInput.bind(this)
     this.derive = this.derive.bind(this)
     this.save = this.save.bind(this)
     this.open = this.open.bind(this)
@@ -46,9 +49,78 @@ class DerivService {
     }
   }
 
+  // Add a new row to the form
+  add (data, which) {
+    let newData = JSON.parse(JSON.stringify(data))
+    if (which === 'lex') {
+      newData.lexemes.push({ lexeme: '', definition: '' })
+    } else {
+      newData.derivations.push({ derivation: '', label: '', definition: '' })
+    }
+    return newData
+  }
+
+  // Remove a row from the form
+  clear (data, num, which) {
+    let newData = JSON.parse(JSON.stringify(data))
+    if (which === 'l') {
+      newData.lexemes.splice(num, 1)
+    } else {
+      newData.derivations.splice(num, 1)
+    }
+    return newData
+  }
+
+  // Update an input field
+  changeInput (data, num, which, val) {
+    let newData = JSON.parse(JSON.stringify(data))
+    switch (which) {
+      case 'lw':
+        newData.lexemes[num].lexeme = val
+        break
+      case 'ld':
+        newData.lexemes[num].definition = val
+        break
+      case 'da':
+        newData.derivations[num].derivation = val
+        break
+      case 'dl':
+        newData.derivations[num].label = val
+        break
+      case 'dd':
+        newData.derivations[num].definition = val
+        break
+      default:
+        break
+    }
+    return newData
+  }
+
+  // When the number of desired words is changed, create a new version of state
+  wordNumChange (data, val) {
+    val = +val
+    // Limit number entry to between 1 and 9999
+    if (val < 1) {
+      val = 1
+    } else if (val > 9999) {
+      val = 9999
+    }
+
+    // Only change state if the number is between 1 and 9999
+    if (val > 0 && val < 10000) {
+      let newData = JSON.parse(JSON.stringify(data))
+      newData.words = val
+      return newData
+    } else {
+      // Otherwise, keep state the same
+      return false
+    }
+  }
+
   // Derive words from the data
   derive (data) {
-    return []
+    let results = []
+    return results
   }
 
   // Save the current state to storage and generate a file
