@@ -59,8 +59,8 @@ const DerivForm = props => {
         type='text'
         id={`dl${index}`}
         name={`dl${index}`}
-        className={props.styles.derivationLabelInput}
-        value={derivation.label}
+        className={props.styles.derivationGlossInput}
+        value={derivation.gloss}
         onChange={props.change}
       />
       <input
@@ -146,10 +146,10 @@ const DerivForm = props => {
           <h6
             className={classNames(
               props.styles.columnLabel,
-              props.styles.labelLabel
+              props.styles.glossLabel
             )}
           >
-            Label
+            Gloss
           </h6>
           <h6
             className={classNames(
@@ -243,7 +243,7 @@ DerivForm.propTypes = {
     derivations: PropTypes.arrayOf(
       PropTypes.shape({
         derivation: PropTypes.string.isRequired,
-        label: PropTypes.string.isRequired,
+        gloss: PropTypes.string.isRequired,
         definition: PropTypes.string.isRequired
       })
     )

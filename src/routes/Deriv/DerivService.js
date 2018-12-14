@@ -55,7 +55,7 @@ class DerivService {
     if (which === 'lex') {
       newData.lexemes.push({ lexeme: '', definition: '' })
     } else {
-      newData.derivations.push({ derivation: '', label: '', definition: '' })
+      newData.derivations.push({ derivation: '', gloss: '', definition: '' })
     }
     return newData
   }
@@ -85,7 +85,7 @@ class DerivService {
         newData.derivations[num].derivation = val
         break
       case 'dl':
-        newData.derivations[num].label = val
+        newData.derivations[num].gloss = val
         break
       case 'dd':
         newData.derivations[num].definition = val
@@ -276,7 +276,7 @@ class DerivService {
 
         const derivationSchema = schema({
           derivation: String,
-          label: String,
+          gloss: String,
           definition: String
         })
 

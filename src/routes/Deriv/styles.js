@@ -36,10 +36,10 @@ const styles = {
   affixLabel: {
     width: `${2 * v.ms4}rem`
   },
-  derivationLabelInput: {
+  derivationGlossInput: {
     width: `${2 * v.ms5}rem`
   },
-  labelLabel: {
+  glossLabel: {
     width: `${2 * v.ms5}rem`
   },
   derivationDefInput: {

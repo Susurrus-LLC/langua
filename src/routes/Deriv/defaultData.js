@@ -26,23 +26,23 @@ export const defData = {
   derivations: [
     {
       derivation: '-vo',
-      label: 'person',
+      gloss: 'person',
       definition:
         'Creates a noun referring to a person associated with the base.'
     },
     {
       derivation: '-lu',
-      label: 'place',
+      gloss: 'place',
       definition: 'Creates a noun denoting the location of the base.'
     },
     {
       derivation: 'ña-',
-      label: 'abstract',
+      gloss: 'abstract',
       definition: 'Creates an abstract noun.'
     },
     {
       derivation: 'k-sa',
-      label: 'collective',
+      gloss: 'collective',
       definition: 'Creates a noun referring to a collection of bases.'
     }
   ],
