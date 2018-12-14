@@ -4,13 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format of this changelog is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased](https://github.com/nai888/langua/compare/v0.2.5...HEAD)
+## [Unreleased](https://github.com/nai888/langua/compare/v0.3.0...HEAD)
+
+### Changed 0.3.1
+
+## [v0.3.0](https://github.com/nai888/langua/compare/v0.2.5...v0.3.0) - 2018-12-14
 
 ### Added 0.3.0
 
 - Add the Deriv default data.
 - Build the Deriv form.
 - Build the Deriv service.
+- Build the Deriv results with stats.
 - Start adding instructions to Deriv Help.
 
 ### Changed 0.3.0
