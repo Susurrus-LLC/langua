@@ -216,21 +216,27 @@ class DerivService {
     // Derive from any base and any derivation
     const deriveFromAny = () => {
       const list = []
-      while (remaining > 0) {
+      // Find only unique pairs of lexemes and affixes
+      const getUniqueItem = () => {
         const randLex =
           newData.lexemes[Math.floor(Math.random() * newData.lexemes.length)]
         const randAff =
           derivations[Math.floor(Math.random() * derivations.length)]
         let newItem = attachAffix(randLex, randAff)
-        // If the chosen pair of lexeme and derivation have already been used together, find a new pair
-        while (list.indexOf(newItem) > -1) {
-          const newRandLex =
-            newData.lexemes[Math.floor(Math.random() * newData.lexemes.length)]
-          const newRandAff =
-            derivations[Math.floor(Math.random() * derivations.length)]
-          newItem = attachAffix(newRandLex, newRandAff)
+        let isUnique = true
+        for (let i = 0; i < list.length; i++) {
+          if (JSON.stringify(newItem) === JSON.stringify(list[i])) {
+            isUnique = false
+            break
+          }
         }
-        list.push(newItem)
+        if (!isUnique) {
+          newItem = getUniqueItem()
+        }
+        return newItem
+      }
+      while (remaining > 0) {
+        list.push(getUniqueItem())
         remaining--
       }
       return list
