@@ -119,8 +119,122 @@ class DerivService {
 
   // Derive words from the data
   derive (data) {
-    let results = []
-    return results
+    const newData = JSON.parse(JSON.stringify(data))
+    // Compute the total possible number of results
+    const computePossible = filter => {
+      if (filter === 'single base') {
+        return newData.derivations.length
+      } else if (filter === 'single derivation') {
+        return newData.lexemes.length
+      } else {
+        return newData.lexemes.length * newData.derivations.length
+      }
+    }
+    const possible = computePossible(newData.type)
+    // If the user has selected to derive more than the total number possible, limit the results to the number that is possible
+    let remaining = newData.words > possible ? possible : newData.words
+
+    // Classify each of the affixes
+    const derivations = newData.derivations.map(affix => {
+      if (/-/.test(affix.derivation)) {
+        // If the affix entered contains a hyphen
+        if (/-/g.exec(affix.derivation).length === 1) {
+          // If the affix entered caintains no more than one hyphen
+          if (/^-/.test(affix.derivation)) {
+            // Prefix
+            return { prefix: affix }
+          } else if (/-$/.test(affix.derivation)) {
+            // Suffix
+            return { suffix: affix }
+          } else {
+            // Circumfix
+            const circum = affix.derivation.split(/-/)
+            let prefix = JSON.parse(JSON.stringify(affix))
+            let suffix = JSON.parse(JSON.stringify(affix))
+            prefix.derivation = `${circum[0]}-`
+            suffix.derivation = `-${circum[1]}`
+            return { prefix: prefix, suffix: suffix }
+          }
+        } else {
+          // If the affix entered contains more than one hyphen
+          return {
+            error: `The affix ${affix.derivation} contains too many hyphens.`
+          }
+        }
+      } else {
+        // If the affix entered contains no hyphens
+        return { error: `The affix ${affix.derivation} is missing a hyphen.` }
+      }
+    })
+
+    // Attach words to their affixes on the correct side(s)
+    const attachAffix = (lexeme, affix) => {
+      return {
+        prefix: affix.prefix,
+        lexeme: lexeme,
+        suffix: affix.suffix
+      }
+    }
+
+    // Derive from a single base
+    const deriveFromSingleBase = () => {
+      const base =
+        newData.lexemes[Math.floor(Math.random() * newData.lexemes.length)]
+      const list = []
+      while (remaining > 0) {
+        const randInd = Math.floor(Math.random() * derivations.length)
+        const randAff = derivations[randInd]
+        list.push(attachAffix(base, randAff))
+        derivations.splice(randInd, 1)
+        remaining--
+      }
+      return list
+    }
+
+    // Derive from a single derivation
+    const deriveFromSingleDerivation = () => {
+      const der = derivations[Math.floor(Math.random() * derivations.length)]
+      const list = []
+      while (remaining > 0) {
+        const randInd = Math.floor(Math.random() * newData.lexemes.length)
+        const randLex = newData.lexemes[randInd]
+        list.push(attachAffix(randLex, der))
+        newData.lexemes.splice(randInd, 1)
+        remaining--
+      }
+      return list
+    }
+
+    // Derive from any base and any derivation
+    const deriveFromAny = () => {
+      const list = []
+      while (remaining > 0) {
+        const randLex =
+          newData.lexemes[Math.floor(Math.random() * newData.lexemes.length)]
+        const randAff =
+          derivations[Math.floor(Math.random() * derivations.length)]
+        let newItem = attachAffix(randLex, randAff)
+        // If the chosen pair of lexeme and derivation have already been used together, find a new pair
+        while (list.indexOf(newItem) > -1) {
+          const newRandLex =
+            newData.lexemes[Math.floor(Math.random() * newData.lexemes.length)]
+          const newRandAff =
+            derivations[Math.floor(Math.random() * derivations.length)]
+          newItem = attachAffix(newRandLex, newRandAff)
+        }
+        list.push(newItem)
+        remaining--
+      }
+      return list
+    }
+
+    if (newData.type === 'single base') {
+      return { newWords: deriveFromSingleBase(), possible: possible }
+    } else if (newData.type === 'single derivation') {
+      return { newWords: deriveFromSingleDerivation(), possible: possible }
+    } else {
+      return { newWords: deriveFromAny(), possible: possible }
+    }
   }
 
   // Save the current state to storage and generate a file
