@@ -9,7 +9,6 @@ import { frequenInfo } from '../'
 
 const FrequenHelp = props => (
   <Help toolInfo={frequenInfo}>
-    <Notice>This tool is still in development.</Notice>
     <h3 id='using'>
       Using {siteTitle}
       {frequenInfo.title}
@@ -59,6 +58,7 @@ const FrequenHelp = props => (
       occur will be omitted from the graph and table.
     </p>
     <h4 id='filtering'>Filtering</h4>
+    <Notice>This feature is still in development.</Notice>
     <p>
       After a text has been analyzed, the results can be filtered to show only
       certain segments. Choosing a filter will show the percentages in the data
@@ -70,7 +70,6 @@ const FrequenHelp = props => (
       vowels. Additional filtering options will be added in the future.
     </p>
     <h4 id='files'>Saving and Loading Settings</h4>
-    <Notice>This functionality has not yet been implemented.</Notice>
     <p>
       Clicking the <strong>Save</strong> button will save the current settings
       to the browser’s local storage and generate a small <code>.lngf</code>{' '}
