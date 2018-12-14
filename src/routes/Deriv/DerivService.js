@@ -39,6 +39,9 @@ class DerivService {
       data = defData
     }
 
+    // Remove previously derived results from state
+    data.results = undefined
+
     return data
   }
 
@@ -142,9 +145,11 @@ class DerivService {
           // If the affix entered caintains no more than one hyphen
           if (/-$/.test(affix.derivation)) {
             // Prefix
+            affix.gloss = `${affix.gloss}-`
             return { prefix: affix }
           } else if (/^-/.test(affix.derivation)) {
             // Suffix
+            affix.gloss = `-${affix.gloss}`
             return { suffix: affix }
           } else {
             // Circumfix
@@ -152,7 +157,9 @@ class DerivService {
             let prefix = JSON.parse(JSON.stringify(affix))
             let suffix = JSON.parse(JSON.stringify(affix))
             prefix.derivation = `${circum[0]}-`
+            prefix.gloss = `${prefix.gloss}-`
             suffix.derivation = `-${circum[1]}`
+            suffix.gloss = `-${suffix.gloss}`
             return { prefix: prefix, suffix: suffix }
           }
         } else {
