@@ -40,7 +40,6 @@ const Home = props => (
         classes={props.classes}
         linkTo={`${derivInfo.link}/`}
         toolTitle={derivInfo.title}
-        disabled
       >
         {`${siteTitle}${derivInfo.title} ${derivInfo.description}`}
       </HomePanel>

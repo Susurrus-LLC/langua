@@ -78,7 +78,7 @@ describe('Header', () => {
           </a>
         </li>
         <li
-          className="Header-navLink-0-1-8 Header-disabled-0-1-9"
+          className="Header-navLink-0-1-8"
         >
           <a
             aria-current={null}

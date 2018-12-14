@@ -37,12 +37,7 @@ const Header = props => (
               Morph
             </NavLink>
           </li>
-          <li
-            className={classNames(
-              props.classes.navLink,
-              props.classes.disabled
-            )}
-          >
+          <li className={props.classes.navLink}>
             <NavLink to='/deriv' activeClassName='active'>
               Deriv
             </NavLink>

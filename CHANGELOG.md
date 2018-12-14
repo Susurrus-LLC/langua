@@ -8,6 +8,8 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Changed 0.3.1
 
+- Remove disabled status for Deriv in the header link and home panel.
+
 ## [v0.3.0](https://github.com/nai888/langua/compare/v0.2.5...v0.3.0) - 2018-12-14
 
 ### Added 0.3.0
