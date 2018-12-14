@@ -84,11 +84,22 @@ const styles = {
     width: `${v.ms4}rem`
   },
   term: {
+    marginBottom: 0,
+    fontWeight: 'bold'
+  },
+  gloss: {
     marginBottom: 0
+  },
+  lexGloss: {
+    fontStyle: 'italic'
   },
   affixGloss: {
     textTransform: 'lowercase',
     fontVariant: 'small-caps'
+  },
+  affixDef: {
+    color: v.black.lighten(5).string(),
+    fontSize: `${v.ms0}rem`
   }
 }
 

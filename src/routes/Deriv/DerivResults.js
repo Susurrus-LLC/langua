@@ -12,7 +12,7 @@ const DerivResults = props => {
       return (
         <div className={styles.outputBox}>
           <p className={styles.term}>{item.derivation}</p>
-          <p className={classNames(styles.gloss, styles.affixGloss)}>
+          <p className={classNames(styles.affixGloss, styles.gloss)}>
             {item.gloss}
           </p>
         </div>
@@ -21,13 +21,15 @@ const DerivResults = props => {
       return (
         <div className={styles.outputBox}>
           <p className={styles.term}>{item.lexeme}</p>
-          <p className={styles.gloss}>{item.definition}</p>
+          <p className={classNames(styles.lexGloss, styles.gloss)}>
+            {item.definition}
+          </p>
         </div>
       )
     } else if (which === 'error') {
       return (
         <div className={styles.outputBox}>
-          <p className={classes.error}>{item}</p>
+          <p className={classNames(classes.error, styles.gloss)}>{item}</p>
         </div>
       )
     } else {
@@ -46,18 +48,29 @@ const DerivResults = props => {
             <div className={classNames(styles.outputBox, styles.rowNumber)}>
               {i + 1}.
             </div>
-            {newWord.prefix
-              ? outputBox('affix', newWord.prefix, styles, classes)
-              : null}
-            {newWord.lexeme
-              ? outputBox('lexeme', newWord.lexeme, styles, classes)
-              : null}
-            {newWord.suffix
-              ? outputBox('affix', newWord.suffix, styles, classes)
-              : null}
-            {newWord.error
-              ? outputBox('error', newWord.error, styles, classes)
-              : null}
+            <div>
+              <div className={classNames(styles.derivRow, styles.outputRow)}>
+                {newWord.prefix
+                  ? outputBox('affix', newWord.prefix, styles, classes)
+                  : null}
+                {newWord.lexeme
+                  ? outputBox('lexeme', newWord.lexeme, styles, classes)
+                  : null}
+                {newWord.suffix
+                  ? outputBox('affix', newWord.suffix, styles, classes)
+                  : null}
+                {newWord.error
+                  ? outputBox('error', newWord.error, styles, classes)
+                  : null}
+              </div>
+              <p className={styles.affixDef}>
+                {newWord.prefix
+                  ? newWord.prefix.definition
+                  : newWord.suffix
+                    ? newWord.suffix.definition
+                    : ''}
+              </p>
+            </div>
           </div>
         ))
       }
