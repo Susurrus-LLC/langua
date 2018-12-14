@@ -14,7 +14,7 @@ const DerivForm = props => {
   const filePicker = React.createRef()
 
   const lexemeRows = props.data.lexemes.map((lexeme, index) => (
-    <div key={index} className={props.styles.frequenRow}>
+    <div key={index} className={props.styles.derivRow}>
       <input
         type='text'
         id={`lw${index}`}
@@ -46,7 +46,7 @@ const DerivForm = props => {
   ))
 
   const derivationRows = props.data.derivations.map((derivation, index) => (
-    <div key={index} className={props.styles.frequenRow}>
+    <div key={index} className={props.styles.derivRow}>
       <input
         type='text'
         id={`da${index}`}
@@ -111,7 +111,7 @@ const DerivForm = props => {
     <Form>
       <div className={classNames(props.styles.lexemes, props.classes.part)}>
         <h5 className={props.classes.sectionTitle}>Lexemes</h5>
-        <div className={props.styles.frequenRow}>
+        <div className={props.styles.derivRow}>
           <h6
             className={classNames(
               props.styles.columnLabel,
@@ -126,7 +126,7 @@ const DerivForm = props => {
               props.styles.definitionLabel
             )}
           >
-            Definition
+            Gloss
           </h6>
         </div>
         {lexemeRows}
@@ -134,7 +134,7 @@ const DerivForm = props => {
       </div>
       <div className={classNames(props.styles.derivations, props.classes.part)}>
         <h5 className={props.classes.sectionTitle}>Derivational Affixes</h5>
-        <div className={props.styles.frequenRow}>
+        <div className={props.styles.derivRow}>
           <h6
             className={classNames(
               props.styles.columnLabel,

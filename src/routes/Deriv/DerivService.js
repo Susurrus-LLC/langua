@@ -140,10 +140,10 @@ class DerivService {
         // If the affix entered contains a hyphen
         if (/-/g.exec(affix.derivation).length === 1) {
           // If the affix entered caintains no more than one hyphen
-          if (/^-/.test(affix.derivation)) {
+          if (/-$/.test(affix.derivation)) {
             // Prefix
             return { prefix: affix }
-          } else if (/-$/.test(affix.derivation)) {
+          } else if (/^-/.test(affix.derivation)) {
             // Suffix
             return { suffix: affix }
           } else {
@@ -172,7 +172,8 @@ class DerivService {
       return {
         prefix: affix.prefix,
         lexeme: lexeme,
-        suffix: affix.suffix
+        suffix: affix.suffix,
+        error: affix.error
       }
     }
 

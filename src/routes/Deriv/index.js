@@ -90,7 +90,7 @@ class Deriv extends React.Component {
 
   componentWillUnmount () {
     this.setState(prevState => ({
-      results: []
+      results: undefined
     }))
   }
 
@@ -103,7 +103,10 @@ class Deriv extends React.Component {
           data={this.state}
           change={this.onChange}
         />
-        <DerivResults styles={this.props.classes} />
+        <DerivResults
+          styles={this.props.classes}
+          results={this.state.results}
+        />
       </Tool>
     )
   }

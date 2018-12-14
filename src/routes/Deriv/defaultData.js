@@ -46,5 +46,5 @@ export const defData = {
       definition: 'Creates a noun referring to a collection of bases.'
     }
   ],
-  results: []
+  results: undefined
 }

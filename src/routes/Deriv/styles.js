@@ -4,13 +4,16 @@ const styles = {
   wordsInput: {
     width: `${v.ms6}rem`
   },
-  frequenRow: {
+  derivRow: {
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'baseline',
     alignContent: 'space-between'
+  },
+  outputRow: {
+    justifyContent: 'flex-start'
   },
   columnLabel: {
     margin: {
@@ -64,6 +67,28 @@ const styles = {
       bottom: 1,
       left: 0
     }
+  },
+  outputBox: {
+    margin: {
+      right: `${v.ms0}rem`,
+      left: `${v.ms0}rem`
+    },
+    '&:first-child': {
+      marginLeft: 0
+    },
+    '&:last-child': {
+      marginRight: 0
+    }
+  },
+  rowNumber: {
+    width: `${v.ms4}rem`
+  },
+  term: {
+    marginBottom: 0
+  },
+  affixGloss: {
+    textTransform: 'lowercase',
+    fontVariant: 'small-caps'
   }
 }
 
