@@ -95,11 +95,18 @@ const styles = {
   },
   affixGloss: {
     textTransform: 'lowercase',
-    fontVariant: 'small-caps'
+    fontVariant: 'small-caps',
+    textDecoration: 'underline',
+    textDecorationColor: v.blu.string(),
+    textDecorationStyle: 'dotted'
   },
   affixDef: {
     color: v.black.lighten(5).string(),
-    fontSize: `${v.ms0}rem`
+    fontSize: `${v.ms0}rem`,
+    opacity: 0,
+    '&:hover': {
+      opacity: 1
+    }
   }
 }
 
