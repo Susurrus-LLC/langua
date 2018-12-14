@@ -4,13 +4,19 @@ const styles = {
   wordsInput: {
     width: `${v.ms6}rem`
   },
-  lexemeRow: {
+  frequenRow: {
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'baseline',
     alignContent: 'space-between'
+  },
+  columnLabel: {
+    margin: {
+      top: `${v.ms0}rem`,
+      bottom: 0
+    }
   },
   lexemeInput: {
     width: `${2 * v.ms5}rem`
@@ -18,18 +24,22 @@ const styles = {
   lexemeDefInput: {
     flexGrow: 1
   },
-  derivationRow: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'baseline',
-    alignContent: 'space-between'
+  wordLabel: {
+    width: `${2 * v.ms5}rem`
+  },
+  definitionLabel: {
+    flexGrow: 1
   },
   derivationInput: {
     width: `${2 * v.ms4}rem`
   },
+  affixLabel: {
+    width: `${2 * v.ms4}rem`
+  },
   derivationLabelInput: {
+    width: `${2 * v.ms5}rem`
+  },
+  labelLabel: {
     width: `${2 * v.ms5}rem`
   },
   derivationDefInput: {

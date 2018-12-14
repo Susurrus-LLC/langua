@@ -14,7 +14,7 @@ const DerivForm = props => {
   const filePicker = React.createRef()
 
   const lexemeRows = props.data.lexemes.map((lexeme, index) => (
-    <div key={index} className={props.styles.lexemeRow}>
+    <div key={index} className={props.styles.frequenRow}>
       <input
         type='text'
         id={`lw${index}`}
@@ -46,7 +46,7 @@ const DerivForm = props => {
   ))
 
   const derivationRows = props.data.derivations.map((derivation, index) => (
-    <div key={index} className={props.styles.derivationRow}>
+    <div key={index} className={props.styles.frequenRow}>
       <input
         type='text'
         id={`da${index}`}
@@ -111,11 +111,55 @@ const DerivForm = props => {
     <Form>
       <div className={classNames(props.styles.lexemes, props.classes.part)}>
         <h5 className={props.classes.sectionTitle}>Lexemes</h5>
+        <div className={props.styles.frequenRow}>
+          <h6
+            className={classNames(
+              props.styles.columnLabel,
+              props.styles.wordLabel
+            )}
+          >
+            Word
+          </h6>
+          <h6
+            className={classNames(
+              props.styles.columnLabel,
+              props.styles.definitionLabel
+            )}
+          >
+            Definition
+          </h6>
+        </div>
         {lexemeRows}
         {addButton('lex')}
       </div>
       <div className={classNames(props.styles.derivations, props.classes.part)}>
         <h5 className={props.classes.sectionTitle}>Derivational Affixes</h5>
+        <div className={props.styles.frequenRow}>
+          <h6
+            className={classNames(
+              props.styles.columnLabel,
+              props.styles.affixLabel
+            )}
+          >
+            Affix
+          </h6>
+          <h6
+            className={classNames(
+              props.styles.columnLabel,
+              props.styles.labelLabel
+            )}
+          >
+            Label
+          </h6>
+          <h6
+            className={classNames(
+              props.styles.columnLabel,
+              props.styles.definitionLabel
+            )}
+          >
+            Definition
+          </h6>
+        </div>
         {derivationRows}
         {addButton('der')}
       </div>
