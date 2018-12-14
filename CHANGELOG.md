@@ -8,12 +8,14 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Added 0.3.0
 
-- Build the Deriv form.
 - Add the Deriv default data.
+- Build the Deriv form.
+- Build the Deriv service.
 - Start adding instructions to Deriv Help.
 
 ### Changed 0.3.0
 
+- Updated information on Frequen Help page to specify what is still under construction.
 - Update dependencies.
 
 ## [v0.2.5](https://github.com/nai888/langua/compare/v0.2.4...v0.2.5) - 2018-12-11
