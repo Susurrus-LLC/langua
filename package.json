@@ -47,7 +47,7 @@
     "react-jss": "8.6.1",
     "react-router-dom": "4.3.1",
     "react-scripts": "2.1.1",
-    "react-toastify": "4.4.3",
+    "react-toastify": "4.5.0",
     "react-vis": "^1.11.5"
   },
   "devDependencies": {
