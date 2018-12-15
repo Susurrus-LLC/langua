@@ -4,7 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format of this changelog is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased](https://github.com/nai888/langua/compare/v0.3.0...HEAD)
+## [Unreleased](https://github.com/nai888/langua/compare/v0.3.1...HEAD)
+
+### Changed 0.3.2
+
+## [v0.3.1](https://github.com/nai888/langua/compare/v0.3.0...v0.3.1) - 2018-12-15
 
 ### Changed 0.3.1
 
