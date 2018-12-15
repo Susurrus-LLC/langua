@@ -14,7 +14,7 @@ export const derivInfo = {
   title: 'Deriv',
   link: 'deriv',
   description:
-    'is a tool for modeling word derivation according to arbitrary rules of morphosyntactics.'
+    'is a tool for modeling word derivation based on a given list of lexemes and affixes.'
 }
 
 class Deriv extends React.Component {
