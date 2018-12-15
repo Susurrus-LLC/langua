@@ -13,7 +13,7 @@ export const morphInfo = {
   title: 'Morph',
   link: 'morph',
   description:
-    'is a tool for modeling historical sound change according to arbitrary rules of phonetic change. It can also be used to reverse historical sound change according to those same rules in order to guess at a word’s proto-language roots.'
+    'is a tool for modeling historical sound change according to arbitrary rules of phonetic change.'
 }
 
 const Morph = props => (
