@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 import { siteTitle } from '../../../App'
 import Help from '../../../components/Help'
-import Notice from '../../../components/Notice'
 
 import { derivInfo } from '../'
 
