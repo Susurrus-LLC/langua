@@ -26,11 +26,11 @@ LanguaGen is a tool for automatically building a set of words based on arbitrary
 
 ### Morph
 
-LanguaMorph is a tool for modeling historical sound change according to arbitrary rules of phonetic change. It can also be used to reverse historical sound change according to those same rules in order to guess at a word's proto-language roots.
+LanguaMorph is a tool for modeling historical sound change according to arbitrary rules of phonetic change.
 
 ### Deriv
 
-LanguaDeriv is a tool for modeling word derivation according to arbitrary rules of morphosyntactics.
+LanguaDeriv is a tool for modeling word derivation based on a given list of lexemes and affixes.
 
 ### Frequen
 
