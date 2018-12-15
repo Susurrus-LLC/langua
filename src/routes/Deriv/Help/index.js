@@ -9,7 +9,6 @@ import { derivInfo } from '../'
 
 const DerivHelp = props => (
   <Help toolInfo={derivInfo}>
-    <Notice>This tool is still under construction.</Notice>
     <h3 id='using'>
       Using {siteTitle}
       {derivInfo.title}
