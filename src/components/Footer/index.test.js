@@ -30,7 +30,7 @@ describe('Footer', () => {
           className="fas fa-code"
         />
          
-        0.3.1
+        0.3.2
       </a>
       . Built by
        
