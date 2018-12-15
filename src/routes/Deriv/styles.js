@@ -96,21 +96,51 @@ const styles = {
   affixGloss: {
     textTransform: 'lowercase',
     fontVariant: 'small-caps',
-    textDecoration: 'underline',
-    textDecorationColor: v.blu.string(),
-    textDecorationStyle: 'dotted'
+    borderBottom: {
+      width: 1,
+      style: 'dotted',
+      color: v.blu.string()
+    },
+    transition: ['border-bottom', '200ms']
   },
   affixDef: {
     color: v.black.lighten(5).string(),
     fontSize: `${v.ms0}rem`,
-    visibility: 'hidden'
+    visibility: 'hidden',
+    opacity: 0,
+    transition: [
+      {
+        property: 'opacity',
+        duration: '200ms'
+      },
+      {
+        property: 'visibility',
+        duration: '0ms',
+        delay: '200ms'
+      }
+    ]
   },
   hoveredGloss: {
-    textDecorationColor: v.ong.string(),
-    textDecorationStyle: 'solid'
+    borderBottom: {
+      width: 1,
+      style: 'dotted',
+      color: v.ong.string()
+    }
   },
   hoveredDef: {
-    visibility: 'visible'
+    visibility: 'visible',
+    opacity: 1,
+    transition: [
+      {
+        property: 'opacity',
+        duration: '200ms'
+      },
+      {
+        property: 'visibility',
+        duration: '0ms',
+        delay: '0ms'
+      }
+    ]
   }
 }
 
