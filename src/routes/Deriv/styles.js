@@ -103,10 +103,10 @@ const styles = {
   affixDef: {
     color: v.black.lighten(5).string(),
     fontSize: `${v.ms0}rem`,
-    opacity: 0,
-    '&:hover': {
-      opacity: 1
-    }
+    visibility: 'hidden'
+  },
+  hoveredDef: {
+    visibility: 'visible'
   }
 }
 

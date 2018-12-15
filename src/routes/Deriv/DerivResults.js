@@ -6,13 +6,29 @@ import PropTypes from 'prop-types'
 import Results from '../../components/Results'
 import sharedResultsStyles from '../../components/Results/sharedResultsStyles'
 
-const DerivResults = props => {
-  const outputBox = (which, item, styles, classes) => {
+class DerivResults extends React.Component {
+  constructor (props) {
+    super(props)
+    this.outputBox = this.outputBox.bind(this)
+    this.output = this.output.bind(this)
+    this.statsText = this.statsText.bind(this)
+    this.hoverAffix = this.hoverAffix.bind(this)
+    this.unhoverAffix = this.unhoverAffix.bind(this)
+    this.state = {
+      hovered: null
+    }
+  }
+
+  outputBox (which, item, styles, classes, i) {
     if (which === 'affix') {
       return (
         <div className={styles.outputBox}>
           <p className={styles.term}>{item.derivation}</p>
-          <p className={classNames(styles.affixGloss, styles.gloss)}>
+          <p
+            className={classNames(styles.affixGloss, styles.gloss)}
+            onMouseOver={() => this.hoverAffix(i)}
+            onMouseOut={() => this.unhoverAffix(i)}
+          >
             {item.gloss}
           </p>
         </div>
@@ -37,10 +53,10 @@ const DerivResults = props => {
     }
   }
 
-  const output = (styles, classes) => {
-    if (props.results) {
-      if (props.results.newWords.length) {
-        return props.results.newWords.map((newWord, i) => (
+  output (styles, classes) {
+    if (this.props.results) {
+      if (this.props.results.newWords.length) {
+        return this.props.results.newWords.map((newWord, i) => (
           <div
             key={i}
             className={classNames(styles.derivRow, styles.outputRow)}
@@ -51,19 +67,25 @@ const DerivResults = props => {
             <div>
               <div className={classNames(styles.derivRow, styles.outputRow)}>
                 {newWord.prefix
-                  ? outputBox('affix', newWord.prefix, styles, classes)
+                  ? this.outputBox('affix', newWord.prefix, styles, classes, i)
                   : null}
                 {newWord.lexeme
-                  ? outputBox('lexeme', newWord.lexeme, styles, classes)
+                  ? this.outputBox('lexeme', newWord.lexeme, styles, classes)
                   : null}
                 {newWord.suffix
-                  ? outputBox('affix', newWord.suffix, styles, classes)
+                  ? this.outputBox('affix', newWord.suffix, styles, classes, i)
                   : null}
                 {newWord.error
-                  ? outputBox('error', newWord.error, styles, classes)
+                  ? this.outputBox('error', newWord.error, styles, classes)
                   : null}
               </div>
-              <p className={styles.affixDef}>
+              <p
+                className={classNames(
+                  styles.affixDef,
+                  // Dynamically assign the hovered class if hovered
+                  i === this.state.hovered ? styles.hoveredDef : null
+                )}
+              >
                 {newWord.prefix
                   ? newWord.prefix.definition
                   : newWord.suffix
@@ -78,25 +100,40 @@ const DerivResults = props => {
     return null
   }
 
-  const statsText = () => {
+  statsText () {
     let words = 0
     let possible = 0
-    if (props.results) {
-      words = props.results.newWords.length
-      possible = props.results.possible
+    if (this.props.results) {
+      words = this.props.results.newWords.length
+      possible = this.props.results.possible
     }
     return `words: ${words}; maximum derivations possible: ${possible}`
   }
-  return (
-    <Results>
-      <div className={props.styles.output}>
-        {output(props.styles, props.classes)}
-      </div>
-      <div className={props.classes.stats}>
-        <p className={props.classes.statsText}>{statsText()}</p>
-      </div>
-    </Results>
-  )
+
+  hoverAffix (i) {
+    this.setState(prevState => ({
+      hovered: i
+    }))
+  }
+
+  unhoverAffix (i) {
+    this.setState(prevState => ({
+      hovered: null
+    }))
+  }
+
+  render () {
+    return (
+      <Results>
+        <div className={this.props.styles.output}>
+          {this.output(this.props.styles, this.props.classes)}
+        </div>
+        <div className={this.props.classes.stats}>
+          <p className={this.props.classes.statsText}>{this.statsText()}</p>
+        </div>
+      </Results>
+    )
+  }
 }
 
 DerivResults.propTypes = {
