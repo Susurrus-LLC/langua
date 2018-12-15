@@ -142,7 +142,6 @@ class DerivService {
       affix.derivation = affix.derivation.replace(/-+/g, '-')
       if (/-/.test(affix.derivation)) {
         // If the affix entered contains a hyphen
-        console.log(/-/.exec(affix.derivation))
         if (affix.derivation.match(/-/g).length === 1) {
           // If the affix entered caintains no more than one hyphen
           if (/-$/.test(affix.derivation)) {

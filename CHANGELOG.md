@@ -16,6 +16,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Change the underline color and style when hovering over an affix gloss in Deriv.
 - Fix error-catching for too many hyphens in an affix.
 - Collapse multiple consecutive hyphens in an affix to just one hyphen in the results.
+- Update the Deriv Help page.
 
 ## [v0.3.0](https://github.com/nai888/langua/compare/v0.2.5...v0.3.0) - 2018-12-14
 
