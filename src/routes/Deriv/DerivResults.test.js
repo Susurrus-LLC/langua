@@ -13,8 +13,10 @@ describe('DerivResults', () => {
         results={{
           newWords: [
             {
-              lexeme: 'nzi',
-              definition: 'tree',
+              lexeme: {
+                lexeme: 'nzi',
+                definition: 'tree'
+              },
               suffix: {
                 derivation: '-vo',
                 gloss: 'person',
@@ -23,8 +25,10 @@ describe('DerivResults', () => {
               }
             },
             {
-              lexeme: 'ilu',
-              definition: 'flower',
+              lexeme: {
+                lexeme: 'ilu',
+                definition: 'flower'
+              },
               suffix: {
                 derivation: '-lu',
                 gloss: 'place',
@@ -32,8 +36,10 @@ describe('DerivResults', () => {
               }
             },
             {
-              lexeme: 'ru',
-              definition: 'person',
+              lexeme: {
+                lexeme: 'ru',
+                definition: 'person'
+              },
               prefix: {
                 derivation: 'ña-',
                 gloss: 'abstract',
@@ -41,12 +47,17 @@ describe('DerivResults', () => {
               }
             },
             {
-              lexeme: 'kwərə',
-              definition: 'goat'
+              lexeme: {
+                lexeme: 'kwərə',
+                definition: 'goat'
+              },
+              error: 'The affix ksa is missing a hyphen.'
             },
             {
-              lexeme: 'lɛtsi',
-              definition: 'sword',
+              lexeme: {
+                lexeme: 'lɛtsi',
+                definition: 'sword'
+              },
               prefix: {
                 derivation: 'k-',
                 gloss: 'collective',
@@ -57,11 +68,6 @@ describe('DerivResults', () => {
                 gloss: 'collective',
                 definition: 'Creates a noun referring to a collection of bases.'
               }
-            },
-            {
-              lexeme: 'ru',
-              definition: 'person',
-              error: 'The affix ksa is missing a hyphen.'
             }
           ],
           possible: 25
