@@ -8,6 +8,8 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Changed 0.3.2
 
+- Update tool descriptions.
+
 ## [v0.3.1](https://github.com/nai888/langua/compare/v0.3.0...v0.3.1) - 2018-12-15
 
 ### Changed 0.3.1
