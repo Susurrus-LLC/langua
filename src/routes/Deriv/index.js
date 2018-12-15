@@ -2,7 +2,6 @@ import React from 'react'
 import injectSheet from 'react-jss'
 import PropTypes from 'prop-types'
 
-import Notice from '../../components/Notice'
 import Tool from '../../components/Tool'
 
 import DerivForm from './DerivForm'
@@ -97,7 +96,6 @@ class Deriv extends React.Component {
   render () {
     return (
       <Tool toolInfo={derivInfo}>
-        <Notice>This tool is still under construction.</Notice>
         <DerivForm
           styles={this.props.classes}
           data={this.state}
