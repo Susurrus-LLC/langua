@@ -105,6 +105,10 @@ const styles = {
     fontSize: `${v.ms0}rem`,
     visibility: 'hidden'
   },
+  hoveredGloss: {
+    textDecorationColor: v.ong.string(),
+    textDecorationStyle: 'solid'
+  },
   hoveredDef: {
     visibility: 'visible'
   }

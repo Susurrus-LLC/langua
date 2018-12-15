@@ -25,7 +25,12 @@ class DerivResults extends React.Component {
         <div className={styles.outputBox}>
           <p className={styles.term}>{item.derivation}</p>
           <p
-            className={classNames(styles.affixGloss, styles.gloss)}
+            className={classNames(
+              styles.affixGloss,
+              styles.gloss,
+              // Dynamically assign the hovered class if hovered
+              i === this.state.hovered ? styles.hoveredGloss : null
+            )}
             onMouseOver={() => this.hoverAffix(i)}
             onMouseOut={() => this.unhoverAffix(i)}
           >
