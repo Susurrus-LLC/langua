@@ -9414,10 +9414,10 @@ react-test-renderer@^16.0.0-0, react-test-renderer@^16.6.3:
     react-is "^16.6.3"
     scheduler "^0.11.2"
 
-react-toastify@4.4.3:
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-4.4.3.tgz#bf4a514b4a160e20ad227a95bd84c9853d1f86ca"
-  integrity sha512-MHv9eAkb02xLKemOtS1mnv+jq+2iThYG8pWJxRCj5s/wgr5lU69uVLh/bTy7lU/HJq0uJEcdwfuIeHr4KGuoUQ==
+react-toastify@4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-4.5.0.tgz#b8e05f0f301ca59a60a58677de69ddba9aa8fb09"
+  integrity sha512-wRlxj9h/kQRA+x0YIvfHFAcxsIls7YwvhnmLy9R1TNcvXYWVs/3+X7iN099Si+/EfRFAnAKH9HXmEGIDoEjxGA==
   dependencies:
     classnames "^2.2.6"
     prop-types "^15.6.0"
