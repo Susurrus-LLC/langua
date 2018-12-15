@@ -6,12 +6,12 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.3.1...HEAD)
 
-### Changed 0.3.2
+### Changed 0.4.0
 
 - Update tool descriptions.
 - Update dependencies.
 
-### Removed 0.3.2
+### Removed 0.4.0
 
 - Remove construction notices from Deriv.
 

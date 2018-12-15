@@ -9,11 +9,27 @@ import { morphInfo } from '../'
 
 const MorphHelp = props => (
   <Help toolInfo={morphInfo}>
-    <Notice>This tool is still in planning.</Notice>
+    <Notice>This tool is still in development.</Notice>
     <h3 id='using'>
       Using {siteTitle}
       {morphInfo.title}
     </h3>
+    <h3 id='acknowledgments'>Acknowledgments</h3>
+    <p>
+      Much thanks should be given to Mark Rosenfelder and{' '}
+      <a
+        href='http://www.zompist.com/sca2.html'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        the Sound Change Applier 2 (SCA
+        <sup>2</sup>)
+      </a>
+      . {siteTitle}
+      {morphInfo.title} was mainly built as a modernized and updated version of
+      SCA
+      <sup>2</sup>.
+    </p>
   </Help>
 )
 

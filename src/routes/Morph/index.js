@@ -18,7 +18,7 @@ export const morphInfo = {
 
 const Morph = props => (
   <Tool toolInfo={morphInfo}>
-    <Notice>This tool is still in planning.</Notice>
+    <Notice>This tool is still in development.</Notice>
     <MorphForm styles={props.classes} />
     <MorphResults styles={props.classes} />
   </Tool>
