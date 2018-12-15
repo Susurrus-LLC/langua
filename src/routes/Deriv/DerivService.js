@@ -139,9 +139,11 @@ class DerivService {
 
     // Classify each of the affixes
     const derivations = newData.derivations.map(affix => {
+      affix.derivation = affix.derivation.replace(/-+/g, '-')
       if (/-/.test(affix.derivation)) {
         // If the affix entered contains a hyphen
-        if (/-/g.exec(affix.derivation).length === 1) {
+        console.log(/-/.exec(affix.derivation))
+        if (affix.derivation.match(/-/g).length === 1) {
           // If the affix entered caintains no more than one hyphen
           if (/-$/.test(affix.derivation)) {
             // Prefix
