@@ -22,10 +22,11 @@ const MorphHelp = props => (
         target='_blank'
         rel='noopener noreferrer'
       >
-        the Sound Change Applier 2 (SCA
-        <sup>2</sup>)
-      </a>
-      . {siteTitle}
+        the Sound Change Applier 2
+      </a>{' '}
+      (SCA
+      <sup>2</sup>
+      ). {siteTitle}
       {morphInfo.title} was mainly built as a modernized and updated version of
       SCA
       <sup>2</sup>.
