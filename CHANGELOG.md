@@ -6,6 +6,11 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.3.1...HEAD)
 
+### Added 0.4.0
+
+- Add Morph default data.
+- Build MorphService.
+
 ### Changed 0.4.0
 
 - Update tool descriptions.
