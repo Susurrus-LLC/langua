@@ -5,7 +5,8 @@
 [![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/58bcc4dc2f914f06ad6cc51658678dc3)](https://www.codacy.com/app/Langua/langua?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nai888/langua&amp;utm_campaign=Badge_Coverage)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=nai888/langua)](https://dependabot.com)
-[![Beerpay](https://beerpay.io/nai888/langua/badge.svg?style=flat)](https://beerpay.io/nai888/langua)
+[![](https://img.shields.io/github/release/nai888/langua.svg)](https://github.com/nai888/langua/releases)
+[![](https://img.shields.io/github/license/nai888/langua.svg)](https://github.com/nai888/langua/blob/master/LICENSE)
 
 1. [Overview](#overview)
 1. [Deployment](#deployment)
