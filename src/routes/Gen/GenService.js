@@ -8,7 +8,6 @@ import { vars } from './defaultData'
 
 class GenService {
   constructor () {
-    this.storage = window.localStorage
     this.item = 'gen'
     this.getData = this.getData.bind(this)
     this.setStorage = this.setStorage.bind(this)
