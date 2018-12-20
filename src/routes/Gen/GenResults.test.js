@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import GenResults from './GenResults'
-import { defData } from './defaultData'
+import { defData } from '../../data/gen'
 
 describe('GenResults', () => {
   it('renders without crashing', () => {

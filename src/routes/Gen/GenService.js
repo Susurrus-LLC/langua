@@ -1,16 +1,18 @@
 import { toast } from 'react-toastify'
 import schema from 'js-schema'
 
+import dataProcessor from '../../tools/dataProcessor'
 import fileProcessor from '../../tools/fileProcessor'
 
-import { defData, vars } from './defaultData'
+import { vars } from '../../data/gen'
 
 class GenService {
   constructor () {
-    this.storage = window.localStorage
     this.item = 'gen'
     this.getData = this.getData.bind(this)
     this.setStorage = this.setStorage.bind(this)
+    this.save = this.save.bind(this)
+    this.open = this.open.bind(this)
     this.changeSelect = this.changeSelect.bind(this)
     this.changeSubpattern = this.changeSubpattern.bind(this)
     this.clear = this.clear.bind(this)
@@ -22,37 +24,103 @@ class GenService {
     this.checkErrors = this.checkErrors.bind(this)
     this.generate = this.generate.bind(this)
     this.build = this.build.bind(this)
-    this.save = this.save.bind(this)
-    this.open = this.open.bind(this)
   }
 
+  // Get the data from storage or from the default data
   getData () {
-    let data
-
-    // Check if there's storage access
-    if (typeof Storage !== 'undefined') {
-      // If we can access storage, check if there is data in storage.
-      if (this.storage.getItem(this.item)) {
-        // If there's data in storage, pull it
-        data = JSON.parse(this.storage.getItem(this.item))
-      } else {
-        // If there's not data in storage, pull the default data
-        data = defData
-        // Store the default data in storage
-        this.setStorage(data)
-      }
-    } else {
-      // If we can't access storage, use the default data
-      data = defData
-    }
-
-    return data
+    return dataProcessor.getData(this.item)
   }
 
   // Store the current data in storage
   setStorage (data) {
-    if (typeof Storage !== 'undefined') {
-      this.storage.setItem(this.item, JSON.stringify(data))
+    dataProcessor.setStorage(data, this.item)
+  }
+
+  // Save the current state to storage and generate a file
+  save (data) {
+    fileProcessor.save(data, this.item)
+  }
+
+  // Open a file and parse it to restore a saved state
+  open (file, callback) {
+    let response
+
+    const processResults = result => {
+      // If correct filetype
+      if (file.name.endsWith(fileProcessor.filetype(this.item))) {
+        // Define correct file structure
+        const SubpatternSchema = schema({
+          selected: /[A-Z]/,
+          subpattern: String
+        })
+
+        const DataSchema = schema({
+          subpatterns: Array.of(1, 24, SubpatternSchema),
+          pattern: String,
+          words: Number.min(1).max(9999),
+          newline: Boolean,
+          filterdupes: Boolean
+        })
+
+        let content = JSON.parse(result)
+
+        content.words = parseInt(content.words, 10)
+
+        if (DataSchema(content)) {
+          // If the file's content contains valid Data, load it
+          toast.success(`Data loaded from ${file.name}.`, {
+            autoClose: 5000,
+            className: 'toast-opened',
+            bodyClassName: 'toast-opened-body',
+            progressClassName: 'toast-opened-progress'
+          })
+
+          this.setStorage(content)
+
+          response = content
+        } else {
+          // If the file's content does not contain valid Data, show an error
+          toast.info(`The content of ${file.name} is invalid.`, {
+            autoClose: 5000,
+            className: 'toast-unopened',
+            bodyClassName: 'toast-unopened-body',
+            progressClassName: 'toast-unopened-progress'
+          })
+
+          // eslint-disable-next-line
+          console.error(DataSchema.errors(content))
+
+          response = false
+        }
+      } else {
+        // If incorrect filetype
+        toast.info('Wrong filetype selected.', {
+          autoClose: 5000,
+          className: 'toast-unopened',
+          bodyClassName: 'toast-unopened-body',
+          progressClassName: 'toast-unopened-progress'
+        })
+
+        response = false
+      }
+
+      callback(response)
+    }
+
+    if (window.FileReader) {
+      // If the browser has access to the File APIs, open the file
+      fileProcessor.openFile(file, processResults)
+    } else {
+      // If the browser can't access the File APIs, display a notification
+      toast.info('Your browser is unable to open files.', {
+        autoClose: 5000,
+        className: 'toast-unopened',
+        bodyClassName: 'toast-unopened-body',
+        progressClassName: 'toast-unopened-progress'
+      })
+
+      response = false
+      callback(response)
     }
   }
 
@@ -444,110 +512,6 @@ class GenService {
     }
 
     return response
-  }
-
-  // Save the current state to storage and generate a file
-  save (data) {
-    // Save data to storage
-    this.setStorage(data)
-    if (window.File) {
-      // If the browser has access to File, save the file locally
-      fileProcessor.saveFile(data, this.item)
-    } else {
-      // If the browser can't access File, display a notification
-      toast.info(
-        'Your browser is unable to save files. The data has been saved to your browser’s local storage.',
-        {
-          autoClose: 5000,
-          className: 'toast-unsaved',
-          bodyClassName: 'toast-unsaved-body',
-          progressClassName: 'toast-unsaved-progress'
-        }
-      )
-    }
-  }
-
-  // Open a file and parse it to restore a saved state
-  open (file, callback) {
-    let response
-
-    const processResults = result => {
-      // If correct filetype
-      if (file.name.endsWith('.lngg')) {
-        // Define correct file structure
-        const SubpatternSchema = schema({
-          selected: /[A-Z]/,
-          subpattern: String
-        })
-
-        const DataSchema = schema({
-          subpatterns: Array.of(1, 24, SubpatternSchema),
-          pattern: String,
-          words: Number.min(1).max(9999),
-          newline: Boolean,
-          filterdupes: Boolean
-        })
-
-        let content = JSON.parse(result)
-
-        content.words = parseInt(content.words, 10)
-
-        if (DataSchema(content)) {
-          // If the file's content contains valid Data, load it
-          toast.success(`Data loaded from ${file.name}.`, {
-            autoClose: 5000,
-            className: 'toast-opened',
-            bodyClassName: 'toast-opened-body',
-            progressClassName: 'toast-opened-progress'
-          })
-
-          this.setStorage(content)
-
-          response = content
-        } else {
-          // If the file's content does not contain valid Data, show an error
-          toast.info(`The content of ${file.name} is invalid.`, {
-            autoClose: 5000,
-            className: 'toast-unopened',
-            bodyClassName: 'toast-unopened-body',
-            progressClassName: 'toast-unopened-progress'
-          })
-
-          // eslint-disable-next-line
-          console.error(DataSchema.errors(content))
-
-          response = false
-        }
-      } else {
-        // If incorrect filetype
-        toast.info('Wrong filetype selected.', {
-          autoClose: 5000,
-          className: 'toast-unopened',
-          bodyClassName: 'toast-unopened-body',
-          progressClassName: 'toast-unopened-progress'
-        })
-
-        response = false
-      }
-
-      callback(response)
-    }
-
-    if (window.FileReader) {
-      // If the browser has access to the File APIs, open the file
-      fileProcessor.openFile(file, processResults)
-    } else {
-      // If the browser can't access the File APIs, display a notification
-      toast.info('Your browser is unable to open files.', {
-        autoClose: 5000,
-        className: 'toast-unopened',
-        bodyClassName: 'toast-unopened-body',
-        progressClassName: 'toast-unopened-progress'
-      })
-
-      response = false
-      callback(response)
-    }
   }
 }
 

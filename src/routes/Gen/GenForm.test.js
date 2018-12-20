@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import GenForm from './GenForm'
-import { defData } from './defaultData'
+import { defData } from '../../data/gen'
 
 describe('GenForm', () => {
   it('renders without crashing', () => {

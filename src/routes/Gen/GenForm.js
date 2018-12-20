@@ -10,7 +10,7 @@ import Control from '../../components/Control'
 import ControlSide from '../../components/Control/Side'
 import ControlPiece from '../../components/Control/Piece'
 
-import { vars } from './defaultData'
+import { vars } from '../../data/gen'
 
 const GenForm = props => {
   const filePicker = React.createRef()

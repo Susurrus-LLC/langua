@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import FrequenForm from './FrequenForm'
-import { defData } from './defaultData'
+import { defData } from '../../data/frequen'
 
 describe('FrequenForm', () => {
   it('renders without crashing', () => {
