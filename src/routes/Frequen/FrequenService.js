@@ -10,9 +10,9 @@ class FrequenService {
     this.item = 'frequen'
     this.getData = this.getData.bind(this)
     this.setStorage = this.setStorage.bind(this)
-    this.analyze = this.analyze.bind(this)
     this.save = this.save.bind(this)
     this.open = this.open.bind(this)
+    this.analyze = this.analyze.bind(this)
   }
 
   // Get the data from storage or from the default data
@@ -23,6 +23,129 @@ class FrequenService {
   // Store the current data in storage
   setStorage (data) {
     dataProcessor.setStorage(data, this.item)
+  }
+
+  // Save the current state to storage and generate a file
+  save (data) {
+    fileProcessor.save(data, this.item)
+  }
+
+  // Open a file and parse it to restore a saved state
+  open (file, callback) {
+    let response
+
+    const processResults = result => {
+      // If correct filetype
+      if (file.name.endsWith('.lngf')) {
+        // Define correct file structure
+        const resultSchema = schema({
+          color: String,
+          count: Number,
+          i: Number,
+          type: String,
+          x: Number,
+          y: String
+        })
+
+        const DataSchema = schema({
+          corpus: String,
+          consonants: String,
+          vowels: String,
+          distinguishCase: Boolean,
+          analyzed: Boolean,
+          '?results': {
+            all: Array.of(resultSchema),
+            consonants: Array.of(resultSchema),
+            vowels: Array.of(resultSchema)
+          },
+          '?hovered': resultSchema,
+          filter: String
+        })
+
+        let content = JSON.parse(result)
+
+        if (content.hovered) {
+          content.hovered.count = +content.hovered.count
+          content.hovered.i = +content.hovered.i
+          content.hovered.x = +content.hovered.x
+        }
+
+        if (content.results) {
+          content.results.all.forEach(el => {
+            el.count = +el.count
+            el.i = +el.i
+            el.x = +el.x
+          })
+          content.results.consonants.forEach(el => {
+            el.count = +el.count
+            el.i = +el.i
+            el.x = +el.x
+          })
+          content.results.vowels.forEach(el => {
+            el.count = +el.count
+            el.i = +el.i
+            el.x = +el.x
+          })
+        }
+
+        content.analyzed = false
+
+        if (DataSchema(content)) {
+          // If the file's content contains valid Data, load it
+          toast.success(`Data loaded from ${file.name}.`, {
+            autoClose: 5000,
+            className: 'toast-opened',
+            bodyClassName: 'toast-opened-body',
+            progressClassName: 'toast-opened-progress'
+          })
+
+          this.setStorage(content)
+
+          response = content
+        } else {
+          // If the file's content does not contain valid Data, show an error
+          toast.info(`The content of ${file.name} is invalid.`, {
+            autoClose: 5000,
+            className: 'toast-unopened',
+            bodyClassName: 'toast-unopened-body',
+            progressClassName: 'toast-unopened-progress'
+          })
+
+          // eslint-disable-next-line
+          console.error(DataSchema.errors(content))
+
+          response = false
+        }
+      } else {
+        // If incorrect filetype
+        toast.info('Wrong filetype selected.', {
+          autoClose: 5000,
+          className: 'toast-unopened',
+          bodyClassName: 'toast-unopened-body',
+          progressClassName: 'toast-unopened-progress'
+        })
+
+        response = false
+      }
+
+      callback(response)
+    }
+
+    if (window.FileReader) {
+      // If the browser has access to the File APIs, open the file
+      fileProcessor.openFile(file, processResults)
+    } else {
+      // If the browser can't access the File APIs, display a notification
+      toast.info('Your browser is unable to open files.', {
+        autoClose: 5000,
+        className: 'toast-unopened',
+        bodyClassName: 'toast-unopened-body',
+        progressClassName: 'toast-unopened-progress'
+      })
+
+      response = false
+      callback(response)
+    }
   }
 
   // Analyze the data
@@ -185,129 +308,6 @@ class FrequenService {
     }
 
     return results
-  }
-
-  // Save the current state to storage and generate a file
-  save (data) {
-    fileProcessor.save(data, this.item)
-  }
-
-  // Open a file and parse it to restore a saved state
-  open (file, callback) {
-    let response
-
-    const processResults = result => {
-      // If correct filetype
-      if (file.name.endsWith('.lngf')) {
-        // Define correct file structure
-        const resultSchema = schema({
-          color: String,
-          count: Number,
-          i: Number,
-          type: String,
-          x: Number,
-          y: String
-        })
-
-        const DataSchema = schema({
-          corpus: String,
-          consonants: String,
-          vowels: String,
-          distinguishCase: Boolean,
-          analyzed: Boolean,
-          '?results': {
-            all: Array.of(resultSchema),
-            consonants: Array.of(resultSchema),
-            vowels: Array.of(resultSchema)
-          },
-          '?hovered': resultSchema,
-          filter: String
-        })
-
-        let content = JSON.parse(result)
-
-        if (content.hovered) {
-          content.hovered.count = +content.hovered.count
-          content.hovered.i = +content.hovered.i
-          content.hovered.x = +content.hovered.x
-        }
-
-        if (content.results) {
-          content.results.all.forEach(el => {
-            el.count = +el.count
-            el.i = +el.i
-            el.x = +el.x
-          })
-          content.results.consonants.forEach(el => {
-            el.count = +el.count
-            el.i = +el.i
-            el.x = +el.x
-          })
-          content.results.vowels.forEach(el => {
-            el.count = +el.count
-            el.i = +el.i
-            el.x = +el.x
-          })
-        }
-
-        content.analyzed = false
-
-        if (DataSchema(content)) {
-          // If the file's content contains valid Data, load it
-          toast.success(`Data loaded from ${file.name}.`, {
-            autoClose: 5000,
-            className: 'toast-opened',
-            bodyClassName: 'toast-opened-body',
-            progressClassName: 'toast-opened-progress'
-          })
-
-          this.setStorage(content)
-
-          response = content
-        } else {
-          // If the file's content does not contain valid Data, show an error
-          toast.info(`The content of ${file.name} is invalid.`, {
-            autoClose: 5000,
-            className: 'toast-unopened',
-            bodyClassName: 'toast-unopened-body',
-            progressClassName: 'toast-unopened-progress'
-          })
-
-          // eslint-disable-next-line
-          console.error(DataSchema.errors(content))
-
-          response = false
-        }
-      } else {
-        // If incorrect filetype
-        toast.info('Wrong filetype selected.', {
-          autoClose: 5000,
-          className: 'toast-unopened',
-          bodyClassName: 'toast-unopened-body',
-          progressClassName: 'toast-unopened-progress'
-        })
-
-        response = false
-      }
-
-      callback(response)
-    }
-
-    if (window.FileReader) {
-      // If the browser has access to the File APIs, open the file
-      fileProcessor.openFile(file, processResults)
-    } else {
-      // If the browser can't access the File APIs, display a notification
-      toast.info('Your browser is unable to open files.', {
-        autoClose: 5000,
-        className: 'toast-unopened',
-        bodyClassName: 'toast-unopened-body',
-        progressClassName: 'toast-unopened-progress'
-      })
-
-      response = false
-      callback(response)
-    }
   }
 }
 

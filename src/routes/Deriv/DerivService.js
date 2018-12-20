@@ -8,13 +8,13 @@ class DerivService {
   constructor () {
     this.item = 'deriv'
     this.getData = this.getData.bind(this)
+    this.save = this.save.bind(this)
+    this.open = this.open.bind(this)
     this.setStorage = this.setStorage.bind(this)
     this.add = this.add.bind(this)
     this.clear = this.clear.bind(this)
     this.changeInput = this.changeInput.bind(this)
     this.derive = this.derive.bind(this)
-    this.save = this.save.bind(this)
-    this.open = this.open.bind(this)
   }
 
   // Get the data from storage or from the default data
@@ -25,6 +25,101 @@ class DerivService {
   // Store the current data in storage
   setStorage (data) {
     dataProcessor.setStorage(data, this.item)
+  }
+
+  // Save the current state to storage and generate a file
+  save (data) {
+    fileProcessor.save(data, this.item)
+  }
+
+  // Open a file and parse it to restore a saved state
+  open (file, callback) {
+    let response
+
+    const processResults = result => {
+      // If correct filetype
+      if (file.name.endsWith('.lngd')) {
+        // Define correct file structure
+        const lexemeSchema = schema({
+          lexeme: String,
+          definition: String
+        })
+
+        const derivationSchema = schema({
+          derivation: String,
+          gloss: String,
+          definition: String
+        })
+
+        const DataSchema = schema({
+          words: Number,
+          type: ['any', 'single base', 'single derivation'],
+          lexemes: Array.of(lexemeSchema),
+          derivations: Array.of(derivationSchema)
+        })
+
+        let content = JSON.parse(result)
+
+        if (content.results) {
+          content.results.words = +content.results.words
+        }
+
+        if (DataSchema(content)) {
+          // If the file's content contains valid Data, load it
+          toast.success(`Data loaded from ${file.name}.`, {
+            autoClose: 5000,
+            className: 'toast-opened',
+            bodyClassName: 'toast-opened-body',
+            progressClassName: 'toast-opened-progress'
+          })
+
+          this.setStorage(content)
+
+          response = content
+        } else {
+          // If the file's content does not contain valid Data, show an error
+          toast.info(`The content of ${file.name} is invalid.`, {
+            autoClose: 5000,
+            className: 'toast-unopened',
+            bodyClassName: 'toast-unopened-body',
+            progressClassName: 'toast-unopened-progress'
+          })
+
+          // eslint-disable-next-line
+          console.error(DataSchema.errors(content))
+
+          response = false
+        }
+      } else {
+        // If incorrect filetype
+        toast.info('Wrong filetype selected.', {
+          autoClose: 5000,
+          className: 'toast-unopened',
+          bodyClassName: 'toast-unopened-body',
+          progressClassName: 'toast-unopened-progress'
+        })
+
+        response = false
+      }
+
+      callback(response)
+    }
+
+    if (window.FileReader) {
+      // If the browser has access to the File APIs, open the file
+      fileProcessor.openFile(file, processResults)
+    } else {
+      // If the browser can't access the File APIs, display a notification
+      toast.info('Your browser is unable to open files.', {
+        autoClose: 5000,
+        className: 'toast-unopened',
+        bodyClassName: 'toast-unopened-body',
+        progressClassName: 'toast-unopened-progress'
+      })
+
+      response = false
+      callback(response)
+    }
   }
 
   // Add a new row to the form
@@ -224,101 +319,6 @@ class DerivService {
       return { newWords: deriveFromSingleDerivation(), possible: possible }
     } else {
       return { newWords: deriveFromAny(), possible: possible }
-    }
-  }
-
-  // Save the current state to storage and generate a file
-  save (data) {
-    fileProcessor.save(data, this.item)
-  }
-
-  // Open a file and parse it to restore a saved state
-  open (file, callback) {
-    let response
-
-    const processResults = result => {
-      // If correct filetype
-      if (file.name.endsWith('.lngd')) {
-        // Define correct file structure
-        const lexemeSchema = schema({
-          lexeme: String,
-          definition: String
-        })
-
-        const derivationSchema = schema({
-          derivation: String,
-          gloss: String,
-          definition: String
-        })
-
-        const DataSchema = schema({
-          words: Number,
-          type: ['any', 'single base', 'single derivation'],
-          lexemes: Array.of(lexemeSchema),
-          derivations: Array.of(derivationSchema)
-        })
-
-        let content = JSON.parse(result)
-
-        if (content.results) {
-          content.results.words = +content.results.words
-        }
-
-        if (DataSchema(content)) {
-          // If the file's content contains valid Data, load it
-          toast.success(`Data loaded from ${file.name}.`, {
-            autoClose: 5000,
-            className: 'toast-opened',
-            bodyClassName: 'toast-opened-body',
-            progressClassName: 'toast-opened-progress'
-          })
-
-          this.setStorage(content)
-
-          response = content
-        } else {
-          // If the file's content does not contain valid Data, show an error
-          toast.info(`The content of ${file.name} is invalid.`, {
-            autoClose: 5000,
-            className: 'toast-unopened',
-            bodyClassName: 'toast-unopened-body',
-            progressClassName: 'toast-unopened-progress'
-          })
-
-          // eslint-disable-next-line
-          console.error(DataSchema.errors(content))
-
-          response = false
-        }
-      } else {
-        // If incorrect filetype
-        toast.info('Wrong filetype selected.', {
-          autoClose: 5000,
-          className: 'toast-unopened',
-          bodyClassName: 'toast-unopened-body',
-          progressClassName: 'toast-unopened-progress'
-        })
-
-        response = false
-      }
-
-      callback(response)
-    }
-
-    if (window.FileReader) {
-      // If the browser has access to the File APIs, open the file
-      fileProcessor.openFile(file, processResults)
-    } else {
-      // If the browser can't access the File APIs, display a notification
-      toast.info('Your browser is unable to open files.', {
-        autoClose: 5000,
-        className: 'toast-unopened',
-        bodyClassName: 'toast-unopened-body',
-        progressClassName: 'toast-unopened-progress'
-      })
-
-      response = false
-      callback(response)
     }
   }
 }
