@@ -14,6 +14,8 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 ### Changed 0.4.0
 
 - Update tool descriptions.
+- Refactor dataProcessor and fileProcessor to take on functions completed by tool Service files.
+- Move all default data into a separate /data folder.
 - Update dependencies.
 
 ### Removed 0.4.0
