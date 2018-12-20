@@ -5,7 +5,9 @@ import PropTypes from 'prop-types'
 import Form from '../../components/Form'
 import sharedFormStyles from '../../components/Form/sharedFormStyles'
 
-const MorphForm = props => <Form />
+const MorphForm = props => {
+  return <Form>Form</Form>
+}
 
 MorphForm.propTypes = {
   classes: PropTypes.object,
