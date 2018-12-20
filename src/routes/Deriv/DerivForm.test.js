@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import DerivForm from './DerivForm'
-import { defData } from './defaultData'
+import { defData } from '../../data/deriv'
 
 describe('DerivForm', () => {
   it('renders without crashing', () => {
