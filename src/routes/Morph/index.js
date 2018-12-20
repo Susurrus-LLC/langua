@@ -32,7 +32,7 @@ class Morph extends React.Component {
     return (
       <Tool toolInfo={morphInfo}>
         <Notice>This tool is still in development.</Notice>
-        <MorphForm styles={this.props.classes} />
+        <MorphForm styles={this.props.classes} data={this.state} />
         <MorphResults styles={this.props.classes} />
       </Tool>
     )
