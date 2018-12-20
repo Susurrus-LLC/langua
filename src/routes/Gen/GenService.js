@@ -4,7 +4,7 @@ import schema from 'js-schema'
 import dataProcessor from '../../tools/dataProcessor'
 import fileProcessor from '../../tools/fileProcessor'
 
-import { vars } from './defaultData'
+import { vars } from '../../data/gen'
 
 class GenService {
   constructor () {
