@@ -25,7 +25,7 @@ export const defData = {
       letters: ['p', 't', 'c']
     },
     {
-      variables: 'Z',
+      variable: 'Z',
       letters: ['b', 'd', 'g']
     }
   ],
