@@ -4,14 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format of this changelog is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased](https://github.com/nai888/langua/compare/v0.3.1...HEAD)
+## [Unreleased](https://github.com/nai888/langua/compare/v0.4.0...HEAD)
+
+## [v0.4.0](https://github.com/nai888/langua/compare/v0.3.1...v0.4.0) - 2018-12-30
 
 ### Added 0.4.0
 
 - Add Morph default data.
-- Build MorphService.
+- Build MorphService for all tasks except building the results.
 - Build MorphForm.
-- Build MorphResults.
+- Build MorphResults with stats.
 - Add tests for dataProcessor and fileProcessor.
 
 ### Changed 0.4.0
@@ -19,8 +21,8 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Update tool descriptions.
 - Refactor dataProcessor and fileProcessor to take on functions completed by tool Service files.
 - Move all default data into a separate /data folder.
-- Update dependencies.
 - Update global styles to set focus styling and `textarea` and `select` element styles globally.
+- Update dependencies.
 
 ### Removed 0.4.0
 
