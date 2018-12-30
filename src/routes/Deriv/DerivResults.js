@@ -109,8 +109,8 @@ class DerivResults extends React.Component {
     let words = 0
     let possible = 0
     if (this.props.results) {
-      words = this.props.results.newWords.length
-      possible = this.props.results.possible
+      words = this.props.results.newWords.length.toLocaleString()
+      possible = this.props.results.possible.toLocaleString()
     }
     return `words: ${words}; maximum derivations possible: ${possible}`
   }
