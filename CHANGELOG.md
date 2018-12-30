@@ -11,6 +11,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Add Morph default data.
 - Build MorphService.
 - Build MorphForm.
+- Build MorphResults.
 - Add tests for dataProcessor and fileProcessor.
 
 ### Changed 0.4.0
