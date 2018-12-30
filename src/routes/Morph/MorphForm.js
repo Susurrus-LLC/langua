@@ -45,6 +45,7 @@ const MorphForm = props => {
             />
             <div className={props.styles.textAreaSpacer}>
               {join(props.data.categories)}
+              &nbsp;
             </div>
           </div>
         </div>
@@ -69,6 +70,7 @@ const MorphForm = props => {
             />
             <div className={props.styles.textAreaSpacer}>
               {join(props.data.rewriteRules)}
+              &nbsp;
             </div>
           </div>
         </div>
@@ -93,6 +95,7 @@ const MorphForm = props => {
             />
             <div className={props.styles.textAreaSpacer}>
               {join(props.data.soundChanges)}
+              &nbsp;
             </div>
           </div>
         </div>
@@ -117,6 +120,7 @@ const MorphForm = props => {
             />
             <div className={props.styles.textAreaSpacer}>
               {join(props.data.lexicon)}
+              &nbsp;
             </div>
           </div>
         </div>
