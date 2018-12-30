@@ -11,7 +11,8 @@ const styles = {
   },
   container: {
     position: 'relative',
-    width: '100%'
+    width: '100%',
+    height: `calc(100% - ${2 * v.lnht}rem)` /* 100% minus the header height */
   },
   dataInput: {
     position: 'absolute',
@@ -23,6 +24,7 @@ const styles = {
   },
   textAreaSpacer: {
     width: '100%',
+    height: '100%',
     wordWrap: 'normal',
     whiteSpace: 'pre',
     padding: {
