@@ -120,7 +120,13 @@ class MorphService {
     return [
       {
         input: 'lector',
-        output: 'leitor'
+        output: 'leitor',
+        changed: true
+      },
+      {
+        input: 'doctor',
+        output: 'doutor',
+        changed: false
       }
     ]
   }

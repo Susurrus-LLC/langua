@@ -42,7 +42,12 @@ const styles = {
     padding: `0 ${v.lnht / 2}rem`
   },
   outText: {
-    whiteSpace: 'pre-wrap'
+    '&:not(:last-child)': {
+      marginBottom: 0
+    }
+  },
+  changed: {
+    fontWeight: 'bold'
   }
 }
 
