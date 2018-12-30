@@ -36,27 +36,10 @@ class MorphService {
       // If correct filetype
       if (file.name.endsWith('.lngm')) {
         // Define correct file structure
-        const categorySchema = schema({
-          variable: String,
-          letters: Array.of(String)
-        })
-
-        const rewriteRuleSchema = schema({
-          pattern: String,
-          substitution: String
-        })
-
-        const soundChangeSchema = schema({
-          input: String,
-          output: String,
-          '?context': String,
-          '?exception': String
-        })
-
         const DataSchema = schema({
-          categories: Array.of(categorySchema),
-          rewriteRules: Array.of(rewriteRuleSchema),
-          soundChanges: Array.of(soundChangeSchema),
+          categories: Array.of(String),
+          rewriteRules: Array.of(String),
+          soundChanges: Array.of(String),
           lexicon: Array.of(String),
           outputFormat: ['oo', 'io', 'oi'],
           showDiff: Boolean,

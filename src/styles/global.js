@@ -3,7 +3,17 @@ import * as v from './variables'
 const styles = {
   '@global': {
     '*': {
-      boxSizing: 'border-box'
+      boxSizing: 'border-box',
+      '&:focus': {
+        outline: {
+          width: 1,
+          style: 'solid',
+          color: v.blu
+            .darken(0.15)
+            .alpha(0.3)
+            .string()
+        }
+      }
     },
     body: {
       margin: 0,
@@ -90,16 +100,6 @@ const styles = {
         '&:active': {
           color: v.ong.darken(0.25).string()
         }
-      },
-      '&:focus': {
-        outline: {
-          width: 1,
-          style: 'solid',
-          color: v.blu
-            .darken(0.15)
-            .alpha(0.3)
-            .string()
-        }
       }
     },
     input: {
@@ -107,20 +107,44 @@ const styles = {
       fontSize: `${v.ms1}rem`,
       boxSizing: 'border-box',
       height: `${3 * v.lnht}rem`,
-      '&:focus': {
-        outline: {
-          width: 1,
-          style: 'solid',
-          color: v.blu
-            .darken(0.15)
-            .alpha(0.3)
-            .string()
-        }
+      lineHeight: v.lnht * 2,
+      border: {
+        width: 1,
+        style: 'solid',
+        color: v.white.darken(0.3).string()
       },
+      backgroundColor: 'white',
       '&[type=checkbox], &[type=radio]': {
         height: 'inherit',
         verticalAlign: 'baseline'
       }
+    },
+    textarea: {
+      fontFamily: v.mainFont,
+      fontSize: `${v.ms1}rem`,
+      boxSizing: 'border-box',
+      height: `${6 * v.lnht}rem`,
+      lineHeight: v.lnht * 2,
+      overflow: 'auto',
+      border: {
+        width: 1,
+        style: 'solid',
+        color: v.white.darken(0.3).string()
+      },
+      backgroundColor: 'white'
+    },
+    select: {
+      fontFamily: v.mainFont,
+      fontSize: `${v.ms1}rem`,
+      boxSizing: 'border-box',
+      height: `${3 * v.lnht}rem`,
+      lineHeight: v.lnht * 2,
+      border: {
+        width: 1,
+        style: 'solid',
+        color: v.white.darken(0.3).string()
+      },
+      backgroundColor: 'white'
     },
     button: {
       fontFamily: v.mainFont,
@@ -151,24 +175,11 @@ const styles = {
           spread: null,
           color: v.white.darken(0.25).string()
         }
-      },
-      '&:focus': {
-        outline: {
-          width: 1,
-          style: 'solid',
-          color: v.blu
-            .darken(0.15)
-            .alpha(0.3)
-            .string()
-        }
       }
     },
-    'select, optgroup, textarea': {
+    optgroup: {
       fontFamily: v.mainFont,
       fontSize: `${v.ms1}rem`
-    },
-    select: {
-      height: `${3 * v.lnht}rem`
     },
     'code, kbd, samp, var': {
       fontFamily: 'monospace, monospace',

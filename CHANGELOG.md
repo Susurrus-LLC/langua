@@ -10,6 +10,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Add Morph default data.
 - Build MorphService.
+- Build MorphForm.
 - Add tests for dataProcessor and fileProcessor.
 
 ### Changed 0.4.0
@@ -18,6 +19,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Refactor dataProcessor and fileProcessor to take on functions completed by tool Service files.
 - Move all default data into a separate /data folder.
 - Update dependencies.
+- Update global styles to set focus styling and `textarea` and `select` element styles globally.
 
 ### Removed 0.4.0
 

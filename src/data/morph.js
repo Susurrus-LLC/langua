@@ -1,106 +1,28 @@
 export const defData = {
   categories: [
-    {
-      variable: 'V',
-      letters: ['i', 'e', 'a', 'o', 'u']
-    },
-    {
-      variable: 'L',
-      letters: ['ī', 'ē', 'ā', 'ō', 'ū']
-    },
-    {
-      variable: 'C',
-      letters: ['p', 't', 'c', 'q', 'b', 'd', 'g', 'm', 'n', 'l', 'r', 'h', 's']
-    },
-    {
-      variable: 'F',
-      letters: ['i', 'e']
-    },
-    {
-      variable: 'B',
-      letters: ['o', 'u']
-    },
-    {
-      variable: 'S',
-      letters: ['p', 't', 'c']
-    },
-    {
-      variable: 'Z',
-      letters: ['b', 'd', 'g']
-    }
+    'V=ieaou',
+    'L=īēāōū',
+    'C=ptcqbdgmnlrhs',
+    'F=ie',
+    'B=ou',
+    'S=ptc',
+    'Z=bdg'
   ],
-  rewriteRules: [
-    {
-      pattern: 'lh',
-      substitution: 'lj'
-    }
-  ],
+  rewriteRules: ['lh=lj'],
   soundChanges: [
-    {
-      input: '[sm]',
-      output: '',
-      context: '_#'
-    },
-    {
-      input: 'i',
-      output: 'j',
-      context: '_V'
-    },
-    {
-      input: 'L',
-      output: 'V',
-      context: '_'
-    },
-    {
-      input: 'e',
-      output: '',
-      context: 'Vr_#'
-    },
-    {
-      input: 'v',
-      output: '',
-      context: 'V_V'
-    },
-    {
-      input: 'u',
-      output: 'o',
-      context: '_#'
-    },
-    {
-      input: 'gn',
-      output: 'nh',
-      context: '_'
-    },
-    {
-      input: 'S',
-      output: 'Z',
-      context: 'V_V'
-    },
-    {
-      input: 'c',
-      output: 'i',
-      context: 'F_t'
-    },
-    {
-      input: 'c',
-      output: 'u',
-      context: 'B_t'
-    },
-    {
-      input: 'p',
-      output: '',
-      context: 'V_t'
-    },
-    {
-      input: 'ii',
-      output: 'i',
-      context: '_'
-    },
-    {
-      input: 'e',
-      output: '',
-      context: 'C_rV'
-    }
+    '[sm]//_#',
+    'i/j/_V',
+    'L/V/_',
+    'e//Vr_#',
+    'v//V_V',
+    'u/o/_#',
+    'gn/nh/_',
+    'S/Z/V_V',
+    'c/i/F_t',
+    'c/u/B_t',
+    'p//V_t',
+    'ii/i/_',
+    'e//C_rV'
   ],
   lexicon: [
     'lector',
