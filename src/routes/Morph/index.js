@@ -98,6 +98,7 @@ class Morph extends React.Component {
           styles={this.props.classes}
           outputFormat={this.state.outputFormat}
           results={this.state.results}
+          showDiff={this.state.showDiff}
         />
       </Tool>
     )

@@ -21,7 +21,7 @@ const MorphResults = props => {
     }
 
     const classes = result => {
-      if (result.changed) {
+      if (result.changed && props.showDiff) {
         return classNames(props.styles.outText, props.styles.changed)
       } else {
         return props.styles.outText

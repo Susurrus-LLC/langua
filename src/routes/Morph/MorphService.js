@@ -121,18 +121,28 @@ class MorphService {
   }
 
   morph (data) {
-    return [
+    let results = [
       {
         input: 'lector',
-        output: 'leitor',
-        changed: true
+        output: 'leitor'
       },
       {
         input: 'doctor',
-        output: 'doutor',
-        changed: false
+        output: 'doutor'
       }
     ]
+    if (data.results !== undefined) {
+      for (let i = 0; i < results.length; i++) {
+        results[i].changed =
+          results[i].input !== data.results[i].input &&
+          results[i].output !== data.results[i].output
+      }
+    } else {
+      for (let i = 0; i < results.length; i++) {
+        results[i].changed = true
+      }
+    }
+    return results
   }
 }
 
