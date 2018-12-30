@@ -21,12 +21,16 @@ class MorphService {
 
   // Store the current data in storage
   setStorage (data) {
-    dataProcessor.setStorage(data, this.item)
+    const dataNoResults = JSON.parse(JSON.stringify(data))
+    delete dataNoResults.results
+    dataProcessor.setStorage(dataNoResults, this.item)
   }
 
   // Save the current state to storage and generate a file
   save (data) {
-    fileProcessor.save(data, this.item)
+    const dataNoResults = JSON.parse(JSON.stringify(data))
+    delete dataNoResults.results
+    fileProcessor.save(dataNoResults, this.item)
   }
 
   // Open a file and parse it to restore a saved state
