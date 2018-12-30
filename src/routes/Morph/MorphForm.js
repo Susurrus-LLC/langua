@@ -15,6 +15,12 @@ const MorphForm = props => {
 
   const join = data => data.join('\n')
 
+  const invokeFilePicker = e => {
+    e.preventDefault()
+    filePicker.current.value = ''
+    filePicker.current.click()
+  }
+
   return (
     <Form>
       <div className={props.styles.section}>
@@ -35,7 +41,7 @@ const MorphForm = props => {
                 props.styles.dataInput
               )}
               value={join(props.data.categories)}
-              readOnly
+              onChange={props.change}
             />
             <div className={props.styles.textAreaSpacer}>
               {join(props.data.categories)}
@@ -59,7 +65,7 @@ const MorphForm = props => {
                 props.styles.dataInput
               )}
               value={join(props.data.rewriteRules)}
-              readOnly
+              onChange={props.change}
             />
             <div className={props.styles.textAreaSpacer}>
               {join(props.data.rewriteRules)}
@@ -83,7 +89,7 @@ const MorphForm = props => {
                 props.styles.dataInput
               )}
               value={join(props.data.soundChanges)}
-              readOnly
+              onChange={props.change}
             />
             <div className={props.styles.textAreaSpacer}>
               {join(props.data.soundChanges)}
@@ -107,7 +113,7 @@ const MorphForm = props => {
                 props.styles.dataInput
               )}
               value={join(props.data.lexicon)}
-              readOnly
+              onChange={props.change}
             />
             <div className={props.styles.textAreaSpacer}>
               {join(props.data.lexicon)}
@@ -118,7 +124,7 @@ const MorphForm = props => {
       <Control addedClasses={props.classes.part}>
         <ControlSide side='left'>
           <ControlPiece>
-            <Button type='submit' ver='neutral' onClick={props.change}>
+            <Button type='submit' ver='neutral' onClick={props.morph}>
               Change
             </Button>
           </ControlPiece>
@@ -143,7 +149,7 @@ const MorphForm = props => {
                 name='options'
                 value='showDiff'
                 checked={props.data.showDiff}
-                onChange={props.change}
+                onChange={props.check}
               />{' '}
               show differences
             </label>
@@ -156,7 +162,7 @@ const MorphForm = props => {
                 name='options'
                 value='ruleReport'
                 checked={props.data.ruleReport}
-                onChange={props.change}
+                onChange={props.check}
               />{' '}
               report applied rules
             </label>
@@ -169,7 +175,7 @@ const MorphForm = props => {
                 name='options'
                 value='rewriteOutput'
                 checked={props.data.rewriteOutput}
-                onChange={props.change}
+                onChange={props.check}
               />{' '}
               rewrite on output
             </label>
@@ -177,21 +183,12 @@ const MorphForm = props => {
         </ControlSide>
         <ControlSide side='right'>
           <ControlPiece>
-            <Button
-              id='save'
-              ver='success'
-              onClick={props.change}
-              type='button'
-            >
+            <Button id='save' ver='success' onClick={props.save} type='button'>
               Save
             </Button>
           </ControlPiece>
           <ControlPiece>
-            <Button
-              id='open'
-              onClick={/*invokeFilePicker*/ e => e.preventDefault()}
-              type='button'
-            >
+            <Button id='open' onClick={invokeFilePicker} type='button'>
               Open
             </Button>
             <input
@@ -200,7 +197,7 @@ const MorphForm = props => {
               className={props.classes.hidden}
               type='file'
               ref={filePicker}
-              onChange={props.change}
+              onChange={props.open}
             />
           </ControlPiece>
         </ControlSide>
@@ -221,7 +218,12 @@ MorphForm.propTypes = {
     showDiff: PropTypes.bool.isRequired,
     ruleReport: PropTypes.bool.isRequired,
     rewriteOutput: PropTypes.bool.isRequired
-  }).isRequired
+  }).isRequired,
+  change: PropTypes.func.isRequired,
+  morph: PropTypes.func.isRequired,
+  check: PropTypes.func.isRequired,
+  save: PropTypes.func.isRequired,
+  open: PropTypes.func.isRequired
 }
 
 export default injectSheet(sharedFormStyles)(MorphForm)

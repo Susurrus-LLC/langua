@@ -11,6 +11,7 @@ class MorphService {
     this.setStorage = this.setStorage.bind(this)
     this.save = this.save.bind(this)
     this.open = this.open.bind(this)
+    this.morph = this.morph.bind(this)
   }
 
   // Get the data from storage or from the default data
@@ -109,6 +110,15 @@ class MorphService {
       response = false
       callback(response)
     }
+  }
+
+  morph (data) {
+    return [
+      {
+        input: 'lector',
+        output: 'leitor'
+      }
+    ]
   }
 }
 
