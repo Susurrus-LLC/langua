@@ -8,6 +8,7 @@ class MorphService {
   constructor () {
     this.item = 'morph'
     this.getData = this.getData.bind(this)
+    this.removeResults = this.removeResults.bind(this)
     this.setStorage = this.setStorage.bind(this)
     this.save = this.save.bind(this)
     this.open = this.open.bind(this)
@@ -19,18 +20,21 @@ class MorphService {
     return dataProcessor.getData(this.item)
   }
 
-  // Store the current data in storage
-  setStorage (data) {
+  // Remove the results from the data
+  removeResults (data) {
     const dataNoResults = JSON.parse(JSON.stringify(data))
     delete dataNoResults.results
-    dataProcessor.setStorage(dataNoResults, this.item)
+    return dataNoResults
+  }
+
+  // Store the current data in storage
+  setStorage (data) {
+    dataProcessor.setStorage(this.removeResults(data), this.item)
   }
 
   // Save the current state to storage and generate a file
   save (data) {
-    const dataNoResults = JSON.parse(JSON.stringify(data))
-    delete dataNoResults.results
-    fileProcessor.save(dataNoResults, this.item)
+    fileProcessor.save(this.removeResults(data), this.item)
   }
 
   // Open a file and parse it to restore a saved state
