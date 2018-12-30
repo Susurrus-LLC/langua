@@ -40,6 +40,9 @@ const styles = {
     minWidth: `${3 * v.ms6}rem`,
     flexGrow: 2,
     padding: `0 ${v.lnht / 2}rem`
+  },
+  outText: {
+    whiteSpace: 'pre-wrap'
   }
 }
 
