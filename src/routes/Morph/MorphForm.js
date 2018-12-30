@@ -3,10 +3,16 @@ import injectSheet from 'react-jss'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
+import Button from '../../components/Button'
 import Form from '../../components/Form'
 import sharedFormStyles from '../../components/Form/sharedFormStyles'
+import Control from '../../components/Control'
+import ControlSide from '../../components/Control/Side'
+import ControlPiece from '../../components/Control/Piece'
 
 const MorphForm = props => {
+  const filePicker = React.createRef()
+
   const join = data => data.join('\n')
 
   return (
@@ -109,10 +115,96 @@ const MorphForm = props => {
           </div>
         </div>
       </div>
-      {JSON.stringify(props.data.outputFormat)}
-      {JSON.stringify(props.data.showDiff)}
-      {JSON.stringify(props.data.ruleReport)}
-      {JSON.stringify(props.data.rewriteOutput)}
+      <Control addedClasses={props.classes.part}>
+        <ControlSide side='left'>
+          <ControlPiece>
+            <Button type='submit' ver='neutral' onClick={props.change}>
+              Change
+            </Button>
+          </ControlPiece>
+          <ControlPiece>
+            <label htmlFor='outputFormat'>output format:</label>
+            <select
+              id='outputFormat'
+              name='outputFormat'
+              value={props.data.outputFormat}
+              onChange={props.change}
+            >
+              <option value='oo'>output</option>
+              <option value='io'>input &rarr; output</option>
+              <option value='oi'>output &larr; input</option>
+            </select>
+          </ControlPiece>
+          <ControlPiece>
+            <label>
+              <input
+                type='checkbox'
+                id='showDiff'
+                name='options'
+                value='showDiff'
+                checked={props.data.showDiff}
+                onChange={props.change}
+              />{' '}
+              show differences
+            </label>
+          </ControlPiece>
+          <ControlPiece>
+            <label>
+              <input
+                type='checkbox'
+                id='ruleReport'
+                name='options'
+                value='ruleReport'
+                checked={props.data.ruleReport}
+                onChange={props.change}
+              />{' '}
+              report applied rules
+            </label>
+          </ControlPiece>
+          <ControlPiece>
+            <label>
+              <input
+                type='checkbox'
+                id='rewriteOutput'
+                name='options'
+                value='rewriteOutput'
+                checked={props.data.rewriteOutput}
+                onChange={props.change}
+              />{' '}
+              rewrite on output
+            </label>
+          </ControlPiece>
+        </ControlSide>
+        <ControlSide side='right'>
+          <ControlPiece>
+            <Button
+              id='save'
+              ver='success'
+              onClick={props.change}
+              type='button'
+            >
+              Save
+            </Button>
+          </ControlPiece>
+          <ControlPiece>
+            <Button
+              id='open'
+              onClick={/*invokeFilePicker*/ e => e.preventDefault()}
+              type='button'
+            >
+              Open
+            </Button>
+            <input
+              id='file'
+              name='file'
+              className={props.classes.hidden}
+              type='file'
+              ref={filePicker}
+              onChange={props.change}
+            />
+          </ControlPiece>
+        </ControlSide>
+      </Control>
     </Form>
   )
 }
