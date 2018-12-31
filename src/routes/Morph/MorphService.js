@@ -20,6 +20,7 @@ class MorphService {
     this.rewriteLex = this.rewriteLex.bind(this)
     this.unrewriteLex = this.unrewriteLex.bind(this)
     this.applyChanges = this.applyChanges.bind(this)
+    this.getResults = this.getResults.bind(this)
     this.idDiff = this.idDiff.bind(this)
     this.morph = this.morph.bind(this)
   }
@@ -330,14 +331,18 @@ class MorphService {
     return newResults
   }
 
-  applyChanges (cats, rules, changes, lexicon, rwOutput) {
+  applyChanges (cats, rules, changes, word) {
+    return word
+  }
+
+  getResults (cats, rules, changes, lexicon, rwOutput) {
     const rwLexicon = this.rewriteLex(lexicon, rules)
     let results = []
 
     for (let i = 0; i < lexicon.length; i++) {
       results.push({
         input: lexicon[i],
-        output: rwLexicon[i]
+        output: this.applyChanges(cats, rules, changes, rwLexicon[i])
       })
     }
 
@@ -355,7 +360,7 @@ class MorphService {
     ) {
       for (let i = 0; i < newResults.length; i++) {
         newResults[i].diff =
-          newResults[i].input !== data.results[i].input &&
+          newResults[i].input !== data.results[i].input ||
           newResults[i].output !== data.results[i].output
       }
     } else {
@@ -388,7 +393,7 @@ class MorphService {
       allErrors = allErrors.concat(soundChanges)
     if (allErrors.length) return allErrors
 
-    const results = this.applyChanges(
+    const results = this.getResults(
       categories,
       rewriteRules,
       soundChanges,
