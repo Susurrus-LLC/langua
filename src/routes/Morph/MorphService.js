@@ -212,8 +212,38 @@ class MorphService {
           changeFrom: split[0],
           changeTo: split[1]
         }
-        if (split[2]) thisRule.context = split[2]
-        if (split[3]) thisRule.exception = split[3]
+        if (split[2]) {
+          thisRule.context = split[2]
+          if (!/_/.test(split[2])) {
+            errors.push(
+              `The context in the sound change ${
+                changes[i]
+              } is missing an _ sign.`
+            )
+          } else if (/_/.exec(split[2]).length > 2) {
+            errors.push(
+              `The context in the sound change ${
+                changes[i]
+              } has too many _ signs.`
+            )
+          }
+        }
+        if (split[3]) {
+          thisRule.exception = split[3]
+          if (!/_/.test(split[3])) {
+            errors.push(
+              `The exception in the sound change ${
+                changes[i]
+              } is missing an _ sign.`
+            )
+          } else if (/_/.exec(split[3]).length > 2) {
+            errors.push(
+              `The exception in the sound change ${
+                changes[i]
+              } has too many _ signs.`
+            )
+          }
+        }
         splitChanges.push(thisRule)
       }
     }
@@ -225,7 +255,11 @@ class MorphService {
   idChanged (data, results) {
     const newResults = JSON.parse(JSON.stringify(results))
 
-    if (data.results !== undefined) {
+    if (
+      data.results !== undefined &&
+      data.results.length &&
+      typeof data.results[0] !== 'string'
+    ) {
       for (let i = 0; i < newResults.length; i++) {
         newResults[i].changed =
           newResults[i].input !== data.results[i].input &&
