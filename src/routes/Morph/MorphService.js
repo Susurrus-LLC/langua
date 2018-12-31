@@ -12,9 +12,13 @@ class MorphService {
     this.setStorage = this.setStorage.bind(this)
     this.save = this.save.bind(this)
     this.open = this.open.bind(this)
-    this.splitCategories = this.splitCategories.bind(this)
     this.splitRewriteRules = this.splitRewriteRules.bind(this)
+    this.rewriteCats = this.rewriteCats.bind(this)
+    this.splitCategories = this.splitCategories.bind(this)
     this.splitSoundChanges = this.splitSoundChanges.bind(this)
+    this.rewriteChanges = this.rewriteChanges.bind(this)
+    this.rewriteLex = this.rewriteLex.bind(this)
+    this.unrewriteLex = this.unrewriteLex.bind(this)
     this.applyChanges = this.applyChanges.bind(this)
     this.idChanged = this.idChanged.bind(this)
     this.morph = this.morph.bind(this)
@@ -125,49 +129,6 @@ class MorphService {
     }
   }
 
-  // Split the categories into an array of objects
-  splitCategories (cats) {
-    let assignments = []
-    let errors = []
-
-    for (let i = 0; i < cats.length; i++) {
-      const split = cats[i].split('=')
-      if (split.length > 2) {
-        // If the string was split too many times, it had too many =
-        errors.push(`The category ${cats[i]} has too many = signs.`)
-      } else if (split.length < 2) {
-        if (cats[i].length === 0) {
-          // If it was a blank line, ignore it
-          continue
-        } else {
-          // If the string wasn't split at all, it was missing a =
-          errors.push(`The category ${cats[i]} is missing an = sign.`)
-        }
-      } else if (split[0].length > 1) {
-        // If the string to the left of the = is more than one character
-        errors.push(
-          `The category ${
-            cats[i]
-          } needs to be assigned to a single-character variable.`
-        )
-      } else {
-        // Split the variable from its assignments
-        assignments.push(split)
-      }
-    }
-
-    let splitCategories = []
-    for (let i = 0; i < assignments.length; i++) {
-      const thisCat = {}
-      thisCat.variable = assignments[i][0]
-      thisCat.categories = assignments[i][1].split('')
-      splitCategories.push(thisCat)
-    }
-
-    // If there are any errors that were logged, return the errors. Otherwise, return the split categories.
-    return errors.length ? errors : splitCategories
-  }
-
   // Split the rewrite rules into an array of objects
   splitRewriteRules (rules) {
     let splitRules = []
@@ -194,6 +155,59 @@ class MorphService {
 
     // If there are any errors that were logged, return the errors. Otherwise, return the split categories.
     return errors.length ? errors : splitRules
+  }
+
+  // Apply the rewrite rules to the categories
+  rewriteCats (cat, rules) {
+    for (let i = 0; i < rules.length; i++) {
+      const rewriteFrom = new RegExp(rules[i].rewriteFrom, 'g')
+      cat[1] = cat[1].replace(rewriteFrom, rules[i].rewriteTo)
+    }
+    return cat
+  }
+
+  // Split the categories into an array of objects
+  splitCategories (cats, rules) {
+    let assignments = []
+    let errors = []
+
+    for (let i = 0; i < cats.length; i++) {
+      const split = cats[i].split('=')
+      if (split.length > 2) {
+        // If the string was split too many times, it had too many =
+        errors.push(`The category ${cats[i]} has too many = signs.`)
+      } else if (split.length < 2) {
+        if (cats[i].length === 0) {
+          // If it was a blank line, ignore it
+          continue
+        } else {
+          // If the string wasn't split at all, it was missing a =
+          errors.push(`The category ${cats[i]} is missing an = sign.`)
+        }
+      } else if (split[0].length > 1) {
+        // If the string to the left of the = is more than one character
+        errors.push(
+          `The category ${
+            cats[i]
+          } needs to be assigned to a single-character variable.`
+        )
+      } else {
+        const rwSplit = this.rewriteCats(split, rules)
+        // Split the variable from its assignments
+        assignments.push(rwSplit)
+      }
+    }
+
+    let splitCategories = []
+    for (let i = 0; i < assignments.length; i++) {
+      const thisCat = {}
+      thisCat.variable = assignments[i][0]
+      thisCat.categories = assignments[i][1].split('')
+      splitCategories.push(thisCat)
+    }
+
+    // If there are any errors that were logged, return the errors. Otherwise, return the split categories.
+    return errors.length ? errors : splitCategories
   }
 
   // Split the sound change rules into an array of objects
@@ -260,19 +274,50 @@ class MorphService {
     return errors.length ? errors : splitChanges
   }
 
-  applyChanges (cats, rules, changes, lexicon, rwOutput) {
-    let results = [
-      {
-        input: 'lector',
-        output: 'leitor'
-      },
-      {
-        input: 'doctor',
-        output: 'doutor'
-      }
-    ]
+  // Apply the rewrite rules to the sound change rules
+  rewriteChanges (changes, rules) {
+    const newChanges = JSON.parse(JSON.stringify(changes))
+    return newChanges
+  }
 
-    return results
+  // Apply the rewrite rules to the lexicon
+  rewriteLex (lex, rules) {
+    let newLex = []
+
+    for (let i = 0; i < lex.length; i++) {
+      let word = lex[i]
+
+      for (let j = 0; j < rules.length; j++) {
+        const regRule = new RegExp(rules[j].rewriteFrom, 'g')
+        word = word.replace(regRule, rules[j].rewriteTo)
+      }
+
+      newLex.push(word)
+    }
+
+    return newLex
+  }
+
+  // Reverse apply the rewrite rules to the output
+  unrewriteLex (results, rules) {
+    const newResults = JSON.parse(JSON.stringify(results))
+
+    return newResults
+  }
+
+  applyChanges (cats, rules, changes, lexicon, rwOutput) {
+    const rwLexicon = this.rewriteLex(lexicon, rules)
+    let results = []
+
+    for (let i = 0; i < lexicon.length; i++) {
+      results.push({
+        input: lexicon[i],
+        output: rwLexicon[i]
+      })
+    }
+
+    // If 'rewrite on output' is selected, rewrite the results. Otherwise, just return the results as-is.
+    return rwOutput ? this.unrewriteLex(results, rules) : results
   }
 
   idChanged (data, results) {
@@ -300,9 +345,14 @@ class MorphService {
   morph (data) {
     const newData = JSON.parse(JSON.stringify(data))
 
-    const categories = this.splitCategories(newData.categories)
+    // Process the input
     const rewriteRules = this.splitRewriteRules(newData.rewriteRules)
+    const categories = this.splitCategories(newData.categories, rewriteRules)
     const soundChanges = this.splitSoundChanges(newData.soundChanges)
+
+    // Apply the rewrite rules
+    const rwChanges = this.rewriteChanges(soundChanges, rewriteRules)
+    console.log(rwChanges)
 
     // Return the errors if there are any
     let allErrors = []
