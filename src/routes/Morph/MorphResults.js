@@ -10,6 +10,16 @@ const MorphResults = props => {
   let resultsArr = props.results || []
 
   const outputText = styles => {
+    // If there were errors, print them
+    if (typeof resultsArr[0] === 'string') {
+      return resultsArr.map((error, i) => (
+        <p className={classNames(styles.outText, props.classes.error)} key={i}>
+          {error}
+        </p>
+      ))
+    }
+
+    // Format the results according to the selected option
     const format = result => {
       if (props.outputFormat === 'oo') {
         return result.output.trim()
@@ -20,12 +30,14 @@ const MorphResults = props => {
       }
     }
 
+    // Assign the changed class if the result is different from last run
     const classes = result => {
       return result.changed && props.showDiff
-        ? classNames(props.styles.outText, props.styles.changed)
-        : props.styles.outText
+        ? classNames(styles.outText, styles.changed)
+        : styles.outText
     }
 
+    // Return the results text
     return resultsArr.length > 0 ? (
       resultsArr.map((result, i) => (
         <p className={classes(result)} key={i}>
@@ -33,7 +45,7 @@ const MorphResults = props => {
         </p>
       ))
     ) : (
-      <p className={props.styles.outText} />
+      <p className={styles.outText} />
     )
   }
 
@@ -83,13 +95,16 @@ MorphResults.propTypes = {
   classes: PropTypes.object,
   styles: PropTypes.object,
   outputFormat: PropTypes.string.isRequired,
-  results: PropTypes.arrayOf(
-    PropTypes.shape({
-      input: PropTypes.string.isRequired,
-      output: PropTypes.string.isRequired,
-      changed: PropTypes.bool.isRequired
-    })
-  ),
+  results: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        input: PropTypes.string.isRequired,
+        output: PropTypes.string.isRequired,
+        changed: PropTypes.bool.isRequired
+      })
+    ).isRequired,
+    PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
+  ]),
   showDiff: PropTypes.bool.isRequired
 }
 

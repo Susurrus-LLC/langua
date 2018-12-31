@@ -246,9 +246,15 @@ class MorphService {
     const categories = this.splitCategories(newData.categories)
     const rewriteRules = this.splitRewriteRules(newData.rewriteRules)
     const soundChanges = this.splitSoundChanges(newData.soundChanges)
-    console.log(categories)
-    console.log(rewriteRules)
-    console.log(soundChanges)
+
+    let allErrors = []
+    if (typeof categories[0] === 'string')
+      allErrors = allErrors.concat(categories)
+    if (typeof rewriteRules[0] === 'string')
+      allErrors = allErrors.concat(rewriteRules)
+    if (typeof soundChanges[0] === 'string')
+      allErrors = allErrors.concat(soundChanges)
+    if (allErrors.length) return allErrors
 
     let results = [
       {
