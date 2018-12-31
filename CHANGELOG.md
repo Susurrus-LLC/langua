@@ -6,6 +6,10 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.4.1...HEAD)
 
+### Changed 0.4.2
+
+- Fix bug with identifying differences in the output from one run to the next.
+
 ## [v0.4.1](https://github.com/nai888/langua/compare/v0.4.0...v0.4.1) - 2018-12-31
 
 ### Added 0.4.1
