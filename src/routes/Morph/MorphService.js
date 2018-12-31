@@ -247,6 +247,7 @@ class MorphService {
     const rewriteRules = this.splitRewriteRules(newData.rewriteRules)
     const soundChanges = this.splitSoundChanges(newData.soundChanges)
 
+    // Return the errors if there are any
     let allErrors = []
     if (typeof categories[0] === 'string')
       allErrors = allErrors.concat(categories)

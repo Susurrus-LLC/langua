@@ -10,6 +10,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Calculate number of Morph results that are different from last time.
 - Correctly display differences in Morph results or not depending on the option selected.
+- Display any errors that are found in the Morph input.
 
 ## [v0.4.0](https://github.com/nai888/langua/compare/v0.3.1...v0.4.0) - 2018-12-30
 
