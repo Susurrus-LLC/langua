@@ -20,6 +20,7 @@ describe('MorphResults', () => {
         styles={classes}
         outputFormat={defData.outputFormat}
         results={results}
+        showDiff={defData.showDiff}
       />,
       div
     )
