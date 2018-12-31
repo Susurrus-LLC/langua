@@ -211,9 +211,22 @@ class MorphService {
   }
 
   // Apply the rewrite rules to the sound change rules
-  rewriteChanges (changes, rules) {
-    const newChanges = JSON.parse(JSON.stringify(changes))
-    return newChanges
+  rewriteChanges (change, rules) {
+    const newChange = JSON.parse(JSON.stringify(change))
+
+    for (let prop in newChange) {
+      if (newChange.hasOwnProperty(prop)) {
+        for (let i = 0; i < rules.length; i++) {
+          const rewriteFrom = new RegExp(rules[i].rewriteFrom, 'g')
+          newChange[prop] = newChange[prop].replace(
+            rewriteFrom,
+            rules[i].rewriteTo
+          )
+        }
+      }
+    }
+
+    return newChange
   }
 
   // Split the sound change rules into an array of objects
@@ -272,14 +285,14 @@ class MorphService {
             )
           }
         }
-        splitChanges.push(thisRule)
+
+        const rwRule = this.rewriteChanges(thisRule, rules)
+        splitChanges.push(rwRule)
       }
     }
 
-    const rwChanges = this.rewriteChanges(splitChanges, rules)
-
     // If there are any errors that were logged, return the errors. Otherwise, return the split categories.
-    return errors.length ? errors : rwChanges
+    return errors.length ? errors : splitChanges
   }
 
   // Apply the rewrite rules to the lexicon
