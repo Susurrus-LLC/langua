@@ -146,43 +146,59 @@ const MorphForm = props => {
             </select>
           </ControlPiece>
           <ControlPiece>
-            <label>
-              <input
-                type='checkbox'
-                id='showDiff'
-                name='options'
-                value='showDiff'
-                checked={props.data.showDiff}
-                onChange={props.check}
-              />{' '}
-              show differences
-            </label>
+            <div>
+              <label>
+                <input
+                  type='checkbox'
+                  id='showDiff'
+                  name='options'
+                  value='showDiff'
+                  checked={props.data.showDiff}
+                  onChange={props.check}
+                />{' '}
+                bold differences
+              </label>
+              <br />
+              <label>
+                <input
+                  type='checkbox'
+                  id='showChanges'
+                  name='options'
+                  value='showChanges'
+                  checked={props.data.showChanges}
+                  onChange={props.check}
+                />{' '}
+                italicize changes
+              </label>
+            </div>
+            <div />
           </ControlPiece>
           <ControlPiece>
-            <label>
-              <input
-                type='checkbox'
-                id='ruleReport'
-                name='options'
-                value='ruleReport'
-                checked={props.data.ruleReport}
-                onChange={props.check}
-              />{' '}
-              report applied rules
-            </label>
-          </ControlPiece>
-          <ControlPiece>
-            <label>
-              <input
-                type='checkbox'
-                id='rewriteOutput'
-                name='options'
-                value='rewriteOutput'
-                checked={props.data.rewriteOutput}
-                onChange={props.check}
-              />{' '}
-              rewrite on output
-            </label>
+            <div>
+              <label>
+                <input
+                  type='checkbox'
+                  id='ruleReport'
+                  name='options'
+                  value='ruleReport'
+                  checked={props.data.ruleReport}
+                  onChange={props.check}
+                />{' '}
+                report applied rules
+              </label>
+              <br />
+              <label>
+                <input
+                  type='checkbox'
+                  id='rewriteOutput'
+                  name='options'
+                  value='rewriteOutput'
+                  checked={props.data.rewriteOutput}
+                  onChange={props.check}
+                />{' '}
+                rewrite on output
+              </label>
+            </div>
           </ControlPiece>
         </ControlSide>
         <ControlSide side='right'>
@@ -220,6 +236,7 @@ MorphForm.propTypes = {
     lexicon: PropTypes.arrayOf(PropTypes.string).isRequired,
     outputFormat: PropTypes.oneOf(['oo', 'io', 'oi']).isRequired,
     showDiff: PropTypes.bool.isRequired,
+    showChanges: PropTypes.bool.isRequired,
     ruleReport: PropTypes.bool.isRequired,
     rewriteOutput: PropTypes.bool.isRequired
   }).isRequired,

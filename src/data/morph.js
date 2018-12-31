@@ -39,6 +39,7 @@ export const defData = {
   ],
   outputFormat: 'oo',
   showDiff: true,
+  showChanges: true,
   ruleReport: true,
   rewriteOutput: true,
   results: undefined

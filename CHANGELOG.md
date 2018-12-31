@@ -6,6 +6,11 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.4.1...HEAD)
 
+### Added 0.4.2
+
+- Add option to choose whether to italicize changed results.
+- Reformat the MorphForm controls to save space.
+
 ### Changed 0.4.2
 
 - Fix bug with identifying differences in the output from one run to the next.

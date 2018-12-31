@@ -331,10 +331,12 @@ class MorphService {
     return newResults
   }
 
+  // Apply the sound changes to a given word
   applyChanges (cats, rules, changes, word) {
     return word
   }
 
+  // Build the results object array
   getResults (cats, rules, changes, lexicon, rwOutput) {
     const rwLexicon = this.rewriteLex(lexicon, rules)
     let results = []

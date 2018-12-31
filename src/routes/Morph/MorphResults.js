@@ -33,13 +33,13 @@ const MorphResults = props => {
     // Assign the 'different' and 'changed' classes appropriately
     const classes = result => {
       if (props.showDiff && result.diff) {
-        if (result.input !== result.output) {
+        if (props.showChanges && result.input !== result.output) {
           return classNames(styles.outText, styles.different, styles.changed)
         } else {
           return classNames(styles.outText, styles.different)
         }
       } else {
-        if (result.input !== result.output) {
+        if (props.showChanges && result.input !== result.output) {
           return classNames(styles.outText, styles.changed)
         } else {
           return styles.outText
@@ -115,7 +115,8 @@ MorphResults.propTypes = {
     ).isRequired,
     PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
   ]),
-  showDiff: PropTypes.bool.isRequired
+  showDiff: PropTypes.bool.isRequired,
+  showChanges: PropTypes.bool.isRequired
 }
 
 export default injectSheet(sharedResultsStyles)(MorphResults)
