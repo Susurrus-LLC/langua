@@ -15,6 +15,7 @@ class MorphService {
     this.splitCategories = this.splitCategories.bind(this)
     this.splitRewriteRules = this.splitRewriteRules.bind(this)
     this.splitSoundChanges = this.splitSoundChanges.bind(this)
+    this.applyChanges = this.applyChanges.bind(this)
     this.idChanged = this.idChanged.bind(this)
     this.morph = this.morph.bind(this)
   }
@@ -142,6 +143,13 @@ class MorphService {
           // If the string wasn't split at all, it was missing a =
           errors.push(`The category ${cats[i]} is missing an = sign.`)
         }
+      } else if (split[0].length > 1) {
+        // If the string to the left of the = is more than one character
+        errors.push(
+          `The category ${
+            cats[i]
+          } needs to be assigned to a single-character variable.`
+        )
       } else {
         // Split the variable from its assignments
         assignments.push(split)
@@ -252,6 +260,21 @@ class MorphService {
     return errors.length ? errors : splitChanges
   }
 
+  applyChanges (cats, rules, changes, lexicon, rwOutput) {
+    let results = [
+      {
+        input: 'lector',
+        output: 'leitor'
+      },
+      {
+        input: 'doctor',
+        output: 'doutor'
+      }
+    ]
+
+    return results
+  }
+
   idChanged (data, results) {
     const newResults = JSON.parse(JSON.stringify(results))
 
@@ -291,16 +314,13 @@ class MorphService {
       allErrors = allErrors.concat(soundChanges)
     if (allErrors.length) return allErrors
 
-    let results = [
-      {
-        input: 'lector',
-        output: 'leitor'
-      },
-      {
-        input: 'doctor',
-        output: 'doutor'
-      }
-    ]
+    const results = this.applyChanges(
+      categories,
+      rewriteRules,
+      soundChanges,
+      newData.lexicon,
+      newData.rewriteOutput
+    )
 
     return this.idChanged(newData, results)
   }
