@@ -332,8 +332,39 @@ class MorphService {
   }
 
   // Apply the sound changes to a given word
-  applyChanges (cats, rules, changes, word) {
-    return word
+  applyChanges (cats, changes, word) {
+    let newWord = word
+
+    for (let i = 0; i < changes.length; i++) {
+      let rpfc
+      let rptc
+      let rpe
+      let reg
+      if (changes[i].context) {
+        rpfc = changes[i].context.replace('_', changes[i].changeFrom)
+        rptc = changes[i].context.replace('_', changes[i].changeTo)
+        if (changes[i].exception) {
+          rpe = changes[i].exception.replace('_', changes[i].changeFrom)
+          // If there is an exception, replace in every context match except when it matches the exception
+          console.log(changes[i])
+          console.log(word)
+          reg = new RegExp(`${rpe}|(${rpfc})`, 'g')
+          console.log(reg)
+          newWord = newWord.replace(reg, rptc)
+          console.log(newWord)
+        } else {
+          // If there are no exceptions, replace in every context match
+          reg = new RegExp(rpfc, 'g')
+          newWord = newWord.replace(reg, rptc)
+        }
+      } else {
+        // If there is no context, replace in every match
+        const reg = new RegExp(changes[i].changeFrom, 'g')
+        newWord = newWord.replace(reg, changes[i].changeTo)
+      }
+    }
+
+    return newWord
   }
 
   // Build the results object array
@@ -344,7 +375,7 @@ class MorphService {
     for (let i = 0; i < lexicon.length; i++) {
       results.push({
         input: lexicon[i],
-        output: this.applyChanges(cats, rules, changes, rwLexicon[i])
+        output: this.applyChanges(cats, changes, rwLexicon[i])
       })
     }
 
