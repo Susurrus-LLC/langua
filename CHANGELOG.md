@@ -8,9 +8,11 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Added 0.4.1
 
-- Calculate number of Morph results that are different from last time.
-- Correctly display differences in Morph results or not depending on the option selected.
 - Display any errors that are found in the Morph input.
+- Calculate number of Morph results that are different from last time.
+- Italicize those results changed by the rules while bolding those results different from the last run if that option is selected.
+- Apply the rewrite rules to the input.
+- Reverse-apply the rewrite rules to the results if selected.
 
 ## [v0.4.0](https://github.com/nai888/langua/compare/v0.3.1...v0.4.0) - 2018-12-30
 

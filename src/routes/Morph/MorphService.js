@@ -15,8 +15,8 @@ class MorphService {
     this.splitRewriteRules = this.splitRewriteRules.bind(this)
     this.rewriteCats = this.rewriteCats.bind(this)
     this.splitCategories = this.splitCategories.bind(this)
-    this.splitSoundChanges = this.splitSoundChanges.bind(this)
     this.rewriteChanges = this.rewriteChanges.bind(this)
+    this.splitSoundChanges = this.splitSoundChanges.bind(this)
     this.rewriteLex = this.rewriteLex.bind(this)
     this.unrewriteLex = this.unrewriteLex.bind(this)
     this.applyChanges = this.applyChanges.bind(this)
@@ -210,8 +210,14 @@ class MorphService {
     return errors.length ? errors : splitCategories
   }
 
+  // Apply the rewrite rules to the sound change rules
+  rewriteChanges (changes, rules) {
+    const newChanges = JSON.parse(JSON.stringify(changes))
+    return newChanges
+  }
+
   // Split the sound change rules into an array of objects
-  splitSoundChanges (changes) {
+  splitSoundChanges (changes, rules) {
     let splitChanges = []
     let errors = []
 
@@ -270,14 +276,10 @@ class MorphService {
       }
     }
 
-    // If there are any errors that were logged, return the errors. Otherwise, return the split categories.
-    return errors.length ? errors : splitChanges
-  }
+    const rwChanges = this.rewriteChanges(splitChanges, rules)
 
-  // Apply the rewrite rules to the sound change rules
-  rewriteChanges (changes, rules) {
-    const newChanges = JSON.parse(JSON.stringify(changes))
-    return newChanges
+    // If there are any errors that were logged, return the errors. Otherwise, return the split categories.
+    return errors.length ? errors : rwChanges
   }
 
   // Apply the rewrite rules to the lexicon
@@ -298,9 +300,19 @@ class MorphService {
     return newLex
   }
 
-  // Reverse apply the rewrite rules to the output
+  // Reverse-apply the rewrite rules to the output
   unrewriteLex (results, rules) {
     const newResults = JSON.parse(JSON.stringify(results))
+
+    for (let i = 0; i < newResults.length; i++) {
+      for (let j = 0; j < rules.length; j++) {
+        const regRule = new RegExp(rules[j].rewriteTo, 'g')
+        newResults[i].output = newResults[i].output.replace(
+          regRule,
+          rules[j].rewriteFrom
+        )
+      }
+    }
 
     return newResults
   }
@@ -348,11 +360,10 @@ class MorphService {
     // Process the input
     const rewriteRules = this.splitRewriteRules(newData.rewriteRules)
     const categories = this.splitCategories(newData.categories, rewriteRules)
-    const soundChanges = this.splitSoundChanges(newData.soundChanges)
-
-    // Apply the rewrite rules
-    const rwChanges = this.rewriteChanges(soundChanges, rewriteRules)
-    console.log(rwChanges)
+    const soundChanges = this.splitSoundChanges(
+      newData.soundChanges,
+      rewriteRules
+    )
 
     // Return the errors if there are any
     let allErrors = []
