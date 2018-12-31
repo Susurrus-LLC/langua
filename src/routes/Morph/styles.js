@@ -46,8 +46,11 @@ const styles = {
       marginBottom: 0
     }
   },
-  changed: {
+  different: {
     fontWeight: 'bold'
+  },
+  changed: {
+    fontStyle: 'italic'
   }
 }
 

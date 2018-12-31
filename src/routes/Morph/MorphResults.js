@@ -30,11 +30,21 @@ const MorphResults = props => {
       }
     }
 
-    // Assign the changed class if the result is different from last run
+    // Assign the 'different' and 'changed' classes appropriately
     const classes = result => {
-      return result.changed && props.showDiff
-        ? classNames(styles.outText, styles.changed)
-        : styles.outText
+      if (props.showDiff && result.diff) {
+        if (result.input !== result.output) {
+          return classNames(styles.outText, styles.different, styles.changed)
+        } else {
+          return classNames(styles.outText, styles.different)
+        }
+      } else {
+        if (result.input !== result.output) {
+          return classNames(styles.outText, styles.changed)
+        } else {
+          return styles.outText
+        }
+      }
     }
 
     // Return the results text
@@ -57,7 +67,7 @@ const MorphResults = props => {
       if (resultsArr[i].input === resultsArr[i].output) {
         unchangedWords++
       }
-      if (resultsArr[i].changed) {
+      if (resultsArr[i].diff) {
         differentWords++
       }
     }
@@ -100,7 +110,7 @@ MorphResults.propTypes = {
       PropTypes.shape({
         input: PropTypes.string.isRequired,
         output: PropTypes.string.isRequired,
-        changed: PropTypes.bool.isRequired
+        diff: PropTypes.bool.isRequired
       })
     ).isRequired,
     PropTypes.arrayOf(PropTypes.string.isRequired).isRequired

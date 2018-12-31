@@ -20,7 +20,7 @@ class MorphService {
     this.rewriteLex = this.rewriteLex.bind(this)
     this.unrewriteLex = this.unrewriteLex.bind(this)
     this.applyChanges = this.applyChanges.bind(this)
-    this.idChanged = this.idChanged.bind(this)
+    this.idDiff = this.idDiff.bind(this)
     this.morph = this.morph.bind(this)
   }
 
@@ -320,7 +320,7 @@ class MorphService {
     return rwOutput ? this.unrewriteLex(results, rules) : results
   }
 
-  idChanged (data, results) {
+  idDiff (data, results) {
     const newResults = JSON.parse(JSON.stringify(results))
 
     if (
@@ -329,13 +329,13 @@ class MorphService {
       typeof data.results[0] !== 'string'
     ) {
       for (let i = 0; i < newResults.length; i++) {
-        newResults[i].changed =
+        newResults[i].diff =
           newResults[i].input !== data.results[i].input &&
           newResults[i].output !== data.results[i].output
       }
     } else {
       for (let i = 0; i < newResults.length; i++) {
-        newResults[i].changed = true
+        newResults[i].diff = true
       }
     }
 
@@ -372,7 +372,7 @@ class MorphService {
       newData.rewriteOutput
     )
 
-    return this.idChanged(newData, results)
+    return this.idDiff(newData, results)
   }
 }
 
