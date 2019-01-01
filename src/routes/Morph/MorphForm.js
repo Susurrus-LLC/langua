@@ -150,18 +150,6 @@ const MorphForm = props => {
               <label>
                 <input
                   type='checkbox'
-                  id='showDiff'
-                  name='options'
-                  value='showDiff'
-                  checked={props.data.showDiff}
-                  onChange={props.check}
-                />{' '}
-                bold differences
-              </label>
-              <br />
-              <label>
-                <input
-                  type='checkbox'
                   id='showChanges'
                   name='options'
                   value='showChanges'
@@ -169,6 +157,18 @@ const MorphForm = props => {
                   onChange={props.check}
                 />{' '}
                 italicize changes
+              </label>
+              <br />
+              <label>
+                <input
+                  type='checkbox'
+                  id='showDiff'
+                  name='options'
+                  value='showDiff'
+                  checked={props.data.showDiff}
+                  onChange={props.check}
+                />{' '}
+                bold differences
               </label>
             </div>
             <div />
