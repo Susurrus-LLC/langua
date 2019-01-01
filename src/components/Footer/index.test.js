@@ -46,7 +46,7 @@ describe('Footer', () => {
         className="far fa-copyright"
       />
        
-      2017–2018
+      2017–2019
        
       under the
        
