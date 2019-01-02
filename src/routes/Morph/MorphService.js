@@ -231,9 +231,35 @@ class MorphService {
   }
 
   // Split the sound change rules into an array of objects
-  splitSoundChanges (changes, rules) {
+  splitSoundChanges (cats, changes, rules) {
     let splitChanges = []
     let errors = []
+
+    const idChar = char => {
+      switch (char) {
+        case '_':
+          return 'target'
+        case '#':
+          return 'wordboundary'
+        case '[':
+          return 'brackopen'
+        case ']':
+          return 'brackclose'
+        case '(':
+          return 'parenopen'
+        case ')':
+          return 'parenclose'
+        default:
+          let cat = false
+          for (let i = 0; i < cats.length; i++) {
+            if (char === cats[i].variable) {
+              cat = true
+              break
+            }
+          }
+          return cat ? 'category' : 'literal'
+      }
+    }
 
     for (let i = 0; i < changes.length; i++) {
       const split = changes[i].split('/')
@@ -288,6 +314,33 @@ class MorphService {
         }
 
         const rwRule = this.rewriteChanges(thisRule, rules)
+
+        // ID all characters in each rule
+        let changeFromArr = []
+        for (let j = 0; j < rwRule.changeFrom.length; j++) {
+          changeFromArr.push(idChar(rwRule.changeFrom[j]))
+        }
+        rwRule.changeFromID = changeFromArr
+        let changeToArr = []
+        for (let j = 0; j < rwRule.changeTo.length; j++) {
+          changeToArr.push(idChar(rwRule.changeTo[j]))
+        }
+        rwRule.changeToID = changeToArr
+        let contextArr = []
+        if (rwRule.context) {
+          for (let j = 0; j < rwRule.context.length; j++) {
+            contextArr.push(idChar(rwRule.context[j]))
+          }
+          rwRule.contextID = contextArr
+        }
+        let exceptionArr = []
+        if (rwRule.exception) {
+          for (let j = 0; j < rwRule.exception.length; j++) {
+            exceptionArr.push(idChar(rwRule.exception[j]))
+          }
+          rwRule.exceptionID = exceptionArr
+        }
+
         splitChanges.push(rwRule)
       }
     }
@@ -336,6 +389,14 @@ class MorphService {
     let newWord = word
 
     for (let i = 0; i < changes.length; i++) {
+      // Replace the # word boundary symbol with the regex \b
+      let context = changes[i].context
+        ? changes[i].context.replace(/#/g, '\\b')
+        : undefined
+      let exception = changes[i].exception
+        ? changes[i].exception.replace(/#/g, '\\b')
+        : undefined
+
       let rpfc
       let rptc
       let rpe
@@ -412,6 +473,7 @@ class MorphService {
     const rewriteRules = this.splitRewriteRules(newData.rewriteRules)
     const categories = this.splitCategories(newData.categories, rewriteRules)
     const soundChanges = this.splitSoundChanges(
+      categories,
       newData.soundChanges,
       rewriteRules
     )
