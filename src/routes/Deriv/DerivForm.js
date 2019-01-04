@@ -22,6 +22,7 @@ const DerivForm = props => {
         className={props.styles.lexemeInput}
         value={lexeme.lexeme}
         onChange={props.change}
+        aria-label={`Word for lexeme ${index}`}
       />
       <input
         type='text'
@@ -30,6 +31,7 @@ const DerivForm = props => {
         className={props.styles.lexemeDefInput}
         value={lexeme.definition}
         onChange={props.change}
+        aria-label={`Gloss for lexeme ${index}`}
       />
       <div className={props.styles.clearButton}>
         <Button
@@ -38,6 +40,7 @@ const DerivForm = props => {
           ver='danger'
           addClass='small'
           type='button'
+          aria-label={`Delete lexeme ${index}`}
         >
           Delete
         </Button>
@@ -54,6 +57,7 @@ const DerivForm = props => {
         className={props.styles.derivationInput}
         value={derivation.derivation}
         onChange={props.change}
+        aria-label={`Affix ${index}`}
       />
       <input
         type='text'
@@ -62,6 +66,7 @@ const DerivForm = props => {
         className={props.styles.derivationGlossInput}
         value={derivation.gloss}
         onChange={props.change}
+        aria-label={`Gloss for affix ${index}`}
       />
       <input
         type='text'
@@ -70,6 +75,7 @@ const DerivForm = props => {
         className={props.styles.derivationDefInput}
         value={derivation.definition}
         onChange={props.change}
+        aria-label={`Definition for affix ${index}`}
       />
       <div className={props.styles.clearButton}>
         <Button
@@ -78,6 +84,7 @@ const DerivForm = props => {
           ver='danger'
           addClass='small'
           type='button'
+          aria-label={`Delete lexeme ${index}`}
         >
           Delete
         </Button>

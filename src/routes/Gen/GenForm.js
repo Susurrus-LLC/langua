@@ -29,6 +29,7 @@ const GenForm = props => {
         value={subpattern.selected}
         onChange={props.change}
         className={props.styles.select}
+        aria-label={`Variable name for subpattern ${index}`}
       >
         {selectOptions}
       </select>
@@ -39,6 +40,7 @@ const GenForm = props => {
         className={props.styles.subpatternInput}
         value={subpattern.subpattern}
         onChange={props.change}
+        aria-label={`Subpattern ${index}`}
       />
       <div className={props.styles.clearButton}>
         <Button
@@ -47,6 +49,7 @@ const GenForm = props => {
           ver='danger'
           addClass='small'
           type='button'
+          aria-label={`Delete subpattern ${index}`}
         >
           Delete
         </Button>
@@ -64,6 +67,7 @@ const GenForm = props => {
             ver='success'
             addClass='small'
             type='button'
+            aria-label='Add a new subpattern'
           >
             Add
           </Button>
@@ -94,6 +98,7 @@ const GenForm = props => {
           className={props.styles.patternInput}
           value={props.data.pattern}
           onChange={props.change}
+          aria-label='Pattern'
         />
       </div>
       <Control addedClasses={props.classes.part}>
@@ -119,6 +124,7 @@ const GenForm = props => {
               className={props.styles.wordsInput}
               value={props.data.words}
               onChange={props.change}
+              aria-label='Number of words to generate'
             />
           </ControlPiece>
           <ControlPiece>
