@@ -2442,10 +2442,10 @@ coa@~2.0.1:
   dependencies:
     q "^1.1.2"
 
-codacy-coverage@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/codacy-coverage/-/codacy-coverage-3.3.0.tgz#9818f593190110b144f9cfc8769d80059e26f063"
-  integrity sha512-NDCrkO/mBiV0HrxubvaZv+xYkj79Njj1KPO5fdnKKE0a33gChIWQyB9TNv7r6lDaGaJMtwrpGn4pfUmTo5ACzQ==
+codacy-coverage@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/codacy-coverage/-/codacy-coverage-3.4.0.tgz#196af70844c4e4179718f7a7f9d96b921b4b3a67"
+  integrity sha512-A0ats3/gZtOw76muu++HZ6QrInztWjjLefkLJmmBpjPfyn6nNwNLoApmGmj3F3dfgl2+o6u5GwPnUBkKdfKXTQ==
   dependencies:
     bluebird "^3.5.x"
     commander "^2.x"
