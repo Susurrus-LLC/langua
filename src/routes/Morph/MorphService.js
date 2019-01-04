@@ -388,6 +388,7 @@ class MorphService {
   applyChanges (cats, changes, word) {
     let newWord = word
 
+    // For each rule
     for (let i = 0; i < changes.length; i++) {
       // Replace the # word boundary symbol with the regex \b
       let context = changes[i].context
@@ -396,6 +397,11 @@ class MorphService {
       let exception = changes[i].exception
         ? changes[i].exception.replace(/#/g, '\\b')
         : undefined
+
+      if (context) {
+      }
+      if (exception) {
+      }
 
       let rpfc
       let rptc
@@ -407,12 +413,8 @@ class MorphService {
         if (changes[i].exception) {
           rpe = changes[i].exception.replace('_', changes[i].changeFrom)
           // If there is an exception, replace in every context match except when it matches the exception
-          console.log(changes[i])
-          console.log(word)
           reg = new RegExp(`${rpe}|(${rpfc})`, 'g')
-          console.log(reg)
           newWord = newWord.replace(reg, rptc)
-          console.log(newWord)
         } else {
           // If there are no exceptions, replace in every context match
           reg = new RegExp(rpfc, 'g')
