@@ -29,6 +29,7 @@ const FrequenForm = props => {
           name='corpus'
           value={props.state.corpus}
           onChange={props.onChangeInput}
+          aria-label='Text corpus'
         />
       </div>
       <div className={classNames(props.styles.consonants, props.classes.part)}>
@@ -40,6 +41,7 @@ const FrequenForm = props => {
           type='text'
           value={props.state.consonants}
           onChange={props.onChangeInput}
+          aria-label='Consonants'
         />
       </div>
       <div className={classNames(props.styles.vowels, props.classes.part)}>
@@ -51,6 +53,7 @@ const FrequenForm = props => {
           type='text'
           value={props.state.vowels}
           onChange={props.onChangeInput}
+          aria-label='Vowels'
         />
       </div>
       <Control addedClasses={props.classes.part}>

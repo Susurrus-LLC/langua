@@ -10,6 +10,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Add option to choose whether to italicize changed results.
 - Reformat the MorphForm controls to save space.
+- Add aria-labels to all input elements without a label. (See [issue #141](https://github.com/nai888/langua/issues/141).)
 
 ### Changed 0.4.2
 

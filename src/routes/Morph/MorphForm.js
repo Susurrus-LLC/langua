@@ -42,6 +42,7 @@ const MorphForm = props => {
               )}
               value={join(props.data.categories)}
               onChange={props.change}
+              aria-label='Categories'
             />
             <div className={props.styles.textAreaSpacer}>
               {join(props.data.categories)}
@@ -67,6 +68,7 @@ const MorphForm = props => {
               )}
               value={join(props.data.rewriteRules)}
               onChange={props.change}
+              aria-label='Rewrite rules'
             />
             <div className={props.styles.textAreaSpacer}>
               {join(props.data.rewriteRules)}
@@ -92,6 +94,7 @@ const MorphForm = props => {
               )}
               value={join(props.data.soundChanges)}
               onChange={props.change}
+              aria-label='Sound Changes'
             />
             <div className={props.styles.textAreaSpacer}>
               {join(props.data.soundChanges)}
@@ -117,6 +120,7 @@ const MorphForm = props => {
               )}
               value={join(props.data.lexicon)}
               onChange={props.change}
+              aria-label='Lexicon'
             />
             <div className={props.styles.textAreaSpacer}>
               {join(props.data.lexicon)}
