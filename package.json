@@ -42,7 +42,7 @@
     "prop-types": "^15.6.2",
     "react": "16.8.0",
     "react-app-polyfill": "0.2.0",
-    "react-dom": "16.7.0",
+    "react-dom": "16.8.0",
     "react-helmet": "5.2.0",
     "react-jss": "8.6.1",
     "react-router-dom": "4.3.1",
