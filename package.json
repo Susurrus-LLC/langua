@@ -40,7 +40,7 @@
     "js-schema": "1.0.1",
     "normalize.css": "8.0.1",
     "prop-types": "^15.7.2",
-    "react": "16.8.4",
+    "react": "16.8.5",
     "react-app-polyfill": "0.2.2",
     "react-dom": "16.8.4",
     "react-helmet": "5.2.0",
