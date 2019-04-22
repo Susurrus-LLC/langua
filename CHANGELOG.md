@@ -6,6 +6,10 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/nai888/langua/compare/v0.4.2...HEAD)
 
+### Changed 0.4.3
+
+- Update dependencies.
+
 ## [v0.4.2](https://github.com/nai888/langua/compare/v0.4.1...v0.4.2)
 
 ### Added 0.4.2
