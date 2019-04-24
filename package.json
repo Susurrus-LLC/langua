@@ -46,7 +46,7 @@
     "react-helmet": "5.2.0",
     "react-jss": "8.6.1",
     "react-router-dom": "5.0.0",
-    "react-scripts": "2.1.8",
+    "react-scripts": "3.0.0",
     "react-toastify": "5.1.0",
     "react-vis": "^1.11.7"
   },
