@@ -29,28 +29,12 @@ const App = props => (
   <div className={props.classes.app}>
     <Helmet>
       <title>{siteTitle} | Language Tools</title>
-      <meta charSet='utf-8' />
-      <meta
-        name='viewport'
-        content='width=device-width, initial-scale=1, shrink-to-fit=no'
-      />
-      <meta name='author' content='Ian A. Cook' />
       <meta
         name='description'
         content='Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation.'
       />
       <meta name='theme-color' content={v.blu.string()} />
       <link rel='canonical' href={canonical} />
-      <link
-        href='https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Noto+Serif:400,400i,700,700i&amp;subset=greek,greek-ext,latin-ext'
-        rel='stylesheet'
-      />
-      <script
-        defer
-        src='https://use.fontawesome.com/releases/v5.0.10/js/all.js'
-        integrity='sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+'
-        crossOrigin='anonymous'
-      />
     </Helmet>
     <Header />
     <Main />

@@ -8,6 +8,8 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Changed 0.4.3
 
+- Move FontAwesome from page head to package.json.
+- Move unchanging head elements from Helmet to the html file.
 - Update dependencies.
 
 ## [v0.4.2](https://github.com/nai888/langua/compare/v0.4.1...v0.4.2)
