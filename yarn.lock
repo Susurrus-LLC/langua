@@ -9423,10 +9423,10 @@ react-test-renderer@^16.0.0-0, react-test-renderer@^16.8.6:
     react-is "^16.8.6"
     scheduler "^0.13.6"
 
-react-toastify@5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-5.2.0.tgz#1bf4c54b435fe8b0ea15fb13e5a3ff429da6898d"
-  integrity sha512-/JKPbjF0MrrclHhqW5trezPYDf+EmpFBw5t3oY6Jd+Q+OP4sBk0fpR1XcAaCzG3WDHfqVlJeIkXKeyGyN82agw==
+react-toastify@5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-5.2.1.tgz#faa05bc4cd5066ee50bf56c7f8b8fd1492e71aca"
+  integrity sha512-OEZQld/jvjFCQnmXShb73dxVgslEuVz6Jb9/K22x+OcpQH5abtb278tO+Z9FwWsnu8aOvKiPuEYRrSfXC0HF8w==
   dependencies:
     "@babel/runtime" "^7.4.2"
     classnames "^2.2.6"
