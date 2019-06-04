@@ -36,7 +36,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
     "classnames": "2.2.6",
-    "color": "3.1.1",
+    "color": "3.1.2",
     "file-saver": "2.0.2",
     "js-schema": "1.0.1",
     "normalize.css": "8.0.1",
