@@ -41,7 +41,7 @@
     "js-schema": "1.0.1",
     "normalize.css": "8.0.1",
     "prop-types": "^15.7.2",
-    "react": "16.8.6",
+    "react": "16.9.0",
     "react-app-polyfill": "1.0.1",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",
