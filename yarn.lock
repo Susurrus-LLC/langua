@@ -4631,7 +4631,7 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-find-up@^4.0.0:
+find-up@^4.0.0, find-up@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/find-up/-/find-up-4.1.0.tgz#97afe7d6cdc0bc5928584b7c8d7b16e8a9aa5d19"
   integrity sha512-PpOwAdQ/YlXQ2vj8a3h8IipDuYRi3wceVQQGYWxNINccq40Anw7BlsEXCMbt1Zt+OLA6Fq9suIpIWD0OsnISlw==
@@ -4860,11 +4860,6 @@ get-own-enumerable-property-symbols@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/get-own-enumerable-property-symbols/-/get-own-enumerable-property-symbols-3.0.0.tgz#b877b49a5c16aefac3655f2ed2ea5b684df8d203"
   integrity sha512-CIJYJC4GGF06TakLg8z4GQKvDsx9EMspVxOYih7LerEL/WosUnFIww45CGfxfeKHqlg3twgUrYRT1O3WQqjGCg==
-
-get-stdin@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-6.0.0.tgz#9e09bf712b360ab9225e812048f71fde9c89657b"
-  integrity sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==
 
 get-stdin@^7.0.0:
   version "7.0.0"
@@ -9207,21 +9202,21 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-prettier-standard@^9.1.1:
-  version "9.1.1"
-  resolved "https://registry.yarnpkg.com/prettier-standard/-/prettier-standard-9.1.1.tgz#31926843d6d2b428fbecb3aceea59e872947d016"
-  integrity sha512-d23Hbdf7tIJ5qeEPEv+7B9cGGczJBOyq188kiKGPk/lvlrM3J8umWC8rR9LIbWmuMzbl5iDSL7kG1/wZgh3EYg==
+prettier-standard@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/prettier-standard/-/prettier-standard-11.0.0.tgz#cc8690b7c8ef371f42560d64a3440dc7573f1c56"
+  integrity sha512-K6Ves69xPKo3pHzOlnoo+xlXXgRRyRzDqzgT66/QBOzuCQ0yx5str4dMZUuxhVBaDsFE4rAELLHJQCvf1v0RZw==
   dependencies:
-    find-up "^3.0.0"
-    get-stdin "^6.0.0"
+    find-up "^4.1.0"
+    get-stdin "^7.0.0"
     minimist "^1.2.0"
-    prettierx "0.3.0"
-    stream-mock "1.2.0"
+    prettierx "0.7.1"
+    stream-mock "2.0.5"
 
-prettierx@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/prettierx/-/prettierx-0.3.0.tgz#7c8bd8b809507bf9ba503729e6c24af152a58136"
-  integrity sha512-cMtPQ1+mhWsMPAJycwUqVYQBL30TrVJnVz8K888WN67mpXMHAHGY53jLgFR2Pr3v3YE8Rz9kxZCB7S7vAfz1iA==
+prettierx@0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/prettierx/-/prettierx-0.7.1.tgz#46aedd7c43627d2a8e76dc34d0300502a8d0c1b3"
+  integrity sha512-6snEPDLZ3iyfoX+DCsQzeFBpi8PDqSfq77Pt9e0H2R/jTG2FJfq/bjYlUqmdonLHEcIgKdHemm7pk/4ydLwcgw==
 
 pretty-bytes@^5.1.0:
   version "5.2.0"
@@ -11017,12 +11012,10 @@ stream-http@^2.7.2:
     to-arraybuffer "^1.0.0"
     xtend "^4.0.0"
 
-stream-mock@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/stream-mock/-/stream-mock-1.2.0.tgz#f68b5523c0e1cfe619ea09d7d1097290f405b96a"
-  integrity sha1-9otVI8Dhz+YZ6gnX0QlykPQFuWo=
-  dependencies:
-    babel-runtime "^6.26.0"
+stream-mock@2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/stream-mock/-/stream-mock-2.0.5.tgz#c99d24bd6dbb0eaa57cf6ffefdb064150747826e"
+  integrity sha512-dx9skT8QYjwLsal+MhGHr4UtgS49brw851C/oTixmhCi4Ip+/qnZmhV1qOcznYYAED6gYKmKea+jjza4/wjpSg==
 
 stream-shift@^1.0.0:
   version "1.0.0"
