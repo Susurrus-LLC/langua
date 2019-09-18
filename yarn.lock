@@ -807,10 +807,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-9.0.1.tgz#c27b391d8457d1e893f1eddeaf5e5412d12ffbb5"
   integrity sha512-6It2EVfGskxZCQhuykrfnALg7oVeiI6KclWSmGDqB0AiInVrTGB9Jp9i4/Ad21u9Jde/voVQz6eFX/eSg/UsPA==
 
-"@fortawesome/fontawesome-free@^5.10.2":
-  version "5.10.2"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.10.2.tgz#27e02da1e34b50c9869179d364fb46627b521130"
-  integrity sha512-9pw+Nsnunl9unstGEHQ+u41wBEQue6XPBsILXtJF/4fNN1L3avJcMF/gGF86rIjeTAgfLjTY9ndm68/X4f4idQ==
+"@fortawesome/fontawesome-free@^5.11.0":
+  version "5.11.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.11.0.tgz#2509777d69c7d1d226fb1199c3429a03424312b3"
+  integrity sha512-uS4fXP6o33BjmudpUmTj9Ps/h3igl4Kvp+BJi9ieGPlL+MTB2URtIlYjMYNrPLHMmmnMHDJHBAmyUA65cmsDpQ==
 
 "@jest/console@^24.7.1":
   version "24.7.1"
