@@ -4171,49 +4171,6 @@ eslint-visitor-keys@^1.0.0, eslint-visitor-keys@^1.1.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.1.0.tgz#e2a82cea84ff246ad6fb57f9bde5b46621459ec2"
   integrity sha512-8y9YjtM1JBJU/A9Kc+SbaOV4y29sSWckBwMHa+FGtVj5gN/sbnKDf6xJUl+8g7FAij9LVaP8C24DUiH/f/2Z9A==
 
-eslint@6.2.2:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-6.2.2.tgz#03298280e7750d81fcd31431f3d333e43d93f24f"
-  integrity sha512-mf0elOkxHbdyGX1IJEUsNBzCDdyoUgljF3rRlgfyYh0pwGnreLc0jjD6ZuleOibjmnUWZLY2eXwSooeOgGJ2jw==
-  dependencies:
-    "@babel/code-frame" "^7.0.0"
-    ajv "^6.10.0"
-    chalk "^2.1.0"
-    cross-spawn "^6.0.5"
-    debug "^4.0.1"
-    doctrine "^3.0.0"
-    eslint-scope "^5.0.0"
-    eslint-utils "^1.4.2"
-    eslint-visitor-keys "^1.1.0"
-    espree "^6.1.1"
-    esquery "^1.0.1"
-    esutils "^2.0.2"
-    file-entry-cache "^5.0.1"
-    functional-red-black-tree "^1.0.1"
-    glob-parent "^5.0.0"
-    globals "^11.7.0"
-    ignore "^4.0.6"
-    import-fresh "^3.0.0"
-    imurmurhash "^0.1.4"
-    inquirer "^6.4.1"
-    is-glob "^4.0.0"
-    js-yaml "^3.13.1"
-    json-stable-stringify-without-jsonify "^1.0.1"
-    levn "^0.3.0"
-    lodash "^4.17.14"
-    minimatch "^3.0.4"
-    mkdirp "^0.5.1"
-    natural-compare "^1.4.0"
-    optionator "^0.8.2"
-    progress "^2.0.0"
-    regexpp "^2.0.1"
-    semver "^6.1.2"
-    strip-ansi "^5.2.0"
-    strip-json-comments "^3.0.1"
-    table "^5.2.3"
-    text-table "^0.2.0"
-    v8-compile-cache "^2.0.3"
-
 eslint@^5.16.0:
   version "5.16.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-5.16.0.tgz#a1e3ac1aae4a3fbd8296fcf8f7ab7314cbb6abea"
@@ -4255,6 +4212,49 @@ eslint@^5.16.0:
     strip-json-comments "^2.0.1"
     table "^5.2.3"
     text-table "^0.2.0"
+
+eslint@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-6.4.0.tgz#5aa9227c3fbe921982b2eda94ba0d7fae858611a"
+  integrity sha512-WTVEzK3lSFoXUovDHEbkJqCVPEPwbhCq4trDktNI6ygs7aO41d4cDT0JFAT5MivzZeVLWlg7vHL+bgrQv/t3vA==
+  dependencies:
+    "@babel/code-frame" "^7.0.0"
+    ajv "^6.10.0"
+    chalk "^2.1.0"
+    cross-spawn "^6.0.5"
+    debug "^4.0.1"
+    doctrine "^3.0.0"
+    eslint-scope "^5.0.0"
+    eslint-utils "^1.4.2"
+    eslint-visitor-keys "^1.1.0"
+    espree "^6.1.1"
+    esquery "^1.0.1"
+    esutils "^2.0.2"
+    file-entry-cache "^5.0.1"
+    functional-red-black-tree "^1.0.1"
+    glob-parent "^5.0.0"
+    globals "^11.7.0"
+    ignore "^4.0.6"
+    import-fresh "^3.0.0"
+    imurmurhash "^0.1.4"
+    inquirer "^6.4.1"
+    is-glob "^4.0.0"
+    js-yaml "^3.13.1"
+    json-stable-stringify-without-jsonify "^1.0.1"
+    levn "^0.3.0"
+    lodash "^4.17.14"
+    minimatch "^3.0.4"
+    mkdirp "^0.5.1"
+    natural-compare "^1.4.0"
+    optionator "^0.8.2"
+    progress "^2.0.0"
+    regexpp "^2.0.1"
+    semver "^6.1.2"
+    strip-ansi "^5.2.0"
+    strip-json-comments "^3.0.1"
+    table "^5.2.3"
+    text-table "^0.2.0"
+    v8-compile-cache "^2.0.3"
 
 espree@^5.0.1:
   version "5.0.1"
@@ -7087,7 +7087,7 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lint-staged@^9.4.0:
+lint-staged@9.4.0, lint-staged@^9.4.0:
   version "9.4.0"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-9.4.0.tgz#dd4abcc9a82539fd290aed1584e3241b8f8af687"
   integrity sha512-jTu1KoGiGTSffM539wK+3igVqDGVsby3KwDBaXL471YndahkjnavLX+R5Nsk49JwklyMo0ZAXay1BaoyA6d2Jw==
@@ -8398,11 +8398,6 @@ parse-asn1@^5.0.0:
     pbkdf2 "^3.0.3"
     safe-buffer "^5.1.1"
 
-parse-diff@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/parse-diff/-/parse-diff-0.5.1.tgz#18b3e82a0765ac1c8796e3854e475073a691c4fb"
-  integrity sha512-/qXjo9x/pFa5bVk/ZXaJD0yr3Tf3Yp6MWWMr4vnUmumDrE0yoE6YDH2A8vmcCD/Ko3tW2o0X+zGYh2zMLXshsg==
-
 parse-entities@^1.0.2, parse-entities@^1.1.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/parse-entities/-/parse-entities-1.2.1.tgz#2c761ced065ba7dc68148580b5a225e4918cdd69"
@@ -9331,22 +9326,22 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-prettier-standard@^14.0.7:
-  version "14.0.7"
-  resolved "https://registry.yarnpkg.com/prettier-standard/-/prettier-standard-14.0.7.tgz#44a6402c4f9210a341656479158144088f4eeaa6"
-  integrity sha512-7CKIcRDfDl+PsPJcZAvs7kCg2rWgbPK5myQhs/Mi7nxhL1Mv/s81+w3TcZNmTUhM8c5ML6xd97ix2AkeHt85jg==
+prettier-standard@^14.1.0:
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/prettier-standard/-/prettier-standard-14.1.0.tgz#44e66ef4e3934c1ca1f392b6fe59e85544bc12fd"
+  integrity sha512-buL90Mw03jWuhq3zejQMSQfhNCAR9RuwmYRbTRV10Uj4bIgSM43CsjE6Rwo/8IdLNoEgxH2bABbSLncrMhn59Q==
   dependencies:
     chalk "^2.4.2"
     diff "^4.0.1"
-    eslint "6.2.2"
+    eslint "^6.4.0"
     execa "^2.0.4"
     find-up "^4.1.0"
     get-stdin "^7.0.0"
     globby "^6.1.0"
     ignore "^3.3.7"
+    lint-staged "9.4.0"
     mri "^1.1.4"
     multimatch "^3.0.0"
-    parse-diff "^0.5.1"
     prettierx "0.7.1"
 
 prettierx@0.7.1:
