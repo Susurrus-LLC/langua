@@ -26,12 +26,10 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "src/**/*.js": [
-        "prettier-standard",
-        "git add"
-      ]
-    }
+    "src/**/*.js": [
+      "prettier-standard",
+      "git add"
+    ]
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.0",
@@ -64,6 +62,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.0.6",
     "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
     "prettier-standard": "^16.1.0",
     "react-snap": "1.23.0",
     "react-test-renderer": "^16.12.0",

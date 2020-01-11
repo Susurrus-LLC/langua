@@ -25,13 +25,13 @@ describe('ButtonLink', () => {
     )
     let tree = buttonLink.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<button
-  className="Button-btn-0-1-1 Button-buttonLink-0-1-5"
-  onClick={[Function]}
-  role="link"
-  type="button"
-/>
-`)
+      <button
+        className="Button-btn-0-2-1 Button-buttonLink-0-2-5"
+        onClick={[Function]}
+        role="link"
+        type="button"
+      />
+    `)
 
     buttonLink = renderer.create(
       <MemoryRouter>
@@ -40,15 +40,15 @@ describe('ButtonLink', () => {
     )
     tree = buttonLink.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<button
-  className="Button-btn-0-1-1 Button-buttonLink-0-1-5"
-  onClick={[Function]}
-  role="link"
-  type="button"
->
-  Click
-</button>
-`)
+      <button
+        className="Button-btn-0-2-1 Button-buttonLink-0-2-5"
+        onClick={[Function]}
+        role="link"
+        type="button"
+      >
+        Click
+      </button>
+    `)
 
     buttonLink = renderer.create(
       <MemoryRouter>
@@ -57,15 +57,15 @@ describe('ButtonLink', () => {
     )
     tree = buttonLink.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<button
-  className="Button-btn-0-1-1 Button-neutral-0-1-2 Button-buttonLink-0-1-5"
-  onClick={[Function]}
-  role="link"
-  type="button"
->
-  Click
-</button>
-`)
+      <button
+        className="Button-btn-0-2-1 Button-neutral-0-2-2 Button-buttonLink-0-2-5"
+        onClick={[Function]}
+        role="link"
+        type="button"
+      >
+        Click
+      </button>
+    `)
 
     buttonLink = renderer.create(
       <MemoryRouter>
@@ -74,15 +74,15 @@ describe('ButtonLink', () => {
     )
     tree = buttonLink.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<button
-  className="Button-btn-0-1-1 Button-success-0-1-3 Button-buttonLink-0-1-5"
-  onClick={[Function]}
-  role="link"
-  type="button"
->
-  Click
-</button>
-`)
+      <button
+        className="Button-btn-0-2-1 Button-success-0-2-3 Button-buttonLink-0-2-5"
+        onClick={[Function]}
+        role="link"
+        type="button"
+      >
+        Click
+      </button>
+    `)
 
     buttonLink = renderer.create(
       <MemoryRouter>
@@ -93,14 +93,14 @@ describe('ButtonLink', () => {
     )
     tree = buttonLink.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<button
-  className="Button-btn-0-1-1 Button-danger-0-1-4 Button-buttonLink-0-1-5"
-  onClick={[Function]}
-  role="link"
-  type="button"
->
-  Click
-</button>
-`)
+      <button
+        className="Button-btn-0-2-1 Button-danger-0-2-4 Button-buttonLink-0-2-5"
+        onClick={[Function]}
+        role="link"
+        type="button"
+      >
+        Click
+      </button>
+    `)
   })
 })

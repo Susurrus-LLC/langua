@@ -29,11 +29,11 @@ describe('Notice', () => {
     const notice = renderer.create(<Notice>Test</Notice>)
     let tree = notice.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<p
-  className="Notice-notice-0-1-1"
->
-  Test
-</p>
-`)
+      <p
+        className="Notice-notice-0-2-1"
+      >
+        Test
+      </p>
+    `)
   })
 })

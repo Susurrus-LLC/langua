@@ -15,19 +15,19 @@ describe('Results', () => {
     let results = renderer.create(<Results />)
     let tree = results.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<div
-  className="Results-results-0-1-1"
-/>
-`)
+      <div
+        className="Results-results-0-2-1"
+      />
+    `)
 
     results = renderer.create(<Results>Test</Results>)
     tree = results.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<div
-  className="Results-results-0-1-1"
->
-  Test
-</div>
-`)
+      <div
+        className="Results-results-0-2-1"
+      >
+        Test
+      </div>
+    `)
   })
 })

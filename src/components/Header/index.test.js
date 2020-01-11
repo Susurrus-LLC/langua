@@ -25,106 +25,106 @@ describe('Header', () => {
     )
     let tree = header.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<header>
-  <div
-    className="Header-header-0-1-1"
-  >
-    <div
-      className="Header-titleArea-0-1-2"
-    >
-      <h1
-        className="Header-siteTitle-0-1-3"
-      >
-        <a
-          className="Header-titleLink-0-1-4"
-          href="/"
-          onClick={[Function]}
+      <header>
+        <div
+          className="Header-header-0-2-1"
         >
-          Langua
-        </a>
-      </h1>
-      <p
-        className="Header-siteSubtitle-0-1-5"
-      >
-        A suite of language tools
-      </p>
-    </div>
-    <nav
-      className="Header-nav-0-1-6"
-    >
-      <ul
-        className="Header-menu-0-1-7"
-      >
-        <li
-          className="Header-navLink-0-1-8"
-        >
-          <a
-            aria-current={null}
-            href="/gen"
-            onClick={[Function]}
+          <div
+            className="Header-titleArea-0-2-2"
           >
-            Gen
-          </a>
-        </li>
-        <li
-          className="Header-navLink-0-1-8 Header-disabled-0-1-9"
-        >
-          <a
-            aria-current={null}
-            href="/morph"
-            onClick={[Function]}
+            <h1
+              className="Header-siteTitle-0-2-3"
+            >
+              <a
+                className="Header-titleLink-0-2-4"
+                href="/"
+                onClick={[Function]}
+              >
+                Langua
+              </a>
+            </h1>
+            <p
+              className="Header-siteSubtitle-0-2-5"
+            >
+              A suite of language tools
+            </p>
+          </div>
+          <nav
+            className="Header-nav-0-2-6"
           >
-            Morph
-          </a>
-        </li>
-        <li
-          className="Header-navLink-0-1-8"
-        >
-          <a
-            aria-current={null}
-            href="/deriv"
-            onClick={[Function]}
-          >
-            Deriv
-          </a>
-        </li>
-        <li
-          className="Header-navLink-0-1-8"
-        >
-          <a
-            aria-current={null}
-            href="/frequen"
-            onClick={[Function]}
-          >
-            Frequen
-          </a>
-        </li>
-        <li
-          className="Header-navLink-0-1-8 Header-disabled-0-1-9"
-        >
-          <a
-            aria-current={null}
-            href="/tree"
-            onClick={[Function]}
-          >
-            Tree
-          </a>
-        </li>
-        <li
-          className="Header-navLink-0-1-8 Header-disabled-0-1-9"
-        >
-          <a
-            aria-current={null}
-            href="/lex"
-            onClick={[Function]}
-          >
-            Lex
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
-`)
+            <ul
+              className="Header-menu-0-2-7"
+            >
+              <li
+                className="Header-navLink-0-2-8"
+              >
+                <a
+                  aria-current={null}
+                  href="/gen"
+                  onClick={[Function]}
+                >
+                  Gen
+                </a>
+              </li>
+              <li
+                className="Header-navLink-0-2-8 Header-disabled-0-2-9"
+              >
+                <a
+                  aria-current={null}
+                  href="/morph"
+                  onClick={[Function]}
+                >
+                  Morph
+                </a>
+              </li>
+              <li
+                className="Header-navLink-0-2-8"
+              >
+                <a
+                  aria-current={null}
+                  href="/deriv"
+                  onClick={[Function]}
+                >
+                  Deriv
+                </a>
+              </li>
+              <li
+                className="Header-navLink-0-2-8"
+              >
+                <a
+                  aria-current={null}
+                  href="/frequen"
+                  onClick={[Function]}
+                >
+                  Frequen
+                </a>
+              </li>
+              <li
+                className="Header-navLink-0-2-8 Header-disabled-0-2-9"
+              >
+                <a
+                  aria-current={null}
+                  href="/tree"
+                  onClick={[Function]}
+                >
+                  Tree
+                </a>
+              </li>
+              <li
+                className="Header-navLink-0-2-8 Header-disabled-0-2-9"
+              >
+                <a
+                  aria-current={null}
+                  href="/lex"
+                  onClick={[Function]}
+                >
+                  Lex
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    `)
   })
 })

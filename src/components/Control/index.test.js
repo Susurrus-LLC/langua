@@ -15,27 +15,27 @@ describe('Control', () => {
     let control = renderer.create(<Control />)
     let tree = control.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<div
-  className="Control-control-0-1-1"
-/>
-`)
+      <div
+        className="Control-control-0-2-1"
+      />
+    `)
 
     control = renderer.create(<Control addedClasses='test' />)
     tree = control.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<div
-  className="Control-control-0-1-1 test"
-/>
-`)
+      <div
+        className="Control-control-0-2-1 test"
+      />
+    `)
 
     control = renderer.create(<Control>Test</Control>)
     tree = control.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<div
-  className="Control-control-0-1-1"
->
-  Test
-</div>
-`)
+      <div
+        className="Control-control-0-2-1"
+      >
+        Test
+      </div>
+    `)
   })
 })

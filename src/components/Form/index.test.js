@@ -15,19 +15,19 @@ describe('Form', () => {
     let form = renderer.create(<Form />)
     let tree = form.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<form
-  className="Form-form-0-1-1"
-/>
-`)
+      <form
+        className="Form-form-0-2-1"
+      />
+    `)
 
     form = renderer.create(<Form>Test</Form>)
     tree = form.toJSON()
     expect(tree).toMatchInlineSnapshot(`
-<form
-  className="Form-form-0-1-1"
->
-  Test
-</form>
-`)
+      <form
+        className="Form-form-0-2-1"
+      >
+        Test
+      </form>
+    `)
   })
 })
