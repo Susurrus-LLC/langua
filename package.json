@@ -61,7 +61,7 @@
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.0.10",
-    "lint-staged": "^10.0.1",
+    "lint-staged": "^10.0.2",
     "prettier": "^1.19.1",
     "prettier-standard": "^16.1.0",
     "react-snap": "1.23.0",
