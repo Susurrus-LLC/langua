@@ -68,7 +68,7 @@
     "react-test-renderer": "^16.12.0",
     "remark-cli": "^7.0.1",
     "remark-lint": "^6.0.5",
-    "remark-preset-lint-recommended": "^3.0.3"
+    "remark-preset-lint-recommended": "^3.0.4"
   },
   "browserslist": [
     ">0.2%",
