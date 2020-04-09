@@ -60,7 +60,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-standard": "^4.0.1",
-    "husky": "^4.0.10",
+    "husky": "^4.2.4",
     "lint-staged": "^10.0.1",
     "prettier": "^1.19.1",
     "prettier-standard": "^16.1.0",
