@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format of this changelog is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased](https://github.com/nai888/langua/compare/v0.4.2...HEAD)
+## [Unreleased](https://github.com/Susurrus-LLC/langua/compare/v0.4.2...HEAD)
 
 ### Changed 0.4.3
 
@@ -12,13 +12,13 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Move unchanging head elements from Helmet to the html file.
 - Update dependencies.
 
-## [v0.4.2](https://github.com/nai888/langua/compare/v0.4.1...v0.4.2)
+## [v0.4.2](https://github.com/Susurrus-LLC/langua/compare/v0.4.1...v0.4.2)
 
 ### Added 0.4.2
 
 - Add option to choose whether to italicize changed results.
 - Reformat the MorphForm controls to save space.
-- Add aria-labels to all input elements without a label. (See [issue #141](https://github.com/nai888/langua/issues/141).)
+- Add aria-labels to all input elements without a label. (See [issue #141](https://github.com/Susurrus-LLC/langua/issues/141).)
 - Add information to Morph Help.
 
 ### Changed 0.4.2
@@ -26,7 +26,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Fix bug with identifying differences in the output from one run to the next.
 - Update dependencies.
 
-## [v0.4.1](https://github.com/nai888/langua/compare/v0.4.0...v0.4.1) - 2018-12-31
+## [v0.4.1](https://github.com/Susurrus-LLC/langua/compare/v0.4.0...v0.4.1) - 2018-12-31
 
 ### Added 0.4.1
 
@@ -36,7 +36,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Apply the rewrite rules to the input.
 - Reverse-apply the rewrite rules to the results if selected.
 
-## [v0.4.0](https://github.com/nai888/langua/compare/v0.3.1...v0.4.0) - 2018-12-30
+## [v0.4.0](https://github.com/Susurrus-LLC/langua/compare/v0.3.1...v0.4.0) - 2018-12-30
 
 ### Added 0.4.0
 
@@ -58,7 +58,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Remove construction notices from Deriv.
 
-## [v0.3.1](https://github.com/nai888/langua/compare/v0.3.0...v0.3.1) - 2018-12-15
+## [v0.3.1](https://github.com/Susurrus-LLC/langua/compare/v0.3.0...v0.3.1) - 2018-12-15
 
 ### Added 0.3.1
 
@@ -78,7 +78,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Remove disabled status for Deriv in the header link and home panel.
 
-## [v0.3.0](https://github.com/nai888/langua/compare/v0.2.5...v0.3.0) - 2018-12-14
+## [v0.3.0](https://github.com/Susurrus-LLC/langua/compare/v0.2.5...v0.3.0) - 2018-12-14
 
 ### Added 0.3.0
 
@@ -93,7 +93,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Updated information on Frequen Help page to specify what is still under construction.
 - Update dependencies.
 
-## [v0.2.5](https://github.com/nai888/langua/compare/v0.2.4...v0.2.5) - 2018-12-11
+## [v0.2.5](https://github.com/Susurrus-LLC/langua/compare/v0.2.4...v0.2.5) - 2018-12-11
 
 ### Added 0.2.5
 
@@ -107,7 +107,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Refactor all tools to use the new Tool component
 - Update dependencies.
 
-## [v0.2.4](https://github.com/nai888/langua/compare/v0.2.3...v0.2.4) - 2018-12-07
+## [v0.2.4](https://github.com/Susurrus-LLC/langua/compare/v0.2.3...v0.2.4) - 2018-12-07
 
 ### Added 0.2.4
 
@@ -124,7 +124,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Change `yarn test` to `yarn test-with-coverage` and change `yarn test-no-coverage` to `yarn test`.
 - Update dependencies.
 
-## [v0.2.3](https://github.com/nai888/langua/compare/v0.2.2...v0.2.3) - 2018-10-29
+## [v0.2.3](https://github.com/Susurrus-LLC/langua/compare/v0.2.2...v0.2.3) - 2018-10-29
 
 ### Added 0.2.3
 
@@ -147,7 +147,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Remove unneeded code for creating a file picker in Button.js.
 
-## [v0.2.2](https://github.com/nai888/langua/compare/v0.2.1...v0.2.2) - 2018-10-27
+## [v0.2.2](https://github.com/Susurrus-LLC/langua/compare/v0.2.1...v0.2.2) - 2018-10-27
 
 ### Added 0.2.2
 
@@ -164,7 +164,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Fix bug with opening a `.lngg` file not updating state immediately.
 - Update dependencies.
 
-## [v0.2.1](https://github.com/nai888/langua/compare/v0.2.0...v0.2.1) - 2018-10-23
+## [v0.2.1](https://github.com/Susurrus-LLC/langua/compare/v0.2.0...v0.2.1) - 2018-10-23
 
 ### Added 0.2.1
 
@@ -183,7 +183,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Remove `disabled` formatting for Frequen in the Header and the Home page.
 
-## [v0.2.0](https://github.com/nai888/langua/compare/v0.1.6...v0.2.0) - 2018-10-19
+## [v0.2.0](https://github.com/Susurrus-LLC/langua/compare/v0.1.6...v0.2.0) - 2018-10-19
 
 ### Added 0.2.0
 
@@ -199,7 +199,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 ### Changed 0.2.0
 
 - Change `file.name.slice(-5) === '.lngg'` to `file.name.endsWith('.lngg')`.
-- Open files directly when clicking the Open button, rather than unhiding a file input element. (See [issue #50](https://github.com/nai888/langua/issues/50).)
+- Open files directly when clicking the Open button, rather than unhiding a file input element. (See [issue #50](https://github.com/Susurrus-LLC/langua/issues/50).)
 - Refactor Home panels into a separate component for reusability.
 - Refactor Gen component form handling.
 - Update dependencies.
@@ -208,7 +208,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Remove Flow.
 
-## [v0.1.6](https://github.com/nai888/langua/compare/v0.1.5...v0.1.6) - 2018-09-30
+## [v0.1.6](https://github.com/Susurrus-LLC/langua/compare/v0.1.5...v0.1.6) - 2018-09-30
 
 ### Added 0.1.6
 
@@ -225,7 +225,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Fix bug preventing variable use within Subpatterns.
 - Update dependencies.
 
-## [v0.1.5](https://github.com/nai888/langua/compare/v0.1.4...v0.1.5) - 2018-07-04
+## [v0.1.5](https://github.com/Susurrus-LLC/langua/compare/v0.1.4...v0.1.5) - 2018-07-04
 
 ### Added 0.1.5
 
@@ -237,23 +237,23 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 ### Changed 0.1.5
 
 - Update the Filter Duplicates option so that it updates the results immediately, rather than needing to re-generate the results before taking effect.
-- Change HelpLink component (a link styled like a button) to a ButtonLink component (a button that changes the URL). (See [issue #13](https://github.com/nai888/langua/issues/13).)
+- Change HelpLink component (a link styled like a button) to a ButtonLink component (a button that changes the URL). (See [issue #13](https://github.com/Susurrus-LLC/langua/issues/13).)
 - Refactor GenService so it reads in order without needing to call an internal function for getStats().
 - Change internal links in the README to relative links.
 - Link to the CHANGELOG in the footer instead of to the README#versioning header.
 - Refactor the top-level Router into its own page so that index.js *only* handles rendering.
 - Update dependencies.
 
-## [v0.1.4](https://github.com/nai888/langua/compare/v0.1.3...v0.1.4) - 2018-05-12
+## [v0.1.4](https://github.com/Susurrus-LLC/langua/compare/v0.1.3...v0.1.4) - 2018-05-12
 
 ### Added 0.1.4
 
-- Create this Changelog. (See [issue #9](https://github.com/nai888/langua/issues/9).)
-- Add toast notifications to indicate: (See [issue #12](https://github.com/nai888/langua/issues/12).)
+- Create this Changelog. (See [issue #9](https://github.com/Susurrus-LLC/langua/issues/9).)
+- Add toast notifications to indicate: (See [issue #12](https://github.com/Susurrus-LLC/langua/issues/12).)
   - The app has been fully cached and can be accessed offline.
   - An updated verision of the app is available and can be loaded by reloading the page.
   - An internet connection is unavailable and the app is being served from the cache.
-- Add locale formatting to the statistics shown at the bottom of the Gen page. (See [issue #10](https://github.com/nai888/langua/issues/10).)
+- Add locale formatting to the statistics shown at the bottom of the Gen page. (See [issue #10](https://github.com/Susurrus-LLC/langua/issues/10).)
 
 ### Changed 0.1.4
 
@@ -265,9 +265,9 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 ### Removed 0.1.4
 
 - Delete the `console.log()` calls and reformatted some of the code within the Gen results function.
-- Remove react-snap from the build process for now, since it currently assigns CSS classes incorrectly. (See [issue #11](https://github.com/nai888/langua/issues/11).)
+- Remove react-snap from the build process for now, since it currently assigns CSS classes incorrectly. (See [issue #11](https://github.com/Susurrus-LLC/langua/issues/11).)
 
-## [v0.1.3](https://github.com/nai888/langua/compare/b5e3e039d054041d8757ffa331d4702b9ea60dd8...v0.1.3) - 2018-04-27
+## [v0.1.3](https://github.com/Susurrus-LLC/langua/compare/b5e3e039d054041d8757ffa331d4702b9ea60dd8...v0.1.3) - 2018-04-27
 
 ### Added 0.1.3
 
@@ -283,7 +283,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Refactor typography CSS among elements with shared styling.
 - Clarify deployment documentation in README.md.
 
-## [v0.1.2](https://github.com/nai888/langua/compare/d0ce8c9ed58aeef8802092d220af7c57f9f0da29...a6e3d281e83fee7648864ac8eaee3f3b8a1b37ff) - 2018-04-27
+## [v0.1.2](https://github.com/Susurrus-LLC/langua/compare/d0ce8c9ed58aeef8802092d220af7c57f9f0da29...a6e3d281e83fee7648864ac8eaee3f3b8a1b37ff) - 2018-04-27
 
 ### Added 0.1.2
 

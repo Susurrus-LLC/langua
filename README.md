@@ -1,12 +1,12 @@
 # Langua
 
-[![Build Status](https://travis-ci.com/nai888/langua.svg?branch=master)](https://travis-ci.com/nai888/langua)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c594056d0f96442cba7a92fe2c348d92)](https://app.codacy.com/app/nai888/langua?utm_source=github.com&utm_medium=referral&utm_content=nai888/langua&utm_campaign=Badge_Grade_Dashboard)
-[![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/58bcc4dc2f914f06ad6cc51658678dc3)](https://www.codacy.com/app/Langua/langua?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nai888/langua&amp;utm_campaign=Badge_Coverage)
+[![Build Status](https://travis-ci.com/Susurrus-LLC/langua.svg?branch=master)](https://travis-ci.com/Susurrus-LLC/langua)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c594056d0f96442cba7a92fe2c348d92)](https://app.codacy.com/app/Susurrus-LLC/langua?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/58bcc4dc2f914f06ad6cc51658678dc3)](https://www.codacy.com/app/Langua/langua?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Susurrus-LLC/langua&amp;utm_campaign=Badge_Coverage)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=nai888/langua)](https://dependabot.com)
-[![](https://img.shields.io/github/release/nai888/langua.svg)](https://github.com/nai888/langua/releases)
-[![](https://img.shields.io/github/license/nai888/langua.svg)](https://github.com/nai888/langua/blob/master/LICENSE)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=Susurrus-LLC/langua)](https://dependabot.com)
+[![](https://img.shields.io/github/release/Susurrus-LLC/langua.svg)](https://github.com/Susurrus-LLC/langua/releases)
+[![](https://img.shields.io/github/license/Susurrus-LLC/langua.svg)](https://github.com/Susurrus-LLC/langua/blob/master/LICENSE)
 
 1. [Overview](#overview)
 1. [Deployment](#deployment)
@@ -132,5 +132,5 @@ Langua is licensed under the [GNU Affero General Public License v3.0](https://ch
 
 Want to support continued work on Langua? Help me out with a couple of :beers:!
 
-[![Beerpay](https://beerpay.io/nai888/langua/badge.svg?style=beer)](https://beerpay.io/nai888/langua)
-[![Beerpay](https://beerpay.io/nai888/langua/make-wish.svg?style=flat)](https://beerpay.io/nai888/langua)
+[![Beerpay](https://beerpay.io/Susurrus-LLC/langua/badge.svg?style=beer)](https://beerpay.io/Susurrus-LLC/langua)
+[![Beerpay](https://beerpay.io/Susurrus-LLC/langua/make-wish.svg?style=flat)](https://beerpay.io/Susurrus-LLC/langua)
