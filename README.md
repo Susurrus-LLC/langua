@@ -119,18 +119,10 @@ Langua was inspired by several existing tools, including:
 - [SynTree](http://mshang.ca/syntree/)
 - [RSyntaxTree](https://www.yohasebe.com/rsyntaxtree/)
 
-Thank you to [Travis CI](https://travis-ci.com), [BrowserStack](https://www.browserstack.com), [Dependabot](https://dependabot.com), and [Codacy](https://www.codacy.com/) for offering free services to open source projects!
+Thank you to [Travis CI](https://travis-ci.com), [Dependabot](https://dependabot.com), and [Codacy](https://www.codacy.com/) for offering free services to open source projects!
 
 [![Travis CI](./Logo%20Travis%20CI.png)](https://travis-ci.com "Travis CI")
-[![BrowserStack](./Logo%20BrowserStack.png)](https://www.browserstack.com "BrowserStack")
 
 ## License
 
 Langua is licensed under the [GNU Affero General Public License v3.0](https://choosealicense.com/licenses/agpl-3.0/).
-
-## Support on Beerpay
-
-Want to support continued work on Langua? Help me out with a couple of :beers:!
-
-[![Beerpay](https://beerpay.io/Susurrus-LLC/langua/badge.svg?style=beer)](https://beerpay.io/Susurrus-LLC/langua)
-[![Beerpay](https://beerpay.io/Susurrus-LLC/langua/make-wish.svg?style=flat)](https://beerpay.io/Susurrus-LLC/langua)
