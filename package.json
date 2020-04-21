@@ -27,8 +27,7 @@
   },
   "lint-staged": {
     "src/**/*.js": [
-      "prettier-standard",
-      "git add"
+      "prettier-standard"
     ]
   },
   "dependencies": {
