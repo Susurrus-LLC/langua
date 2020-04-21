@@ -15,6 +15,7 @@ deploy:
   skip_cleanup: true
   github_token: "$github_token"
   local_dir: build
+  keep_history: true
   on:
     branch: master
 notifications:
