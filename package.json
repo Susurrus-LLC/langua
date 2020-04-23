@@ -62,7 +62,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.1.6",
     "prettier": "^2.0.4",
-    "prettier-standard": "^16.2.1",
+    "prettier-standard": "^16.3.0",
     "react-snap": "1.23.0",
     "react-test-renderer": "^16.13.1",
     "remark-cli": "^8.0.0",
