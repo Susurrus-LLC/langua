@@ -42,7 +42,7 @@
     "react-app-polyfill": "1.0.6",
     "react-dom": "16.13.1",
     "react-helmet": "6.0.0",
-    "react-jss": "10.1.1",
+    "react-jss": "10.4.0",
     "react-router-dom": "5.1.2",
     "react-scripts": "3.4.1",
     "react-toastify": "5.5.0",
