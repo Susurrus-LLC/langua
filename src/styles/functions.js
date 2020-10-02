@@ -57,7 +57,7 @@ export const mixNeutral = color => {
 }
 
 export const pickContrastOf = color => {
-  let newColor = complement(color)
+  const newColor = complement(color)
   if (color.lightness() < 0.3) {
     newColor.lightness(newColor.lightness() + 0.86)
   } else if (color.lightness() > 0.7) {
