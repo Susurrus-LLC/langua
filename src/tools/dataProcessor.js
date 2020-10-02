@@ -21,7 +21,6 @@ class DataProcessor {
       case 'tree':
         return treeData
       default:
-        return
     }
   }
 
