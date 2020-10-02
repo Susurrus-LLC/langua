@@ -20,8 +20,6 @@ class DataProcessor {
         return morphData
       case 'tree':
         return treeData
-      default:
-        return
     }
   }
 
