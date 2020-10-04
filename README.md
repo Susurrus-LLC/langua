@@ -119,10 +119,6 @@ Langua was inspired by several existing tools, including:
 - [SynTree](http://mshang.ca/syntree/)
 - [RSyntaxTree](https://www.yohasebe.com/rsyntaxtree/)
 
-Thank you to [Travis CI](https://travis-ci.com), [Dependabot](https://dependabot.com), and [Codacy](https://www.codacy.com/) for offering free services to open source projects!
-
-[![Travis CI](./Logo%20Travis%20CI.png)](https://travis-ci.com "Travis CI")
-
 ## License
 
 Langua is licensed under the [GNU Affero General Public License v3.0](https://choosealicense.com/licenses/agpl-3.0/).
