@@ -13,6 +13,7 @@ import 'normalize.css/normalize.css'
 import '../../styles/global.sass'
 
 import Header from '../header'
+import Main from '../main'
 import Footer from '../footer'
 
 import styles from './layout.module.sass'
@@ -34,7 +35,7 @@ const Layout = ({ children }) => {
         siteTitle={data.site.siteMetadata?.title}
         siteSubTitle={data.site.siteMetadata?.subtitle}
       />
-      <main>{children}</main>
+      <Main>{children}</Main>
       <Footer />
     </div>
   )
