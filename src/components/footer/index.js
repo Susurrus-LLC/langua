@@ -27,44 +27,42 @@ const Footer = () => {
   `)
 
   return (
-    <footer>
-      <div className={styles.footer}>
-        <p className={styles.copyright}>
-          <a
-            href={`${data.site.siteMetadata?.appGhURL}/blob/master/CHANGELOG.md`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Version <i className='fas fa-code' />{' '}
-            {data.site.siteMetadata?.version}
-          </a>
-          . Built by{' '}
-          <a
-            href={data.site.siteMetadata?.authorURL}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            {data.site.siteMetadata?.author}
-          </a>
-          , copyright <i className='far fa-copyright' />
-          {getCopyrightYear()} under the{' '}
-          <a
-            href='https://choosealicense.com/licenses/agpl-3.0/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            AGPL-3.0 <i className='fas fa-gavel' /> license
-          </a>
-          .{' '}
-          <a
-            href={data.site.siteMetadata?.appGhURL}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            View this project on <i className='fab fa-github' /> GitHub.
-          </a>
-        </p>
-      </div>
+    <footer className={styles.footer}>
+      <p className={styles.copyright}>
+        <a
+          href={`${data.site.siteMetadata?.appGhURL}/blob/master/CHANGELOG.md`}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Version <i className='fas fa-code' />{' '}
+          {data.site.siteMetadata?.version}
+        </a>
+        . Built by{' '}
+        <a
+          href={data.site.siteMetadata?.authorURL}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          {data.site.siteMetadata?.author}
+        </a>
+        , copyright <i className='far fa-copyright' />
+        {getCopyrightYear()} under the{' '}
+        <a
+          href='https://choosealicense.com/licenses/agpl-3.0/'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          AGPL-3.0 <i className='fas fa-gavel' /> license
+        </a>
+        .{' '}
+        <a
+          href={data.site.siteMetadata?.appGhURL}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          View this project on <i className='fab fa-github' /> GitHub.
+        </a>
+      </p>
     </footer>
   )
 }
