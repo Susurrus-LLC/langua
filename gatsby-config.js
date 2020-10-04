@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Langua`,
+    title: `Langua | Language Tools`,
     description: `A suite of language tools.`,
-    author: `@Susurrus-LLC`
+    author: `Ian A. Cook`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -12,6 +12,15 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Noto+Sans:400,400i,700,700i`,
+          `Noto+Serif:400,400i,700,700i&amp;subset=greek,greek-ext,latin-ext`
+        ]
       }
     },
     `gatsby-transformer-sharp`,
