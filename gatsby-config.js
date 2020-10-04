@@ -1,8 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Langua | Language Tools`,
+    title: `Langua`,
+    subtitle: `A suite of language tools`,
     description: `A suite of language tools.`,
-    author: `Ian A. Cook`
+    author: `Ian A. Cook`,
+    authorURL: `https://github.com/nai888`,
+    appGhURL: `https://github.com/susurrus-llc/langua`,
+    version: `0.4.3`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

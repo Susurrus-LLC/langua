@@ -1,0 +1,51 @@
+// Colors based on https://tallys.github.io/color-theory/ //
+
+@function is-cool-color($color)
+  @return hue($color) < 310 and hue($color) > 140
+
+@function is-high-key-value($color)
+  @return hue($color) > 20 and hue($color) < 190
+
+@function is-highest-key-value($color)
+  @return hue($color) > 30 and hue($color) < 90
+
+@function harmonious-mix($mix, $base)
+  @if is-cool-color($mix)
+    @if is-high-key-value($base)
+      @return mix($mix, $base, 11%)
+    @else
+      @return mix($mix, $base, 16%)
+  @else
+    @if is-high-key-value($base)
+      @return mix($mix, $base, 13%)
+    @else
+      @return mix($mix, $base, 23%)
+
+@function mix-neutral($color)
+  @if is-highest-key-value($color)
+    @if is-high-key-value(complement($color))
+      @return mix(complement($color), $color, 19%)
+    @else
+      @return mix(complement($color), $color, 13%)
+  @else if is-high-key-value($color)
+    @if is-high-key-value(complement($color))
+      @return mix(complement($color), $color, 31%)
+    @else
+      @return mix(complement($color), $color, 23%)
+  @else
+    @if is-highest-key-value(complement($color))
+      @return mix(complement($color), $color, 31%)
+    @if is-high-key-value(complement($color))
+      @return mix(complement($color), $color, 26%)
+    @else
+      @return mix(complement($color), $color, 23%)
+
+@function pow($int, $exp)
+  $val: 1
+  @if $exp > 0
+    @for $i from 1 through $exp
+      $val: $val * $int
+  @else if $exp < 0
+    @for $i from 1 through -$exp
+      $val: $val / $int
+  @return $val
