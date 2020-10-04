@@ -11,6 +11,7 @@ Thanks for your contribution. There seems to be an issue with your pull request.
 <a href="{{link}}">View build log</a>
 
 {{#scripts}}
+
 <details>
   <summary>
     <strong>

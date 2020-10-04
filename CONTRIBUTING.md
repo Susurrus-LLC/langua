@@ -51,7 +51,7 @@ This will start a virtual server running Langua at [http://localhost:3000](http:
 
 #### Pull requests
 
-When creating a pull request, always use the [pull request template](https://github.com/Susurrus-LLC/langua/blob/master/.github/PULL_REQUEST_TEMPLATE.md) and provide all required information along with a clear and descriptive title and any other relevant details. Do not include issue numbers in the title; *do* link to related issues in the body of the pull request. If needed, include a screenshot or animate GIF to demonstrate your changes.
+When creating a pull request, always use the [pull request template](https://github.com/Susurrus-LLC/langua/blob/master/.github/PULL_REQUEST_TEMPLATE.md) and provide all required information along with a clear and descriptive title and any other relevant details. Do not include issue numbers in the title; _do_ link to related issues in the body of the pull request. If needed, include a screenshot or animate GIF to demonstrate your changes.
 
 ## Styles
 

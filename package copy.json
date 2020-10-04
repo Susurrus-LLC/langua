@@ -26,9 +26,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.js": [
-      "prettier-standard"
-    ]
+    "src/**/*.js": ["prettier-standard"]
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.0",
@@ -69,10 +67,5 @@
     "remark-lint": "^7.0.1",
     "remark-preset-lint-recommended": "^4.0.1"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 9",
-    "not op_mini all"
-  ]
+  "browserslist": [">0.2%", "not dead", "not ie <= 9", "not op_mini all"]
 }
