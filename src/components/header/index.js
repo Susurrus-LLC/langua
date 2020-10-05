@@ -7,7 +7,7 @@ import styles from './header.module.sass'
 const Header = ({ siteTitle, siteSubTitle }) => (
   <header className={styles.header}>
     <div className={styles.titleArea}>
-      <h1 className={styles.title}>
+      <h1 className={styles.siteTitle}>
         <Link to='/' className={styles.titleLink}>
           {siteTitle}
         </Link>
