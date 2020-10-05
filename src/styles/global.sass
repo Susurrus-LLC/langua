@@ -33,7 +33,7 @@ body
   padding-left: calc(100vw - 100%)
   font-size: $ms1 * 1rem
   font-weight: normal
-  $line-height: $lnht * 2rem
+  line-height: $lnht * 2
   word-wrap: break-word
   font-kerning: normal
   font-variant-ligatures: common-ligatures contextual
@@ -112,16 +112,16 @@ a
   &:hover, &:active
     outline-width: 0
   &:hover
-    color: darken($blu, 15%)
+    color: darken($blu, 5%)
   &:active
     color: $ong
   .active
     &:link, &:visited
       color: $ong
     &:hover
-      color: darken($ong, 15%)
+      color: darken($ong, 5%)
     &:active
-      color: darken($ong, 25%)
+      color: darken($ong, 10%)
 
 abbr[title]
   border-bottom: 1px dotted change-color($black, $alpha: 0.5)
@@ -227,7 +227,7 @@ button, select
 
 button
   cursor: pointer
-  border: 1px solid change-color(darken($blu, 15%), $alpha: 0.3)
+  border: 1px solid change-color(darken($blu, 10%), $alpha: 0.3)
   background: none
   background-color: darken($white, 5%)
   padding: $lnht * 1rem
@@ -312,7 +312,7 @@ pre
   margin-bottom: $lnht * $ms1 * 2rem // base line height * base font size
   padding: $lnht * $ms1 * 2rem
   font-size: $ms0 * 1rem
-  line-height: $lnht * 2rem
+  line-height: $lnht * 2
   background: change-color($black, $alpha: 0.04)
   border-radius: 3px
   overflow: auto
@@ -323,7 +323,7 @@ table
   margin-bottom: $lnht * $ms1 * 2rem // base line height * base font size
   padding: 0
   font-size: $ms1 * 1rem
-  line-height: $lnht * 2rem
+  line-height: $lnht * 2
   border-collapse: collapse
   width: 100%
 
@@ -368,7 +368,7 @@ tt, code
 
 pre code
   background: none
-  line-height: 1.42
+  line-height: $lnht * 2
 
 code:before, code:after, tt:before, tt:after
   letter-spacing: -0.2em
