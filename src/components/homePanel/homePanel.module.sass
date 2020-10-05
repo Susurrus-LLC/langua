@@ -1,0 +1,22 @@
+@import ../../styles/variables
+
+.panel
+  &:link, &:visited, &:hover, &:active
+    color: $black
+    width: 49%
+    margin-bottom: $lnht * 1rem
+    padding: $ms0 * 1rem
+    text-decoration: none
+    box-sizing: border-box
+  &:hover
+    outline: 1px solid change-color(darken($blu, 3%), $alpha: 0.3)
+
+.disabled
+  opacity: 0.5
+  &:hover
+    opacity: 0.8
+  p
+    font-style: italic
+
+.tool-description
+  margin: 0
