@@ -45,8 +45,7 @@ const Footer = () => {
         >
           {data.site.siteMetadata?.author}
         </a>
-        , copyright <i className='far fa-copyright' />
-        {getCopyrightYear()} under the{' '}
+        , copyright &copy; {getCopyrightYear()} under the{' '}
         <a
           href='https://choosealicense.com/licenses/agpl-3.0/'
           target='_blank'

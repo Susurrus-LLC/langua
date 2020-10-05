@@ -9,6 +9,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import 'normalize.css/normalize.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 
 import '../../styles/global.sass'
 
