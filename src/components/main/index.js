@@ -7,7 +7,7 @@ import styles from './main.module.sass'
 
 const Main = ({ children }) => (
   <main className={styles.main}>
-    <div>{children}</div>
+    {children}
     <ToastContainer
       draggablePercent={60}
       position={toast.POSITION.BOTTOM_CENTER}

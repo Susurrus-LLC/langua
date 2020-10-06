@@ -20,13 +20,13 @@ const Tool = ({ toolInfo, children }) => {
   const siteTitle = data.site.siteMetadata?.title
 
   return (
-    <div className={styles.tool}>
-      <Button link route={`${toolInfo.link}/help`}>
+    <>
+      <Button link ver='danger' route={`${toolInfo.link}/help`}>
         Help
       </Button>
       <h2 className={styles.toolTitle}>{`${siteTitle}${toolInfo.title}`}</h2>
       {children}
-    </div>
+    </>
   )
 }
 
