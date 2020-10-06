@@ -21,7 +21,7 @@ const Tool = ({ toolInfo, children }) => {
 
   return (
     <>
-      <Button link ver='danger' route={`${toolInfo.link}/help`}>
+      <Button link route={`${toolInfo.link}/help`}>
         Help
       </Button>
       <h2 className={styles.toolTitle}>{`${siteTitle}${toolInfo.title}`}</h2>

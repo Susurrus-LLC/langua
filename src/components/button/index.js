@@ -17,13 +17,15 @@ const Button = ({
   const assignClasses = () => {
     let classes = styles.btn
 
-    if (ver !== null) {
+    if (['neutral', 'success', 'danger'].find(el => el === ver)) {
       classes += ` ${styles[ver]}`
     }
 
     if (small) {
       classes += ` ${styles.small}`
     }
+
+    return classes
   }
 
   if (link) {
