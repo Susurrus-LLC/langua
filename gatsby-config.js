@@ -6,6 +6,7 @@ module.exports = {
     author: `Ian A. Cook`,
     authorURL: `https://github.com/nai888`,
     appGhURL: `https://github.com/susurrus-llc/langua`,
+    canonical: `https://susurrus-llc.github.io/langua/`,
     version: `0.4.3`,
     toolInfo: {
       gen: {
