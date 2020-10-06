@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './control.module.sass'
+import styles from './form.module.sass'
 
 const Form = ({ name, children }) => (
   <form name={name} className={styles.form}>

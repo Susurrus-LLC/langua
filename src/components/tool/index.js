@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 
 import Button from '../button'
 
+import styles from './tool.module.sass'
+
 const Tool = ({ toolInfo, children }) => {
   const data = useStaticQuery(graphql`
     query ToolTitleQuery {
