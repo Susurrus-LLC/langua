@@ -4,19 +4,19 @@
     "main.js.map": "/langua/static/js/main.106338d8.chunk.js.map",
     "runtime-main.js": "/langua/static/js/runtime-main.3f21ce55.js",
     "runtime-main.js.map": "/langua/static/js/runtime-main.3f21ce55.js.map",
-    "static/css/2.cd0ced40.chunk.css": "/langua/static/css/2.cd0ced40.chunk.css",
+    "static/css/2.4dc8b762.chunk.css": "/langua/static/css/2.4dc8b762.chunk.css",
     "static/js/2.812c03d2.chunk.js": "/langua/static/js/2.812c03d2.chunk.js",
     "static/js/2.812c03d2.chunk.js.map": "/langua/static/js/2.812c03d2.chunk.js.map",
     "index.html": "/langua/index.html",
-    "precache-manifest.86da92ac861003f9b2a50bb552c5508f.js": "/langua/precache-manifest.86da92ac861003f9b2a50bb552c5508f.js",
+    "precache-manifest.78c9cb7205e106179f2c07e58a585cfc.js": "/langua/precache-manifest.78c9cb7205e106179f2c07e58a585cfc.js",
     "service-worker.js": "/langua/service-worker.js",
-    "static/css/2.cd0ced40.chunk.css.map": "/langua/static/css/2.cd0ced40.chunk.css.map",
+    "static/css/2.4dc8b762.chunk.css.map": "/langua/static/css/2.4dc8b762.chunk.css.map",
     "static/js/2.812c03d2.chunk.js.LICENSE.txt": "/langua/static/js/2.812c03d2.chunk.js.LICENSE.txt",
-    "static/media/all.css": "/langua/static/media/fa-solid-900.8e39d5d5.svg"
+    "static/media/all.css": "/langua/static/media/fa-solid-900.8e1ed89b.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.3f21ce55.js",
-    "static/css/2.cd0ced40.chunk.css",
+    "static/css/2.4dc8b762.chunk.css",
     "static/js/2.812c03d2.chunk.js",
     "static/js/main.106338d8.chunk.js"
   ]
