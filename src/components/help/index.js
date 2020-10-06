@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 
 import Button from '../button'
 
+import styles from './help.module.sass'
+
 const Help = ({ toolInfo, children }) => {
   const data = useStaticQuery(graphql`
     query HelpTitleQuery {
@@ -18,16 +20,18 @@ const Help = ({ toolInfo, children }) => {
   const siteTitle = data.site.siteMetadata?.title
 
   return (
-    <div className={styles.help}>
+    <>
       <Button link route={toolInfo.link}>
         Back
       </Button>
-      <h2 className={styles.toolTitle}>{`${siteTitle}${toolInfo.title}`}</h2>
+      <h2
+        className={styles.toolTitle}
+      >{`${siteTitle}${toolInfo.title} Help`}</h2>
       <p id={styles.description}>
         {`${siteTitle}${toolInfo.title} ${toolInfo.description}`}
       </p>
       {children}
-    </div>
+    </>
   )
 }
 

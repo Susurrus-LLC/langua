@@ -9,6 +9,8 @@ import Tool from '../../components/tool'
 import TreeForm from '../../pageComponents/tree/treeForm'
 import TreeResults from '../../pageComponents/tree/treeResults'
 
+import styles from './tree.module.sass'
+
 const TreePage = () => {
   const data = useStaticQuery(graphql`
     query TreeToolQuery {

@@ -1,22 +1,46 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../../../components/layout'
-import Image from '../../../components/image'
 import SEO from '../../../components/seo'
+import Notice from '../../../components/notice'
+import Help from '../../../components/help'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title='Home' />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to='/page-2/'>Go to page 2</Link> <br />
-    <Link to='/using-typescript/'>Go to "Using TypeScript"</Link>
-  </Layout>
-)
+const TreeHelpPage = () => {
+  const data = useStaticQuery(graphql`
+    query TreeHelpQuery {
+      site {
+        siteMetadata {
+          title
+          toolInfo {
+            tree {
+              title
+              link
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
 
-export default IndexPage
+  const metadata = data.site.siteMetadata
+
+  return (
+    <Layout>
+      <SEO
+        title={`${metadata.title}${metadata.toolInfo.tree.title} Help`}
+        canonical={`${metadata.toolInfo.tree.link}/help`}
+      />
+      <Help toolInfo={metadata.toolInfo.tree}>
+        <Notice>This tool is still in planning.</Notice>
+        <h3 id='using'>
+          Using {metadata.title}
+          {metadata.toolInfo.tree.title}
+        </h3>
+      </Help>
+    </Layout>
+  )
+}
+
+export default TreeHelpPage
