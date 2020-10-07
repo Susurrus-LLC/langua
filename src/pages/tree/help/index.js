@@ -1,8 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import Layout from '../../../components/layout'
-import SEO from '../../../components/seo'
 import Notice from '../../../components/notice'
 import Help from '../../../components/help'
 
@@ -11,7 +9,6 @@ const TreeHelpPage = () => {
     query TreeHelpQuery {
       site {
         siteMetadata {
-          title
           toolInfo {
             tree {
               title
@@ -28,19 +25,13 @@ const TreeHelpPage = () => {
   const toolInfo = metadata.toolInfo.tree
 
   return (
-    <Layout>
-      <SEO
-        title={`${metadata.title}${toolInfo.title} Help`}
-        canonical={`${toolInfo.link}/help`}
-      />
-      <Help toolInfo={toolInfo}>
-        <Notice>This tool is still in planning.</Notice>
-        <h3 id='using'>
-          Using {metadata.title}
-          {toolInfo.title}
-        </h3>
-      </Help>
-    </Layout>
+    <Help toolInfo={toolInfo}>
+      <Notice>This tool is still in planning.</Notice>
+      <h3 id='using'>
+        Using {metadata.title}
+        {toolInfo.title}
+      </h3>
+    </Help>
   )
 }
 

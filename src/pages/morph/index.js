@@ -1,8 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
 import Notice from '../../components/notice'
 import Tool from '../../components/tool'
 
@@ -17,7 +15,6 @@ const MorphPage = () => {
     query MorphToolQuery {
       site {
         siteMetadata {
-          title
           toolInfo {
             morph {
               title
@@ -34,17 +31,11 @@ const MorphPage = () => {
   const toolInfo = metadata.toolInfo.morph
 
   return (
-    <Layout>
-      <SEO
-        title={`${metadata.title}${toolInfo.title}`}
-        canonical={toolInfo.link}
-      />
-      <Tool toolInfo={toolInfo}>
-        <Notice>This tool is still in development.</Notice>
-        <MorphForm />
-        <MorphResults />
-      </Tool>
-    </Layout>
+    <Tool toolInfo={toolInfo}>
+      <Notice>This tool is still in development.</Notice>
+      <MorphForm />
+      <MorphResults />
+    </Tool>
   )
 }
 

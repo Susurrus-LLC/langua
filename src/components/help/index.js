@@ -20,7 +20,11 @@ const Help = ({ toolInfo, children }) => {
   const siteTitle = data.site.siteMetadata?.title
 
   return (
-    <>
+    <Layout>
+      <SEO
+        title={`${metadata.title}${toolInfo.title} Help`}
+        canonical={`${toolInfo.link}/help`}
+      />
       <Button link route={toolInfo.link}>
         Back
       </Button>
@@ -31,7 +35,7 @@ const Help = ({ toolInfo, children }) => {
         {`${siteTitle}${toolInfo.title} ${toolInfo.description}`}
       </p>
       {children}
-    </>
+    </Layout>
   )
 }
 
