@@ -9,6 +9,7 @@ const MorphHelpPage = () => {
     query MorphHelpQuery {
       site {
         siteMetadata {
+          title
           toolInfo {
             morph {
               title

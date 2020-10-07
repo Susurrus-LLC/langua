@@ -2,7 +2,8 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import Layout from '../../components/layout'
+import Layout from '../layout'
+import SEO from '../seo'
 import Button from '../button'
 
 import styles from './tool.module.sass'
@@ -18,7 +19,7 @@ const Tool = ({ toolInfo, children }) => {
     }
   `)
 
-  const siteTitle = data.site.siteMetadata?.title
+  const metadata = data.site.siteMetadata
 
   return (
     <Layout>
@@ -29,7 +30,9 @@ const Tool = ({ toolInfo, children }) => {
       <Button link route={`${toolInfo.link}/help`}>
         Help
       </Button>
-      <h2 className={styles.toolTitle}>{`${siteTitle}${toolInfo.title}`}</h2>
+      <h2
+        className={styles.toolTitle}
+      >{`${metadata.title}${toolInfo.title}`}</h2>
       {children}
     </Layout>
   )

@@ -2,6 +2,8 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 
+import Layout from '../layout'
+import SEO from '../seo'
 import Button from '../button'
 
 import styles from './help.module.sass'
@@ -17,7 +19,7 @@ const Help = ({ toolInfo, children }) => {
     }
   `)
 
-  const siteTitle = data.site.siteMetadata?.title
+  const metadata = data.site.siteMetadata
 
   return (
     <Layout>
@@ -30,9 +32,9 @@ const Help = ({ toolInfo, children }) => {
       </Button>
       <h2
         className={styles.toolTitle}
-      >{`${siteTitle}${toolInfo.title} Help`}</h2>
+      >{`${metadata.title}${toolInfo.title} Help`}</h2>
       <p id={styles.description}>
-        {`${siteTitle}${toolInfo.title} ${toolInfo.description}`}
+        {`${metadata.title}${toolInfo.title} ${toolInfo.description}`}
       </p>
       {children}
     </Layout>

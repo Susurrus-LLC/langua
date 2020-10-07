@@ -9,6 +9,7 @@ const GenHelpPage = () => {
     query GenHelpQuery {
       site {
         siteMetadata {
+          title
           toolInfo {
             gen {
               title

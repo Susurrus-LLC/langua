@@ -9,6 +9,7 @@ const TreeHelpPage = () => {
     query TreeHelpQuery {
       site {
         siteMetadata {
+          title
           toolInfo {
             tree {
               title

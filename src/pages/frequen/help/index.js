@@ -9,6 +9,7 @@ const FrequenHelpPage = () => {
     query FrequenHelpQuery {
       site {
         siteMetadata {
+          title
           toolInfo {
             frequen {
               title

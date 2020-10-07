@@ -9,6 +9,7 @@ const LexHelpPage = () => {
     query LexHelpQuery {
       site {
         siteMetadata {
+          title
           toolInfo {
             lex {
               title

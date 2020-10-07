@@ -8,6 +8,7 @@ const DerivHelpPage = () => {
     query DerivHelpQuery {
       site {
         siteMetadata {
+          title
           toolInfo {
             deriv {
               title
