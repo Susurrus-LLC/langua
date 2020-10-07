@@ -1,22 +1,50 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../../components/layout'
-import Image from '../../components/image'
 import SEO from '../../components/seo'
+import Notice from '../../components/notice'
+import Tool from '../../components/tool'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title='Home' />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to='/page-2/'>Go to page 2</Link> <br />
-    <Link to='/using-typescript/'>Go to "Using TypeScript"</Link>
-  </Layout>
-)
+import FrequenForm from '../../pageComponents/frequen/frequenForm'
+import FrequenResults from '../../pageComponents/frequen/frequenResults'
+import FrequenService from '../../services/frequenService'
 
-export default IndexPage
+import styles from './frequen.module.sass'
+
+const FrequenPage = () => {
+  const data = useStaticQuery(graphql`
+    query FrequenToolQuery {
+      site {
+        siteMetadata {
+          title
+          toolInfo {
+            frequen {
+              title
+              link
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const metadata = data.site.siteMetadata
+
+  return (
+    <Layout>
+      <SEO
+        title={`${metadata.title}${metadata.toolInfo.frequen.title}`}
+        canonical={metadata.toolInfo.frequen.link}
+      />
+      <Tool toolInfo={metadata.toolInfo.frequen}>
+        <Notice>This tool is still in development.</Notice>
+        <FrequenForm />
+        <FrequenResults />
+      </Tool>
+    </Layout>
+  )
+}
+
+export default FrequenPage

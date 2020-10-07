@@ -1,22 +1,49 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../../components/layout'
-import Image from '../../components/image'
 import SEO from '../../components/seo'
+import Notice from '../../components/notice'
+import Tool from '../../components/tool'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title='Home' />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to='/page-2/'>Go to page 2</Link> <br />
-    <Link to='/using-typescript/'>Go to "Using TypeScript"</Link>
-  </Layout>
-)
+import LexForm from '../../pageComponents/lex/lexForm'
+import LexResults from '../../pageComponents/lex/lexResults'
 
-export default IndexPage
+import styles from './lex.module.sass'
+
+const LexPage = () => {
+  const data = useStaticQuery(graphql`
+    query LexToolQuery {
+      site {
+        siteMetadata {
+          title
+          toolInfo {
+            lex {
+              title
+              link
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const metadata = data.site.siteMetadata
+
+  return (
+    <Layout>
+      <SEO
+        title={`${metadata.title}${metadata.toolInfo.lex.title}`}
+        canonical={metadata.toolInfo.lex.link}
+      />
+      <Tool toolInfo={metadata.toolInfo.lex}>
+        <Notice>This tool is still in planning.</Notice>
+        <LexForm />
+        <LexResults />
+      </Tool>
+    </Layout>
+  )
+}
+
+export default LexPage

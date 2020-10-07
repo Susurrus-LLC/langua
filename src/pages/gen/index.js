@@ -1,22 +1,50 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import Layout from '../../components/layout'
-import Image from '../../components/image'
 import SEO from '../../components/seo'
+import Notice from '../../components/notice'
+import Tool from '../../components/tool'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title='Home' />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to='/page-2/'>Go to page 2</Link> <br />
-    <Link to='/using-typescript/'>Go to "Using TypeScript"</Link>
-  </Layout>
-)
+import GenForm from '../../pageComponents/gen/genForm'
+import GenResults from '../../pageComponents/gen/genResults'
+import GenService from '../../services/genService'
 
-export default IndexPage
+import styles from './gen.module.sass'
+
+const GenPage = () => {
+  const data = useStaticQuery(graphql`
+    query GenToolQuery {
+      site {
+        siteMetadata {
+          title
+          toolInfo {
+            gen {
+              title
+              link
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const metadata = data.site.siteMetadata
+
+  return (
+    <Layout>
+      <SEO
+        title={`${metadata.title}${metadata.toolInfo.gen.title}`}
+        canonical={metadata.toolInfo.gen.link}
+      />
+      <Tool toolInfo={metadata.toolInfo.gen}>
+        <Notice>This tool is still in development.</Notice>
+        <GenForm />
+        <GenResults />
+      </Tool>
+    </Layout>
+  )
+}
+
+export default GenPage
