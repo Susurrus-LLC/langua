@@ -21,9 +21,9 @@
 
 html
   -webkit-text-size-adjust: 100%
-      -ms-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
   font-family: $main-font
-   -webkit-font-smoothing: antialiased
+  -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   overflow-y: scroll
 
@@ -38,10 +38,10 @@ body
   font-kerning: normal
   font-variant-ligatures: common-ligatures contextual
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt"
-     -moz-font-feature-settings: "kern", "liga", "clig", "calt"
-      -ms-font-feature-settings: "kern", "liga", "clig", "calt"
-          font-feature-settings: "kern", "liga", "clig", "calt"
-  background-color: $white
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt"
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt"
+  font-feature-settings: "kern", "liga", "clig", "calt"
+  background-color: darken($white, 1%)
   color: $black
 
 article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary
@@ -348,9 +348,9 @@ thead, td, th
 td, th
   border-bottom: 1px solid change-color($black, $alpha: 0.12)
   -webkit-font-feature-settings: "tnum"
-     -moz-font-feature-settings: "tnum"
-      -ms-font-feature-settings: "tnum"
-          font-feature-settings: "tnum"
+  -moz-font-feature-settings: "tnum"
+  -ms-font-feature-settings: "tnum"
+  font-feature-settings: "tnum"
   padding: calc($ms1 * 1rem - 1px)
   padding-top: $ms0 * 1rem
 
