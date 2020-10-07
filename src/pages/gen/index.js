@@ -31,14 +31,15 @@ const GenPage = () => {
   `)
 
   const metadata = data.site.siteMetadata
+  const toolInfo = metadata.toolInfo.gen
 
   return (
     <Layout>
       <SEO
-        title={`${metadata.title}${metadata.toolInfo.gen.title}`}
-        canonical={metadata.toolInfo.gen.link}
+        title={`${metadata.title}${toolInfo.title}`}
+        canonical={toolInfo.link}
       />
-      <Tool toolInfo={metadata.toolInfo.gen}>
+      <Tool toolInfo={toolInfo}>
         <Notice>This tool is still in development.</Notice>
         <GenForm />
         <GenResults />

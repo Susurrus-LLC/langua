@@ -30,14 +30,15 @@ const TreePage = () => {
   `)
 
   const metadata = data.site.siteMetadata
+  const toolInfo = metadata.toolInfo.tree
 
   return (
     <Layout>
       <SEO
-        title={`${metadata.title}${metadata.toolInfo.tree.title}`}
-        canonical={metadata.toolInfo.tree.link}
+        title={`${metadata.title}${toolInfo.title}`}
+        canonical={toolInfo.link}
       />
-      <Tool toolInfo={metadata.toolInfo.tree}>
+      <Tool toolInfo={toolInfo}>
         <Notice>This tool is still in planning.</Notice>
         <TreeForm />
         <TreeResults />

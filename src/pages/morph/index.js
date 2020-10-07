@@ -31,14 +31,15 @@ const MorphPage = () => {
   `)
 
   const metadata = data.site.siteMetadata
+  const toolInfo = metadata.toolInfo.morph
 
   return (
     <Layout>
       <SEO
-        title={`${metadata.title}${metadata.toolInfo.morph.title}`}
-        canonical={metadata.toolInfo.morph.link}
+        title={`${metadata.title}${toolInfo.title}`}
+        canonical={toolInfo.link}
       />
-      <Tool toolInfo={metadata.toolInfo.morph}>
+      <Tool toolInfo={toolInfo}>
         <Notice>This tool is still in development.</Notice>
         <MorphForm />
         <MorphResults />

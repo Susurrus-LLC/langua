@@ -25,17 +25,18 @@ const FrequenHelpPage = () => {
   `)
 
   const metadata = data.site.siteMetadata
+  const toolInfo = metadata.toolInfo.frequen
 
   return (
     <Layout>
       <SEO
-        title={`${metadata.title}${metadata.toolInfo.frequen.title} Help`}
-        canonical={`${metadata.toolInfo.frequen.link}/help`}
+        title={`${metadata.title}${toolInfo.title} Help`}
+        canonical={`${toolInfo.link}/help`}
       />
-      <Help toolInfo={metadata.toolInfo.frequen}>
+      <Help toolInfo={toolInfo}>
         <h3 id='using'>
           Using {metadata.title}
-          {metadata.toolInfo.frequen.title}
+          {toolInfo.title}
         </h3>
         <h4 id='corpus'>Text Corpus</h4>
         <p>
@@ -114,8 +115,8 @@ const FrequenHelpPage = () => {
             the Frequentizer
           </a>
           . {metadata.title}
-          {metadata.toolInfo.frequen.title} was mainly built as a modernized and
-          updated version of the Frequentizer.
+          {toolInfo.title} was mainly built as a modernized and updated version
+          of the Frequentizer.
         </p>
       </Help>
     </Layout>

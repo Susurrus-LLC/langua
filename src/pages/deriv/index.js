@@ -31,14 +31,15 @@ const DerivPage = () => {
   `)
 
   const metadata = data.site.siteMetadata
+  const toolInfo = metadata.toolInfo.deriv
 
   return (
     <Layout>
       <SEO
-        title={`${metadata.title}${metadata.toolInfo.deriv.title}`}
-        canonical={metadata.toolInfo.deriv.link}
+        title={`${metadata.title}${toolInfo.title}`}
+        canonical={toolInfo.link}
       />
-      <Tool toolInfo={metadata.toolInfo.deriv}>
+      <Tool toolInfo={toolInfo}>
         <Notice>This tool is still in development.</Notice>
         <DerivForm />
         <DerivResults />

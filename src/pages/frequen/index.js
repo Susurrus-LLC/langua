@@ -31,14 +31,15 @@ const FrequenPage = () => {
   `)
 
   const metadata = data.site.siteMetadata
+  const toolInfo = metadata.toolInfo.frequen
 
   return (
     <Layout>
       <SEO
-        title={`${metadata.title}${metadata.toolInfo.frequen.title}`}
-        canonical={metadata.toolInfo.frequen.link}
+        title={`${metadata.title}${toolInfo.title}`}
+        canonical={toolInfo.link}
       />
-      <Tool toolInfo={metadata.toolInfo.frequen}>
+      <Tool toolInfo={toolInfo}>
         <Notice>This tool is still in development.</Notice>
         <FrequenForm />
         <FrequenResults />

@@ -30,14 +30,15 @@ const LexPage = () => {
   `)
 
   const metadata = data.site.siteMetadata
+  const toolInfo = metadata.toolInfo.lex
 
   return (
     <Layout>
       <SEO
-        title={`${metadata.title}${metadata.toolInfo.lex.title}`}
-        canonical={metadata.toolInfo.lex.link}
+        title={`${metadata.title}${toolInfo.title}`}
+        canonical={toolInfo.link}
       />
-      <Tool toolInfo={metadata.toolInfo.lex}>
+      <Tool toolInfo={toolInfo}>
         <Notice>This tool is still in planning.</Notice>
         <LexForm />
         <LexResults />

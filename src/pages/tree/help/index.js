@@ -25,18 +25,19 @@ const TreeHelpPage = () => {
   `)
 
   const metadata = data.site.siteMetadata
+  const toolInfo = metadata.toolInfo.tree
 
   return (
     <Layout>
       <SEO
-        title={`${metadata.title}${metadata.toolInfo.tree.title} Help`}
-        canonical={`${metadata.toolInfo.tree.link}/help`}
+        title={`${metadata.title}${toolInfo.title} Help`}
+        canonical={`${toolInfo.link}/help`}
       />
-      <Help toolInfo={metadata.toolInfo.tree}>
+      <Help toolInfo={toolInfo}>
         <Notice>This tool is still in planning.</Notice>
         <h3 id='using'>
           Using {metadata.title}
-          {metadata.toolInfo.tree.title}
+          {toolInfo.title}
         </h3>
       </Help>
     </Layout>

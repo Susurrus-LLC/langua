@@ -25,18 +25,19 @@ const MorphHelpPage = () => {
   `)
 
   const metadata = data.site.siteMetadata
+  const toolInfo = metadata.toolInfo.morph
 
   return (
     <Layout>
       <SEO
-        title={`${metadata.title}${metadata.toolInfo.morph.title} Help`}
-        canonical={`${metadata.toolInfo.morph.link}/help`}
+        title={`${metadata.title}${toolInfo.title} Help`}
+        canonical={`${toolInfo.link}/help`}
       />
-      <Help toolInfo={metadata.toolInfo.morph}>
+      <Help toolInfo={toolInfo}>
         <Notice>This tool is still in development.</Notice>
         <h3 id='using'>
           Using {metadata.title}
-          {metadata.toolInfo.morph.title}
+          {toolInfo.title}
         </h3>
         <h3 id='acknowledgments'>Acknowledgments</h3>
         <p>
@@ -49,8 +50,8 @@ const MorphHelpPage = () => {
             the Sound Change Applier 2
           </a>{' '}
           (SCA<sup>2</sup>). {metadata.title}
-          {metadata.toolInfo.morph.title} was mainly built as a modernized and
-          updated version of SCA<sup>2</sup>.
+          {toolInfo.title} was mainly built as a modernized and updated version
+          of SCA<sup>2</sup>.
         </p>
       </Help>
     </Layout>

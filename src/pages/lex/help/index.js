@@ -25,18 +25,19 @@ const LexHelpPage = () => {
   `)
 
   const metadata = data.site.siteMetadata
+  const toolInfo = metadata.toolInfo.lex
 
   return (
     <Layout>
       <SEO
-        title={`${metadata.title}${metadata.toolInfo.lex.title} Help`}
-        canonical={`${metadata.toolInfo.lex.link}/help`}
+        title={`${metadata.title}${toolInfo.title} Help`}
+        canonical={`${toolInfo.link}/help`}
       />
-      <Help toolInfo={metadata.toolInfo.lex}>
+      <Help toolInfo={toolInfo}>
         <Notice>This tool is still in planning.</Notice>
         <h3 id='using'>
           Using {metadata.title}
-          {metadata.toolInfo.lex.title}
+          {toolInfo.title}
         </h3>
       </Help>
     </Layout>

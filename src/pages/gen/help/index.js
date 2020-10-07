@@ -25,17 +25,18 @@ const GenHelpPage = () => {
   `)
 
   const metadata = data.site.siteMetadata
+  const toolInfo = metadata.toolInfo.gen
 
   return (
     <Layout>
       <SEO
-        title={`${metadata.title}${metadata.toolInfo.gen.title} Help`}
-        canonical={`${metadata.toolInfo.gen.link}/help`}
+        title={`${metadata.title}${toolInfo.title} Help`}
+        canonical={`${toolInfo.link}/help`}
       />
-      <Help toolInfo={metadata.toolInfo.gen}>
+      <Help toolInfo={toolInfo}>
         <h3 id='using'>
           Using {metadata.title}
-          {metadata.toolInfo.gen.title}
+          {toolInfo.title}
         </h3>
         <p>
           The most important part of the tool is the <strong>Pattern</strong>.
@@ -174,8 +175,8 @@ const GenHelpPage = () => {
             Awkwords
           </a>
           . {metadata.title}
-          {metadata.toolInfo.gen.title} was mainly built as a modernized and
-          updated version of Awkwords.
+          {toolInfo.title} was mainly built as a modernized and updated version
+          of Awkwords.
         </p>
       </Help>
     </Layout>
