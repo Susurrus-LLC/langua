@@ -154,10 +154,10 @@ sub
 sup
   top: -0.5em
 
-code, kbd, pre, samp, var
-  font-family: monospace
+code, kbd, pre, samp, var, tt
+  font-family: monospace, monospace
   font-size: $ms1 * 1rem
-  background-color: darken($white, 10%)
+  background-color: change-color(darken($white, 15%), $alpha: 0.7)
   color: lighten($black, 5%)
   padding: $lnht / 7 * 1rem $lnht / 2 * 1rem
 
@@ -359,12 +359,6 @@ th:first-child, td:first-child
 
 th:last-child, td:last-child
   padding-right: 0
-
-tt, code
-  background-color: change-color($black, $alpha: 0.04)
-  border-radius: 3px
-  font-family: monospace
-  padding: 0.2rem 0
 
 pre code
   background: none
