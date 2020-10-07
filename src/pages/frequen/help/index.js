@@ -33,7 +33,6 @@ const FrequenHelpPage = () => {
         canonical={`${metadata.toolInfo.frequen.link}/help`}
       />
       <Help toolInfo={metadata.toolInfo.frequen}>
-        <Notice>This tool is still in development.</Notice>
         <h3 id='using'>
           Using {metadata.title}
           {metadata.toolInfo.frequen.title}
