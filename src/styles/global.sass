@@ -14,9 +14,9 @@
   box-sizing: border-box
   &:focus
     outline: 1px solid change-color($blu, $alpha: 0.3)
-  &:before
+  &::before
     box-sizing: inherit
-  &:after
+  &::after
     box-sizing: inherit
 
 html
@@ -366,10 +366,10 @@ pre code
 
 code:before, code:after, tt:before, tt:after
   letter-spacing: -0.2em
-  content: " "
+  content: ''
 
 pre code:before, pre code:after, pre tt:before, pre tt:after
-  content: ""
+  content: ''
 
 @media only screen and (max-width: 480px)
   html
