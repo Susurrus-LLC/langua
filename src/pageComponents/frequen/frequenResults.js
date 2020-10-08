@@ -181,11 +181,18 @@ const FrequenResults = ({
           <FlexibleWidthXYPlot
             yType='ordinal'
             height={
-              v.ms1 * 16 * whichData().length /* bar height */ +
-              v.ms3 * (whichData().length - 1) /* bar spacing */ +
+              /* ms1 */ 16 * whichData().length /* bar height */ +
+              /* ms3 */ 1.777 * (whichData().length - 1) /* bar spacing */ +
               64 /* top and bottom axes */
             }
-            margin={`${v.ms3 * 16} ${v.ms5 * 16}`}
+            style={{
+              margin: {
+                top: `${1.777 * 16}`, // ms3
+                right: `${3.16 * 16}`, // ms5
+                bottom: `${1.777 * 16}`, // ms3
+                left: `${3.16 * 16}` // ms5
+              }
+            }}
             onMouseLeave={onMouseOut}
           >
             <VerticalGridLines style={gridStyle} />

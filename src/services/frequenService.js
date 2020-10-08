@@ -295,8 +295,7 @@ class FrequenService {
         count: d.count,
         type: d.type,
         i: i,
-        color:
-          d.type === 'consonant' ? v.blu.string() : v.blu.darken(0.2).string()
+        color: d.type === 'consonant' ? '#236b76' : '#18484e'
       }))
     }
 
