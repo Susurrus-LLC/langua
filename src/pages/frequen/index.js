@@ -146,6 +146,7 @@ const FrequenPage = () => {
 
       setResults(response)
       setAnalyzed(true)
+      setUpdateAnalysis(false)
     }
   }, [updateAnalysis])
 
