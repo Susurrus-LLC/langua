@@ -1,0 +1,45 @@
+@import ../../styles/variables.module
+
+.section, .container, .data-input, .text-area-spacer
+  width: 100%
+
+.section
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: stretch
+  align-content: flex-start
+
+.container
+  position: relative
+  height: calc(100% - $lnht * 2rem)
+
+.data-input, .text-area-spacer
+  height: 100%
+  word-wrap: normal
+
+.data-input
+  position: absolute
+  resize: none
+  padding: 2px
+
+.text-area-spacer
+  white-space: pre
+  padding: 2px $lnht * 1rem $lnht * 1rem 2px
+  border-width: 1px
+  visibility: hidden
+
+.input-section
+  min-width: $ms6 * 3rem
+  flex-grow: 2
+  padding: 0 $lnht / 2 * 1rem
+
+.out-text
+  &:not(:last-child)
+    margin-bottom: 0
+
+.different
+  font-weight: bold
+
+.changed
+  font-style: italic
