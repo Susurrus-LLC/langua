@@ -7,7 +7,7 @@ import sharedStyles from '../../components/results/sharedResults.module.sass'
 
 const GenResults = ({
   styles,
-  newLine,
+  newline,
   filterDupes,
   status,
   results,
@@ -21,7 +21,7 @@ const GenResults = ({
   const outputText = () => {
     const filterResults = filterDupes ? Array.from(new Set(results)) : results
     const joinedResults = Array.prototype.join
-      .call(filterResults, `${newLine ? '\n' : ' '}`)
+      .call(filterResults, `${newline ? '\n' : ' '}`)
       .trim()
 
     return <p className={styles.outText}>{joinedResults}</p>
@@ -62,7 +62,7 @@ const GenResults = ({
 
 GenResults.propTypes = {
   styles: PropTypes.object,
-  newLine: PropTypes.bool.isRequired,
+  newline: PropTypes.bool.isRequired,
   filterDupes: PropTypes.bool.isRequired,
   status: PropTypes.arrayOf(PropTypes.string).isRequired,
   results: PropTypes.arrayOf(PropTypes.string).isRequired,
