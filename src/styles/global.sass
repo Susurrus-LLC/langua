@@ -177,7 +177,7 @@ hr
   box-sizing: content-box
   overflow: visible
   margin: 0
-  margin-bottom: calc($lnht * $ms1 * 2rem - 1px)
+  margin-bottom: calc(#{$lnht * $ms1 * 2rem} - 1px)
   padding: 0
   background: change-color($black, $alpha: 0.2)
   border: none
@@ -283,7 +283,7 @@ ul, ol
   list-style-image: none
 
 li
-  margin-bottom: calc($lnht * $ms1 * 1rem)
+  margin-bottom: $lnht * $ms1 * 1rem
 
 ol li
   padding-left: 0
@@ -292,7 +292,7 @@ ul li
   padding-left: 0
 
 li > ol, li > ul
-  margin: calc($lnht * $ms1 * 1rem) 0
+  margin: $lnht * $ms1 * 1rem 0
   margin-left: $lnht * $ms1 * 2rem
 
 blockquote *:last-child
@@ -305,7 +305,7 @@ p *:last-child
   margin-bottom: 0
 
 li > p
-  margin-bottom: calc($lnht * $ms1 * 1rem)
+  margin-bottom: $lnht * $ms1 * 1rem
 
 pre
   margin: 0
@@ -351,7 +351,7 @@ td, th
   -moz-font-feature-settings: "tnum"
   -ms-font-feature-settings: "tnum"
   font-feature-settings: "tnum"
-  padding: calc($ms1 * 1rem - 1px)
+  padding: calc(#{$ms1 * 1rem} - 1px)
   padding-top: $ms0 * 1rem
 
 th:first-child, td:first-child
