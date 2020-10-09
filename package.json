@@ -22,7 +22,8 @@
     "clean": "gatsby clean",
     "lintjs": "eslint src/**/*.js",
     "lintmd": "remark .",
-    "test": "jest",
+    "test": "jest --watch",
+    "test-once": "jest",
     "test-with-coverage": "jest --coverage && codacy-coverage < ./coverage/lcov.info"
   },
   "husky": {
