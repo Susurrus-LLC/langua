@@ -1,12 +1,11 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import Notice from '../../components/notice'
 import Tool from '../../components/tool'
 
 import GenForm from '../../pageComponents/gen/genForm'
 import GenResults from '../../pageComponents/gen/genResults'
-import GenService from '../../services/genService'
+import genService from '../../services/genService'
 
 import styles from './gen.module.sass'
 
@@ -32,9 +31,8 @@ const GenPage = () => {
 
   return (
     <Tool toolInfo={toolInfo}>
-      <Notice>This tool is still in development.</Notice>
-      <GenForm />
-      <GenResults />
+      <GenForm styles={styles} />
+      <GenResults styles={styles} />
     </Tool>
   )
 }

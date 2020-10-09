@@ -1,0 +1,32 @@
+@import ../../styles/variables.module
+
+.duplicate
+  outline: 1px solid $red
+
+.subps-row, .adding-row, .pattern-input
+  width: 100%
+
+.subps-row, .adding-row
+  display: flex
+  flex-direction: row
+  align-items: baseline
+  align-content: space-between
+
+.subps-row
+  justify-content: space-between
+
+.adding-row, .pattern-input
+  margin: 1px 0
+  padding: 1px
+
+.adding-row
+  justify-content: flex-end
+
+.subpattern-input
+  flex-grow: 1
+
+.words-input
+  width: $ms6 * 1rem
+
+.out-text
+  white-space: pre-wrap
