@@ -18,12 +18,12 @@ describe('SEO', () => {
 
   it('renders without crashing', () => {
     const div = document.createElement('div')
-    ReactDOM.render(<SEO data={data} />, div)
+    ReactDOM.render(<SEO data={data} title='Test' />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<SEO data={data} />)
+    let tree = renderer.create(<SEO data={data} title='Test' />)
     expect(tree).toMatchSnapshot()
   })
 })
