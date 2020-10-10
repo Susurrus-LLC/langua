@@ -4,24 +4,21 @@ import PropTypes from 'prop-types'
 
 import styles from './homePanel.module.sass'
 
-const HomePanel = props => (
+const HomePanel = ({ linkTo, toolTitle, disabled, children }) => (
   <Link
-    to={props.linkTo}
-    className={
-      props.disabled ? `${styles.panel} ${styles.disabled}` : styles.panel
-    }
+    to={linkTo}
+    className={disabled ? `${styles.panel} ${styles.disabled}` : styles.panel}
   >
-    <h2 className={styles.toolTitle}>{props.toolTitle}</h2>
-    <p className={styles.toolDescription}>{props.children}</p>
+    <h2 className={styles.toolTitle}>{toolTitle}</h2>
+    <p className={styles.toolDescription}>{children}</p>
   </Link>
 )
 
 HomePanel.propTypes = {
-  classes: PropTypes.object,
   linkTo: PropTypes.string.isRequired,
   toolTitle: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  children: PropTypes.string.isRequired
 }
 
 export default HomePanel

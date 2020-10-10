@@ -2,28 +2,26 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import { PureFooter as Footer } from '.'
+import { PureHeader as Header } from '.'
 
-describe('Footer', () => {
-  const data = {
+describe('Header', () => {
+  const siteData = {
     site: {
       siteMetadata: {
-        author: `Ian A. Cook`,
-        authorURL: 'http://localhost/author',
-        appGhURL: 'http://localhost/ghURL',
-        version: '1.0.0'
+        title: 'Langua',
+        subtitle: 'A suite of language tools'
       }
     }
   }
 
   it('renders without crashing', () => {
     const div = document.createElement('div')
-    ReactDOM.render(<Footer data={data} />, div)
+    ReactDOM.render(<Header siteData={siteData} />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<Footer data={data} />).toJSON()
+    let tree = renderer.create(<Header siteData={siteData} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

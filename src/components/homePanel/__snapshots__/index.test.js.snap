@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePanel renders accurately with various props 1`] = `
+<a
+  className="panel"
+  href="test"
+>
+  <h2
+    className="toolTitle"
+  >
+    Test
+  </h2>
+  <p
+    className="toolDescription"
+  >
+    Test
+  </p>
+</a>
+`;
+
+exports[`HomePanel renders accurately with various props 2`] = `
+<a
+  className="panel disabled"
+  href="different/test"
+>
+  <h2
+    className="toolTitle"
+  >
+    Different Test
+  </h2>
+  <p
+    className="toolDescription"
+  >
+    Different Test
+  </p>
+</a>
+`;

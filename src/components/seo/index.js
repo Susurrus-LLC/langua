@@ -11,25 +11,26 @@ import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 
 function SEO ({ canonical, description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            canonical
-          }
+  const data = useStaticQuery(graphql`
+    query SEOQuery {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+          canonical
         }
       }
-    `
-  )
+    }
+  `)
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
-  let metaCanonical = site.siteMetadata?.canonical
-  if (metaCanonical && canonical) metaCanonical += canonical
+  const metadata = data?.site?.siteMetadata
+  const metaDescription = description || metadata?.description
+  const defaultTitle = metadata?.title
+  let metaCanonical = metadata?.canonical
+  if (metaCanonical && canonical) {
+    metaCanonical += canonical
+  }
 
   return (
     <Helmet
@@ -65,7 +66,7 @@ function SEO ({ canonical, description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``
+          content: metadata?.author || ``
         },
         {
           name: `twitter:title`,
