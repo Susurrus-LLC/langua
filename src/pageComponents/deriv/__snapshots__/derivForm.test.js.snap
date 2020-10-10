@@ -1,0 +1,544 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DerivForm renders accurately 1`] = `
+<form
+  className="form"
+  name="deriv-form"
+>
+  <div
+    className="lexemes part"
+  >
+    <h5
+      className="sectionTitle"
+    >
+      Lexemes
+    </h5>
+    <div
+      className="derivRow"
+    >
+      <h6
+        className="columnLabel wordLabel"
+      >
+        Word
+      </h6>
+      <h6
+        className="columnLabel definitionLabel"
+      >
+        Gloss
+      </h6>
+    </div>
+    <div
+      className="derivRow"
+    >
+      <input
+        aria-label="Word for lexeme 0"
+        className="lexemeInput"
+        id="lw0"
+        name="lw0"
+        onChange={[MockFunction]}
+        type="text"
+        value="nzi"
+      />
+      <input
+        aria-label="Gloss for lexeme 0"
+        className="lexemeDefInput"
+        id="ld0"
+        name="ld0"
+        onChange={[MockFunction]}
+        type="text"
+        value="tree"
+      />
+      <div
+        className="clearButton"
+      >
+        <button
+          className="btn danger small"
+          id="lc0"
+          onClick={[MockFunction]}
+          role="button"
+          type="button"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <div
+      className="derivRow"
+    >
+      <input
+        aria-label="Word for lexeme 1"
+        className="lexemeInput"
+        id="lw1"
+        name="lw1"
+        onChange={[MockFunction]}
+        type="text"
+        value="ilu"
+      />
+      <input
+        aria-label="Gloss for lexeme 1"
+        className="lexemeDefInput"
+        id="ld1"
+        name="ld1"
+        onChange={[MockFunction]}
+        type="text"
+        value="flower"
+      />
+      <div
+        className="clearButton"
+      >
+        <button
+          className="btn danger small"
+          id="lc1"
+          onClick={[MockFunction]}
+          role="button"
+          type="button"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <div
+      className="derivRow"
+    >
+      <input
+        aria-label="Word for lexeme 2"
+        className="lexemeInput"
+        id="lw2"
+        name="lw2"
+        onChange={[MockFunction]}
+        type="text"
+        value="ru"
+      />
+      <input
+        aria-label="Gloss for lexeme 2"
+        className="lexemeDefInput"
+        id="ld2"
+        name="ld2"
+        onChange={[MockFunction]}
+        type="text"
+        value="person"
+      />
+      <div
+        className="clearButton"
+      >
+        <button
+          className="btn danger small"
+          id="lc2"
+          onClick={[MockFunction]}
+          role="button"
+          type="button"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <div
+      className="derivRow"
+    >
+      <input
+        aria-label="Word for lexeme 3"
+        className="lexemeInput"
+        id="lw3"
+        name="lw3"
+        onChange={[MockFunction]}
+        type="text"
+        value="kwərə"
+      />
+      <input
+        aria-label="Gloss for lexeme 3"
+        className="lexemeDefInput"
+        id="ld3"
+        name="ld3"
+        onChange={[MockFunction]}
+        type="text"
+        value="goat"
+      />
+      <div
+        className="clearButton"
+      >
+        <button
+          className="btn danger small"
+          id="lc3"
+          onClick={[MockFunction]}
+          role="button"
+          type="button"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <div
+      className="derivRow"
+    >
+      <input
+        aria-label="Word for lexeme 4"
+        className="lexemeInput"
+        id="lw4"
+        name="lw4"
+        onChange={[MockFunction]}
+        type="text"
+        value="lɛtsi"
+      />
+      <input
+        aria-label="Gloss for lexeme 4"
+        className="lexemeDefInput"
+        id="ld4"
+        name="ld4"
+        onChange={[MockFunction]}
+        type="text"
+        value="sword"
+      />
+      <div
+        className="clearButton"
+      >
+        <button
+          className="btn danger small"
+          id="lc4"
+          onClick={[MockFunction]}
+          role="button"
+          type="button"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <div
+      className="addingRow"
+    >
+      <button
+        className="btn success small"
+        id="lexAdd"
+        onClick={[MockFunction]}
+        role="button"
+        type="button"
+      >
+        Add
+      </button>
+    </div>
+  </div>
+  <div
+    className="derivations part"
+  >
+    <h5
+      className="sectionTitle"
+    >
+      Derivational Affixes
+    </h5>
+    <div
+      className="derivRow"
+    >
+      <h6
+        className="columnLabel affixLabel"
+      >
+        Affix
+      </h6>
+      <h6
+        className="columnLabel glossLabel"
+      >
+        Gloss
+      </h6>
+      <h6
+        className="columnLabel definitionLabel"
+      >
+        Definition
+      </h6>
+    </div>
+    <div
+      className="derivRow"
+    >
+      <input
+        aria-label="Affix 0"
+        className="derivationInput"
+        id="da0"
+        name="da0"
+        onChange={[MockFunction]}
+        type="text"
+        value="-vo"
+      />
+      <input
+        aria-label="Gloss for affix 0"
+        className="derivationGlossInput"
+        id="dl0"
+        name="dl0"
+        onChange={[MockFunction]}
+        type="text"
+        value="person"
+      />
+      <input
+        aria-label="Definition for affix 0"
+        className="derivationDefInput"
+        id="dd0"
+        name="dd0"
+        onChange={[MockFunction]}
+        type="text"
+        value="Creates a noun referring to a person associated with the base."
+      />
+      <div
+        className="clearButton"
+      >
+        <button
+          className="btn danger small"
+          id="dc0"
+          onClick={[MockFunction]}
+          role="button"
+          type="button"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <div
+      className="derivRow"
+    >
+      <input
+        aria-label="Affix 1"
+        className="derivationInput"
+        id="da1"
+        name="da1"
+        onChange={[MockFunction]}
+        type="text"
+        value="-lu"
+      />
+      <input
+        aria-label="Gloss for affix 1"
+        className="derivationGlossInput"
+        id="dl1"
+        name="dl1"
+        onChange={[MockFunction]}
+        type="text"
+        value="place"
+      />
+      <input
+        aria-label="Definition for affix 1"
+        className="derivationDefInput"
+        id="dd1"
+        name="dd1"
+        onChange={[MockFunction]}
+        type="text"
+        value="Creates a noun denoting the location of the base."
+      />
+      <div
+        className="clearButton"
+      >
+        <button
+          className="btn danger small"
+          id="dc1"
+          onClick={[MockFunction]}
+          role="button"
+          type="button"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <div
+      className="derivRow"
+    >
+      <input
+        aria-label="Affix 2"
+        className="derivationInput"
+        id="da2"
+        name="da2"
+        onChange={[MockFunction]}
+        type="text"
+        value="ña-"
+      />
+      <input
+        aria-label="Gloss for affix 2"
+        className="derivationGlossInput"
+        id="dl2"
+        name="dl2"
+        onChange={[MockFunction]}
+        type="text"
+        value="abstract"
+      />
+      <input
+        aria-label="Definition for affix 2"
+        className="derivationDefInput"
+        id="dd2"
+        name="dd2"
+        onChange={[MockFunction]}
+        type="text"
+        value="Creates an abstract noun."
+      />
+      <div
+        className="clearButton"
+      >
+        <button
+          className="btn danger small"
+          id="dc2"
+          onClick={[MockFunction]}
+          role="button"
+          type="button"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <div
+      className="derivRow"
+    >
+      <input
+        aria-label="Affix 3"
+        className="derivationInput"
+        id="da3"
+        name="da3"
+        onChange={[MockFunction]}
+        type="text"
+        value="k-sa"
+      />
+      <input
+        aria-label="Gloss for affix 3"
+        className="derivationGlossInput"
+        id="dl3"
+        name="dl3"
+        onChange={[MockFunction]}
+        type="text"
+        value="collective"
+      />
+      <input
+        aria-label="Definition for affix 3"
+        className="derivationDefInput"
+        id="dd3"
+        name="dd3"
+        onChange={[MockFunction]}
+        type="text"
+        value="Creates a noun referring to a collection of bases."
+      />
+      <div
+        className="clearButton"
+      >
+        <button
+          className="btn danger small"
+          id="dc3"
+          onClick={[MockFunction]}
+          role="button"
+          type="button"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <div
+      className="addingRow"
+    >
+      <button
+        className="btn success small"
+        id="derAdd"
+        onClick={[MockFunction]}
+        role="button"
+        type="button"
+      >
+        Add
+      </button>
+    </div>
+  </div>
+  <div
+    className="control part"
+  >
+    <div
+      className="controlSide controlLeft"
+    >
+      <div
+        className="controlPiece"
+      >
+        <button
+          className="btn neutral"
+          onClick={[MockFunction]}
+          role="button"
+          type="submit"
+        >
+          Derive
+        </button>
+      </div>
+      <div
+        className="controlPiece"
+      >
+        <label
+          htmlFor="words"
+        >
+          number of words to derive:
+        </label>
+        <input
+          className="wordsInput"
+          id="words"
+          max="9999"
+          min="1"
+          name="words"
+          onChange={[MockFunction]}
+          type="number"
+          value={5}
+        />
+      </div>
+      <div
+        className="controlPiece"
+      >
+        <label
+          htmlFor="type"
+        >
+          output type:
+        </label>
+        <select
+          id="type"
+          name="type"
+          onChange={[MockFunction]}
+          value="any"
+        >
+          <option
+            value="any"
+          >
+            any base, any derivation
+          </option>
+          <option
+            value="single base"
+          >
+            single base
+          </option>
+          <option
+            value="single derivation"
+          >
+            single derivation
+          </option>
+        </select>
+      </div>
+    </div>
+    <div
+      className="controlSide controlRight"
+    >
+      <div
+        className="controlPiece"
+      >
+        <button
+          className="btn success"
+          id="save"
+          onClick={[MockFunction]}
+          role="button"
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+      <div
+        className="controlPiece"
+      >
+        <button
+          className="btn"
+          id="open"
+          onClick={[Function]}
+          role="button"
+          type="button"
+        >
+          Open
+        </button>
+        <input
+          className="hidden"
+          id="file"
+          name="file"
+          onChange={[MockFunction]}
+          type="file"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+`;
