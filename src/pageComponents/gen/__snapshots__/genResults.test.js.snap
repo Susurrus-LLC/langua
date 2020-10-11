@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenResults renders accurately with various props 1`] = `
+<div
+  className="results"
+>
+  <div
+    className="output"
+  >
+    <p
+      className="outText"
+    >
+      
+    </p>
+  </div>
+  <div
+    className="stats"
+  >
+    <p
+      className="statsText"
+    >
+      words: 0; maximum different words: 0
+    </p>
+  </div>
+</div>
+`;
+
+exports[`GenResults renders accurately with various props 2`] = `
+<div
+  className="results"
+>
+  <div
+    className="output"
+  >
+    <p
+      className="outText"
+    >
+      a sa na asa ana
+    </p>
+  </div>
+  <div
+    className="stats"
+  >
+    <p
+      className="statsText"
+    >
+      words: 0; maximum different words: 0
+    </p>
+  </div>
+</div>
+`;
+
+exports[`GenResults renders accurately with various props 3`] = `
+<div
+  className="results"
+>
+  <div
+    className="output"
+  >
+    <p
+      className="error"
+    >
+      The Subpatterns contain a circular reference.
+    </p>
+    <p
+      className="outText"
+    >
+      
+    </p>
+  </div>
+  <div
+    className="stats"
+  >
+    <p
+      className="statsText"
+    >
+      words: 0; maximum different words: 0
+    </p>
+  </div>
+</div>
+`;

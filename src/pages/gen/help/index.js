@@ -4,31 +4,14 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Notice from '../../../components/notice'
 import Help from '../../../components/help'
 
-const GenHelpPage = () => {
-  const data = useStaticQuery(graphql`
-    query GenHelpQuery {
-      site {
-        siteMetadata {
-          title
-          toolInfo {
-            gen {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const metadata = data.site.siteMetadata
-  const toolInfo = metadata.toolInfo.gen
+export const PureGenHelp = ({ data }) => {
+  const metadata = data?.site?.siteMetadata
+  const toolInfo = metadata?.toolInfo?.gen
 
   return (
     <Help toolInfo={toolInfo}>
       <h3 id='using'>
-        Using {metadata.title}
+        Using {metadata?.title}
         {toolInfo.title}
       </h3>
       <p>
@@ -166,7 +149,7 @@ const GenHelpPage = () => {
         >
           Awkwords
         </a>
-        . {metadata.title}
+        . {metadata?.title}
         {toolInfo.title} was mainly built as a modernized and updated version of
         Awkwords.
       </p>
@@ -174,4 +157,25 @@ const GenHelpPage = () => {
   )
 }
 
-export default GenHelpPage
+const GenHelp = props => {
+  const data = useStaticQuery(graphql`
+    query GenHelpQuery {
+      site {
+        siteMetadata {
+          title
+          toolInfo {
+            gen {
+              title
+              link
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  return <PureGenHelp {...props} data={data} />
+}
+
+export default GenHelp

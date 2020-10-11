@@ -9,25 +9,8 @@ import genService from '../../services/genService'
 
 import styles from './gen.module.sass'
 
-const GenPage = () => {
-  const data = useStaticQuery(graphql`
-    query GenToolQuery {
-      site {
-        siteMetadata {
-          toolInfo {
-            gen {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const metadata = data.site.siteMetadata
-  const toolInfo = metadata.toolInfo.gen
+export const PureGen = ({ data }) => {
+  const toolInfo = data?.site?.siteMetadata?.toolInfo?.gen
 
   // State
 
@@ -158,4 +141,24 @@ const GenPage = () => {
   )
 }
 
-export default GenPage
+const Gen = props => {
+  const data = useStaticQuery(graphql`
+    query GenToolQuery {
+      site {
+        siteMetadata {
+          toolInfo {
+            gen {
+              title
+              link
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  return <PureGen {...props} data={data} />
+}
+
+export default Gen
