@@ -41,5 +41,6 @@ describe('Header', () => {
         Small Function
       </Button>
     )
+    expect(tree).toMatchSnapshot()
   })
 })

@@ -36,3 +36,14 @@ exports[`Header renders accurately with various props and children 4`] = `
   Link
 </a>
 `;
+
+exports[`Header renders accurately with various props and children 5`] = `
+<button
+  className="btn small"
+  onClick={[MockFunction]}
+  role="button"
+  type="button"
+>
+  Small Function
+</button>
+`;
