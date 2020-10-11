@@ -98,54 +98,62 @@ exports[`Frequen renders accurately 1`] = `
     >
       <a
         className="panel"
-        href="undefined/"
+        href="gen/"
       >
         <h2
           className="toolTitle"
-        />
+        >
+          Gen
+        </h2>
         <p
           className="toolDescription"
         >
-          Languaundefined undefined
+          LanguaGen Gen description
         </p>
       </a>
       <a
         className="panel disabled"
-        href="undefined/"
+        href="morph/"
       >
         <h2
           className="toolTitle"
-        />
+        >
+          Morph
+        </h2>
         <p
           className="toolDescription"
         >
-          Languaundefined undefined
+          LanguaMorph Morph description
         </p>
       </a>
       <a
         className="panel"
-        href="undefined/"
+        href="deriv/"
       >
         <h2
           className="toolTitle"
-        />
+        >
+          Deriv
+        </h2>
         <p
           className="toolDescription"
         >
-          Languaundefined undefined
+          LanguaDeriv deriv description
         </p>
       </a>
       <a
         className="panel"
-        href="undefined/"
+        href="frequen/"
       >
         <h2
           className="toolTitle"
-        />
+        >
+          Frequen
+        </h2>
         <p
           className="toolDescription"
         >
-          Languaundefined undefined
+          LanguaFrequen Frequen description
         </p>
       </a>
       <a
@@ -165,15 +173,17 @@ exports[`Frequen renders accurately 1`] = `
       </a>
       <a
         className="panel disabled"
-        href="undefined/"
+        href="lex/"
       >
         <h2
           className="toolTitle"
-        />
+        >
+          Lex
+        </h2>
         <p
           className="toolDescription"
         >
-          Languaundefined undefined
+          LanguaLex Lex description
         </p>
       </a>
     </div>
