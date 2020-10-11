@@ -1,0 +1,64 @@
+@import ../../styles/variables.module
+
+.btn
+  &, &:link, &:visited, &:hover, &:active
+    border: 1px solid change-color(darken($blu, 10%), $alpha: 0.3)
+    background: none
+    font-weight: bold
+    padding: $lnht * 1rem
+    border-radius: 3px
+    text-decoration: none
+  &, &:link, &:visited
+    background-color: darken($white, 5%)
+    color: $blu
+  &:hover
+    background-color: darken($white, 10%)
+    color: darken($blu, 1.5%)
+  &:active
+    background-color: darken($white, 15%)
+    box-shadow: inset 0 0 $lnht * 1rem darken($white, 20%)
+    color: $ong
+
+.neutral
+  &, &:link, &:visited, &:hover, &:active
+    border: 1px solid change-color(darken($ong, 20%), $alpha: 0.3)
+    color: $white
+  &, &:link, &:visited
+    background-color: darken($ong, 5%)
+  &:hover
+    background-color: darken($ong, 10%)
+  &:active
+    background-color: darken($ong-ntl, 15%)
+    box-shadow: inset 0 0 $lnht * 1rem darken($ong-ntl, 20%)
+
+.success
+  &, &:link, &:visited, &:hover, &:active
+    border: 1px solid change-color(darken($blu, 20%), $alpha: 0.3)
+    color: $white
+  &, &:link, &:visited
+    background-color: $blu
+  &:hover
+    background-color: darken($blu, 5%)
+  &:active
+    background-color: darken($blu-ntl, 10%)
+    box-shadow: inset 0 0 $lnht * 1rem darken($blu-ntl, 15%)
+
+.danger
+  &, &:link, &:visited, &:hover, &:active
+    border: 1px solid change-color(darken($red, 20%), $alpha: 0.3)
+    color: $white
+  &, &:link, &:visited
+    background-color: darken($red, 5%)
+  &:hover
+    background-color: darken($red, 10%)
+  &:active
+    background-color: darken($red-ntl, 15%)
+    box-shadow: inset 0 0 $lnht * 1rem darken($red-ntl, 20%)
+
+.small
+  &, &:link, &:visited, &:hover, &:active
+    font-size: $ms0 * 1rem
+    padding: $ms1 / 2 * 1rem
+
+.button-link
+  float: right

@@ -1,0 +1,376 @@
+@import ./functions
+@import ./variables.module
+
+.toast-update, .toast-unsaved, .toast-unopened
+  background-color: change-color(darken($red, 10%), $alpha: 0.9)
+
+.toast-cached, .toast-opened
+  background-color: change-color(darken($blu, 10%), $alpha: 0.9)
+
+.toast-offline
+  background-color: change-color(darken($ong, 10%), $alpha: 0.9)
+
+*
+  box-sizing: border-box
+  &:focus
+    outline: 1px solid change-color($blu, $alpha: 0.3)
+  &::before
+    box-sizing: inherit
+  &::after
+    box-sizing: inherit
+
+html
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+  font-family: $main-font
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  overflow-y: scroll
+
+body
+  margin: 0
+  padding: 0
+  padding-left: calc(100vw - 100%)
+  font-size: $ms1 * 1rem
+  font-weight: normal
+  line-height: $lnht * 2
+  word-wrap: break-word
+  font-kerning: normal
+  font-variant-ligatures: common-ligatures contextual
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt"
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt"
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt"
+  font-feature-settings: "kern", "liga", "clig", "calt"
+  background-color: darken($white, 1%)
+  color: $black
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary
+  display: block
+
+audio, canvas, progress, video
+  display: inline-block
+
+audio:not([controls])
+  display: none
+  height: 0
+
+progress
+  vertical-align: baseline
+
+[hidden], template
+  display: none
+
+h1, h2, h3, h4, h5, h6
+  font-family: $header-font
+  font-weight: bold
+  text-rendering: optimizeLegibility
+  margin: 0
+  margin-top: $lnht * ($ms1 * 2) * 2rem // base line height * double base font size
+  margin-bottom: $lnht * $ms1 * 2rem // base line height * font size
+  padding: 0
+
+h1, h2
+  margin-top: 0
+
+h1
+  color: darken($blu, 5%)
+  font-size: $ms5 * 1rem
+
+h2
+  color: darken($blu, 4%)
+  font-size: $ms4 * 1rem
+
+h3
+  color: darken($blu, 3%)
+  font-size: $ms3 * 1rem
+
+h4
+  color: darken($blu, 2%)
+  font-size: $ms2 * 1rem
+
+h5
+  color: darken($blu, 1%)
+  font-size: $ms1 * 1rem
+
+h6
+  color: $blu
+  font-size: $ms0 * 1rem
+
+p
+  font-size: $ms1 * 1rem
+  margin: 0
+  margin-bottom: $lnht * $ms1 * 2rem // base line height * base font size
+  padding: 0
+
+a
+  background-color: transparent
+  -webkit-text-decoration-skip: objects
+  &:link, &:visited, &:hover, &:active
+    text-decoration: underline
+  &:link, &:visited
+    color: $blu
+  &:hover, &:active
+    outline-width: 0
+  &:hover
+    color: darken($blu, 5%)
+  &:active
+    color: $ong
+  &.active
+    &:link, &:visited
+      color: $ong
+    &:hover
+      color: darken($ong, 5%)
+    &:active
+      color: darken($ong, 10%)
+
+abbr[title]
+  border-bottom: 1px dotted change-color($black, $alpha: 0.5)
+  cursor: help
+  text-decoration: none
+
+dfn
+  font-style: italic
+
+b, strong
+  font-weight: inherit
+  font-weight: bolder
+
+mark
+  background-color: #ff0
+  color: #000
+
+small
+  font-size: 80%
+
+sub, sup
+  font-size: 75%
+  line-height: 0
+  position: relative
+  vertical-align: baseline
+
+sub
+  bottom: -0.25em
+
+sup
+  top: -0.5em
+
+code, kbd, pre, samp, var, tt
+  font-family: monospace, monospace
+  font-size: $ms1 * 1rem
+  background-color: change-color(darken($white, 15%), $alpha: 0.7)
+  color: lighten($black, 20%)
+  padding: $lnht / 7 * 1rem $lnht / 2 * 1rem
+
+img
+  border-style: none
+  max-width: 100%
+
+img, figure
+  margin: 0
+  margin-bottom: $lnht * $ms1 * 2rem // base line height * base font size
+  padding: 0
+
+svg:not(:root)
+  overflow: hidden
+
+hr
+  box-sizing: content-box
+  overflow: visible
+  margin: 0
+  margin-bottom: calc(#{$lnht * $ms1 * 2rem} - 1px)
+  padding: 0
+  background: change-color($black, $alpha: 0.2)
+  border: none
+  height: 1px
+
+button, input, optgroup, select, textarea
+  font: inherit
+  margin: 0
+  box-sizing: border-box
+
+input, select, textarea
+  line-height: $lnht * 2
+  background-color: $white
+  border: 1px solid darken($white, 30%)
+
+input
+  height: $lnht * 3rem
+  &[type="checkbox"], &[type="radio"]
+    height: inherit
+    vertical-align: baseline
+    box-sizing: border-box
+    padding: 0
+  &[type="number"]::-webkit-inner-spin-button, &[type="number"]::-webkit-outer-spin-button
+    height: auto
+  &[type="search"]
+    -webkit-appearance: textfield
+    outline-offset: -2px
+  &[type="search"]::-webkit-search-cancel-button, &[type="search"]::-webkit-search-decoration
+    -webkit-appearance: none
+
+::-webkit-input-placeholder
+  color: inherit
+  opacity: 0.54
+
+input, select
+  height: $lnht * 3rem
+
+textarea
+  height: $lnht * 6rem
+  overflow: auto
+
+button, input
+  overflow: visible
+
+button, select
+  text-transform: none
+
+button
+  cursor: pointer
+  border: 1px solid change-color(darken($blu, 10%), $alpha: 0.3)
+  background: none
+  background-color: darken($white, 5%)
+  padding: $lnht * 1rem
+  border-radius: 3px
+  &:hover
+    background-color: darken($white, 10%)
+  &:active
+    background-color: darken($white, 15%)
+    box-shadow: inset 0 0 $lnht * 1rem null darken($white, 25%)
+
+[type="reset"], [type="submit"], button, html [type="button"]
+  -webkit-appearance: button
+
+[type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner, button::-moz-focus-inner
+  border-style: none
+  padding: 0
+
+[type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring, button:-moz-focusring
+  outline: 1px dotted ButtonText
+
+::-webkit-file-upload-button
+  -webkit-appearance: button
+  font: inherit
+
+optgroup
+  font-weight: bold
+
+fieldset
+  margin: 0
+  margin-bottom: $lnht * $ms1 * 2rem // base line height * base font size
+  border: 1px solid silver
+  padding: $lnht / 2 * 1rem $lnht * 1rem $ms0 * 1rem
+
+legend
+  box-sizing: border-box
+  color: inherit
+  display: table
+  max-width: 100%
+  padding: 0
+  white-space: normal
+
+hgroup, dl, dd, form, noscript, iframe, address
+  margin: 0
+  margin-bottom: $lnht * $ms1 * 2rem // base line height * base font size
+  padding: 0
+
+ul, ol
+  margin: 0
+  margin-bottom: $lnht * $ms1 * 2rem // base line height * base font size
+  margin-left: $ms1 * 1rem
+  padding: 0
+  list-style-position: outside
+  list-style-image: none
+
+li
+  margin-bottom: $lnht * $ms1 * 1rem
+
+ol li
+  padding-left: 0
+
+ul li
+  padding-left: 0
+
+li > ol, li > ul
+  margin: $lnht * $ms1 * 1rem 0
+  margin-left: $lnht * $ms1 * 2rem
+
+blockquote *:last-child
+  margin-bottom: 0
+
+li *:last-child
+  margin-bottom: 0
+
+p *:last-child
+  margin-bottom: 0
+
+li > p
+  margin-bottom: $lnht * $ms1 * 1rem
+
+pre
+  margin: 0
+  margin-bottom: $lnht * $ms1 * 2rem // base line height * base font size
+  padding: $lnht * $ms1 * 2rem
+  font-size: $ms0 * 1rem
+  line-height: $lnht * 2
+  background: change-color($black, $alpha: 0.04)
+  border-radius: 3px
+  overflow: auto
+  word-wrap: normal
+
+table
+  margin: 0
+  margin-bottom: $lnht * $ms1 * 2rem // base line height * base font size
+  padding: 0
+  font-size: $ms1 * 1rem
+  line-height: $lnht * 2
+  border-collapse: collapse
+  width: 100%
+
+blockquote
+  margin: $lnht * $ms1 * 2rem
+  margin-top: 0
+  padding: 0
+
+dt
+  font-weight: bold
+
+th
+  font-weight: bold
+
+abbr, acronym
+  border-bottom: 1px dotted change-color($black, $alpha: 0.5)
+  cursor: help
+
+thead, td, th
+  text-align: left
+
+td, th
+  border-bottom: 1px solid change-color($ong, $alpha: 0.25)
+  -webkit-font-feature-settings: "tnum"
+  -moz-font-feature-settings: "tnum"
+  -ms-font-feature-settings: "tnum"
+  font-feature-settings: "tnum"
+  padding: calc(#{$ms1 * 1rem} - 1px)
+  padding-top: $ms0 * 1rem
+
+th:first-child, td:first-child
+  padding-left: 0
+
+th:last-child, td:last-child
+  padding-right: 0
+
+pre code
+  background: none
+  line-height: $lnht * 2
+
+code:before, code:after, tt:before, tt:after
+  letter-spacing: -0.2em
+  content: ''
+
+pre code:before, pre code:after, pre tt:before, pre tt:after
+  content: ''
+
+@media only screen and (max-width: 480px)
+  html
+    font-size: 100%

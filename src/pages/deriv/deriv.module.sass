@@ -1,0 +1,77 @@
+@import ../../styles/variables.module
+
+.words-input
+  width: $ms6 * 1rem
+
+.deriv-row, .adding-row
+  width: 100%
+  display: flex
+  flex-direction: row
+  align-items: baseline
+  align-content: space-between
+
+.deriv-row
+  justify-content: space-between
+
+.output-row
+  justify-content: flex-start
+
+.column-label
+  margin-top: $ms0 * 1rem
+  margin-bottom: 0
+
+.lexeme-input, .word-label, .derivation-gloss-input, .gloss-label
+  width: $ms5 * 2rem
+
+.lexeme-def-input, .definition-label, .derivation-def-input
+  flex-grow: 1
+
+.derivation-input, .affix-label
+  width: $ms4 * 2rem
+
+.adding-row
+  justify-content: flex-end
+  padding: 1px 0
+  margin: 1px 0
+
+.output-box
+  margin-right: $ms0 * 1rem
+  margin-left: $ms0 * 1rem
+  &:first-child
+    margin-left: 0
+  &:last-child
+    margin-right: 0
+
+.row-number
+  width: $ms4 * 1rem
+
+.term
+  margin-bottom: 0
+  font-weight: bold
+
+.gloss
+  margin-bottom: 0
+
+.lex-gloss
+  font-style: italic
+
+.affix-gloss
+  text-transform: lowercase
+  font-variant: small-caps
+  border-bottom: 1px dotted $blu
+  transition: border-bottom 200ms
+
+.affix-def
+  color: lighten($black, 20%)
+  font-size: $ms0 * 1rem
+  visibility: hidden
+  opacity: 0
+  transition: opacity 200ms, visibility 0ms 200ms
+
+.hovered-gloss
+  border-bottom: 1px dotted $ong
+
+.hovered-def
+  visibility: visible
+  opacity: 1
+  transition: opacity 200ms, visibility 0ms 0ms

@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TreeForm renders accurately 1`] = `
+<form
+  className="form"
+  name="tree-form"
+/>
+`;

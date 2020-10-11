@@ -1,0 +1,328 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Help renders accurately with and without children 1`] = `
+<div
+  className="app"
+>
+  <header
+    className="header"
+  >
+    <div
+      className="titleArea"
+    >
+      <h1
+        className="siteTitle"
+      >
+        <a
+          className="titleLink"
+          href="/"
+        />
+      </h1>
+      <p
+        className="subtitle"
+      />
+    </div>
+    <nav
+      className="nav"
+    >
+      <ul
+        className="menu"
+      >
+        <li
+          className="navLink"
+        >
+          <a
+            href="/gen"
+          >
+            Gen
+          </a>
+        </li>
+        <li
+          className="navLink disabled"
+        >
+          <a
+            href="/morph"
+          >
+            Morph
+          </a>
+        </li>
+        <li
+          className="navLink"
+        >
+          <a
+            href="/deriv"
+          >
+            Deriv
+          </a>
+        </li>
+        <li
+          className="navLink"
+        >
+          <a
+            href="/frequen"
+          >
+            Frequen
+          </a>
+        </li>
+        <li
+          className="navLink disabled"
+        >
+          <a
+            href="/tree"
+          >
+            Tree
+          </a>
+        </li>
+        <li
+          className="navLink disabled"
+        >
+          <a
+            href="/lex"
+          >
+            Lex
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main
+    className="main"
+  >
+    <a
+      className="btn buttonLink"
+      href="/test"
+    >
+      Back
+    </a>
+    <h2
+      className="toolTitle"
+    >
+      LanguaTest Help
+    </h2>
+    <p
+      id="description"
+    >
+      LanguaTest is a test.
+    </p>
+    <div
+      className="Toastify"
+    />
+  </main>
+  <footer
+    className="footer"
+  >
+    <p
+      className="copyright"
+    >
+      <a
+        href="undefined/blob/master/CHANGELOG.md"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Version 
+        <i
+          className="fas fa-code"
+        />
+         
+      </a>
+      . Built by
+       
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+      />
+      , copyright © 
+      2017–2020
+       under the
+       
+      <a
+        href="https://choosealicense.com/licenses/agpl-3.0/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        AGPL-3.0 
+        <i
+          className="fas fa-gavel"
+        />
+         license
+      </a>
+      .
+       
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        View this project on 
+        <i
+          className="fab fa-github"
+        />
+         GitHub.
+      </a>
+    </p>
+  </footer>
+</div>
+`;
+
+exports[`Help renders accurately with and without children 2`] = `
+<div
+  className="app"
+>
+  <header
+    className="header"
+  >
+    <div
+      className="titleArea"
+    >
+      <h1
+        className="siteTitle"
+      >
+        <a
+          className="titleLink"
+          href="/"
+        />
+      </h1>
+      <p
+        className="subtitle"
+      />
+    </div>
+    <nav
+      className="nav"
+    >
+      <ul
+        className="menu"
+      >
+        <li
+          className="navLink"
+        >
+          <a
+            href="/gen"
+          >
+            Gen
+          </a>
+        </li>
+        <li
+          className="navLink disabled"
+        >
+          <a
+            href="/morph"
+          >
+            Morph
+          </a>
+        </li>
+        <li
+          className="navLink"
+        >
+          <a
+            href="/deriv"
+          >
+            Deriv
+          </a>
+        </li>
+        <li
+          className="navLink"
+        >
+          <a
+            href="/frequen"
+          >
+            Frequen
+          </a>
+        </li>
+        <li
+          className="navLink disabled"
+        >
+          <a
+            href="/tree"
+          >
+            Tree
+          </a>
+        </li>
+        <li
+          className="navLink disabled"
+        >
+          <a
+            href="/lex"
+          >
+            Lex
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main
+    className="main"
+  >
+    <a
+      className="btn buttonLink"
+      href="/test"
+    >
+      Back
+    </a>
+    <h2
+      className="toolTitle"
+    >
+      LanguaTest Help
+    </h2>
+    <p
+      id="description"
+    >
+      LanguaTest is a test.
+    </p>
+    Test
+    <div
+      className="Toastify"
+    />
+  </main>
+  <footer
+    className="footer"
+  >
+    <p
+      className="copyright"
+    >
+      <a
+        href="undefined/blob/master/CHANGELOG.md"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Version 
+        <i
+          className="fas fa-code"
+        />
+         
+      </a>
+      . Built by
+       
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+      />
+      , copyright © 
+      2017–2020
+       under the
+       
+      <a
+        href="https://choosealicense.com/licenses/agpl-3.0/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        AGPL-3.0 
+        <i
+          className="fas fa-gavel"
+        />
+         license
+      </a>
+      .
+       
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        View this project on 
+        <i
+          className="fab fa-github"
+        />
+         GitHub.
+      </a>
+    </p>
+  </footer>
+</div>
+`;

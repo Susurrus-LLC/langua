@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FrequenResults renders accurately with various props 1`] = `
+<div
+  className="results"
+/>
+`;

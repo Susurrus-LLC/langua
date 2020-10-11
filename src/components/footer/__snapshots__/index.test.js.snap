@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders accurately 1`] = `
+<footer
+  className="footer"
+>
+  <p
+    className="copyright"
+  >
+    <a
+      href="http://localhost/ghURL/blob/master/CHANGELOG.md"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Version 
+      <i
+        className="fas fa-code"
+      />
+       
+      1.0.0
+    </a>
+    . Built by
+     
+    <a
+      href="http://localhost/author"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Ian A. Cook
+    </a>
+    , copyright © 
+    2017–2020
+     under the
+     
+    <a
+      href="https://choosealicense.com/licenses/agpl-3.0/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      AGPL-3.0 
+      <i
+        className="fas fa-gavel"
+      />
+       license
+    </a>
+    .
+     
+    <a
+      href="http://localhost/ghURL"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      View this project on 
+      <i
+        className="fab fa-github"
+      />
+       GitHub.
+    </a>
+  </p>
+</footer>
+`;

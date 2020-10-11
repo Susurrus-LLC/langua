@@ -1,0 +1,44 @@
+@import ../../styles/variables.module
+
+.header
+  display: flex
+  justify-content: space-between
+  align-items: baseline
+  border-bottom: 1px solid $blu
+  padding: $lnht * 2rem 0
+  & a, & a:link, & a:visited, & a:hover, & a:active
+    text-decoration: none
+
+.title-area
+  order: 0
+
+.site-title
+  margin-bottom: $lnht * 1rem
+
+.title-link
+  &:link, &:visited, &:hover, &:active
+    color: darken($blu, 10%)
+
+.subtitle
+  font-style: italic
+
+.nav
+  order: 1
+  flex-grow: 1
+
+.menu
+  text-align: right
+  font-family: $header-font
+
+.nav-link
+  display: inline-block
+  margin: 0 $lnht * 2rem
+  padding: 0
+  font-size: $ms2 * 1rem
+  line-height: $lnht * 2rem
+  list-style: none
+
+.disabled
+  opacity: 0.5
+  &:hover
+    opacity: 0.8

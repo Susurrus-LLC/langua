@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders accurately with various props and children 1`] = `
+<button
+  className="btn"
+  role="button"
+  type="button"
+/>
+`;
+
+exports[`Header renders accurately with various props and children 2`] = `
+<button
+  className="btn success"
+  role="button"
+  type="submit"
+>
+  Submit
+</button>
+`;
+
+exports[`Header renders accurately with various props and children 3`] = `
+<button
+  className="btn danger"
+  role="button"
+  type="reset"
+>
+  Reset
+</button>
+`;
+
+exports[`Header renders accurately with various props and children 4`] = `
+<a
+  className="btn neutral buttonLink"
+  href="/test"
+>
+  Link
+</a>
+`;

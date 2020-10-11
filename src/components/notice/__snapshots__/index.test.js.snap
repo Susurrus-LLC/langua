@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notice renders accurately 1`] = `
+<p
+  className="notice"
+/>
+`;
+
+exports[`Notice renders accurately 2`] = `
+<p
+  className="notice"
+>
+  Test
+</p>
+`;

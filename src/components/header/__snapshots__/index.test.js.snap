@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders accurately 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="titleArea"
+  >
+    <h1
+      className="siteTitle"
+    >
+      <a
+        className="titleLink"
+        href="/"
+      />
+    </h1>
+    <p
+      className="subtitle"
+    />
+  </div>
+  <nav
+    className="nav"
+  >
+    <ul
+      className="menu"
+    >
+      <li
+        className="navLink"
+      >
+        <a
+          href="/gen"
+        >
+          Gen
+        </a>
+      </li>
+      <li
+        className="navLink disabled"
+      >
+        <a
+          href="/morph"
+        >
+          Morph
+        </a>
+      </li>
+      <li
+        className="navLink"
+      >
+        <a
+          href="/deriv"
+        >
+          Deriv
+        </a>
+      </li>
+      <li
+        className="navLink"
+      >
+        <a
+          href="/frequen"
+        >
+          Frequen
+        </a>
+      </li>
+      <li
+        className="navLink disabled"
+      >
+        <a
+          href="/tree"
+        >
+          Tree
+        </a>
+      </li>
+      <li
+        className="navLink disabled"
+      >
+        <a
+          href="/lex"
+        >
+          Lex
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results renders accurately with and without children 1`] = `
+<div
+  className="results"
+/>
+`;
+
+exports[`Results renders accurately with and without children 2`] = `
+<div
+  className="results"
+>
+  Test
+</div>
+`;

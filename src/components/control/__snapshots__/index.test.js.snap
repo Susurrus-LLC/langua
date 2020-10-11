@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Control renders accurately with and without props and children 1`] = `
+<div
+  className="control"
+/>
+`;
+
+exports[`Control renders accurately with and without props and children 2`] = `
+<div
+  className="control test"
+/>
+`;
+
+exports[`Control renders accurately with and without props and children 3`] = `
+<div
+  className="control"
+>
+  Test
+</div>
+`;

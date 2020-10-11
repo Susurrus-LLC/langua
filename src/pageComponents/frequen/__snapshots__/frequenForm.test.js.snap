@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FrequenForm renders accurately 1`] = `
+<form
+  className="form"
+  name="frequen-form"
+>
+  <div
+    className="part"
+  >
+    <h5
+      className="sectionTitle"
+    >
+      Text Corpus
+    </h5>
+    <textarea
+      aria-label="Text corpus"
+      className="corpusInput input"
+      id="corpus"
+      name="corpus"
+      onChange={[MockFunction]}
+      value="Nzɔ de’áxa Tsənaxa, ño lo sɛtsa’ɔk, ño lo de’áxa u Kasaga, ño lo mɛya ayru Tol o Əbe kwə, sa nzɔ xa mpaskale: Steyə rabɛ lu ñire lu mvunə poxe o lu pɛlɔ ah lo mɛwɛ axe, maxə ɔra latsi əbɔwə səyo."
+    />
+  </div>
+  <div
+    className="consonants part"
+  >
+    <h5
+      className="sectionTitle"
+    >
+      Consonants
+    </h5>
+    <input
+      aria-label="Consonants"
+      className="input"
+      id="consonants"
+      name="consonants"
+      onChange={[MockFunction]}
+      type="text"
+      value="b/d/f/g/k/kw/l/m/mp/mv/n/nt/nts/nz/ñ/ŋk/ŋkw/p/r/s/t/ts/v/w/x,h/y/’"
+    />
+  </div>
+  <div
+    className="vowels part"
+  >
+    <h5
+      className="sectionTitle"
+    >
+      Vowels
+    </h5>
+    <input
+      aria-label="Vowels"
+      className="input"
+      id="vowels"
+      name="vowels"
+      onChange={[MockFunction]}
+      type="text"
+      value="a,á/ɛ,ɛ́/e,é/ə,ə́/i,í/ɔ,ɔ́/o,ó/u,ú"
+    />
+  </div>
+  <div
+    className="control part"
+  >
+    <div
+      className="controlSide controlLeft"
+    >
+      <div
+        className="controlPiece"
+      >
+        <button
+          className="btn neutral"
+          onClick={[MockFunction]}
+          role="button"
+          type="submit"
+        >
+          Analyze
+        </button>
+      </div>
+      <div
+        className="controlPiece"
+      >
+        <label
+          htmlFor="distinguishCase"
+        >
+          <input
+            checked={true}
+            id="distinguishCase"
+            name="distinguishCase"
+            onChange={[MockFunction]}
+            type="checkbox"
+            value="distinguishCase"
+          />
+           
+          distinguish upper and lower case
+        </label>
+      </div>
+    </div>
+    <div
+      className="controlSide controlRight"
+    >
+      <div
+        className="controlPiece"
+      >
+        <button
+          className="btn success"
+          id="save"
+          onClick={[MockFunction]}
+          role="button"
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+      <div
+        className="controlPiece"
+      >
+        <button
+          className="btn"
+          id="open"
+          onClick={[Function]}
+          role="button"
+          type="button"
+        >
+          Open
+        </button>
+        <input
+          className="hidden"
+          id="file"
+          name="file"
+          onChange={[MockFunction]}
+          type="file"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+`;

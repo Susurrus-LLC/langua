@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form renders accurately with and without props and children 1`] = `
+<form
+  className="form"
+/>
+`;
+
+exports[`Form renders accurately with and without props and children 2`] = `
+<form
+  className="form"
+  name="test"
+>
+  Test
+</form>
+`;

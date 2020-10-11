@@ -46,7 +46,9 @@ class FileProcessor {
     } else {
       // If the browser can't access File, display a notification
       toast.info(
-        'Your browser is unable to save files. The data has been saved to your browser’s local storage.',
+        `Your browser is unable to save files. The data has been saved to your browser${String.fromCharCode(
+          8217
+        )}s local storage.`,
         {
           autoClose: 5000,
           className: 'toast-unsaved',

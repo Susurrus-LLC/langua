@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/Susurrus-LLC/langua.svg?branch=master)](https://travis-ci.com/Susurrus-LLC/langua)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c594056d0f96442cba7a92fe2c348d92)](https://app.codacy.com/app/Susurrus-LLC/langua?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Grade_Dashboard)
-[![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/58bcc4dc2f914f06ad6cc51658678dc3)](https://www.codacy.com/app/Langua/langua?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Susurrus-LLC/langua&amp;utm_campaign=Badge_Coverage)
+[![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/58bcc4dc2f914f06ad6cc51658678dc3)](https://www.codacy.com/app/Langua/langua?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Coverage)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=Susurrus-LLC/langua)](https://dependabot.com)
 [![](https://img.shields.io/github/release/Susurrus-LLC/langua.svg)](https://github.com/Susurrus-LLC/langua/releases)
@@ -64,7 +64,7 @@ If you are installing Langua in a subfolder (e.g. `*.com/languages/`), you will 
 
 1. Download and unpack the [latest release](../../releases/latest).
 1. Install the dependencies with `yarn`.
-1. Open `Router.js` and change `<BrowserRouter basename={'/langua'}>` to  `<BrowserRouter basename={'/yoursubfolder'}>`.
+1. Open `gatsby-config.js` and change `pathPrefix: &grave;/langua&grave;,` to `pathPrefix: &grave;/yoursubfolder&grave;,`.
 1. Build the project with `yarn build`.
 1. Copy the contents of the resulting /build folder into the appropriate subfolder on your server. You're done!
 
@@ -74,7 +74,7 @@ If you are installing Langua in a website's root (e.g. a URL that ends in `.com`
 
 1. Download and unpack the [latest release](../../releases/latest).
 1. Install the dependencies with `yarn`.
-1. Open `Router.js` and remove the `basename` prop by changing `<BrowserRouter basename={'/langua'}>` to  `<BrowserRouter>`.
+1. Open `gatsby-config.js` and change `pathPrefix: &grave;/langua&grave;,` to `pathPrefix: &grave;&grave;,`.
 1. Build the project with `yarn build`.
 1. Copy the contents of the resulting /build folder into the root of your server. You're done!
 
@@ -118,10 +118,6 @@ Langua was inspired by several existing tools, including:
 - [phpSyntaxTree](http://ironcreek.net/phpsyntaxtree/)
 - [SynTree](http://mshang.ca/syntree/)
 - [RSyntaxTree](https://www.yohasebe.com/rsyntaxtree/)
-
-Thank you to [Travis CI](https://travis-ci.com), [Dependabot](https://dependabot.com), and [Codacy](https://www.codacy.com/) for offering free services to open source projects!
-
-[![Travis CI](./Logo%20Travis%20CI.png)](https://travis-ci.com "Travis CI")
 
 ## License
 
