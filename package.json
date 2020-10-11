@@ -14,7 +14,7 @@
   "homepage": "https://susurrus-llc.github.io/langua/",
   "private": true,
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "format": "prettier-standard --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "yarn develop",

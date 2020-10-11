@@ -41,6 +41,7 @@ module.exports = {
       }
     }
   },
+  pathPrefix: `/langua`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
