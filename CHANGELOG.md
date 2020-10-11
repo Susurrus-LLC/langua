@@ -4,13 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format of this changelog is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased](https://github.com/Susurrus-LLC/langua/compare/v0.4.2...HEAD)
+## [Unreleased](https://github.com/Susurrus-LLC/langua/compare/v0.4.3...HEAD)
+
+### Changed 0.4.4
+
+## [v0.4.3](https://github.com/Susurrus-LLC/langua/compare/v0.4.2...v0.4.3)
 
 ### Changed 0.4.3
 
 - Move FontAwesome from page head to package.json.
-- Move unchanging head elements from Helmet to the html file.
-- Update dependencies.
+- Convert site from pure React to Gatsby
 
 ## [v0.4.2](https://github.com/Susurrus-LLC/langua/compare/v0.4.1...v0.4.2)
 
