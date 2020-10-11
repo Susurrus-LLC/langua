@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DerivResults renders accurately with various props 1`] = `
+<div
+  className="results"
+>
+  <div
+    className="output"
+  />
+  <div
+    className="stats"
+  >
+    <p
+      className="statsText"
+    >
+      words: 0; maximum derivations possible: 0
+    </p>
+  </div>
+</div>
+`;
+
+exports[`DerivResults renders accurately with various props 2`] = `
+<div
+  className="results"
+>
+  <div
+    className="output"
+  >
+    <div
+      className="derivRow outputRow"
+    >
+      <div
+        className="outputBox rowNumber"
+      >
+        1
+        .
+      </div>
+      <div>
+        <div
+          className="derivRow outputRow"
+        >
+          <div
+            className="outputBox"
+          >
+            <p
+              className="term"
+            >
+              nzi
+            </p>
+            <p
+              className="lexGloss gloss"
+            >
+              tree
+            </p>
+          </div>
+          <div
+            className="outputBox"
+          >
+            <p
+              className="term"
+            >
+              -vo
+            </p>
+            <p
+              className="affixGloss gloss"
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+            >
+              person
+            </p>
+          </div>
+        </div>
+        <p
+          className="affixDef"
+        >
+          Creates a noun referring to a person associated with the base.
+        </p>
+      </div>
+    </div>
+    <div
+      className="derivRow outputRow"
+    >
+      <div
+        className="outputBox rowNumber"
+      >
+        2
+        .
+      </div>
+      <div>
+        <div
+          className="derivRow outputRow"
+        >
+          <div
+            className="outputBox"
+          >
+            <p
+              className="term"
+            >
+              k-
+            </p>
+            <p
+              className="affixGloss gloss"
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+            >
+              collective
+            </p>
+          </div>
+          <div
+            className="outputBox"
+          >
+            <p
+              className="term"
+            >
+              lɛtsi
+            </p>
+            <p
+              className="lexGloss gloss"
+            >
+              sword
+            </p>
+          </div>
+          <div
+            className="outputBox"
+          >
+            <p
+              className="term"
+            >
+              -sa
+            </p>
+            <p
+              className="affixGloss gloss"
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+            >
+              collective
+            </p>
+          </div>
+        </div>
+        <p
+          className="affixDef"
+        >
+          Creates a noun referring to a collection of bases.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="stats"
+  >
+    <p
+      className="statsText"
+    >
+      words: 2; maximum derivations possible: 25
+    </p>
+  </div>
+</div>
+`;

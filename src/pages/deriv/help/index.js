@@ -3,32 +3,15 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import Help from '../../../components/help'
 
-const DerivHelpPage = () => {
-  const data = useStaticQuery(graphql`
-    query DerivHelpQuery {
-      site {
-        siteMetadata {
-          title
-          toolInfo {
-            deriv {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const metadata = data.site.siteMetadata
-  const toolInfo = metadata.toolInfo.deriv
+export const PureDerivHelp = data => {
+  const metadata = data?.site?.siteMetadata
+  const toolInfo = metadata?.toolInfo?.deriv
 
   return (
     <Help toolInfo={toolInfo}>
       <h3 id='using'>
-        Using {metadata.title}
-        {toolInfo.title}
+        Using {metadata?.title}
+        {toolInfo?.title}
       </h3>
       <h4 id='lexemes'>Lexemes</h4>
       <p>
@@ -89,12 +72,33 @@ const DerivHelpPage = () => {
         >
           the Derivizer
         </a>
-        . {metadata.title}
-        {toolInfo.title} was mainly built as a modernized and updated version of
-        the Derivizer.
+        . {metadata?.title}
+        {toolInfo?.title} was mainly built as a modernized and updated version
+        of the Derivizer.
       </p>
     </Help>
   )
 }
 
-export default DerivHelpPage
+const DerivHelp = props => {
+  const data = useStaticQuery(graphql`
+    query DerivHelpQuery {
+      site {
+        siteMetadata {
+          title
+          toolInfo {
+            deriv {
+              title
+              link
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  return <PureDerivHelp {...props} data={data} />
+}
+
+export default DerivHelp

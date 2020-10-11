@@ -9,25 +9,8 @@ import derivService from '../../services/derivService'
 
 import styles from './deriv.module.sass'
 
-const DerivPage = () => {
-  const data = useStaticQuery(graphql`
-    query DerivToolQuery {
-      site {
-        siteMetadata {
-          toolInfo {
-            deriv {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const metadata = data.site.siteMetadata
-  const toolInfo = metadata.toolInfo.deriv
+export const PureDeriv = ({ data }) => {
+  const toolInfo = data?.site?.siteMetadata?.toolInfo?.deriv
 
   // State
 
@@ -136,4 +119,24 @@ const DerivPage = () => {
   )
 }
 
-export default DerivPage
+const Deriv = props => {
+  const data = useStaticQuery(graphql`
+    query DerivToolQuery {
+      site {
+        siteMetadata {
+          toolInfo {
+            deriv {
+              title
+              link
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  return <PureDeriv {...props} data={data} />
+}
+
+export default Deriv

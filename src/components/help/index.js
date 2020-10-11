@@ -14,17 +14,17 @@ export const PureHelp = ({ data, toolInfo, children }) => {
   return (
     <Layout>
       <SEO
-        title={`${metadata?.title}${toolInfo.title} Help`}
-        canonical={`${toolInfo.link}/help`}
+        title={`${metadata?.title}${toolInfo?.title} Help`}
+        canonical={`${toolInfo?.link}/help`}
       />
-      <Button link route={toolInfo.link}>
+      <Button link route={toolInfo?.link}>
         Back
       </Button>
       <h2
         className={styles.toolTitle}
-      >{`${metadata?.title}${toolInfo.title} Help`}</h2>
+      >{`${metadata?.title}${toolInfo?.title} Help`}</h2>
       <p id={styles.description}>
-        {`${metadata?.title}${toolInfo.title} ${toolInfo.description}`}
+        {`${metadata?.title}${toolInfo?.title} ${toolInfo?.description}`}
       </p>
       {children}
     </Layout>
@@ -53,6 +53,8 @@ const Help = props => {
       site {
         siteMetadata {
           title
+          link
+          description
         }
       }
     }
