@@ -11,7 +11,7 @@ script:
 deploy:
   provider: pages
   token: $github_token
-  local_dir: build
+  local_dir: public
   edge: true #opt in dpl v2
   on:
     branch: master
