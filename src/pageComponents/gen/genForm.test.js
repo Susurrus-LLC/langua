@@ -28,7 +28,7 @@ describe('GenForm', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer
+    const tree = renderer
       .create(<GenForm styles={styles} data={defData} change={jest.fn()} />)
       .toJSON()
     expect(tree).toMatchSnapshot()

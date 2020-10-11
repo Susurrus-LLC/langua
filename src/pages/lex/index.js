@@ -7,7 +7,7 @@ import Tool from '../../components/tool'
 import LexForm from '../../pageComponents/lex/lexForm'
 import LexResults from '../../pageComponents/lex/lexResults'
 
-import styles from './lex.module.sass'
+// import styles from './lex.module.sass'
 
 export const PureLex = ({ data }) => {
   const toolInfo = data?.site?.siteMetadata?.toolInfo?.lex

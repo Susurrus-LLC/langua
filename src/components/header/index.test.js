@@ -21,7 +21,7 @@ describe('Header', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<Header siteData={siteData} />).toJSON()
+    const tree = renderer.create(<Header siteData={siteData} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

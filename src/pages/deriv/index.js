@@ -89,7 +89,7 @@ export const PureDeriv = ({ data }) => {
           setDerivations(response.derivations)
           setResults(response.results)
         }
-      } else if (e.target.name === 'words') {
+      } else if (name === 'words') {
         const response = derivService.wordNumChange(state, val)
         if (response) {
           // Only change state if the word number was successfully changed
@@ -100,7 +100,7 @@ export const PureDeriv = ({ data }) => {
           setResults(response.results)
         }
       } else {
-        if (e.target.name === 'type') {
+        if (name === 'type') {
           setType(val)
         }
       }

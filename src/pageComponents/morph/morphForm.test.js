@@ -41,7 +41,7 @@ describe('MorphForm', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer
+    const tree = renderer
       .create(
         <MorphForm
           styles={styles}

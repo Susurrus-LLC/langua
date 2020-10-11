@@ -10,6 +10,7 @@ describe('FrequenResults', () => {
     input: 'input'
   }
 
+  /*
   const results = {
     all: [
       {
@@ -51,6 +52,7 @@ describe('FrequenResults', () => {
     x: 3,
     y: 'c'
   }
+  */
 
   it('renders without crashing', () => {
     const div = document.createElement('div')
@@ -69,7 +71,7 @@ describe('FrequenResults', () => {
   })
 
   it('renders accurately with various props', () => {
-    let tree = renderer
+    const tree = renderer
       .create(
         <FrequenResults
           styles={styles}

@@ -42,9 +42,9 @@ const FrequenResults = ({
   }
 
   const headerCells = () => {
-    let data = []
+    const data = []
 
-    for (let prop in results) {
+    for (const prop in results) {
       if (results.hasOwnProperty(prop)) {
         let count = 0
 
@@ -142,17 +142,17 @@ const FrequenResults = ({
   }
 
   const axisStyle = {
-    fontSize: `0.75rem`,
+    fontSize: '0.75rem',
     text: {
-      fill: `#777`
+      fill: '#777'
     },
     line: {
-      stroke: `#aaa`
+      stroke: '#aaa'
     }
   }
 
   const gridStyle = {
-    stroke: `#aaa`
+    stroke: '#aaa'
   }
 
   if (analyzed) {

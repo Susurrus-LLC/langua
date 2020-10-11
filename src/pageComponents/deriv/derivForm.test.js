@@ -35,7 +35,7 @@ describe('DerivForm', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer
+    const tree = renderer
       .create(<DerivForm styles={styles} data={defData} change={jest.fn()} />)
       .toJSON()
     expect(tree).toMatchSnapshot()

@@ -26,7 +26,7 @@ describe('Deriv', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<Deriv data={data} />).toJSON()
+    const tree = renderer.create(<Deriv data={data} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

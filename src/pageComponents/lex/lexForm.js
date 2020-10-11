@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import Form from '../../components/form'
 
-import sharedStyles from '../../components/form/sharedForm.module.sass'
+// import sharedStyles from '../../components/form/sharedForm.module.sass'
 
 const LexForm = () => <Form name='lex-form' />
 

@@ -23,7 +23,7 @@ describe('SEO', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<SEO data={data} title='Test' />)
+    const tree = renderer.create(<SEO data={data} title='Test' />)
     expect(tree).toMatchSnapshot()
   })
 })

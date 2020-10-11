@@ -66,7 +66,7 @@ class MorphService {
           rewriteOutput: Boolean
         })
 
-        let content = JSON.parse(result)
+        const content = JSON.parse(result)
 
         if (content.results) {
           content.results.words = +content.results.words
@@ -132,8 +132,8 @@ class MorphService {
 
   // Split the rewrite rules into an array of objects
   splitRewriteRules (rules) {
-    let splitRules = []
-    let errors = []
+    const splitRules = []
+    const errors = []
 
     for (let i = 0; i < rules.length; i++) {
       const split = rules[i].split('=')
@@ -169,8 +169,8 @@ class MorphService {
 
   // Split the categories into an array of objects
   splitCategories (cats, rules) {
-    let assignments = []
-    let errors = []
+    const assignments = []
+    const errors = []
 
     for (let i = 0; i < cats.length; i++) {
       const split = cats[i].split('=')
@@ -197,7 +197,7 @@ class MorphService {
       }
     }
 
-    let splitCategories = []
+    const splitCategories = []
     for (let i = 0; i < assignments.length; i++) {
       const thisCat = {}
       thisCat.variable = assignments[i][0]
@@ -213,7 +213,7 @@ class MorphService {
   rewriteChanges (change, rules) {
     const newChange = JSON.parse(JSON.stringify(change))
 
-    for (let prop in newChange) {
+    for (const prop in newChange) {
       if (newChange.hasOwnProperty(prop)) {
         for (let i = 0; i < rules.length; i++) {
           const rewriteFrom = new RegExp(rules[i].rewriteFrom, 'g')
@@ -230,10 +230,11 @@ class MorphService {
 
   // Split the sound change rules into an array of objects
   splitSoundChanges (cats, changes, rules) {
-    let splitChanges = []
-    let errors = []
+    const splitChanges = []
+    const errors = []
 
     const idChar = char => {
+      let cat = false
       switch (char) {
         case '_':
           return 'target'
@@ -248,7 +249,6 @@ class MorphService {
         case ')':
           return 'parenclose'
         default:
-          let cat = false
           for (let i = 0; i < cats.length; i++) {
             if (char === cats[i].variable) {
               cat = true
@@ -306,24 +306,24 @@ class MorphService {
         const rwRule = this.rewriteChanges(thisRule, rules)
 
         // ID all characters in each rule
-        let changeFromArr = []
+        const changeFromArr = []
         for (let j = 0; j < rwRule.changeFrom.length; j++) {
           changeFromArr.push(idChar(rwRule.changeFrom[j]))
         }
         rwRule.changeFromID = changeFromArr
-        let changeToArr = []
+        const changeToArr = []
         for (let j = 0; j < rwRule.changeTo.length; j++) {
           changeToArr.push(idChar(rwRule.changeTo[j]))
         }
         rwRule.changeToID = changeToArr
-        let contextArr = []
+        const contextArr = []
         if (rwRule.context) {
           for (let j = 0; j < rwRule.context.length; j++) {
             contextArr.push(idChar(rwRule.context[j]))
           }
           rwRule.contextID = contextArr
         }
-        let exceptionArr = []
+        const exceptionArr = []
         if (rwRule.exception) {
           for (let j = 0; j < rwRule.exception.length; j++) {
             exceptionArr.push(idChar(rwRule.exception[j]))
@@ -341,7 +341,7 @@ class MorphService {
 
   // Apply the rewrite rules to the lexicon
   rewriteLex (lex, rules) {
-    let newLex = []
+    const newLex = []
 
     for (let i = 0; i < lex.length; i++) {
       let word = lex[i]
@@ -381,16 +381,19 @@ class MorphService {
     // For each rule
     for (let i = 0; i < changes.length; i++) {
       // Replace the # word boundary symbol with the regex \b
-      let context = changes[i].context
+      const context = changes[i].context
         ? changes[i].context.replace(/#/g, '\\b')
         : undefined
-      let exception = changes[i].exception
+      const exception = changes[i].exception
         ? changes[i].exception.replace(/#/g, '\\b')
         : undefined
 
       if (context) {
+        // This needs to be added
       }
+
       if (exception) {
+        // This needs to be added
       }
 
       let rpfc
@@ -423,7 +426,7 @@ class MorphService {
   // Build the results object array
   getResults (cats, rules, changes, lexicon, rwOutput) {
     const rwLexicon = this.rewriteLex(lexicon, rules)
-    let results = []
+    const results = []
 
     for (let i = 0; i < lexicon.length; i++) {
       results.push({
@@ -472,13 +475,18 @@ class MorphService {
 
     // Return the errors if there are any
     let allErrors = []
-    if (typeof categories[0] === 'string')
+    if (typeof categories[0] === 'string') {
       allErrors = allErrors.concat(categories)
-    if (typeof rewriteRules[0] === 'string')
+    }
+    if (typeof rewriteRules[0] === 'string') {
       allErrors = allErrors.concat(rewriteRules)
-    if (typeof soundChanges[0] === 'string')
+    }
+    if (typeof soundChanges[0] === 'string') {
       allErrors = allErrors.concat(soundChanges)
-    if (allErrors.length) return allErrors
+    }
+    if (allErrors.length) {
+      return allErrors
+    }
 
     const results = this.getResults(
       categories,

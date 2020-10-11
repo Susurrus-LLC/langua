@@ -27,7 +27,7 @@ describe('LexHelp', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<LexHelp data={data} />).toJSON()
+    const tree = renderer.create(<LexHelp data={data} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

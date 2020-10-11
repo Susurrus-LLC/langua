@@ -58,7 +58,7 @@ class DerivService {
           derivations: Array.of(derivationSchema)
         })
 
-        let content = JSON.parse(result)
+        const content = JSON.parse(result)
 
         if (content.results) {
           content.results.words = +content.results.words
@@ -124,7 +124,7 @@ class DerivService {
 
   // Add a new row to the form
   add (data, which) {
-    let newData = JSON.parse(JSON.stringify(data))
+    const newData = JSON.parse(JSON.stringify(data))
     if (which === 'lex') {
       newData.lexemes.push({ lexeme: '', definition: '' })
     } else {
@@ -135,7 +135,7 @@ class DerivService {
 
   // Remove a row from the form
   clear (data, num, which) {
-    let newData = JSON.parse(JSON.stringify(data))
+    const newData = JSON.parse(JSON.stringify(data))
     if (which === 'l') {
       newData.lexemes.splice(num, 1)
     } else {
@@ -146,7 +146,7 @@ class DerivService {
 
   // Update an input field
   changeInput (data, num, which, val) {
-    let newData = JSON.parse(JSON.stringify(data))
+    const newData = JSON.parse(JSON.stringify(data))
     switch (which) {
       case 'lw':
         newData.lexemes[num].lexeme = val
@@ -181,7 +181,7 @@ class DerivService {
 
     // Only change state if the number is between 1 and 9999
     if (val > 0 && val < 10000) {
-      let newData = JSON.parse(JSON.stringify(data))
+      const newData = JSON.parse(JSON.stringify(data))
       newData.words = val
       return newData
     } else {
@@ -225,8 +225,8 @@ class DerivService {
           } else {
             // Circumfix
             const circum = affix.derivation.split(/-/)
-            let prefix = JSON.parse(JSON.stringify(affix))
-            let suffix = JSON.parse(JSON.stringify(affix))
+            const prefix = JSON.parse(JSON.stringify(affix))
+            const suffix = JSON.parse(JSON.stringify(affix))
             prefix.derivation = `${circum[0]}-`
             prefix.gloss = `${prefix.gloss}-`
             suffix.derivation = `-${circum[1]}`

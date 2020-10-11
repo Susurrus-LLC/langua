@@ -61,7 +61,7 @@ class FrequenService {
           filter: String
         })
 
-        let content = JSON.parse(result)
+        const content = JSON.parse(result)
 
         if (content.hovered) {
           content.hovered.count = +content.hovered.count
@@ -151,7 +151,7 @@ class FrequenService {
   analyze (data) {
     // Break the input into arrays and remove duplicates
     const splitBySlash = arr => {
-      let newArr = Array.from(new Set(arr.split('/')))
+      const newArr = Array.from(new Set(arr.split('/')))
       // Remove any blanks
       if (newArr.indexOf('') > -1) {
         newArr.splice(newArr.indexOf(''), 1)
@@ -160,7 +160,7 @@ class FrequenService {
     }
     // Break each element in an array into a sub-array
     const makeSubArrays = arr => {
-      let newArr = []
+      const newArr = []
       arr.forEach(el => {
         newArr.push(el.split(','))
       })
@@ -190,7 +190,7 @@ class FrequenService {
     )
     const vowelsFlat = sortArrays(distinguishCase(flattenArrays(vowels)))
 
-    let rawResults = {}
+    const rawResults = {}
 
     // Add each element in the flattened arrays to the results object and indicate which type they are
     const initResults = (arr, type) => {
@@ -242,7 +242,7 @@ class FrequenService {
     })
 
     // Find allophones and combine their counts
-    for (let seg in rawResults) {
+    for (const seg in rawResults) {
       if (rawResults.hasOwnProperty(seg)) {
         if (rawResults[seg].hasOwnProperty('allophoneOf')) {
           rawResults[rawResults[seg].allophoneOf].count += rawResults[seg].count
@@ -254,9 +254,9 @@ class FrequenService {
     // Assemble the data
     const assembleData = filter => {
       // Add the results to a results array
-      let resArr = []
+      const resArr = []
 
-      for (let seg in rawResults) {
+      for (const seg in rawResults) {
         if (rawResults[seg].type === filter || filter === undefined) {
           resArr.push({
             segment: seg,

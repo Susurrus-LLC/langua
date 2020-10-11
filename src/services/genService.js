@@ -62,7 +62,7 @@ class GenService {
           filterdupes: Boolean
         })
 
-        let content = JSON.parse(result)
+        const content = JSON.parse(result)
 
         content.words = parseInt(content.words, 10)
 
@@ -126,21 +126,21 @@ class GenService {
 
   // When a Subpattern variable is changed, create a new version of state
   changeSelect (id, val, data) {
-    let newData = JSON.parse(JSON.stringify(data))
+    const newData = JSON.parse(JSON.stringify(data))
     newData.subpatterns[id].selected = val
     return newData
   }
 
   // When a Subpattern is changed, create a new version of state
   changeSubpattern (id, val, data) {
-    let newData = JSON.parse(JSON.stringify(data))
+    const newData = JSON.parse(JSON.stringify(data))
     newData.subpatterns[id].subpattern = val
     return newData
   }
 
   // When a Subpattern is cleared, create a new version of state
   clear (id, data) {
-    let newData = JSON.parse(JSON.stringify(data))
+    const newData = JSON.parse(JSON.stringify(data))
     newData.subpatterns.splice(id, 1)
     return newData
   }
@@ -148,7 +148,7 @@ class GenService {
   // When a Subpattern is added, create a new version of state
   add (data) {
     let toUse = ''
-    let newData = JSON.parse(JSON.stringify(data))
+    const newData = JSON.parse(JSON.stringify(data))
 
     // Identify the first unused Subpattern variable and select it
     for (let i = 0; i < vars.length; i++) {
@@ -178,7 +178,7 @@ class GenService {
 
   // When the pattern is changed, create a new version of state
   changePattern (val, data) {
-    let newData = JSON.parse(JSON.stringify(data))
+    const newData = JSON.parse(JSON.stringify(data))
     newData.pattern = val
     return newData
   }
@@ -194,7 +194,7 @@ class GenService {
 
     // Only change state if the number is between 1 and 9999
     if (val > 0 && val < 10000) {
-      let newData = JSON.parse(JSON.stringify(data))
+      const newData = JSON.parse(JSON.stringify(data))
       newData.words = val
       return newData
     } else {
@@ -205,14 +205,14 @@ class GenService {
 
   // If the selection for new lines is changed, create a new version of state
   changeNewline (checked, data) {
-    let newData = JSON.parse(JSON.stringify(data))
+    const newData = JSON.parse(JSON.stringify(data))
     newData.newline = checked
     return newData
   }
 
   // If the selection for filtering duplicates is changed, create a new version of state
   changeDupes (checked, data) {
-    let newData = JSON.parse(JSON.stringify(data))
+    const newData = JSON.parse(JSON.stringify(data))
     newData.filterdupes = checked
     return newData
   }
@@ -234,7 +234,7 @@ class GenService {
     }
 
     const idDeps = subpattern => {
-      let deps = []
+      const deps = []
       for (let i = 0; i < subpattern.length; i++) {
         if (vars.includes(subpattern[i])) {
           deps.push(subpattern[i])
@@ -266,7 +266,7 @@ class GenService {
 
     for (let i = 0; i < data.subpatterns.length; i++) {
       const deps = idDeps(data.subpatterns[i].subpattern)
-      let refed = []
+      const refed = []
 
       if (deps.length > 0) {
         for (let j = 0; j < deps.length; j++) {
@@ -281,7 +281,7 @@ class GenService {
     // Check for duplicate Subpattern variable names
     let duplicates = []
     for (let i = 0; i < data.subpatterns.length; i++) {
-      let current = data.subpatterns[i].selected
+      const current = data.subpatterns[i].selected
 
       for (let j = 0; j < data.subpatterns.length; j++) {
         if (i === j) {
@@ -308,12 +308,12 @@ class GenService {
     }
 
     // Check Pattern for undefined variable
-    let defed = []
+    const defed = []
     for (let i = 0; i < data.subpatterns.length; i++) {
       defed.push(data.subpatterns[i].selected)
     }
 
-    let undefed = []
+    const undefed = []
     for (let i = 0; i < data.pattern.length; i++) {
       if (vars.includes(data.pattern[i])) {
         if (!defed.includes(data.pattern[i])) {
@@ -374,8 +374,8 @@ class GenService {
 
   // Generate the output
   build (data, status) {
-    let results = []
-    let newData = JSON.parse(JSON.stringify(data))
+    const results = []
+    const newData = JSON.parse(JSON.stringify(data))
 
     // Randomly choose from the items in an array
     const chooseRand = length => {

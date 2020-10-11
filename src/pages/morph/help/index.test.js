@@ -27,7 +27,7 @@ describe('MorphHelp', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<MorphHelp data={data} />).toJSON()
+    const tree = renderer.create(<MorphHelp data={data} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

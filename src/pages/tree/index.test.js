@@ -26,7 +26,7 @@ describe('Tree', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<Tree data={data} />).toJSON()
+    const tree = renderer.create(<Tree data={data} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

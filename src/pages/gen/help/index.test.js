@@ -27,7 +27,7 @@ describe('GenHelp', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<GenHelp data={data} />).toJSON()
+    const tree = renderer.create(<GenHelp data={data} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

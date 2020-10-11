@@ -8,7 +8,7 @@ describe('Footer', () => {
   const data = {
     site: {
       siteMetadata: {
-        author: `Ian A. Cook`,
+        author: 'Ian A. Cook',
         authorURL: 'http://localhost/author',
         appGhURL: 'http://localhost/ghURL',
         version: '1.0.0'
@@ -23,7 +23,7 @@ describe('Footer', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<Footer data={data} />).toJSON()
+    const tree = renderer.create(<Footer data={data} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

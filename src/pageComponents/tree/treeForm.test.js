@@ -12,7 +12,7 @@ describe('TreeForm', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<TreeForm />).toJSON()
+    const tree = renderer.create(<TreeForm />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

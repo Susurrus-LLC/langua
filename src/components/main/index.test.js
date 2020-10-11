@@ -12,7 +12,7 @@ describe('Main', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<Main>Test</Main>).toJSON()
+    const tree = renderer.create(<Main>Test</Main>).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

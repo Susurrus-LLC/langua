@@ -32,7 +32,7 @@ describe('FrequenForm', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer
+    const tree = renderer
       .create(
         <FrequenForm
           styles={styles}

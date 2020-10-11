@@ -35,39 +35,39 @@ export const PureSEO = ({
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
-          name: `description`,
+          name: 'description',
           content: metaDescription
         },
         {
-          name: `canonical`,
+          name: 'canonical',
           content: metaCanonical
         },
         {
-          property: `og:title`,
+          property: 'og:title',
           content: title
         },
         {
-          property: `og:description`,
+          property: 'og:description',
           content: metaDescription
         },
         {
-          property: `og:type`,
-          content: `website`
+          property: 'og:type',
+          content: 'website'
         },
         {
-          name: `twitter:card`,
-          content: `summary`
+          name: 'twitter:card',
+          content: 'summary'
         },
         {
-          name: `twitter:creator`,
-          content: metadata?.author || ``
+          name: 'twitter:creator',
+          content: metadata?.author || ''
         },
         {
-          name: `twitter:title`,
+          name: 'twitter:title',
           content: title
         },
         {
-          name: `twitter:description`,
+          name: 'twitter:description',
           content: metaDescription
         }
       ].concat(meta)}
@@ -76,9 +76,9 @@ export const PureSEO = ({
 }
 
 PureSEO.defaultProps = {
-  lang: `en`,
+  lang: 'en',
   meta: [],
-  description: ``
+  description: ''
 }
 
 PureSEO.propTypes = {

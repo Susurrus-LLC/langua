@@ -1,24 +1,16 @@
 {
+  "globals": {
+    "__PATH_PREFIX__": true
+  },
   "extends": [
     "standard",
+    "react-app",
     "eslint:recommended",
-    "plugin:react/recommended",
     "plugin:jest/recommended"
   ],
   "plugins": [
-    "react",
     "jest"
   ],
-  "settings": {
-    "react": {
-      "version": "latest"
-    }
-  },
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
   "rules": {
     "semi": ["error", "never"],
     "quotes": ["error", "single"],

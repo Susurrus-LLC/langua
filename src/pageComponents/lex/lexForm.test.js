@@ -12,7 +12,7 @@ describe('LexForm', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<LexForm />).toJSON()
+    const tree = renderer.create(<LexForm />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

@@ -52,7 +52,7 @@ describe('Frequen', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<Home data={data} />).toJSON()
+    const tree = renderer.create(<Home data={data} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

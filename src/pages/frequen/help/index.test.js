@@ -27,7 +27,7 @@ describe('Frequen', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<FrequenHelp data={data} />).toJSON()
+    const tree = renderer.create(<FrequenHelp data={data} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

@@ -13,7 +13,7 @@ const MorphResults = ({
   showDiff,
   showChanges
 }) => {
-  let resultsArr = results || []
+  const resultsArr = results || []
 
   const outputText = () => {
     // If there were errors, print them

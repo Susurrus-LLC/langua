@@ -7,7 +7,7 @@ import Tool from '../../components/tool'
 import TreeForm from '../../pageComponents/tree/treeForm'
 import TreeResults from '../../pageComponents/tree/treeResults'
 
-import styles from './tree.module.sass'
+// import styles from './tree.module.sass'
 
 export const PureTree = ({ data }) => {
   const toolInfo = data?.site?.siteMetadata?.toolInfo?.tree

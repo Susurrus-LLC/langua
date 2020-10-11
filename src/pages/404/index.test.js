@@ -12,7 +12,7 @@ describe('NotFound', () => {
   })
 
   it('renders accurately', () => {
-    let tree = renderer.create(<NotFound />).toJSON()
+    const tree = renderer.create(<NotFound />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
