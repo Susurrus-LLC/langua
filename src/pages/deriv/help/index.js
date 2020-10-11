@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import Help from '../../../components/help'
 
-export const PureDerivHelp = data => {
+export const PureDerivHelp = ({ data }) => {
   const metadata = data?.site?.siteMetadata
   const toolInfo = metadata?.toolInfo?.deriv
 

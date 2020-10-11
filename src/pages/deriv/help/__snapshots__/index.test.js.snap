@@ -90,24 +90,26 @@ exports[`Deriv renders accurately 1`] = `
   >
     <a
       className="btn buttonLink"
-      href="/undefined"
+      href="/deriv"
     >
       Back
     </a>
     <h2
       className="toolTitle"
     >
-      undefinedundefined Help
+      undefinedDeriv Help
     </h2>
     <p
       id="description"
     >
-      undefinedundefined undefined
+      undefinedDeriv Deriv description
     </p>
     <h3
       id="using"
     >
       Using 
+      Langua
+      Deriv
     </h3>
     <h4
       id="lexemes"
@@ -181,6 +183,8 @@ exports[`Deriv renders accurately 1`] = `
         the Derivizer
       </a>
       . 
+      Langua
+      Deriv
        was mainly built as a modernized and updated version of the Derivizer.
     </p>
     <div

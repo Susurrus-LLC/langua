@@ -53,8 +53,6 @@ const Help = props => {
       site {
         siteMetadata {
           title
-          link
-          description
         }
       }
     }

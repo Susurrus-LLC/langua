@@ -33,11 +33,11 @@ const FrequenResults = ({
   const whichData = () => {
     switch (filterSeg) {
       case 'consonants':
-        return results.consonants
+        return results?.consonants
       case 'vowels':
-        return results.vowels
+        return results?.vowels
       default:
-        return results.all
+        return results?.all
     }
   }
 
