@@ -1,8 +1,8 @@
 # Langua
 
 [![Build Status](https://travis-ci.com/Susurrus-LLC/langua.svg?branch=master)](https://travis-ci.com/Susurrus-LLC/langua)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c594056d0f96442cba7a92fe2c348d92)](https://app.codacy.com/app/Susurrus-LLC/langua?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Grade_Dashboard)
-[![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/58bcc4dc2f914f06ad6cc51658678dc3)](https://www.codacy.com/app/Langua/langua?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Coverage)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/41a3616c2dfa484da0e2eb52d47ee444)](https://www.codacy.com/gh/Susurrus-LLC/langua/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Susurrus-LLC/langua&amp;utm_campaign=Badge_Grade)
+[![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/41a3616c2dfa484da0e2eb52d47ee444)](https://www.codacy.com/app/Langua/langua?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Coverage)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=Susurrus-LLC/langua)](https://dependabot.com)
 [![](https://img.shields.io/github/release/Susurrus-LLC/langua.svg)](https://github.com/Susurrus-LLC/langua/releases)
