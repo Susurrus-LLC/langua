@@ -4,7 +4,22 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Notice from '../../../components/notice'
 import Help from '../../../components/help'
 
-const TreeHelpPage = () => {
+export const PureTreeHelp = ({ data }) => {
+  const metadata = data?.site?.siteMetadata
+  const toolInfo = metadata?.toolInfo?.tree
+
+  return (
+    <Help toolInfo={toolInfo}>
+      <Notice>This tool is still in planning.</Notice>
+      <h3 id='using'>
+        Using {metadata?.title}
+        {toolInfo?.title}
+      </h3>
+    </Help>
+  )
+}
+
+const TreeHelp = props => {
   const data = useStaticQuery(graphql`
     query TreeHelpQuery {
       site {
@@ -22,18 +37,7 @@ const TreeHelpPage = () => {
     }
   `)
 
-  const metadata = data.site.siteMetadata
-  const toolInfo = metadata.toolInfo.tree
-
-  return (
-    <Help toolInfo={toolInfo}>
-      <Notice>This tool is still in planning.</Notice>
-      <h3 id='using'>
-        Using {metadata.title}
-        {toolInfo.title}
-      </h3>
-    </Help>
-  )
+  return <PureTreeHelp {...props} data={data} />
 }
 
-export default TreeHelpPage
+export default TreeHelp
