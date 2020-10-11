@@ -35,7 +35,7 @@ export const PureGen = ({ data }) => {
   // Functions
 
   const onChangeInput = e => {
-    const data = {
+    const newdata = {
       subpatterns,
       pattern,
       words,
@@ -47,23 +47,23 @@ export const PureGen = ({ data }) => {
       e.preventDefault()
       if (e.target.type === 'submit') {
         // Generate the output
-        const response = genService.generate(data)
+        const response = genService.generate(newdata)
         setStatus(response.status)
         setResults(response.results)
         setStats(response.stats)
         // Save the current state to storage
-        genService.setStorage(data)
+        genService.setStorage(newdata)
       } else if (e.target.type === 'button') {
         if (e.target.id === 'save') {
           // Save the current state to storage and generate a file
-          genService.save(data)
+          genService.save(newdata)
         } else if (e.target.id === 'add') {
           // When the add button is clicked, add a blank Subpattern to state
-          setSubpatterns(genService.add(data).subpatterns)
+          setSubpatterns(genService.add(newdata).subpatterns)
         } else if (e.target.id.slice(0, 1) === 'c') {
           // When a Subpattern is cleared, delete the corresponding Subpattern from state
           const id = e.target.id.slice(1)
-          setSubpatterns(genService.clear(id, data).subpatterns)
+          setSubpatterns(genService.clear(id, newdata).subpatterns)
         }
       }
     } else if (e.target.type === 'file') {
@@ -85,19 +85,19 @@ export const PureGen = ({ data }) => {
       const checked = e.target.checked
       if (e.target.id === 'newline') {
         // If the selection for new lines is changed, store that change in state
-        setNewline(genService.changeNewline(checked, data).newline)
+        setNewline(genService.changeNewline(checked, newdata).newline)
       } else if (e.target.id === 'filterdupes') {
         // If the selection for filtering duplicates is changed, store that change in state
-        setFilterdupes(genService.changeDupes(checked, data).filterdupes)
+        setFilterdupes(genService.changeDupes(checked, newdata).filterdupes)
       }
     } else {
       const val = e.target.value
       if (e.target.id === 'pattern') {
         // When the pattern is changed, store the change in state
-        setPattern(genService.changePattern(val, data).pattern)
+        setPattern(genService.changePattern(val, newdata).pattern)
       } else if (e.target.id === 'words') {
         // When the number of desired words is changed, store that change in state
-        const response = genService.wordNumChange(val, data)
+        const response = genService.wordNumChange(val, newdata)
         if (response) {
           // Only update state if there's a change
           setWords(response.words)
@@ -107,10 +107,12 @@ export const PureGen = ({ data }) => {
         const which = e.target.id.slice(0, 1)
         if (which === 'v') {
           // When a Subpattern variable is changed, store that change in state
-          setSubpatterns(genService.changeSelect(id, val, data).subpatterns)
+          setSubpatterns(genService.changeSelect(id, val, newdata).subpatterns)
         } else if (which === 'p') {
           // When a Subpattern is changed, store that change in state
-          setSubpatterns(genService.changeSubpattern(id, val, data).subpatterns)
+          setSubpatterns(
+            genService.changeSubpattern(id, val, newdata).subpatterns
+          )
         }
       }
     }

@@ -415,7 +415,7 @@ class MorphService {
         }
       } else {
         // If there is no context, replace in every match
-        const reg = new RegExp(changes[i].changeFrom, 'g')
+        reg = new RegExp(changes[i].changeFrom, 'g')
         newWord = newWord.replace(reg, changes[i].changeTo)
       }
     }
