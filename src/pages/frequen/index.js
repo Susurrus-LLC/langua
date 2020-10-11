@@ -9,25 +9,8 @@ import frequenService from '../../services/frequenService'
 
 import styles from './frequen.module.sass'
 
-const FrequenPage = () => {
-  const data = useStaticQuery(graphql`
-    query FrequenToolQuery {
-      site {
-        siteMetadata {
-          toolInfo {
-            frequen {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const metadata = data.site.siteMetadata
-  const toolInfo = metadata.toolInfo.frequen
+export const PureFrequen = ({ data }) => {
+  const toolInfo = data?.site?.siteMetadata?.toolInfo?.frequen
 
   // State
   const [corpus, setCorpus] = useState(frequenService.getData().corpus)
@@ -179,4 +162,24 @@ const FrequenPage = () => {
   )
 }
 
-export default FrequenPage
+const Frequen = props => {
+  const data = useStaticQuery(graphql`
+    query FrequenToolQuery {
+      site {
+        siteMetadata {
+          toolInfo {
+            frequen {
+              title
+              link
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  return <PureFrequen {...props} data={data} />
+}
+
+export default Frequen

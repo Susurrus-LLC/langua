@@ -4,32 +4,15 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Notice from '../../../components/notice'
 import Help from '../../../components/help'
 
-const FrequenHelpPage = () => {
-  const data = useStaticQuery(graphql`
-    query FrequenHelpQuery {
-      site {
-        siteMetadata {
-          title
-          toolInfo {
-            frequen {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const metadata = data.site.siteMetadata
-  const toolInfo = metadata.toolInfo.frequen
+export const PureFrequenHelp = ({ data }) => {
+  const metadata = data?.site?.siteMetadata
+  const toolInfo = metadata?.toolInfo?.frequen
 
   return (
     <Help toolInfo={toolInfo}>
       <h3 id='using'>
-        Using {metadata.title}
-        {toolInfo.title}
+        Using {metadata?.title}
+        {toolInfo?.title}
       </h3>
       <h4 id='corpus'>Text Corpus</h4>
       <p>
@@ -105,12 +88,33 @@ const FrequenHelpPage = () => {
         >
           the Frequentizer
         </a>
-        . {metadata.title}
-        {toolInfo.title} was mainly built as a modernized and updated version of
-        the Frequentizer.
+        . {metadata?.title}
+        {toolInfo?.title} was mainly built as a modernized and updated version
+        of the Frequentizer.
       </p>
     </Help>
   )
 }
 
-export default FrequenHelpPage
+const FrequenHelp = props => {
+  const data = useStaticQuery(graphql`
+    query FrequenHelpQuery {
+      site {
+        siteMetadata {
+          title
+          toolInfo {
+            frequen {
+              title
+              link
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  return <PureFrequenHelp {...props} data={data} />
+}
+
+export default FrequenHelp

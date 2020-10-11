@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Frequen renders accurately 1`] = `
+<div
+  className="app"
+>
+  <header
+    className="header"
+  >
+    <div
+      className="titleArea"
+    >
+      <h1
+        className="siteTitle"
+      >
+        <a
+          className="titleLink"
+          href="/"
+        />
+      </h1>
+      <p
+        className="subtitle"
+      />
+    </div>
+    <nav
+      className="nav"
+    >
+      <ul
+        className="menu"
+      >
+        <li
+          className="navLink"
+        >
+          <a
+            href="/gen"
+          >
+            Gen
+          </a>
+        </li>
+        <li
+          className="navLink disabled"
+        >
+          <a
+            href="/morph"
+          >
+            Morph
+          </a>
+        </li>
+        <li
+          className="navLink"
+        >
+          <a
+            href="/deriv"
+          >
+            Deriv
+          </a>
+        </li>
+        <li
+          className="navLink"
+        >
+          <a
+            href="/frequen"
+          >
+            Frequen
+          </a>
+        </li>
+        <li
+          className="navLink disabled"
+        >
+          <a
+            href="/tree"
+          >
+            Tree
+          </a>
+        </li>
+        <li
+          className="navLink disabled"
+        >
+          <a
+            href="/lex"
+          >
+            Lex
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main
+    className="main"
+  >
+    <p
+      className="siteDescription"
+    >
+      Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation.
+    </p>
+    <div
+      className="grid"
+    >
+      <a
+        className="panel"
+        href="undefined/"
+      >
+        <h2
+          className="toolTitle"
+        />
+        <p
+          className="toolDescription"
+        >
+          Languaundefined undefined
+        </p>
+      </a>
+      <a
+        className="panel disabled"
+        href="undefined/"
+      >
+        <h2
+          className="toolTitle"
+        />
+        <p
+          className="toolDescription"
+        >
+          Languaundefined undefined
+        </p>
+      </a>
+      <a
+        className="panel"
+        href="undefined/"
+      >
+        <h2
+          className="toolTitle"
+        />
+        <p
+          className="toolDescription"
+        >
+          Languaundefined undefined
+        </p>
+      </a>
+      <a
+        className="panel"
+        href="undefined/"
+      >
+        <h2
+          className="toolTitle"
+        />
+        <p
+          className="toolDescription"
+        >
+          Languaundefined undefined
+        </p>
+      </a>
+      <a
+        className="panel disabled"
+        href="tree/"
+      >
+        <h2
+          className="toolTitle"
+        >
+          Tree
+        </h2>
+        <p
+          className="toolDescription"
+        >
+          LanguaTree Tree description
+        </p>
+      </a>
+      <a
+        className="panel disabled"
+        href="undefined/"
+      >
+        <h2
+          className="toolTitle"
+        />
+        <p
+          className="toolDescription"
+        >
+          Languaundefined undefined
+        </p>
+      </a>
+    </div>
+    <p
+      className="siteDescription"
+    >
+      Langua
+       is a full Progressive Web App; once the site has been loaded, its full functionality is available even offline. 
+      Langua
+       
+      can also be added to the homescreen of your tablet or mobile device for easy access.
+    </p>
+    <div
+      className="Toastify"
+    />
+  </main>
+  <footer
+    className="footer"
+  >
+    <p
+      className="copyright"
+    >
+      <a
+        href="undefined/blob/master/CHANGELOG.md"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Version 
+        <i
+          className="fas fa-code"
+        />
+         
+      </a>
+      . Built by
+       
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+      />
+      , copyright © 
+      2017–2020
+       under the
+       
+      <a
+        href="https://choosealicense.com/licenses/agpl-3.0/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        AGPL-3.0 
+        <i
+          className="fas fa-gavel"
+        />
+         license
+      </a>
+      .
+       
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        View this project on 
+        <i
+          className="fab fa-github"
+        />
+         GitHub.
+      </a>
+    </p>
+  </footer>
+</div>
+`;
