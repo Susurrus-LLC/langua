@@ -14,37 +14,27 @@ describe('Frequen', () => {
             title: 'Gen',
             link: 'gen',
             description: 'Gen description'
-          }
-        },
-        toolInfo: {
+          },
           frequen: {
             title: 'Frequen',
             link: 'frequen',
             description: 'Frequen description'
-          }
-        },
-        toolInfo: {
+          },
           deriv: {
             title: 'Deriv',
             link: 'deriv',
             description: 'deriv description'
-          }
-        },
-        toolInfo: {
+          },
           lex: {
             title: 'Lex',
             link: 'lex',
             description: 'Lex description'
-          }
-        },
-        toolInfo: {
+          },
           morph: {
             title: 'Morph',
             link: 'morph',
             description: 'Morph description'
-          }
-        },
-        toolInfo: {
+          },
           tree: {
             title: 'Tree',
             link: 'tree',

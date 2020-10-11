@@ -11,7 +11,6 @@ describe('DerivForm', () => {
     lexemeInput: 'lexemeInput',
     lexemeDefInput: 'lexemeDefInput',
     clearButton: 'clearButton',
-    derivRow: 'derivRow',
     derivationInput: 'derivationInput',
     derivationGlossInput: 'derivationGlossInput',
     derivationDefInput: 'derivationDefInput',
