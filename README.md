@@ -1,5 +1,6 @@
 # Langua
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3f333e36b4f5400b8f3c6a2447495a17)](https://app.codacy.com/gh/Susurrus-LLC/langua?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://travis-ci.com/Susurrus-LLC/langua.svg?branch=master)](https://travis-ci.com/Susurrus-LLC/langua)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c594056d0f96442cba7a92fe2c348d92)](https://app.codacy.com/app/Susurrus-LLC/langua?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Grade_Dashboard)
 [![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/58bcc4dc2f914f06ad6cc51658678dc3)](https://www.codacy.com/app/Langua/langua?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Coverage)
