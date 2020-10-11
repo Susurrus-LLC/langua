@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import ControlPiece from './Piece'
+import ControlPiece from './piece'
 
 describe('ControlPiece', () => {
   it('renders without crashing', () => {

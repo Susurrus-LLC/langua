@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import ControlSide from './Side'
+import ControlSide from './side'
 
 describe('ControlSide', () => {
   it('renders without crashing', () => {

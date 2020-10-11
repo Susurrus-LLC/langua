@@ -90,25 +90,26 @@ exports[`Frequen renders accurately 1`] = `
   >
     <a
       className="btn buttonLink"
-      href="/undefined"
+      href="/frequen"
     >
       Back
     </a>
     <h2
       className="toolTitle"
     >
-      undefinedundefined Help
+      undefinedFrequen Help
     </h2>
     <p
       id="description"
     >
-      undefinedundefined undefined
+      undefinedFrequen Frequen description
     </p>
     <h3
       id="using"
     >
       Using 
       Langua
+      Frequen
     </h3>
     <h4
       id="corpus"
@@ -288,6 +289,7 @@ exports[`Frequen renders accurately 1`] = `
       </a>
       . 
       Langua
+      Frequen
        was mainly built as a modernized and updated version of the Frequentizer.
     </p>
     <div

@@ -23,7 +23,7 @@ describe('GenResults', () => {
     ReactDOM.render(
       <GenResults
         styles={styles}
-        newLine={defData.newline}
+        newline={defData.newline}
         filterDupes={defData.filterdupes}
         status={['ok']}
         results={['']}
@@ -39,7 +39,7 @@ describe('GenResults', () => {
       .create(
         <GenResults
           styles={styles}
-          newLine={defData.newline}
+          newline={defData.newline}
           filterDupes={defData.filterdupes}
           status={['ok']}
           results={['']}
@@ -53,7 +53,7 @@ describe('GenResults', () => {
       .create(
         <GenResults
           styles={styles}
-          newLine={defData.newline}
+          newline={defData.newline}
           filterDupes={defData.filterdupes}
           status={['ok']}
           results={['a', 'sa', 'na', 'asa', 'ana']}
@@ -67,7 +67,7 @@ describe('GenResults', () => {
       .create(
         <GenResults
           styles={styles}
-          newLine={defData.newline}
+          newline={defData.newline}
           filterDupes={defData.filterdupes}
           status={['The Subpatterns contain a circular reference.']}
           results={['']}

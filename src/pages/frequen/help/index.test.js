@@ -10,7 +10,7 @@ describe('Frequen', () => {
       siteMetadata: {
         title: 'Langua',
         toolInfo: {
-          deriv: {
+          frequen: {
             title: 'Frequen',
             link: 'frequen',
             description: 'Frequen description'
