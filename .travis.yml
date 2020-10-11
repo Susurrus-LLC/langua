@@ -7,8 +7,6 @@ cache:
     - node_modules
 script:
   - yarn test-with-coverage
-  - yarn lintjs
-  - yarn lintmd
   - yarn build
 deploy:
   provider: pages
