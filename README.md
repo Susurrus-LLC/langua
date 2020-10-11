@@ -64,7 +64,7 @@ If you are installing Langua in a subfolder (e.g. `*.com/languages/`), you will 
 
 1. Download and unpack the [latest release](../../releases/latest).
 1. Install the dependencies with `yarn`.
-1. Open `Router.js` and change `<BrowserRouter basename={'/langua'}>` to `<BrowserRouter basename={'/yoursubfolder'}>`.
+1. Open `gatsby-config.js` and change `pathPrefix: &grave;/langua&grave;,` to `pathPrefix: &grave;/yoursubfolder&grave;,`.
 1. Build the project with `yarn build`.
 1. Copy the contents of the resulting /build folder into the appropriate subfolder on your server. You're done!
 
@@ -74,7 +74,7 @@ If you are installing Langua in a website's root (e.g. a URL that ends in `.com`
 
 1. Download and unpack the [latest release](../../releases/latest).
 1. Install the dependencies with `yarn`.
-1. Open `Router.js` and remove the `basename` prop by changing `<BrowserRouter basename={'/langua'}>` to `<BrowserRouter>`.
+1. Open `gatsby-config.js` and change `pathPrefix: &grave;/langua&grave;,` to `pathPrefix: &grave;&grave;,`.
 1. Build the project with `yarn build`.
 1. Copy the contents of the resulting /build folder into the root of your server. You're done!
 
