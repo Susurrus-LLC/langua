@@ -4,7 +4,22 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Notice from '../../../components/notice'
 import Help from '../../../components/help'
 
-const LexHelpPage = () => {
+export const PureLexHelp = ({ data }) => {
+  const metadata = data?.site?.siteMetadata
+  const toolInfo = metadata?.toolInfo?.lex
+
+  return (
+    <Help toolInfo={toolInfo}>
+      <Notice>This tool is still in planning.</Notice>
+      <h3 id='using'>
+        Using {metadata?.title}
+        {toolInfo?.title}
+      </h3>
+    </Help>
+  )
+}
+
+const LexHelp = props => {
   const data = useStaticQuery(graphql`
     query LexHelpQuery {
       site {
@@ -22,18 +37,7 @@ const LexHelpPage = () => {
     }
   `)
 
-  const metadata = data.site.siteMetadata
-  const toolInfo = metadata.toolInfo.lex
-
-  return (
-    <Help toolInfo={toolInfo}>
-      <Notice>This tool is still in planning.</Notice>
-      <h3 id='using'>
-        Using {metadata.title}
-        {toolInfo.title}
-      </h3>
-    </Help>
-  )
+  return <PureLexHelp {...props} data={data} />
 }
 
-export default LexHelpPage
+export default LexHelp

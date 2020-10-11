@@ -1,0 +1,327 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MorphForm renders accurately 1`] = `
+<form
+  className="form"
+  name="morph-form"
+>
+  <div
+    className="section"
+  >
+    <div
+      className="categories inputSection part"
+    >
+      <h5
+        className="sectionTitle"
+      >
+        Categories
+      </h5>
+      <div
+        className="container"
+      >
+        <textarea
+          aria-label="Categories"
+          className="categoriesInput dataInput"
+          id="categories"
+          name="categories"
+          onChange={[MockFunction]}
+          value="V=ieaou
+L=īēāōū
+C=ptcqbdgmnlrhs
+F=ie
+B=ou
+S=ptc
+Z=bdg"
+        />
+        <div
+          className="textAreaSpacer"
+        >
+          V=ieaou
+L=īēāōū
+C=ptcqbdgmnlrhs
+F=ie
+B=ou
+S=ptc
+Z=bdg
+           
+        </div>
+      </div>
+    </div>
+    <div
+      className="rewriteRules inputSection part"
+    >
+      <h5
+        className="sectionTitle"
+      >
+        Rewrite Rules
+      </h5>
+      <div
+        className="container"
+      >
+        <textarea
+          aria-label="Rewrite rules"
+          className="rewriteRulesInput dataInput"
+          id="rewriteRules"
+          name="rewriteRules"
+          onChange={[MockFunction]}
+          value="lh=lj"
+        />
+        <div
+          className="textAreaSpacer"
+        >
+          lh=lj
+           
+        </div>
+      </div>
+    </div>
+    <div
+      className="soundChanges inputSection part"
+    >
+      <h5
+        className="sectionTitle"
+      >
+        Sound Changes
+      </h5>
+      <div
+        className="container"
+      >
+        <textarea
+          aria-label="Sound changes"
+          className="soundChangesInput dataInput"
+          id="soundChanges"
+          name="soundChanges"
+          onChange={[MockFunction]}
+          value="[sm]//_#
+i/j/_V
+L/V/_
+e//Vr_#
+v//V_V
+u/o/_#
+gn/nh/_
+S/Z/V_V
+c/i/F_t
+c/u/B_t
+p//V_t
+ii/i/_
+e//C_rV"
+        />
+        <div
+          className="textAreaSpacer"
+        >
+          [sm]//_#
+i/j/_V
+L/V/_
+e//Vr_#
+v//V_V
+u/o/_#
+gn/nh/_
+S/Z/V_V
+c/i/F_t
+c/u/B_t
+p//V_t
+ii/i/_
+e//C_rV
+           
+        </div>
+      </div>
+    </div>
+    <div
+      className="lexicon inputSection part"
+    >
+      <h5
+        className="sectionTitle"
+      >
+        Lexicon
+      </h5>
+      <div
+        className="container"
+      >
+        <textarea
+          aria-label="Lexicon"
+          className="lexiconInput dataInput"
+          id="lexicon"
+          name="lexicon"
+          onChange={[MockFunction]}
+          value="lector
+doctor
+focus
+jocus
+districtus
+cīvitatem
+adoptare
+opera
+secundus
+fīliam
+pōntem"
+        />
+        <div
+          className="textAreaSpacer"
+        >
+          lector
+doctor
+focus
+jocus
+districtus
+cīvitatem
+adoptare
+opera
+secundus
+fīliam
+pōntem
+           
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="control part"
+  >
+    <div
+      className="controlSide controlLeft"
+    >
+      <div
+        className="controlPiece"
+      >
+        <button
+          className="btn neutral"
+          onClick={[MockFunction]}
+          role="button"
+          type="submit"
+        >
+          Change
+        </button>
+      </div>
+      <div
+        className="controlPiece"
+      >
+        <label
+          htmlFor="outputFormat"
+        >
+          output format:
+        </label>
+        <select
+          id="outputFormat"
+          name="outputFormat"
+          onChange={[MockFunction]}
+          value="oo"
+        >
+          <option
+            value="oo"
+          >
+            output
+          </option>
+          <option
+            value="io"
+          >
+            input → output
+          </option>
+          <option
+            value="oi"
+          >
+            output ← input
+          </option>
+        </select>
+      </div>
+      <div
+        className="controlPiece"
+      >
+        <div>
+          <label>
+            <input
+              checked={true}
+              id="showChanges"
+              name="options"
+              onChange={[MockFunction]}
+              type="checkbox"
+              value="showChanges"
+            />
+             
+            italicize changes
+          </label>
+          <br />
+          <label>
+            <input
+              checked={true}
+              id="showDiff"
+              name="options"
+              onChange={[MockFunction]}
+              type="checkbox"
+              value="showDiff"
+            />
+             
+            bold differences
+          </label>
+        </div>
+      </div>
+      <div
+        className="controlPiece"
+      >
+        <div>
+          <label>
+            <input
+              checked={true}
+              id="ruleReport"
+              name="options"
+              onChange={[MockFunction]}
+              type="checkbox"
+              value="ruleReport"
+            />
+             
+            report applied rules
+          </label>
+          <br />
+          <label>
+            <input
+              checked={true}
+              id="rewriteOutput"
+              name="options"
+              onChange={[MockFunction]}
+              type="checkbox"
+              value="rewriteOutput"
+            />
+             
+            rewrite on output
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      className="controlSide controlRight"
+    >
+      <div
+        className="controlPiece"
+      >
+        <button
+          className="btn success"
+          id="save"
+          onClick={[MockFunction]}
+          role="button"
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+      <div
+        className="controlPiece"
+      >
+        <button
+          className="btn"
+          id="open"
+          onClick={[Function]}
+          role="button"
+          type="button"
+        >
+          Open
+        </button>
+        <input
+          className="hidden"
+          id="file"
+          name="file"
+          onChange={[MockFunction]}
+          type="file"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+`;

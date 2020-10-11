@@ -4,26 +4,9 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Notice from '../../../components/notice'
 import Help from '../../../components/help'
 
-const MorphHelpPage = () => {
-  const data = useStaticQuery(graphql`
-    query MorphHelpQuery {
-      site {
-        siteMetadata {
-          title
-          toolInfo {
-            morph {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const metadata = data.site.siteMetadata
-  const toolInfo = metadata.toolInfo.morph
+export const PureMorphHelp = ({ data }) => {
+  const metadata = data?.site?.siteMetadata
+  const toolInfo = metadata?.toolInfo?.morph
 
   return (
     <Help toolInfo={toolInfo}>
@@ -50,4 +33,25 @@ const MorphHelpPage = () => {
   )
 }
 
-export default MorphHelpPage
+const MorphHelp = props => {
+  const data = useStaticQuery(graphql`
+    query MorphHelpQuery {
+      site {
+        siteMetadata {
+          title
+          toolInfo {
+            morph {
+              title
+              link
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  return <PureMorphHelp {...props} data={data} />
+}
+
+export default MorphHelp

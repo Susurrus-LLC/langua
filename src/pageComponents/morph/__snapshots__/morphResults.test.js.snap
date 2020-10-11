@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MorphResults renders accurately with various props 1`] = `
+<div
+  className="results"
+>
+  <div
+    className="output"
+  >
+    <p
+      className="outText different changed"
+    >
+      leitor
+    </p>
+    <p
+      className="outText changed"
+    >
+      doutor
+    </p>
+    <p
+      className="outText different"
+    >
+      focus
+    </p>
+    <p
+      className="outText"
+    >
+      jocus
+    </p>
+  </div>
+  <div
+    className="stats"
+  >
+    <p
+      className="statsText"
+    >
+      2 of 4 words changed (undefined unchanged); 2 of 4 words different from last time (2 the same)
+    </p>
+  </div>
+</div>
+`;
+
+exports[`MorphResults renders accurately with various props 2`] = `
+<div
+  className="results"
+>
+  <div
+    className="output"
+  >
+    <p
+      className="outText different changed"
+    >
+      lector → leitor
+    </p>
+    <p
+      className="outText changed"
+    >
+      doctor → doutor
+    </p>
+    <p
+      className="outText different"
+    >
+      focus → focus
+    </p>
+    <p
+      className="outText"
+    >
+      jocus → jocus
+    </p>
+  </div>
+  <div
+    className="stats"
+  >
+    <p
+      className="statsText"
+    >
+      2 of 4 words changed (undefined unchanged); 2 of 4 words different from last time (2 the same)
+    </p>
+  </div>
+</div>
+`;
+
+exports[`MorphResults renders accurately with various props 3`] = `
+<div
+  className="results"
+>
+  <div
+    className="output"
+  >
+    <p
+      className="outText"
+    >
+      leitor ← lector
+    </p>
+    <p
+      className="outText"
+    >
+      doutor ← doctor
+    </p>
+    <p
+      className="outText"
+    >
+      focus ← focus
+    </p>
+    <p
+      className="outText"
+    >
+      jocus ← jocus
+    </p>
+  </div>
+  <div
+    className="stats"
+  >
+    <p
+      className="statsText"
+    >
+      2 of 4 words changed (undefined unchanged); 2 of 4 words different from last time (2 the same)
+    </p>
+  </div>
+</div>
+`;
