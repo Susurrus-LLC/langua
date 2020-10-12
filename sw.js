@@ -33,11 +33,11 @@ self.__precacheManifest = [
     "url": "framework-aad5b025b9e173e1e8c7.js"
   },
   {
-    "url": "app-6fb0f124c081dec2ded3.js"
+    "url": "app-607291253957ff8f0431.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "21234ef2cac6da1da5f239001d2374e1"
+    "revision": "ab1e48ba663365e17bc1cea83f710507"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js"
@@ -48,14 +48,14 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "1e64f6a028856b67d9e71ab0f63ead6a"
+    "revision": "4f9df94b4b21ef17d980121711bc96ff"
   },
   {
     "url": "polyfill-c45ff097f01a06e9e2c8.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "583fbea984cc9bb27228f375b4039ef1"
+    "revision": "2e022fdb501e79402362e308b27dba33"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -147,7 +147,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/langua/app-6fb0f124c081dec2ded3.js`))) {
+  if (!resources || !(await caches.match(`/langua/app-607291253957ff8f0431.js`))) {
     return await fetch(event.request)
   }
 
