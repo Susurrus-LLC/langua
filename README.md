@@ -1,7 +1,7 @@
 # Langua
 
 [![Build Status](https://travis-ci.com/Susurrus-LLC/langua.svg?branch=master)](https://travis-ci.com/Susurrus-LLC/langua)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/41a3616c2dfa484da0e2eb52d47ee444)](https://www.codacy.com/gh/Susurrus-LLC/langua/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Susurrus-LLC/langua&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/41a3616c2dfa484da0e2eb52d47ee444)](https://www.codacy.com/gh/Susurrus-LLC/langua/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Grade)
 [![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/41a3616c2dfa484da0e2eb52d47ee444)](https://www.codacy.com/app/Langua/langua?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Coverage)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=Susurrus-LLC/langua)](https://dependabot.com)
@@ -64,7 +64,7 @@ If you are installing Langua in a subfolder (e.g. `*.com/languages/`), you will 
 
 1. Download and unpack the [latest release](../../releases/latest).
 1. Install the dependencies with `yarn`.
-1. Open `gatsby-config.js` and change ``pathPrefix: `/langua`,`` to ``pathPrefix: `/yoursubfolder`,``.
+1. Open `gatsby-config.js` and change `` pathPrefix: `/langua`, `` to `` pathPrefix: `/yoursubfolder`, ``.
 1. Build the project with `yarn build`.
 1. Copy the contents of the resulting /build folder into the appropriate subfolder on your server. You're done!
 
@@ -74,7 +74,7 @@ If you are installing Langua in a website's root (e.g. a URL that ends in `.com`
 
 1. Download and unpack the [latest release](../../releases/latest).
 1. Install the dependencies with `yarn`.
-1. Open `gatsby-config.js` and change ``pathPrefix: `/langua`,`` to ```pathPrefix: ``,```.
+1. Open `gatsby-config.js` and change `` pathPrefix: `/langua`, `` to ` pathPrefix: ``, `.
 1. Build the project with `yarn build`.
 1. Copy the contents of the resulting /build folder into the root of your server. You're done!
 

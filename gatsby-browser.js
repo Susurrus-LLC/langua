@@ -9,7 +9,8 @@
 import { toast } from 'react-toastify'
 
 export const onServiceWorkerInstalled = () => {
-  toast.success('Langua has been successfully cached. You can now use it offline.',
+  toast.success(
+    'Langua has been successfully cached. You can now use it offline.',
     {
       autoClose: 5000,
       className: 'toast-cached',
@@ -37,13 +38,10 @@ export const onServiceWorkerActive = () => {
 }
 
 export const onServiceWorkerUpdateReady = () => {
-  toast.warn(
-    'An update is available; please refresh the page to load it.',
-    {
-      autoClose: false,
-      className: 'toast-update',
-      bodyClassName: 'toast-update-body',
-      progressClassName: 'toast-update-progress'
-    }
-  )
+  toast.warn('An update is available; please refresh the page to load it.', {
+    autoClose: false,
+    className: 'toast-update',
+    bodyClassName: 'toast-update-body',
+    progressClassName: 'toast-update-progress'
+  })
 }
