@@ -70,7 +70,7 @@ module.exports = {
         short_name: `Langua`,
         description: `A suite of language tools`,
         lang: `en-us`,
-        start_url: `/langua`,
+        start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#2f8f9d`,
         display: `standalone`,
