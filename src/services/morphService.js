@@ -86,7 +86,7 @@ class MorphService {
           response = content
         } else {
           // If the file's content does not contain valid Data, show an error
-          toast.info(`The content of ${file.name} is invalid.`, {
+          toast.warn(`The content of ${file.name} is invalid.`, {
             autoClose: 5000,
             className: 'toast-unopened',
             bodyClassName: 'toast-unopened-body',
@@ -100,7 +100,7 @@ class MorphService {
         }
       } else {
         // If incorrect filetype
-        toast.info('Wrong filetype selected.', {
+        toast.warn('Wrong filetype selected.', {
           autoClose: 5000,
           className: 'toast-unopened',
           bodyClassName: 'toast-unopened-body',
@@ -118,7 +118,7 @@ class MorphService {
       fileProcessor.openFile(file, processResults)
     } else {
       // If the browser can't access the File APIs, display a notification
-      toast.info('Your browser is unable to open files.', {
+      toast.warn('Your browser is unable to open files.', {
         autoClose: 5000,
         className: 'toast-unopened',
         bodyClassName: 'toast-unopened-body',

@@ -1,14 +1,17 @@
 @import ./functions
 @import ./variables.module
 
-.toast-update, .toast-unsaved, .toast-unopened
-  background-color: change-color(darken($red, 10%), $alpha: 0.9)
+.Toastify__toast--error
+  &.toast-update, &.toast-unsaved
+    background-color: change-color(darken($red, 10%), $alpha: 0.9)
 
-.toast-cached, .toast-opened
-  background-color: change-color(darken($blu, 10%), $alpha: 0.9)
+.Toastify__toast--success, .Toastify__toast--default, .Toastify__toast--info
+  &.toast-cached, &.toast-opened
+    background-color: change-color(darken($blu, 10%), $alpha: 0.9)
 
-.toast-offline
-  background-color: change-color(darken($ong, 10%), $alpha: 0.9)
+.Toastify__toast--warning
+  &.toast-offline, &.toast-unopened
+    background-color: change-color(darken($ong, 10%), $alpha: 0.9)
 
 *
   box-sizing: border-box
