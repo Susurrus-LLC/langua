@@ -68,10 +68,12 @@ module.exports = {
       options: {
         name: `Langua`,
         short_name: `Langua`,
+        description: `A suite of language tools`,
+        lang: `en-us`,
         start_url: `/langua`,
-        background_color: `#2f8f9d`,
+        background_color: `#ffffff`,
         theme_color: `#2f8f9d`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/favicon.png` // This path is relative to the root of the site.
       }
     }
