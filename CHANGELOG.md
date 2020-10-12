@@ -8,6 +8,9 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Changed 0.4.4
 
+- Re-enable offline support as a progressive web app.
+- Correct toast coloring
+
 ## [v0.4.3](https://github.com/Susurrus-LLC/langua/compare/v0.4.2...v0.4.3)
 
 ### Changed 0.4.3
