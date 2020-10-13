@@ -47,7 +47,7 @@
     "gatsby-plugin-offline": "^3.2.31",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-sass": "^2.3.16",
-    "gatsby-plugin-sharp": "^2.6.40",
+    "gatsby-plugin-sharp": "^2.6.42",
     "gatsby-source-filesystem": "^2.3.34",
     "gatsby-transformer-sharp": "^2.5.17",
     "js-schema": "^1.0.1",
