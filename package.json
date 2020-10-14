@@ -63,7 +63,7 @@
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.5.2",
-    "babel-preset-gatsby": "^0.5.13",
+    "babel-preset-gatsby": "^0.5.14",
     "codacy-coverage": "^3.4.0",
     "eslint": "^7.11.0",
     "eslint-config-react-app": "^5.2.1",
