@@ -55,7 +55,7 @@
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "react-toastify": "^6.0.9",
     "react-vis": "^1.11.7"
