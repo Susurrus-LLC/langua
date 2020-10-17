@@ -49,7 +49,7 @@
     "gatsby-plugin-sass": "^2.3.17",
     "gatsby-plugin-sharp": "^2.6.42",
     "gatsby-source-filesystem": "^2.3.35",
-    "gatsby-transformer-sharp": "^2.5.17",
+    "gatsby-transformer-sharp": "^2.5.18",
     "js-schema": "^1.0.1",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
