@@ -37,7 +37,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "1bfc9d7cad36d481fa97e78fd74eac04"
+    "revision": "7ca060815e3574a872b1d920f1a79152"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js"
@@ -48,10 +48,10 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "e0505faa25549a1a462da6752819dfb8"
+    "revision": "5d207ff3eb611a140f6ad8aa4c882ace"
   },
   {
-    "url": "polyfill-89b817c70dec095bd3d7.js"
+    "url": "polyfill-4ccbab5b158d67080b5c.js"
   },
   {
     "url": "manifest.webmanifest",
