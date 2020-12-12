@@ -1,6 +1,6 @@
 {
   "name": "langua",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "license": "AGPL-3.0",
   "author": "Ian A. Cook",
   "description": "A suite of language tools",
@@ -51,7 +51,7 @@
     "gatsby-source-filesystem": "^2.7.0",
     "gatsby-transformer-sharp": "^2.8.0",
     "js-schema": "^1.0.1",
-    "node-sass": "^5.0.0",
+    "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
