@@ -1,10 +1,5 @@
 language: node_js
-node_js:
-  - stable
-cache:
-  yarn: true
-  directories:
-    - node_modules
+node_js: stable
 script:
   - yarn test-with-coverage
   - yarn build
