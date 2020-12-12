@@ -18,7 +18,7 @@
     "develop": "gatsby develop",
     "format": "prettier-standard --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "yarn develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve --prefix-paths",
     "clean": "gatsby clean",
     "lintjs": "eslint src/**/*.js",
     "lintmd": "remark .",
