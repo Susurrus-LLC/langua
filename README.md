@@ -74,7 +74,7 @@ If you are installing Langua in a website's root (e.g. a URL that ends in `.com`
 
 1. Download and unpack the [latest release](../../releases/latest).
 1. Install the dependencies with `yarn`.
-1. Open `gatsby-config.js` and change `` pathPrefix: `/langua`, `` to ` pathPrefix: ``, `.
+1. Open `gatsby-config.js` and change `` pathPrefix: `/langua`, `` to ` pathPrefix: ``, `, then remove the `--prefix-paths` option from the `build` and `serve` commands.
 1. Build the project with `yarn build`.
 1. Copy the contents of the resulting /build folder into the root of your server. You're done!
 
