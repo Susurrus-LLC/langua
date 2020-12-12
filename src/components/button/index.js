@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import styles from './button.module.sass'
+import { Link } from 'gatsby'
 
 const Button = ({
   ver,
@@ -12,6 +13,7 @@ const Button = ({
   role,
   route,
   link,
+  external,
   children
 }) => {
   const assignClasses = () => {
@@ -29,15 +31,27 @@ const Button = ({
   }
 
   if (link) {
-    return (
-      <a
-        href={`/${route}`}
-        id={id}
-        className={`${assignClasses()} ${styles.buttonLink}`}
-      >
-        {children}
-      </a>
-    )
+    if (external) {
+      return (
+        <a
+          href={`/${route}`}
+          id={id}
+          className={`${assignClasses()} ${styles.buttonLink}`}
+        >
+          {children}
+        </a>
+      )
+    } else {
+      return (
+        <Link
+          to={`/${route}`}
+          id={id}
+          className={`${assignClasses()} ${styles.buttonLink}`}
+        >
+          {children}
+        </Link>
+      )
+    }
   } else {
     return (
       <button
@@ -63,6 +77,7 @@ Button.propTypes = {
   classes: PropTypes.object,
   route: PropTypes.string,
   link: PropTypes.bool,
+  external: PropTypes.bool,
   children: PropTypes.string
 }
 
