@@ -37,7 +37,7 @@
     ]
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "classnames": "^2.2.6",
     "file-saver": "^2.0.5",
     "gatsby": "^2.30.1",
