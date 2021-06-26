@@ -67,7 +67,7 @@
     "codacy-coverage": "^3.4.0",
     "eslint": "^7.26.0",
     "eslint-config-react-app": "^6.0.0",
-    "eslint-config-standard": "^16.0.2",
+    "eslint-config-standard": "^16.0.3",
     "eslint-plugin-flowtype": "^5.7.2",
     "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-jest": "^24.3.6",
