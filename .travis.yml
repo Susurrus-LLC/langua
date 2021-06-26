@@ -3,6 +3,10 @@ node_js: stable
 script:
   - yarn test-with-coverage
   - yarn build
+before_script:
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh) download
+after_success:
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh)
 deploy:
   provider: pages
   token: $github_token
