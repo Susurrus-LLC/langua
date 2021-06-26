@@ -16,6 +16,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 - Re-enable offline support as a progressive web app.
 - Correct toast coloring
+- Remove Travis Buddy templates (service discontinued)
 - Update dependencies
 
 ## [v0.4.3](https://github.com/Susurrus-LLC/langua/compare/v0.4.2...v0.4.3)
