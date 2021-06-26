@@ -4,12 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format of this changelog is based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased](https://github.com/Susurrus-LLC/langua/compare/v0.4.3...HEAD)
+## [Unreleased](https://github.com/Susurrus-LLC/langua/compare/v0.4.4...HEAD)
+
+### Changed 0.4.5
+
+- 
+
+## [v0.4.4](https://github.com/Susurrus-LLC/langua/compare/v0.4.3...v0.4.4)
 
 ### Changed 0.4.4
 
 - Re-enable offline support as a progressive web app.
 - Correct toast coloring
+- Update dependencies
 
 ## [v0.4.3](https://github.com/Susurrus-LLC/langua/compare/v0.4.2...v0.4.3)
 
