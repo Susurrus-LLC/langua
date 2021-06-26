@@ -24,6 +24,7 @@ export const onServiceWorkerInstalled = () => {
   )
 }
 
+/* Hide this notice
 export const onServiceWorkerActive = () => {
   toast.info('Langua is up-to-date and loading from your cache.', {
     autoClose: 3000,
@@ -36,6 +37,7 @@ export const onServiceWorkerActive = () => {
     'This web app is being served cache-first by a service worker. To learn more, visit https://goo.gl/SC7cgQ'
   )
 }
+*/
 
 export const onServiceWorkerUpdateReady = () => {
   toast.warn('An update is available; please refresh the page to load it.', {
