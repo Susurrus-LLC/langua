@@ -20,7 +20,7 @@ export const PureHome = ({ data }) => {
   return (
     <Layout>
       <SEO title='Home' />
-      <p className={styles.siteDescription}>
+      <p>
         Langua is a suite of language tools that can be used for testing,
         experimentation, learning, analysis, or creation.
       </p>
