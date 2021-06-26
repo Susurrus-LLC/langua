@@ -37,6 +37,13 @@ describe('Header', () => {
     expect(tree).toMatchSnapshot()
 
     tree = renderer.create(
+      <Button link external ver='neutral' route='test'>
+        Link
+      </Button>
+    )
+    expect(tree).toMatchSnapshot()
+
+    tree = renderer.create(
       <Button small onClick={jest.fn()}>
         Small Function
       </Button>

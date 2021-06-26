@@ -5,3 +5,15 @@ exports[`FrequenResults renders accurately with various props 1`] = `
   className="results"
 />
 `;
+
+exports[`FrequenResults renders accurately with various props 2`] = `
+<div
+  className="results"
+/>
+`;
+
+exports[`FrequenResults renders accurately with various props 3`] = `
+<div
+  className="results"
+/>
+`;

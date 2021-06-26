@@ -71,11 +71,39 @@ describe('FrequenResults', () => {
   })
 
   it('renders accurately with various props', () => {
-    const tree = renderer
+    var tree = renderer
       .create(
         <FrequenResults
           styles={styles}
           filterSeg='all'
+          analyzed={false} // Need to figure out how to mock the results and check the graph
+          onChangeInput={jest.fn()}
+          onMouseOver={jest.fn()}
+          onMouseOut={jest.fn()}
+        />
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+
+    tree = renderer
+      .create(
+        <FrequenResults
+          styles={styles}
+          filterSeg='consonants'
+          analyzed={false} // Need to figure out how to mock the results and check the graph
+          onChangeInput={jest.fn()}
+          onMouseOver={jest.fn()}
+          onMouseOut={jest.fn()}
+        />
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+
+    tree = renderer
+      .create(
+        <FrequenResults
+          styles={styles}
+          filterSeg='vowels'
           analyzed={false} // Need to figure out how to mock the results and check the graph
           onChangeInput={jest.fn()}
           onMouseOver={jest.fn()}

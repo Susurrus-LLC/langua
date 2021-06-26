@@ -29,5 +29,8 @@ describe('fileProcessor', () => {
     expect(
       fileProcessor.filename('tree', fileProcessor.filetype('tree'))
     ).toEqual('LanguaTree.lngt')
+    expect(
+      fileProcessor.filename('default', fileProcessor.filetype('default'))
+    ).toEqual('LanguaDefault.lnga')
   })
 })

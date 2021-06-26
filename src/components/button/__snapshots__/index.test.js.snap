@@ -38,6 +38,15 @@ exports[`Header renders accurately with various props and children 4`] = `
 `;
 
 exports[`Header renders accurately with various props and children 5`] = `
+<a
+  className="btn neutral buttonLink"
+  href="/test"
+>
+  Link
+</a>
+`;
+
+exports[`Header renders accurately with various props and children 6`] = `
 <button
   className="btn small"
   onClick={[MockFunction]}
