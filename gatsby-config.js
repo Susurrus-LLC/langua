@@ -7,7 +7,7 @@ module.exports = {
     authorURL: `https://github.com/nai888`,
     appGhURL: `https://github.com/susurrus-llc/langua`,
     canonical: `https://susurrus-llc.github.io/langua/`,
-    version: `0.4.4`,
+    version: `0.4.5`,
     toolInfo: {
       gen: {
         title: `Gen`,
