@@ -10,5 +10,3 @@ deploy:
   edge: true #opt in dpl v2
   on:
     branch: master
-notifications:
-  webhooks: https://www.travisbuddy.com/
