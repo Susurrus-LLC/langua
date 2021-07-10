@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import { PureTreeHelp as TreeHelp } from '.'
+import TreeHelp from '.'
 
 describe('TreeHelp', () => {
   const data = {

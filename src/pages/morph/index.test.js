@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import { PureMorph as Morph } from '.'
+import Morph from '.'
 
 describe('Morph', () => {
   const data = {

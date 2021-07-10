@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Tool from '../../components/tool'
 
@@ -9,8 +9,24 @@ import frequenService from '../../services/frequenService'
 
 import styles from './frequen.module.sass'
 
-export const PureFrequen = ({ data }) => {
-  const toolInfo = data?.site?.siteMetadata?.toolInfo?.frequen
+export const pageQuery = graphql`
+query FrequenToolQuery {
+  site {
+    siteMetadata {
+      toolInfo {
+        frequen {
+          title
+          link
+          description
+        }
+      }
+    }
+  }
+}
+`
+
+const Frequen = props => {
+  const toolInfo = props.data?.site?.siteMetadata?.toolInfo?.frequen
 
   // State
   const [corpus, setCorpus] = useState(frequenService.getData().corpus)
@@ -160,26 +176,6 @@ export const PureFrequen = ({ data }) => {
       />
     </Tool>
   )
-}
-
-const Frequen = props => {
-  const data = useStaticQuery(graphql`
-    query FrequenToolQuery {
-      site {
-        siteMetadata {
-          toolInfo {
-            frequen {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureFrequen {...props} data={data} />
 }
 
 export default Frequen

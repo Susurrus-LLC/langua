@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import { PureLex as Lex } from '.'
+import Lex from '.'
 
 describe('Lex', () => {
   const data = {

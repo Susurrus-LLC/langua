@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import { PureGenHelp as GenHelp } from '.'
+import GenHelp from '.'
 
 describe('GenHelp', () => {
   const data = {

@@ -1,10 +1,27 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Help from '../../../components/help'
 
-export const PureDerivHelp = ({ data }) => {
-  const metadata = data?.site?.siteMetadata
+export const pageQuery = graphql`
+    query DerivHelpQuery {
+      site {
+        siteMetadata {
+          title
+          toolInfo {
+            deriv {
+              title
+              link
+              description
+            }
+          }
+        }
+      }
+    }
+  `
+
+const DerivHelp = props => {
+  const metadata = props.data?.site?.siteMetadata
   const toolInfo = metadata?.toolInfo?.deriv
 
   return (
@@ -78,27 +95,6 @@ export const PureDerivHelp = ({ data }) => {
       </p>
     </Help>
   )
-}
-
-const DerivHelp = props => {
-  const data = useStaticQuery(graphql`
-    query DerivHelpQuery {
-      site {
-        siteMetadata {
-          title
-          toolInfo {
-            deriv {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureDerivHelp {...props} data={data} />
 }
 
 export default DerivHelp

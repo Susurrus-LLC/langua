@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import { PureTree as Tree } from '.'
+import Tree from '.'
 
 describe('Tree', () => {
   const data = {

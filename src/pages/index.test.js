@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import { PureHome as Home } from '.'
+import Home from '.'
 
 describe('Frequen', () => {
   const data = {

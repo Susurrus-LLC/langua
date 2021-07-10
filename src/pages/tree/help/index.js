@@ -1,11 +1,28 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Notice from '../../../components/notice'
 import Help from '../../../components/help'
 
-export const PureTreeHelp = ({ data }) => {
-  const metadata = data?.site?.siteMetadata
+export const pageQuery = graphql`
+query TreeHelpQuery {
+  site {
+    siteMetadata {
+      title
+      toolInfo {
+        tree {
+          title
+          link
+          description
+        }
+      }
+    }
+  }
+}
+`
+
+const TreeHelp = props => {
+  const metadata = props.data?.site?.siteMetadata
   const toolInfo = metadata?.toolInfo?.tree
 
   return (
@@ -17,27 +34,6 @@ export const PureTreeHelp = ({ data }) => {
       </h3>
     </Help>
   )
-}
-
-const TreeHelp = props => {
-  const data = useStaticQuery(graphql`
-    query TreeHelpQuery {
-      site {
-        siteMetadata {
-          title
-          toolInfo {
-            tree {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureTreeHelp {...props} data={data} />
 }
 
 export default TreeHelp

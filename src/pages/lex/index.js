@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Notice from '../../components/notice'
 import Tool from '../../components/tool'
@@ -9,8 +9,24 @@ import LexResults from '../../pageComponents/lex/lexResults'
 
 // import styles from './lex.module.sass'
 
-export const PureLex = ({ data }) => {
-  const toolInfo = data?.site?.siteMetadata?.toolInfo?.lex
+export const pageQuery = graphql`
+query LexToolQuery {
+  site {
+    siteMetadata {
+      toolInfo {
+        lex {
+          title
+          link
+          description
+        }
+      }
+    }
+  }
+}
+`
+
+const Lex = props => {
+  const toolInfo = props.data?.site?.siteMetadata?.toolInfo?.lex
 
   return (
     <Tool toolInfo={toolInfo}>
@@ -19,26 +35,6 @@ export const PureLex = ({ data }) => {
       <LexResults />
     </Tool>
   )
-}
-
-const Lex = props => {
-  const data = useStaticQuery(graphql`
-    query LexToolQuery {
-      site {
-        siteMetadata {
-          toolInfo {
-            lex {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureLex {...props} data={data} />
 }
 
 export default Lex

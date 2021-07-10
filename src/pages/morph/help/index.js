@@ -1,11 +1,28 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Notice from '../../../components/notice'
 import Help from '../../../components/help'
 
-export const PureMorphHelp = ({ data }) => {
-  const metadata = data?.site?.siteMetadata
+export const pageQuery = graphql`
+query MorphHelpQuery {
+  site {
+    siteMetadata {
+      title
+      toolInfo {
+        morph {
+          title
+          link
+          description
+        }
+      }
+    }
+  }
+}
+`
+
+const MorphHelp = props => {
+  const metadata = props.data?.site?.siteMetadata
   const toolInfo = metadata?.toolInfo?.morph
 
   return (
@@ -31,27 +48,6 @@ export const PureMorphHelp = ({ data }) => {
       </p>
     </Help>
   )
-}
-
-const MorphHelp = props => {
-  const data = useStaticQuery(graphql`
-    query MorphHelpQuery {
-      site {
-        siteMetadata {
-          title
-          toolInfo {
-            morph {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureMorphHelp {...props} data={data} />
 }
 
 export default MorphHelp

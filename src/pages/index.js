@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -7,7 +7,49 @@ import HomePanel from '../components/homePanel'
 
 import styles from './home.module.sass'
 
-export const PureHome = ({ data }) => {
+export const pageQuery = graphql`
+query HomeToolQuery {
+  site {
+    siteMetadata {
+      title
+      toolInfo {
+        gen {
+          title
+          link
+          description
+        }
+        frequen {
+          title
+          link
+          description
+        }
+        deriv {
+          title
+          link
+          description
+        }
+        lex {
+          title
+          link
+          description
+        }
+        morph {
+          title
+          link
+          description
+        }
+        tree {
+          title
+          link
+          description
+        }
+      }
+    }
+  }
+}
+`
+
+const Home = ({ data }) => {
   const metadata = data?.site?.siteMetadata
   const siteTitle = metadata?.title
   const genInfo = metadata?.toolInfo?.gen
@@ -67,52 +109,6 @@ export const PureHome = ({ data }) => {
       </p>
     </Layout>
   )
-}
-
-const Home = props => {
-  const data = useStaticQuery(graphql`
-    query HomeToolQuery {
-      site {
-        siteMetadata {
-          title
-          toolInfo {
-            gen {
-              title
-              link
-              description
-            }
-            frequen {
-              title
-              link
-              description
-            }
-            deriv {
-              title
-              link
-              description
-            }
-            lex {
-              title
-              link
-              description
-            }
-            morph {
-              title
-              link
-              description
-            }
-            tree {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureHome {...props} data={data} />
 }
 
 export default Home

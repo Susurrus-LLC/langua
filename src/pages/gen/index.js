@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Tool from '../../components/tool'
 
@@ -9,8 +9,24 @@ import genService from '../../services/genService'
 
 import styles from './gen.module.sass'
 
-export const PureGen = ({ data }) => {
-  const toolInfo = data?.site?.siteMetadata?.toolInfo?.gen
+export const pageQuery = graphql`
+query GenToolQuery {
+  site {
+    siteMetadata {
+      toolInfo {
+        gen {
+          title
+          link
+          description
+        }
+      }
+    }
+  }
+}
+`
+
+const Gen = props => {
+  const toolInfo = props.data?.site?.siteMetadata?.toolInfo?.gen
 
   // State
 
@@ -141,26 +157,6 @@ export const PureGen = ({ data }) => {
       />
     </Tool>
   )
-}
-
-const Gen = props => {
-  const data = useStaticQuery(graphql`
-    query GenToolQuery {
-      site {
-        siteMetadata {
-          toolInfo {
-            gen {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureGen {...props} data={data} />
 }
 
 export default Gen

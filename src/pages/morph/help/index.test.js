@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import { PureMorphHelp as MorphHelp } from '.'
+import MorphHelp from '.'
 
 describe('MorphHelp', () => {
   const data = {

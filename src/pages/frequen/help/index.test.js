@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import { PureFrequenHelp as FrequenHelp } from '.'
+import FrequenHelp from '.'
 
 describe('Frequen', () => {
   const data = {

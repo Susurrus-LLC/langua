@@ -1,11 +1,28 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Notice from '../../../components/notice'
 import Help from '../../../components/help'
 
-export const PureLexHelp = ({ data }) => {
-  const metadata = data?.site?.siteMetadata
+export const pageQuery = graphql`
+query LexHelpQuery {
+  site {
+    siteMetadata {
+      title
+      toolInfo {
+        lex {
+          title
+          link
+          description
+        }
+      }
+    }
+  }
+}
+`
+
+const LexHelp = props => {
+  const metadata = props.data?.site?.siteMetadata
   const toolInfo = metadata?.toolInfo?.lex
 
   return (
@@ -17,27 +34,6 @@ export const PureLexHelp = ({ data }) => {
       </h3>
     </Help>
   )
-}
-
-const LexHelp = props => {
-  const data = useStaticQuery(graphql`
-    query LexHelpQuery {
-      site {
-        siteMetadata {
-          title
-          toolInfo {
-            lex {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureLexHelp {...props} data={data} />
 }
 
 export default LexHelp

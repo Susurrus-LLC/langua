@@ -1,11 +1,28 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Notice from '../../../components/notice'
 import Help from '../../../components/help'
 
-export const PureGenHelp = ({ data }) => {
-  const metadata = data?.site?.siteMetadata
+export const pageQuery = graphql`
+query GenHelpQuery {
+  site {
+    siteMetadata {
+      title
+      toolInfo {
+        gen {
+          title
+          link
+          description
+        }
+      }
+    }
+  }
+}
+`
+
+const GenHelp = props => {
+  const metadata = props.data?.site?.siteMetadata
   const toolInfo = metadata?.toolInfo?.gen
 
   return (
@@ -155,27 +172,6 @@ export const PureGenHelp = ({ data }) => {
       </p>
     </Help>
   )
-}
-
-const GenHelp = props => {
-  const data = useStaticQuery(graphql`
-    query GenHelpQuery {
-      site {
-        siteMetadata {
-          title
-          toolInfo {
-            gen {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureGenHelp {...props} data={data} />
 }
 
 export default GenHelp

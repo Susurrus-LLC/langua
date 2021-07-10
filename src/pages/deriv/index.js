@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Tool from '../../components/tool'
 
@@ -9,8 +9,24 @@ import derivService from '../../services/derivService'
 
 import styles from './deriv.module.sass'
 
-export const PureDeriv = ({ data }) => {
-  const toolInfo = data?.site?.siteMetadata?.toolInfo?.deriv
+export const pageQuery = graphql`
+query DerivToolQuery {
+  site {
+    siteMetadata {
+      toolInfo {
+        deriv {
+          title
+          link
+          description
+        }
+      }
+    }
+  }
+}
+`
+
+const Deriv = props => {
+  const toolInfo = props.data?.site?.siteMetadata?.toolInfo?.deriv
 
   // State
 
@@ -117,26 +133,6 @@ export const PureDeriv = ({ data }) => {
       <DerivResults styles={styles} results={results} />
     </Tool>
   )
-}
-
-const Deriv = props => {
-  const data = useStaticQuery(graphql`
-    query DerivToolQuery {
-      site {
-        siteMetadata {
-          toolInfo {
-            deriv {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureDeriv {...props} data={data} />
 }
 
 export default Deriv

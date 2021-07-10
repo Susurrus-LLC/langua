@@ -10,8 +10,24 @@ import morphService from '../../services/morphService'
 
 import styles from './morph.module.sass'
 
-export const PureMorph = ({ data }) => {
-  const toolInfo = data?.site?.siteMetadata?.toolInfo?.morph
+export const pageQuery = graphql`
+query MorphToolQuery {
+  site {
+    siteMetadata {
+      toolInfo {
+        morph {
+          title
+          link
+          description
+        }
+      }
+    }
+  }
+}
+`
+
+const Morph = props => {
+  const toolInfo = props.data?.site?.siteMetadata?.toolInfo?.morph
 
   // State
 
@@ -186,26 +202,6 @@ export const PureMorph = ({ data }) => {
       />
     </Tool>
   )
-}
-
-const Morph = props => {
-  const data = useStaticQuery(graphql`
-    query MorphToolQuery {
-      site {
-        siteMetadata {
-          toolInfo {
-            morph {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureMorph {...props} data={data} />
 }
 
 export default Morph

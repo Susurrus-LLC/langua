@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Notice from '../../components/notice'
 import Tool from '../../components/tool'
@@ -9,8 +9,24 @@ import TreeResults from '../../pageComponents/tree/treeResults'
 
 // import styles from './tree.module.sass'
 
-export const PureTree = ({ data }) => {
-  const toolInfo = data?.site?.siteMetadata?.toolInfo?.tree
+export const pageQuery = graphql`
+query TreeToolQuery {
+  site {
+    siteMetadata {
+      toolInfo {
+        tree {
+          title
+          link
+          description
+        }
+      }
+    }
+  }
+}
+`
+
+const Tree = props => {
+  const toolInfo = props.data?.site?.siteMetadata?.toolInfo?.tree
 
   return (
     <Tool toolInfo={toolInfo}>
@@ -19,26 +35,6 @@ export const PureTree = ({ data }) => {
       <TreeResults />
     </Tool>
   )
-}
-
-const Tree = props => {
-  const data = useStaticQuery(graphql`
-    query TreeToolQuery {
-      site {
-        siteMetadata {
-          toolInfo {
-            tree {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureTree {...props} data={data} />
 }
 
 export default Tree

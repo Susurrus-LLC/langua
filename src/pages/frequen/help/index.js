@@ -1,11 +1,28 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Notice from '../../../components/notice'
 import Help from '../../../components/help'
 
-export const PureFrequenHelp = ({ data }) => {
-  const metadata = data?.site?.siteMetadata
+export const pageQuery = graphql`
+query FrequenHelpQuery {
+  site {
+    siteMetadata {
+      title
+      toolInfo {
+        frequen {
+          title
+          link
+          description
+        }
+      }
+    }
+  }
+}
+`
+
+const FrequenHelp = props => {
+  const metadata = props.data?.site?.siteMetadata
   const toolInfo = metadata?.toolInfo?.frequen
 
   return (
@@ -94,27 +111,6 @@ export const PureFrequenHelp = ({ data }) => {
       </p>
     </Help>
   )
-}
-
-const FrequenHelp = props => {
-  const data = useStaticQuery(graphql`
-    query FrequenHelpQuery {
-      site {
-        siteMetadata {
-          title
-          toolInfo {
-            frequen {
-              title
-              link
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureFrequenHelp {...props} data={data} />
 }
 
 export default FrequenHelp

@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import { PureDeriv as Deriv } from '.'
+import Deriv from '.'
 
 describe('Deriv', () => {
   const data = {

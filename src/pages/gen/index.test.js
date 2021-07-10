@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import renderer from 'react-test-renderer'
 
-import { PureGen as Gen } from '.'
+import Gen from '.'
 
 describe('Gen', () => {
   const data = {
