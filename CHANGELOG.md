@@ -6,11 +6,21 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ## [Unreleased](https://github.com/Susurrus-LLC/langua/compare/v0.4.4...HEAD)
 
+### Added 0.4.5
+
+- Added Codacy code coverage reporting
+
 ### Changed 0.4.5
 
-- 
+- Use pageQueries instead of exporting pages both with and without data
+- Update dependencies
+- Switch testing environment from Node to jsdom
 
-## [v0.4.4](https://github.com/Susurrus-LLC/langua/compare/v0.4.3...v0.4.4)
+### Removed 0.4.5
+
+- Removed Travis Buddy
+
+## [v0.4.4](https://github.com/Susurrus-LLC/langua/compare/v0.4.3...v0.4.4) - 2021-06-26
 
 ### Changed 0.4.4
 
@@ -19,14 +29,14 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Remove Travis Buddy templates (service discontinued)
 - Update dependencies
 
-## [v0.4.3](https://github.com/Susurrus-LLC/langua/compare/v0.4.2...v0.4.3)
+## [v0.4.3](https://github.com/Susurrus-LLC/langua/compare/v0.4.2...v0.4.3) - 2020-10-11
 
 ### Changed 0.4.3
 
 - Move FontAwesome from page head to package.json.
 - Convert site from pure React to Gatsby
 
-## [v0.4.2](https://github.com/Susurrus-LLC/langua/compare/v0.4.1...v0.4.2)
+## [v0.4.2](https://github.com/Susurrus-LLC/langua/compare/v0.4.1...v0.4.2) - 2019-04-22
 
 ### Added 0.4.2
 
