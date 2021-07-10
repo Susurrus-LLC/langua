@@ -8,7 +8,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Added 0.4.5
 
-- Added Codacy code coverage reporting
+- Add Codacy code coverage reporting
 
 ### Changed 0.4.5
 
@@ -18,7 +18,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 
 ### Removed 0.4.5
 
-- Removed Travis Buddy
+- Remove Travis Buddy from .travis.yml
 
 ## [v0.4.4](https://github.com/Susurrus-LLC/langua/compare/v0.4.3...v0.4.4) - 2021-06-26
 
