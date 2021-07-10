@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { defData as derivData } from '../data/deriv'
 import { defData as frequenData } from '../data/frequen'
 import { defData as genData } from '../data/gen'

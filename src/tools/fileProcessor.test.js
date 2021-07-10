@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import fileProcessor from './fileProcessor'
 
 describe('fileProcessor', () => {
