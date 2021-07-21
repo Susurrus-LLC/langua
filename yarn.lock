@@ -7120,19 +7120,19 @@ gatsby-plugin-sass@^4.9.0:
     resolve-url-loader "^3.1.2"
     sass-loader "^10.1.1"
 
-gatsby-plugin-sharp@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-3.9.0.tgz#4dfa61be3907f6e5abc262e41d55be265e0a225f"
-  integrity sha512-DHaX390FyPVCVzVy+ALrzbMf7hjMHsIhaQu98bzsodOJ+0bispyh/Qohxq+i8Qeexy8+sy2mRrlDR3ahM5Yb6w==
+gatsby-plugin-sharp@^3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-3.10.0.tgz#85402d1518c5327b5ba7f3b810816c3f48b54564"
+  integrity sha512-jX+4OFdigQd7M3aG+JonTSSr1SBfSGUFalghB3i/fixeQhAvGanE+N1EYx5yUvO0xYeW/LMLauEyGQQA8nOkhA==
   dependencies:
-    "@babel/runtime" "^7.14.0"
+    "@babel/runtime" "^7.14.6"
     async "^3.2.0"
     bluebird "^3.7.2"
     filenamify "^4.2.0"
     fs-extra "^9.1.0"
-    gatsby-core-utils "^2.9.0"
-    gatsby-plugin-utils "^1.9.0"
-    gatsby-telemetry "^2.9.0"
+    gatsby-core-utils "^2.10.0"
+    gatsby-plugin-utils "^1.10.0"
+    gatsby-telemetry "^2.10.0"
     got "^10.7.0"
     imagemin "^7.0.1"
     imagemin-mozjpeg "^9.0.0"
@@ -7143,7 +7143,7 @@ gatsby-plugin-sharp@^3.9.0:
     probe-image-size "^6.0.0"
     progress "^2.0.3"
     semver "^7.3.4"
-    sharp "^0.28.0"
+    sharp "^0.28.3"
     svgo "1.3.2"
     uuid "3.4.0"
 
@@ -7257,7 +7257,7 @@ gatsby-source-filesystem@^3.9.0:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-telemetry@^2.10.0, gatsby-telemetry@^2.9.0:
+gatsby-telemetry@^2.10.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-2.10.0.tgz#ebc7e74e10d1ddc88aa69c8288eb3984c58a8fa7"
   integrity sha512-uon+KRo6NQqkc6Qk/QTw+RmaxIjFFIK7cSU8XXE3y353il2Tk04Kxct2hMHn8Zdl4TYyKla1T5UIvVV/EfpBcg==
@@ -14266,7 +14266,7 @@ shallow-compare@^1.2.2:
   resolved "https://registry.yarnpkg.com/shallow-compare/-/shallow-compare-1.2.2.tgz#fa4794627bf455a47c4f56881d8a6132d581ffdb"
   integrity sha512-LUMFi+RppPlrHzbqmFnINTrazo0lPNwhcgzuAXVVcfy/mqPDrQmHAyz5bvV0gDAuRFrk804V0HpQ6u9sZ0tBeg==
 
-sharp@^0.28.0, sharp@^0.28.1:
+sharp@^0.28.0, sharp@^0.28.1, sharp@^0.28.3:
   version "0.28.3"
   resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.28.3.tgz#ecd74cefd020bee4891bb137c9850ee2ce277a8b"
   integrity sha512-21GEP45Rmr7q2qcmdnjDkNP04Ooh5v0laGS5FDpojOO84D1DJwUijLiSq8XNNM6e8aGXYtoYRh3sVNdm8NodMA==
