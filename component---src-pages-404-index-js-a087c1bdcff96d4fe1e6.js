@@ -1,0 +1,2 @@
+(self.webpackChunklangua=self.webpackChunklangua||[]).push([[911],{3673:function(e,t,n){"use strict";n.r(t);var l=n(7294),a=n(5444),u=n(9397),o=n(2789);t.default=function(){return l.createElement(u.Z,null,l.createElement(o.Z,{title:"404: Not found"}),l.createElement("h1",null,"404: Not Found"),l.createElement("p",null,"Uh oh, you seem to have become lost… Try heading back"," ",l.createElement(a.Link,{to:"/"},"Home"),"."))}}}]);
+//# sourceMappingURL=component---src-pages-404-index-js-a087c1bdcff96d4fe1e6.js.map
