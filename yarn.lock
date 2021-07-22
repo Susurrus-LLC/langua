@@ -7074,10 +7074,10 @@ gatsby-plugin-sass@^4.10.0:
     resolve-url-loader "^3.1.2"
     sass-loader "^10.1.1"
 
-gatsby-plugin-sharp@^3.10.1:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-3.10.1.tgz#bcfe088a997a90e2cac15229806ac17de46312e8"
-  integrity sha512-Nn4SuNPK9mG6Q0PX5E3Eb2mI2OhBU0jqiGyVgaPUwRQWElvQB+2qbJoBRvjW1pt5lbAX2tQqbG7Gs2s51RP44w==
+gatsby-plugin-sharp@^3.10.2:
+  version "3.10.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-3.10.2.tgz#0354d5dea20cd21ac607f0a022cde167bac97c21"
+  integrity sha512-aaoxfsYgfS2LqGLxLHit9fRAH8mbpltyEni+l9SYMUwjfZAJHFnY0tqstsIYijMZyeatAzm3UWt7lQnEUEtGTg==
   dependencies:
     "@babel/runtime" "^7.14.6"
     async "^3.2.0"
