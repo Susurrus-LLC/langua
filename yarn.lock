@@ -1076,10 +1076,10 @@
     core-js-pure "^3.15.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.14.6", "@babel/runtime@^7.3.4", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
-  version "7.14.8"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.8.tgz#7119a56f421018852694290b9f9148097391b446"
-  integrity sha512-twj3L8Og5SaCRCErB4x4ajbvBIVV77CGeFglHpeg5WC5FF8TZzBWXtTJ4MqaD9QszLYTtr+IsaAL2rEUevb+eg==
+"@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.14.6", "@babel/runtime@^7.14.8", "@babel/runtime@^7.3.4", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+  version "7.15.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.15.3.tgz#2e1c2880ca118e5b2f9988322bd8a7656a32502b"
+  integrity sha512-OvwMLqNXkCXSz1kSm58sEsNuhqOx/fKpnUnKnFB5v8uDda5bLNEHNgKPvhDN6IU0LDcnHQ90LlJ0Q6jnyBSIBA==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -7339,18 +7339,18 @@ gatsby-telemetry@^2.11.0:
     node-fetch "^2.6.1"
     uuid "3.4.0"
 
-gatsby-transformer-sharp@^3.11.0:
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-3.11.0.tgz#5bac77192cfbaa3cdadf7aacdbb78a4bcad87ea0"
-  integrity sha512-JOEyfYTqoUXOUAxxcFBQF40U5OoHVk6ZZQT2Ij8Zh6GPNEosdIoT4GGI5BlDbio4L2duiG/Gx71AdXHuPjFZww==
+gatsby-transformer-sharp@^3.12.0:
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-3.12.0.tgz#ee34204005cab2b15da2681474eafc1e21680080"
+  integrity sha512-3ptK/ItEMp8TYOHdoYNOOQk+ZST+Bu7Ieb+GA/2HBFMAACMrcnvJozwNMqbJwvIRgNpO3UbnImCvoy7VQ5BDMA==
   dependencies:
-    "@babel/runtime" "^7.14.6"
+    "@babel/runtime" "^7.14.8"
     bluebird "^3.7.2"
     common-tags "^1.8.0"
     fs-extra "^9.1.0"
     potrace "^2.1.8"
     probe-image-size "^6.0.0"
-    semver "^7.3.4"
+    semver "^7.3.5"
     sharp "^0.28.3"
 
 gatsby-worker@^0.2.0:
