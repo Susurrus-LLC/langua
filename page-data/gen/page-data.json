@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-pages-gen-index-js","path":"/gen/","result":{"data":{"site":{"siteMetadata":{"toolInfo":{"gen":{"title":"Gen","link":"gen","description":"is a tool for automatically building a set of words based on arbitrary rules of phonotactics. This can be used to create a dummy vocabulary for linguistic experimentation, to generate words or names for a naming language in a work of fantasy or science fiction, or as the basis for building the vocabulary of a constructed language."}}}}},"pageContext":{}},"staticQueryHashes":["2732334453","326269449","4051994697","841973984"]}
+{
+    "componentChunkName": "component---src-pages-gen-index-js",
+    "path": "/gen/",
+    "result": {"data":{"site":{"siteMetadata":{"toolInfo":{"gen":{"title":"Gen","link":"gen","description":"is a tool for automatically building a set of words based on arbitrary rules of phonotactics. This can be used to create a dummy vocabulary for linguistic experimentation, to generate words or names for a naming language in a work of fantasy or science fiction, or as the basis for building the vocabulary of a constructed language."}}}}},"pageContext":{}},
+    "staticQueryHashes": ["2732334453","326269449","4051994697","841973984"]}

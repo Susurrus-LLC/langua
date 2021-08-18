@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-pages-morph-help-index-js","path":"/morph/help/","result":{"data":{"site":{"siteMetadata":{"title":"Langua","toolInfo":{"morph":{"title":"Morph","link":"morph","description":"is a tool for modeling historical sound change according to arbitrary rules of phonetic change."}}}}},"pageContext":{}},"staticQueryHashes":["326269449","4051994697","4063318711","841973984"]}
+{
+    "componentChunkName": "component---src-pages-morph-help-index-js",
+    "path": "/morph/help/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Langua","toolInfo":{"morph":{"title":"Morph","link":"morph","description":"is a tool for modeling historical sound change according to arbitrary rules of phonetic change."}}}}},"pageContext":{}},
+    "staticQueryHashes": ["326269449","4051994697","4063318711","841973984"]}

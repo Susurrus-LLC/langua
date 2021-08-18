@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-pages-lex-index-js","path":"/lex/","result":{"data":{"site":{"siteMetadata":{"toolInfo":{"lex":{"title":"Lex","link":"lex","description":"is a tool for building a lexicon or dictionary for a language and exporting it to various formats."}}}}},"pageContext":{}},"staticQueryHashes":["2732334453","326269449","4051994697","841973984"]}
+{
+    "componentChunkName": "component---src-pages-lex-index-js",
+    "path": "/lex/",
+    "result": {"data":{"site":{"siteMetadata":{"toolInfo":{"lex":{"title":"Lex","link":"lex","description":"is a tool for building a lexicon or dictionary for a language and exporting it to various formats."}}}}},"pageContext":{}},
+    "staticQueryHashes": ["2732334453","326269449","4051994697","841973984"]}

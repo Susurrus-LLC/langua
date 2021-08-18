@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-pages-lex-help-index-js","path":"/lex/help/","result":{"data":{"site":{"siteMetadata":{"title":"Langua","toolInfo":{"lex":{"title":"Lex","link":"lex","description":"is a tool for building a lexicon or dictionary for a language and exporting it to various formats."}}}}},"pageContext":{}},"staticQueryHashes":["326269449","4051994697","4063318711","841973984"]}
+{
+    "componentChunkName": "component---src-pages-lex-help-index-js",
+    "path": "/lex/help/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Langua","toolInfo":{"lex":{"title":"Lex","link":"lex","description":"is a tool for building a lexicon or dictionary for a language and exporting it to various formats."}}}}},"pageContext":{}},
+    "staticQueryHashes": ["326269449","4051994697","4063318711","841973984"]}
