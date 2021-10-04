@@ -80,7 +80,7 @@
     "husky": "^7.0.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.2.4",
-    "lint-staged": "^11.1.2",
+    "lint-staged": "^11.2.0",
     "prettier": "2.4.1",
     "prettier-standard": "^16.4.1",
     "react-test-renderer": "^17.0.2",
