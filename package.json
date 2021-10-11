@@ -62,7 +62,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^27.2.4",
+    "babel-jest": "^27.2.5",
     "babel-preset-gatsby": "^1.14.0",
     "codacy-coverage": "^3.4.0",
     "eslint": "^7.32.0",
