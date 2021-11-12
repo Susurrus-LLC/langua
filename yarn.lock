@@ -3350,10 +3350,10 @@ babel-preset-current-node-syntax@^1.0.0:
     "@babel/plugin-syntax-optional-chaining" "^7.8.3"
     "@babel/plugin-syntax-top-level-await" "^7.8.3"
 
-babel-preset-gatsby@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-2.0.0.tgz#215e4fede2d16906d7f91a2572b0fa029813e45d"
-  integrity sha512-zq4lt0HB9EM6k5k5PQr9sRbidaCQHRlQk80NbbO6K74IZgcn5bNPMWz3o+81ogvQd6ouof5eCVxygEIZyzTdqw==
+babel-preset-gatsby@^2.0.0, babel-preset-gatsby@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-2.1.2.tgz#0230a50901965fb8f944e7018bcb81f13acd7f88"
+  integrity sha512-i9/o/MCQS4R4+vr6Bpy0QuoiAxhdkNEGwmfxGWdna7X+YVS3clkMigceMD38FTKwX0hc5ifoezBt+AFDQkUcwQ==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.14.0"
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.14.5"
@@ -3368,8 +3368,8 @@ babel-preset-gatsby@^2.0.0:
     babel-plugin-dynamic-import-node "^2.3.3"
     babel-plugin-macros "^2.8.0"
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
-    gatsby-core-utils "^3.0.0"
-    gatsby-legacy-polyfills "^2.0.0"
+    gatsby-core-utils "^3.1.2"
+    gatsby-legacy-polyfills "^2.1.0"
 
 babel-preset-jest@^27.2.0:
   version "27.2.0"
@@ -6649,10 +6649,10 @@ gatsby-cli@^4.0.0:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.0.0.tgz#5a0fccd9118acb874dd64324fcc3c1b407a5c16e"
-  integrity sha512-MEQAgP+/ddDTOjcfRhyZenLfr6q3nyh01muI6QTgz0qAFsbS50lZh9SbczgpuKnb6qiST1KR0OUIYTaBFXfB2g==
+gatsby-core-utils@^3.0.0, gatsby-core-utils@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.1.2.tgz#5e9bff98036ec55714079314ae027d6bcab51cb6"
+  integrity sha512-l3LUdGNDlM3fLrdxRUGnsd/Szu9e8yLEL/pZIV2LuhTHMNwjOStiycEQivezsUhHNPobep1r5t4yWzP6r2cw/Q==
   dependencies:
     "@babel/runtime" "^7.15.4"
     ci-info "2.0.0"
@@ -6681,10 +6681,10 @@ gatsby-image@^3.11.0:
     object-fit-images "^3.2.4"
     prop-types "^15.7.2"
 
-gatsby-legacy-polyfills@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-legacy-polyfills/-/gatsby-legacy-polyfills-2.0.0.tgz#83d9b8806d8d9a432ead98bf52ba09d883b32fb9"
-  integrity sha512-/zjwMYecVfb3Q+TPi16IjrN21Hgdz4ftRaL45x8Y0rcJNaLAT06dbJmpLkdbVxOGvRklGqMNRG19rBDl6nxLTw==
+gatsby-legacy-polyfills@^2.0.0, gatsby-legacy-polyfills@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-legacy-polyfills/-/gatsby-legacy-polyfills-2.1.0.tgz#f50fafd8c18d8edbea41a0d21fa952db729635d6"
+  integrity sha512-clDAz0Iv18bLPxfmg14YiL5nt/pCBUqFQcpswSUatfSo6O/PR3L5G8gRJNhgCVdaGp24opcOvh8y+sZWKza5rA==
   dependencies:
     "@babel/runtime" "^7.15.4"
     core-js-compat "3.9.0"
