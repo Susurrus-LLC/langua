@@ -6738,15 +6738,15 @@ gatsby-plugin-manifest@^4.0.0:
     semver "^7.3.5"
     sharp "^0.29.1"
 
-gatsby-plugin-offline@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-5.0.0.tgz#256926f7893a27803781b52e6415cb7099dcdbdb"
-  integrity sha512-+7poj4PzZjJc5sN77KTyjRGJaWhPeoPaPLxlvzz/x1iCTsJCPdQcPY/TeoRbzSk5BFyU94KgPejYdvBl5i/Upg==
+gatsby-plugin-offline@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-5.2.0.tgz#2ef32b7e0bc97bc4400e38708addf38ed0f187ef"
+  integrity sha512-CAFVrv/V8V5m4DQ8oJVaoorxRcSzdeak0tEKy02geY6ZkPKVFpozf3TqWSoXeFsBWCZhpNOjOM+jLo236Pj4Bw==
   dependencies:
     "@babel/runtime" "^7.15.4"
     cheerio "^1.0.0-rc.10"
-    gatsby-core-utils "^3.0.0"
-    glob "^7.1.7"
+    gatsby-core-utils "^3.2.0"
+    glob "^7.2.0"
     idb-keyval "^3.2.0"
     lodash "^4.17.21"
     workbox-build "^4.3.1"
@@ -7272,7 +7272,7 @@ glob@7.1.2:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^7.0.0, glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6, glob@^7.1.7, glob@^7.2.0:
+glob@^7.0.0, glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6, glob@^7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.0.tgz#d15535af7732e02e948f4c41628bd910293f6023"
   integrity sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==
