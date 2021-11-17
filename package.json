@@ -40,7 +40,7 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "classnames": "^2.3.1",
     "file-saver": "^2.0.5",
-    "gatsby": "^4.0.0",
+    "gatsby": "^4.2.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^4.0.0",
@@ -57,7 +57,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "react-toastify": "^8.0.3",
+    "react-toastify": "^8.1.0",
     "react-vis": "^1.11.7"
   },
   "devDependencies": {
