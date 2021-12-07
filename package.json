@@ -65,7 +65,7 @@
     "babel-jest": "^27.3.1",
     "babel-preset-gatsby": "^2.0.0",
     "codacy-coverage": "^3.4.0",
-    "eslint": "^8.0.1",
+    "eslint": "^8.4.1",
     "eslint-config-react-app": "^6.0.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-flowtype": "^6.1.1",
