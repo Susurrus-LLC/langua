@@ -48,7 +48,7 @@
     "gatsby-plugin-react-helmet": "^5.0.0",
     "gatsby-plugin-sass": "^5.0.0",
     "gatsby-plugin-sharp": "^4.0.0",
-    "gatsby-source-filesystem": "^4.0.0",
+    "gatsby-source-filesystem": "^4.4.0",
     "gatsby-transformer-sharp": "^4.0.0",
     "js-schema": "^1.0.1",
     "node-sass": "^6.0.1",
