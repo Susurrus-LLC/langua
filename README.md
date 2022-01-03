@@ -1,6 +1,6 @@
 # Langua
 
-[![Build Status](https://travis-ci.com/Susurrus-LLC/langua.svg?branch=master)](https://travis-ci.com/Susurrus-LLC/langua)
+[![Build](https://github.com/Susurrus-LLC/langua/actions/workflows/build.yml/badge.svg)](./actions)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/41a3616c2dfa484da0e2eb52d47ee444)](https://www.codacy.com/gh/Susurrus-LLC/langua/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Grade)
 [![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/41a3616c2dfa484da0e2eb52d47ee444)](https://www.codacy.com/app/Langua/langua?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Coverage)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
