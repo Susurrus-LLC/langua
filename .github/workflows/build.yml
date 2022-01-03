@@ -1,0 +1,50 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  install:
+    name: Install
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install
+        run: yarn
+
+  test:
+    name: Test
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install
+        run: yarn
+
+      - name: Test
+        run: yarn test
+
+  deploy:
+    name: Build and Deploy
+    needs: test
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install
+        run: yarn
+
+      - name: Build and Deploy
+        run: |
+          git config user.email '6866411+nai888@users.noreply.github.com'
+          git config user.name 'Ian A. Cook'
+          git remote rm origin
+          git remote add origin 'git@github.com:Susurrus-LLC/langua.git'
+          yarn deploy
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
