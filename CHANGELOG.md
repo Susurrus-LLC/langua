@@ -15,6 +15,7 @@ The format of this changelog is based on [Keep a Changelog](https://keepachangel
 - Use pageQueries instead of exporting pages both with and without data
 - Update dependencies
 - Switch testing environment from Node to jsdom
+- Switch from Travis to GitHub Actions
 
 ### Removed 0.4.5
 
