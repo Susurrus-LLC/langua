@@ -25,7 +25,7 @@ jobs:
         run: yarn
 
       - name: Test
-        run: yarn test-with-coverage
+        run: yarn test-once
 
   deploy:
     name: Build and Deploy
