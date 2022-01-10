@@ -79,7 +79,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.4.5",
+    "jest": "^27.4.7",
     "lint-staged": "^12.1.7",
     "prettier": "2.5.1",
     "prettier-standard": "^16.4.1",
