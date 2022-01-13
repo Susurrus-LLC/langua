@@ -6798,19 +6798,19 @@ gatsby-plugin-sass@^5.5.0:
     resolve-url-loader "^3.1.4"
     sass-loader "^10.1.1"
 
-gatsby-plugin-sharp@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.5.0.tgz#3796fc4c70c443bf16f5ea261eb652698b721693"
-  integrity sha512-TEcBt77klwu4qcPavSdTqa2C8fXBMYXJzyS71Ck2Z92GJxjsG5X+JGmazVej62VONssZSG/DUu/vb/hWiOcX5g==
+gatsby-plugin-sharp@^4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.5.1.tgz#a6341e8be7be1da8c8510c92c3fdf68e97086734"
+  integrity sha512-q2XWcnZX71FVd3hAw8Qb+x6hT1W/OOUhr4Shx5YrcwTJ5X9wnBsdK9o1CevXqDnjrEDipA8nXg1gq9Xa7zJdzw==
   dependencies:
     "@babel/runtime" "^7.15.4"
     async "^3.2.2"
     bluebird "^3.7.2"
     filenamify "^4.3.0"
     fs-extra "^10.0.0"
-    gatsby-core-utils "^3.5.0"
+    gatsby-core-utils "^3.5.1"
     gatsby-plugin-utils "^2.5.0"
-    gatsby-telemetry "^3.5.0"
+    gatsby-telemetry "^3.5.1"
     got "^11.8.3"
     lodash "^4.17.21"
     mini-svg-data-uri "^1.4.3"
@@ -6869,10 +6869,10 @@ gatsby-source-filesystem@^4.5.1:
     valid-url "^1.0.9"
     xstate "^4.26.1"
 
-gatsby-telemetry@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-3.5.0.tgz#a65c434f88e3e38aa4d7a66fdffa55ec1e6be6f6"
-  integrity sha512-9NYRXC9OwHwNvOtjvDDZ/DQ+0Znr8X9XtiTV8+cYGoHVmuSjuL194j0qsEZ+knGgmkSDEw1hSoTVtPhaxnndHg==
+gatsby-telemetry@^3.5.0, gatsby-telemetry@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-3.5.1.tgz#f5649a63e1dfc64a8fdcdf676a7e69c05c7fa19d"
+  integrity sha512-d8w06YPKVKErzDOd+6kqV7XVjW+XClgkyjzZU+TiaLMqxlsXbu/BeplE0NFSfZHh1lBFmhp5AFSW7eDZPi3CkQ==
   dependencies:
     "@babel/code-frame" "^7.14.0"
     "@babel/runtime" "^7.15.4"
@@ -6882,7 +6882,7 @@ gatsby-telemetry@^3.5.0:
     boxen "^4.2.0"
     configstore "^5.0.1"
     fs-extra "^10.0.0"
-    gatsby-core-utils "^3.5.0"
+    gatsby-core-utils "^3.5.1"
     git-up "^4.0.5"
     is-docker "^2.2.1"
     lodash "^4.17.21"
