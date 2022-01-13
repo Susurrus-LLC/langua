@@ -6672,10 +6672,10 @@ gatsby-cli@^4.5.0:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.5.0.tgz#b4b95252c3a06dd1883b13918746550d3f782035"
-  integrity sha512-hv0biKZytTJgO8mghiDF0mqlDTu8AbapcK1KU25m1NkvnossuVOU/5fyMqPUXRE9BBD5OT6wJQqHCmiSmoxDEQ==
+gatsby-core-utils@^3.5.0, gatsby-core-utils@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.5.1.tgz#0c0e03e173d0a615fa8146e629f2ad29ceff50d4"
+  integrity sha512-qYjPUKULMcrcQyzY3BYKRFwBeI94Cxxm95ByNzYLT80QL0qZL4CapwLgCo1PyZPNd5IWByO8+nmZTcBR6hy0tQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     ci-info "2.0.0"
@@ -6850,17 +6850,17 @@ gatsby-react-router-scroll@^5.5.0:
   dependencies:
     "@babel/runtime" "^7.15.4"
 
-gatsby-source-filesystem@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-4.5.0.tgz#2dfeb50d083acc03c3eed092dac91297ebba7448"
-  integrity sha512-b4MeHoP/1Et6YTeHB1DSsd7L5gky+wN2fo+UBVLYRwk/JlFOhkhEFfdsxA7LGEFd69R1UWi+YUOPMIgVQNDZFw==
+gatsby-source-filesystem@^4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-4.5.1.tgz#4cd34113b83027bd0e97637d14b2dfa77ca6f948"
+  integrity sha512-yME2P0uzsKIB8K7j2zidwIJkqko0e8CxB644piti4NqTF0NAjYHRuich0cjGIvv5sGq2infWVvw+6+tRZT2Hqw==
   dependencies:
     "@babel/runtime" "^7.15.4"
     chokidar "^3.5.2"
     fastq "^1.13.0"
     file-type "^16.5.3"
     fs-extra "^10.0.0"
-    gatsby-core-utils "^3.5.0"
+    gatsby-core-utils "^3.5.1"
     got "^9.6.0"
     md5-file "^5.0.0"
     mime "^2.5.2"
