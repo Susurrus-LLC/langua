@@ -7009,10 +7009,10 @@ gatsby-worker@^1.5.0:
     "@babel/core" "^7.15.5"
     "@babel/runtime" "^7.15.4"
 
-gatsby@^4.5.4:
-  version "4.5.4"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.5.4.tgz#53404b798da0c86057675d03011f072faf85b27c"
-  integrity sha512-uXyYl9nq52xdvP/9lwWFp7eGtjFFgdAjG2xNBvpgNgd1AtH/4kU76khm1mmpXea98mnJrcwKmsSZkIbQO9YWCg==
+gatsby@^4.5.5:
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.5.5.tgz#5e9b24e32e842810b1ce88de6f6f576a3455c33b"
+  integrity sha512-WAT5FLiA6kziWQu1eplqrfBYH1FUeDMfuHPulh2QV0IVmE/AirTCNNIK1RhvY96UjR6qn6xJ1rSgiMqwr6y1sw==
   dependencies:
     "@babel/code-frame" "^7.14.0"
     "@babel/core" "^7.15.5"
