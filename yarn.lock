@@ -3472,10 +3472,10 @@ babel-preset-current-node-syntax@^1.0.0:
     "@babel/plugin-syntax-optional-chaining" "^7.8.3"
     "@babel/plugin-syntax-top-level-await" "^7.8.3"
 
-babel-preset-gatsby@^2.6.0, babel-preset-gatsby@^2.9.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-2.9.0.tgz#6a478ee39b99be21b5ed804ebd8cc96a0fd492d3"
-  integrity sha512-naGwVr1uCX2NsyM38pTp0f+vO0UfCH2h7wEC1H8B748twHTUpoOPJ/GWUs+/FQzNrfgOvHSspcqkRyD3Vb2EPg==
+babel-preset-gatsby@^2.6.0, babel-preset-gatsby@^2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-2.9.1.tgz#2f62f7f7899ed7282f0a84ef0b5a0e131225ed96"
+  integrity sha512-HkZyo5Phb5+vbICx0Q8Goj+FV8xPH4detCqJUDHH9sfBvAjvdnKfL2dtDFd0QvKhUQ/55rO3Rdcmo6PU5zYwZw==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.14.0"
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.14.5"
@@ -3490,7 +3490,7 @@ babel-preset-gatsby@^2.6.0, babel-preset-gatsby@^2.9.0:
     babel-plugin-dynamic-import-node "^2.3.3"
     babel-plugin-macros "^2.8.0"
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
-    gatsby-core-utils "^3.9.0"
+    gatsby-core-utils "^3.9.1"
     gatsby-legacy-polyfills "^2.9.0"
 
 babel-preset-jest@^27.5.1:
@@ -6791,10 +6791,10 @@ gatsby-cli@^4.6.1:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^3.6.0, gatsby-core-utils@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.9.0.tgz#7be5969622e44c4475cb14f1ac64b49a4072ab6c"
-  integrity sha512-SvPnr86oXTY3ldbQ4QAkEew3BQE9vlzUXcXVJqTOhMUeGEz2kibBFUmVp8ia9Y1eOD+K/0xXQ54jUqaResj69w==
+gatsby-core-utils@^3.6.0, gatsby-core-utils@^3.9.0, gatsby-core-utils@^3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.9.1.tgz#a4c1bb2021a7e7c06b4aad8d71c9c76ca9cdc21f"
+  integrity sha512-DNf7NhhH0WrFuoBvyURjsw4w+eKbp1GlRA0cchYHJwVTaDPvLvX1o7zxN76xIBx+m0kttpnO3KuJ9LDOSli3ag==
   dependencies:
     "@babel/runtime" "^7.15.4"
     ci-info "2.0.0"
