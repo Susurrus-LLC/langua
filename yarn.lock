@@ -6921,10 +6921,10 @@ gatsby-plugin-sass@^5.10.0:
     resolve-url-loader "^3.1.4"
     sass-loader "^10.1.1"
 
-gatsby-plugin-sharp@^4.10.0:
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.10.0.tgz#620fcf1dbd5a4b333c3fe1ff77953c237ecf431b"
-  integrity sha512-rdTpbL/E01klO+Kfa+zmRlWRWSOQoaCLeUbwLobzKeSC80JfSg8yl+dVLC7ipfGqzZtacuq6JU5TJcy3bau89A==
+gatsby-plugin-sharp@^4.10.1:
+  version "4.10.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.10.1.tgz#d72145f7649b71a1e5051dcf7ed8f4d1f72bb041"
+  integrity sha512-Y+kB5BSfcxMYO5s13W3NDeDH28RCzSa8goo1yQNTISiGaC6iBO4EIEVbUiUBkoLA5nf46J71ve8A3sprZ66bog==
   dependencies:
     "@babel/runtime" "^7.15.4"
     async "^3.2.3"
@@ -6933,7 +6933,7 @@ gatsby-plugin-sharp@^4.10.0:
     filenamify "^4.3.0"
     fs-extra "^10.0.0"
     gatsby-core-utils "^3.10.0"
-    gatsby-plugin-utils "^3.4.0"
+    gatsby-plugin-utils "^3.4.1"
     gatsby-telemetry "^3.10.0"
     got "^11.8.3"
     lodash "^4.17.21"
@@ -6959,12 +6959,13 @@ gatsby-plugin-typescript@^4.6.0:
     "@babel/runtime" "^7.15.4"
     babel-plugin-remove-graphql-queries "^4.6.0"
 
-gatsby-plugin-utils@^3.0.0, gatsby-plugin-utils@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.4.0.tgz#210fc7f51247388c1bc0a966a05acda79eab27ea"
-  integrity sha512-ACMIJZ/yaGDgNfw3cIGytbrIMK88rvv/r/Art6gPgu7g664uAh4FDnVqJQyFbJ3G+3gCRKtNs4sRxEx2fJib9A==
+gatsby-plugin-utils@^3.0.0, gatsby-plugin-utils@^3.4.0, gatsby-plugin-utils@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.4.1.tgz#14c9cff75af32a32860575069af44bdabc8f65d9"
+  integrity sha512-sDMVGauxMgXyX8WGZDndZI2vIaolJzlXBMdKhgP7DIT+Qa5wjvyHWvZy34dxtVrT3IHPK/PRMgpE81Gr7gKveg==
   dependencies:
     "@babel/runtime" "^7.15.4"
+    fs-extra "^10.0.0"
     gatsby-core-utils "^3.10.0"
     gatsby-sharp "^0.4.0"
     graphql-compose "^9.0.7"
