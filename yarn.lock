@@ -6912,10 +6912,10 @@ gatsby-plugin-react-helmet@^5.10.0:
   dependencies:
     "@babel/runtime" "^7.15.4"
 
-gatsby-plugin-sass@^5.10.0:
-  version "5.10.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-5.10.0.tgz#a510293de5b43c8eee7564b4a2bf4736621e7e83"
-  integrity sha512-s/h+BCMvqi3EUXx46Z/rkXX5jo714mCb1qwSxiu/yj7UbpD5huv57NAVwZgG2U/bqQDMAYJNAipHz9L2F5RS7A==
+gatsby-plugin-sass@^5.10.1:
+  version "5.10.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-5.10.1.tgz#1ada3acc1e2c16e51ec1e494ad8d48a581be72f2"
+  integrity sha512-h8HS0BVEa/+GMQukScFyr0cpcdXQqwi4tliUto1EKtGsDO3ps2j89ytS6V9yGwp7KGFtZiI2y10R7gbBuVW1Yw==
   dependencies:
     "@babel/runtime" "^7.15.4"
     resolve-url-loader "^3.1.4"
@@ -6959,7 +6959,7 @@ gatsby-plugin-typescript@^4.6.0:
     "@babel/runtime" "^7.15.4"
     babel-plugin-remove-graphql-queries "^4.6.0"
 
-gatsby-plugin-utils@^3.0.0, gatsby-plugin-utils@^3.4.0, gatsby-plugin-utils@^3.4.1:
+gatsby-plugin-utils@^3.0.0, gatsby-plugin-utils@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.4.1.tgz#14c9cff75af32a32860575069af44bdabc8f65d9"
   integrity sha512-sDMVGauxMgXyX8WGZDndZI2vIaolJzlXBMdKhgP7DIT+Qa5wjvyHWvZy34dxtVrT3IHPK/PRMgpE81Gr7gKveg==
