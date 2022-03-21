@@ -6875,10 +6875,10 @@ gatsby-plugin-manifest@^4.10.0:
     semver "^7.3.5"
     sharp "^0.30.1"
 
-gatsby-plugin-offline@^5.10.0:
-  version "5.10.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-5.10.0.tgz#0dd5fbd86a1b8e64cd22a460fb8dafca3821c65e"
-  integrity sha512-UInZjkLoq8+zlLhP5wKfvd3guetKYDNeHtA0pmg1tJXaqDriVSuwYg/S0mASDS8OYyjOEu8YrahxPMArHndlDA==
+gatsby-plugin-offline@^5.10.1:
+  version "5.10.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-5.10.1.tgz#b4d6296ca788cb301af989612dea7fc13637f0fa"
+  integrity sha512-l33iJlXfnY9xg3iEG1qCyu7bz0tnoMzocUY1KUCE2I4FMhSHtzMzcHqVHlrULbaye0fxikwsQ9oEX0bZPBuMHA==
   dependencies:
     "@babel/runtime" "^7.15.4"
     cheerio "^1.0.0-rc.10"
