@@ -6864,14 +6864,14 @@ gatsby-plugin-google-fonts@^1.0.1:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-1.0.1.tgz#d71054f7bf207b9a8da227380369e18e6f4e0201"
   integrity sha512-p1NVkn27GUnDA5qHM+Z4cCcLCJIardzZXMon3640sT4xuL/AZJbsx3HEt2KY/5oZu0UXIkytkxzV2Da4rQeUIg==
 
-gatsby-plugin-manifest@^4.10.1:
-  version "4.10.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-4.10.1.tgz#01949125a70bac22f2d8946d5829b49f7f188ca2"
-  integrity sha512-D4WYQD1gDdyvWt8RYl4OC/i7thPkgtkm+kZW+d1JVpUTu+BrbdPYCIUMGdSrDyKxx3x0bhMmEf9hZW25acew0Q==
+gatsby-plugin-manifest@^4.10.2:
+  version "4.10.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-4.10.2.tgz#117b44e0e219fa85d6b710d2ed985268d82a1e25"
+  integrity sha512-2QGrG3qFkUnp0IcxQ+uQS4/jPL4NMHShOEs/7JPsuIJSIdumnG7QYJ9xHbIBb8U5mIFLpeonADYJVbdTsnGtrg==
   dependencies:
     "@babel/runtime" "^7.15.4"
-    gatsby-core-utils "^3.10.0"
-    gatsby-plugin-utils "^3.4.1"
+    gatsby-core-utils "^3.10.1"
+    gatsby-plugin-utils "^3.4.2"
     semver "^7.3.5"
     sharp "^0.30.1"
 
@@ -6959,14 +6959,14 @@ gatsby-plugin-typescript@^4.6.0:
     "@babel/runtime" "^7.15.4"
     babel-plugin-remove-graphql-queries "^4.6.0"
 
-gatsby-plugin-utils@^3.0.0, gatsby-plugin-utils@^3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.4.1.tgz#14c9cff75af32a32860575069af44bdabc8f65d9"
-  integrity sha512-sDMVGauxMgXyX8WGZDndZI2vIaolJzlXBMdKhgP7DIT+Qa5wjvyHWvZy34dxtVrT3IHPK/PRMgpE81Gr7gKveg==
+gatsby-plugin-utils@^3.0.0, gatsby-plugin-utils@^3.4.1, gatsby-plugin-utils@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.4.2.tgz#bdc66fd52c052c91af443981e1facbc097429dc7"
+  integrity sha512-HkVR8BnEdc915pmY2L9wPwFgjq303ThMH9UtT+frDOPzn+GFjPlBF5+YGJ3tZaxH0ouwpnGTn3Pu37tcRZcctA==
   dependencies:
     "@babel/runtime" "^7.15.4"
     fs-extra "^10.0.0"
-    gatsby-core-utils "^3.10.0"
+    gatsby-core-utils "^3.10.1"
     gatsby-sharp "^0.4.0"
     graphql-compose "^9.0.7"
     import-from "^4.0.0"
