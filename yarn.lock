@@ -7140,10 +7140,10 @@ gatsby-plugin-sass@^5.14.0:
     resolve-url-loader "^3.1.4"
     sass-loader "^10.1.1"
 
-gatsby-plugin-sharp@^4.14.0:
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.14.0.tgz#2f097d5d83829b9154235c8f1a5e8fd4e9746dc7"
-  integrity sha512-5xBF9+esTS/mkZx/NLdovjmyVu/EefDAPbTckh9UkXYTSe3BmhUjZ8wFN9xr1NQUTuDBta9csjBDWs8whvBzVw==
+gatsby-plugin-sharp@^4.14.1:
+  version "4.14.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.14.1.tgz#bc8402c014e8d4ad9b304adad6d56be5e54912ea"
+  integrity sha512-izYl9XcnWdAY+rDtZtnKfzZ/djBioGSDg/k84cgLVbTzLB29jgqipw3PkjV7IlvmJmlw2v78YCHO5mk3bfcitg==
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@gatsbyjs/potrace" "^2.2.0"
