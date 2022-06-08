@@ -7216,10 +7216,10 @@ gatsby-plugin-sass@^5.15.1:
     resolve-url-loader "^3.1.4"
     sass-loader "^10.1.1"
 
-gatsby-plugin-sharp@^4.15.1:
-  version "4.15.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.15.1.tgz#5daeb44e72993c138a29755c7461b059ae22b6e4"
-  integrity sha512-RXQkLP9D6Aa0X1eK+2lKjcxXnZZhm3m5mH3hMTfBU8DHKOojK8nUk/Uf2Kw+eVmlUONulSG+1SiH2ayAokvSJQ==
+gatsby-plugin-sharp@^4.16.0:
+  version "4.16.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.16.0.tgz#21af434f31909fd49b8a9452d18f731d47cf2758"
+  integrity sha512-erX5pPDserEUwSKaUznOZi4ge7Z10M00jSUO+5ixZoJSMx8F3fzQ6PDzFF3f0h5jJ3PDJky1d1rR6Bz1MkprCQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@gatsbyjs/potrace" "^2.2.0"
@@ -7228,9 +7228,9 @@ gatsby-plugin-sharp@^4.15.1:
     debug "^4.3.4"
     filenamify "^4.3.0"
     fs-extra "^10.1.0"
-    gatsby-core-utils "^3.15.0"
-    gatsby-plugin-utils "^3.9.1"
-    gatsby-telemetry "^3.15.0"
+    gatsby-core-utils "^3.16.0"
+    gatsby-plugin-utils "^3.10.0"
+    gatsby-telemetry "^3.16.0"
     got "^11.8.3"
     lodash "^4.17.21"
     mini-svg-data-uri "^1.4.4"
@@ -7312,10 +7312,10 @@ gatsby-source-filesystem@^4.16.0:
     valid-url "^1.0.9"
     xstate "^4.26.1"
 
-gatsby-telemetry@^3.15.0, gatsby-telemetry@^3.6.0:
-  version "3.15.0"
-  resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-3.15.0.tgz#10a211b2b74d04ec94cade5230f21d779abda0fd"
-  integrity sha512-pXHnw79qmfN5bAVkgdQMCnq7rZFxfGU1YkZJQAG+gCsLRpDgYxgxZYhkbdRJzyF8vMYiCp7HlNsCMvBA75Rpug==
+gatsby-telemetry@^3.16.0, gatsby-telemetry@^3.6.0:
+  version "3.16.0"
+  resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-3.16.0.tgz#5feed051c562b52bbcba7e85c9f9a7b0f1afad87"
+  integrity sha512-u7s3/VoWwYO7gyqiEn7J1YiNxsdn26WSFL9egFM5jH1IMnj86fiFM4EnDfcaZ5MSTEA1dFqBa6hidwhrpv2rhw==
   dependencies:
     "@babel/code-frame" "^7.14.0"
     "@babel/runtime" "^7.15.4"
@@ -7325,7 +7325,7 @@ gatsby-telemetry@^3.15.0, gatsby-telemetry@^3.6.0:
     boxen "^4.2.0"
     configstore "^5.0.1"
     fs-extra "^10.1.0"
-    gatsby-core-utils "^3.15.0"
+    gatsby-core-utils "^3.16.0"
     git-up "^4.0.5"
     is-docker "^2.2.1"
     lodash "^4.17.21"
