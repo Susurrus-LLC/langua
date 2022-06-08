@@ -7159,14 +7159,14 @@ gatsby-plugin-google-fonts@^1.0.1:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-1.0.1.tgz#d71054f7bf207b9a8da227380369e18e6f4e0201"
   integrity sha512-p1NVkn27GUnDA5qHM+Z4cCcLCJIardzZXMon3640sT4xuL/AZJbsx3HEt2KY/5oZu0UXIkytkxzV2Da4rQeUIg==
 
-gatsby-plugin-manifest@^4.15.1:
-  version "4.15.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-4.15.1.tgz#8e32e9d8ee1b61f5707b7b2bf17c2de84c74d174"
-  integrity sha512-tlXO2TGpDU2fmBBpNDadAQdfaZiKt+yB1m8O5tEvpMmW00n7qsaicteNRCNgX9Ex/sgircd9Dvph4hvy7zyesw==
+gatsby-plugin-manifest@^4.16.0:
+  version "4.16.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-4.16.0.tgz#84549aa6e11f85351ccb274aaa9f692b7a8dc286"
+  integrity sha512-hGRFxJeC9j+f2JG9WkkKEjbnP3Gq4FOKzcTmKUt4iZ8DnY+BcDaBEqAm9wrlk4yCqLR6AL/ZGnB6AkG6j7twjQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
-    gatsby-core-utils "^3.15.0"
-    gatsby-plugin-utils "^3.9.1"
+    gatsby-core-utils "^3.16.0"
+    gatsby-plugin-utils "^3.10.0"
     semver "^7.3.7"
     sharp "^0.30.3"
 
@@ -7253,7 +7253,7 @@ gatsby-plugin-typescript@^4.6.0:
     "@babel/runtime" "^7.15.4"
     babel-plugin-remove-graphql-queries "^4.6.0"
 
-gatsby-plugin-utils@^3.0.0, gatsby-plugin-utils@^3.10.0, gatsby-plugin-utils@^3.9.1:
+gatsby-plugin-utils@^3.0.0, gatsby-plugin-utils@^3.10.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-3.10.0.tgz#d47bb1165bd6aafb3bd17820df97582dba93a69f"
   integrity sha512-/K6frqNRwmSznUnjWD3Isk5wEj56zLrygfAdlBYVLd6XfAHK18sPJBaIi+Gpno4pNaSMuu10x+OxPmSIjE0X7g==
