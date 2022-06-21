@@ -40,7 +40,7 @@
     "@fortawesome/fontawesome-free": "^6.1.1",
     "classnames": "^2.3.1",
     "file-saver": "^2.0.5",
-    "gatsby": "^4.6.2",
+    "gatsby": "^4.17.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^4.17.0",
