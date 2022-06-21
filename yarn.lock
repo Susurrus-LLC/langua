@@ -7116,7 +7116,7 @@ gatsby-cli@^4.6.1:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^3.16.0, gatsby-core-utils@^3.17.0, gatsby-core-utils@^3.6.0:
+gatsby-core-utils@^3.17.0, gatsby-core-utils@^3.6.0:
   version "3.17.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.17.0.tgz#5fe33c4267a3d0a7439b8065ee9c16f5cc2aead1"
   integrity sha512-1e0YaqTAEpSSBkpWkY703lu+Bl76ASXUvUcpnNO3CavCYZsRQxAXtMXIKIEvhm1z6zWJmY9HILo6/DjP+PHeyw==
@@ -7237,10 +7237,10 @@ gatsby-plugin-react-helmet@^5.17.0:
   dependencies:
     "@babel/runtime" "^7.15.4"
 
-gatsby-plugin-sass@^5.16.0:
-  version "5.16.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-5.16.0.tgz#a14b49e91a9de714e04dd094609f539b1170d5a3"
-  integrity sha512-iLko0j3JlGCmZiCmsXXzct8SFGGOtkZ1fhopBruSDTMuYUhAsLVS88IxP/o2TvjTbkpYgqPh3rBR+d4PLty5YA==
+gatsby-plugin-sass@^5.17.0:
+  version "5.17.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-5.17.0.tgz#9c5c8c6de103bb3e3fcf82a643b0a7f2da0d9d84"
+  integrity sha512-WOJ3stTHJCk9+t7YVEbagAeRw9UFxrEgZLzQ4Q0FB8kxZ5YRx8BfDKgc2pqQI0jF0/s8NeLYJCdVYIc1VRNK5A==
   dependencies:
     "@babel/runtime" "^7.15.4"
     resolve-url-loader "^3.1.4"
