@@ -7166,7 +7166,7 @@ gatsby-cli@^4.6.1:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^3.17.0, gatsby-core-utils@^3.18.0, gatsby-core-utils@^3.6.0:
+gatsby-core-utils@^3.18.0, gatsby-core-utils@^3.6.0:
   version "3.18.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.18.0.tgz#4b03ee01822d399eec06ba83c867967d14669a42"
   integrity sha512-mCoNgH4MilosLhEroklgVffwie9lyxgmvNwe/oIyzXr6NcZ2uxSp8G1KrgxdG2srt2hCNlZLlzS25ltLTeHTjA==
@@ -7287,10 +7287,10 @@ gatsby-plugin-react-helmet@^5.18.0:
   dependencies:
     "@babel/runtime" "^7.15.4"
 
-gatsby-plugin-sass@^5.18.0:
-  version "5.18.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-5.18.0.tgz#d09e40b3592c981dad1aba8332719d8322728012"
-  integrity sha512-78CKsIbEb91ojD+CnpZDfgAUWltl8B+Y1J0afORqXZsxd0QL0/YhmYZU7NdTD+kCqZXSZ4B2x+YeZWXZtgA/Kg==
+gatsby-plugin-sass@^5.18.1:
+  version "5.18.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-5.18.1.tgz#7ebdc3e1a4b39476d892112b1d9f486be839df64"
+  integrity sha512-xZSHG45j1LFabNzSOE9k/xIlknFfH47xqqiZ1+vhuN5gnzf0SGNEN5w414/LELcsSmTzyDsynTaAWE0Li9fg1g==
   dependencies:
     "@babel/runtime" "^7.15.4"
     resolve-url-loader "^3.1.4"
@@ -7954,23 +7954,6 @@ globule@^1.0.0:
     minimatch "~3.0.2"
 
 got@^11.8.2, got@^11.8.5:
-  version "11.8.5"
-  resolved "https://registry.yarnpkg.com/got/-/got-11.8.5.tgz#ce77d045136de56e8f024bebb82ea349bc730046"
-  integrity sha512-o0Je4NvQObAuZPHLFoRSkdG2lTgtcynqymzg2Vupdx6PorhaT5MCbIyXG6d4D94kk8ZG57QeosgdiqfJWhEhlQ==
-  dependencies:
-    "@sindresorhus/is" "^4.0.0"
-    "@szmarczak/http-timer" "^4.0.5"
-    "@types/cacheable-request" "^6.0.1"
-    "@types/responselike" "^1.0.0"
-    cacheable-lookup "^5.0.3"
-    cacheable-request "^7.0.2"
-    decompress-response "^6.0.0"
-    http2-wrapper "^1.0.0-beta.5.2"
-    lowercase-keys "^2.0.0"
-    p-cancelable "^2.0.0"
-    responselike "^2.0.0"
-
-got@^11.8.5:
   version "11.8.5"
   resolved "https://registry.yarnpkg.com/got/-/got-11.8.5.tgz#ce77d045136de56e8f024bebb82ea349bc730046"
   integrity sha512-o0Je4NvQObAuZPHLFoRSkdG2lTgtcynqymzg2Vupdx6PorhaT5MCbIyXG6d4D94kk8ZG57QeosgdiqfJWhEhlQ==
