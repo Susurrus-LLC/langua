@@ -3762,10 +3762,10 @@ babel-preset-current-node-syntax@^1.0.0:
     "@babel/plugin-syntax-optional-chaining" "^7.8.3"
     "@babel/plugin-syntax-top-level-await" "^7.8.3"
 
-babel-preset-gatsby@^2.18.1, babel-preset-gatsby@^2.6.0:
-  version "2.18.1"
-  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-2.18.1.tgz#1dd274e2203f25b381d45342a1292e57baede17f"
-  integrity sha512-oaVV6ULceMjTQKjCA06qvgfLwBNZFJxpacwNZYOJpLygmj+qYiNKDGhJ8vTw/KAIUeDPZAbPMP5P+3wMEPIWYQ==
+babel-preset-gatsby@^2.19.0, babel-preset-gatsby@^2.6.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-2.19.0.tgz#adfe95b476ee4951ca52ebc2759c269c4b196a8e"
+  integrity sha512-wjh4lUN1MffsnqHAfRoeOtJFGEObUPR4oxo7fyfx9pZUyqBgXvKXMEoLnwNht5HV5BzT5Xo9dkwNJl0/CNhXHw==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.14.0"
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.14.5"
@@ -3780,8 +3780,8 @@ babel-preset-gatsby@^2.18.1, babel-preset-gatsby@^2.6.0:
     babel-plugin-dynamic-import-node "^2.3.3"
     babel-plugin-macros "^3.1.0"
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
-    gatsby-core-utils "^3.18.1"
-    gatsby-legacy-polyfills "^2.18.0"
+    gatsby-core-utils "^3.19.0"
+    gatsby-legacy-polyfills "^2.19.0"
 
 babel-preset-jest@^27.5.1:
   version "27.5.1"
@@ -7203,10 +7203,10 @@ gatsby-image@^3.11.0:
     object-fit-images "^3.2.4"
     prop-types "^15.7.2"
 
-gatsby-legacy-polyfills@^2.18.0, gatsby-legacy-polyfills@^2.6.0:
-  version "2.18.0"
-  resolved "https://registry.yarnpkg.com/gatsby-legacy-polyfills/-/gatsby-legacy-polyfills-2.18.0.tgz#ef0152e61a360308407b18a3510abef2000ebdd0"
-  integrity sha512-wPnsRUnnab10wyt5VPkIhpJC1k8bVrpn0Sfat1L3JskYwkVIEvquqTmHWkpGMB8SLbXQiJEGCs2TcIrx9riL+w==
+gatsby-legacy-polyfills@^2.19.0, gatsby-legacy-polyfills@^2.6.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/gatsby-legacy-polyfills/-/gatsby-legacy-polyfills-2.19.0.tgz#751dadf23cfa3a250caa8c0a8b56a8cfd0d3aca2"
+  integrity sha512-WuyN01eiRxhanfnj6UgsCxU+Pxs9B8rtgxbrwXhlEKX+QdAp4XlywDQ8QXvv8i028QDF9h+VnvGlfcZY4tgQrQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     core-js-compat "3.9.0"
