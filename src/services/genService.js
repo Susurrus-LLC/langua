@@ -417,7 +417,7 @@ class GenService {
     const resolveOpt = (subpatterns, option) => {
       let letters = ''
       for (let i = 0; i < option.length; i++) {
-        if (/[()[\]^*"]/.test(option[i])) {
+        if (/[()[\]^"]/.test(option[i])) {
           // For now, ignore the characters that will be used for operations
           continue
         } else {
@@ -427,15 +427,36 @@ class GenService {
       return letters
     }
 
-    // Split all the Subpatterns into arrays based on '/'
-    for (let i = 0; i < newData.subpatterns.length; i++) {
-      newData.subpatterns[i].subpattern = newData.subpatterns[
-        i
-      ].subpattern.split('/')
+    // Parse weighted options and expand them
+    const parseWeightedOptions = str => {
+      const parts = str.split('/')
+      const expanded = []
+
+      for (const part of parts) {
+        const match = part.match(/^(.+)\*(\d+)$/)
+        if (match) {
+          const option = match[1]
+          const weight = Math.min(128, Math.max(1, parseInt(match[2], 10)))
+          for (let i = 0; i < weight; i++) {
+            expanded.push(option)
+          }
+        } else {
+          expanded.push(part)
+        }
+      }
+
+      return expanded
     }
 
-    // Split the Pattern into an array based on '/'
-    const pattArr = newData.pattern.split('/')
+    // Split all the Subpatterns into arrays based on '/' and expand weights
+    for (let i = 0; i < newData.subpatterns.length; i++) {
+      newData.subpatterns[i].subpattern = parseWeightedOptions(
+        newData.subpatterns[i].subpattern
+      )
+    }
+
+    // Split the Pattern into an array based on '/' and expand weights
+    const pattArr = parseWeightedOptions(newData.pattern)
 
     // Generate the number of words requested in the settings
     for (let i = 0; i < newData.words; i++) {

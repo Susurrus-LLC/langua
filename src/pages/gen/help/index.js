@@ -97,7 +97,6 @@ const GenHelp = props => {
       <h5 id='weights'>
         Weights &ndash; <code>*</code>
       </h5>
-      <Notice>This functionality has not yet been implemented.</Notice>
       <p>
         Weights can be added to certain choices using an asterisk <code>*</code>{' '}
         and a number to improve the likelihood of it being chosen. For example,
