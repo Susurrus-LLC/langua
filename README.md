@@ -1,3 +1,14 @@
+# Deprecation
+
+I am retiring Langua as a project. Over the years, two things have become clear to me:
+
+1. This project's scope grew to be too large for me. I should have kept it to just Gen, a rebuild of Awkwords.
+2. The React ecosystem evolves too quickly for me, a hobbyist, to keep up.
+
+The app will remain published on gh-pages, but I will archive this repo to make it read-only. Feel free to fork it if you want to continue working on it.
+
+Alternatively, consider checking out [Awkwords](https://github.com/nai888/awkwords), which I've now renovated and released using Vue. This accomplishes everything I was trying to achieve with Gen and more.
+
 # Langua
 
 [![Build](https://github.com/Susurrus-LLC/langua/actions/workflows/build.yml/badge.svg)](./actions)
